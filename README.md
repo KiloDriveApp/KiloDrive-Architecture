@@ -34,12 +34,18 @@ reading order. It builds one idea at a time:
 5. [Geospatial processing](docs/architecture/geospatial.md) — how location,
    route matching, and deviation detection work without treating noisy GPS as
    perfect evidence.
-6. [Financial systems](docs/architecture/financial-systems.md) — wallets,
+6. [Rider and driver safety](docs/architecture/rider-driver-safety.md) — how
+   eligibility, pre-trip confirmation, RideCheck, emergency actions, evidence,
+   and human response protect both sides of a trip.
+7. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
+   how country dossiers, shard gates, effective rules, approvals, and retained
+   evidence turn legal requirements into enforceable operations.
+8. [Financial systems](docs/architecture/financial-systems.md) — wallets,
    holds, double-entry journals, idempotency, and reconciliation.
-7. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
+9. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
    availability, payment authorization, evidence, deposits, and disputes form
    one lifecycle.
-8. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
+10. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
    production safely.
 
 The [documentation guide](docs/README.md) also provides role-based paths for
@@ -202,6 +208,8 @@ versions worth remembering:
 - [Entity identification](docs/architecture/entity-identification.md)
 - [Realtime and events](docs/architecture/realtime-and-events.md)
 - [Geospatial processing](docs/architecture/geospatial.md)
+- [Rider and driver safety](docs/architecture/rider-driver-safety.md)
+- [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md)
 - [Financial systems](docs/architecture/financial-systems.md)
 - [Rental marketplace](docs/architecture/rental-marketplace.md)
 - [Documents, media, and voice](docs/architecture/documents-media-voice.md)

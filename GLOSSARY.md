@@ -28,13 +28,18 @@ meanings in other systems.
 | Circuit breaker | A resilience control that temporarily stops calls to a failing dependency so the application can recover instead of amplifying failure. |
 | ClamAV | Open-source malware-scanning engine used by a configured upload-scanning adapter. A timeout or unavailable scanner is not a clean result; protected uploads remain quarantined. |
 | Cloud edge | Public TLS, WAF, request filtering, and proxy boundary in front of the application. It supplements but never replaces application authorization. |
+| Compliance evidence | Version-bound proof that a required control operated for a particular country, release, provider, and time window. A configuration field without a test or review record is not compliance evidence. |
+| Compliance register | Controlled country-by-country record of applicable obligations, legal sources, control owners, evidence, review dates, exceptions, and launch decisions. The public architecture describes its shape but does not publish privileged legal advice. |
 | Control plane | Global identity, country routing, support/privacy orchestration, and other cross-cell coordination data. |
 | Correlation ID | A validated or generated request identifier propagated through responses, traces, logs, outbox work, and safe audit evidence. |
 | CQRS | Command Query Responsibility Segregation: separating state-changing commands from read-only queries so validation, transaction, audit, and caching expectations are explicit. It does not require separate services or databases. |
 | CSRF | Cross-Site Request Forgery: tricking an authenticated browser into submitting an unwanted request. The Portal uses anti-forgery protection because cookies can be sent automatically by the browser. |
 | CSP | Content Security Policy, a browser response header that limits which script, style, frame, image, and connection sources a page may use. |
 | Country cell | A country-scoped MySQL database containing operational, tenant, and financial domain data. |
+| Country activation gate | Fail-closed decision that permits signup or operations only after the country shard, schema contract, rules, providers, legal approvals, runbooks, and accountable owners are ready. |
 | Data plane | Country-local operational state used to run rides, deliveries, rentals, wallets, and related workflows. It is distinct from the global identity control plane. |
+| Data controller | Organization that determines why and how personal data is processed under the applicable privacy framework. The legal role depends on the processing relationship and must be determined by counsel, not inferred from a database name. |
+| Data processor | Organization that handles personal data on a controller's instructions. Provider contracts, subprocessor review, security obligations, and cross-border transfer rules remain part of the compliance boundary. |
 | Data Protection | ASP.NET Core facility for purpose-scoped encryption and integrity protection of application secrets such as protected fields. Its key ring must be persistent, protected, and shared correctly across API nodes. |
 | Dead-letter queue | A queue that isolates messages that could not be processed after the allowed attempts, preserving them for investigation and controlled redrive. |
 | Distributed transaction | One atomic transaction spanning independent systems or databases. KiloDrive avoids it across control/country boundaries and uses durable orchestration instead. |
@@ -61,8 +66,11 @@ meanings in other systems.
 | IPA | iOS App Store package containing the signed application and embedded frameworks. Release review inspects the actual IPA, not only Dart or Swift source. |
 | JWT | JSON Web Token: compact signed claims used for KiloDrive access tokens and some provider integrations. A JWT is readable by its holder unless its contents are separately encrypted. |
 | JWKS | JSON Web Key Set publishing public verification keys for asymmetrically signed tokens. |
+| Jurisdiction | Country, state, province, territory, municipality, or other legal authority whose rules may apply to an operation. A country code is a routing key, not a complete legal conclusion. |
 | KMS | Cloud key-management service used to protect encryption keys and enforce audited key-use policy. |
 | KYC | Know Your Customer controls: identity and eligibility checks appropriate to a financial or marketplace action. Required evidence and limits are country- and risk-specific. |
+| Lawful basis | Documented legal ground for processing personal data. Consent is only one possible basis and must not be used as a generic substitute when another basis or prohibition applies. |
+| Legal hold | Authorized suspension of ordinary deletion or retention expiry for defined evidence. Holds are scoped, audited, reviewed, and released deliberately; they do not justify indefinite collection of unrelated data. |
 | Map matching | Matching noisy GPS observations to plausible road-network segments, often through OSRM `/match` or an equivalent engine. |
 | MediatR | In-process .NET request dispatcher used to route commands and queries to handlers. It organizes application flow; it is not an external message broker. |
 | Minor unit | Integer representation of money at the ISO currency exponent; for a two-decimal currency, `12345` represents `123.45`. |
@@ -91,6 +99,7 @@ meanings in other systems.
 | RS256 / ES256 | JWT signature algorithms using RSA or elliptic-curve private keys respectively and SHA-256. Verifiers use public keys; algorithm selection must be pinned rather than trusted from an unvalidated token header. |
 | S3 | Amazon Simple Storage Service, used for private object storage such as approved documents and consented recordings. Bucket privacy, authorization, encryption, retention, and malware disposition are separate controls. |
 | Saga | Durable multi-step orchestration across independent transaction boundaries, with idempotent steps and compensating behavior. |
+| Safety case | Versioned, auditable response record with severity, owner, SLA, escalation channel, evidence, acknowledgement, transitions, and closure reason. It coordinates human response; it is not merely a notification. |
 | Saturation | The degree to which a constrained resource—such as CPU, connections, locks, memory, IO, bandwidth, or provider quota—has no safe capacity left for more work. |
 | SBOM | Software Bill of Materials: machine-readable inventory of components, versions, relationships, and available licence/provenance data. |
 | Schema contract | Versioned expectation for relational metadata that the application verifies before serving incompatible work. |
@@ -109,6 +118,7 @@ meanings in other systems.
 | Tenant | Logical marketplace/organization authorization boundary inside an approved country cell. |
 | TLS | Transport Layer Security, which protects network traffic in transit and authenticates the server endpoint. TLS does not replace application authorization or encrypt data after it reaches an endpoint. |
 | TOTP | Time-based one-time password generated from a shared secret, commonly used for authenticator-app 2FA. |
+| Trusted contact | User-selected person eligible to receive a time-bounded live-trip share under the active trip and privacy policy. A trusted contact is not automatically an emergency responder or account administrator. |
 | TTL | Time to live: the bounded period after which cached, ephemeral, or privacy-sensitive state expires. A TTL is not a substitute for explicit revocation when immediate removal is required. |
 | TURN | Relay protocol/server used when direct WebRTC media paths cannot traverse NAT or firewalls. |
 | UUIDv7 | RFC 9562 time-ordered universally unique identifier used for new transactional and externally exposed entities. |

@@ -51,6 +51,8 @@ REQUIRED_PATHS = (
     "docs/architecture/entity-identification.md",
     "docs/architecture/geospatial.md",
     "docs/architecture/financial-systems.md",
+    "docs/architecture/rider-driver-safety.md",
+    "docs/architecture/jurisdictional-compliance.md",
     "docs/architecture/rental-marketplace.md",
     "docs/architecture/scaling-and-capacity.md",
     "docs/runbooks/README.md",

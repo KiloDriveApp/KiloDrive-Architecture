@@ -31,6 +31,8 @@ Operators use restricted deployment evidence and health systems for the latter.
 | `MONEY` | Ledger property/concurrency/crash tests, provider webhook matrix, cashout/membership and daily reconciliation tests |
 | `UPLOAD` | Magic-byte, size, scanner timeout/reject/retry, quarantine authorization, re-encode, retention tests |
 | `MOBILE` | Format/analyze/unit/widget/integration, localization parity, responsive render matrix, signed native artifact gates |
+| `SAFETY` | Driver trust/eligibility, trip-share expiry/privacy, route-anomaly policy, SafetyCase state-machine, emergency-context and retention-metadata tests |
+| `COMPLIANCE` | Country provision/activation, rule validation, schema drift block, privacy checkpoint and jurisdiction/financial operating-model review evidence |
 | `OPERATIONS` | Health/canary, controlled failure/recovery, alert delivery, restore, and runbook exercise evidence |
 
 The matrix's final column says what must be present for a deployment claim. The
@@ -55,6 +57,8 @@ word without new evidence is not acceptable.
 | Capability | Status | What the status means | Evidence required before saying “active” |
 | --- | --- | --- | --- |
 | Global identity control plane and country operational cells | Implemented | Authentication and global directory data are separated from country-local operational/financial graphs | Compiled model, canonical schema, cell/control fingerprints, startup/readiness and cross-cell tests |
+| Country activation and jurisdiction controls | Implemented gates plus operational/legal approval | A country cannot become active until its shard and schema contract are ready; legal scope, provider approval, rules, owners, and evidence remain an accountable launch decision | Provision/fingerprint tests, signed country compliance register, rule versions, provider/counsel approvals, rollback and periodic review |
+| Rider and driver safety foundations | Implemented/incremental and configurable operations | Trust preferences, eligibility checks, bounded trip sharing, route-deviation events, emergency context, and the SafetyCase state model exist; complete case participant authorization, attachment lifecycle, retention enforcement, detection evidence, and human response remain deployment or maturity boundaries | Two-client/device tests, noisy/offline trace fixtures, case authorization/evidence tests, emergency and escalation tabletop, access/retention review, responder SLA evidence |
 | UUIDv7 transactional identifiers | Implemented/incremental | New exposed/security-sensitive transactional creation paths use the common RFC 9562 generator; stable catalogues retain business codes | Static creation-site policy and database/API round-trip tests |
 | MySQL metadata contract | Implemented | Startup/readiness compares normalized table, column, index, and foreign-key expectations rather than trusting a version label alone | Empty bootstrap parity, clone alignment, all-cell fingerprints, exact binary version |
 | Valkey cache, GEO, and SignalR backplane | Configurable production dependency | The distributed implementation exists; process-memory fallback is development-only | TLS/ACL command canaries, multi-node tests, latency/memory alarms, degradation exercise |
@@ -112,6 +116,8 @@ Replace the claim with a control, limitation, and verification method.
 ## Related reading
 
 - [System context](system-context.md)
+- [Rider and driver safety](rider-driver-safety.md)
+- [Jurisdictional compliance](jurisdictional-compliance.md)
 - [Scaling and capacity](scaling-and-capacity.md)
 - [Public documentation policy](../governance/public-documentation-policy.md)
 - [Third-party and SBOM policy](../third-party/README.md)

@@ -90,6 +90,30 @@ The best security review follows data from collection to deletion. Checking the
 login endpoint alone misses object storage, logs, analytics, backups, support
 tools, and country-cell projections.
 
+### I work on rider or driver safety
+
+Begin with [rider and driver safety](architecture/rider-driver-safety.md), then
+read [geospatial processing](architecture/geospatial.md),
+[documents, media, and voice](architecture/documents-media-voice.md), and the
+[security incident runbook](runbooks/security-incident.md).
+
+Safety is an end-to-end property. Matching eligibility, pre-trip confirmation,
+communications, route signals, emergency actions, evidence custody, human case
+ownership, and post-trip support must agree. A visible SOS button cannot repair
+an unsafe assignment or an unstaffed escalation path.
+
+### I work on a country launch or compliance change
+
+Start with [jurisdictional compliance](architecture/jurisdictional-compliance.md),
+then read [tenancy and country cells](architecture/tenancy-and-country-cells.md),
+the [country activation runbook](runbooks/country-activation.md), and
+[privacy and data protection](security/privacy-and-data-protection.md).
+
+Code can enforce an approved country rule; it cannot interpret law or approve a
+launch. Keep authoritative sources, applicability analysis, legal and domain
+owners, effective dates, tests, deployment evidence, exceptions, and rollback
+in the governed country dossier.
+
 ## How the documentation is organized
 
 | Directory | Purpose |

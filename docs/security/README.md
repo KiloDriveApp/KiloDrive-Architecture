@@ -108,6 +108,12 @@ real environment check.
   minimization, location, documents, recording, retention, and deletion.
 - [Threat boundaries](threat-boundaries.md) is the practical threat model and
   review checklist.
+- [Rider and driver safety](../architecture/rider-driver-safety.md) connects
+  account, matching, location, communications, emergency, evidence, and human
+  response controls across the full trip lifecycle.
+- [Jurisdictional compliance](../architecture/jurisdictional-compliance.md)
+  explains how those controls are approved, versioned, activated, evidenced,
+  reviewed, and safely disabled per country.
 
 Security defects should be reported privately using the repository's security
 policy. Never paste a live credential, token, document, phone number, precise

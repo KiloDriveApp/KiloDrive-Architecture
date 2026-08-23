@@ -17,6 +17,8 @@ not the permanent trip record.
 | [Entity identification](entity-identification.md) | How are internal, external, and human support identifiers designed? |
 | [Realtime and events](realtime-and-events.md) | How does fast delivery coexist with durable recovery? |
 | [Geospatial](geospatial.md) | How are noisy locations turned into useful matching and safety signals? |
+| [Rider and driver safety](rider-driver-safety.md) | How do prevention, trip protection, RideCheck, emergency actions, evidence, and human response protect both marketplace participants? |
+| [Jurisdictional compliance](jurisdictional-compliance.md) | How do country dossiers, shard controls, effective rules, approvals, and evidence support lawful country operations? |
 | [Financial systems](financial-systems.md) | How are wallet balances, holds, journals, and provider settlements kept explainable? |
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |
 | [Documents, media, and voice](documents-media-voice.md) | How are private uploads and call media authorized, scanned, retained, and audited? |
