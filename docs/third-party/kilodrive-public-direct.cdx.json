@@ -1,0 +1,1984 @@
+{
+  "$schema": "https://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.EventBridge@3.7.502.62",
+      "name": "AWSSDK.EventBridge",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.EventBridge@3.7.502.62",
+      "type": "library",
+      "version": "3.7.502.62"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
+      "name": "AWSSDK.PinpointSMSVoice",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
+      "type": "library",
+      "version": "3.7.502.63"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.PinpointSMSVoiceV2@3.7.505.37",
+      "name": "AWSSDK.PinpointSMSVoiceV2",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.PinpointSMSVoiceV2@3.7.505.37",
+      "type": "library",
+      "version": "3.7.505.37"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.S3@3.7.415.3",
+      "name": "AWSSDK.S3",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.S3@3.7.415.3",
+      "type": "library",
+      "version": "3.7.415.3"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.SecretsManager@3.7.400.185",
+      "name": "AWSSDK.SecretsManager",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.SecretsManager@3.7.400.185",
+      "type": "library",
+      "version": "3.7.400.185"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.SecurityToken@3.7.401",
+      "name": "AWSSDK.SecurityToken",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.SecurityToken@3.7.401",
+      "type": "library",
+      "version": "3.7.401"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.SimpleEmailV2@3.7.509.10",
+      "name": "AWSSDK.SimpleEmailV2",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.SimpleEmailV2@3.7.509.10",
+      "type": "library",
+      "version": "3.7.509.10"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.SocialMessaging@3.7.503.29",
+      "name": "AWSSDK.SocialMessaging",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.SocialMessaging@3.7.503.29",
+      "type": "library",
+      "version": "3.7.503.29"
+    },
+    {
+      "bom-ref": "pkg:nuget/AWSSDK.SQS@3.7.502.57",
+      "name": "AWSSDK.SQS",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/AWSSDK.SQS@3.7.502.57",
+      "type": "library",
+      "version": "3.7.502.57"
+    },
+    {
+      "bom-ref": "pkg:nuget/ClosedXML@0.105.1",
+      "name": "ClosedXML",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/ClosedXML@0.105.1",
+      "type": "library",
+      "version": "0.105.1"
+    },
+    {
+      "bom-ref": "pkg:nuget/coverlet.collector@6.0.2",
+      "name": "coverlet.collector",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/coverlet.collector@6.0.2",
+      "type": "library",
+      "version": "6.0.2"
+    },
+    {
+      "bom-ref": "pkg:nuget/Fido2@4.0.1",
+      "name": "Fido2",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Fido2@4.0.1",
+      "type": "library",
+      "version": "4.0.1"
+    },
+    {
+      "bom-ref": "pkg:nuget/FirebaseAdmin@3.0.0",
+      "name": "FirebaseAdmin",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/FirebaseAdmin@3.0.0",
+      "type": "library",
+      "version": "3.0.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/FluentValidation.AspNetCore@11.3.1",
+      "name": "FluentValidation.AspNetCore",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/FluentValidation.AspNetCore@11.3.1",
+      "type": "library",
+      "version": "11.3.1"
+    },
+    {
+      "bom-ref": "pkg:nuget/Google.Apis.Auth@1.70.0",
+      "name": "Google.Apis.Auth",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Google.Apis.Auth@1.70.0",
+      "type": "library",
+      "version": "1.70.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/MediatR@12.5.0",
+      "name": "MediatR",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/MediatR@12.5.0",
+      "type": "library",
+      "version": "12.5.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@9.0.16",
+      "name": "Microsoft.AspNetCore.Authentication.JwtBearer",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.AspNetCore.Mvc.Testing@9.0.16",
+      "name": "Microsoft.AspNetCore.Mvc.Testing",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.AspNetCore.Mvc.Testing@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.AspNetCore.SignalR.StackExchangeRedis@9.0.16",
+      "name": "Microsoft.AspNetCore.SignalR.StackExchangeRedis",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.AspNetCore.SignalR.StackExchangeRedis@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.EntityFrameworkCore@9.0.16",
+      "name": "Microsoft.EntityFrameworkCore",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.EntityFrameworkCore@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.EntityFrameworkCore.InMemory@9.0.16",
+      "name": "Microsoft.EntityFrameworkCore.InMemory",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.EntityFrameworkCore.InMemory@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.EntityFrameworkCore.Relational@9.0.16",
+      "name": "Microsoft.EntityFrameworkCore.Relational",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.EntityFrameworkCore.Relational@9.0.16",
+      "type": "library",
+      "version": "9.0.16"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.Extensions.Caching.StackExchangeRedis@9.0.8",
+      "name": "Microsoft.Extensions.Caching.StackExchangeRedis",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.Extensions.Caching.StackExchangeRedis@9.0.8",
+      "type": "library",
+      "version": "9.0.8"
+    },
+    {
+      "bom-ref": "pkg:nuget/Microsoft.NET.Test.Sdk@17.12.0",
+      "name": "Microsoft.NET.Test.Sdk",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Microsoft.NET.Test.Sdk@17.12.0",
+      "type": "library",
+      "version": "17.12.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/MySqlConnector@2.4.0",
+      "name": "MySqlConnector",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/MySqlConnector@2.4.0",
+      "type": "library",
+      "version": "2.4.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/OpenTelemetry.Exporter.OpenTelemetryProtocol@1.17.0",
+      "name": "OpenTelemetry.Exporter.OpenTelemetryProtocol",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/OpenTelemetry.Exporter.OpenTelemetryProtocol@1.17.0",
+      "type": "library",
+      "version": "1.17.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/OpenTelemetry.Extensions.Hosting@1.17.0",
+      "name": "OpenTelemetry.Extensions.Hosting",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/OpenTelemetry.Extensions.Hosting@1.17.0",
+      "type": "library",
+      "version": "1.17.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/OpenTelemetry.Instrumentation.AspNetCore@1.17.0",
+      "name": "OpenTelemetry.Instrumentation.AspNetCore",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/OpenTelemetry.Instrumentation.AspNetCore@1.17.0",
+      "type": "library",
+      "version": "1.17.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/OpenTelemetry.Instrumentation.Http@1.17.0",
+      "name": "OpenTelemetry.Instrumentation.Http",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/OpenTelemetry.Instrumentation.Http@1.17.0",
+      "type": "library",
+      "version": "1.17.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/OpenTelemetry.Instrumentation.Runtime@1.17.0",
+      "name": "OpenTelemetry.Instrumentation.Runtime",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/OpenTelemetry.Instrumentation.Runtime@1.17.0",
+      "type": "library",
+      "version": "1.17.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Pomelo.EntityFrameworkCore.MySql@9.0.0",
+      "name": "Pomelo.EntityFrameworkCore.MySql",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Pomelo.EntityFrameworkCore.MySql@9.0.0",
+      "type": "library",
+      "version": "9.0.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/QuestPDF@2026.7.2",
+      "name": "QuestPDF",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/QuestPDF@2026.7.2",
+      "type": "library",
+      "version": "2026.7.2"
+    },
+    {
+      "bom-ref": "pkg:nuget/Serilog.AspNetCore@9.0.0",
+      "name": "Serilog.AspNetCore",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Serilog.AspNetCore@9.0.0",
+      "type": "library",
+      "version": "9.0.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Serilog.Sinks.AwsCloudWatch@4.3.37",
+      "name": "Serilog.Sinks.AwsCloudWatch",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Serilog.Sinks.AwsCloudWatch@4.3.37",
+      "type": "library",
+      "version": "4.3.37"
+    },
+    {
+      "bom-ref": "pkg:nuget/SixLabors.ImageSharp@3.1.12",
+      "name": "SixLabors.ImageSharp",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/SixLabors.ImageSharp@3.1.12",
+      "type": "library",
+      "version": "3.1.12"
+    },
+    {
+      "bom-ref": "pkg:nuget/StackExchange.Redis@2.8.31",
+      "name": "StackExchange.Redis",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/StackExchange.Redis@2.8.31",
+      "type": "library",
+      "version": "2.8.31"
+    },
+    {
+      "bom-ref": "pkg:nuget/Stripe.net@52.2.0",
+      "name": "Stripe.net",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Stripe.net@52.2.0",
+      "type": "library",
+      "version": "52.2.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Swashbuckle.AspNetCore@7.2.0",
+      "name": "Swashbuckle.AspNetCore",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Swashbuckle.AspNetCore@7.2.0",
+      "type": "library",
+      "version": "7.2.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Testcontainers.MySql@4.14.0",
+      "name": "Testcontainers.MySql",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Testcontainers.MySql@4.14.0",
+      "type": "library",
+      "version": "4.14.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/xunit@2.9.2",
+      "name": "xunit",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/xunit@2.9.2",
+      "type": "library",
+      "version": "2.9.2"
+    },
+    {
+      "bom-ref": "pkg:nuget/xunit.runner.visualstudio@2.8.2",
+      "name": "xunit.runner.visualstudio",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "test"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/xunit.runner.visualstudio@2.8.2",
+      "type": "library",
+      "version": "2.8.2"
+    },
+    {
+      "bom-ref": "pkg:pub/animations@2.2.0",
+      "name": "animations",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/animations@2.2.0",
+      "type": "library",
+      "version": "2.2.0"
+    },
+    {
+      "bom-ref": "pkg:pub/app_links@7.0.0",
+      "name": "app_links",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/app_links@7.0.0",
+      "type": "library",
+      "version": "7.0.0"
+    },
+    {
+      "bom-ref": "pkg:pub/cached_network_image@3.4.1",
+      "name": "cached_network_image",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/cached_network_image@3.4.1",
+      "type": "library",
+      "version": "3.4.1"
+    },
+    {
+      "bom-ref": "pkg:pub/connectivity_plus@7.3.1",
+      "name": "connectivity_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/connectivity_plus@7.3.1",
+      "type": "library",
+      "version": "7.3.1"
+    },
+    {
+      "bom-ref": "pkg:pub/crypto@3.0.7",
+      "name": "crypto",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/crypto@3.0.7",
+      "type": "library",
+      "version": "3.0.7"
+    },
+    {
+      "bom-ref": "pkg:pub/cupertino_icons@1.0.9",
+      "name": "cupertino_icons",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/cupertino_icons@1.0.9",
+      "type": "library",
+      "version": "1.0.9"
+    },
+    {
+      "bom-ref": "pkg:pub/device_info_plus@12.4.0",
+      "name": "device_info_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/device_info_plus@12.4.0",
+      "type": "library",
+      "version": "12.4.0"
+    },
+    {
+      "bom-ref": "pkg:pub/dio@5.11.0",
+      "name": "dio",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/dio@5.11.0",
+      "type": "library",
+      "version": "5.11.0"
+    },
+    {
+      "bom-ref": "pkg:pub/file_picker@11.0.3",
+      "name": "file_picker",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/file_picker@11.0.3",
+      "type": "library",
+      "version": "11.0.3"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_app_check@0.4.6",
+      "name": "firebase_app_check",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_app_check@0.4.6",
+      "type": "library",
+      "version": "0.4.6"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_core@4.13.0",
+      "name": "firebase_core",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_core@4.13.0",
+      "type": "library",
+      "version": "4.13.0"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_crashlytics@5.2.7",
+      "name": "firebase_crashlytics",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_crashlytics@5.2.7",
+      "type": "library",
+      "version": "5.2.7"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_messaging@16.5.0",
+      "name": "firebase_messaging",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_messaging@16.5.0",
+      "type": "library",
+      "version": "16.5.0"
+    },
+    {
+      "bom-ref": "pkg:pub/fl_chart@0.69.2",
+      "name": "fl_chart",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/fl_chart@0.69.2",
+      "type": "library",
+      "version": "0.69.2"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_animate@4.5.2",
+      "name": "flutter_animate",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_animate@4.5.2",
+      "type": "library",
+      "version": "4.5.2"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_callkit_incoming@3.1.5",
+      "name": "flutter_callkit_incoming",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_callkit_incoming@3.1.5",
+      "type": "library",
+      "version": "3.1.5"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_facebook_auth@7.2.0",
+      "name": "flutter_facebook_auth",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_facebook_auth@7.2.0",
+      "type": "library",
+      "version": "7.2.0"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_image_compress@2.5.1",
+      "name": "flutter_image_compress",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_image_compress@2.5.1",
+      "type": "library",
+      "version": "2.5.1"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_lints@5.0.0",
+      "name": "flutter_lints",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "development"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_lints@5.0.0",
+      "type": "library",
+      "version": "5.0.0"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_local_notifications@22.3.0",
+      "name": "flutter_local_notifications",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_local_notifications@22.3.0",
+      "type": "library",
+      "version": "22.3.0"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_riverpod@3.3.2",
+      "name": "flutter_riverpod",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_riverpod@3.3.2",
+      "type": "library",
+      "version": "3.3.2"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_secure_storage@10.3.1",
+      "name": "flutter_secure_storage",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage@10.3.1",
+      "type": "library",
+      "version": "10.3.1"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_svg@2.3.0",
+      "name": "flutter_svg",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_svg@2.3.0",
+      "type": "library",
+      "version": "2.3.0"
+    },
+    {
+      "bom-ref": "pkg:pub/geolocator@13.0.4",
+      "name": "geolocator",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/geolocator@13.0.4",
+      "type": "library",
+      "version": "13.0.4"
+    },
+    {
+      "bom-ref": "pkg:pub/google_maps_flutter@2.18.0",
+      "name": "google_maps_flutter",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/google_maps_flutter@2.18.0",
+      "type": "library",
+      "version": "2.18.0"
+    },
+    {
+      "bom-ref": "pkg:pub/google_sign_in@7.2.0",
+      "name": "google_sign_in",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/google_sign_in@7.2.0",
+      "type": "library",
+      "version": "7.2.0"
+    },
+    {
+      "bom-ref": "pkg:pub/image_cropper@12.2.1",
+      "name": "image_cropper",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/image_cropper@12.2.1",
+      "type": "library",
+      "version": "12.2.1"
+    },
+    {
+      "bom-ref": "pkg:pub/image_picker@1.2.3",
+      "name": "image_picker",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/image_picker@1.2.3",
+      "type": "library",
+      "version": "1.2.3"
+    },
+    {
+      "bom-ref": "pkg:pub/in_app_purchase@3.3.0",
+      "name": "in_app_purchase",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/in_app_purchase@3.3.0",
+      "type": "library",
+      "version": "3.3.0"
+    },
+    {
+      "bom-ref": "pkg:pub/in_app_purchase_android@0.5.0",
+      "name": "in_app_purchase_android",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/in_app_purchase_android@0.5.0",
+      "type": "library",
+      "version": "0.5.0"
+    },
+    {
+      "bom-ref": "pkg:pub/in_app_review@2.0.12",
+      "name": "in_app_review",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/in_app_review@2.0.12",
+      "type": "library",
+      "version": "2.0.12"
+    },
+    {
+      "bom-ref": "pkg:pub/intl@0.20.2",
+      "name": "intl",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/intl@0.20.2",
+      "type": "library",
+      "version": "0.20.2"
+    },
+    {
+      "bom-ref": "pkg:pub/livekit_client@2.11.0",
+      "name": "livekit_client",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/livekit_client@2.11.0",
+      "type": "library",
+      "version": "2.11.0"
+    },
+    {
+      "bom-ref": "pkg:pub/local_auth@3.0.2",
+      "name": "local_auth",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/local_auth@3.0.2",
+      "type": "library",
+      "version": "3.0.2"
+    },
+    {
+      "bom-ref": "pkg:pub/package_info_plus@9.0.1",
+      "name": "package_info_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/package_info_plus@9.0.1",
+      "type": "library",
+      "version": "9.0.1"
+    },
+    {
+      "bom-ref": "pkg:pub/path@1.9.1",
+      "name": "path",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/path@1.9.1",
+      "type": "library",
+      "version": "1.9.1"
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider@2.1.6",
+      "name": "path_provider",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/path_provider@2.1.6",
+      "type": "library",
+      "version": "2.1.6"
+    },
+    {
+      "bom-ref": "pkg:pub/permission_handler@12.0.3",
+      "name": "permission_handler",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/permission_handler@12.0.3",
+      "type": "library",
+      "version": "12.0.3"
+    },
+    {
+      "bom-ref": "pkg:pub/qr_flutter@4.1.0",
+      "name": "qr_flutter",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/qr_flutter@4.1.0",
+      "type": "library",
+      "version": "4.1.0"
+    },
+    {
+      "bom-ref": "pkg:pub/share_plus@12.0.2",
+      "name": "share_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/share_plus@12.0.2",
+      "type": "library",
+      "version": "12.0.2"
+    },
+    {
+      "bom-ref": "pkg:pub/shared_preferences@2.5.5",
+      "name": "shared_preferences",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/shared_preferences@2.5.5",
+      "type": "library",
+      "version": "2.5.5"
+    },
+    {
+      "bom-ref": "pkg:pub/shimmer@3.0.0",
+      "name": "shimmer",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/shimmer@3.0.0",
+      "type": "library",
+      "version": "3.0.0"
+    },
+    {
+      "bom-ref": "pkg:pub/sign_in_with_apple@8.1.0",
+      "name": "sign_in_with_apple",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/sign_in_with_apple@8.1.0",
+      "type": "library",
+      "version": "8.1.0"
+    },
+    {
+      "bom-ref": "pkg:pub/signalr_core_new@1.0.3",
+      "name": "signalr_core_new",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/signalr_core_new@1.0.3",
+      "type": "library",
+      "version": "1.0.3"
+    },
+    {
+      "bom-ref": "pkg:pub/sms_autofill@2.5.0",
+      "name": "sms_autofill",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/sms_autofill@2.5.0",
+      "type": "library",
+      "version": "2.5.0"
+    },
+    {
+      "bom-ref": "pkg:pub/timezone@0.11.1",
+      "name": "timezone",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/timezone@0.11.1",
+      "type": "library",
+      "version": "0.11.1"
+    },
+    {
+      "bom-ref": "pkg:pub/url_launcher@6.3.2",
+      "name": "url_launcher",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/url_launcher@6.3.2",
+      "type": "library",
+      "version": "6.3.2"
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [
+        "pkg:nuget/AWSSDK.EventBridge@3.7.502.62",
+        "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
+        "pkg:nuget/AWSSDK.PinpointSMSVoiceV2@3.7.505.37",
+        "pkg:nuget/AWSSDK.S3@3.7.415.3",
+        "pkg:nuget/AWSSDK.SecretsManager@3.7.400.185",
+        "pkg:nuget/AWSSDK.SecurityToken@3.7.401",
+        "pkg:nuget/AWSSDK.SimpleEmailV2@3.7.509.10",
+        "pkg:nuget/AWSSDK.SocialMessaging@3.7.503.29",
+        "pkg:nuget/AWSSDK.SQS@3.7.502.57",
+        "pkg:nuget/ClosedXML@0.105.1",
+        "pkg:nuget/coverlet.collector@6.0.2",
+        "pkg:nuget/Fido2@4.0.1",
+        "pkg:nuget/FirebaseAdmin@3.0.0",
+        "pkg:nuget/FluentValidation.AspNetCore@11.3.1",
+        "pkg:nuget/Google.Apis.Auth@1.70.0",
+        "pkg:nuget/MediatR@12.5.0",
+        "pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@9.0.16",
+        "pkg:nuget/Microsoft.AspNetCore.Mvc.Testing@9.0.16",
+        "pkg:nuget/Microsoft.AspNetCore.SignalR.StackExchangeRedis@9.0.16",
+        "pkg:nuget/Microsoft.EntityFrameworkCore@9.0.16",
+        "pkg:nuget/Microsoft.EntityFrameworkCore.InMemory@9.0.16",
+        "pkg:nuget/Microsoft.EntityFrameworkCore.Relational@9.0.16",
+        "pkg:nuget/Microsoft.Extensions.Caching.StackExchangeRedis@9.0.8",
+        "pkg:nuget/Microsoft.NET.Test.Sdk@17.12.0",
+        "pkg:nuget/MySqlConnector@2.4.0",
+        "pkg:nuget/OpenTelemetry.Exporter.OpenTelemetryProtocol@1.17.0",
+        "pkg:nuget/OpenTelemetry.Extensions.Hosting@1.17.0",
+        "pkg:nuget/OpenTelemetry.Instrumentation.AspNetCore@1.17.0",
+        "pkg:nuget/OpenTelemetry.Instrumentation.Http@1.17.0",
+        "pkg:nuget/OpenTelemetry.Instrumentation.Runtime@1.17.0",
+        "pkg:nuget/Pomelo.EntityFrameworkCore.MySql@9.0.0",
+        "pkg:nuget/QuestPDF@2026.7.2",
+        "pkg:nuget/Serilog.AspNetCore@9.0.0",
+        "pkg:nuget/Serilog.Sinks.AwsCloudWatch@4.3.37",
+        "pkg:nuget/SixLabors.ImageSharp@3.1.12",
+        "pkg:nuget/StackExchange.Redis@2.8.31",
+        "pkg:nuget/Stripe.net@52.2.0",
+        "pkg:nuget/Swashbuckle.AspNetCore@7.2.0",
+        "pkg:nuget/Testcontainers.MySql@4.14.0",
+        "pkg:nuget/xunit@2.9.2",
+        "pkg:nuget/xunit.runner.visualstudio@2.8.2",
+        "pkg:pub/animations@2.2.0",
+        "pkg:pub/app_links@7.0.0",
+        "pkg:pub/cached_network_image@3.4.1",
+        "pkg:pub/connectivity_plus@7.3.1",
+        "pkg:pub/crypto@3.0.7",
+        "pkg:pub/cupertino_icons@1.0.9",
+        "pkg:pub/device_info_plus@12.4.0",
+        "pkg:pub/dio@5.11.0",
+        "pkg:pub/file_picker@11.0.3",
+        "pkg:pub/firebase_app_check@0.4.6",
+        "pkg:pub/firebase_core@4.13.0",
+        "pkg:pub/firebase_crashlytics@5.2.7",
+        "pkg:pub/firebase_messaging@16.5.0",
+        "pkg:pub/fl_chart@0.69.2",
+        "pkg:pub/flutter_animate@4.5.2",
+        "pkg:pub/flutter_callkit_incoming@3.1.5",
+        "pkg:pub/flutter_facebook_auth@7.2.0",
+        "pkg:pub/flutter_image_compress@2.5.1",
+        "pkg:pub/flutter_lints@5.0.0",
+        "pkg:pub/flutter_local_notifications@22.3.0",
+        "pkg:pub/flutter_riverpod@3.3.2",
+        "pkg:pub/flutter_secure_storage@10.3.1",
+        "pkg:pub/flutter_svg@2.3.0",
+        "pkg:pub/geolocator@13.0.4",
+        "pkg:pub/google_maps_flutter@2.18.0",
+        "pkg:pub/google_sign_in@7.2.0",
+        "pkg:pub/image_cropper@12.2.1",
+        "pkg:pub/image_picker@1.2.3",
+        "pkg:pub/in_app_purchase@3.3.0",
+        "pkg:pub/in_app_purchase_android@0.5.0",
+        "pkg:pub/in_app_review@2.0.12",
+        "pkg:pub/intl@0.20.2",
+        "pkg:pub/livekit_client@2.11.0",
+        "pkg:pub/local_auth@3.0.2",
+        "pkg:pub/package_info_plus@9.0.1",
+        "pkg:pub/path@1.9.1",
+        "pkg:pub/path_provider@2.1.6",
+        "pkg:pub/permission_handler@12.0.3",
+        "pkg:pub/qr_flutter@4.1.0",
+        "pkg:pub/share_plus@12.0.2",
+        "pkg:pub/shared_preferences@2.5.5",
+        "pkg:pub/shimmer@3.0.0",
+        "pkg:pub/sign_in_with_apple@8.1.0",
+        "pkg:pub/signalr_core_new@1.0.3",
+        "pkg:pub/sms_autofill@2.5.0",
+        "pkg:pub/timezone@0.11.1",
+        "pkg:pub/url_launcher@6.3.2"
+      ],
+      "ref": "pkg:generic/kilodrive-public-baseline@1.0.0+66"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "pkg:generic/kilodrive-public-baseline@1.0.0+66",
+      "name": "KiloDrive public architecture baseline",
+      "properties": [
+        {
+          "name": "kilodrive:inventory-depth",
+          "value": "direct-only"
+        },
+        {
+          "name": "kilodrive:distribution",
+          "value": "sanitized-public-baseline"
+        },
+        {
+          "name": "kilodrive:authoritative-release-sbom",
+          "value": "false"
+        }
+      ],
+      "type": "application",
+      "version": "1.0.0+66"
+    },
+    "timestamp": "2026-08-23T00:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "name": "KiloDrive public SBOM generator",
+          "type": "application",
+          "version": "1.0.0"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:f14c2eed-8d41-59a2-af64-07c36709c13c",
+  "specVersion": "1.6",
+  "version": 1
+}

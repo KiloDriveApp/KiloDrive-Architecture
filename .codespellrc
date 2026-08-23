@@ -1,0 +1,4 @@
+[codespell]
+skip = .git,*.json
+ignore-words-list = BLoC
+quiet-level = 2

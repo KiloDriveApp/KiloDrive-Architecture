@@ -6,3 +6,5 @@ Thumbs.db
 artifacts/
 build/
 verification-results/
+__pycache__/
+*.py[cod]

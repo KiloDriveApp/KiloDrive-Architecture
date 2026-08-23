@@ -8,7 +8,8 @@ data, trademarks, confidential implementation details, or third-party services.
 
 KiloDrive incorporates open-source packages and commercial/cloud services.
 Those components remain governed by their respective licenses and service terms.
-See [third-party/licenses.md](third-party/licenses.md).
+See [third-party license guidance](docs/third-party/licenses.md) and the
+[sanitized public SBOM baseline](docs/third-party/kilodrive-public-direct.cdx.json).
 
 No production secret or personal data should ever be committed here. If such
 material is discovered, follow [SECURITY.md](SECURITY.md) and do not open a
