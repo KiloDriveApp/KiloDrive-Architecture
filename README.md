@@ -103,8 +103,8 @@ same thing:
 
 The current product lifecycle map—including scheduled guarantees, multi-stop
 and hourly rides, privacy-preserving marketplace estimates, professional driver
-tools, family/business delegation, courier chain of custody, complete rentals,
-two-sided reputation, and structured support—is maintained in
+tools, family/business delegation, courier chain of custody, versioned rental
+lifecycle foundations, two-sided reputation, and structured support—is maintained in
 [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md).
 Active-trip native location behavior, privacy limits, recovery, and release
 proof are maintained in the
@@ -319,10 +319,11 @@ jurisdiction-specific approval.
 
 ## Documentation baseline
 
-- Mobile baseline: KiloDrive `1.0.0+66`
+- Mobile baseline: KiloDrive `1.0.0+70`
 - Flutter baseline: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`
 - Database family: MySQL `8`
-- Last architecture review: 2026-08-23
+- Schema-contract baseline: `2026.08.24.10`
+- Last architecture review: 2026-08-24
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).

@@ -170,6 +170,30 @@ Review headings, grammar, link targets, navigation, footer, contact/support,
 privacy, terms/EULA, data security, accessibility, metadata, canonical URL,
 OpenGraph, and `hreflang`. Test English plus every published locale.
 
+The reviewed navigation must expose Why KiloDrive, Safety & Trust, Pricing &
+Plans, and Resources without hiding the direct Riders, Drivers, Rentals, Parcel,
+Features, Membership, Safety, Data Security, calculators, blog, About, and
+Support destinations. At 320 pixels, verify the menu opens, announces
+“Navigation menu” (localized where published), reports expanded/collapsed state,
+keeps every item reachable, closes predictably, and does not cover the primary
+action.
+
+Verify `WebsiteApi:PublicBaseUrl` is the approved HTTPS public origin. Then
+inspect rendered—not source-only—SEO output:
+
+- one absolute canonical URL for the current route;
+- `x-default`, English, Spanish, and French alternates with the correct route;
+- route-specific title and description plus Open Graph and Twitter summary
+  metadata;
+- valid WebSite/Organization data on the shell, Breadcrumb data on content
+  pages, and BlogPosting author/date data on posts;
+- `sitemap.xml` containing only approved public routes/variants; and
+- `robots.txt` pointing to the canonical sitemap without disclosing private
+  routes.
+
+These controls improve discoverability; they do not justify analytics pixels,
+cross-site tracking, unreviewed scripts, or a CSP exception.
+
 ### Contact and public forms
 
 Email is optional where product policy says so. Validate field-specific errors,
@@ -250,6 +274,9 @@ compatibility for the currently serving web clients.
   dedicated fixture;
 - at least one known calculator route matches mobile/API component totals;
 - canonical/metadata/`hreflang` and internal/external links are valid; and
+- Twitter/Open Graph and structured data match the current content, sitemap and
+  robots are canonical, and the narrow responsive menu remains keyboard- and
+  screen-reader-operable; and
 - no CSP, mixed-content, console, or uncaught browser error appears.
 
 ## Diagnosis guide
@@ -263,6 +290,8 @@ compatibility for the currently serving web clients.
 | Public page wrong tenant | host/header tenant resolution/cache key issue | contain content; verify trusted domain-to-tenant mapping |
 | Calculator differs from mobile | duplicated formula/reference/DTO behavior | stop publishing wrong result; reconcile with source-of-truth contract |
 | Static assets 404 | package path/base URL/cache/version mismatch | correct immutable package/reference; avoid editing live files |
+| Canonical/structured data uses an internal host | missing or wrong public base URL | restore reviewed HTTPS `PublicBaseUrl`; do not derive authority from an untrusted Host header |
+| Mobile navigation is empty or unlabelled | responsive-menu initialization/content fallback defect | verify fallback links, accessible name/expanded state and CSP-safe script execution |
 | Security headers absent on errors | response clear/error middleware order | use shared hardening path and test 4xx/5xx |
 
 ## Rollback

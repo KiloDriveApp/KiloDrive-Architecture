@@ -24,27 +24,6 @@
       "version": "3.7.502.62"
     },
     {
-      "bom-ref": "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
-      "name": "AWSSDK.PinpointSMSVoice",
-      "properties": [
-        {
-          "name": "kilodrive:ecosystem",
-          "value": "nuget"
-        },
-        {
-          "name": "kilodrive:direct-scope",
-          "value": "runtime"
-        },
-        {
-          "name": "kilodrive:license-status",
-          "value": "review-in-release-evidence"
-        }
-      ],
-      "purl": "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
-      "type": "library",
-      "version": "3.7.502.63"
-    },
-    {
       "bom-ref": "pkg:nuget/AWSSDK.PinpointSMSVoiceV2@3.7.505.37",
       "name": "AWSSDK.PinpointSMSVoiceV2",
       "properties": [
@@ -316,6 +295,27 @@
       "purl": "pkg:nuget/Google.Apis.Auth@1.70.0",
       "type": "library",
       "version": "1.70.0"
+    },
+    {
+      "bom-ref": "pkg:nuget/Konscious.Security.Cryptography.Argon2@1.3.1",
+      "name": "Konscious.Security.Cryptography.Argon2",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "nuget"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:nuget/Konscious.Security.Cryptography.Argon2@1.3.1",
+      "type": "library",
+      "version": "1.3.1"
     },
     {
       "bom-ref": "pkg:nuget/MediatR@12.5.0",
@@ -1855,7 +1855,6 @@
     {
       "dependsOn": [
         "pkg:nuget/AWSSDK.EventBridge@3.7.502.62",
-        "pkg:nuget/AWSSDK.PinpointSMSVoice@3.7.502.63",
         "pkg:nuget/AWSSDK.PinpointSMSVoiceV2@3.7.505.37",
         "pkg:nuget/AWSSDK.S3@3.7.415.3",
         "pkg:nuget/AWSSDK.SecretsManager@3.7.400.185",
@@ -1869,6 +1868,7 @@
         "pkg:nuget/FirebaseAdmin@3.0.0",
         "pkg:nuget/FluentValidation.AspNetCore@11.3.1",
         "pkg:nuget/Google.Apis.Auth@1.70.0",
+        "pkg:nuget/Konscious.Security.Cryptography.Argon2@1.3.1",
         "pkg:nuget/MediatR@12.5.0",
         "pkg:nuget/Microsoft.AspNetCore.Authentication.JwtBearer@9.0.16",
         "pkg:nuget/Microsoft.AspNetCore.Mvc.Testing@9.0.16",
@@ -1943,12 +1943,12 @@
         "pkg:pub/timezone@0.11.1",
         "pkg:pub/url_launcher@6.3.2"
       ],
-      "ref": "pkg:generic/kilodrive-public-baseline@1.0.0+66"
+      "ref": "pkg:generic/kilodrive-public-baseline@1.0.0+70"
     }
   ],
   "metadata": {
     "component": {
-      "bom-ref": "pkg:generic/kilodrive-public-baseline@1.0.0+66",
+      "bom-ref": "pkg:generic/kilodrive-public-baseline@1.0.0+70",
       "name": "KiloDrive public architecture baseline",
       "properties": [
         {
@@ -1965,9 +1965,9 @@
         }
       ],
       "type": "application",
-      "version": "1.0.0+66"
+      "version": "1.0.0+70"
     },
-    "timestamp": "2026-08-23T00:00:00Z",
+    "timestamp": "2026-08-24T00:00:00Z",
     "tools": {
       "components": [
         {
@@ -1978,7 +1978,7 @@
       ]
     }
   },
-  "serialNumber": "urn:uuid:f14c2eed-8d41-59a2-af64-07c36709c13c",
+  "serialNumber": "urn:uuid:d1f19e12-8093-5c2b-af43-f0f957895984",
   "specVersion": "1.6",
   "version": 1
 }

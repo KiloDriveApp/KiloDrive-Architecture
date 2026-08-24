@@ -16,6 +16,7 @@ that every future release keeps them.
 | Data | EF Core + Relational | 9.0.16 | Unit of work, model metadata, relational queries |
 | MySQL | Pomelo EF MySQL; MySqlConnector | 9.0.0; 2.4.0 | MySQL 8 provider and direct operational/test access |
 | Auth | JwtBearer; Fido2; Google APIs Auth; FirebaseAdmin | 9.0.16; 4.0.1; 1.70.0; 3.0.0 | JWT validation, passkeys, social token validation, FCM administration |
+| Password hashing | Konscious.Security.Cryptography.Argon2 | 1.3.1 (exact reviewed pin) | Argon2id password derivation for the normal non-FIPS profile |
 | Application | MediatR; FluentValidation.AspNetCore | 12.5.0; 11.3.1 | CQRS dispatch and request validation |
 | Realtime/cache | SignalR Redis; Extensions Redis; StackExchange.Redis | 9.0.16; 9.0.8; 2.8.31 | Hub backplane, distributed cache, Valkey protocol operations |
 | Observability | OpenTelemetry hosting/exporter/instrumentation family | 1.17.0 | Traces, metrics, OTLP export, ASP.NET/HTTP/runtime instrumentation |
@@ -62,6 +63,12 @@ MySqlConnector, and Testcontainers for MySQL.
 Test-only packages do not ship in a production publish, but CI workers still
 execute them. They remain in the security/license inventory and must not receive
 production credentials.
+
+The Argon2 package is deliberately exact-version pinned. Updating it requires
+known-vector, hash-compatibility, malformed-input, memory/concurrency and lazy-
+rehash tests. Environments with an approved FIPS-only boundary select the
+platform PBKDF2-HMAC-SHA256 profile instead; package presence does not make
+Argon2 a FIPS-validated primitive.
 
 ## Resolved transitive examples
 

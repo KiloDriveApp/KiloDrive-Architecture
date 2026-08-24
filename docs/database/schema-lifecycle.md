@@ -53,7 +53,7 @@ is why retirement still needs a separate zero-reference process.
 
 ### Why a version string is insufficient
 
-Consider two cells both labelled `2026.08.22.5`:
+Consider two cells both labelled `vN`:
 
 - Cell A has `AmountMinor bigint NOT NULL`.
 - Cell B has `AmountMinor int NULL`.

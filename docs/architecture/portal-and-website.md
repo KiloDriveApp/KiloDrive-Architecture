@@ -84,6 +84,37 @@ the API per tenant and language. Localized routes, canonical links, `hreflang`,
 metadata, Open Graph tags, accessibility structure, legal links, and support
 paths are part of the output.
 
+The reviewed public information architecture groups content by user intent:
+
+- **Why KiloDrive:** Benefits & Features, For Riders, For Drivers, Car Rentals,
+  and Parcel Delivery;
+- **Safety & Trust:** Rider & Driver Safety, Account & Data Security, and
+  Privacy Controls;
+- **Pricing & Plans:** the Rider Free and driver/rental Free, Silver, and Gold
+  explanation; and
+- **Resources:** calculators, blog/guides, About, and Help & Support.
+
+Those labels are navigation aids, not a second content database. Audience pages
+(`riders`, `drivers`, rental and parcel content), `features`, `membership`,
+`safety`, and `data-security` remain published tenant content. Navigation and
+the footer resolve those records with a bounded fallback so an optional
+navigation read cannot blank the page. A content slug is allow-listed and does
+not become an arbitrary API or filesystem path.
+
+Search and social metadata are server-rendered. The configured public base URL
+produces one absolute canonical URL, an `x-default` plus supported English,
+Spanish, and French alternates, Open Graph and Twitter summary metadata, and the
+appropriate WebSite/Organization/Breadcrumb/BlogPosting structured data.
+`sitemap.xml` lists only approved public routes and language variants;
+`robots.txt` points to that sitemap without exposing administrative paths.
+Dynamic titles, descriptions, author/date evidence, image alternatives and
+breadcrumbs are encoded rather than copied from arbitrary query input.
+
+`WebsiteApi:PublicBaseUrl` is deployment-owned configuration. Production must
+set it to the reviewed HTTPS origin without round-tripping the complete JSON
+configuration through a serializer that could corrupt CSP strings. Host headers
+or a proxy value are not trusted as the canonical origin.
+
 Calculators call the same API used by mobile rather than copying toll, fare, loan,
 or currency rules into Razor. Mobile is the experience baseline and the API is
 the calculation authority. Missing reference/provider data produces a bounded,
@@ -182,6 +213,13 @@ content fallback, legal/support links, challenge degraded behavior, 320-pixel
 responsive rendering, keyboard navigation, and no-JavaScript essentials. Portal
 fixtures cover least-privilege roles as well as System Administrator; testing
 only the most powerful account hides menu and IDOR defects.
+
+SEO/render tests also parse the output rather than searching source text. They
+assert one canonical, correct alternates, route-specific title/description,
+Open Graph/Twitter values, valid structured-data types, sitemap/robots behavior,
+blog author/date metadata, accessible breadcrumb order, and a functional mobile
+menu with an accurate accessible name and expanded state. These tests protect
+discoverability without adding trackers or weakening CSP.
 
 ## Deployment and verification
 

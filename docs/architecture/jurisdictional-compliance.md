@@ -197,6 +197,13 @@ At minimum it records:
 - legal text, consumer disclosures, accessibility review, ownership, and next
   review date.
 
+The reviewed implementation has one deliberate exception to country-derived
+vehicle evidence: driver fitness/inspection is currently required
+unconditionally by onboarding, vehicle validation, readiness, and primary-
+vehicle selection. Operators must not configure or advertise a country waiver
+that the server does not implement. Making fitness conditional is a future
+versioned rule change requiring matching API, client, seed, and test evidence.
+
 Rules that can change must not be overwritten without history. Use a stable rule
 identifier plus a revision, effective-from time, optional effective-to time,
 source/approval reference, and status. A transaction snapshots the rule values

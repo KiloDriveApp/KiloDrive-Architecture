@@ -73,6 +73,48 @@ The APK/IPA is an untrusted client. Changing Dart code, replaying an HTTP call,
 or modifying a local role cannot grant server permission. The API revalidates
 role, tenant, country, plan, compliance, wallet, and state-transition rules.
 
+## Driver onboarding: resumable but not bypassable
+
+New drivers move through one server-backed, twelve-page journey. The mobile app
+renders immutable view models and saves the current page; it does not keep an
+untyped JSON checklist or infer completion from one local flag.
+
+| Page | Purpose | Blocking rule |
+| ---: | --- | --- |
+| 1 | Identity, profile photo, driver-licence details and licence document | Required |
+| 2 | Proof of address and background/police evidence | May be deferred for up to 21 days; overdue evidence locks operations |
+| 3 | Membership introduction and Free/Silver/Gold choice | A deliberate choice is required; paid membership is not required |
+| 4 | Verified email and phone review | Both contacts must be present and verified |
+| 5 | Language, currency display, distance unit, text/accessibility and optional 2FA preferences | Required confirmation; preferences do not change ledger currency |
+| 6 | Vehicle make, model, year, condition and images | An existing complete verified vehicle satisfies it |
+| 7 | Registration details, expiry and document | Required |
+| 8 | Insurance details, expiry and document | Required |
+| 9 | Fitness/inspection details, expiry and document | Required for every driver at the current implementation baseline |
+| 10 | Optional reviewed Uber, Lyft or inDrive rating screenshots | Skippable; imported evidence remains separately labelled |
+| 11 | Hourly-hire rate, distance unit, currency view and driver business preferences | Required confirmation; reviewed default hourly rate is USD 6.00 |
+| 12 | Terms, Privacy and manual links plus explicit legal acceptance | Required to complete; cancel-and-delete follows the separate governed deletion flow |
+
+Each page offers Back, Next, Save for later and Logout; the restricted settings
+action exposes only basic preferences and cannot escape into the ordinary app
+shell. Progress is server-derived. Saving after a completed journey is a safe
+no-op, and completion is monotonic: a future checklist or document change may
+make the driver operationally ineligible, but it must not send an already-
+completed driver back to “add a vehicle.” Ongoing compliance and onboarding
+history are different facts.
+
+The API remains the enforcement boundary. Completion stages an outbox event for
+administrator and driver notification, while operational bidding still requires
+current licence, vehicle, document, membership, assignment, online and telemetry
+eligibility. A client cannot unlock bidding by skipping screens or editing
+local preferences.
+
+Vehicle fitness is not country-conditional in the reviewed implementation:
+onboarding, vehicle validation, readiness, and primary-vehicle selection all
+require current fitness evidence. A country setting cannot waive that gate
+today. Introducing country-conditional fitness later requires one versioned
+server rule, matching client guidance, and positive/negative readiness tests;
+documentation alone must never imply that behavior exists.
+
 ## Feature-first layering
 
 New and migrated functionality lives under `features/<feature>/`. A mature
@@ -227,6 +269,19 @@ Race tests cover refresh versus mutation, dispose versus response, realtime
 versus refresh, logout versus queued work, and session expiry during navigation.
 
 ## Native dependency release discipline
+
+Release Dart code is built with the reviewed obfuscation and split-debug-info
+controls. Obfuscation reduces casual recovery of symbols; it is not
+authorization, encryption, or a place to hide a secret. Split debug symbols are
+retained in protected release evidence and linked to the exact artifact hash so
+crashes remain diagnosable.
+
+CI scans AOT snapshots, native binaries, archive metadata and packaged resources
+for developer workstation paths, source roots, debug service markers and other
+release-only privacy regressions. It also checks that an IPA archive contains
+the expected executable symbols rather than treating an empty scan as success.
+Endpoints and feature concepts may remain discoverable in a client; the server
+still enforces every permission and resource boundary.
 
 Native upgrades are performed in isolated batches:
 

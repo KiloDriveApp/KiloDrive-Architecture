@@ -142,6 +142,20 @@ digests rather than plaintext lookup values and enforce attempt/velocity limits.
 Issuance, purchase, redemption, refund, expiry, and revocation use different
 references and posting rules.
 
+An administrative batch is itself a money-like operation even though no wallet
+has been credited yet. One idempotency key and request hash bind the tenant,
+administrator, route, quantity, face value, credit currency, and deterministic
+`KDOP-…` operation reference. A completed retry replays the original identifiers
+and one-time codes; an in-flight duplicate returns a conflict and a changed
+payload is rejected. The protected replay record is retained for the supported
+voucher lifetime and encrypted with the persistent Data Protection key ring.
+
+Code lookup uses a keyed HMAC-SHA256 digest plus a small display suffix. The
+plaintext code exists only at the authorized issuance/retrieval boundary. Batch
+reconciliation compares requested count and value, issued identifiers, active /
+redeemed / expired / revoked states, wallet credits, promotion expense, and
+journals. A balanced ledger does not excuse an accidentally duplicated batch.
+
 ### Ride and delivery escrow
 
 For wallet-paid work, acceptance can reserve the customer amount. Completion
@@ -167,6 +181,53 @@ memberships operate in the membership/no-commission model. A subscription
 preserves plan foreign key, audience, purchased term, actual billed price source,
 service period, renewal/grace state, provider transaction, entitlement, payment,
 and journal reference.
+
+### Public tier language and reviewed published/store catalogue baseline
+
+The tier name communicates a bounded entitlement, not social status, driver
+quality, guaranteed demand, priority over safety rules, or promised earnings.
+Use the audience-qualified names **Rider Free**, **Free Driver**, **Silver
+Driver**, **Gold Driver**, **Rental Free**, **Rental Silver**, and **Rental
+Gold**. Never shorten a label in a context where driver and rental plans can be
+confused.
+
+Riders use KiloDrive without a rider subscription. Driver and rental providers
+choose Free, Silver, or Gold. Paid terms are one week, one month, or one quarter;
+"quarterly" means the reviewed three-month term, not an instalment loan. The
+published/store presentation catalogue reviewed on 2026-08-24 is:
+
+| Audience and tier | Week | Month | Quarter | Published allocation or headline limit |
+| --- | ---: | ---: | ---: | --- |
+| Rider Free | USD 0 | USD 0 | USD 0 | No rider subscription plan |
+| Free Driver | USD 0 | USD 0 | USD 0 | Up to 8 accepted trips/week and 1 registered vehicle |
+| Silver Driver | USD 7.50 | USD 27 | USD 78 | Up to 40 accepted trips/week and 3 registered vehicles |
+| Gold Driver | USD 25 | USD 90 | USD 260 | Up to 120 accepted trips/week and 5 registered vehicles; Preferred Driver eligibility still requires every safety/reputation rule |
+| Rental Free | USD 0 | USD 0 | USD 0 | Published allocation: 1 active listing and owner-managed core tools |
+| Rental Silver | USD 7.50 | USD 27 | USD 78 | Published allocation: up to 5 active fleet vehicles plus the approved team/reporting tools |
+| Rental Gold | USD 25 | USD 90 | USD 260 | Published allocation: up to 25 active fleet vehicles plus expanded team/analytics tools |
+
+These figures document the reviewed published/store presentation; they are not
+proof that a live database, store console, or every server handler is aligned.
+At this review, the canonical bootstrap still transitively sources legacy driver
+seed prices (Silver USD 15/54/156 and Gold USD 50/180/520) from
+`driver-membership-model.sql`. That discrepancy must be reconciled and verified
+against live plan rows and store-product mappings before a release can claim
+operational price parity. This public architecture baseline makes no such claim.
+
+Similarly, the rental vehicle counts above are published product allocations.
+They must not be described as uniformly enforced limits until all rental
+mutation handlers and contract tests prove the same rule. Apple and Google
+storefront prices are the checkout authority in store builds; approved
+non-store displays use the country currency and an explicit FX snapshot. The
+active, verified plan record remains the runtime source for benefits that are
+actually enforced. A manual or marketing page must be updated when the
+catalogue changes and must not invent a benefit merely because the tier sounds
+premium.
+
+The no-commission statement is also precise: drivers retain 100% of the agreed
+ordinary trip fare before their own taxes, fuel, maintenance, insurance, tolls,
+refunds, chargebacks, or other disclosed adjustments. Membership does not
+guarantee requests, acceptance, availability, income, safety, or payout timing.
 
 Apple and Google purchases are validated server-side. Google acknowledgement is
 durable outbox work, so `acknowledgement_pending` can be represented without

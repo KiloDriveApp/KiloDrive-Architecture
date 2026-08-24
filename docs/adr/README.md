@@ -21,6 +21,7 @@ ADRs are not marketing documents. A good ADR admits what became harder.
 | [008](008-double-entry-wallet-accounting.md) | Wallet subledgers paired with double-entry journals | Accepted |
 | [009](009-mysql-scripts-not-ef-migrations.md) | Reviewed idempotent MySQL scripts for schema evolution | Accepted |
 | [010](010-flutter-feature-repositories.md) | Feature repositories and AsyncNotifiers in Flutter | Accepted/Incremental |
+| [011](011-password-hashing-policy.md) | Argon2id by default with an explicit PBKDF2 FIPS profile | Accepted |
 
 ## Lifecycle
 

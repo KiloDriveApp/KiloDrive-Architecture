@@ -3,7 +3,7 @@
 ## Verified baseline
 
 The reviewed source uses Flutter 3.41.7, a Dart constraint beginning at 3.11.5,
-and mobile version `1.0.0+66`. `pubspec.yaml` identifies direct intent;
+and mobile version `1.0.0+70`. `pubspec.yaml` identifies direct intent;
 `pubspec.lock`, Gradle/CocoaPods resolution, and the signed artifact identify what
 was actually selected. Package presence does not mean an optional feature or
 permission is enabled in every release.
@@ -31,7 +31,7 @@ privacy declarations, and licenses, so the lockfile alone is not the last check.
 ### Reviewed direct-resolution snapshot
 
 The current lockfile resolves these feature-bearing direct packages (Flutter SDK
-packages are omitted). This snapshot belongs to mobile version `1.0.0+66`; a
+packages are omitted). This snapshot belongs to mobile version `1.0.0+70`; a
 later release regenerates it rather than editing versions from memory.
 
 | Package | Resolved | Package | Resolved |

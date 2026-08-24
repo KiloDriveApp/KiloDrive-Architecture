@@ -111,6 +111,13 @@ Run in this order:
 9. Produce dependency, license, permission, and generated-file diffs against the
    prior production release.
 
+For driver onboarding, include a new incomplete driver, a journey saved on each
+page, an existing compliant vehicle, a deferred background check before and
+after its 21-day deadline, optional rating-import skip, hourly-rate validation,
+legal-link launch failure, completion notification, logout/re-login resume, and
+an already-completed driver evaluated against a newer checklist. Completion must
+stay monotonic while operational compliance can independently become ineligible.
+
 Test artifacts must redact credentials, access tokens, personal information,
 document URLs, and real notification destinations.
 
@@ -121,6 +128,11 @@ document URLs, and real notification destinations.
 Build release APK and AAB with the approved Dart defines and both supported ARM
 ABIs: `armeabi-v7a` and `arm64-v8a`. Use the same signing lineage intended for
 Play. Keep universal/debug artifacts clearly separated from store output.
+
+Use the approved `--obfuscate` and `--split-debug-info` release path. Store split
+symbols in protected release evidence keyed by application version, build,
+commit and artifact SHA-256. Never package the symbol directory into APK/AAB/IPA
+or publish it with public artifacts.
 
 ### Inspect the exact artifacts
 
@@ -135,6 +147,11 @@ Verify:
 - target/min SDK and device architecture support match store/device policy;
 - no debug flag, cleartext traffic, permissive network security, diagnostic proxy,
   test endpoint, or development Firebase configuration is present;
+- Dart AOT/native/archive scanning finds no developer workstation path, source
+  root, debug-service marker, credential, or protected configuration value;
+- the source-path gate is tested with a known bad fixture and the symbol/archive
+  verifier proves it inspected the intended executable rather than an empty or
+  missing path;
 - R8/shrinker mapping and native symbols are retained securely; and
 - Play Integrity, billing, notifications, location, camera/gallery, biometrics,
   and calls match the store declarations and visible app behavior.
@@ -179,6 +196,10 @@ Extract and inspect the actual `Runner.app` and embedded frameworks:
 - background modes justified by visible behavior; and
 - executable Mach-O strings and Objective-C metadata for prohibited private or
   deprecated selectors.
+
+Run the same AOT/source-path privacy scan against the IPA and its Mach-O/archive
+metadata. Retain the protected split symbols separately so an obfuscated crash
+can still be symbolicated without shipping workstation paths to users.
 
 The historical ReplayKit `buttonPressed:` issue is a supply-chain lesson. Scan
 every executable image and report the exact offender. Do not scan every NOTICE or

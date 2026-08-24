@@ -139,12 +139,14 @@ vehicle tomorrow must not rewrite yesterday's contract or receipt.
 ### Compliance and safety gate
 
 Before quote visibility and again inside confirmation/check-in, verify the
-country-required registration, insurance, fitness/inspection, ownership or
-management authority, image/evidence requirements, recall/maintenance state,
-and membership limits. Expiry or rejection takes the vehicle out of eligibility
-immediately for new rentals. Existing bookings enter a governed exception flow;
-they are not silently left active or automatically cancelled without customer
-and operator handling.
+configured registration and insurance requirements, fitness/inspection,
+ownership or management authority, image/evidence requirements,
+recall/maintenance state, and membership limits. At the current reviewed
+baseline, driver-vehicle fitness is an unconditional server gate; it is not
+waived by country configuration. Expiry or rejection takes the vehicle out of
+eligibility immediately for new rentals. Existing bookings enter a governed
+exception flow; they are not silently left active or automatically cancelled
+without customer and operator handling.
 
 A maintenance window reserves time just like a booking. Otherwise an oil change
 scheduled after a quote can collide with a rental confirmation. Safety-critical

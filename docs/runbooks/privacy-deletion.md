@@ -109,6 +109,16 @@ Build a versioned plan before changing data:
 - each control-to-country membership;
 - operational projections and profiles;
 - trips, bids, chat/call metadata, safety and support records;
+- scheduled reservations/replacements, ordered stops, hourly-rate snapshots and
+  marketplace-intelligence source/derived records;
+- family/business travel profiles, invitations, members, cost centres, policies,
+  delegated bookings, notifications and expiring live-share authority;
+- courier declared contents, custody events, pickup/recipient proof state,
+  signatures/photos, failed attempts and return-to-sender evidence;
+- rental organizations/teams, calendars, quotes, authorizations, bookings,
+  inspections, agreements, mileage/fuel, extensions, damage and disputes;
+- KiloDrive ratings, category feedback, moderation/appeals, imported third-party
+  review evidence and derived achievements;
 - wallets, journals, payments, memberships, vouchers, cashouts, disputes, and tax
   evidence;
 - documents, thumbnails, receipts, recordings, quarantine, and multipart uploads;

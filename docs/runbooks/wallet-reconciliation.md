@@ -193,6 +193,28 @@ wallet currency, FX source/effective time, unique redemption, journal, and walle
 credit. A voucher code must not be the only durable security secret; its redemption
 is conditionally claimed.
 
+For an administrative issuance batch, start with the durable operation
+reference—not a plaintext code list. Confirm:
+
+- tenant, administrator, route, request hash, face value, credit currency and
+  quantity are one idempotency scope;
+- one completed scope owns exactly one contiguous response set and expected
+  aggregate promotional value;
+- a replay returned the same voucher identifiers rather than creating another
+  set, while a payload mismatch was rejected;
+- the encrypted replay body is readable only through the intended Data
+  Protection purpose and the HMAC lookup key is present and protected;
+- active, redeemed, expired and revoked counts sum to issued count;
+- each redemption appears at most once and links to one wallet credit and one
+  balanced journal; and
+- no full code, replay body, HMAC key, or customer identity entered evidence.
+
+If the administrator reports a timeout after generation, **do not issue another
+batch with a new idempotency key**. Reconcile the original operation reference
+and key first. If the key ring is unavailable, contain issuance and preserve the
+encrypted record; changing voucher state or minting replacements is not a key-
+recovery procedure.
+
 ### Transfers
 
 Lock sender and receiver in deterministic order. Verify sender/receiver are

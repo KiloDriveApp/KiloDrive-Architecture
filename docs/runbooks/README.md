@@ -25,6 +25,7 @@ environment-specific commands remain in restricted operational material.
 | [Country activation](country-activation.md) | A country is being enabled or restored | Prove schema, rules, providers, legal controls, and operational ownership |
 | [Readiness triage](readiness-triage.md) | Readiness is degraded or unhealthy | Identify the dependency and preserve truthful traffic handling |
 | [Ride dispatch](dispatching.md) | Drivers do not receive, see, or act on current offers | Restore durable and realtime dispatch without duplicating assignments |
+| [Scheduled-ride guarantee](scheduled-ride-guarantee.md) | A reservation is stuck, falsely guaranteed, awaiting reconfirmation, or replacing a driver | Restore a truthful guarantee state without duplicating the ride or assignment |
 | [Active-trip location and privacy](active-trip-location-and-privacy.md) | Trip location will not start, is stale, survives a terminal trip, or conflicts with the privacy/store declaration | Restore truthful trip telemetry and prove collection stops at the authorized boundary |
 | [Capacity baseline](capacity-baseline.md) | A launch, scale change, or scheduled review needs a controlled operating envelope | Find the first bottleneck with safe fixtures, bounded ramps, and verified cleanup |
 | [Outbox recovery](outbox-recovery.md) | Pending age, failed rows, or worker heartbeat alarms | Deliver or explicitly resolve promised side effects exactly once economically |
@@ -33,6 +34,9 @@ environment-specific commands remain in restricted operational material.
 | [Provider outage](provider-outage.md) | Maps, messaging, payments, or another external service fails | Degrade, queue, reconcile, or fail closed according to business risk |
 | [Notification canaries](notification-canaries.md) | A channel health probe fails or must enter maintenance | Validate providers without exposing customer destinations or message content |
 | [Geospatial degradation](geospatial-degradation.md) | Route, geocode, map-match, or toll calculation is unavailable or implausible | Avoid false precision and preserve safe fallbacks |
+| [Courier chain of custody](courier-chain-of-custody.md) | Pickup/delivery proof, custody events, failed delivery, or return-to-sender is stuck or disputed | Preserve the parcel and evidence chain while reaching one legal terminal state |
+| [Rental booking recovery](rental-booking-recovery.md) | Availability, authorization, handover, extension, return, deposit, or settlement disagrees | Restore one versioned booking and its inventory/payment/evidence invariants |
+| [Support and dispute cases](support-dispute-cases.md) | A case, reply, attachment, SLA, assignment, or closure is missing or inconsistent | Restore secure case communication and accountable resolution without losing evidence |
 | [LiveKit voice](livekit-voice.md) | Calls, TURN, rooms, tokens, or recording egress fail | Restore authorized voice and reconcile consent/recording state |
 | [Upload quarantine](upload-quarantine.md) | Scanner timeout, rejection, or retrieval issue occurs | Keep documents private and quarantined until trustworthy disposition |
 | [Authentication and sessions](authentication-session.md) | Login, OTP, refresh, passkey, 2FA, or logout behavior is unsafe | Restore account access without weakening security boundaries |

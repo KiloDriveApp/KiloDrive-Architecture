@@ -15,6 +15,7 @@ authoritative.
 | AWS SDK and OpenTelemetry | Apache-2.0 | Preserve license/NOTICE and comply with terms |
 | Firebase/Google libraries | Apache-2.0 or package-specific | Verify metadata plus service/privacy terms |
 | Serilog, MediatR, Redis/MySQL clients, ClosedXML, Swashbuckle, Stripe.net | Commonly MIT/Apache-style | Preserve each exact resolved notice; do not infer from the family |
+| Konscious.Security.Cryptography.Argon2 | MIT in the reviewed 1.3.1 package | Preserve the exact package license and record the security-reviewed pin; re-check on every version change |
 | Flutter SDK and plugins | BSD-3-Clause, MIT, Apache-2.0, or package-specific | Generate notices from resolved Dart and native graphs |
 | ImageSharp | Six Labors Split License | Confirm commercial eligibility and current terms |
 | QuestPDF | Community/commercial terms | Confirm organization eligibility for each release |

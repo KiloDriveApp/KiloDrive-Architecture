@@ -28,6 +28,14 @@ GENERATOR_VERSION = "1.0.0"
 NAMESPACE = uuid.UUID("b86be7d7-d95e-5d65-bdce-e07ac860dfc7")
 
 
+def normalize_nuget_version(version: str) -> str:
+    """Collapse an exact NuGet range such as [1.3.1] to its package version."""
+
+    value = version.strip()
+    exact = re.fullmatch(r"\[\s*([^,\[\]()]+?)\s*\]", value)
+    return exact.group(1) if exact else value
+
+
 def parse_dotnet(source_root: Path) -> list[dict[str, str]]:
     props_path = source_root / "Directory.Packages.props"
     if not props_path.is_file():
@@ -57,6 +65,7 @@ def parse_dotnet(source_root: Path) -> list[dict[str, str]]:
         version = versions.get(name)
         if not version:
             raise ValueError(f"direct NuGet package has no central version: {name}")
+        version = normalize_nuget_version(version)
         test_only = all(path.lower().startswith("tests/") for path in projects)
         components.append(
             {

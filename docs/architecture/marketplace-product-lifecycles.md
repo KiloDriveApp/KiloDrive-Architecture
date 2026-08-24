@@ -16,6 +16,27 @@ rules they share. It deliberately avoids route dumps and schema listings. Those
 change faster than the ownership, consistency, privacy, and recovery decisions
 an engineer needs to understand.
 
+## Capability status at this baseline
+
+“Implemented” below means the core server/schema behavior and focused tests are
+present. It does not mean every country, provider, store client, or operations
+team has activated every optional branch.
+
+| Product area | Public status | Important boundary |
+| --- | --- | --- |
+| Scheduled reservation and guarantee | Implemented; timing is country-configurable | Saved is not guaranteed; driver reconfirmation before the cutoff is required |
+| Multi-stop, round-trip, and hourly rides | Implemented with incremental client coverage | Stops/rates are snapshotted and versioned; country availability may differ |
+| Marketplace intelligence | Implemented advisory projection | Probability, response time, fare range, and heatmap are estimates, never assignment or safety proof |
+| Driver professional toolkit | Implemented/incremental | Queues and forecasts require fresh eligible state and remain non-authoritative |
+| Family and business profiles | Implemented/incremental | Booking, billing, administration, notification, and tracking are separate permissions |
+| Courier chain of custody | Implemented/incremental and policy-gated | Protection, prohibited contents, insurance and business shipping require country approval |
+| Rental lifecycle | Implemented/incremental and provider-gated | Deposit, insurance, adjudication and payout paths require configured providers and operators |
+| Two-sided reputation | Implemented/incremental operations | Imported history is reviewed and labelled separately; moderation/appeals need ownership |
+| Structured support and disputes | Implemented/incremental operations | A case record does not prove a staffed SLA or country-specific remedy |
+
+See [Capability status and evidence](capability-status.md) for the release-level
+evidence language and the relevant runbooks for active operations.
+
 ## Rules shared by every lifecycle
 
 1. **The country cell owns operational truth.** Trips, parcels, rentals,
@@ -50,6 +71,15 @@ arrival, departure, and skip evidence. Round trips add an explicit turnaround
 and return to the original pickup. Hourly rides snapshot the booked period and
 package price. Completion is rejected while an actionable stop remains; an
 operator does not fix that condition by editing the destination text.
+
+Drivers can maintain an hourly-hire rate in the business toolkit and during the
+driver onboarding preferences step. The reviewed default is USD 6.00 per hour;
+the accepted configuration range is USD 1.00–1,000.00. A quote stores the exact
+rate, source and booked duration used for the offer. The app may display a
+country-currency conversion, but conversion does not rewrite the driver's USD
+setting or the transaction's ISO-currency accounting evidence. A rider-facing
+estimate before assignment remains an estimate until the accepted driver/rate
+is snapshotted.
 
 Scheduled rides distinguish a reservation request from a guarantee. The
 lifecycle tells the rider whether KiloDrive is searching, has reserved a driver,
@@ -186,4 +216,3 @@ Before extending any lifecycle, require answers to these questions:
 - What does a user see when an optional provider or projection fails?
 - Which accounting journal, reconciliation rule, or safety case is created?
 - Which fixture, race, authorization, and crash-point tests prove the answer?
-

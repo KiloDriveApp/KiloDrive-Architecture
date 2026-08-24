@@ -60,6 +60,33 @@ Password hashes use a slow, salted password derivation function with a reviewed
 work factor. Store neither plaintext nor reversible passwords. Rehash on a
 successful login when the configured work factor changes.
 
+### Argon2id and the explicit FIPS profile
+
+The normal KiloDrive password-storage profile is **Argon2id** with a random
+16-byte salt, 32-byte derived key, RFC 9106 version 19 encoding, 19,456 KiB of
+memory, two iterations, and one lane. Those values are a reviewed baseline, not
+a timeless optimum. Capacity tests and current password-hashing guidance decide
+when the policy changes.
+
+An approved environment that must keep password derivation inside a validated
+FIPS cryptographic boundary uses the separate PBKDF2-HMAC-SHA256 profile with at
+least 600,000 iterations. Configuration rejects Argon2id with `FipsMode=true`
+and rejects the PBKDF2 profile outside that explicit mode. Engineers must not
+describe the Argon2 library itself as FIPS validated.
+
+Each stored representation identifies its algorithm and cost. Verification
+parses untrusted hash metadata through strict upper and lower bounds before it
+allocates memory or performs expensive work, compares derived bytes in constant
+time, and limits concurrent operations so login bursts cannot consume the
+process memory envelope. A supported older PBKDF2 or weaker Argon2id hash is
+verified once and replaced after a successful login. A failed login never
+rewrites the record.
+
+The release gate includes known Argon2 vectors, malformed/oversized encodings,
+wrong-password behavior, legacy migration, FIPS configuration rejection, and
+concurrency-capacity tests. A work-factor increase is therefore a controlled
+security and capacity change, not a string edit in production configuration.
+
 Password failure counters are independent of OTP challenge attempts. We learned
 why this matters: if an invalid OTP increments the global password lockout, an
 attacker who knows a victim's email can deliberately lock the account without

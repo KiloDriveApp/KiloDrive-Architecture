@@ -23,6 +23,8 @@ display problem. Durable ride/bid/trip state is authoritative.
 | Driver acts but rider only sees a notification | SignalR group/backplane, client merge, or missing reconciliation |
 | Cancelled request remains visible | missing durable cancellation event, delayed worker, stale client cache, or failed fallback refresh |
 | Two accepts appear possible | missing/incorrect lock, version, idempotency, or conditional transition—treat as high risk |
+| Scheduled ride is stuck or falsely guaranteed | cutoff/reconfirmation job, eligibility recheck, replacement transition, clock/country policy, or stale client projection |
+| Airport/venue queue position never changes | expired queue heartbeat, stale location, duplicate active entry, active assignment, or realtime/cache projection |
 
 ## Establish authoritative state
 
@@ -82,6 +84,22 @@ Offer expiry closes the ride even if stale bids exist. Fare reductions do not
 silently rewrite a driver's previous acceptance; affected bids expire or
 require renewed consent.
 
+## Scheduled reservations and managed queues
+
+A scheduled request is **Searching**, **Driver reserved**, **Confirmation
+required**, **Guaranteed**, **Replacement searching**, or **Not guaranteed**
+according to durable state and country timing policy. Saved is never a synonym
+for guaranteed. Trace the expected-version delayed job, final eligibility
+recheck, reconfirmation event and replacement transition on the same ride. Use
+the [scheduled-ride guarantee runbook](scheduled-ride-guarantee.md) for recovery.
+
+Airport/venue queues are expiring memberships, not permanent ranks. Joining
+requires an online eligible driver, fresh permitted position inside the zone,
+and no active assignment. A driver can occupy only one active queue. Check zone
+configuration, location age, queue heartbeat, unique active membership, order,
+assignment transition and client projection. Remove/expire a stale entry through
+the supported queue command; do not reorder or delete competitors manually.
+
 ## Contain
 
 - If duplicate assignment is possible, pause acceptance for the affected scope
@@ -113,6 +131,10 @@ Run a deterministic two-client fixture through:
 5. chat;
 6. arrive, start, and complete or cancel; and
 7. disconnect/retry at commit and publish boundaries.
+
+Add scheduled reserve/reconfirm/replacement/cutoff races and queue join,
+heartbeat expiry, duplicate join, assignment removal, network loss and re-entry
+when either feature changes.
 
 Verify no duplicate assignment, both screens converge, cancelled/expired offers
 disappear, event versions increase, and durable backlogs return to normal.

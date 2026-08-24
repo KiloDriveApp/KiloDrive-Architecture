@@ -100,6 +100,20 @@ Do not blindly retry POST/PUT/PATCH/DELETE in a generic HTTP resilience handler.
 A provider may have accepted the first call before timing out. Retry only with a
 stable provider idempotency key or after reconciliation.
 
+Administrative issuance of redeemable value follows the same rule. A voucher
+batch binds tenant, administrator, route, idempotency key, quantity, face value,
+credit currency, and request hash to one durable operation reference. If the
+database commits and the response is lost, the same request replays the same
+batch; it never mints another set of codes. An in-flight duplicate conflicts and
+a changed payload under the same key is rejected.
+
+Because the replay response contains one-time voucher material, it is encrypted
+with the persistent Data Protection key ring rather than stored as readable
+idempotency JSON. Lookup uses a keyed HMAC digest and bounded display suffix,
+not plaintext or a fast unkeyed hash. Losing the key ring or HMAC key is an
+incident affecting recovery or redemption; neither secret belongs in logs,
+source, metrics, or the public documentation repository.
+
 ## Tenant and object authorization
 
 Global EF query filters reduce accidental tenant leakage but are not magic. Code

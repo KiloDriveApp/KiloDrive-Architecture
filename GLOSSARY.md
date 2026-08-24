@@ -14,6 +14,7 @@ meanings in other systems.
 | API | Application Programming Interface. In KiloDrive, the authenticated ASP.NET Core API is the server-side security and business-rule boundary shared by mobile, Portal, Website, and provider callbacks. |
 | APK | Android Package: an installable Android application artifact. KiloDrive inspects release APKs as well as AABs because native libraries and merged permissions can differ from source declarations. |
 | APNs | Apple Push Notification service, used to deliver permitted notifications to Apple devices. |
+| Argon2id | Memory-hard password derivation algorithm used by KiloDrive's normal password-storage profile. Its memory, iteration, parallelism, salt, output and concurrency policy are versioned and bounded; package use does not imply FIPS validation. |
 | App attestation | Platform-signed evidence intended to make unauthorized or automated clients harder to use. It supplements authentication and authorization; it never grants access by itself. |
 | AsyncNotifier | Riverpod state owner for asynchronous Flutter features. It coordinates user intent, loading/refresh/mutation states, cancellation, and disposal without putting transport logic in widgets. |
 | At-least-once delivery | A message-delivery model in which retries can deliver the same message more than once; consumers therefore need idempotency. |
@@ -52,6 +53,7 @@ meanings in other systems.
 | Escrow hold | Funds reserved for an accepted marketplace obligation; held funds are not spendable until settlement or release. |
 | EventBridge | AWS event-bus service used as a configurable dispatch-acceleration path. Event publication does not replace the SQL outbox's durable recovery evidence. |
 | FCM | Firebase Cloud Messaging, used for permitted Android and cross-platform push delivery. |
+| FIPS profile | Explicit deployment profile that keeps required cryptographic work inside an approved FIPS boundary. For KiloDrive password hashing it selects PBKDF2-HMAC-SHA256 with the reviewed work factor instead of Argon2id; it is not a generic claim that the entire application is certified. |
 | Geofence corridor | A bounded area around an expected route used as one signal for route-deviation analysis; it is not proof without map matching and uncertainty handling. |
 | H3 | A hierarchical hexagonal geospatial indexing system useful for bucketing and neighborhood queries. Use is documented as implemented or planned per feature. |
 | Haversine distance | Straight-line great-circle distance between coordinates. Useful as a bounded approximation, not a substitute for road distance or traversal evidence. |
@@ -85,7 +87,7 @@ meanings in other systems.
 | Outbox | Durable database records committed with business state and later claimed by workers to perform side effects. |
 | p50 / p95 / p99 | Latency percentiles: the values at or below which 50%, 95%, or 99% of observations complete. Tail percentiles reveal slow experiences hidden by an average. |
 | Passkey | WebAuthn/FIDO credential using public-key authentication and an authenticator such as device biometrics or hardware key. |
-| PBKDF2 | Password-Based Key Derivation Function 2: a salted, deliberately expensive derivation function used with a reviewed work factor. It must not be confused with a fast hash used only for a lookup protocol. |
+| PBKDF2 | Password-Based Key Derivation Function 2: a salted, deliberately expensive derivation function used by KiloDrive only under the explicit FIPS password profile or to verify supported legacy hashes. It must not be confused with a fast hash used only for a lookup protocol. |
 | PII | Personally identifiable information, including combinations of data that can identify or locate a person. |
 | ProblemDetails | Structured HTTP error representation with stable public fields; production responses must not expose stack traces or sensitive payloads. |
 | Projection | Credential-free country-local representation of a global user, retained for local domain relationships. |

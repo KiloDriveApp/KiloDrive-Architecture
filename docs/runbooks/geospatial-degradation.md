@@ -150,6 +150,24 @@ If the platform cannot maintain genuine background heartbeats, expire online
 status clearly and notify the driver. Do not keep a stale driver visible for a
 selling point.
 
+### Marketplace intelligence and demand heatmaps
+
+Pickup probability, first-response time, suggested fare range and driver demand
+cells are advisory projections. Check their data window, country/time bucket,
+eligible-supply and open-demand inputs, cache age, minimum cohort threshold,
+suppression rule and confidence band separately from route/provider latency.
+
+A driver heatmap must contain delayed/coarse cells and bands, not individual
+rider coordinates or exact small counts. One rider contributes at most once to
+the bounded cell/time bucket. If privacy threshold, history, cache, or provider
+input is unavailable, hide/degrade the projection while the ordinary eligible-
+ride feed and rider-entered fare remain available.
+
+Do not increase certainty, expose smaller cells, lower suppression, or retain
+precise routes to make a sparse heatmap look useful. Never use the projection to
+assign a driver, reject a rider fare, settle a trip, or claim demand/earnings are
+guaranteed.
+
 ### OSRM map matching and route anomaly detection
 
 Confirm the OSRM service is healthy and uses the intended regional data build.
@@ -195,6 +213,7 @@ MySQL, API JSON, Portal, Website, and Flutter.
 | Toll reference incomplete | explicit incomplete/unavailable toll result | flag reviewed data repair; do not return zero as certainty |
 | Valkey/telemetry stale | driver becomes ineligible/offline | preserve durable state; restore cache/backplane |
 | Map tiles fail | textual route, addresses, status, and actions remain | treat as rendering-only unless route service also fails |
+| Intelligence sparse/stale | wider uncertainty or explicit unavailable; rider may still propose fare and driver feed remains | verify cohort/suppression/cache inputs; do not expose exact demand |
 
 ## Recovery procedure
 
@@ -213,6 +232,8 @@ MySQL, API JSON, Portal, Website, and Flutter.
 8. Observe at least two healthy windows before removing degraded-mode messaging.
 9. Identify quotes/tolls produced during the affected period and route any
    correction through an approved audited financial process.
+10. Verify intelligence cells meet the privacy threshold, stale projections
+    expire, and disabling the projection does not disable ordinary ride search.
 
 ## Rollback
 
