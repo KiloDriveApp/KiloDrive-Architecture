@@ -18,6 +18,7 @@ not the permanent trip record.
 | [Realtime and events](realtime-and-events.md) | How does fast delivery coexist with durable recovery? |
 | [Geospatial](geospatial.md) | How are noisy locations turned into useful matching and safety signals? |
 | [Rider and driver safety](rider-driver-safety.md) | How do prevention, trip protection, RideCheck, emergency actions, evidence, and human response protect both marketplace participants? |
+| [Marketplace product lifecycles](marketplace-product-lifecycles.md) | How do scheduled/multi-stop rides, intelligence, driver tools, family/business travel, courier, rentals, reputation, and support remain durable and recoverable? |
 | [Jurisdictional compliance](jurisdictional-compliance.md) | How do country dossiers, shard controls, effective rules, approvals, and evidence support lawful country operations? |
 | [Financial systems](financial-systems.md) | How are wallet balances, holds, journals, and provider settlements kept explainable? |
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |

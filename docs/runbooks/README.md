@@ -25,6 +25,7 @@ environment-specific commands remain in restricted operational material.
 | [Country activation](country-activation.md) | A country is being enabled or restored | Prove schema, rules, providers, legal controls, and operational ownership |
 | [Readiness triage](readiness-triage.md) | Readiness is degraded or unhealthy | Identify the dependency and preserve truthful traffic handling |
 | [Ride dispatch](dispatching.md) | Drivers do not receive, see, or act on current offers | Restore durable and realtime dispatch without duplicating assignments |
+| [Active-trip location and privacy](active-trip-location-and-privacy.md) | Trip location will not start, is stale, survives a terminal trip, or conflicts with the privacy/store declaration | Restore truthful trip telemetry and prove collection stops at the authorized boundary |
 | [Capacity baseline](capacity-baseline.md) | A launch, scale change, or scheduled review needs a controlled operating envelope | Find the first bottleneck with safe fixtures, bounded ramps, and verified cleanup |
 | [Outbox recovery](outbox-recovery.md) | Pending age, failed rows, or worker heartbeat alarms | Deliver or explicitly resolve promised side effects exactly once economically |
 | [Realtime and SignalR](realtime-signalr.md) | One device changes state but another stays stale | Restore delivery and client convergence while database truth remains authoritative |

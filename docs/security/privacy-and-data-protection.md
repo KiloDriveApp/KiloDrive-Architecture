@@ -35,6 +35,28 @@ Trip-sharing handles are opaque, high entropy, expiring, revocable, and rate
 limited. Shared location is coarse, refreshed at a bounded interval, and expires
 after the privacy TTL. A short numeric lookup code is not a sufficient secret.
 
+Active-trip background collection is narrower than ordinary driver online
+status. Android and iOS collect in the background only for a server-confirmed
+Assigned, DriverArrived, or InProgress trip. A visible platform indicator tells
+the driver that collection is active. Collection stops after completion,
+cancellation, assignment removal, logout, permission revocation, or an
+authoritative rejection. The protected device retry queue is account-bound and
+limited to 500 samples and 24 hours; it is not a hidden location history.
+
+The rider sees the assigned driver's current trip position and an honest
+freshness state. RideCheck may use a sustained route deviation, prolonged stop,
+or telemetry gap to ask whether the rider is okay and to create safety evidence.
+One noisy sample is not proof of misconduct, and location never completes,
+cancels, charges, refunds, or settles a trip.
+
+The reviewed production defaults at 2026-08-24 are a 10-minute current-location
+cache, a 120-minute revocable share link, a shared moving-location window limited
+to the latest 15 minutes, and 365-day ordinary trip-replay retention. Country
+law, an active dispute, a safety case, or a narrowly audited legal hold can alter
+durable evidence retention. Changing any default requires a matching technical
+control, user-facing policy, mobile disclosure, store declaration, and recovery
+test. See the [active-trip location and privacy runbook](../runbooks/active-trip-location-and-privacy.md).
+
 ## Documents and images
 
 Identity and vehicle evidence is private and authorization-gated. New uploads

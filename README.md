@@ -37,17 +37,20 @@ reading order. It builds one idea at a time:
 6. [Rider and driver safety](docs/architecture/rider-driver-safety.md) — how
    eligibility, pre-trip confirmation, RideCheck, emergency actions, evidence,
    and human response protect both sides of a trip.
-7. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
+7. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) —
+   how scheduled and multi-stop rides, driver business tools, family/business
+   travel, courier, rentals, reputation, and support remain recoverable.
+8. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
    how country dossiers, shard gates, effective rules, approvals, and retained
    evidence turn legal requirements into enforceable operations.
-8. [Financial systems](docs/architecture/financial-systems.md) — wallets,
+9. [Financial systems](docs/architecture/financial-systems.md) — wallets,
    holds, double-entry journals, idempotency, and reconciliation.
-9. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
+10. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
    availability, payment authorization, evidence, deposits, and disputes form
    one lifecycle.
-10. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
+11. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
    production safely.
-11. [Testing and verification](docs/quality/testing-and-verification.md) — how
+12. [Testing and verification](docs/quality/testing-and-verification.md) — how
     invariants, negative authorization, races, failure injection, real
     boundaries, and signed artifacts become release evidence.
 
@@ -97,6 +100,15 @@ same thing:
   not replace the transactional record in the country cell.
 - Push, email, SMS, WhatsApp, maps, payment, and voice providers are external
   dependencies. Their success must never be guessed from a network timeout.
+
+The current product lifecycle map—including scheduled guarantees, multi-stop
+and hourly rides, privacy-preserving marketplace estimates, professional driver
+tools, family/business delegation, courier chain of custody, complete rentals,
+two-sided reputation, and structured support—is maintained in
+[Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md).
+Active-trip native location behavior, privacy limits, recovery, and release
+proof are maintained in the
+[Active-trip location and privacy runbook](docs/runbooks/active-trip-location-and-privacy.md).
 
 This distinction prevents a common distributed-systems mistake: treating the
 fastest component as the source of truth. Fast state can disappear. Durable
