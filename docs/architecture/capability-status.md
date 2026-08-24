@@ -40,6 +40,12 @@ evidence keys above say what supported the source-level status. A new review
 updates this date, version baseline, status row, and affected ADR; changing the
 word without new evidence is not acceptable.
 
+The evidence families are governed by
+[Testing and verification](../quality/testing-and-verification.md). That guide
+defines what each category means, which high-risk invariants require direct
+evidence, and why a test count or one coverage percentage cannot change a
+capability claim by itself.
+
 ## Status terms
 
 - **Implemented** — the core behavior is represented in code/schema and has
@@ -115,6 +121,7 @@ Replace the claim with a control, limitation, and verification method.
 
 ## Related reading
 
+- [Testing and verification](../quality/testing-and-verification.md)
 - [System context](system-context.md)
 - [Rider and driver safety](rider-driver-safety.md)
 - [Jurisdictional compliance](jurisdictional-compliance.md)

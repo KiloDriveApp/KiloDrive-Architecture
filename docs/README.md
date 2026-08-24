@@ -36,6 +36,11 @@ retry button, reconnect loop, or offline queue can repeat a command long after
 the first response was lost. The UI cannot make an unsafe endpoint safe by
 being careful.
 
+Before deciding that a feature is covered, read
+[testing and verification](quality/testing-and-verification.md). It explains
+which behavior belongs in unit, provider, widget, integration, native artifact,
+and physical-device tests.
+
 ### I work on data or money
 
 Read [tenancy and country cells](architecture/tenancy-and-country-cells.md),
@@ -46,6 +51,10 @@ Read [tenancy and country cells](architecture/tenancy-and-country-cells.md),
 Do not begin with table names. Begin with invariants: debits equal credits,
 held funds are not spendable, a provider reference is unique, and one financial
 transaction never straddles two country cells.
+
+Use the financial invariant and real-MySQL requirements in
+[testing and verification](quality/testing-and-verification.md); controller
+coverage alone is not evidence of correct settlement.
 
 ### I work on the rental marketplace
 

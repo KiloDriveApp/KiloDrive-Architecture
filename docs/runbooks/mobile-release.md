@@ -4,6 +4,7 @@
 - **Status:** Operational store-release procedure
 - **Last exercised:** Not yet recorded in this public repository
 - **Related architecture:** [Mobile architecture](../architecture/mobile.md), [API architecture](../architecture/api.md), and [application security](../security/application-security.md)
+- **Verification policy:** [Testing and verification](../quality/testing-and-verification.md)
 
 ## Purpose and scope
 
@@ -16,6 +17,12 @@ A release build is not store-ready merely because `flutter build` exits with
 zero. The artifact submitted to a store must be the same artifact whose native
 contents, signing identity, privacy behavior, subscription UI, background modes,
 and critical workflows were verified.
+
+The test labels and evidence expectations in this runbook use the taxonomy in
+[Testing and verification](../quality/testing-and-verification.md). Emulator or
+widget evidence cannot replace physical-device lifecycle coverage, and source
+manifest review cannot replace inspection of the final merged and signed
+artifact.
 
 ## Owners and decision rights
 

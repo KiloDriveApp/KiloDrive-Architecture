@@ -47,6 +47,9 @@ reading order. It builds one idea at a time:
    one lifecycle.
 10. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
    production safely.
+11. [Testing and verification](docs/quality/testing-and-verification.md) — how
+    invariants, negative authorization, races, failure injection, real
+    boundaries, and signed artifacts become release evidence.
 
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
@@ -232,6 +235,7 @@ versions worth remembering:
 ### Operations and decisions
 
 - [Runbook index](docs/runbooks/README.md)
+- [Testing and verification](docs/quality/testing-and-verification.md)
 - [Architecture Decision Records](docs/adr/README.md)
 - [Architecture decision process](docs/governance/architecture-decisions.md)
 - [Public documentation policy](docs/governance/public-documentation-policy.md)
@@ -249,13 +253,22 @@ versions worth remembering:
 - [SBOM guide](docs/third-party/sbom.md)
 - [Machine-readable public CycloneDX baseline](docs/third-party/kilodrive-public-direct.cdx.json)
 
+## Official repositories
+
+- [KiloDrive Architecture & Operations Runbooks](https://github.com/KiloDriveApp/KiloDrive-Architecture)
+  contains this public-safe architecture, quality, security, and operations
+  documentation.
+- [KiloDrive application](https://github.com/KiloDriveApp/KiloDrive) is the
+  separately maintained application repository. Its access policy and release
+  evidence are managed independently from this documentation repository.
+
 ## Quickstart for documentation contributors
 
 This public repository contains documentation tooling, not the private KiloDrive
 application source.
 
 ```powershell
-git clone https://github.com/Eprecus-LLC/KiloDrive-Architecture.git
+git clone https://github.com/KiloDriveApp/KiloDrive-Architecture.git
 Set-Location KiloDrive-Architecture
 python tools/audit_docs.py
 ```

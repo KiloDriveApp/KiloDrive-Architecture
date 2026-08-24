@@ -55,6 +55,8 @@ REQUIRED_PATHS = (
     "docs/architecture/jurisdictional-compliance.md",
     "docs/architecture/rental-marketplace.md",
     "docs/architecture/scaling-and-capacity.md",
+    "docs/quality/README.md",
+    "docs/quality/testing-and-verification.md",
     "docs/runbooks/README.md",
     "docs/runbooks/_template.md",
     "docs/runbooks/dispatching.md",

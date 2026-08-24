@@ -4,6 +4,7 @@
 - **Status:** Operational release procedure
 - **Last exercised:** Not yet recorded in this public repository
 - **Related architecture:** [API architecture](../architecture/api.md), [hosting](../architecture/hosting.md), and [observability](../architecture/observability.md)
+- **Verification policy:** [Testing and verification](../quality/testing-and-verification.md)
 
 ## Purpose and scope
 
@@ -20,6 +21,11 @@ reviewed changes. If the release needs a schema change, use the
 The guiding idea is simple: a deployment is not “copy some files and see if the
 site starts.” It is a controlled replacement of one known release with another,
 with enough evidence to return to the previous release safely.
+
+The required unit, property, real-MySQL, authorization, contract, concurrency,
+failure-injection, and compatibility evidence is defined in
+[Testing and verification](../quality/testing-and-verification.md). A broad
+controller smoke test does not replace those boundary-specific gates.
 
 ## Roles and decision rights
 
