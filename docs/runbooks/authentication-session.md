@@ -63,12 +63,17 @@ challenge invalidation, and rate-limit decision. Confirm password lockout counte
 were not changed by OTP failures. Do not extend OTP lifetime broadly to resolve a
 delivery incident; fix provider latency and preserve a short security window.
 
-### 2FA and Data Protection
+### Recent authentication, 2FA, and Data Protection
 
-Check recent step-up proof, TOTP clock skew, enrollment confirmation, recovery
-state, and persistent Data Protection key-ring availability across nodes. Warnings
-about an ephemeral key repository are production defects: encrypted secrets may
-become unreadable after restart.
+Distinguish recent authentication from action-bound 2FA step-up. Recent
+authentication accepts the current session's validated `auth_time` within ten
+minutes or one generic, single-use proof bound to the user and tenant. Enrolled
+2FA step-up is bound to one named action and is consumed atomically. Check the
+endpoint's enrollment policy, proof user/tenant/action, consumption, expiry,
+TOTP clock skew, enrollment confirmation, recovery state, and persistent Data
+Protection key-ring availability across nodes. Warnings about an ephemeral key
+repository are production defects: encrypted secrets may become unreadable
+after restart.
 
 ### Passkeys
 
@@ -96,7 +101,8 @@ For suspected compromise:
 1. Revoke affected refresh family/all sessions.
 2. Increment token version if broad access-token invalidation is required.
 3. Disable suspicious passkey/social credentials.
-4. Require verified recovery and recent step-up before re-enabling.
+4. Require verified recovery and the endpoint's recent-authentication/2FA policy
+   before re-enabling.
 5. Rotate signing/provider material if exposure is credible.
 6. Add a narrow WAF/rate-limit rule only if it does not block legitimate recovery.
 

@@ -31,6 +31,20 @@ create required local records, and reconcile incomplete steps. Never create an
 active placeholder account merely because somebody requested an OTP for an email
 or number.
 
+### One registration intent
+
+The reviewed client carries one immutable registration intent from first-run
+choice through password or social registration and final review. It contains
+the intended role, country, contact method, driver account type, and whether a
+rental organization should be created. Dependent request fields are derived
+from that object, never from an older app-mode preference.
+
+The API validates the same combinations before identity creation. A passenger
+intent cannot carry driver/company fields, and a rental-organization request
+must carry the matching company-driver intent. Interrupted signup can restore
+the reviewed intent, but successful authentication clears it so it cannot
+overwrite an authorized workspace later.
+
 ## Passwords
 
 Passwords are processed through a canonical policy regardless of whether signup
@@ -140,6 +154,28 @@ cleanup is atomic from the user's perspective: credentials disappear, hubs
 disconnect, caches wipe, and navigation returns to login. Leaving the shell
 visible while every request returns 401 is both confusing and risky.
 
+## Recent authentication and 2FA step-up
+
+These controls answer different questions and must not be described as one
+token. A recent-authentication boundary accepts either the current access
+session's validated `auth_time` when it is no more than ten minutes old or a
+generic, single-use proof bound to the same user and tenant. The proof is issued
+after password or supported linked-social reauthentication. It is deliberately
+not bound to one action, but it is consumed once and cannot become a second
+access token.
+
+An enrolled 2FA step-up proof is stricter: it is bound to the named protected
+action, user, and tenant and is consumed atomically. Reusing it, presenting it
+for another action, or presenting it after expiry fails with the same coarse
+error. Accounts without enrolled 2FA follow the endpoint's explicit policy;
+ordinary accounts are not silently locked out merely because 2FA is optional,
+while selected System Administrator security/settings mutations require
+enrollment before they proceed.
+
+The KiloDrive app lock is only a local privacy boundary. A biometric unlock or
+the app's own four-digit PIN never satisfies recent authentication or 2FA for a
+wallet, payout, passkey, contact, password, or administrator mutation.
+
 ## OTP and recovery challenges
 
 A safe OTP challenge is:
@@ -197,6 +233,19 @@ authenticated linking ceremony or a confirmation challenge sent through the
 existing account. Apple flows also bind a client-generated nonce to prevent token
 replay/substitution.
 
+When social signup discovers that the provider belongs with an existing
+KiloDrive account, the server creates an expiring pending-link record and gives
+the client a protected opaque intent. The user signs in to the existing account,
+performs recent authentication, reviews the existing and provider identities,
+and explicitly confirms or cancels. The record is user-bound, provider-bound,
+single use, replay protected, and invalid after expiry.
+
+This ceremony also protects hidden or relay emails: the provider subject and
+verified claims—not a guessed display name or matching email string—identify
+the external account. Provider display text such as “social” is never accepted
+as a person's real name when a reviewed name claim is available; missing names
+are requested from the user rather than invented.
+
 ## Authorization decision stack
 
 For a protected resource, evaluate:
@@ -236,6 +285,11 @@ sign-out, OTP denial-of-service separation, cross-database partial registration,
 social-email takeover prevention, 2FA boundary mutations, cross-node passkeys,
 role/workspace restore, and cross-user object access. Include negative tests;
 happy-path login alone proves very little.
+
+Also test contradictory registration intents, interrupted-signup restoration,
+pending-social-link expiry/replay/account mismatch, recent-authentication
+expiry, linked-provider reauthentication, last-login-method protection, and
+account-switch cleanup.
 
 See [ADR 007](../adr/007-asymmetric-jwt-signing.md) and the
 [authentication/session runbook](../runbooks/authentication-session.md).

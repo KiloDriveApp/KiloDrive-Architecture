@@ -25,32 +25,38 @@ reading order. It builds one idea at a time:
 
 1. [System context](docs/architecture/system-context.md) — what KiloDrive does
    and where the important trust boundaries sit.
-2. [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md) —
+2. [Product and operational doctrine](docs/governance/product-and-operational-doctrine.md) —
+   the rules that connect product intent, security, money, safety, failure
+   recovery, honest status, and production evidence.
+3. [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md) —
    why identity is global while trips and money remain country-local.
-3. [Entity identification](docs/architecture/entity-identification.md) — why
+4. [Entity identification](docs/architecture/entity-identification.md) — why
    UUIDv7 is used and why public support IDs are not database keys.
-4. [Realtime and asynchronous processing](docs/architecture/realtime-and-events.md) —
+5. [Realtime and asynchronous processing](docs/architecture/realtime-and-events.md) —
    the difference between durable truth and fast delivery.
-5. [Geospatial processing](docs/architecture/geospatial.md) — how location,
+6. [Geospatial processing](docs/architecture/geospatial.md) — how location,
    route matching, and deviation detection work without treating noisy GPS as
    perfect evidence.
-6. [Rider and driver safety](docs/architecture/rider-driver-safety.md) — how
+7. [Rider and driver safety](docs/architecture/rider-driver-safety.md) — how
    eligibility, pre-trip confirmation, RideCheck, emergency actions, evidence,
    and human response protect both sides of a trip.
-7. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) —
+8. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) —
    how scheduled and multi-stop rides, driver business tools, family/business
    travel, courier, rentals, reputation, and support remain recoverable.
-8. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
+9. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
    how country dossiers, shard gates, effective rules, approvals, and retained
    evidence turn legal requirements into enforceable operations.
-9. [Financial systems](docs/architecture/financial-systems.md) — wallets,
+10. [Financial systems](docs/architecture/financial-systems.md) — wallets,
    holds, double-entry journals, idempotency, and reconciliation.
-10. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
-   availability, payment authorization, evidence, deposits, and disputes form
-   one lifecycle.
-11. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
-   production safely.
-12. [Testing and verification](docs/quality/testing-and-verification.md) — how
+11. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
+    availability, payment authorization, evidence, deposits, and disputes form
+    one lifecycle.
+12. [System Administration](docs/architecture/system-administration.md) — how
+    capabilities, country workspaces, work queues, investigations, step-up,
+    audit, and safe recovery fit together.
+13. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
+    production safely.
+14. [Testing and verification](docs/quality/testing-and-verification.md) — how
     invariants, negative authorization, races, failure injection, real
     boundaries, and signed artifacts become release evidence.
 
@@ -101,11 +107,13 @@ same thing:
 - Push, email, SMS, WhatsApp, maps, payment, and voice providers are external
   dependencies. Their success must never be guessed from a network timeout.
 
-The current product lifecycle map—including scheduled guarantees, multi-stop
-and hourly rides, privacy-preserving marketplace estimates, professional driver
-tools, family/business delegation, courier chain of custody, versioned rental
-lifecycle foundations, two-sided reputation, and structured support—is maintained in
-[Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md).
+The [marketplace lifecycle map](docs/architecture/marketplace-product-lifecycles.md)
+explains the reviewed product baseline. It covers scheduled guarantees,
+multi-stop and hourly rides, advisory marketplace intelligence, professional
+driver tools, family/business delegation, assisted riders, wallet fare splitting,
+courier chain of custody, rentals, two-sided reputation, and support. Each
+capability is labelled separately for source maturity, country activation, and
+runtime certification.
 Active-trip native location behavior, privacy limits, recovery, and release
 proof are maintained in the
 [Active-trip location and privacy runbook](docs/runbooks/active-trip-location-and-privacy.md).
@@ -114,7 +122,7 @@ This distinction prevents a common distributed-systems mistake: treating the
 fastest component as the source of truth. Fast state can disappear. Durable
 state must still explain what happened.
 
-## What KiloDrive contains
+## Major components in the reviewed design
 
 | Area | Primary implementation | Responsibility |
 | --- | --- | --- |
@@ -123,11 +131,11 @@ state must still explain what happened.
 | Corporate website | ASP.NET Core Razor Pages | Public content and calculators backed by reviewed API contracts |
 | Mobile | Flutter 3.41 / Dart 3.11 | Rider, driver, rental, tools-only, and System Admin workspaces |
 | Durable data | MySQL 8 | Global identity control plane plus independent country cells |
-| Distributed state | Valkey over TLS | Cache, SignalR backplane, geospatial freshness, rate coordination, and short-lived ceremonies |
+| Distributed state | Valkey over TLS | Production design dependency for cache, SignalR backplane, geospatial freshness, rate coordination, and short-lived ceremonies; runtime activation needs its own evidence |
 | Routing | Google provider adapters and OSRM | Geocoding, route calculation, map matching, and degraded fallback paths |
-| Events | SQL outbox, EventBridge, and SQS | Durable side effects, scalable dispatch, retries, and dead-letter recovery |
+| Events | SQL outbox, optional EventBridge and SQS acceleration | Durable side effects, scalable dispatch, retries, and dead-letter recovery; SQL remains the recovery authority |
 | Object storage | Private S3-compatible object storage | Quarantined uploads, reviewed documents, report artifacts, and authorized call recordings |
-| Realtime media | LiveKit and TURN | Consent-aware rider/driver voice, room tokens, connectivity, and optional egress |
+| Realtime media | LiveKit and TURN | Configurable consent-aware voice, room tokens, connectivity, and egress only where provider, jurisdiction, consent, and retention gates are approved |
 | Observability | OpenTelemetry, ADOT, CloudWatch, Serilog | Correlated traces, bounded metrics, sanitized logs, readiness, dashboards, and alarms |
 
 Version numbers in this public repository are a reviewed documentation
@@ -159,7 +167,7 @@ These questions sound basic. They catch a surprising number of serious defects.
 
 ## Hard-learned lessons
 
-The detailed chapters contain the complete stories. These are the short
+The detailed chapters contain the longer explanations. These are the short
 versions worth remembering:
 
 - **Database version is not application version.** A current schema marker does
@@ -219,11 +227,13 @@ versions worth remembering:
 - [API architecture](docs/architecture/api.md)
 - [Mobile architecture](docs/architecture/mobile.md)
 - [Portal and website](docs/architecture/portal-and-website.md)
+- [System Administration](docs/architecture/system-administration.md)
 - [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md)
 - [Entity identification](docs/architecture/entity-identification.md)
 - [Realtime and events](docs/architecture/realtime-and-events.md)
 - [Geospatial processing](docs/architecture/geospatial.md)
 - [Rider and driver safety](docs/architecture/rider-driver-safety.md)
+- [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md)
 - [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md)
 - [Financial systems](docs/architecture/financial-systems.md)
 - [Rental marketplace](docs/architecture/rental-marketplace.md)
@@ -231,6 +241,7 @@ versions worth remembering:
 - [Hosting topology](docs/architecture/hosting.md)
 - [Observability](docs/architecture/observability.md)
 - [Scaling and capacity planning](docs/architecture/scaling-and-capacity.md)
+- [Plugins and extension points](docs/architecture/plugins-and-extension-points.md)
 - [Database guide](docs/database/README.md)
 
 ### Cloud, integrations, and security
@@ -250,6 +261,7 @@ versions worth remembering:
 - [Testing and verification](docs/quality/testing-and-verification.md)
 - [Architecture Decision Records](docs/adr/README.md)
 - [Architecture decision process](docs/governance/architecture-decisions.md)
+- [Product and operational doctrine](docs/governance/product-and-operational-doctrine.md)
 - [Public documentation policy](docs/governance/public-documentation-policy.md)
 - [Learning diagrams](docs/diagrams/README.md)
 - [Engineering tutorials](docs/tutorials/README.md)
@@ -298,15 +310,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full writing and review guide.
 
 ## Status language
 
-Every chapter uses these terms deliberately:
-
-- **Implemented** — represented in current application code or canonical MySQL
-  scripts and supported by relevant tests.
-- **Configurable** — implemented, but active only when approved provider or
-  deployment configuration is supplied.
-- **Operational policy** — a required human or automated procedure surrounding
-  the implementation.
-- **Planned** — a design direction that must not be presented as deployed.
+Every chapter separates **source maturity**—Implemented, Incremental, or
+Planned—from **deployment state**—Configurable, Uncertified, Certified, Active,
+or Unavailable. Operational policy names a required procedure and its retained
+evidence; it is not a maturity level. Read the exact definitions in the
+[product and operational doctrine](docs/governance/product-and-operational-doctrine.md).
 
 ## Public assurance versus certification
 
@@ -319,11 +327,11 @@ jurisdiction-specific approval.
 
 ## Documentation baseline
 
-- Mobile baseline: KiloDrive `1.0.0+70`
+- Mobile baseline: KiloDrive `1.0.0+82`
 - Flutter baseline: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`
 - Database family: MySQL `8`
-- Schema-contract baseline: `2026.08.24.10`
-- Last architecture review: 2026-08-24
+- Schema-contract baseline: `2026.08.30.1`
+- Last architecture review: 2026-08-30
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).

@@ -11,7 +11,7 @@ on native SDKs.
 The current source targets Flutter 3.41.7 and Dart 3.11.5. The application uses
 Material 3, Riverpod 3, Dio, Firebase services, Google Maps, platform secure
 storage, local authentication, social sign-in, Play/App Store billing, and
-LiveKit/WebRTC. Exact resolved versions are recorded in the private product
+LiveKit/WebRTC. Exact resolved versions are recorded in the reviewed product
 lockfile; this public guide intentionally contains no provider credentials.
 
 Package presence does not prove that a feature is enabled. Firebase, maps,
@@ -51,6 +51,13 @@ that will not exist in a killed process.
 
 ## Authentication and workspace reconciliation
 
+Before account creation, the app carries one immutable registration intent:
+role, country, contact method, driver account type, and rental-organization
+choice. First-run selection and registration do not maintain competing copies.
+An interrupted signup restores that intent, while an authenticated user resumes
+the authorized workspace or incomplete server-backed onboarding journey instead
+of being sent through country/language selection again.
+
 Tokens are stored in platform secure storage. Access tokens are short-lived;
 refresh is serialized so concurrent 401 responses do not rotate the same token
 multiple times. A failed refresh emits a typed session-expired event. The event
@@ -72,6 +79,34 @@ an authorized country workspace before administrative data loads.
 The APK/IPA is an untrusted client. Changing Dart code, replaying an HTTP call,
 or modifying a local role cannot grant server permission. The API revalidates
 role, tenant, country, plan, compliance, wallet, and state-transition rules.
+
+Social registration and social account linking are separate actions. If a
+provider identity collides with an existing account, the app preserves a
+protected pending-link intent and guides the user through authentication,
+recent reauthentication, review, explicit confirmation, or cancellation. It
+does not silently link by email and does not discard the provider transaction
+into an unexplained loading state.
+
+Sensitive profile/security actions obtain a short-lived recent-authentication
+proof from the API after the user re-enters the current password or proves an
+already-linked social identity. The proof complements any required 2FA step-up;
+local app unlock is not an account-security proof.
+
+### App lock and device lifecycle
+
+App lock is a local privacy boundary. When enabled for an authenticated account,
+a cold launch locks before authenticated content is revealed. The sixty-second
+grace applies only when an already-visible app moves to the background and then
+resumes. Biometrics use the platform prompt; the fallback is KiloDrive's own
+four-digit app PIN, not the Android or iOS device PIN. Neither unlock method is
+proof for a wallet, payout, or account-security API. Logout, account switch,
+missing account-bound state, and process restoration cannot inherit another
+user's unlocked session.
+
+Tests distinguish a user-cancelled biometric prompt, temporary failure,
+platform lockout, unavailable hardware, cold launch, short backgrounding, and
+an actual timeout. “Wait one minute before app lock works” is not an acceptable
+substitute for a deterministic policy.
 
 ## Driver onboarding: resumable but not bypassable
 
@@ -107,6 +142,17 @@ administrator and driver notification, while operational bidding still requires
 current licence, vehicle, document, membership, assignment, online and telemetry
 eligibility. A client cannot unlock bidding by skipping screens or editing
 local preferences.
+
+### Managed queue location session
+
+Airport and venue queues do not depend on the toolkit screen remaining open.
+After an explicit, successful join, Flutter requests a short server-authorized
+queue telemetry session and hands it to the same narrow native location bridge
+used for active-trip reliability. Native tracking renews one zone/lease only;
+the UI displays lease freshness and expiry. Leaving the zone, going offline,
+receiving an assignment, lease expiry, logout, or an authoritative server denial
+stops tracking and removes the active position. This is not permission for
+general background driver surveillance.
 
 Vehicle fitness is not country-conditional in the reviewed implementation:
 onboarding, vehicle validation, readiness, and primary-vehicle selection all
@@ -171,8 +217,39 @@ identity plus locale/country context. Image bytes use a bounded account-aware
 LRU with requested decode dimensions based on logical size and device pixel
 ratio. Logout and avatar revision changes evict relevant entries.
 
+A successful profile-photo upload updates the authenticated profile revision
+and provider state before the UI reports completion. Screens use the revisioned
+avatar provider rather than holding an old URL or byte array, so the new image
+appears immediately and survives relaunch after the next authoritative profile
+load.
+
+Legal-name changes do not share the avatar fast path. They create or update a
+governed review state, preserve the last approved identity while review is
+pending, and present the review outcome without exposing evidence URLs or raw
+payloads. This distinction prevents a harmless media refresh from becoming an
+identity-boundary shortcut.
+
 Caches have explicit TTLs and are never an authority for authorization,
 financial balance, driver eligibility, or document approval.
+
+### Assisted-rider and fare-split surface status
+
+Flutter has rider assistance-profile and driver-capability screens, plus fare-
+split owner/invitation screens. These are incremental source surfaces, not an
+active-country claim.
+
+Assisted-rider activation must fail closed on a verified feature policy. The
+current migration still needs to reject an invalid policy signature, gate every
+entry point, render the operational need on the driver offer and assigned trip,
+stop hard-coding option labels/bounds, and connect the stored caregiver
+notification preference to a reviewed dispatcher. Portal parity and real-device
+accessibility remain incomplete.
+
+Fare-split retries must preserve one idempotency key and mandatory expected
+version. The owner needs durable status/expiry/recovery presentation, and a fare
+change that alters a payer's share needs renewed consent. Until server bootstrap,
+client lifecycle, reversal, and country/provider evidence are complete, the
+feature policy keeps purchase/acceptance entry unavailable.
 
 ## Realtime and offline behavior
 
@@ -185,10 +262,28 @@ to the account and tenant, retain the original idempotency key, have a TTL, and
 are removed on logout. Wallet, payout, account-security, or other step-up
 operations are not authorized by a local PIN or a stale offline decision.
 
+The bid outbox is the currently reviewed replayable mutation slice. It stores
+encrypted records in account-bound SQLite using a device-protected key and
+authenticated encryption. Each record retains the idempotency key, request
+hash, expected entity version, workspace ownership, and authoritative offer
+expiry. Missing/malformed expiry fails closed; corrupt or wrong-workspace rows
+are quarantined instead of dispatched; logout removes both records and the
+account binding. This does not authorize offline wallet, payout, profile-
+security, or trip-settlement commands.
+
 Connectivity is advisory: a network indicator may say online while an API or
 provider is unreachable. Repositories classify timeout, cancellation, 401
 refresh, forbidden, successful empty, validation, conflict, rate limit, and
 server failure into stable view outcomes.
+
+Wallet top-up is the reviewed durable customer payment-status slice. After
+checkout the app navigates to a typed `Pending`, `Completed`, `Failed`, or
+`Needs attention` resource keyed by payment ID and idempotency key. A protected,
+account-bound pending reference survives process death; repository/background
+reconciliation refreshes wallet state after completion and exposes receipt or
+support actions. Last-good state remains visible on a recoverable refresh error.
+This does not claim equivalent recovery for every membership, ride, rental, or
+cashout payment path.
 
 ## Navigation and shell ownership
 
@@ -201,6 +296,17 @@ Deep links are treated as untrusted input. The app validates route shape,
 authentication, workspace, and entity access before opening a destination.
 External links use an allow-listed URI and a checked launcher with a localized
 fallback.
+
+Peer tab content uses the shared accessible tab standard, including swipe when
+it does not conflict with a map, carousel, signature canvas, or another
+horizontal gesture owner. Chat and similar pushed screens also provide a
+platform-appropriate back gesture while preserving unsent input and focus.
+
+Complex first-ride concepts are taught in a one-time, account-bound rider or
+driver guide. Time-sensitive creation and bidding screens then use concise
+labels and progressive disclosure rather than repeating a manual above the
+primary action. Dismissing or completing the guide is not permission and never
+changes server eligibility.
 
 ## UI, localization, and accessibility
 
@@ -221,7 +327,13 @@ ARB resources retain exact key and ICU-placeholder parity. The generic Chinese
 resource is the Simplified fallback, not a separate language choice. Money uses
 the active currency context and ISO-aware formatter. Server UTC timestamps go
 through the nullable UTC parser and localized display helpers; malformed input
-shows an unavailable marker rather than the current time.
+shows an unavailable marker rather than the current time. Offset-less server
+values are treated as UTC by the centralized parser; date-picker/local-only
+values stay a separate type of input. KiloDrive's reviewed presentation policy
+uses a localized twelve-hour AM/PM display, including Japanese and Chinese
+resources; rendered locale tests, rather than the device formatter's default,
+prove that policy. Seconds appear only where chat or operational ordering needs
+them.
 
 ## Location and maps
 
@@ -230,6 +342,17 @@ accuracy meet policy, requests a fresh balanced-accuracy fix in parallel,
 updates coordinates first, and reverse-geocodes asynchronously. Nearby
 reverse-geocode results are cached briefly. The UI shows an explicit locating or
 retry state and can display coordinates when geocoding is unavailable.
+
+Recent rider locations are an account-bound convenience list, not a geocoder or
+authorization source. Suggestions retain reviewed display information and
+coordinates under the configured privacy/retention policy; selecting one still
+passes the same quote/create validation as a newly searched place.
+
+Entering the driver bidding hall evaluates service availability, permission,
+location settings, and telemetry freshness before presenting the driver as
+offer-ready. Denial or stale telemetry produces a focused recovery action. A
+driver must not sit in an apparently active hall while the server will reject
+matching because no fresh permitted location exists.
 
 Foreground/background driver telemetry follows platform permissions and store
 policy. An online indicator is not a promise of infinite background execution.
@@ -250,23 +373,33 @@ unapproved foreground-service permissions. iOS declares remote notifications
 but does not use background audio or legacy VoIP keep-alive merely to preserve a
 process.
 
-The optional diagnostic proxy is compile-time gated. A production build rejects
-it. A signed diagnostic build displays a persistent warning and blocks sensitive
-wallet/security flows.
+The customer application contains no proxy-server settings or proxy wording.
+Network interception for an approved support investigation belongs in a
+separately controlled diagnostic environment/build and must never become an
+end-user toggle or silently weaken wallet/security transport.
 
 ## Testing pyramid
 
 1. **Every change:** pure models, formatters, repositories, providers, and widget
-   tests with fakes.
+   tests with fakes. Form/property fuzzing uses recorded deterministic seeds so
+   a discovered boundary failure becomes a permanent regression.
 2. **Merge:** semantics-driven emulator smoke for tools-only, rider, driver, and
    rental workspaces; no credentials in screenshots or artifacts.
-3. **Nightly/release:** real-device permissions, background location, push,
-   biometrics, offline queue, SignalR reconnect, store billing, and calls.
+3. **Required nightly/release lane:** real-device permissions, background
+   location, push, biometrics, offline queue, SignalR reconnect, store billing,
+   and calls. Source and CI configuration do not prove that the lane ran for a
+   release; signed device evidence is retained separately, and iOS remains
+   uncertified until that evidence exists.
 4. **Visual matrix:** pairwise screen harness for dimensions, text scale, theme,
    keyboard, navigation mode, touch target, semantics order, and overflow.
 
 Race tests cover refresh versus mutation, dispose versus response, realtime
 versus refresh, logout versus queued work, and session expiry during navigation.
+
+The default test process is hermetic. It refuses production/external origins
+and real providers even when a developer machine happens to have credentials.
+Crossing a real boundary requires an explicit certification job, non-user
+fixtures, allowlists, a run ID, cleanup, and sanitized evidence.
 
 ## Native dependency release discipline
 

@@ -445,6 +445,33 @@ must not depend on “sleep and hope.” Each wait has a reason, timeout, and us
 failure message. Dates are asserted in UTC at the API/storage boundary and in
 the selected local timezone at the presentation boundary.
 
+## Hermetic boundaries and seeded fuzzing
+
+An ordinary unit, component, repository, widget, or application test is
+hermetic: it cannot reach production, a public API, a real notification
+destination, or a payment/provider account just because credentials or a URL
+exist on the developer machine. The test process validates requested origins
+and provider modes before network work begins. An unexpected external boundary
+is a failed test, not a warning.
+
+Certification is a separate, explicit job. It requires a reviewed environment
+allowlist, non-user destinations/accounts, a unique run ID, automatic cleanup,
+sanitized evidence, and a narrow reason for crossing the boundary. A live test
+flag does not weaken the production application or ordinary test runner.
+
+Form and calculation fuzzing uses deterministic seeds and bounded generated
+values. It covers whitespace, paste, locale decimal separators, negative and
+exponent input, large/overflow values, malformed dates, future enum values, and
+operation sequences. When a generated case finds a defect:
+
+1. record the seed and smallest reproducing input without PII;
+2. add it to the reviewed regression corpus;
+3. fix the product rule or parser rather than filtering the seed out; and
+4. keep randomized exploration plus the deterministic regression.
+
+Fuzzing complements explicit boundary examples. It does not prove usable error
+copy, layout, accessibility, database locks, or provider behavior.
+
 ## Synthetic fixtures and cleanup
 
 Tests use deterministic, clearly non-user fixtures:
@@ -467,7 +494,7 @@ lifecycle operations. Evidence retains only sanitized correlation IDs and
 fixture-run references.
 
 Before a ride/bid test, fixture readiness is asserted explicitly: verified
-licence, compliant active primary vehicle, valid membership, fresh permitted
+driver's license, compliant active primary vehicle, valid membership, fresh permitted
 location, no active assignment, and `canBid=true`. A partially constructed
 fixture is a failed precondition, not an application defect.
 

@@ -4,6 +4,11 @@ This guide is the front door to the KiloDrive documentation set. You do not
 need to read every file before making a useful contribution. You do need to
 understand the ownership and failure boundaries touched by your change.
 
+Before describing a new product as ready, read the
+[product and operational doctrine](governance/product-and-operational-doctrine.md).
+It defines separate source-maturity and deployment-state language and records
+gaps explicitly.
+
 ## Choose a path
 
 ### I am new to backend systems
@@ -41,6 +46,37 @@ Before deciding that a feature is covered, read
 which behavior belongs in unit, provider, widget, integration, native artifact,
 and physical-device tests.
 
+For active-trip behavior, continue with the
+[active-trip location and privacy runbook](runbooks/active-trip-location-and-privacy.md).
+For store releases, distinguish source/widget evidence from signed Play/StoreKit
+device certification as described in the
+[mobile release runbook](runbooks/mobile-release.md).
+
+### I work on identity, onboarding, or social authentication
+
+Read [identity and access](security/identity-and-access.md),
+[mobile architecture](architecture/mobile.md), and the
+[authentication/session runbook](runbooks/authentication-session.md). Then read
+the registration, recent-authentication, social-link, projection, and
+account-switch rules in the
+[product and operational doctrine](governance/product-and-operational-doctrine.md).
+
+Do not treat provider email equality, a local biometric result, or a restored
+workspace preference as account authority. Preserve one registration intent
+and require a server proof for security-boundary changes.
+
+### I work on the Portal or corporate website
+
+Read [Portal and website architecture](architecture/portal-and-website.md),
+[API contracts](architecture/api.md), [identity and access](security/identity-and-access.md),
+and the [Portal/website release runbook](runbooks/portal-website-release.md).
+
+Browser rendering is not allowed to invent authorization. Views must not bind
+directly to unvalidated `JsonElement` or raw JSON. Typed view models,
+anti-forgery, permission-driven navigation,
+security headers, localized display, safe Problem Details, and partial states
+are part of the feature—not decorative cleanup.
+
 ### I work on data or money
 
 Read [tenancy and country cells](architecture/tenancy-and-country-cells.md),
@@ -64,6 +100,33 @@ Read [rental marketplace architecture](architecture/rental-marketplace.md),
 [tenancy and country cells](architecture/tenancy-and-country-cells.md). A rental
 is not ordinary CRUD: inventory, payment authorization, immutable policy,
 condition evidence, deposit handling, and settlement must move together.
+Use the [rental booking recovery runbook](runbooks/rental-booking-recovery.md)
+before changing a lifecycle or attempting operational repair.
+
+### I work on providers, messaging, maps, payments, or media
+
+Start with [provider boundaries](integrations/providers.md), then read the
+appropriate [AWS integration chapter](aws/README.md),
+[observability](architecture/observability.md), and
+[provider outage runbook](runbooks/provider-outage.md).
+
+An adapter plus a fake-provider test certifies KiloDrive's local behavior, not
+the external provider. Live certification uses dedicated non-user destinations,
+least-privilege credentials, maintenance controls, alerts, cleanup, and
+sanitized evidence.
+
+### I work on System Administration or support operations
+
+Read [System Administration architecture](architecture/system-administration.md),
+[Portal and website architecture](architecture/portal-and-website.md),
+[capability status](architecture/capability-status.md),
+[identity and access](security/identity-and-access.md), and the
+[support/dispute runbook](runbooks/support-dispute-cases.md).
+
+Prefer permission- and country-scoped work queues over raw entity menus. Keep
+the selected investigation stable while deltas load, require recent proof for
+security mutations, and present allow-listed metadata rather than payloads or
+internal identifiers.
 
 ### I am on call
 
@@ -127,16 +190,18 @@ in the governed country dossier.
 
 | Directory | Purpose |
 | --- | --- |
-| [`architecture/`](architecture/README.md) | Component design, request flow, data ownership, realtime, geospatial, money, mobile, and hosting |
+| [`architecture/`](architecture/README.md) | Component design, request flow, data ownership, realtime, geospatial, money, mobile, System Administration, and hosting |
 | [`database/`](database/README.md) | MySQL control/cell model, schema lifecycle, ownership, retention, and fingerprinting |
 | [`aws/`](aws/README.md) | Public-safe cloud integration patterns for storage, messaging, eventing, monitoring, IAM, and media |
 | [`security/`](security/README.md) | Authentication, authorization, threat boundaries, privacy, redaction, and incident prevention |
 | [`runbooks/`](runbooks/README.md) | Trigger-oriented diagnosis, containment, recovery, rollback, and verification |
 | [`adr/`](adr/README.md) | Why important architectural choices were made and what tradeoffs remain |
 | [`third-party/`](third-party/README.md) | Package inventories, licensing, SBOM, provenance, and native binary checks |
+| [`integrations/`](integrations/providers.md) | Valkey and external-provider trust, retry, degradation, and certification boundaries |
+| [`quality/`](quality/README.md) | Test taxonomy, hermetic boundaries, fixtures, certification, and release evidence |
 | [`tutorials/`](tutorials/README.md) | Guided walkthroughs that connect multiple architecture chapters |
 | [`diagrams/`](diagrams/README.md) | Compact visual explanations for common system flows and failure boundaries |
-| [`governance/`](governance/architecture-decisions.md) | Documentation safety, decision process, and review expectations |
+| [`governance/`](governance/README.md) | Product/operational doctrine, documentation safety, decision process, and review expectations |
 
 Use [Further reading from primary sources](further-reading.md) when you need the
 standard or official project documentation behind a concept used here.
@@ -146,16 +211,18 @@ For a symptom-first view of the architecture, read
 
 ## The status box convention
 
-Detailed chapters should state whether the described capability is:
+Detailed chapters state both axes where they matter:
 
-- **Implemented** — code/schema plus relevant verification exists;
-- **Configurable** — code exists but needs approved deployment configuration;
-- **Operational policy** — people or automation must perform the procedure;
-- **Planned** — useful direction, not a current production claim.
+- **Source maturity:** Implemented, Incremental, or Planned.
+- **Deployment state:** Configurable, Uncertified, Certified, Active, or
+  Unavailable.
+- **Operational policy:** a separately named human/automated procedure and its
+  retained evidence, not a maturity level.
 
 A chapter may contain more than one status. For example, private S3 storage can
-be implemented while content disarm and reconstruction remains configurable.
-State the boundary instead of choosing the more impressive word.
+be implemented in source while its scanner is configurable and the named mobile
+release remains uncertified. State both boundaries instead of choosing the more
+impressive word.
 
 The [capability status matrix](architecture/capability-status.md) collects the
 main cross-cutting claims and the deployment evidence required before an

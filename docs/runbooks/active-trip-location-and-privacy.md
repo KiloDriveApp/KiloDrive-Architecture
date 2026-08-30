@@ -42,6 +42,21 @@ justify continuous background collection.
 - A server-configured telemetry gap creates a safe metadata event and may start
   a RideCheck. It does not infer wrongdoing from one missing update.
 
+### Managed queue mode
+
+Managed airport/venue queue tracking is not an active trip. It starts only after
+the driver explicitly joins one configured zone and receives a short,
+zone/lease-bound native telemetry credential. The native session renews the
+server-timed lease with fresh, accuracy-bounded samples. It stops on leave,
+verified zone exit, offline state, assignment, expiry, logout, or an
+authoritative rejection. Do not use a screen timer to preserve rank and do not
+reuse a queue credential for trip telemetry.
+
+If queue tracking appears stuck, verify the zone/lease identity, expiry,
+driver-online state, active assignment, last accepted sample age/accuracy, and
+native mode independently. A stale client projection never outranks the server
+lease.
+
 ## First response
 
 1. Establish the authoritative trip ID, lifecycle state, driver identity, and
@@ -141,4 +156,3 @@ Do not close the incident after seeing one moving marker. Prove:
 Retain build hashes, test run IDs, sanitized correlations, configuration
 fingerprints, and reviewer sign-off. Do not retain a customer's route merely to
 prove the test ran; use dedicated fixtures.
-

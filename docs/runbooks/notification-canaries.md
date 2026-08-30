@@ -20,9 +20,18 @@ Destinations are injected from protected environment/secret references. Do not
 put registration tokens, phone numbers, WhatsApp destinations, or email
 addresses in Git or ordinary application settings.
 
-Supported configured probes include FCM, APNs, primary/backup SMS, primary/backup
-WhatsApp, SES, and LiveKit token/room/egress. Provider availability remains
-deployment-specific.
+Supported transports include FCM, APNs, primary/backup SMS, primary/backup
+WhatsApp, SES, LiveKit token/room/egress, and opt-in AWS voice. AWS voice is not
+part of the default provider list; add it only when the destination country,
+origination identity, quota, IAM, cost, and dedicated non-user voice destination
+are approved. Provider availability remains deployment-specific.
+
+The runner's accepted result is only the first evidence item. Device-receipt
+ingestion exists for FCM/APNs, and AWS WhatsApp has delivery and inbound-reply
+correlation. Other delivery/inbound evidence named by the certification contract
+must have an approved, authenticated producer before that provider can become
+certified. A missing producer is not repaired by labelling provider acceptance as
+delivery.
 
 ## What a result may contain
 
@@ -90,13 +99,18 @@ backup.
 
 ## Maintenance mode
 
-Maintenance stops scheduled/manual probes according to policy without erasing
-history. Give it a safe reason code and expiry/owner. Do not use maintenance mode
-to hide an unexplained outage or disable real notification delivery globally.
+Maintenance is deployment configuration at this baseline, while the System
+Administrator diagnostics surface is read-only for that state. Change it through
+the reviewed configuration/release path, record a safe reason code and owner,
+then verify the scheduler and diagnostics after deployment. It stops scheduled
+and manual probes without erasing history; it does not disable real notification
+delivery globally. Do not describe this as an in-app runtime toggle until a
+separately authorized, audited mutation contract exists.
 
 ## Recovery and verification
 
-- Run the failed canary manually and observe a healthy receipt.
+- Run the failed canary manually and observe the required evidence set, not only
+  provider acceptance.
 - Observe at least the configured number of scheduled healthy windows.
 - Verify real outbox oldest age/failure count drains normally.
 - Verify backup routing returned to intended state.

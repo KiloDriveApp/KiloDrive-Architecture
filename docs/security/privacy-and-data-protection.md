@@ -49,7 +49,7 @@ or telemetry gap to ask whether the rider is okay and to create safety evidence.
 One noisy sample is not proof of misconduct, and location never completes,
 cancels, charges, refunds, or settles a trip.
 
-The reviewed production defaults at 2026-08-24 are a 10-minute current-location
+The last public operational-default snapshot, reviewed on 2026-08-24, records a 10-minute current-location
 cache, a 120-minute revocable share link, a shared moving-location window limited
 to the latest 15 minutes, and 365-day ordinary trip-replay retention. Country
 law, an active dispute, a safety case, or a narrowly audited legal hold can alter
@@ -67,6 +67,22 @@ never cached publicly.
 Avatars and vehicle images use re-encoded thumbnails with removed metadata and
 bounded dimensions. The original remains private. A revision-aware authenticated
 cache is bound to the account and wiped on logout.
+
+A profile photograph and a legal identity change are different operations. A
+successful photo upload advances an account-bound revision so every authorized
+surface can refresh without making the object public. A legal-name change keeps
+the existing verified identity until the governed evidence/review case reaches
+an approved transition; it must not silently rewrite documents, payments,
+receipts, safety evidence, or historical audit ownership. Rejection notes and
+submitted evidence remain private and purpose-bound.
+
+Replayable mobile data is also content-class specific. The encrypted bid outbox
+contains only the minimum command/version/idempotency material needed to retry a
+still-valid offer. It is account/workspace-bound, expires with the offer, and is
+wiped with its device-protected key at logout. The general principle is not
+“SQLite is trusted”; it is “a named, bounded operation has a reviewed encrypted
+record and recovery policy.” Wallet, payout, security, private-document, and
+arbitrary API payloads do not enter that queue.
 
 Review notes should be factual and necessary. Do not copy document numbers into
 notification bodies, ticket subjects, or audit metadata just because the field is

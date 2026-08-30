@@ -2,7 +2,7 @@
 
 - **Owner:** Product architecture with Rider, Driver, Rental, Courier, Safety, and Finance service owners
 - **Status:** Implemented baseline with country-configurable controls
-- **Last reviewed:** 2026-08-24
+- **Last reviewed:** 2026-08-30
 - **Related chapters:** [Rider and driver safety](rider-driver-safety.md), [financial systems](financial-systems.md), and [realtime and events](realtime-and-events.md)
 
 KiloDrive no longer treats a trip, parcel, rental, or support request as a form
@@ -29,6 +29,8 @@ team has activated every optional branch.
 | Marketplace intelligence | Implemented advisory projection | Probability, response time, fare range, and heatmap are estimates, never assignment or safety proof |
 | Driver professional toolkit | Implemented/incremental | Queues and forecasts require fresh eligible state and remain non-authoritative |
 | Family and business profiles | Implemented/incremental | Booking, billing, administration, notification, and tracking are separate permissions |
+| Assisted-rider profile and matching | Backend foundation with partial Flutter; disabled/uncertified | Opt-in profile and matching checks exist, but offer/assigned-trip disclosure, caregiver delivery, Portal and field certification are incomplete |
+| Immediate wallet fare splitting | Source candidate; unavailable/uncertified | Core wallet lifecycle exists, but bootstrap parity, mandatory versions/stable retries, consent/fallback behavior, owner operations and reversal certification are incomplete |
 | Courier chain of custody | Implemented/incremental and policy-gated | Protection, prohibited contents, insurance and business shipping require country approval |
 | Rental lifecycle | Implemented/incremental and provider-gated | Deposit, insurance, adjudication and payout paths require configured providers and operators |
 | Two-sided reputation | Implemented/incremental operations | Imported history is reviewed and labelled separately; moderation/appeals need ownership |
@@ -66,6 +68,11 @@ special implementation. The accepted route, ordered stops, fare, payment method,
 driver, vehicle and compliance revision are snapshotted when the assignment is
 made. Later profile or vehicle edits cannot rewrite historical evidence.
 
+The trip summary also snapshots meters plus typed distance provenance from the
+validated route and may advance to validated telemetry at completion. Old trips
+without authoritative retained evidence remain unavailable. Presentation may
+convert meters to kilometres or miles; it never derives distance from fare.
+
 Multi-stop rides persist each stop with sequence, type, planned wait, status,
 arrival, departure, and skip evidence. Round trips add an explicit turnaround
 and return to the original pickup. Hourly rides snapshot the booked period and
@@ -89,6 +96,14 @@ reserved driver's account, duty, membership, documents, assigned vehicle,
 conflicting work, online state, and telemetry freshness. A replacement keeps the
 same rider request and evidence chain. It does not silently manufacture a new
 ride.
+
+When pickup confirmation is enabled by country policy or rider preference, trip
+start requires the active short-lived challenge rather than a deterministic
+trip-lifetime PIN. The server stores only a protected participant/trip/purpose
+digest, limits attempts, rotates older challenges, and invalidates it after use,
+expiry, cancellation, or terminal state. The same challenge may be presented as
+a signed QR. A narrowly authorized emergency override records actor, reason, and
+audit evidence; it is not a general bypass.
 
 ### Failure lesson
 
@@ -142,6 +157,32 @@ contact. Acceptance creates an auditable membership. Final ride acceptance
 rechecks active membership, booking policy, local-time rules, budget, payment,
 and live-tracking permission. Removing a member ends future authority but does
 not erase completed-trip or accounting evidence.
+
+## Assisted riders
+
+The assisted-rider backend foundation and partial Flutter surfaces exist, but
+the feature remains disabled by default and uncertified. A rider can opt into
+practical trip needs: mobility equipment
+and bounded dimensions where necessary, service-animal accommodation, hearing
+or vision communication preferences, extra boarding time, and an optional
+protected caregiver contact/notification preference. A driver separately
+attests the assistance they can provide.
+
+Ride creation snapshots bounded operational detail and backend discovery,
+bidding, and acceptance can check the active vehicle and driver capability. The
+backend accepted trip preserves the profile revision. The system must never
+infer disability or expose diagnostic information.
+
+Important product gaps remain visible: the driver offer UI and assigned-trip DTO
+do not yet present the operational snapshot, the stored caregiver-notification
+preference has no delivery consumer, Flutter surfaces and existing-ride checks
+do not consistently fail closed on policy/kill-switch state, and Portal has no
+assisted-rider workspace.
+
+Source behavior is not country activation. Positive two-device matching,
+caregiver delivery, small-screen and assistive-technology testing, retention,
+driver training/consent, privacy, accessibility, discrimination, and legal
+approval remain required before the product is advertised as active.
 
 ## Courier product and chain of custody
 
@@ -197,6 +238,14 @@ secure participant messages, unread state, owner, SLA, and timeline move through
 Received → Reviewing → Waiting for information → Resolved. Safety matters may
 escalate to the separate SafetyCase lifecycle rather than being buried in a
 normal support queue.
+
+The API publishes a versioned support vocabulary for status, issue, priority,
+subject, next action, reopen policy, and escalation policy. Flutter and Portal
+localize those stable codes rather than displaying enum/wire names. Legacy
+Open/Answered/Closed records map deterministically; the old Answered state uses
+message chronology to distinguish “support is waiting for the user” from
+“support must review a newer user reply.” Unknown future values render a neutral
+unavailable state and disable unsafe mutations instead of exposing a number.
 
 Notifications are outbox work. A provider outage cannot roll back a committed
 case reply. Administrators access only an authorized country workspace and all

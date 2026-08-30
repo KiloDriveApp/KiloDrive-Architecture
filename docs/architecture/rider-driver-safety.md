@@ -22,18 +22,11 @@ that call depend on an API response, telemetry upload, or case-creation request.
 
 ## Status language used here
 
-Every material capability in this chapter carries one of these labels:
+Every material capability in this chapter separates source maturity from
+deployment state using the [product and operational doctrine](../governance/product-and-operational-doctrine.md).
+Operational policy remains a separate people/procedure/evidence control.
 
-- **Implemented** — the reviewed code/schema represents the core behavior and
-  focused verification exists.
-- **Configurable** — the implementation depends on country rules, deployment
-  configuration, permissions, providers, or infrastructure before it is active.
-- **Operational policy** — safety depends on trained people, an approved
-  procedure, retained evidence, and periodic exercises; code alone cannot
-  complete the control.
-- **Planned** — this is a recommended design direction, not a shipped feature.
-
-These labels describe the public source baseline reviewed on 2026-08-23. They
+These labels describe the public source baseline reviewed on 2026-08-30. They
 are not a live production dashboard. Deployment claims require the evidence
 described in [Capability Status and Evidence](capability-status.md).
 
@@ -99,7 +92,7 @@ as a potential threat and every rider as harmless is incomplete.
 
 | Driver threat | Example | Primary controls | Residual risk |
 | --- | --- | --- | --- |
-| Unsafe or deceptive pickup | Rider places pin in an inaccessible or dangerous location | route/pickup display, geofence, pre-bid inquiry, reject/ignore/cancel paths | a valid-looking address can still be unsafe in context |
+| Unsafe or deceptive pickup | Rider places pin in an inaccessible or dangerous location | route/pickup display, pre-bid inquiry, reject/ignore/cancel paths | the standalone geofence helper is not an enforced start control, and a valid-looking address can still be unsafe in context |
 | Rider impersonation | A different person attempts to enter the vehicle | trip participant context and pickup confirmation | rider identity verification may be country-configurable or unavailable |
 | Robbery or assault setup | Fake trip draws driver to an isolated area | account/risk signals, trip trace, support/safety actions, block/report paths | new accounts and cash trips provide less financial identity evidence |
 | Payment or wallet fraud | stolen account, reversed top-up, fake proof of payment | server-side wallet/provider verification, holds, fraud controls, immutable ledger | cash collection and external social engineering remain risks |
@@ -220,6 +213,26 @@ fraud patterns, or high-risk-area warnings. They must avoid redlining, protected
 attribute proxies, and opaque automatic denial. Safety review and appeal are
 part of the design, not later polish.
 
+## Assisted-rider boundary
+
+**Source maturity:** backend foundation implemented, Flutter partial.
+**Deployment state:** disabled by default and uncertified by country.
+
+An assistance profile is opt-in and describes practical trip needs, not a
+diagnosis. The backend protects an optional caregiver contact, records driver
+capability attestation, snapshots minimum operational detail, and can check the
+active driver/vehicle during discovery, bidding, and acceptance. A rider must
+never be assigned a disability by inference, and a driver sees no medical
+record.
+
+That foundation is not yet an end-to-end safety product. The driver offer and
+assigned-trip UI do not present the snapshot, the caregiver notification
+preference has no dispatcher, mobile entry points and existing rides do not all
+fail closed on policy/kill-switch state, and Portal parity is absent. Country
+activation therefore requires those fixes plus two-device accessibility,
+minimum-disclosure/expiry, driver training and consent, caregiver delivery,
+fairness, privacy, legal, and field evidence.
+
 ## Pre-trip confirmation: verify the meeting, not just the account
 
 ### Assigned vehicle snapshot
@@ -245,9 +258,25 @@ assigned vehicle's registration, fitness, and insurance. This is independent of
 the earlier acceptance check because evidence can change while the driver travels
 to pickup.
 
-**Implemented.** The driver marks arrival before starting. Start then requires
-either presence in the pickup geofence or a valid rider pickup confirmation PIN.
-This reduces accidental/wrong pickup and makes remote start harder.
+**Implemented.** The driver marks arrival before starting. Pickup confirmation
+is off by default for the rider unless a country rule requires it; when the
+rider enables it, start also requires the valid rider proof according to policy.
+This reduces accidental/wrong pickup without forcing a PIN into every market or
+trip.
+
+The source contains a tested pickup-distance/geofence helper, but the reviewed
+start transition does not currently enforce it. Therefore documentation and UI
+must not call geofence presence the ordinary start proof. Wiring a location gate
+would require freshness/accuracy, legitimate inaccessible-pickup exceptions,
+audited override, two-device tests, and country policy before the claim changes.
+
+The proof is not a deterministic value derived from the trip. The server issues
+a random, short-lived, single-use six-digit PIN and an optional signed opaque QR
+form. It stores only purpose-, trip-, and participant-bound protected digests,
+limits failed attempts, rejects cross-trip/replay/expired proofs, and cancels or
+consumes the challenge with the trip lifecycle. An emergency administrator
+override requires recent authorization, a reason, and audit evidence; the proof
+itself never enters the audit record.
 
 ### What the user should see
 
@@ -283,6 +312,12 @@ Chat should display participant role and local time while keeping server UTC as
 the stored authority. Logs and telemetry record message ID/status/latency, not
 the message body.
 
+Important pre-trip messages and state changes can request an audible
+notification under the user's category preferences and the operating system's
+policy. Sound only attracts attention. The committed message, unread state, and
+in-screen conversation remain authoritative when push is delayed, duplicated,
+or suppressed.
+
 ### In-app voice
 
 **Implemented/configurable.** In-app calling is restricted to active trip
@@ -316,6 +351,22 @@ prefer in-app communication.
 than a permanent rider/driver relationship. Completion or cancellation closes
 new communication, while retained metadata remains available only to authorized
 support/safety investigation.
+
+### Supervised family travel
+
+**Implemented/incremental and country/legal-gated.** Family management does not
+silently grant a guardian access to the private rider-driver chat. Supervised
+travel models requester, traveler, payer, guardian/supervisor, and driver as
+separate roles. Consent-scoped tracking and notifications expire with the trip,
+and a distinct supervised conversation carries only the messages its named
+participants are allowed to see.
+
+Teen/dependent operation requires more than a family-member row: country age
+rules, guardian authority and consent evidence, pickup/drop-off handover,
+trust/time/payment restrictions, revocation, retention, escalation, and
+safeguarding review. Until those controls and three-client tests are approved
+for a country, the source foundations must not be marketed as a generally
+available teen ride product.
 
 **Operational policy.** Any support exception that reopens communication needs a
 bounded purpose, expiry, actor, and audit. It must not silently bypass a block.
@@ -390,6 +441,13 @@ change occurred.
 
 ### Route deviation
 
+An explicit destination/route alteration is not inferred from GPS. One
+participant proposes the new destination; the affected participant accepts or
+rejects the versioned proposal. Only acceptance updates the trip and produces
+the dedicated durable event, timeline/audit evidence, route/fare recomputation,
+and client reconciliation. A route alteration never dismisses a RideCheck
+signal automatically; safety and commercial consent remain separate records.
+
 **Implemented/configurable.** During an in-progress trip, fresh driver samples
 can be compared with the planned route. The monitor uses a sustained sample
 window, minimum duration, accuracy filtering, configured deviation threshold,
@@ -419,6 +477,11 @@ This is server-side inference from available trip samples, not a guarantee that
 every prolonged stop will be detected. Background permission, device scheduling,
 connectivity, sample freshness, and deployment configuration determine whether
 the monitor receives enough evidence.
+
+A telemetry-gap event carries a real observed-at timestamp, freshness threshold,
+and recovery state. Missing or malformed time displays as unavailable. A
+runtime minimum date such as year 1 must never appear as a plausible safety
+incident date.
 
 A good rider prompt asks a neutral question. It should not accuse the driver or
 suggest an emergency before the user has enough context.
@@ -699,8 +762,9 @@ in ordinary tickets or chat are not a chain of custody.
 
 **Implemented/incremental.** The driver can inspect route/pickup context, ask for
 information in the pre-bid conversation, ignore/reject an offer, and use defined
-cancellation/safety paths. Pickup geofence and rider PIN reduce remote/wrong
-starts.
+cancellation/safety paths. The optional protected rider PIN/QR reduces
+wrong-rider starts. The reviewed trip-start handler does not yet enforce the
+standalone pickup-geofence helper.
 
 **Planned.** Add a dedicated “pickup feels unsafe” action before arrival/start.
 It should cancel or reroute without requiring the driver to type while moving,
@@ -820,7 +884,8 @@ Test:
 - matching/bid/acceptance revalidation under concurrent assignment, block,
   compliance expiry, stale telemetry, and vehicle switch;
 - assignment snapshot immutability;
-- pickup geofence/PIN and start-state transitions;
+- pickup PIN/QR and start-state transitions, plus separate geofence-helper tests
+  until start-time enforcement is explicitly implemented;
 - route-deviation sampling, accuracy rejection, cooldown, rejoin, and repeated
   alert versions;
 - prolonged-stop windows and movement tolerance;

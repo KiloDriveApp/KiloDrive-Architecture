@@ -17,10 +17,26 @@ general concern. The principal workflow is:
 
 `Received → Reviewing → Waiting for information → Resolved`.
 
+This is the canonical versioned contract shared by API, Flutter, and Portal.
+The published contract version is `1` and exposes stable localization codes;
+wire names are not user-facing copy.
+Legacy Open/Answered/Closed data is mapped, not relabelled optimistically:
+Open becomes Received, Closed becomes Resolved, and Answered uses the latest
+user/support message chronology to choose Reviewing or Waiting for information.
+If a client sees a future contract version/value it cannot interpret, it shows
+unavailable, preserves safe read-only context, and blocks status mutation.
+
 Reopening, rejection, withdrawal, escalation and closure are conditional policy
 transitions. A SafetyCase is a separate, more restrictive lifecycle. Do not bury
 an immediate safety concern in an ordinary ticket queue merely because both can
 carry messages.
+
+The version-one requester policy allows a resolved case to reopen for fourteen
+days. After that window, the client creates a follow-up case that references the
+original case number; it does not rewrite the closed timeline. The published
+escalation policy sends overdue ordinary work to the SLA queue. Immediate danger
+uses the safety/emergency path, and a support case promoted into safety becomes
+a separately authorized SafetyCase rather than merely changing a label.
 
 ## Invariants
 

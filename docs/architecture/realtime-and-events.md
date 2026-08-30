@@ -26,9 +26,16 @@ pub/sub ACL must be tested; otherwise rider and driver may connect to different
 nodes and never see each other's updates.
 
 Hub authorization checks the authenticated identity and the specific domain
-relationship. A trip participant can join that trip's groups; a valid bearer
-token cannot join arbitrary groups. Hub-specific tokens are short lived and
-scoped to role/trip where the endpoint uses them.
+relationship. Ordinary API bearer tokens are not hub credentials. The client
+obtains a short-lived hub token (currently 60 seconds at issuance) scoped to a
+`discovery` or `trip` purpose and bound to user, role, tenant, country, token
+version, and participant role. A trip participant can join that trip's groups;
+a valid login or discovery token cannot join arbitrary trip groups.
+
+Broad driver discovery fan-out carries only a refresh hint. Account-scoped
+groups carry the actual offer/bid details after authorization. This reduces the
+damage of a group-subscription defect and prevents rider information from being
+broadcast as a general presence feed.
 
 WebSocket negotiation may place `access_token` in a query string. KiloDrive
 redacts it from reverse proxy logs, Serilog request data, OpenTelemetry URL tags,
@@ -82,6 +89,22 @@ Handler registration is a release contract. We encountered permanently failed
 should enumerate produced message types and prove a handler or intentional
 terminal policy exists for each.
 
+### Lifecycle webhook publication
+
+The country-cell save boundary stages allow-listed webhook dispatch for ride,
+bid, trip, rental booking/inspection/extension/damage/dispute, membership/store,
+and safety lifecycle changes in the same transaction as domain state. Support is
+a control-plane aggregate, so it stages an idempotent control relay that later
+inserts the same event identity into the owning cell outbox. A client disconnect
+after commit cannot cancel either intent.
+
+Webhook envelopes expose opaque aggregate identity, state, monotonic version,
+UTC occurrence time, and the minimum approved money/reference fields. They omit
+names, addresses, coordinates, chat/support text, document references, and
+provider secrets. Source coverage proves publication code and focused tests; it
+does not prove a subscriber endpoint, network, signature configuration, or
+delivery certification in a deployment.
+
 ## Request cancellation after commit
 
 The HTTP request token signals that the client stopped waiting; it does not undo
@@ -119,6 +142,19 @@ The event says what happened (`ride.cancelled`, `bid.changed`, `trip.completed`)
 not what UI trick should occur (“treat fare_updated as removal”). Stable semantics
 make portal, mobile, analytics, and future consumers agree.
 
+Route changes follow the same rule. A participant requests a versioned route
+alteration; the other affected participant accepts or rejects that specific
+proposal. The transaction snapshots the previous/new route context, updates the
+trip only on the allowed transition, writes audit/timeline evidence, and emits a
+dedicated durable route-changed event. A notification or map animation cannot
+silently rewrite the destination.
+
+An audible notification is attention delivery, not a lifecycle transition.
+Pre-trip offer, acceptance, arrival, chat, route-change, and safety interactions
+use category-appropriate sound only when user/platform policy permits it. The
+corresponding in-screen inbox/card remains authoritative after notification
+loss, duplication, or suppression.
+
 ## Background drivers
 
 An “online” flag without fresh telemetry is unsafe. Mobile platforms constrain
@@ -129,6 +165,18 @@ and safety decisions.
 
 Background permissions and foreground-service declarations must match visible
 user functionality and store policy. They are not a keep-alive shortcut.
+
+The bidding hall therefore has an explicit readiness gate: permission, device
+location state, fresh permitted telemetry, server online lease, active
+assignment, and eligibility are checked independently. A missing optional feed
+enrichment cannot force the driver offline, but stale/missing telemetry cannot
+be presented as offer-ready.
+
+Active-trip telemetry gaps are stateful safety observations with a real
+creation time and freshness context. An absent timestamp renders as unavailable;
+it must never fall through to a language/runtime minimum date. Recovery or a
+fresh sample resolves the displayed freshness state without deleting the
+historical safety evidence.
 
 ## Failure behavior
 
@@ -149,6 +197,11 @@ A deterministic two-client suite exercises create → fare change → bid → wi
 with lost responses, duplicate taps, SignalR disconnect, API-node switch,
 background/resume, and out-of-order events. Assert both clients converge to the
 same server version and no side effect duplicates.
+
+Add explicit route-alteration request/accept/reject, telemetry-gap/recovery,
+notification suppression, API recycle, backplane loss, and process-death cases.
+The assertions compare both clients, API response, country-cell rows, outbox,
+audit/timeline evidence, vehicle snapshot, fare provenance, and final cleanup.
 
 See [EventBridge/SQS](../aws/eventbridge-sqs.md), [Outbox recovery](../runbooks/outbox-recovery.md),
 and [Realtime incident response](../runbooks/realtime-signalr.md).

@@ -11,8 +11,9 @@ not the permanent trip record.
 | Chapter | Question it answers |
 | --- | --- |
 | [System context](system-context.md) | Who uses KiloDrive and what sits inside or outside the trust boundary? |
-| [Capability status](capability-status.md) | Which designs are implemented, configurable, incremental, or still planned? |
-| [API](api.md) | How do requests become validated, authorized, idempotent domain work? |
+| [Capability status](capability-status.md) | What is implemented, incremental, or planned in source, and what is configurable, uncertified, certified, active, or unavailable in deployment? |
+| [Product and operational doctrine](../governance/product-and-operational-doctrine.md) | Which product, failure, safety, wording, and evidence rules apply across every architecture chapter? |
+| [API](api.md) | How does the API turn a request into authorized, validated, idempotent domain work? |
 | [Tenancy and country cells](tenancy-and-country-cells.md) | Which database owns each class of data, and why? |
 | [Entity identification](entity-identification.md) | How are internal, external, and human support identifiers designed? |
 | [Realtime and events](realtime-and-events.md) | How does fast delivery coexist with durable recovery? |
@@ -25,6 +26,7 @@ not the permanent trip record.
 | [Documents, media, and voice](documents-media-voice.md) | How are private uploads and call media authorized, scanned, retained, and audited? |
 | [Mobile](mobile.md) | How do Flutter workspaces, repositories, state, offline behavior, and native services fit together? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
+| [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
 | [Hosting](hosting.md) | How are edge, IIS, MySQL, Valkey, routing, and media failure domains separated? |
 | [Observability](observability.md) | How are requests, queues, providers, and customer symptoms correlated safely? |
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |
@@ -53,5 +55,5 @@ prove the ride is open, the bid is actionable, the driver remains eligible, the
 vehicle is compliant, and the expected entity version still matches. The
 database lock and condition make competing accepts deterministic.
 
-These models are repeated throughout the documentation because they apply to
-almost every production incident KiloDrive has encountered.
+These models are repeated throughout the documentation because they explain
+many of the failure modes documented in this repository.

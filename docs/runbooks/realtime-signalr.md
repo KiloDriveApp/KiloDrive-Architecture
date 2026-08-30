@@ -44,10 +44,12 @@ signal. Inspect outbox state/age and correlation without copying payload.
 
 ### 3. Hub authorization and groups
 
-Confirm authentication, token expiry, trip/role scope, participant relationship,
-tenant/country, group naming, and block/lifecycle policy. A System Administrator
-investigation path is explicit and audited; admins do not silently join user chat
-groups.
+The hub accepts a dedicated sixty-second `discovery` or `trip` token; an ordinary
+API bearer token is not a hub credential. Confirm user, role, tenant, country,
+token version, token kind, trip/participant role where applicable, group naming,
+and block/lifecycle policy. Broad driver discovery carries refresh cues only;
+offer and bid contents are account-scoped. A System Administrator investigation
+path is explicit and audited; admins do not silently join user chat groups.
 
 ### 4. Valkey backplane
 
@@ -69,6 +71,13 @@ a small realtime failure into a five- or thirty-second user-visible delay.
 
 Do not mark every ride returned by the driver's feed as “viewed.” Explicit
 per-ride visibility heartbeats are the source for viewer counts.
+
+Bid mutation replay is encrypted and account-bound on supported mobile builds.
+The bounded SQLite outbox retains the original idempotency key, request hash,
+entity version, and authoritative offer expiry. Wrong-workspace or corrupt rows
+are quarantined, malformed/missing expiry fails closed, and logout removes both
+rows and the account key. This outbox authorizes no wallet, payout, security, or
+arbitrary command replay.
 
 ### 6. Capacity
 

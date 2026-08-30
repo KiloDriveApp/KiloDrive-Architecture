@@ -100,7 +100,13 @@ configured cell:
   counts;
 - the exact normalized definitions used by the fingerprint;
 - table sizes and bounded row counts needed for DDL risk;
-- FK/index coverage and normalized duplicate-table candidates; and
+- normalized index signatures (uniqueness, ordered columns/prefixes,
+  expressions, generated/spatial attributes) and FK signatures (child/parent
+  columns plus update/delete actions);
+- FK-support coverage and exact-duplicate, left-prefix, covering,
+  generated-column, spatial, and workload-specific index candidates;
+- bounded `performance_schema` usage and representative `EXPLAIN ANALYZE`
+  evidence for ride, wallet, rental, administration, and write paths; and
 - active sessions/long transactions relevant to the maintenance window.
 
 Use read-only credentials and retain hashes/metadata, not row contents. Compare
@@ -120,10 +126,19 @@ Do not jump from “17 mismatches” to a generic script. Classify each differen
 | Seed/reference drift | missing country rules or wrong encoding | separate idempotent reviewed seed repair |
 | Fingerprint bug | normalizer differs by server representation | fix/test algorithm; do not mutate schema to suit a bug |
 | Configuration mismatch | expected version/hash is stale after approved contract | update reviewed config artifact only after proving canonical result |
+| Exact semantic duplicate | same normalized purpose despite another name | propose removal only after clone/query/write evidence and tested rollback |
+| Left-prefix candidate | one index begins with another index's ordered columns | retain when uniqueness, ordering, covering, collation or workload evidence differs; otherwise review as a measured candidate |
+| FK-support index | index exists to keep referential writes/deletes bounded | retain unless MySQL's exact supporting path and replacement are proven |
+| Country/workload exception | deliberate extra covering/generated/spatial object | record owner, query/workload, rationale, review date and rollback |
 
 Decimal precision, `longtext` nullability, default expressions, index column
 order, collation, and FK delete behavior are meaningful. A superficially similar
 table can still violate the model.
+
+Never delete an object merely because cells have different counts, a table is
+empty, a name looks redundant, or a short observation window reports no reads.
+Preserve unique constraints and FK paths that protect tenant/country isolation,
+money, active assignments, custody, and lifecycle concurrency.
 
 ## Phase 4: produce one reviewed idempotent script
 
@@ -166,10 +181,18 @@ For each path:
 5. start the target API and require valid readiness;
 6. run canonical fixture, financial, ride/bid, rental, support/privacy, and
    authorization tests; and
-7. retain failures and exact script hash.
+7. run FK-orphan attempts, duplicate-key races, representative query plans and a
+   concurrent write/lock benchmark; and
+8. retain failures, before/after signatures, exception register, rollback proof,
+   and exact script hash.
 
 If empty bootstrap and upgraded clone differ, the canonical schema/history is
 still broken even if one production cell starts.
+
+For a physical-object cleanup, repeat the same program on a restored backup and
+then one approved canary cell before wider application. Required signatures must
+remain identical; every retained exception needs an owner and rationale. Stop on
+query-plan, referential, uniqueness, latency, deadlock, or lock-wait regression.
 
 ## Phase 6: production execution
 
@@ -239,6 +262,11 @@ On any error:
 Prefer expand-first schema so the previous application remains compatible. If
 the binary fails after a successful compatible expansion, roll back the binary,
 not the schema.
+
+Index/FK cleanup rollback is explicit DDL tested on the same clone. Capture the
+complete definition before change; a vague “recreate the index” note is not a
+rollback. If a canary regresses, stop rollout, apply the reviewed restoration,
+re-run plans/integrity/readiness, and retain the incident evidence.
 
 Destructive contract cleanup happens in a later release after zero-reference and
 data-retention proof. If a destructive operation fails and integrity is uncertain,

@@ -96,9 +96,12 @@ the [scheduled-ride guarantee runbook](scheduled-ride-guarantee.md) for recovery
 Airport/venue queues are expiring memberships, not permanent ranks. Joining
 requires an online eligible driver, fresh permitted position inside the zone,
 and no active assignment. A driver can occupy only one active queue. Check zone
-configuration, location age, queue heartbeat, unique active membership, order,
-assignment transition and client projection. Remove/expire a stale entry through
-the supported queue command; do not reorder or delete competitors manually.
+configuration, location age, the zone/lease-bound native telemetry session,
+server-timed renewal, unique active membership, order, assignment transition,
+verified zone exit and client projection. Screen lifetime does not preserve a
+rank. Offline, assignment, exit, lease expiry, logout, or authoritative denial
+closes it. Remove/expire a stale entry through the supported queue command; do
+not reorder or delete competitors manually.
 
 ## Contain
 
@@ -133,8 +136,9 @@ Run a deterministic two-client fixture through:
 7. disconnect/retry at commit and publish boundaries.
 
 Add scheduled reserve/reconfirm/replacement/cutoff races and queue join,
-heartbeat expiry, duplicate join, assignment removal, network loss and re-entry
-when either feature changes.
+native-session renewal, heartbeat expiry, duplicate join, assignment removal,
+zone exit, killed-state recovery, network loss and re-entry when either feature
+changes.
 
 Verify no duplicate assignment, both screens converge, cancelled/expired offers
 disappear, event versions increase, and durable backlogs return to normal.

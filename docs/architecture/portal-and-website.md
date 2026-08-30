@@ -77,6 +77,21 @@ dedicated entity pages rather than raw JSON dialogs, independent tabs for
 related subdomains, field-specific validation, and explicit destructive
 confirmation. A safe support/correlation reference accompanies failures.
 
+The API and Flutter currently contain incremental, country/legal-gated
+foundations for guardian consent, dependent travel policy, scoped tracking, and
+a separate guardian/rider/driver supervised conversation. Portal teen-account
+enrollment and supervised three-way communication are not enabled at this
+baseline. Portal wording must say so directly; a general family membership row
+must never be presented as an approved teen product or as permission to expose
+the private rider-driver chat.
+
+The Portal also has no operational assisted-rider profile/capability workspace,
+fare-split owner/payer lifecycle, or automated-payout certification and
+reconciliation workspace at this baseline. Generic readiness or cashout screens
+are not parity. These destinations remain absent or explicitly unavailable
+until their typed contracts, permissions, partial states, step-up rules, and
+end-to-end evidence are reviewed.
+
 ## Corporate website flow
 
 The website renders public pages on the server. Published content is loaded from
@@ -170,7 +185,11 @@ targets, sufficient contrast, and responsive navigation. Validation names the
 specific field and preserves safe input. Wide tables have a compact/card form on
 narrow screens rather than an inaccessible horizontal layout.
 
-Dates arrive as UTC and render in the operator's selected/device timezone.
+Dates arrive as UTC and render in the operator's validated selected IANA
+timezone. Reviewed user-facing displays use localized twelve-hour AM/PM time;
+UTC remains the stored/export evidence and may appear only when clearly labelled
+for an authorized technical context. Null, malformed, and sentinel timestamps
+render unavailable rather than substituting the current time.
 Money arrives as integer minor units plus row currency and uses the ISO exponent;
 Razor never interpolates `AmountMinor` as though it were a major decimal. API
 numeric enums use one tolerant name mapper so users see “Approved,” not `2`.
@@ -229,7 +248,8 @@ startup, login/logout, correlation, role menus, GET rendering, anti-forgery POST
 CSP/headers on success and failure, localized critical pages/calculators, clean
 artifacts, and rollback to the previous immutable package.
 
-See [Portal and Website Release](../runbooks/portal-website-release.md).
+See [System Administration architecture](system-administration.md) and
+[Portal and Website Release](../runbooks/portal-website-release.md).
 
 Configuration is deployed outside the immutable application package. A publish
 must not overwrite Data Protection keys, logs, uploads, or operator-owned

@@ -51,6 +51,41 @@ indexes and foreign keys are explicitly compared. Objects outside the compiled
 required model do not automatically make the contract valid or invalid, which
 is why retirement still needs a separate zero-reference process.
 
+### Required parity and physical-object review are different
+
+Two country cells can have the same required fingerprint while one contains
+additional indexes or foreign keys. That is not automatically drift and it is
+not automatically healthy. The review exports normalized signatures from
+`information_schema` and classifies every extra object as:
+
+- exact semantic duplicate;
+- possible left-prefix overlap;
+- deliberate covering index;
+- generated-column or spatial index;
+- index required to support an FK/write path; or
+- country/workload-specific object with a named owner and rationale.
+
+Names and raw object counts are not proof. Column order, uniqueness, prefix
+length, collation/expression, referenced columns, and delete/update actions are
+part of the signature. A candidate removal also needs representative
+`EXPLAIN ANALYZE`, performance-schema usage over a meaningful window, concurrent
+write/lock measurements, restored-clone tests, and tested rollback DDL. Empty or
+apparently unused never means safe to drop, especially for tenant isolation,
+active-assignment uniqueness, and financial integrity.
+
+The readiness contract proves required-object parity. A separate reviewed
+exception register proves why intentional physical differences remain. Do not
+claim that every country has physically identical indexes/FKs until both checks
+pass.
+
+The 2026-08-30 source review also found a product-specific bootstrap gap:
+fare-split entities appear in the upgrade/alignment path but not in canonical
+`database/schema.sql`. That means a restored or empty environment is not yet
+equivalent for that feature. Fare splitting therefore remains unavailable until
+the canonical bootstrap, compiled model, alignment path, fingerprints, and
+empty/restored-clone tests converge. Running alignment only on production is not
+a valid repair.
+
 ### Why a version string is insufficient
 
 Consider two cells both labelled `vN`:

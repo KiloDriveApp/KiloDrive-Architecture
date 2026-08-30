@@ -36,6 +36,7 @@ KiloDrive's rule is simple to say and important to enforce:
 | Country trip/financial anonymization | Country cell | Local retention and accounting law | Cell-local governed execution |
 | Current driver location and GEO candidates | Valkey | High write rate, short-lived presence, multi-node lookup | Eventual/ephemeral with TTL |
 | Trip replay samples | Country cell | Durable trip/safety evidence | Batched, deduplicated persistence |
+| Trip summary distance and provenance | Country cell | Historical route/telemetry fact belongs to the trip | Strong snapshot; legacy unavailable unless authoritative evidence exists |
 | Identity documents and attachments | Private object storage plus control/cell metadata by content class | Bytes do not belong in relational/web roots; metadata carries authorization and scan status | Object and metadata coordinated; quarantined until clean |
 | Provider identifiers/status | Owning local operation or global provider-health store | Reconciliation and operational health | Provider-event eventual, idempotent |
 | Calculators/reference catalogues | Control or cell according to scope | Universal data once; country rules locally where regulated | Versioned/effective-dated where prices change |

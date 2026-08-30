@@ -73,6 +73,28 @@ when image delivery fails.
 A presigned URL is a temporary bearer credential. Keep it very short lived and
 out of logs, analytics, email, referrers, and screenshots.
 
+### Restricted System Administrator viewer
+
+Identity and compliance evidence does not use the operating system's generic
+share/open flow. An authorized System Administrator obtains a short-lived
+protected viewer session after the required recent authentication and 2FA
+step-up. Every byte request rechecks the active administrator session/token
+version, document-view capability, selected country workspace, tenant,
+document ownership, and clean scan state.
+
+The UI shows reviewed metadata—document type, human-readable status, upload
+date, review notes, and audited actions—without exposing an object key, storage
+path, internal user identifier, or raw signed URL. Restricted content cannot be
+shared through the ordinary OS sheet. Temporary bytes are cleared on close,
+logout, session revocation, and process restoration. Platform screenshot
+protection is a useful best-effort control, not digital-rights management and
+not a reason to weaken authorization or audit.
+
+Expected `401`, `403`, `404`, expired-session, and `409` quarantine outcomes
+render stable guidance. Cross-tenant/country and revoked-session tests prove
+denial; access-audit tests prove that a successful view leaves accountable
+evidence without copying the document contents.
+
 ## In-app voice boundary
 
 LiveKit rooms belong to a specific trip and call session. The API authorizes both

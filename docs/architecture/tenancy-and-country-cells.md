@@ -90,12 +90,17 @@ authority. Authentication code must use the control identity context.
 
 The routing decision occurs before a feature handler uses the country database.
 
-1. Authentication validates the access token and its signature, expiry, token
-   version, role, tenant, and home-country claims.
+1. Authentication validates the access token signature and expiry, then
+   revalidates the global control identity's active status, role, and token
+   version. Signed claims are necessary but are not the final authority after
+   an account is locked, revoked, moved, or changed.
 2. The cell resolver selects the configured country connection. For an ordinary
    user, the signed home-country claim wins; a request header cannot switch it.
-3. Tenant middleware resolves the tenant slug and confirms it matches the signed
-   tenant identifier.
+3. Tenant middleware resolves the tenant slug and confirms it matches both the
+   signed tenant identifier and an active control-plane cell membership for the
+   exact tenant, country, role, and user. The sole no-local-projection exception
+   is a globally authorized System Administrator using the explicit workspace
+   path.
 4. The scoped `TenantContext` is populated.
 5. EF Core global query filters constrain every `TenantEntity` to that tenant.
 6. The feature handler applies ownership, role, state, and business checks that
@@ -113,6 +118,12 @@ the query.
 
 Tenant filtering prevents cross-tenant leakage; ownership authorization prevents
 same-tenant IDOR. Both are required.
+
+Claim drift fails closed. A token minted before role removal, token-version
+change, account lock, or cell-membership revocation cannot keep operating merely
+because its signature is valid. Tests cover wrong country, wrong tenant, stale
+role/token version, inactive membership, ordinary-user header switching, and the
+intentional System Administrator exception.
 
 ## System Admin workspace selection
 

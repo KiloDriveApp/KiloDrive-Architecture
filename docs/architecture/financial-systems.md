@@ -10,15 +10,11 @@ provider that actually moved the funds.
 
 ## Status legend
 
-The descriptions below deliberately distinguish three states:
-
-- **Implemented** means the behavior is represented in the current source and
-  schema.
-- **Configurable** means an adapter or control exists, but it works only when an
-  operator supplies approved provider configuration and enables it.
-- **Policy or planned extension** means the architecture reserves a boundary;
-  it must not be described as a live customer capability until release evidence
-  proves it.
+This chapter uses the doctrine's two axes. **Implemented**, **Incremental**, and
+**Planned** describe source maturity. **Configurable**, **Uncertified**,
+**Certified**, **Active**, and **Unavailable** describe a named deployment.
+Provider configuration, a country operating policy, and real reconciliation
+evidence are therefore separate facts; none can substitute for another.
 
 ## Money representation
 
@@ -124,6 +120,20 @@ Provider POST retries need an additional rule. A timeout after capture is an
 **unknown outcome**, not a failed payment. The adapter first queries or waits for
 the provider's idempotent result before attempting another mutation.
 
+### Durable payment status after app or network loss
+
+Checkout navigation is not the payment record. The API persists a payment-
+status resource keyed by payment ID and idempotency key before handing control
+to a provider. The client can immediately navigate to a durable state:
+`Pending`, `Completed`, `Failed`, or `Needs attention`.
+
+A repository/background reconciliation path survives app termination, delayed
+or duplicate/out-of-order webhooks, and a provider timeout after capture. On
+completion it refreshes wallet/entitlement state and offers the authorized
+receipt; unresolved outcomes link to support without encouraging a second
+payment attempt. This same state must be visible to authorized operations staff
+with safe correlation evidence.
+
 ## Typical lifecycle examples
 
 ### Wallet transfer
@@ -156,6 +166,21 @@ reconciliation compares requested count and value, issued identifiers, active /
 redeemed / expired / revoked states, wallet credits, promotion expense, and
 journals. A balanced ledger does not excuse an accidentally duplicated batch.
 
+### Durable wallet top-up status
+
+Wallet top-up does not treat an HTTP response as the financial truth. The
+implemented status resource is keyed by payment ID and idempotency key and
+exposes `Pending`, `Completed`, `Failed`, or `Needs attention`. Mobile retains
+only an account-bound protected pending reference, restores it after process
+death, reconciles in repository/background work, refreshes the wallet after
+completion, and exposes receipt or support actions. Last-good status remains
+visible during a recoverable refresh failure.
+
+This contract is currently scoped to wallet top-ups. Membership, ride, rental,
+cashout, or other payment entities must not be advertised as having the same
+durable customer status until their own handlers, clients, and crash-point tests
+prove it.
+
 ### Ride and delivery escrow
 
 For wallet-paid work, acceptance can reserve the customer amount. Completion
@@ -173,6 +198,47 @@ execute or fraud-match a payout. Requesting a cashout holds the amount. Approval
 moves it into payable state, provider settlement clears it, rejection or a safe
 reversal releases the hold. A payout method cannot be removed while an active
 cashout depends on it.
+
+“Verified” must mean provider ownership verification for automation. The current
+local user-confirmation path is not that proof and cannot by itself make a
+destination eligible for automated payout.
+
+Cashout approval is not proof of provider settlement. The source includes a
+protected-destination provider adapter, durable outbox initiation and
+reconciliation, signed-webhook transition path, payout-transfer evidence, and
+return/reversal accounting. Those foundations remain dormant and
+provider-specific: no supported administrative command currently records the
+required provider or instant certification timestamps, the generic adapter is
+not a named certified provider, and multi-country callback scope still needs
+explicit proof. Unless the active country policy records provider
+certification and a separate measured instant-payout certification, the product
+uses a reviewed processing range and a durable status such as Pending review,
+Approved for processing, Completed, Reversed, or Needs attention. Adapter
+presence alone must never unlock **Instant payout** wording.
+
+### Multi-payer trip settlement
+
+Fare splitting is a source-implemented, fail-closed wallet candidate for immediate
+rides. The rider configures one to five saved recipients before accepting a
+driver. Each invited payer accepts or declines an expiring fixed-minor-unit or
+basis-point share; the rider is recorded as the fallback payer. At acceptance, eligible
+shares are allocated exactly, wallets are locked in deterministic order, and
+the system holds each share. Completion settles those holds and records one
+payment per payer; cancellation releases them.
+
+An ordinary wallet transfer after settlement is still a different product and
+cannot rewrite fare responsibility. Scheduled/guaranteed fare splitting is
+explicitly unavailable. This is not production-ready: canonical `schema.sql`
+omits the fare-split objects, conditional versions are optional on relevant
+routes, client retries do not preserve one idempotency key, accepted-payer
+insufficient funds fail acceptance rather than applying a reviewed fallback,
+and a changed winning fare can alter percentage obligations without renewed
+payer consent. Owner status, expiry/audit/reconciliation queues, Portal parity,
+and notification coverage are incomplete. The source contains proportional reversal allocation,
+but documentation must not claim refund or chargeback certification until that
+allocator is integrated with the payment reversal lifecycle and provider,
+journal, concurrency, insufficient-funds, notification, privacy, and daily
+reconciliation matrices pass.
 
 ### Membership
 
@@ -194,7 +260,7 @@ confused.
 Riders use KiloDrive without a rider subscription. Driver and rental providers
 choose Free, Silver, or Gold. Paid terms are one week, one month, or one quarter;
 "quarterly" means the reviewed three-month term, not an instalment loan. The
-published/store presentation catalogue reviewed on 2026-08-24 is:
+published/store presentation catalogue reviewed on 2026-08-30 is:
 
 | Audience and tier | Week | Month | Quarter | Published allocation or headline limit |
 | --- | ---: | ---: | ---: | --- |
@@ -208,11 +274,12 @@ published/store presentation catalogue reviewed on 2026-08-24 is:
 
 These figures document the reviewed published/store presentation; they are not
 proof that a live database, store console, or every server handler is aligned.
-At this review, the canonical bootstrap still transitively sources legacy driver
-seed prices (Silver USD 15/54/156 and Gold USD 50/180/520) from
-`driver-membership-model.sql`. That discrepancy must be reconciled and verified
-against live plan rows and store-product mappings before a release can claim
-operational price parity. This public architecture baseline makes no such claim.
+The canonical membership bootstrap/alignment scripts now use the reviewed
+50%-reduced values above for driver and rental audiences. Runtime certification
+still compares the named release's country plan rows with the native store
+product, base plan, offer, term, currency, minor-unit amount, and localized
+display price. A missing/stale mapping keeps the plan visible but disables that
+purchase action.
 
 Similarly, the rental vehicle counts above are published product allocations.
 They must not be described as uniformly enforced limits until all rental

@@ -533,8 +533,8 @@ membership term, fresh location, wallet, or clean assignment state.
 
 ### Why the assumption failed
 
-The test assumed “driver exists” meant “driver can bid.” In a mature domain,
-eligibility is a graph and changes over time.
+The test assumed “driver exists” meant “driver can bid.” Bidding eligibility
+depends on several records that can change independently.
 
 ### The durable practice
 
@@ -561,7 +561,228 @@ Every chapter uses **Implemented**, **Configurable**, **Operational policy**, or
 **Planned**. Claims come from code, schema, tests, and approved evidence. The
 guide teaches architecture without promising what it cannot prove.
 
-## Use the lessons, do not worship them
+## 29. A signup intent needs one authority
+
+### What we saw
+
+First-run and registration each asked for role and country. One screen could
+show Passenger while stale preferences still submitted company-driver fields.
+
+### Why the assumption failed
+
+Duplicated selectors were treated as harmless presentation state even though
+they controlled identity shape and country projection.
+
+### The durable practice
+
+Carry one immutable registration intent through review and commit. Derive
+dependent fields from it, validate the same combinations on the server, and
+restore or clear it explicitly across interruption and authentication.
+
+## 30. A social collision is a linking ceremony, not a dead end
+
+### What we saw
+
+A legitimate provider identity reached an existing KiloDrive email and the
+client either stopped or sent the user back to login without preserving intent.
+
+### Why the assumption failed
+
+Automatic email linking risks takeover; discarding the attempt makes secure
+behavior feel broken.
+
+### The durable practice
+
+Preserve an expiring protected pending-link intent. Authenticate and recently
+reauthenticate the existing account, display both identities, require explicit
+confirmation, and make replay, mismatch, expiry, and cancellation ordinary
+tested outcomes.
+
+## 31. A store price is a contract, not a catalogue guess
+
+### What we saw
+
+Plan fees, API mappings, base plans, offers, and native store prices could be
+loaded independently. Filling a missing value with a convenient price made the
+screen look complete while the purchase contract was not.
+
+### Why the assumption failed
+
+The store, not the app string table, owns the localized customer charge. Product
+and term identity are part of the entitlement.
+
+### The durable practice
+
+Require an exact active country/currency/platform/plan/term/product/base-plan/
+offer match and the native localized price. Preserve non-store plan information
+on partial failure, but disable the unsupported purchase rather than inventing
+price or duration.
+
+## 32. Background trip tracking belongs to the platform lifecycle
+
+### What we saw
+
+Dart timers worked in the foreground and then stopped under screen lock, Doze,
+process pressure, or iOS suspension while the UI still implied live tracking.
+
+### Why the assumption failed
+
+A Flutter isolate is not a background-execution guarantee. Mobile operating
+systems require visible, purpose-specific native behavior and store disclosure.
+
+### The durable practice
+
+Bind native background location to the active assignment/trip lifecycle, show
+the platform-required visible state, queue bounded account-bound samples, and
+stop on every terminal transition. Certify foreground, background, killed,
+permission-denied, and network-handoff behavior on physical devices.
+
+## 33. A device token belongs to an account session
+
+### What we saw
+
+One phone was used for several test accounts. Re-registering the same FCM/APNs
+token without account/session ownership created duplicate or misdirected
+delivery risk.
+
+### Why the assumption failed
+
+A device identifier was treated as a permanent user address rather than a
+revocable binding that changes on login, logout, reinstall, and provider token
+rotation.
+
+### The durable practice
+
+Bind tokens to account, installation, session, platform, and revision. Upsert
+idempotently, revoke old ownership during account switch/logout, reject stale
+bindings, and test multi-account and token-rotation races.
+
+## 34. Feature code is not country readiness
+
+### What we saw
+
+Routes and tables existed for rentals, payments, providers, and safety while
+country reference data, legal approval, provider support, or operational owners
+were incomplete.
+
+### Why the assumption failed
+
+Schema and compilation prove shape, not lawful or supportable operation.
+
+### The durable practice
+
+Use one versioned country capability registry with owner, dependencies, rollout,
+maintenance/kill switch, readiness predicate, customer label, and rollback.
+Unknown state fails closed for destructive and financial actions.
+
+## 35. Last good data must look stale when refresh fails
+
+### What we saw
+
+A refresh either replaced useful rows with a spinner/error or left old content
+looking current after the network failed.
+
+### Why the assumption failed
+
+The screen modeled “data” and “error” as mutually exclusive even though a
+cached successful result and a failed refresh can both be true.
+
+### The durable practice
+
+Keep the last good view model, display refresh failure, last-sync and reconnect
+state, and disable mutations whose preconditions cannot be revalidated. Reserve
+empty state for a successful empty response.
+
+## 36. A payment timeout needs a durable destination
+
+### What we saw
+
+A checkout could be captured while the app lost the response. Returning to the
+wallet gave no reliable place to learn whether money moved.
+
+### Why the assumption failed
+
+The transient HTTP response was treated as the payment lifecycle.
+
+### The durable practice
+
+Create a payment-status resource keyed by payment ID and idempotency key before
+handoff. Navigate to Pending/Completed/Failed/Needs attention, reconcile webhook
+delay and unknown outcomes, and refresh balances/receipts from durable state.
+
+## 37. Admin refresh must preserve investigation context
+
+### What we saw
+
+Periodic refresh replaced an administrator's list with shimmer, changed row
+order, and lost selection or scroll while a case was being inspected.
+
+### Why the assumption failed
+
+Freshness was optimized without treating focus and the selected entity as
+operator state.
+
+### The durable practice
+
+Fetch deltas in the background, show the number of new events, merge by server
+version, and pause visual replacement while an editor or dialog owns focus.
+Explicit refresh remains available.
+
+## 38. A provider fake certifies our logic, not the provider
+
+### What we saw
+
+Deterministic tests proved retry, fallback, redaction, and status handling, then
+documentation risked describing the external channel as certified.
+
+### Why the assumption failed
+
+The test double intentionally removes credentials, carrier policy, network,
+quota, delivery receipt, and destination behavior.
+
+### The durable practice
+
+Keep local and live evidence separate. Live certification uses dedicated
+non-user destinations, approved credentials, failure injection, alarms,
+maintenance, recovery, and a public-safe result—not customer traffic.
+
+## 39. Schema parity is object-level, not a table count
+
+### What we saw
+
+Country cells could report equal table/column counts while index and foreign-key
+signatures differed substantially.
+
+### Why the assumption failed
+
+Counts hide order, uniqueness, prefixes, generated columns, referential actions,
+and semantically duplicate constraints.
+
+### The durable practice
+
+Compare normalized table, column, index, and foreign-key signatures. Review
+workload-specific exceptions with an owner and query evidence; test changes on
+empty and restored clones before a canary cell.
+
+## 40. Private media caches need account and revision boundaries
+
+### What we saw
+
+An updated avatar stayed stale, or document/image bytes survived a logout or
+account switch longer than intended.
+
+### Why the assumption failed
+
+The URL was treated as immutable and the cache as device-wide even though both
+authorization and content revision changed.
+
+### The durable practice
+
+Key caches by account, content class, logical size, and server revision. Use
+bounded memory, authenticated thumbnail/stream delivery, and eviction on
+revision, close, logout, session revocation, and process restoration.
+
+## Treat these lessons as guardrails, not dogma
 
 These lessons reflect KiloDrive's constraints and history. A different system
 may choose a different database, bus, map engine, or hosting model. Keep the

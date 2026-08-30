@@ -84,6 +84,28 @@ This is not a complete raw GPS archive. Batching deliberately trades some
 granularity for bounded database write volume. The required sampling rate must
 be chosen from safety, replay, privacy, cost, and device-battery needs.
 
+### Managed airport and venue queue leases
+
+Queue presence is a separate location purpose from active-trip tracking or
+general driver availability. A driver explicitly joins a configured zone while
+online, eligible, unassigned, and physically inside it. The server creates one
+short lease and issues a least-privilege native telemetry credential bound to
+the user, tenant, country, zone, queue entry, and token version. The credential
+cannot authorize trip or account commands.
+
+The native Android/iOS location session—not a visible-screen Dart timer—sends
+recent, accuracy-bounded samples. Server time renews the three-minute lease; an
+expired lease, offline driver, active assignment, or verified zone exit closes
+membership. A unique active entry prevents a driver from occupying multiple
+queues. The app shows freshness and the server expiry time so an operator or
+driver can tell the difference between an active rank and a stale projection.
+
+Queue tracking never means broad, indefinite background availability. It starts
+only after the driver's explicit queue action and stops on leave, assignment,
+offline, zone exit, expiry, logout, or authoritative rejection. Country/privacy
+policy still governs whether this mode may be activated and how its minimal
+evidence is retained.
+
 ## Valkey for current location
 
 In production, KiloDrive uses TLS-protected Valkey/Redis-compatible storage for:
@@ -144,6 +166,21 @@ Do not write every GPS update synchronously in the request transaction. At high
 driver counts, that turns harmless map animation into database contention. Also
 do not rely solely on Valkey if the feature promises trip replay or durable
 safety evidence.
+
+### Trip-summary distance provenance
+
+Trip summaries store distance in meters with one typed provenance:
+`ValidatedRoute`, `ValidatedTelemetry`, or `Unavailable`. Metric/imperial choice
+is presentation only. A legacy trip with no authoritative retained route or
+telemetry remains unavailable; fare is never reverse-engineered into distance.
+Backfill uses a reviewed route record only where the evidence is present and does
+not invent zero or current-time data.
+
+Completion can replace the accepted-route summary with validated telemetry when
+the policy has enough trustworthy samples. A telemetry gap keeps provenance
+truthful and routes any bounded manual override through separate audited
+evidence. API, Flutter, Portal, exports, and investigation screens share the same
+neutral unknown behavior.
 
 ## Routing and provider boundaries
 

@@ -193,6 +193,16 @@ wallet currency, FX source/effective time, unique redemption, journal, and walle
 credit. A voucher code must not be the only durable security secret; its redemption
 is conditionally claimed.
 
+For wallet top-ups, compare the durable customer status keyed by payment ID and
+idempotency key with provider, payment, journal, and wallet state. `Pending`,
+`Completed`, `Failed`, and `Needs attention` are recovery states, not display
+guesses. A timeout after capture, process death, delayed/duplicate/out-of-order
+webhook, or stale client must converge through the original reference. Confirm
+the protected pending reference belongs to the current account, completion
+refreshes wallet state, and receipt/support actions reference the same payment.
+Do not generalize this implemented top-up status contract to every payment type
+without equivalent crash-point tests.
+
 For an administrative issuance batch, start with the durable operation
 reference—not a plaintext code list. Confirm:
 
@@ -229,6 +239,15 @@ membership mode, cash debt, completion/cancellation state, and receipt. Actual
 distance/duration should come from validated telemetry/map matching or an audited
 bounded override.
 
+For a fare split, compare the plan quote/authorized/settled totals, every payer's
+accepted allocation, wallet hold, payment row, settlement or release, fallback
+responsibility, and trip state. At this baseline the feature remains unavailable:
+canonical bootstrap parity, mandatory version/stable retry, renewed consent after
+fare changes, insufficient-funds fallback, expiry/audit queues, Portal status,
+and reversal integration are incomplete. Do not repair a missing share with an
+ordinary wallet transfer or enable the feature merely because alignment SQL can
+create the tables.
+
 ### Memberships
 
 Verify plan foreign key, customer type, term, actual billed price source, service
@@ -243,6 +262,14 @@ Require a verified payout method and immutable encrypted destination snapshot.
 Verify requested hold, Approved payable clearing, Completed settled clearing,
 rejection/reversal release, provider payout ID, limits, 2FA/step-up, and admin
 audit. Prevent payout-method deletion while Pending or Approved work references it.
+
+The payout automation backend remains dormant. Do not populate certification
+timestamps by direct row edit or describe a locally confirmed destination as
+provider verified. Activation requires a supported dual-controlled command,
+named-provider ownership proof, tenant/country-safe signed callback handling,
+duplicate/out-of-order/unknown/crash tests, return/reversal journals, measured
+processing evidence, and zero unexplained reconciliation. “Instant payout” stays
+unavailable until its separate measured certification passes.
 
 ## Recovery and repair execution
 

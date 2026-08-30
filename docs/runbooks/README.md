@@ -2,7 +2,8 @@
 
 - **Owner:** Platform operations and service owners
 - **Status:** Maintained index and operating standard
-- **Last exercised:** Not applicable; reviewed whenever the runbook set changes
+- **Last reviewed:** 2026-08-30
+- **Exercise evidence:** Maintained by each individual runbook
 - **Related architecture:** [Architecture guide](../architecture/README.md) and [system context](../architecture/system-context.md)
 
 A runbook is a decision aid for a tired engineer working under pressure. It
@@ -20,6 +21,7 @@ environment-specific commands remain in restricted operational material.
 | --- | --- | --- |
 | [API deployment](api-deployment.md) | An approved API build is being released or rolled back | Prove the intended binary and compatible schema are serving traffic |
 | [Portal and website release](portal-website-release.md) | A browser application is being released | Preserve security headers, localization, API contracts, and rollback |
+| [Content Security Policy change](csp-policy-change.md) | A Portal or corporate-site resource needs a production CSP change | Stage, probe, approve, activate, or roll back a parsed policy without weakening the web boundary |
 | [Mobile release](mobile-release.md) | Android or iOS binaries are being prepared | Certify the exact signed artifacts, permissions, native dependencies, and store metadata |
 | [Schema alignment](schema-alignment.md) | Startup/readiness reports schema drift | Align reviewed metadata without guessing or deleting unexplained data |
 | [Country activation](country-activation.md) | A country is being enabled or restored | Prove schema, rules, providers, legal controls, and operational ownership |
@@ -28,7 +30,7 @@ environment-specific commands remain in restricted operational material.
 | [Scheduled-ride guarantee](scheduled-ride-guarantee.md) | A reservation is stuck, falsely guaranteed, awaiting reconfirmation, or replacing a driver | Restore a truthful guarantee state without duplicating the ride or assignment |
 | [Active-trip location and privacy](active-trip-location-and-privacy.md) | Trip location will not start, is stale, survives a terminal trip, or conflicts with the privacy/store declaration | Restore truthful trip telemetry and prove collection stops at the authorized boundary |
 | [Capacity baseline](capacity-baseline.md) | A launch, scale change, or scheduled review needs a controlled operating envelope | Find the first bottleneck with safe fixtures, bounded ramps, and verified cleanup |
-| [Outbox recovery](outbox-recovery.md) | Pending age, failed rows, or worker heartbeat alarms | Deliver or explicitly resolve promised side effects exactly once economically |
+| [Outbox recovery](outbox-recovery.md) | Pending age, failed rows, or worker heartbeat alarms | Deliver or explicitly resolve every promised side effect without duplicating its business or financial effect |
 | [Realtime and SignalR](realtime-signalr.md) | One device changes state but another stays stale | Restore delivery and client convergence while database truth remains authoritative |
 | [Valkey degradation](valkey-degradation.md) | Cache, backplane, location, or short-lived state fails | Protect security/correctness and rebuild replaceable distributed state |
 | [Provider outage](provider-outage.md) | Maps, messaging, payments, or another external service fails | Degrade, queue, reconcile, or fail closed according to business risk |

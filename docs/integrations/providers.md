@@ -201,10 +201,22 @@ privilege credentials. They store provider identifier, latency, sanitized state,
 and correlation ID only. Consecutive failures alert an operator; a deliberate
 maintenance/disabled state does not page as `not_configured` noise.
 
+Transport support and delivery certification are separate. The reviewed runner
+can probe push, SMS, WhatsApp, SES, LiveKit, and an explicitly configured AWS
+voice route. FCM/APNs device receipts and AWS WhatsApp delivery/inbound events
+have dedicated evidence-ingestion paths. A provider whose required delivery or
+reply evidence has no authenticated producer remains accepted-but-uncertified,
+even when its send API returns success.
+
 Each provider has an owner, quota/budget dashboard, health check, alert, disable
 switch, rollback, and recovery test. Warm-cache application p95 is separated from
 provider time so thresholds are tuned from legitimate traffic rather than hiding
 latency by increasing timeouts.
+
+At this baseline canary maintenance is deployment configuration and the protected
+System Administrator diagnostics view reports it. It is not a general in-app
+mutation control. Runtime maintenance editing would require its own capability,
+recent-auth/step-up boundary, audit event, expiry, and rollback contract.
 
 Canaries do not run every minute merely because a scheduler can. Frequency
 balances detection time, cost/quota, anti-abuse rules, and alert value. An

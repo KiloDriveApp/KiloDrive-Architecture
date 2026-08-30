@@ -58,6 +58,14 @@ styles/scripts, use self-hosted pinned assets and nonces/hashes where truly
 needed, and keep Swagger's documented policy separate from corporate/portal
 pages.
 
+Production CSP changes use parsed directives and allow-listed sources, not a
+raw textbox followed by immediate activation. A candidate is versioned, diffed,
+validated for syntax and security regressions, staged, independently approved,
+and checked by a no-redirect synthetic health probe before activation. Rollback
+selects a previously activated, probe-passed version. The control plane is
+implemented; browser resource-load and rollback exercises remain release/
+operational evidence rather than a source-code claim.
+
 ## Validation, injection, and content handling
 
 DTO validation gives each missing/invalid field a stable error instead of a vague
@@ -146,8 +154,12 @@ error for a mutation that actually succeeded.
 
 ## Realtime security
 
-Hub tokens are short-lived, hub-specific, and trip/role scoped. The server checks
-participant authorization when joining groups and when handling messages.
+Hub tokens live for sixty seconds and are explicitly `discovery`- or
+`trip`-scoped. They are bound to user, role, tenant, country, token version and,
+for trip tokens, participant role. An ordinary API bearer token is rejected as a
+hub credential. The server checks participant authorization when joining groups
+and when handling messages. Broad driver fan-out carries refresh cues rather
+than another user's offer/bid content.
 Realtime is only an acceleration path; durable state and bounded resync recover
 lost frames.
 
@@ -165,9 +177,11 @@ The app uses secure storage, platform biometrics/keystore, release signing,
 bounded caches, and production permission gates. These controls protect a normal
 device user and raise attacker cost. They do not authorize an API command.
 
-Diagnostic proxy configuration is compile-time gated, visibly warns the user,
-and disables wallet/security flows in an approved support build. Production
-builds reject it. Never add a hidden “trust all certificates” switch.
+The ordinary customer app exposes no proxy/server configuration UI and contains
+no hidden trust-all-certificate switch. Network inspection belongs in managed
+test infrastructure or a separately reviewed support build with a documented
+scope. It must not be reachable through production user settings or silently
+weaken certificate validation, wallet, or account-security traffic.
 
 ## Review checklist for a new mutation
 
