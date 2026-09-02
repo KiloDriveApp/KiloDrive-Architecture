@@ -27,6 +27,7 @@ not the permanent trip record.
 | [Mobile](mobile.md) | How do Flutter workspaces, repositories, state, offline behavior, and native services fit together? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
+| [Runtime boundaries and certification](runtime-boundaries-and-certification.md) | How are anonymous tenancy, public endpoints, response hardening, typed clients, negotiated fares, realtime recovery, and capacity evidence certified together? |
 | [Hosting](hosting.md) | How are edge, IIS, MySQL, Valkey, routing, and media failure domains separated? |
 | [Observability](observability.md) | How are requests, queues, providers, and customer symptoms correlated safely? |
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |

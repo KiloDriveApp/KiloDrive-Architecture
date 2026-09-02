@@ -9,6 +9,12 @@ Before describing a new product as ready, read the
 It defines separate source-maturity and deployment-state language and records
 gaps explicitly.
 
+Changes that cross public routing, client state, realtime recovery, or load
+boundaries should also use the
+[runtime-boundary certification guide](architecture/runtime-boundaries-and-certification.md).
+It joins controls that are easy to review separately but dangerous to operate
+as unrelated concerns.
+
 ## Choose a path
 
 ### I am new to backend systems

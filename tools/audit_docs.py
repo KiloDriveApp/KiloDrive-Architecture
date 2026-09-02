@@ -47,6 +47,7 @@ REQUIRED_PATHS = (
     "docs/architecture/README.md",
     "docs/architecture/system-context.md",
     "docs/architecture/capability-status.md",
+    "docs/architecture/runtime-boundaries-and-certification.md",
     "docs/architecture/tenancy-and-country-cells.md",
     "docs/architecture/entity-identification.md",
     "docs/architecture/geospatial.md",

@@ -59,6 +59,10 @@ reading order. It builds one idea at a time:
 14. [Testing and verification](docs/quality/testing-and-verification.md) — how
     invariants, negative authorization, races, failure injection, real
     boundaries, and signed artifacts become release evidence.
+15. [Runtime boundaries and certification](docs/architecture/runtime-boundaries-and-certification.md) —
+    how anonymous tenancy, public routes, hardened failures, typed clients,
+    work queues, negotiated fares, realtime recovery, and capacity proof fit
+    together.
 
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
