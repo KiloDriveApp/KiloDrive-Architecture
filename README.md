@@ -67,6 +67,11 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
+The current synchronized release is documented in [Release 1.0.0 build 97](docs/architecture/release-1.0.0-97.md).
+It records the vehicle/onboarding hardening, typed partial-state behavior,
+schema contract `2026.09.06.3`, and the evidence boundary between source
+implementation and production certification.
+
 ## The system in one picture
 
 ```mermaid

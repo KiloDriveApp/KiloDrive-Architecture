@@ -33,6 +33,10 @@ not the permanent trip record.
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |
 | [Plugins and extension points](plugins-and-extension-points.md) | Where can providers change without leaking SDK details into business logic? |
 
+The [1.0.0 build 97 release update](release-1.0.0-97.md) captures the latest
+vehicle/onboarding, typed-state and schema-alignment changes and explains which
+claims still require live production or provider evidence.
+
 ## Three mental models worth keeping
 
 ### 1. Ownership before access
