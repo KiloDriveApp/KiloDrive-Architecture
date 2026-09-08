@@ -97,6 +97,19 @@ oldest pending age, reclaimed leases and conflicting finalizations after rollout
 
 ## Source references
 
+The application [build-101 deployment record](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/reports/RELEASE_101_DEPLOYMENT_2026-09-08.md)
+records API/Portal rollout, eight-database object parity, unchanged configuration,
+signed Android artifacts and live changelog publication. It also records the
+isolated changelog SQL ambiguity caught and corrected before publication. The
+release does not promote unexecuted native/provider tests to passed status.
+
+The extended disposable restore gate remains blocked by extra index/FK count
+differences already present in canonical bootstrap (JM and mature cells versus
+US/CA). Required signatures, balanced data restoration and two alignment passes
+passed; restoration introduced no drift. This is not complete physical parity.
+Review normalized signatures and workload evidence before changing constraints;
+the deployment applied no physical schema DDL.
+
 - [Application repository](https://github.com/KiloDriveApp/KiloDrive)
 - [Chat/outbox hardening evidence](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/reports/TRIP_CHAT_OUTBOX_MATURITY_PASS_2026-09-08.md)
 - [Calculator dismissal evidence](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/reports/CALCULATOR_SHEET_DISMISSAL_2026-09-08.md)
