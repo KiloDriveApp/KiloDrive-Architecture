@@ -67,10 +67,11 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current synchronized release is documented in [Release 1.0.0 build 97](docs/architecture/release-1.0.0-97.md).
-It records the vehicle/onboarding hardening, typed partial-state behavior,
-schema contract `2026.09.06.3`, and the evidence boundary between source
-implementation and production certification.
+The current source release is documented in [Release 1.0.0 build 101](docs/architecture/release-1.0.0-101.md).
+It explains assignment navigation, rapid-chat recovery, outbox lane isolation and
+lease fencing, payment snapshots, cancellation diagnostics and accessible calculator
+sheets. Schema contract `2026.09.07.3` is unchanged. Production rollout and native
+device/provider certification remain distinct evidence requirements.
 
 ## The system in one picture
 
