@@ -7,7 +7,7 @@ of unrestricted CRUD screens. It helps authorized people resolve country-scoped
 work while preserving identity, tenant, financial, safety, privacy, and evidence
 boundaries.
 
-- **Reviewed baseline:** mobile `1.0.0+82`, schema contract `2026.08.30.1`
+- **Reviewed baseline:** mobile `1.0.0+111`, schema contract `2026.09.12.1`
 - **Source status:** implemented incrementally across API, Flutter, and Portal
 - **Runtime status:** capability-, country-, role-, and feature-policy-dependent
 - **Not claimed:** complete mobile/Portal parity, universal country activation,
@@ -71,11 +71,12 @@ Unknown permission bits are reported through sanitized diagnostics and never
 rendered as a raw numeric mask. Narrow layouts use named capability chips or an
 accessible “N permissions” summary.
 
-Operations that are intentionally desktop-only remain labelled as such with a
-reviewed rationale and a secure handoff. They must not appear to be broken
-mobile buttons. Permission-aware parity tests require every registered
-capability to be available, explicitly desktop-only, disabled by policy, or
-retired.
+The 21 former desktop capability registry entries now have typed mobile routes.
+The menu groups authorized leaves into expandable domains and subdomains.
+Permission-aware parity tests require every registered capability to have an
+explicit disposition. This proves navigation coverage, not successful execution
+or recovery of every administrative HTTP mutation. The [current release](release-1.0.0-111.md)
+records top-up investigation contracts, vehicle compatibility and remaining evidence gaps.
 
 ## Authentication, recent authentication, and step-up
 
