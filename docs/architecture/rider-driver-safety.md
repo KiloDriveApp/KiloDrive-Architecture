@@ -1038,6 +1038,8 @@ Before shipping a safety-related change, ask:
 
 ## Related reading
 
+- [Build 116: signed trip-call evidence, retention and investigator workflow](release-1.0.0-116.md)
+
 - [System context](system-context.md)
 - [Jurisdictional compliance](jurisdictional-compliance.md)
 - [Tenancy and country cells](tenancy-and-country-cells.md)

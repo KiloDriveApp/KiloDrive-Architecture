@@ -67,7 +67,7 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in [Release 1.0.0 build 111](docs/architecture/release-1.0.0-111.md).
+The current source release is documented in [Release 1.0.0 build 116](docs/architecture/release-1.0.0-116.md).
 It covers the mobile administration hierarchy, typed operational workspaces,
 top-up issuance investigation, vehicle revision compatibility and schema
 contract `2026.09.12.1`. Recorded API/schema rollout, local verification and
