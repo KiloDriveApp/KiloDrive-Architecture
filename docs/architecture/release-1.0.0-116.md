@@ -7,6 +7,7 @@ Evidence: [authoritative source facts](https://github.com/KiloDriveApp/KiloDrive
 [evidence implementation](https://github.com/KiloDriveApp/KiloDrive/blob/main/src/server/KiloDrive.Api/Services/Voice/TripCallEvidenceService.cs)
 and [operational runbook](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/trip-call-evidence-runbook.md).
 Implementation: [reviewed release commit](https://github.com/KiloDriveApp/KiloDrive/commit/b82b7920d354040ef38a3a4fc7ae236dc2a9324d).
+Deployment evidence: [owned production verification](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/releases/release-116-production-verification.md).
 
 | Fact | Value | Authority |
 | --- | --- | --- |
