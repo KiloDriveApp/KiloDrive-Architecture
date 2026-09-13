@@ -2,7 +2,7 @@
 
 Owner: KiloDrive Identity, Mobile and Release Engineering.
 Last source review: 13 September 2026.
-Environment: reviewed release candidate; production deployment remains unverified.
+Environment: verified production API/schema/release catalogue; locally signed Android artifacts.
 Evidence: [source-derived repository facts](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/generated/repository-facts.md),
 [release verification](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/releases/release-117-production-verification.md),
 [emulator evidence boundaries](https://github.com/KiloDriveApp/KiloDrive/blob/main/docs/mobile-emulator-smoke-2026-09-13.md).
@@ -64,5 +64,12 @@ Actual emulator rider/driver login and re-login passed in the preceding smoke
 pass. Reset request, code entry and local invalid-code handling passed. A real
 inbox and completed password replacement, physical two-device calling,
 provider failover and store approval remain separate evidence requirements.
-Audio recording remains disabled. Deployment results are recorded only in the
-owned release verification report after they are observed.
+Audio recording remains disabled. Deployment results are recorded in the
+owned release verification report. The final API hash matches the release
+package; read-only schema inspection verified eight aligned databases with
+zero mismatches. Dedicated administrator, driver and rider login/identity/
+workspace reads passed nine checks. The deployed notification asset matches
+source, minimum supported builds are unchanged, and the current release
+catalogue is published without resetting its history. Android APK/AAB packaged
+manifest and signature checks passed. These facts do not certify inbox delivery,
+complete physical journeys or store approval.
