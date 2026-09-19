@@ -9,9 +9,9 @@ say that a button exists; doctrine explains what must remain true when the
 network fails, two people act at once, a provider times out, or an operator has
 to recover the system at 2 a.m.
 
-- **Reviewed:** 2026-08-30
-- **Application baseline:** mobile `1.0.0+82`, .NET `9`, MySQL `8`
-- **Schema-contract baseline:** `2026.08.30.1`
+- **Reviewed:** 2026-09-19
+- **Application baseline:** mobile `1.0.0+130`, .NET `9`, MySQL `8`
+- **Schema-contract baseline:** `2026.09.19.2`
 - **Scope:** source-level architecture and public-safe operating principles
 - **Not a claim of universal activation:** country, provider, store, legal, and
   physical-device evidence still decide whether a capability is active
@@ -49,7 +49,7 @@ unless the surrounding sentence names the boundary, recovery behavior, and
 evidence. “A SignalR hint normally appears within seconds and the client
 reconciles from MySQL after reconnect” is useful. “Updates are seamless” is not.
 
-## Thirteen rules that outrank screen convenience
+## Sixteen rules that outrank screen convenience
 
 ### 1. One user intent survives the whole journey
 
@@ -221,6 +221,43 @@ happens to have credentials in the environment. Explicit certification jobs
 cross those boundaries with non-user fixtures, allowlists, run IDs, cleanup,
 and retained sanitized evidence.
 
+### 14. Workspaces organize outcomes; menus only provide access
+
+Each role receives a small set of authoritative workspaces rather than a flat
+inventory of entities. A workspace states what is happening, which source is
+authoritative, what can be done now, what is blocked, and what happens next.
+Rider, driver, and operations clients may present different views, but they do
+not independently reconstruct lifecycle, eligibility, money, or readiness.
+
+Large workspace reads use purpose-built typed projections. Safe independent
+reads may run concurrently and are cancelled when account, tenant, or country
+scope changes. Transactional truth is never inferred from cached reference data.
+
+### 15. Every blocked or uncertain outcome has one safe next action
+
+A blocked response carries a stable code, user-safe localized title/detail key,
+commit state, retryability and earliest retry time, one primary action or deep
+link, a support/correlation reference, and state/policy revision. The client may
+decorate that contract but must not combine several local guesses into a new
+eligibility decision.
+
+For interrupted value mutations, “checking outcome” is a durable state. The
+original idempotency key and revision remain bound until authoritative status
+proves committed, no-op, retryable, or manual review. A timeout alone is never
+permission to purchase, transfer, cash out, accept, or cancel again.
+
+### 16. Readiness has four independent dimensions
+
+Code verification, operational configuration, provider/native certification,
+and current production health are reported separately. A green feature-policy
+flag proves only policy intent; it never proves credentials, product discovery,
+webhook freshness, provider delivery, reconciliation health, or store approval.
+
+Administrator readiness views name source, last success, freshness, owner,
+evidence link, and one remediation. They expose no secret, private key, purchase
+token, identity document, or personal data. Unknown or stale evidence fails
+closed for activation and purchase while preserving safe read-only context.
+
 ## Changes incorporated in the current baseline
 
 | Capability | Status | Doctrine impact | Remaining boundary |
@@ -241,6 +278,9 @@ and retained sanitized evidence.
 | Canonical support contract | Implemented/incremental | Received → Reviewing → Waiting for information → Resolved is shared vocabulary; legacy values map without lying | Queue staffing, assignee/SLA ownership, closure/reopen evidence are operational |
 | Typed System Admin trip evidence presentation | Implemented/incremental | Investigation views prefer safe structured sections and partial states over raw payloads | Large legacy admin screens remain migration debt |
 | Hermetic test boundary and form fuzz regression corpus | Implemented quality control | Default test runs cannot escape to real services; generated failures become deterministic regression fixtures | Provider/native/load certification remains separate and explicit |
+| Authoritative membership transition state | Implemented/incremental | Current access, pending change, provider event identity, revision and safe next action are projected together | Exact licensed-store and notification lifecycle evidence remains release- and country-specific |
+| Read-only financial evidence graph | Implemented source boundary | Payment, ledger, hold, cashout, provider, membership, receipt, notification and review evidence can be investigated without balance edits | Provider fault injection and production reconciliation exception handling remain independently certified |
+| Administrator readiness workspace | Implemented source boundary | Code, configuration, provider certification and production health cannot collapse into one misleading green flag | Live credentials, canaries, freshness and owner response remain operational evidence |
 
 ## Known gaps and deliberately unfinished work
 
@@ -251,7 +291,7 @@ and product copy from outrunning evidence.
 | --- | --- | --- | --- |
 | Provider canaries | Transports and sanitized status paths are configurable; evidence support differs by provider | Provider acceptance means delivery, or every push/SMS/WhatsApp/email/voice/media path is certified | Dedicated non-user destinations, authenticated delivery/inbound producers, scheduled success/failure/maintenance, reply/egress cleanup and alert recovery |
 | iOS runtime | Source, entitlements, simulator-compatible code, and artifact gates exist | Background location, CallKit, APNs, StoreKit, biometrics, and killed-state recovery work on every supported iPhone/iPad | Approved simulator plus physical-device matrix using signed release artifacts |
-| Store billing | API/native mapping and lifecycle foundations exist | Every displayed paid term is purchasable in every active country | Exact active product/base-plan/offer and localized-price match, licensed-store device, acknowledgement/refund/restore certification |
+| Store billing | API/native mapping, lifecycle state machine, status/history recovery and operational readiness foundations exist | Every displayed paid term is purchasable, renewable or recoverable in every active country | Exact active product/base-plan/offer and localized-price match, licensed-store device, acknowledgement, notification, refund, revoke and restore certification |
 | Rental marketplace | Browse, inventory, quote, organization/fleet, booking/evidence and lifecycle foundations are incremental | Rentals are active or insured in a country merely because tables/routes exist | Versioned country activation, provider/deposit/protection/legal evidence and renter/owner end-to-end tests |
 | Family and supervised travel | Delegated profiles, roles, notifications, tracking scope, and supervised conversation foundations exist | A general family member row is a legally approved teen product | Country age/guardian policy, consent/revocation, retention, three-client and safeguarding review |
 | Support operations | Typed cases, evidence, conversation, status and next-action foundations exist | A named response SLA is met everywhere | Staff ownership, escalation channels, breach monitoring, exercises and retained SLA measurements |

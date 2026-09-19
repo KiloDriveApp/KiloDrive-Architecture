@@ -67,11 +67,11 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in [Release 1.0.0 build 117](docs/architecture/release-1.0.0-117.md).
-It covers authentication/workspace composition, rider dashboard and driver
-Bidding Hall destinations, and durable request-time security email context.
-The schema contract remains `2026.09.13.1`. Deployment verification and
-remaining device/provider certification are described separately.
+The current source release is documented in [Release 1.0.0 build 130](docs/architecture/release-1.0.0-130.md).
+It covers authoritative membership transitions, immutable financial evidence,
+System Administrator readiness, and safer typed mobile recovery boundaries.
+The schema contract is `2026.09.19.2`. Deployment, native-copy, device, store,
+and provider certification remain separate evidence.
 
 ## The system in one picture
 
