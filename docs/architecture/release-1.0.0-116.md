@@ -42,7 +42,7 @@ unverified access. Generated OpenAPI and Dart clients mark that header required.
 Every read records access. Decisions reload state after acquiring the trip
 lock so concurrent investigators cannot publish competing decisions. The
 requester cannot approve the request; a separate investigator records
-fulfilment while preserving the approval reason. Fulfilment records an
+fulfillment while preserving the approval reason. Fulfillment records an
 operational action; an authorized export process performs the actual transfer.
 
 Routine evidence follows the approved one-month metadata schedule, independently
