@@ -8,6 +8,10 @@ disconnects, and operators can recover without inventing state.
   taxonomy, risk-based expectations, invariant traceability, authorization and
   lifecycle matrices, concurrency/failure testing, mobile pyramid, and release
   evidence policy.
+- [Public quality assurance and concurrency guarantees](public-assurance-and-concurrency.md)
+  publishes the public-safe test inventory, outcome-oriented coverage model,
+  concurrency guarantees, and the boundary between architecture and measured
+  capacity.
 - [Capability status](../architecture/capability-status.md) records which
   evidence families support each public architecture claim.
 - [Runbooks](../runbooks/README.md) explain how approved releases and recovery

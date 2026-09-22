@@ -56,9 +56,11 @@ reading order. It builds one idea at a time:
     audit, and safe recovery fit together.
 13. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
     production safely.
-14. [Testing and verification](docs/quality/testing-and-verification.md) — how
-    invariants, negative authorization, races, failure injection, real
-    boundaries, and signed artifacts become release evidence.
+14. [Public quality assurance and concurrency guarantees](docs/quality/public-assurance-and-concurrency.md)
+    and [testing and verification](docs/quality/testing-and-verification.md) —
+    how outcome-oriented coverage, invariants, negative authorization, races,
+    failure injection, real boundaries, and signed artifacts become release
+    evidence.
 15. [Runtime boundaries and certification](docs/architecture/runtime-boundaries-and-certification.md) —
     how anonymous tenancy, public routes, hardened failures, typed clients,
     work queues, negotiated fares, realtime recovery, and capacity proof fit
