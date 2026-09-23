@@ -15,6 +15,12 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
+The current public-safe source synchronization is the
+[1.0.0 build 144 architecture baseline](architecture/release-1.0.0-144.md).
+It records mobile `1.0.0+144`, schema contract `2026.09.23.2`, the reviewed
+OpenAPI identity, and the separation between source maturity, deployment
+configuration, provider certification, device evidence, and current health.
+
 ## Choose a path
 
 ### I am new to backend systems

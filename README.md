@@ -65,15 +65,27 @@ reading order. It builds one idea at a time:
     how anonymous tenancy, public routes, hardened failures, typed clients,
     work queues, negotiated fares, realtime recovery, and capacity proof fit
     together.
+16. [Runtime profiles](docs/architecture/runtime-profiles.md) — how the modular
+    monolith can run as Public API, realtime gateway, country worker, media
+    worker, reporting worker, or the compatibility Combined host without
+    splitting a country-cell transaction.
+17. [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md) —
+    how reviewed rates, fee policy, immutable quotes, transaction snapshots,
+    maker-checker controls, and reconciliation keep cross-currency money honest.
 
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in [Release 1.0.0 build 130](docs/architecture/release-1.0.0-130.md).
-It covers authoritative membership transitions, immutable financial evidence,
-System Administrator readiness, and safer typed mobile recovery boundaries.
-The schema contract is `2026.09.19.2`. Deployment, native-copy, device, store,
-and provider certification remain separate evidence.
+The current source release is documented in [Release 1.0.0 build 144](docs/architecture/release-1.0.0-144.md).
+It covers authoritative role workspaces, rider active-journey protection,
+central foreign-exchange evidence, recoverable PayPal and store-billing flows,
+driver readiness consistency, public manuals and search discovery, and the
+latest System Administrator operational boundaries. The schema contract is
+`2026.09.23.2`; the reviewed OpenAPI v1 artifact contains 826 paths and 925
+operations with SHA-256
+`34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
+Deployment, native-copy, device, store, provider, and country certification
+remain separate evidence.
 
 ## The system in one picture
 
@@ -236,6 +248,9 @@ versions worth remembering:
 - [Architecture index](docs/architecture/README.md)
 - [System context](docs/architecture/system-context.md)
 - [Capability status and evidence](docs/architecture/capability-status.md)
+- [Runtime boundaries and certification](docs/architecture/runtime-boundaries-and-certification.md)
+- [Runtime profiles](docs/architecture/runtime-profiles.md)
+- [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md)
 - [API architecture](docs/architecture/api.md)
 - [Mobile architecture](docs/architecture/mobile.md)
 - [Portal and website](docs/architecture/portal-and-website.md)
@@ -339,11 +354,14 @@ jurisdiction-specific approval.
 
 ## Documentation baseline
 
-- Mobile baseline: KiloDrive `1.0.0+82`
+- Mobile baseline: KiloDrive `1.0.0+144`
 - Flutter baseline: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`
 - Database family: MySQL `8`
-- Schema-contract baseline: `2026.08.30.1`
-- Last architecture review: 2026-08-30
+- Schema-contract baseline: `2026.09.23.2`
+- OpenAPI v1 baseline: 826 paths / 925 operations
+- OpenAPI SHA-256: `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`
+- Supported mobile locales: `en`, `es`, `fr`, `ja`, `zh_Hans`, `zh_Hant`
+- Last architecture review: 2026-09-23
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).

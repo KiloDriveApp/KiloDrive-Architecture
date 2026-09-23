@@ -22,7 +22,7 @@ reachability, monitoring, a canary, an owner, and a recovery procedure.
 
 | Capability | Boundary | Verified/configurable examples |
 | --- | --- | --- |
-| Payments | gateway and verifier | Stripe, PayPal, bank transfer; simulator is non-production |
+| Payments | gateway and verifier | PayPal and reviewed bank-transfer flows; simulator is non-production |
 | Store billing | signed transaction verifier | Google Play and Apple server validation |
 | Notifications | channel/provider adapter | FCM/APNs, AWS/Twilio SMS/WhatsApp, SES |
 | Maps | route/geocode/matrix/map match | Google Maps and OSRM-compatible services |

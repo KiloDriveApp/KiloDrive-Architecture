@@ -32,6 +32,23 @@ than rounded invisibly. Foreign exchange stores the source and target currency,
 the reviewed rate snapshot, and both amounts; conversion must account for both
 currencies' exponents.
 
+## Authoritative foreign exchange
+
+The control database owns one versioned FX catalogue and maker-checker lifecycle.
+Application settings, web lookups and provider responses cannot become a second
+runtime rate authority. A customer quote binds source/destination currencies,
+rate version, fee-policy version, purpose, provider/environment, account,
+country, expiry and exact rounded source/destination amounts. Capture, wallet
+posting, refund, dispute, receipt and reconciliation reuse the immutable
+transaction snapshot; they never recalculate history using the latest rate.
+
+Unavailable, expired, suspended or unsupported pairs fail before a provider
+payment is started and return one specific next action. Reconciliation compares
+the provider's settlement evidence, customer snapshot, wallet subledger and
+double-entry journal but never auto-corrects money. See
+[Authoritative Foreign Exchange](authoritative-foreign-exchange.md) and the
+[Foreign-exchange Readiness Runbook](../runbooks/foreign-exchange-readiness.md).
+
 ## The four layers of financial evidence
 
 It helps to think of a wallet operation as four related but different records:
@@ -133,6 +150,24 @@ completion it refreshes wallet/entitlement state and offers the authorized
 receipt; unresolved outcomes link to support without encouraging a second
 payment attempt. This same state must be visible to authorized operations staff
 with safe correlation evidence.
+
+Deterministic provider rejections such as an unsupported currency, invalid
+amount or rejected account are terminal failures when evidence proves no remote
+success. They do not enter an unknown-outcome loop and cannot credit a wallet.
+An ambiguous timeout after possible remote success retains the original
+operation and provider identity, queries status and requires reconciliation
+before any retry. PayPal return/deep-link navigation is merely a signal to read
+that authoritative status; it is never proof of payment.
+
+Membership entitlement is state-machine driven. Current access, current period,
+access-through date, grace/hold reason and a versioned pending change are
+separate data. An immediate upgrade records disclosed proration evidence; a
+downgrade preserves the current tier until its effective date. Renewal, billing
+retry, cancellation, expiry, refund, dispute, revocation and restoration consume
+verified Apple/Google/provider identities idempotently. Storefront product data
+is price/currency authority for native checkout, while server mappings bind the
+exact product to plan, term, country and audience. See the
+[Store-entitlement Reconciliation Runbook](../runbooks/store-entitlement-reconciliation.md).
 
 ## Typical lifecycle examples
 

@@ -34,6 +34,20 @@ The Portal and Website call the API; they do not become alternate database
 clients. This keeps tenant, authorization, audit, and contract behavior in one
 backend boundary.
 
+## Runtime profile composition
+
+The API codebase remains one modular monolith but can run as `Combined`,
+`PublicApi`, `RealtimeGateway`, `CellWorker`, `MediaWorker`, or
+`ReportingWorker`. A profile registers only its owned endpoints, workers,
+providers and readiness dependencies. Country workers bind exactly one
+provisioned cell; global schedulers have one explicit owner. Invalid or
+ambiguous composition fails startup rather than silently duplicating work.
+
+The combined host remains the compatibility deployment during staged rollout.
+Splitting profiles never splits a country-cell transaction or duplicates the
+SQL outbox owner. See [Runtime Profiles](runtime-profiles.md) and the
+[Runtime-profile Rollout Runbook](../runbooks/runtime-profile-rollout.md).
+
 ## Stateless API nodes—with explicit exceptions
 
 An API node should be disposable. Durable state lives in MySQL/S3; distributed

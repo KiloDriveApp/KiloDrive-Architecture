@@ -1,5 +1,16 @@
 # Schema Lifecycle
 
+- **Reviewed source baseline:** `2026.09.23.2`
+- **Database engine:** MySQL 8
+- **Evolution authority:** canonical idempotent SQL scripts; no EF migrations or
+  runtime EF seeding
+
+The baseline includes the control-plane authority needed for versioned FX,
+native-store/product evidence, global identity/security, runtime configuration
+and country directory state, while operational and financial graphs remain in
+their country cells. A matching version string alone is not proof of matching
+objects or readiness.
+
 ## The goal is parity, not a successful script
 
 A database release is complete when all of these describe the same contract:

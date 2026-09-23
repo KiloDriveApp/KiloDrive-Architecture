@@ -22,6 +22,10 @@ ADRs are not marketing documents. A good ADR admits what became harder.
 | [009](009-mysql-scripts-not-ef-migrations.md) | Reviewed idempotent MySQL scripts for schema evolution | Accepted |
 | [010](010-flutter-feature-repositories.md) | Feature repositories and AsyncNotifiers in Flutter | Accepted/Incremental |
 | [011](011-password-hashing-policy.md) | Argon2id by default with an explicit PBKDF2 FIPS profile | Accepted |
+| [012](012-native-api-v1-and-generated-contract.md) | Native `/api/v1` selectors and one reviewed generated contract | Accepted |
+| [013](013-runtime-profile-composition.md) | Configurable modular-monolith runtime profiles | Accepted/Incremental |
+| [014](014-authoritative-foreign-exchange.md) | Database-backed, versioned foreign-exchange authority | Accepted |
+| [015](015-account-membership-notification-authority.md) | Account, membership and notification authority boundaries | Accepted/Incremental |
 
 ## Lifecycle
 

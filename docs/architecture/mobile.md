@@ -285,12 +285,41 @@ support actions. Last-good state remains visible on a recoverable refresh error.
 This does not claim equivalent recovery for every membership, ride, rental, or
 cashout payment path.
 
+The shared operation-recovery model is expanding beyond top-up. A recoverable
+mutation persists the operation ID, idempotency key, original entity revision,
+initiation timestamp, account/workspace binding and safe status endpoint. A lost
+response renders `Checking outcome`, prevents blind resubmission and reconciles
+with bounded backoff. Confirmed success, confirmed no-op and manual review are
+distinct; only unresolved operations appear in contextual Payment Recovery or
+Resolution Center surfaces rather than as a global blocking popup.
+
 ## Navigation and shell ownership
 
 Named route construction goes through the application routing layer so
 transitions, deep links, and authorization checks remain consistent. Shell tabs
 are body widgets owned by the shared app shell. Pushed detail/edit screens own a
 scaffold. Phones use a navigation drawer; wider layouts can use a rail.
+
+Build 144 organizes driver navigation around five persistent workspaces: Home,
+Work, Active journey, Earnings, and Readiness. Expandable drawer groups provide
+hierarchical access to work, money, readiness/vehicle, reputation, tools,
+help/safety, and account/settings destinations. A typed destination identifies
+both the parent workspace and intended child page; aliases do not collapse
+Wallet, Membership, Reports, Top-up, or Resolution Center back onto a generic
+financial landing screen. The selected child and expanded group are scoped by
+account, tenant, country and role, then reconciled against current authorization
+after resume or restart.
+
+Rider creation follows the same authority rule: an account with an assigned or
+active trip is directed to Active Journey instead of being allowed to open a
+second Hail a Cab form. This is a client usability guard, not the assignment
+constraint; the API remains authoritative under races and modified clients.
+
+Navigation preserves the mounted navigator during transient device-security
+revalidation. Protected content is obscured, input and semantics are disabled,
+and sensitive operations remain fail-closed, but native picker/cropper results
+and unsaved onboarding state are not destroyed. An authoritative ban, logout or
+account-state change still performs terminal cleanup.
 
 Deep links are treated as untrusted input. The app validates route shape,
 authentication, workspace, and entity access before opening a destination.

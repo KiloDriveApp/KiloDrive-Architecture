@@ -27,7 +27,7 @@ WhatsApp templates, or another country remains in sandbox or pending approval.
 | Email | Amazon SES | transactional mail and scheduled attachments |
 | Social identity | Google, Facebook, Apple | verified token exchange and explicit account linking |
 | Store billing | Google Play and Apple server APIs | purchase validation, renewal, refund/revocation, acknowledgement |
-| External payments | Stripe, PayPal, bank transfer | top-up/payment intent and authenticated webhooks |
+| External payments | PayPal and reviewed bank-transfer flows | top-up/payment intent, return recovery and authenticated webhooks |
 | Realtime voice | LiveKit, TURN, Egress | scoped rooms, call state, optional consented recording |
 | Object storage | Amazon S3 | private documents, receipts, recording objects |
 | Upload safety | ClamAV-compatible scanner | quarantine until signed clean outcome |
@@ -161,7 +161,7 @@ Google acknowledgement is durable outbox work; entitlement can expose an
 `acknowledgement_pending` state rather than returning a misleading purchase
 failure after commit.
 
-Stripe/PayPal unknown outcomes are reconciled by provider reference. Refund,
+PayPal unknown outcomes are reconciled by provider reference. Refund,
 partial refund, revocation, dispute/chargeback, and reversal update payment,
 entitlement/wallet, journal, notification, and audit atomically where local state
 changes.

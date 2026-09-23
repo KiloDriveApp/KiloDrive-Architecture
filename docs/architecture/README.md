@@ -28,14 +28,17 @@ not the permanent trip record.
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
 | [Runtime boundaries and certification](runtime-boundaries-and-certification.md) | How are anonymous tenancy, public endpoints, response hardening, typed clients, negotiated fares, realtime recovery, and capacity evidence certified together? |
+| [Runtime profiles](runtime-profiles.md) | How can one modular monolith run as API, realtime, country worker, media, reporting, or combined profiles without splitting transactions? |
+| [Authoritative foreign exchange](authoritative-foreign-exchange.md) | How are reviewed rates, quotes, transaction snapshots, fees, reconciliation, and administration kept under one authority? |
 | [Hosting](hosting.md) | How are edge, IIS, MySQL, Valkey, routing, and media failure domains separated? |
 | [Observability](observability.md) | How are requests, queues, providers, and customer symptoms correlated safely? |
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |
 | [Plugins and extension points](plugins-and-extension-points.md) | Where can providers change without leaking SDK details into business logic? |
 
-The [1.0.0 build 111 release update](release-1.0.0-111.md) captures the current
-administration, top-up investigation, vehicle revision and schema changes and
-records the limits of available deployment and certification evidence.
+The [1.0.0 build 144 release update](release-1.0.0-144.md) captures the current
+workspace, financial, membership, readiness, public-documentation, runtime and
+contract changes while recording the limits of deployment and certification
+evidence.
 
 ## Three mental models worth keeping
 

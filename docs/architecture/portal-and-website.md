@@ -120,10 +120,21 @@ Search and social metadata are server-rendered. The configured public base URL
 produces one absolute canonical URL, an `x-default` plus supported English,
 Spanish, and French alternates, Open Graph and Twitter summary metadata, and the
 appropriate WebSite/Organization/Breadcrumb/BlogPosting structured data.
-`sitemap.xml` lists only approved public routes and language variants;
-`robots.txt` points to that sitemap without exposing administrative paths.
+`sitemap.xml` and its focused child sitemaps list only self-canonical, HTTP 200,
+indexable routes and approved language variants. Public manuals have first-class
+responsive HTML pages with a table of contents, search, illustrations and
+semantic headings; the dedicated manual sitemap makes those pages discoverable
+without treating PDF/Markdown artifacts as competing canonical pages.
+`robots.txt` points to the sitemap index without exposing administrative paths,
+and the public API host returns its own deliberate robots policy. `HEAD` follows
+the same canonical and indexability contract as `GET` without rendering a body.
 Dynamic titles, descriptions, author/date evidence, image alternatives and
 breadcrumbs are encoded rather than copied from arbitrary query input.
+
+The footer and relevant technical pages link to the public
+`KiloDriveApp/KiloDrive-Architecture` repository as the owned architecture source.
+That attribution is supporting evidence, not a substitute for page content or a
+signal that source presence proves current deployment health.
 
 `WebsiteApi:PublicBaseUrl` is deployment-owned configuration. Production must
 set it to the reviewed HTTPS origin without round-tripping the complete JSON

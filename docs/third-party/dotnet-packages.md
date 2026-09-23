@@ -21,7 +21,6 @@ that every future release keeps them.
 | Realtime/cache | SignalR Redis; Extensions Redis; StackExchange.Redis | 9.0.16; 9.0.8; 2.8.31 | Hub backplane, distributed cache, Valkey protocol operations |
 | Observability | OpenTelemetry hosting/exporter/instrumentation family | 1.17.0 | Traces, metrics, OTLP export, ASP.NET/HTTP/runtime instrumentation |
 | Logging | Serilog.AspNetCore; CloudWatch sink | 9.0.0; 4.3.37 | Structured local/cloud logs |
-| Payments | Stripe.net | 52.2.0 | Stripe API/webhook adapter |
 | Reports | ClosedXML; QuestPDF | 0.105.1; 2026.7.2 | XLSX and PDF output |
 | Images | SixLabors.ImageSharp | 3.1.12 | Safe server-side image processing/re-encoding |
 | Contract | Swashbuckle.AspNetCore | 7.2.0 | OpenAPI generation and filters |

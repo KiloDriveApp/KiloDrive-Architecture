@@ -45,6 +45,10 @@ environment-specific commands remain in restricted operational material.
 | [JWT key rotation](jwt-key-rotation.md) | Scheduled or emergency signing-key change is required | Introduce a new key, preserve bounded overlap, and retire the old key safely |
 | [Security incident](security-incident.md) | Compromise, abuse, leakage, or unauthorized access is suspected | Contain, preserve evidence, assess impact, recover, and notify appropriately |
 | [Wallet reconciliation](wallet-reconciliation.md) | A ledger, hold, journal, cashout, or provider total disagrees | Reach zero unexplained money before enabling affected financial operations |
+| [Foreign-exchange readiness](foreign-exchange-readiness.md) | A quote is missing, stale, suspended, inconsistent, or lacks reviewed evidence | Restore one approved FX authority without rewriting transaction history |
+| [Payment operation recovery](payment-operation-recovery.md) | Checkout returned ambiguously, the app lost a response, or recovery keeps resurfacing | Reconcile the original operation without duplicate value or false failure |
+| [Store entitlement reconciliation](store-entitlement-reconciliation.md) | Store, server, and client disagree about a driver membership | Converge provider evidence and entitlement without dual access or premature downgrade |
+| [Runtime-profile rollout](runtime-profile-rollout.md) | A combined host is being separated into API, realtime, country, media, or reporting profiles | Preserve ownership and one-writer rules while rolling profiles forward or back |
 | [Backup and recovery](backup-and-recovery.md) | Data loss is suspected or a restore exercise is running | Restore a consistent control/cell point and prove application invariants |
 | [Privacy and deletion](privacy-deletion.md) | An access, deletion, legal-hold, or retention request needs coordination | Complete and audit work across control and authorized country cells |
 

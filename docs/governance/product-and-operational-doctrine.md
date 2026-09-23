@@ -10,8 +10,8 @@ network fails, two people act at once, a provider times out, or an operator has
 to recover the system at 2 a.m.
 
 - **Reviewed:** 2026-09-19
-- **Application baseline:** mobile `1.0.0+130`, .NET `9`, MySQL `8`
-- **Schema-contract baseline:** `2026.09.19.2`
+- **Application baseline:** mobile `1.0.0+144`, .NET `9`, MySQL `8`
+- **Schema-contract baseline:** `2026.09.23.2`
 - **Scope:** source-level architecture and public-safe operating principles
 - **Not a claim of universal activation:** country, provider, store, legal, and
   physical-device evidence still decide whether a capability is active

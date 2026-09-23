@@ -61,11 +61,11 @@ and the correlation ID used to join evidence.
 
 ## Public contract rules
 
-The public canonical prefix is `/api/v1`. Controller templates use the internal,
-unversioned `api/...` convention; the versioning middleware maps the public v1
-prefix before endpoint matching. Controllers never write `api/v1` themselves,
-because doing so would publish the invalid double-version path
-`/api/v1/v1/...`.
+The public canonical prefix is `/api/v1`. Controllers retain internal `api/...`
+templates, while `ApiV1RouteConvention` registers native canonical `/api/v1/...`
+MVC selectors before endpoint matching. `ApiVersioningMiddleware` never rewrites
+paths; it emits compatibility lifecycle headers and alias-traffic telemetry.
+This separation prevents accidental `/api/v1/v1/...` selectors.
 
 The former unversioned `/api/...` contract is a temporary compatibility alias.
 It returns deprecation, successor-link, and sunset metadata and is scheduled to
@@ -73,8 +73,11 @@ sunset on 2027-02-10. New first-party clients use `/api/v1`; the double-version
 form must return `404`.
 
 One reviewed OpenAPI v1 artifact in the product repository describes the public
-contract. A contract change is incomplete until endpoint metadata, canonical
-path tests, artifact, and SHA-256 sidecar agree.
+contract. At the build `1.0.0+144` baseline it contains 826 paths and 925
+operations, with SHA-256
+`34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
+A contract change is incomplete until endpoint metadata, canonical path tests,
+artifact, generated client, and SHA-256 sidecar agree.
 
 Wire conventions include:
 
@@ -139,7 +142,9 @@ key, and payload hash:
 2. an identical concurrent request receives an in-progress result;
 3. a completed retry replays the recorded outcome;
 4. the same key with a different payload is rejected; and
-5. an exception or 5xx safely releases/expires the claim.
+5. a response interruption or 5xx after possible execution retains the claim as
+   `OutcomeUnknown` until reconciliation; only a handler that proves no domain
+   or provider mutation occurred may release it for safe re-execution.
 
 Idempotency prevents duplicate intent; it does not replace a state machine. Ride,
 bid, trip, booking, cashout, and membership handlers also compare expected state
@@ -157,10 +162,17 @@ scope, claims the message, invokes a typed handler, and records retry/failure
 metadata. Business handlers do not wait for SMS, email, push, or webhook delivery.
 
 Implemented/configurable adapters include Firebase push, Amazon SES, AWS/Twilio
-messaging, Google Maps, OSRM-compatible routing/map matching, Stripe, PayPal,
-Google Play and Apple store validation, LiveKit, S3, ClamAV, Valkey,
+messaging, Google Maps, OSRM-compatible routing/map matching, PayPal, reviewed
+bank-transfer flows, Google Play and Apple store validation, LiveKit, S3,
+ClamAV, Valkey,
 EventBridge/SQS, Cloudflare-compatible proxy headers, and OpenTelemetry. Source
 presence does not mean every provider account is enabled in every country.
+
+The same modular monolith can compose as `Combined`, `PublicApi`,
+`RealtimeGateway`, `CellWorker`, `MediaWorker`, or `ReportingWorker`. Each
+profile registers only its owned endpoints, workers, providers, and health
+checks. Country workers bind exactly one provisioned cell and fail startup on an
+invalid or ambiguous binding. See [Runtime Profiles](runtime-profiles.md).
 
 Outbound GET/HEAD may use bounded transient retries. Mutations are retried only
 with stable provider idempotency and unknown-result reconciliation. Webhooks

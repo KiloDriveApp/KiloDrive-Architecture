@@ -7,7 +7,7 @@ of unrestricted CRUD screens. It helps authorized people resolve country-scoped
 work while preserving identity, tenant, financial, safety, privacy, and evidence
 boundaries.
 
-- **Reviewed baseline:** mobile `1.0.0+111`, schema contract `2026.09.12.1`
+- **Reviewed baseline:** mobile `1.0.0+144`, schema contract `2026.09.23.2`
 - **Source status:** implemented incrementally across API, Flutter, and Portal
 - **Runtime status:** capability-, country-, role-, and feature-policy-dependent
 - **Not claimed:** complete mobile/Portal parity, universal country activation,
@@ -16,6 +16,20 @@ boundaries.
 The control plane keeps entity browsing for investigation, but ordinary work is
 organized around outcomes: verify an applicant, contain a safety issue,
 reconcile money, recover an outbox item, resolve a case, or restore a provider.
+
+The build 144 readiness dashboard keeps four evidence layers separate: code
+tests, provider certification, operational configuration, and current production
+health. It evaluates feature policy, country and tenant activation, native-store
+product discovery, Apple/Google server credentials, webhook freshness,
+acknowledgement backlog, reconciliation exceptions, notification delivery,
+device enforcement, fraud thresholds, and onboarding SLA. A green feature flag
+alone is never labelled production certified.
+
+Foreign-exchange administration is a maker-checker workspace. Operators can
+propose, review, schedule, activate, suspend and supersede versioned rates while
+seeing source classification, freshness, evidence hash and impacted purposes.
+The client cannot edit historical transaction snapshots or bypass quote expiry.
+See [Authoritative Foreign Exchange](authoritative-foreign-exchange.md).
 
 ## Trust boundaries
 
