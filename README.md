@@ -76,7 +76,7 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in [Release 1.0.0 build 144](docs/architecture/release-1.0.0-144.md).
+The current source release is documented in [Release 1.0.0 build 156](docs/architecture/release-1.0.0-156.md); build 144 remains a historical baseline.
 It covers authoritative role workspaces, rider active-journey protection,
 central foreign-exchange evidence, recoverable PayPal and store-billing flows,
 driver readiness consistency, public manuals and search discovery, and the

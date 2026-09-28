@@ -1,5 +1,9 @@
 # Mobile Architecture
 
+For the build-156 typed platform boundaries, Apple StoreKit, Google Play Billing,
+subscription recovery and their separate test/certification evidence, see
+[Native adapters and store billing](native-adapters-and-store-billing.md).
+
 KiloDrive's mobile client is a Flutter application for Android and iOS. The same
 binary can expose rider, driver, rental organization, tools-only, and authorized
 System Administrator workspaces. This chapter explains the boundaries that keep

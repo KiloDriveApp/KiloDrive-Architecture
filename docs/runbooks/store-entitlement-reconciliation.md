@@ -2,8 +2,8 @@
 
 - **Owner:** Membership and Store Billing Platform
 - **Status:** Reviewed public procedure
-- **Last exercised:** 2026-09-23 (source and automated-test review)
-- **Related architecture:** [Financial systems](../architecture/financial-systems.md)
+- **Last exercised:** 2026-09-28 (build-156 source and recorded automated-test review; no new physical-store exercise)
+- **Related architecture:** [Financial systems](../architecture/financial-systems.md) and [Native adapters and store billing](../architecture/native-adapters-and-store-billing.md)
 
 ## Trigger
 
