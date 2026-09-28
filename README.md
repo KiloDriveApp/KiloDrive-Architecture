@@ -76,13 +76,14 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in [Release 1.0.0 build 156](docs/architecture/release-1.0.0-156.md); build 144 remains a historical baseline.
-It covers authoritative role workspaces, rider active-journey protection,
-central foreign-exchange evidence, recoverable PayPal and store-billing flows,
-driver readiness consistency, public manuals and search discovery, and the
-latest System Administrator operational boundaries. The schema contract is
-`2026.09.23.2`; the reviewed OpenAPI v1 artifact contains 826 paths and 925
-operations with SHA-256
+The current source release is documented in
+[Release 1.0.0 build 156](docs/architecture/release-1.0.0-156.md). Its public
+changelog consolidates the pending improvements under that build.
+[Build 144](docs/architecture/release-1.0.0-144.md) remains a historical
+baseline for role workspaces, journey protection, financial evidence,
+administration, manuals, and search discovery. The current source schema
+contract is `2026.09.26.2`; the reviewed build-144 OpenAPI v1 artifact
+contains 826 paths and 925 operations with SHA-256
 `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
 Deployment, native-copy, device, store, provider, and country certification
 remain separate evidence.
@@ -352,16 +353,17 @@ readiness is decided by restricted deployment evidence, health checks, schema
 fingerprints, provider canaries, reconciliation, restore exercises, and
 jurisdiction-specific approval.
 
-## Documentation baseline
+## Documentation baselines
 
-- Mobile baseline: KiloDrive `1.0.0+144`
-- Flutter baseline: `3.41.7` / Dart `3.11.5`
+- Current source mobile release: KiloDrive `1.0.0+156`
+- Current source schema contract: `2026.09.26.2`
+- Last full architecture review: 2026-09-23, build `1.0.0+144`
+- Reviewed Flutter snapshot: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`
 - Database family: MySQL `8`
-- Schema-contract baseline: `2026.09.23.2`
-- OpenAPI v1 baseline: 826 paths / 925 operations
-- OpenAPI SHA-256: `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`
+- Reviewed build-144 schema contract: `2026.09.23.2`
+- Reviewed build-144 OpenAPI v1 snapshot: 826 paths / 925 operations
+- Reviewed OpenAPI SHA-256: `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`
 - Supported mobile locales: `en`, `es`, `fr`, `ja`, `zh_Hans`, `zh_Hant`
-- Last architecture review: 2026-09-23
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).

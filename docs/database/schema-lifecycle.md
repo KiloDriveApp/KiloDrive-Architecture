@@ -1,6 +1,7 @@
 # Schema Lifecycle
 
-- **Reviewed source baseline:** `2026.09.23.2`
+- **Current source contract:** `2026.09.26.2` (build `1.0.0+156`); the
+  `2026.09.23.2` object snapshot remains a historical reviewed baseline
 - **Database engine:** MySQL 8
 - **Evolution authority:** canonical idempotent SQL scripts; no EF migrations or
   runtime EF seeding

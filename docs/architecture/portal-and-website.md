@@ -95,9 +95,19 @@ end-to-end evidence are reviewed.
 ## Corporate website flow
 
 The website renders public pages on the server. Published content is loaded from
-the API per tenant and language. Localized routes, canonical links, `hreflang`,
-metadata, Open Graph tags, accessibility structure, legal links, and support
-paths are part of the output.
+the API for the selected country, tenant, and language. Localized routes,
+canonical links, `hreflang`, metadata, Open Graph tags, accessibility structure,
+legal links, and support paths are part of the output.
+
+The country-neutral homepage uses Cloudflare's visitor-country header to send a
+temporary redirect to a provisioned country path such as `/us/` or `/jm/`.
+Unknown or unsupported country codes fall back to Jamaica. This root response
+is private and uncacheable and varies on the country header; it does not wait
+for a content API call. An explicit country path remains the visitor's choice
+and is not relocated by a later IP signal. English country pages use
+`/{country}/...`; published Spanish and French variants use
+`/{country}/{language}/...`. Older language-first links resolve to the
+documented Jamaica compatibility route until callers migrate.
 
 The reviewed public information architecture groups content by user intent:
 
@@ -109,19 +119,30 @@ The reviewed public information architecture groups content by user intent:
   explanation; and
 - **Resources:** calculators, blog/guides, About, and Help & Support.
 
-Those labels are navigation aids, not a second content database. Audience pages
-(`riders`, `drivers`, rental and parcel content), `features`, `membership`,
-`safety`, and `data-security` remain published tenant content. Navigation and
-the footer resolve those records with a bounded fallback so an optional
-navigation read cannot blank the page. A content slug is allow-listed and does
-not become an arbitrary API or filesystem path.
+Those labels are navigation aids, not a second content database. Audience,
+feature, membership, safety, and legal pages appear only when their country and
+language content is published. An unpublished data-security or legal variant
+is not offered as a live navigation link. Navigation and the footer resolve
+eligible records with a bounded fallback so an optional navigation read cannot
+blank the page. A content slug is allow-listed and does not become an arbitrary
+API or filesystem path.
+
+The country pricing page obtains membership amounts from the public API's
+active country-cell plan catalogue and reviewed USD-to-local-currency quote.
+The API validates the selected country and currency; the website withholds a
+quote when its exchange-rate evidence has expired. The page is uncacheable and
+currently carries `noindex,follow` while public pricing evidence and country
+availability are reviewed. Storefront subscription prices remain the native
+checkout authority and are not inferred from a marketing conversion.
 
 Search and social metadata are server-rendered. The configured public base URL
 produces one absolute canonical URL, an `x-default` plus supported English,
 Spanish, and French alternates, Open Graph and Twitter summary metadata, and the
 appropriate WebSite/Organization/Breadcrumb/BlogPosting structured data.
-`sitemap.xml` and its focused child sitemaps list only self-canonical, HTTP 200,
-indexable routes and approved language variants. Public manuals have first-class
+`sitemap.xml` selects launch-ready country maps plus eligible global and blog
+maps. Each map lists only selected self-canonical, HTTP 200, indexable routes
+and approved language variants; a published page is not assumed to belong in
+every country map. Public manuals have first-class
 responsive HTML pages with a table of contents, search, illustrations and
 semantic headings; the dedicated manual sitemap makes those pages discoverable
 without treating PDF/Markdown artifacts as competing canonical pages.
