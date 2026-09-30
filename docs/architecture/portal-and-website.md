@@ -9,6 +9,14 @@ KiloDrive has two .NET 9 browser applications with different boundaries:
 - the **Corporate Website** is an ASP.NET Core Razor Pages public site for
   content, calculators, support entry points, and legal information.
 
+The live [KiloDrive website](https://kilodrive.com/) provides
+[manuals](https://kilodrive.com/manuals),
+[Contact Us](https://kilodrive.com/contact),
+[What's new](https://kilodrive.com/changelog),
+[Privacy Policy](https://kilodrive.com/privacy) and
+[Terms of Service](https://kilodrive.com/terms). See
+[official product links](../public-product-links.md) for the full public set.
+
 Neither application owns domain tables or receives MySQL credentials. Both call
 the versioned API, which remains the authorization and business-rule authority.
 Hiding an action in HTML helps usability; it is never security.

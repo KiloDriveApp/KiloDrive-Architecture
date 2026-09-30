@@ -5,6 +5,13 @@ this column?” but “does this component need the data at all?” KiloDrive se
 identity, country operations, transient telemetry, audit, provider attempts, and
 private artifacts so each subsystem can receive the minimum it needs.
 
+Readers seeking the user-facing notice should use the current
+[Privacy Policy](https://kilodrive.com/privacy) and
+[Data protection overview](https://kilodrive.com/data-protection). Website
+storage and tracking are covered by the
+[Cookie Policy](https://kilodrive.com/cookie-policy); rights enquiries can begin
+through [Contact KiloDrive](https://kilodrive.com/contact).
+
 ## Data map
 
 | Data class | Why it exists | Typical owner | Special concern |

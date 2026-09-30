@@ -6,6 +6,10 @@ database that owns a trip. The system that announces a bid is not the system
 that proves who won it. The cache that knows where a driver was seconds ago is
 not the permanent trip record.
 
+For the public product experience, see the [KiloDrive website](https://kilodrive.com/)
+and [official product links](../public-product-links.md), including manuals,
+support, policies, releases and the consumer download.
+
 ## The chapters
 
 | Chapter | Question it answers |

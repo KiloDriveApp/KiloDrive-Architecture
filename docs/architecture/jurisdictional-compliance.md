@@ -8,6 +8,12 @@ The platform therefore treats a country as more than a value in a dropdown. A
 country is an operational and legal boundary with its own data cell, rules,
 providers, evidence, owners, and activation decision.
 
+The public [Legal Center](https://kilodrive.com/legal),
+[Privacy Policy](https://kilodrive.com/privacy) and
+[Terms of Service](https://kilodrive.com/terms) are the reader-facing entry
+points. An approved country or service schedule and current checkout disclosure
+remain necessary where those general documents do not settle a local rule.
+
 This architecture **supports** compliance work. It does not certify that a
 country launch is lawful, replace qualified local counsel, or guarantee that a
 deployment remains compliant after a law, provider term, or business practice

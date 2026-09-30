@@ -8,6 +8,11 @@ ordinary rider, driver and rental journeys and no operative System Admin
 workspace. A person who is both an administrator and a rider can use separate,
 appropriately scoped sessions in the two apps under one global identity.
 
+The [public Google Play listing](https://play.google.com/store/apps/details?id=com.kilodrive.app)
+belongs to the consumer app. It is not a distribution link for the restricted
+System Admin app. Public support, legal and product resources are collected in
+[official product links](../public-product-links.md).
+
 This chapter describes the **2026-09-30 local source checkpoint**. The separate
 app exists and several workspaces are implemented, but the migration is not
 complete. Source tests, an API route, a rendered screen and a signed-device

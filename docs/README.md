@@ -4,6 +4,12 @@ This guide is the front door to the KiloDrive documentation set. You do not
 need to read every file before making a useful contribution. You do need to
 understand the ownership and failure boundaries touched by your change.
 
+Readers looking for the live website, rider/driver/rental manuals, public
+changes, support, privacy notices, terms or the consumer Google Play listing
+can start with [official product links](public-product-links.md). Architecture
+chapters describe the design; current country-specific product disclosures
+remain on the website and in the app.
+
 Before describing a new product as ready, read the
 [product and operational doctrine](governance/product-and-operational-doctrine.md).
 It defines separate source-maturity and deployment-state language and records

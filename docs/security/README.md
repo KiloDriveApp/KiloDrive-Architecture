@@ -12,6 +12,13 @@ test report, or permission to advertise “military-grade” security. Honest
 security documentation names assumptions, failure modes, and remaining
 deployment responsibilities.
 
+The public [Privacy Policy](https://kilodrive.com/privacy),
+[Cookie Policy](https://kilodrive.com/cookie-policy),
+[Data protection overview](https://kilodrive.com/data-protection) and
+[Terms of Service](https://kilodrive.com/terms) describe user-facing commitments.
+This repository explains their supporting technical boundaries; it is not a
+substitute for the current published documents.
+
 For the separate operator client, read [System Admin data handling](admin-data-handling.md)
 alongside [identity and access](identity-and-access.md). The former classifies
 what an administrator may view, cache, export and retain for a permitted task.

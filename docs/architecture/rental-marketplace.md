@@ -13,6 +13,11 @@ row whose `Status` may be edited freely. It is a versioned agreement that moves
 through a controlled state machine while availability, payment, evidence,
 accounting, notifications, and audit stay consistent.
 
+The [rental provider manual](https://kilodrive.com/manuals/rental-provider)
+explains user tasks; this chapter explains the system behind them. Current
+[Terms of Service](https://kilodrive.com/terms) and the country-specific booking
+disclosure govern an actual rental.
+
 ## Capability status
 
 The reviewed KiloDrive source contains the country-cell rental organization,

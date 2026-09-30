@@ -8,6 +8,12 @@ movement also needs durable business records, immutable subledger entries, a
 balanced accounting journal, and a way to reconcile KiloDrive with the external
 provider that actually moved the funds.
 
+For user-facing wallet and membership steps, consult the
+[rider manual](https://kilodrive.com/manuals/rider) or
+[driver manual](https://kilodrive.com/manuals/driver), the current
+[Terms of Service](https://kilodrive.com/terms), and the in-app price and
+payment disclosure for the selected country.
+
 ## Status legend
 
 This chapter uses the doctrine's two axes. **Implemented**, **Incremental**, and

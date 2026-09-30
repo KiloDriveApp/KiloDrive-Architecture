@@ -18,6 +18,16 @@ painful lesson, the lesson is recorded beside the design it changed.
 > architecture and operating principles. Restricted values and private incident
 > evidence belong in controlled operational systems.
 
+For the product itself, visit the [KiloDrive website](https://kilodrive.com/),
+read the [user manuals](https://kilodrive.com/manuals) or
+[latest public changes](https://kilodrive.com/changelog), and use
+[Contact KiloDrive](https://kilodrive.com/contact) for help. The
+[Privacy Policy](https://kilodrive.com/privacy),
+[Terms of Service](https://kilodrive.com/terms), and
+[consumer Android listing on Google Play](https://play.google.com/store/apps/details?id=com.kilodrive.app)
+are linked from the [official product-links guide](docs/public-product-links.md).
+The separate System Admin app is not the public consumer download.
+
 ## Start here
 
 If this is your first day with a sharded, realtime platform, use the following

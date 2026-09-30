@@ -18,6 +18,14 @@ and artifact discipline to each, while using the
 [two-app release and compatibility runbook](two-app-release-and-compatibility.md)
 for their shared API, dual-role, push-isolation and legacy-client decisions.
 
+Verify the consumer release against its
+[Google Play listing](https://play.google.com/store/apps/details?id=com.kilodrive.app),
+the public [What's new page](https://kilodrive.com/changelog),
+[manual library](https://kilodrive.com/manuals),
+[Privacy Policy](https://kilodrive.com/privacy) and
+[Terms of Service](https://kilodrive.com/terms). The separate System Admin app
+uses restricted distribution; do not reuse the consumer store link for it.
+
 A release build is not store-ready merely because `flutter build` exits with
 zero. The artifact submitted to a store must be the same artifact whose native
 contents, signing identity, privacy behavior, subscription UI, background modes,

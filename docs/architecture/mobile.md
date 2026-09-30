@@ -11,6 +11,13 @@ System Administrator work belongs to the separate restricted app described in
 [System Administration](system-administration.md). The two apps share API
 contracts and design principles, not privileged navigation or local credentials.
 
+The public consumer Android listing is
+[KiloDrive on Google Play](https://play.google.com/store/apps/details?id=com.kilodrive.app).
+The [rider](https://kilodrive.com/manuals/rider),
+[driver](https://kilodrive.com/manuals/driver) and
+[rental provider](https://kilodrive.com/manuals/rental-provider) manuals describe
+user workflows. Country availability and current in-app terms remain decisive.
+
 ## Verified technology baseline
 
 The current source targets Flutter 3.41.7 and Dart 3.11.5. The application uses

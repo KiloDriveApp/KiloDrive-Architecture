@@ -14,6 +14,12 @@ prove store distribution, push routing, application attestation or operational
 parity. This runbook keeps those questions separate and avoids production
 targets, credential procedures and named private resources.
 
+The [consumer Google Play listing](https://play.google.com/store/apps/details?id=com.kilodrive.app)
+and [public changelog](https://kilodrive.com/changelog) are external
+consumer-facing checkpoints. The System Admin app has a separate restricted
+distribution path; public store visibility must not be inferred from the
+consumer listing.
+
 ## Decision owners
 
 | Owner | Decision to record |
