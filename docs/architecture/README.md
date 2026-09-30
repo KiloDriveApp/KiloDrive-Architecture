@@ -30,6 +30,10 @@ not the permanent trip record.
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
 | [System Admin mobile app](system-admin-mobile-app.md) | What does the separate operator app present, and how do its dossiers, investigations, security, notifications and recovery behave? |
+| [Admin workflow contracts](admin-workflow-contracts.md) | Which operator outcomes have scoped source surfaces, which are partial, and what evidence is still needed? |
+| [Mobile sessions and installations](mobile-session-and-device-lifecycle.md) | How do identity, session families, app installations, device restrictions and dual-role workspaces differ? |
+| [Notification delivery lifecycle](notification-delivery-lifecycle.md) | How do domain commits, outbox work, provider attempts, device presentation and read state stay separate? |
+| [Admin accessibility and localization](admin-accessibility-and-localization.md) | How are high-risk operator flows reviewed across screen states, sizes, assistive technology and languages? |
 | [Runtime boundaries and certification](runtime-boundaries-and-certification.md) | How are anonymous tenancy, public endpoints, response hardening, typed clients, negotiated fares, realtime recovery, and capacity evidence certified together? |
 | [Runtime profiles](runtime-profiles.md) | How can one modular monolith run as API, realtime, country worker, media, reporting, or combined profiles without splitting transactions? |
 | [Authoritative foreign exchange](authoritative-foreign-exchange.md) | How are reviewed rates, quotes, transaction snapshots, fees, reconciliation, and administration kept under one authority? |

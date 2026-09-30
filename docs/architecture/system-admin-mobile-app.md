@@ -222,7 +222,9 @@ signed candidate before a general release claim.
 Use the source repository's `src/client/system_admin/MIGRATION_PARITY.md` and
 dated operation-evidence ledger for per-workflow status; regenerate them before
 using counts because the People work has continued since the last ledger. For
-the trust boundaries, continue with [Identity and access](../security/identity-and-access.md),
+the operator-level map, continue with [workflow contracts](admin-workflow-contracts.md)
+and [critical journeys](../diagrams/admin-critical-journeys.md). For the trust
+boundaries, continue with [Identity and access](../security/identity-and-access.md),
 [Realtime and events](realtime-and-events.md),
 [Financial systems](financial-systems.md), and
 [Capability status](capability-status.md).

@@ -8,6 +8,7 @@ incident response—not as substitutes for the state machine, schema, or runbook
 - [Ride bidding lifecycle](ride-bidding-lifecycle.md)
 - [Country-cell ownership](country-cell-ownership.md)
 - [Wallet and accounting flow](wallet-accounting-flow.md)
+- [System Admin critical journeys](admin-critical-journeys.md)
 
 ## How to use them
 

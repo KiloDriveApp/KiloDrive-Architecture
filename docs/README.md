@@ -48,6 +48,9 @@ Read [mobile architecture](architecture/mobile.md),
 [API contracts](architecture/api.md), and
 [realtime/event processing](architecture/realtime-and-events.md). Then read the
 [mobile release runbook](runbooks/mobile-release.md).
+For app separation and device/notification trust, continue with
+[mobile sessions and installations](architecture/mobile-session-and-device-lifecycle.md)
+and [notification delivery](architecture/notification-delivery-lifecycle.md).
 
 Mobile engineers should also understand the backend idempotency contract. A
 retry button, reconnect loop, or offline queue can repeat a command long after
@@ -131,10 +134,14 @@ sanitized evidence.
 ### I work on System Administration or support operations
 
 Read [System Administration architecture](architecture/system-administration.md),
+[the separate Admin app](architecture/system-admin-mobile-app.md),
+[workflow contracts](architecture/admin-workflow-contracts.md),
 [Portal and website architecture](architecture/portal-and-website.md),
 [capability status](architecture/capability-status.md),
 [identity and access](security/identity-and-access.md), and the
 [support/dispute runbook](runbooks/support-dispute-cases.md).
+The [critical-journey diagrams](diagrams/admin-critical-journeys.md) explain
+how an interrupted action is reconciled without a blind second mutation.
 
 Prefer permission- and country-scoped work queues over raw entity menus. Keep
 the selected investigation stable while deltas load, require recent proof for

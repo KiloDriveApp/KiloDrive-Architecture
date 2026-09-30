@@ -82,6 +82,10 @@ The current local-source architecture is documented in
 [Two mobile apps, one authoritative API](docs/architecture/two-mobile-apps-and-security-2026-09-30.md).
 It explains the consumer/System Admin split, shared identity, adapters,
 notifications, device trust, and the release evidence still needed. The
+[Admin workflow map](docs/architecture/admin-workflow-contracts.md),
+[critical journeys](docs/diagrams/admin-critical-journeys.md), and
+[two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
+carry the design into task and release decisions. The
 [build 156 update](docs/architecture/release-1.0.0-156.md) is historical; its
 public changelog consolidated the pending improvements under that build.
 [Build 144](docs/architecture/release-1.0.0-144.md) remains a historical
