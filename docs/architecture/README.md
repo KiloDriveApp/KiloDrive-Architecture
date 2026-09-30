@@ -29,6 +29,7 @@ not the permanent trip record.
 | [Native adapters and store billing](native-adapters-and-store-billing.md) | How do device SDKs, StoreKit, Play Billing, the API, and membership recovery divide responsibility? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
+| [System Admin mobile app](system-admin-mobile-app.md) | What does the separate operator app present, and how do its dossiers, investigations, security, notifications and recovery behave? |
 | [Runtime boundaries and certification](runtime-boundaries-and-certification.md) | How are anonymous tenancy, public endpoints, response hardening, typed clients, negotiated fares, realtime recovery, and capacity evidence certified together? |
 | [Runtime profiles](runtime-profiles.md) | How can one modular monolith run as API, realtime, country worker, media, reporting, or combined profiles without splitting transactions? |
 | [Authoritative foreign exchange](authoritative-foreign-exchange.md) | How are reviewed rates, quotes, transaction snapshots, fees, reconciliation, and administration kept under one authority? |

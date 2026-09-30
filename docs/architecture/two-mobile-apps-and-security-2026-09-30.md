@@ -61,6 +61,9 @@ distribution require artifact-bound verification.
 
 ## What the separate System Admin app currently covers
 
+The [dedicated System Admin mobile chapter](system-admin-mobile-app.md) gives a
+fuller public-safe account of the operator experience, workspaces and safeguards.
+
 The home screen presents server statistics and work requiring attention. A
 four-destination bottom bar and drawer expose permitted workspaces; theme,
 contrast and text scaling follow the consumer design language while retaining

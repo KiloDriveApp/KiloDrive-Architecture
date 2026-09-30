@@ -54,6 +54,8 @@ reading order. It builds one idea at a time:
 12. [System Administration](docs/architecture/system-administration.md) — how
     capabilities, country workspaces, work queues, investigations, step-up,
     audit, and safe recovery fit together.
+    The [System Admin mobile app](docs/architecture/system-admin-mobile-app.md)
+    chapter describes the separate operator client and its current limits.
 13. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
     production safely.
 14. [Public quality assurance and concurrency guarantees](docs/quality/public-assurance-and-concurrency.md)

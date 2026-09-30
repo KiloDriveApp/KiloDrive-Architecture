@@ -14,6 +14,8 @@ separate browser surface. The app split does not relax server authorization or
 certify the many workflows still migrating from the archived consumer-admin
 surface. The [2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
 maps ownership, adapters, notifications, device trust and release limits.
+The [dedicated System Admin mobile chapter](system-admin-mobile-app.md) explains
+the operator experience and currently migrated workspaces in more detail.
 
 - **Historical reviewed baseline below:** consumer `1.0.0+144`, schema contract `2026.09.23.2`
 - **Current local source checkpoint:** consumer `1.0.0+159`, separate Admin `0.1.0+4`, schema contract `2026.09.30.2`; not a signed release claim
@@ -412,6 +414,7 @@ accounting policy.
 
 ## Related reading
 
+- [System Admin mobile app](system-admin-mobile-app.md)
 - [Product and operational doctrine](../governance/product-and-operational-doctrine.md)
 - [Portal and corporate website](portal-and-website.md)
 - [Capability status and evidence](capability-status.md)
