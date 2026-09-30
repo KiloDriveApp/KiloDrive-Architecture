@@ -32,7 +32,8 @@ eligible to accept a trip.
 ```mermaid
 flowchart LR
     subgraph Clients[Untrusted clients]
-        Mobile[Flutter mobile app]
+        Mobile[Consumer Flutter app]
+        AdminMobile[Separate System Admin Flutter app]
         Portal[ASP.NET Core portal]
         Website[Corporate website]
     end
@@ -55,6 +56,7 @@ flowchart LR
     Telemetry[Metrics, traces, logs, alarms]
 
     Mobile --> Edge
+    AdminMobile --> Edge
     Portal --> Edge
     Website --> Edge
     Edge --> API
@@ -85,17 +87,23 @@ data.
 
 ## Runtime components and their jobs
 
-### Flutter mobile app
+### Flutter mobile apps
 
-The mobile app presents rider, driver, rental, tools-only, and System Admin
-workspaces. It is an untrusted client even when distributed through an official
-store. APK or IPA code can be inspected or modified, so the server repeats all
-authorization, eligibility, state-transition, and financial checks.
+The consumer app presents rider, driver, rental and tools-only workspaces. The
+separate System Admin app presents authorized administrative workspaces. Neither
+is trusted merely because it came from an official store: APK or IPA code can
+be inspected or modified, so the server repeats authorization, eligibility,
+state-transition and financial checks. A person with both SystemAdmin and rider
+membership uses separately scoped sessions in the respective apps.
 
-The app uses repositories and Riverpod state for network-backed features,
+The consumer app uses repositories and Riverpod state for network-backed features,
 SignalR for low-latency changes, FCM/APNs for background notification, and
 polling or refresh as a recovery path. Optimistic UI makes the experience feel
 fast; the API response remains authoritative.
+
+The Admin app has its own native app and Firebase identities, secure local
+state and capability-scoped navigation. See the
+[current two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md).
 
 ### Portal
 

@@ -18,6 +18,15 @@ commit, clients can render a ride that later rolls back. If it waits for push
 after commit, a provider timeout can produce a false HTTP failure. If SignalR is
 the only event record, an API restart loses the update.
 
+The consumer and separate System Admin apps have distinct push channels and
+installation/session bindings. Outbox acceptance, FCM/APNs acceptance, OS
+presentation and a person's reading the message are separate outcomes. Admin
+alerts contain a generic hint; opening one requires a fresh identity, country,
+tenant, capability and target-record check. Exact-installation notification is
+gated to a reviewed foreground presenter and must never infer ownership from a
+historical device association. The [two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+maps these notification and device-trust boundaries.
+
 ## SignalR topology
 
 Each API node hosts the realtime hub. A Valkey/Redis backplane carries group

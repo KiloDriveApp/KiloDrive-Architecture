@@ -26,6 +26,7 @@ ADRs are not marketing documents. A good ADR admits what became harder.
 | [013](013-runtime-profile-composition.md) | Configurable modular-monolith runtime profiles | Accepted/Incremental |
 | [014](014-authoritative-foreign-exchange.md) | Database-backed, versioned foreign-exchange authority | Accepted |
 | [015](015-account-membership-notification-authority.md) | Account, membership and notification authority boundaries | Accepted/Incremental |
+| [016](016-separate-system-admin-mobile-app.md) | Separate privileged mobile administration from the consumer app | Accepted/Incremental |
 
 ## Lifecycle
 

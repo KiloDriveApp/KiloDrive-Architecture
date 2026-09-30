@@ -25,6 +25,7 @@ not the permanent trip record.
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |
 | [Documents, media, and voice](documents-media-voice.md) | How are private uploads and call media authorized, scanned, retained, and audited? |
 | [Mobile](mobile.md) | How do Flutter workspaces, repositories, state, offline behavior, and native services fit together? |
+| [Two mobile apps and security](two-mobile-apps-and-security-2026-09-30.md) | Which work belongs in the consumer versus System Admin app, and how do identity, adapters, device trust, notifications and release evidence connect? |
 | [Native adapters and store billing](native-adapters-and-store-billing.md) | How do device SDKs, StoreKit, Play Billing, the API, and membership recovery divide responsibility? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
@@ -36,9 +37,10 @@ not the permanent trip record.
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |
 | [Plugins and extension points](plugins-and-extension-points.md) | Where can providers change without leaking SDK details into business logic? |
 
-The [1.0.0 build 156 release update](release-1.0.0-156.md) records the current
-source baseline, adapter changes, billing recovery, and verified test evidence.
-The [build 144 update](release-1.0.0-144.md) remains a historical snapshot.
+The [2026-09-30 two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+records the later local `1.0.0+159` consumer and `0.1.0+4` Admin architecture;
+it is not signed-release evidence. The [build 156 update](release-1.0.0-156.md)
+and [build 144 update](release-1.0.0-144.md) remain historical snapshots.
 
 ## Three mental models worth keeping
 

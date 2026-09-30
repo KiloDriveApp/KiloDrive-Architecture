@@ -5,6 +5,12 @@
 - **Environment:** KiloDrive source build `1.0.0+156`; automated host/release tests
 - **Evidence:** Source repository `docs/architecture/platform-adapter-migration-inventory.md`, `docs/releases/release-156-source-verification.md`, and the dated release-gate results cited there
 
+This page retains its build-156 verification history. The consumer source has
+since advanced to `1.0.0+159`, and the System Admin client is a separate app.
+The [two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+describes current ownership and additional device, notification and identity
+adapters. Its source observations are not a signed release certification.
+
 Native adapters isolate Flutter from device and store SDKs. They do not own account identity, trip state, money, or membership entitlement. Those decisions are API and country-cell responsibilities. An adapter reports a typed observation or performs a bounded device action; its caller verifies account, tenant, country, role, and operation generation before accepting a callback. A late callback from a previous account or disposed screen cannot replace current state.
 
 The common operation shape is **prepare → check scope → invoke native API → classify result → retain sanitized evidence → reconcile with the API → show one safe next action**. Completed, explicitly cancelled, unavailable, failed, and outcome-unknown are different states. An unknown purchase cannot be retried as a new purchase simply because a network response was lost. It retains its original operation identity and is checked against server history. A confirmed cancellation of the StoreKit sheet, by contrast, must clear the local in-flight state without alleging that Apple charged the user.
@@ -35,6 +41,14 @@ A verified cancellation normally stops renewal but preserves access through the 
 The Android adapter discovers products/base plans for the signed-in Play storefront, presents the Play purchase flow, and observes purchase updates/restore. The API binds verified evidence to the KiloDrive account, uses `subscriptionsv2.get` as the provider status authority, projects the entitlement, and acknowledges a valid purchase exactly once. RTDN is a notification to reconcile provider status, not an entitlement command. Linked purchase tokens, replacement modes, duplicate/out-of-order events, pending purchases, pause, grace, hold, cancellation, refund, and revocation must converge without dual access or duplicate charges.
 
 Both platforms preserve an operation journal and original idempotency/revision information across response loss and process death. Confirmed success moves to Current Plan; unresolved provider outcomes show checking/recovery with a support reference and no blind second-buy action. Server reconciliation and a restricted exception case handle disagreement. See the [operator runbook](../runbooks/store-entitlement-reconciliation.md).
+
+At the later build-159 source checkpoint, Google Play preparation protects an
+exact quote and billing account before opening the sheet, but a new-token RTDN
+arriving before app verification still lacks a provider-echoed operation ID and
+verified exact first-token charge. The server fails closed instead of guessing
+an entitlement. StoreKit and Play lifecycle certification requires a signed
+artifact, licensed/sandbox provider history and an exact server ledger/outbox
+timeline. The earlier build-156 host tests below do not close those gaps.
 
 ## What was actually tested for build 156
 

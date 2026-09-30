@@ -15,13 +15,12 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
-The current public-safe source synchronization is the
-[1.0.0 build 156 architecture update](architecture/release-1.0.0-156.md)
-and the historical [build 144 baseline](architecture/release-1.0.0-144.md).
-It records mobile `1.0.0+156`, source schema contract `2026.09.26.2`, the
-consolidated public changelog, and the separation between source maturity,
-deployment configuration, provider certification, device evidence, and
-current health.
+The current local-source architecture checkpoint is
+[two mobile apps and security, 2026-09-30](architecture/two-mobile-apps-and-security-2026-09-30.md).
+It records consumer `1.0.0+159`, separate System Admin `0.1.0+4`, and source
+schema contract `2026.09.30.2` as inspected on that date. It is not a signed
+release or production certification. The [build 156 update](architecture/release-1.0.0-156.md)
+and [build 144 baseline](architecture/release-1.0.0-144.md) remain historical.
 
 ## Choose a path
 
