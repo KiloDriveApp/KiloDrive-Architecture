@@ -194,6 +194,37 @@ inspect rendered—not source-only—SEO output:
 These controls improve discoverability; they do not justify analytics pixels,
 cross-site tracking, unreviewed scripts, or a CSP exception.
 
+### Country entry, pricing, and changelog publication
+
+Check the country-neutral homepage from at least two known visitor countries.
+Its temporary redirect must use the trusted edge country signal, preserve the
+query, return `Cache-Control: private, no-store`, and vary on that signal. An
+unknown code uses the documented fallback. Revisit an explicit country URL to
+prove that geolocation does not override the visitor's selection. Check that
+country pages load without turning the root redirect into an API round trip.
+
+For every market being promoted, compare the country pricing response with the
+active plan catalogue, the country's ISO currency, and the reviewed exchange
+rate. An unavailable or stale quote must show an unavailable state, not an
+invented price. The pricing response remains uncacheable and non-indexable
+until its separate publication evidence is approved. Recheck country, blog,
+and global sitemap entries against live 200 responses, robots directives, and
+self-canonical URLs; an unpublished legal translation must not be linked as a
+public alternate.
+
+Changelog publication is a control-database content release, distinct from a
+Website binary or mobile store rollout. Read the current build from the mobile
+source version, compare the public release list with the source catalogue, and
+identify unpublished notes that belong under that build. Preserve published
+history; do not silently turn intermediate source builds into separate public
+pages. Back up release and improvement records, apply only the reviewed,
+idempotent release block, and verify the current-release API, detail count,
+website listing, and canonical detail route. If an improvement ID already
+belongs to consolidated history, stop and assign a new ID before completing
+the current release. Keep incomplete translations as drafts and verify their
+reviewed-source fallback. Publication alone neither changes the mobile
+compatibility minimum nor proves a store rollout.
+
 ### Contact and public forms
 
 Email is optional where product policy says so. Validate field-specific errors,
