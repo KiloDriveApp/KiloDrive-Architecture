@@ -14,6 +14,9 @@ disconnects, and operators can recover without inventing state.
   capacity.
 - [Capability status](../architecture/capability-status.md) records which
   evidence families support each public architecture claim.
+- [Mobile security verification](mobile-security-verification.md) maps the
+  consumer and separate Admin app to source, API, signed-device and provider
+  evidence levels without treating a mock as native certification.
 - [Runbooks](../runbooks/README.md) explain how approved releases and recovery
   exercises turn those tests into operational confidence.
 

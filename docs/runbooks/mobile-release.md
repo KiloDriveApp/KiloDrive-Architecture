@@ -13,6 +13,11 @@ store artifacts from one reviewed source commit. It covers versioning, Flutter
 quality gates, native dependency/permission inspection, signed-binary checks,
 device behavior, store metadata, rollout, and rollback.
 
+The consumer and System Admin apps are separate artifacts. Apply this quality
+and artifact discipline to each, while using the
+[two-app release and compatibility runbook](two-app-release-and-compatibility.md)
+for their shared API, dual-role, push-isolation and legacy-client decisions.
+
 A release build is not store-ready merely because `flutter build` exits with
 zero. The artifact submitted to a store must be the same artifact whose native
 contents, signing identity, privacy behavior, subscription UI, background modes,
@@ -101,8 +106,9 @@ Run in this order:
    failures.
 5. Fast model, formatter, repository, provider, widget, contract, and security
    tests.
-6. Integration tests for tools-only, rider, driver, rental, and system-admin
-   workspaces using Flutter semantics, not raw ADB text injection.
+6. Integration tests for tools-only, rider, driver and rental workspaces in the
+   consumer app, and separately for permitted System Admin workspaces in its own
+   package, using Flutter semantics rather than raw ADB text injection.
 7. Render critical routes at 320 px and tablet widths, portrait/landscape,
    1.3x/2.0x platform text, light/dark/high contrast, keyboard open/closed, and
    gesture/three-button navigation.

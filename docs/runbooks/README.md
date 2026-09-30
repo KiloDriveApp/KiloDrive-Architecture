@@ -23,6 +23,7 @@ environment-specific commands remain in restricted operational material.
 | [Portal and website release](portal-website-release.md) | A browser application is being released | Preserve security headers, localization, API contracts, and rollback |
 | [Content Security Policy change](csp-policy-change.md) | A Portal or corporate-site resource needs a production CSP change | Stage, probe, approve, activate, or roll back a parsed policy without weakening the web boundary |
 | [Mobile release](mobile-release.md) | Android or iOS binaries are being prepared | Certify the exact signed artifacts, permissions, native dependencies, and store metadata |
+| [Two-app release and compatibility](two-app-release-and-compatibility.md) | Consumer and System Admin releases or a legacy-client policy change are being coordinated | Preserve app, API, schema, session and push compatibility while proving the exact candidates |
 | [Schema alignment](schema-alignment.md) | Startup/readiness reports schema drift | Align reviewed metadata without guessing or deleting unexplained data |
 | [Country activation](country-activation.md) | A country is being enabled or restored | Prove schema, rules, providers, legal controls, and operational ownership |
 | [Readiness triage](readiness-triage.md) | Readiness is degraded or unhealthy | Identify the dependency and preserve truthful traffic handling |

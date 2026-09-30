@@ -24,6 +24,17 @@ rentals, but no password, refresh token, TOTP secret, or passkey. This avoids th
 dangerous situation where two databases disagree about whether an account is
 locked or which password is current.
 
+The consumer and System Admin apps are distinct clients of this one identity
+authority. A SystemAdmin may also hold an active rider membership under the
+same email. Consumer login resolves a consumer-scoped session with a rider role
+claim and no administrative workspace; the separate Admin app resolves the
+privileged workspace after capability, country and acting-tenant checks. A
+SystemAdmin without an active consumer membership cannot use the consumer app
+as a rider. The consumer HTTP interceptor removes `X-Acting-Tenant`; the API
+still enforces the actual session role and scope. The app split and older-binary
+compatibility boundary are documented in the
+[two-app checkpoint](../architecture/two-mobile-apps-and-security-2026-09-30.md).
+
 Registration spans control and cell databases, so it cannot rely on one ACID
 transaction. The mature design uses a durable, idempotent registration saga:
 prove contact ownership, create the global identity, project the country user,
@@ -143,6 +154,17 @@ Access-token expiry is not enough. Refresh tokens are server-side records groupe
 into a token family. Every refresh rotates the token. If an already used token is
 presented again, the server treats the family as compromised and revokes the
 replacement chain.
+
+Native session families bind to a server-registered installation credential.
+The random installation secret and server ID describe one app installation,
+not permanent physical hardware. A second app or a reinstall can create a
+different installation on the same phone. Model, manufacturer, IP and
+client-claimed installation IDs are useful diagnostics but cannot authorize a
+request. App Check supplies separately verified application identity where
+configured; a claimed channel header is not equivalent. A known installation
+ban or revoked session remains authoritative across resume and token rotation.
+Anonymous, unattested native login that resembles a browser request is still a
+documented admission-boundary gap and must not be described as solved.
 
 Logout calls the server first to revoke the refresh token/session, then the app
 disconnects realtime services and wipes secure tokens, identity metadata,

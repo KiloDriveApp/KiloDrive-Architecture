@@ -10,6 +10,12 @@ architecture claims honest by separating code capability from active operation.
 The status is a reviewed source baseline, not a live production dashboard.
 Operators use restricted deployment evidence and health systems for the latter.
 
+The matrix below retains its 2026-09-23 build-144 review baseline. The later
+[2026-09-30 two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+records the separate consumer/Admin packages, newer source versions, typed
+adapters, notification/device binding and open certification gaps. It does not
+retroactively recertify the older matrix or establish a live deployment state.
+
 ## Review baseline and evidence anchors
 
 - **Reviewed:** 2026-09-23

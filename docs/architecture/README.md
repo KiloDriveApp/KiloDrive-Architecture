@@ -25,9 +25,15 @@ not the permanent trip record.
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |
 | [Documents, media, and voice](documents-media-voice.md) | How are private uploads and call media authorized, scanned, retained, and audited? |
 | [Mobile](mobile.md) | How do Flutter workspaces, repositories, state, offline behavior, and native services fit together? |
+| [Two mobile apps and security](two-mobile-apps-and-security-2026-09-30.md) | Which work belongs in the consumer versus System Admin app, and how do identity, adapters, device trust, notifications and release evidence connect? |
 | [Native adapters and store billing](native-adapters-and-store-billing.md) | How do device SDKs, StoreKit, Play Billing, the API, and membership recovery divide responsibility? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
+| [System Admin mobile app](system-admin-mobile-app.md) | What does the separate operator app present, and how do its dossiers, investigations, security, notifications and recovery behave? |
+| [Admin workflow contracts](admin-workflow-contracts.md) | Which operator outcomes have scoped source surfaces, which are partial, and what evidence is still needed? |
+| [Mobile sessions and installations](mobile-session-and-device-lifecycle.md) | How do identity, session families, app installations, device restrictions and dual-role workspaces differ? |
+| [Notification delivery lifecycle](notification-delivery-lifecycle.md) | How do domain commits, outbox work, provider attempts, device presentation and read state stay separate? |
+| [Admin accessibility and localization](admin-accessibility-and-localization.md) | How are high-risk operator flows reviewed across screen states, sizes, assistive technology and languages? |
 | [Runtime boundaries and certification](runtime-boundaries-and-certification.md) | How are anonymous tenancy, public endpoints, response hardening, typed clients, negotiated fares, realtime recovery, and capacity evidence certified together? |
 | [Runtime profiles](runtime-profiles.md) | How can one modular monolith run as API, realtime, country worker, media, reporting, or combined profiles without splitting transactions? |
 | [Authoritative foreign exchange](authoritative-foreign-exchange.md) | How are reviewed rates, quotes, transaction snapshots, fees, reconciliation, and administration kept under one authority? |
@@ -36,9 +42,10 @@ not the permanent trip record.
 | [Scaling and capacity](scaling-and-capacity.md) | How do we model load, find the first bottleneck, and scale without guessing? |
 | [Plugins and extension points](plugins-and-extension-points.md) | Where can providers change without leaking SDK details into business logic? |
 
-The [1.0.0 build 156 release update](release-1.0.0-156.md) records the current
-source baseline, adapter changes, billing recovery, and verified test evidence.
-The [build 144 update](release-1.0.0-144.md) remains a historical snapshot.
+The [2026-09-30 two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+records the later local `1.0.0+159` consumer and `0.1.0+4` Admin architecture;
+it is not signed-release evidence. The [build 156 update](release-1.0.0-156.md)
+and [build 144 update](release-1.0.0-144.md) remain historical snapshots.
 
 ## Three mental models worth keeping
 

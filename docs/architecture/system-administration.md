@@ -7,7 +7,18 @@ of unrestricted CRUD screens. It helps authorized people resolve country-scoped
 work while preserving identity, tenant, financial, safety, privacy, and evidence
 boundaries.
 
-- **Reviewed baseline:** mobile `1.0.0+144`, schema contract `2026.09.23.2`
+The mobile control plane is now a **separate Android/iOS System Admin Flutter
+app** in `src/client/system_admin`. The consumer package no longer contains
+operative System Admin screens, routes or mutations. The Portal remains a
+separate browser surface. The app split does not relax server authorization or
+certify the many workflows still migrating from the archived consumer-admin
+surface. The [2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+maps ownership, adapters, notifications, device trust and release limits.
+The [dedicated System Admin mobile chapter](system-admin-mobile-app.md) explains
+the operator experience and currently migrated workspaces in more detail.
+
+- **Historical reviewed baseline below:** consumer `1.0.0+144`, schema contract `2026.09.23.2`
+- **Current local source checkpoint:** consumer `1.0.0+159`, separate Admin `0.1.0+4`, schema contract `2026.09.30.2`; not a signed release claim
 - **Source status:** implemented incrementally across API, Flutter, and Portal
 - **Runtime status:** capability-, country-, role-, and feature-policy-dependent
 - **Not claimed:** complete mobile/Portal parity, universal country activation,
@@ -70,7 +81,8 @@ the last country.
 
 ## Capability-driven navigation
 
-Portal and Flutter are migrating to one shared capability vocabulary. Each
+Portal and the separate System Admin Flutter app are migrating to one shared
+capability vocabulary. Each
 registered navigation entry declares:
 
 - route and user-facing label;
@@ -85,7 +97,10 @@ Unknown permission bits are reported through sanitized diagnostics and never
 rendered as a raw numeric mask. Narrow layouts use named capability chips or an
 accessible “N permissions” summary.
 
-The 21 former desktop capability registry entries now have typed mobile routes.
+The historical 21-entry desktop capability registry had typed mobile routes in
+the former combined consumer build. The current separate Admin app maintains
+its own capability-gated destination inventory; the historical count must not
+be read as parity for the new binary.
 The menu groups authorized leaves into expandable domains and subdomains.
 Permission-aware parity tests require every registered capability to have an
 explicit disposition. This proves navigation coverage, not successful execution
@@ -399,6 +414,7 @@ accounting policy.
 
 ## Related reading
 
+- [System Admin mobile app](system-admin-mobile-app.md)
 - [Product and operational doctrine](../governance/product-and-operational-doctrine.md)
 - [Portal and corporate website](portal-and-website.md)
 - [Capability status and evidence](capability-status.md)

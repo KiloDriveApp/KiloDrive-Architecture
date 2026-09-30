@@ -54,6 +54,8 @@ reading order. It builds one idea at a time:
 12. [System Administration](docs/architecture/system-administration.md) — how
     capabilities, country workspaces, work queues, investigations, step-up,
     audit, and safe recovery fit together.
+    The [System Admin mobile app](docs/architecture/system-admin-mobile-app.md)
+    chapter describes the separate operator client and its current limits.
 13. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
     production safely.
 14. [Public quality assurance and concurrency guarantees](docs/quality/public-assurance-and-concurrency.md)
@@ -76,13 +78,20 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current source release is documented in
-[Release 1.0.0 build 156](docs/architecture/release-1.0.0-156.md). Its public
-changelog consolidates the pending improvements under that build.
+The current local-source architecture is documented in
+[Two mobile apps, one authoritative API](docs/architecture/two-mobile-apps-and-security-2026-09-30.md).
+It explains the consumer/System Admin split, shared identity, adapters,
+notifications, device trust, and the release evidence still needed. The
+[Admin workflow map](docs/architecture/admin-workflow-contracts.md),
+[critical journeys](docs/diagrams/admin-critical-journeys.md), and
+[two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
+carry the design into task and release decisions. The
+[build 156 update](docs/architecture/release-1.0.0-156.md) is historical; its
+public changelog consolidated the pending improvements under that build.
 [Build 144](docs/architecture/release-1.0.0-144.md) remains a historical
 baseline for role workspaces, journey protection, financial evidence,
-administration, manuals, and search discovery. The current source schema
-contract is `2026.09.26.2`; the reviewed build-144 OpenAPI v1 artifact
+administration, manuals, and search discovery. The 2026-09-30 local source
+schema contract is `2026.09.30.2`; the historical build-144 OpenAPI v1 artifact
 contains 826 paths and 925 operations with SHA-256
 `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
 Deployment, native-copy, device, store, provider, and country certification
@@ -154,7 +163,8 @@ state must still explain what happened.
 | API | ASP.NET Core on .NET 9 | Authentication, authorization, workflows, validation, country routing, durable commands and queries |
 | Operations portal | ASP.NET Core MVC | Administrative and operational workflows through the API |
 | Corporate website | ASP.NET Core Razor Pages | Public content and calculators backed by reviewed API contracts |
-| Mobile | Flutter 3.41 / Dart 3.11 | Rider, driver, rental, tools-only, and System Admin workspaces |
+| Consumer mobile | Flutter 3.41 / Dart 3.11 | Rider, driver, rental, and tools-only workspaces; no operative System Admin UI |
+| System Admin mobile | Separate Flutter Android/iOS package | Capability-scoped country/tenant operations; migration and signed-device certification remain incremental |
 | Durable data | MySQL 8 | Global identity control plane plus independent country cells |
 | Distributed state | Valkey over TLS | Production design dependency for cache, SignalR backplane, geospatial freshness, rate coordination, and short-lived ceremonies; runtime activation needs its own evidence |
 | Routing | Google provider adapters and OSRM | Geocoding, route calculation, map matching, and degraded fallback paths |
@@ -355,8 +365,8 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-- Current source mobile release: KiloDrive `1.0.0+156`
-- Current source schema contract: `2026.09.26.2`
+- Local-source checkpoint (2026-09-30): consumer `1.0.0+159`, separate System Admin `0.1.0+4`; neither is certified by this documentation update
+- Local-source schema contract at that checkpoint: `2026.09.30.2`
 - Last full architecture review: 2026-09-23, build `1.0.0+144`
 - Reviewed Flutter snapshot: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`

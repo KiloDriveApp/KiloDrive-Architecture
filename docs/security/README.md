@@ -12,6 +12,10 @@ test report, or permission to advertise “military-grade” security. Honest
 security documentation names assumptions, failure modes, and remaining
 deployment responsibilities.
 
+For the separate operator client, read [System Admin data handling](admin-data-handling.md)
+alongside [identity and access](identity-and-access.md). The former classifies
+what an administrator may view, cache, export and retain for a permitted task.
+
 ## The short version
 
 KiloDrive's main security boundaries are:

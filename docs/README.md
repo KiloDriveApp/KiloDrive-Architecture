@@ -15,13 +15,12 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
-The current public-safe source synchronization is the
-[1.0.0 build 156 architecture update](architecture/release-1.0.0-156.md)
-and the historical [build 144 baseline](architecture/release-1.0.0-144.md).
-It records mobile `1.0.0+156`, source schema contract `2026.09.26.2`, the
-consolidated public changelog, and the separation between source maturity,
-deployment configuration, provider certification, device evidence, and
-current health.
+The current local-source architecture checkpoint is
+[two mobile apps and security, 2026-09-30](architecture/two-mobile-apps-and-security-2026-09-30.md).
+It records consumer `1.0.0+159`, separate System Admin `0.1.0+4`, and source
+schema contract `2026.09.30.2` as inspected on that date. It is not a signed
+release or production certification. The [build 156 update](architecture/release-1.0.0-156.md)
+and [build 144 baseline](architecture/release-1.0.0-144.md) remain historical.
 
 ## Choose a path
 
@@ -49,6 +48,9 @@ Read [mobile architecture](architecture/mobile.md),
 [API contracts](architecture/api.md), and
 [realtime/event processing](architecture/realtime-and-events.md). Then read the
 [mobile release runbook](runbooks/mobile-release.md).
+For app separation and device/notification trust, continue with
+[mobile sessions and installations](architecture/mobile-session-and-device-lifecycle.md)
+and [notification delivery](architecture/notification-delivery-lifecycle.md).
 
 Mobile engineers should also understand the backend idempotency contract. A
 retry button, reconnect loop, or offline queue can repeat a command long after
@@ -132,10 +134,14 @@ sanitized evidence.
 ### I work on System Administration or support operations
 
 Read [System Administration architecture](architecture/system-administration.md),
+[the separate Admin app](architecture/system-admin-mobile-app.md),
+[workflow contracts](architecture/admin-workflow-contracts.md),
 [Portal and website architecture](architecture/portal-and-website.md),
 [capability status](architecture/capability-status.md),
 [identity and access](security/identity-and-access.md), and the
 [support/dispute runbook](runbooks/support-dispute-cases.md).
+The [critical-journey diagrams](diagrams/admin-critical-journeys.md) explain
+how an interrupted action is reconciled without a blind second mutation.
 
 Prefer permission- and country-scoped work queues over raw entity menus. Keep
 the selected investigation stable while deltas load, require recent proof for

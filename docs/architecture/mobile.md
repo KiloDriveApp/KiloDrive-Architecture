@@ -1,14 +1,15 @@
 # Mobile Architecture
 
-For the build-156 typed platform boundaries, Apple StoreKit, Google Play Billing,
-subscription recovery and their separate test/certification evidence, see
+For the current two-package boundary, security and notification flows, see
+[Two mobile apps, one authoritative API](two-mobile-apps-and-security-2026-09-30.md).
+The build-156 adapter history and current billing limits are described in
 [Native adapters and store billing](native-adapters-and-store-billing.md).
 
-KiloDrive's mobile client is a Flutter application for Android and iOS. The same
-binary can expose rider, driver, rental organization, tools-only, and authorized
-System Administrator workspaces. This chapter explains the boundaries that keep
-that breadth manageable and the release controls needed when Dart code depends
-on native SDKs.
+KiloDrive has two Android/iOS Flutter packages. This chapter describes the
+consumer app for rider, driver, rental organization and tools-only journeys.
+System Administrator work belongs to the separate restricted app described in
+[System Administration](system-administration.md). The two apps share API
+contracts and design principles, not privileged navigation or local credentials.
 
 ## Verified technology baseline
 
@@ -74,11 +75,13 @@ not leave another user's role, tenant, name, or workspace preference on the
 device.
 
 The last workspace is only a preference. After password, OTP, social login,
-refresh, or secure-state restore, the app derives authorized workspaces from the
-authenticated API claims/profile. A single-role driver cannot accidentally
-render the rider shell because an old device preference says `customer`.
-Multi-role users see only authorized choices, and a System Administrator selects
-an authorized country workspace before administrative data loads.
+refresh, or secure-state restore, the consumer app derives authorized workspaces
+from the authenticated API claims/profile. A single-role driver cannot
+accidentally render the rider shell because an old device preference says
+`customer`. Multi-role consumers see only authorized choices. A dual-role
+System Administrator with a separate active rider membership receives a
+consumer-scoped rider session in this app; administrative country/tenant
+selection occurs only in the separate System Admin app.
 
 The APK/IPA is an untrusted client. Changing Dart code, replaying an HTTP call,
 or modifying a local role cannot grant server permission. The API revalidates
