@@ -2,7 +2,7 @@
 
 - **Owner:** API platform, eventing, and provider operations
 - **Status:** Operational durable-work recovery procedure
-- **Last exercised:** Not yet recorded in this public repository
+- **Last exercised:** 2026-10-03 (bounded seven-message membership recovery; not a general financial repair)
 - **Related architecture:** [Realtime and events](../architecture/realtime-and-events.md) and [EventBridge and SQS](../aws/eventbridge-sqs.md)
 
 **Use when:** outbox oldest age grows, failed count is non-zero, a worker
@@ -68,6 +68,15 @@ points to a handler or dependency.
 KiloDrive previously produced `trip.status_changed` messages without a registered
 handler. The correct response is to restore the release contract and replay—not
 to discard the rows.
+
+The build-168 membership incident involved four direct writers using an invalid
+zero status when the source enum's Pending value is one. Seven exact historical
+rows were then recovered with row/state/payload preconditions, rollback rehearsal
+and seven append-only audit records. Independent readback proved dispatch and
+six exact reporting facts ingested once. This queue repair did not create a
+renewal charge, alter a balance, manufacture provider cost or prove email receipt.
+Never generalize that recovery into a blanket status update; see the
+[bounded handover](build168-operational-handover.md).
 
 ### 3. Dependency and unknown outcome
 

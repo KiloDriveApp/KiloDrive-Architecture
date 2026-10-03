@@ -2,7 +2,7 @@
 
 - **Owner:** Membership and Store Billing Platform
 - **Status:** Reviewed public procedure
-- **Last exercised:** 2026-09-28 (build-156 source and recorded automated-test review; no new physical-store exercise)
+- **Last exercised:** 2026-10-03 (bounded source/current-schema review; retained build-167 licensed Play observations remain build 167, not a new iOS exercise)
 - **Related architecture:** [Financial systems](../architecture/financial-systems.md) and [Native adapters and store billing](../architecture/native-adapters-and-store-billing.md)
 
 ## Trigger
@@ -39,6 +39,14 @@ and Apple/Google history disagree.
   events and immutable audit.
 - A stale or mismatched account binding opens restricted review and never grants
   access to the wrong KiloDrive account.
+- A native sheet dismissal is cancellation unless authoritative evidence makes
+  the result uncertain. Do not tell a user the store may have charged them
+  merely because they cancelled.
+- Expired membership is not an assigned Free plan. Current must show the actual
+  active tier/term, or no active membership, without expired paid benefits.
+- Renewed access and accounting proof are separate. Create a renewal charge only
+  from the exact verified order, price/currency and service period; missing
+  charge evidence cannot be replaced with a guessed payment or zero fee.
 
 ## Verification
 
@@ -61,3 +69,13 @@ Stop automated repair for conflicting provider accounts, invalid signatures,
 environment mismatch, dual entitlement, unknown product/term, missing price
 evidence or financial mismatch. Preserve evidence and route to the restricted
 membership exception queue.
+
+## Current handover and unperformed cases
+
+Use the [build-168 handover](build168-operational-handover.md) for the current
+source and deployment checkpoint. Automated first-token context recovery and
+pending-refund workflow tests cover controlled provider boundaries, not a
+physical first-purchase kill or genuine provider refund. Historical Play
+purchase/cancellation and RTDN observations remain attributed to their tested
+build. A fresh post-fix renewal charge, iOS physical quarterly lifecycle and
+Apple production notification activation still require their own observations.

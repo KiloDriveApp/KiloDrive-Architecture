@@ -21,7 +21,11 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
-The current local-source architecture checkpoint is
+The current source and bounded-release checkpoint is the
+[build-168 operational handover](runbooks/build168-operational-handover.md):
+consumer `1.0.0+168`, separate System Admin source `0.1.0+10`, and schema
+`2026.10.02.3`. It separates source tests, provider observations, configuration,
+deployment health and exact signed-device evidence. The preceding architecture checkpoint is
 [two mobile apps and security, 2026-09-30](architecture/two-mobile-apps-and-security-2026-09-30.md).
 It records consumer `1.0.0+159`, separate System Admin `0.1.0+4`, and source
 schema contract `2026.09.30.2` as inspected on that date. It is not a signed

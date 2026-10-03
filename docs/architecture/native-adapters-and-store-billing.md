@@ -1,12 +1,12 @@
 # Native adapters and store billing
 
 - **Owner:** Mobile platform and membership engineering
-- **Last verified:** 2026-09-28
-- **Environment:** KiloDrive source build `1.0.0+156`; automated host/release tests
-- **Evidence:** Source repository `docs/architecture/platform-adapter-migration-inventory.md`, `docs/releases/release-156-source-verification.md`, and the dated release-gate results cited there
+- **Last reviewed:** 2026-10-03
+- **Environment:** Current consumer source `1.0.0+168`, Admin source `0.1.0+10`; historical test records keep their original builds
+- **Evidence:** [Current bounded handover](../runbooks/build168-operational-handover.md) and the source repository's owned adapter inventory and build-168 verification snapshot
 
 This page retains its build-156 verification history. The consumer source has
-since advanced to `1.0.0+159`, and the System Admin client is a separate app.
+since advanced to `1.0.0+168`, and the System Admin client is a separate app.
 The [two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
 describes current ownership and additional device, notification and identity
 adapters. Its source observations are not a signed release certification.
@@ -42,13 +42,37 @@ The Android adapter discovers products/base plans for the signed-in Play storefr
 
 Both platforms preserve an operation journal and original idempotency/revision information across response loss and process death. Confirmed success moves to Current Plan; unresolved provider outcomes show checking/recovery with a support reference and no blind second-buy action. Server reconciliation and a restricted exception case handle disagreement. See the [operator runbook](../runbooks/store-entitlement-reconciliation.md).
 
-At the later build-159 source checkpoint, Google Play preparation protects an
-exact quote and billing account before opening the sheet, but a new-token RTDN
-arriving before app verification still lacks a provider-echoed operation ID and
-verified exact first-token charge. The server fails closed instead of guessing
-an entitlement. StoreKit and Play lifecycle certification requires a signed
-artifact, licensed/sandbox provider history and an exact server ledger/outbox
-timeline. The earlier build-156 host tests below do not close those gaps.
+The build-159 checkpoint's first-token recovery gap was subsequently addressed
+through durable prepared-account context and a replay-safe notification inbox.
+Build-168 current-schema tests recreate the API context and prove recovery
+without client verification, including concurrent duplicate arrival. This is
+not a physical purchase-then-process-kill certificate. Conflicting ownership
+still fails closed. Exact provider order/charge/period evidence remains distinct
+from renewed access; the server never guesses money from an entitlement update.
+StoreKit and Play lifecycle certification still needs the exact signed artifact,
+provider history and server ledger/outbox timeline.
+
+## Installation attention and authentication races
+
+Push registration carries versioned channel capabilities on the current verified
+installation/token generation, plus an authoritative notification preference
+revision and mutation identity. A late in-flight registration must not defeat
+a newer opt-out. Explicit opt-in reads fresh state. Missing or stale quiet or
+no-vibration channel proof uses data-only handoff instead of an audible default
+channel. Provider acceptance, device receipt, display, sound and vibration are
+five different observations. Existing OS channel choices are not overwritten.
+
+Session refresh is single-flight and native/secure-storage callbacks are fenced
+by account, tenant, country, role and generation. Temporary device validation
+obscures and disables the mounted route while retaining pending picker/cropper
+results; an authoritative ban/revocation still performs terminal cleanup. A
+restored route is not authority to replay a financial command. Its scoped journal
+retains original operation, payload and revision until server reconciliation.
+
+The support situation uses a catalogued `KD-XXXXX` code; the occurrence uses a
+separate correlation reference. Native diagnostic categories never invent a KD
+code. Public recovery meaning comes from [the code catalog](https://kilodrive.com/help/codes),
+not from raw SDK messages or provider payloads.
 
 ## What was actually tested for build 156
 
@@ -65,4 +89,10 @@ The recorded release evidence reports a passing Flutter analyzer, complete Codem
 
 For an end-to-end certification, start with an isolated licensed/sandbox account and a signed build, capture the exact product IDs returned, perform purchase/cancel/restore/renewal/upgrade/downgrade/refund scenarios, then compare the provider history, server purchase/period/notification records, and the device Current Plan state. Repeat across process death and an interrupted response. Record build, storefront, provider environment, timestamps, sanitized references, expected and observed state; never put receipts or tokens in a public report. A scenario remains **untested**, not passed, when its provider or device boundary was only mocked.
 
-The following still require current provider/device evidence before a certification claim: real iOS sandbox/TestFlight quarterly purchase and lifecycle, App Store Connect product/territory/agreement metadata, App Store Notifications V2; licensed Play purchase and RTDN; OS-killed/background recovery; App Attest/Play Integrity; push, RTC, and sustained GPS behavior. Source tests or a green policy flag cannot stand in for those outcomes.
+The following still require candidate-specific evidence before a full certification
+claim: physical iOS quarterly lifecycle and notification activation; genuine
+refund/chargeback; first-purchase OS-kill and fresh post-fix renewal financial
+proof; current signed App Attest/Play Integrity, push, RTC and sustained GPS
+matrices. Retained build-167 licensed Play/RTDN observations do not become
+build-168 results because the source or public documentation changed. Source
+tests or a green policy flag cannot stand in for unperformed outcomes.

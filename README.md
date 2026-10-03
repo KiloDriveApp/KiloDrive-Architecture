@@ -88,7 +88,11 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current local-source architecture is documented in
+The current release checkpoint is documented in the
+[build-168 operational handover](docs/runbooks/build168-operational-handover.md).
+It identifies consumer `1.0.0+168`, separate System Admin source `0.1.0+10`,
+schema `2026.10.02.3`, the deployed bounded fixes, and the provider/device
+evidence that still remains separate. The earlier local-source architecture is documented in
 [Two mobile apps, one authoritative API](docs/architecture/two-mobile-apps-and-security-2026-09-30.md).
 It explains the consumer/System Admin split, shared identity, adapters,
 notifications, device trust, and the release evidence still needed. The
@@ -274,6 +278,7 @@ versions worth remembering:
 - [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md)
 - [API architecture](docs/architecture/api.md)
 - [Mobile architecture](docs/architecture/mobile.md)
+- [Native adapters and store billing](docs/architecture/native-adapters-and-store-billing.md)
 - [Portal and website](docs/architecture/portal-and-website.md)
 - [System Administration](docs/architecture/system-administration.md)
 - [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md)
@@ -306,6 +311,8 @@ versions worth remembering:
 ### Operations and decisions
 
 - [Runbook index](docs/runbooks/README.md)
+- [Build-168 operational handover](docs/runbooks/build168-operational-handover.md)
+- [Native-store entitlement reconciliation](docs/runbooks/store-entitlement-reconciliation.md)
 - [Testing and verification](docs/quality/testing-and-verification.md)
 - [Architecture Decision Records](docs/adr/README.md)
 - [Architecture decision process](docs/governance/architecture-decisions.md)
@@ -375,8 +382,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-- Local-source checkpoint (2026-09-30): consumer `1.0.0+159`, separate System Admin `0.1.0+4`; neither is certified by this documentation update
-- Local-source schema contract at that checkpoint: `2026.09.30.2`
+- Current source checkpoint (2026-10-03): consumer `1.0.0+168`, separate System Admin `0.1.0+10`; documentation is not whole-app certification
+- Current source schema contract: `2026.10.02.3`
+- Previous source checkpoint (2026-09-30): consumer `1.0.0+159`, System Admin `0.1.0+4`, schema `2026.09.30.2`; historical, not silently relabeled
 - Last full architecture review: 2026-09-23, build `1.0.0+144`
 - Reviewed Flutter snapshot: `3.41.7` / Dart `3.11.5`
 - API/runtime family: .NET `9`
