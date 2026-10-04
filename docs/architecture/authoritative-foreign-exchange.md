@@ -22,7 +22,7 @@ currency unit. Rates use exact decimal arithmetic; money uses signed 64-bit
 minor units. Conversion owns one documented rounding rule. USD-to-USD is an
 explicit identity conversion, not a missing-rate special case.
 
-## Maker-checker lifecycle
+## Version and approval lifecycle
 
 ```mermaid
 stateDiagram-v2
@@ -37,7 +37,12 @@ stateDiagram-v2
     Scheduled --> Suspended: safety or evidence issue
 ```
 
-The maker cannot approve their own version. Every command checks capability,
+Independent maker/checker separation is an optional API policy for FX rates.
+When enabled, the proposer cannot approve their own version. The reviewed
+source default is disabled, permitting one authorized administrator to complete
+the workflow. This does not establish the deployed setting. See the
+[approval-policy explanation](system-admin-mobile-app.md#approval-policy-and-restricted-viewing).
+Every command still checks capability,
 recent authentication/step-up policy, current revision, idempotency and reason.
 Activation atomically supersedes the prior active version. A rollback is a new
 version with new approval; it never edits or reactivates history.

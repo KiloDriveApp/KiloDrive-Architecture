@@ -7,6 +7,9 @@ platform, and service providers. The dependency manifest tells us what we asked
 for; the resolved graph tells us what is actually compiled; the signed artifact
 proves what went to a store or server. All three are needed.
 
+The generated [current package inventory](direct-packages.md) covers both apps,
+.NET projects and reviewed explicit overrides with source provenance.
+
 This public inventory is a readable baseline, not the legal or vulnerability
 record for a particular release. The release-generated Software Bill of
 Materials (SBOM), third-party notices, package hashes, and signed artifact remain

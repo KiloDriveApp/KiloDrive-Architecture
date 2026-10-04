@@ -7,6 +7,7 @@ explain the contract's field name/type without inventing a hidden business rule.
 from __future__ import annotations
 
 import re
+from api_context import MODEL_FIELDS, OPERATIONS
 
 PURPOSES = {
     ("post", "/api/v1/auth/register"): "Create a consumer account and begin its country/contact/onboarding journey; this does not grant administrator authority.",
@@ -232,12 +233,12 @@ def words(name: str) -> str:
 
 
 def purpose(method: str, path: str) -> str:
-    exact = PURPOSES.get((method, path))
+    exact = OPERATIONS.get((method, path), PURPOSES.get((method, path)))
     if exact:
         return exact
     segments = path.removeprefix("/api/v1/").split("/")
     readable = [words(segment) for segment in segments if not segment.startswith("{")]
-    context = " → ".join(readable)
+    context = " / ".join(readable)
     action = readable[-1]
     actions = {
         "accept": "Accept the selected offer/request", "reject": "Reject the selected offer/request",
@@ -278,7 +279,7 @@ def purpose(method: str, path: str) -> str:
     if method == "get":
         verb = "Read the permitted records/state for"
     elif method == "delete":
-        verb = "Remove, archive or deactivate the selected record for"
+        verb = "Request removal of the selected record for"
     elif method in {"put", "patch"}:
         verb = "Update the permitted configuration/record for"
     elif method == "post" and action in actions:
@@ -287,10 +288,29 @@ def purpose(method: str, path: str) -> str:
         verb = "Submit/create the documented record or action for"
     else:
         verb = "Read transport metadata for"
-    return f"{verb} {context}. Use the request/response fields below; server validation and the caller's resource relationship define the permitted effect."
+    return f"{verb} {context}. This route-derived summary does not establish additional lifecycle rules."
+
+
+def purpose_basis(method: str, path: str) -> str:
+    return "Operation-specific explanation" if (method, path) in PURPOSES or (method, path) in OPERATIONS else "Route-derived summary; detailed behavior review remains open"
+
+
+def field_basis(name: str, schema: dict, model: str = "") -> str:
+    if name in MODEL_FIELDS.get(model, {}):
+        return "Model-specific"
+    if name in FIELDS:
+        return "Shared convention"
+    if name.endswith(("Minor", "Utc", "Token", "Secret", "Password", "Ticket", "RecoveryCode",
+                      "Id", "Ids", "Revision", "Version", "Seconds", "Minutes", "Days", "Meters", "Url", "Count")) or schema.get("format") == "date":
+        return "Naming convention"
+    return "Type only; meaning review open"
 
 
 def field_meaning(name: str, schema: dict, model: str = "") -> str:
+    if name in MODEL_FIELDS.get(model, {}):
+        return MODEL_FIELDS[model][name]
+    if name == "feeMinor":
+        return "Fee amount in the accompanying currency's integer minor units; the owning operation defines what the fee charges for."
     if name in FIELDS:
         return FIELDS[name]
     label = words(name)
@@ -331,4 +351,4 @@ def field_meaning(name: str, schema: dict, model: str = "") -> str:
         return f"Structured {label} data; follow the referenced/inline properties and additional-property rules."
     if schema.get("type") in {"integer", "number"}:
         return f"Numeric {label} for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow."
-    return f"{label.capitalize()} text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use."
+    return f"{label.capitalize()} text/value. Detailed meaning and accepted vocabulary are not yet documented for this model."

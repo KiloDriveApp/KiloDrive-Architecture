@@ -7,20 +7,31 @@ workflow validation. Monetary amounts use integer minor units; timestamp fields
 use strict UTC parsing. Private tokens, passwords, document references and
 personal fields must remain outside public logs and examples.
 
+The explanation basis distinguishes model-specific meaning, shared conventions,
+name-derived units and type-only entries awaiting semantic review. See the
+[coverage report](../reference/coverage.md); field presence is not semantic completeness.
+
+## Models on this page
+
+- [HouseholdAccountDto](#householdaccountdto)
+- [HouseholdConsentState](#householdconsentstate)
+- [HouseholdMemberRole](#householdmemberrole)
+- [HouseholdStatus](#householdstatus)
+
 ## HouseholdAccountDto
 
 **Wire type:** `object`. No further constraint recorded.
 
-| Field | Type | Required by schema | Nullability | Meaning | Additional constraints |
-| --- | --- | --- | --- | --- | --- |
-| `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | No further constraint recorded |
-| `name` | `string` | Yes | Not declared nullable | Name of the record described by this model; distinct from its opaque ID. | No further constraint recorded |
-| `countryCode` | `string` | Yes | Not declared nullable | Country ISO code for this model/context; it cannot override authenticated country authority. | No further constraint recorded |
-| `currency` | `string` | Yes | Not declared nullable | ISO currency code for the accompanying monetary amounts. | No further constraint recorded |
-| `status` | [HouseholdStatus](h.md#householdstatus) | Yes | Not declared nullable | Current domain status; use this model's enum or documented string vocabulary. | No further constraint recorded |
-| `availableBalanceMinor` | `integer (int64)` | Yes | Not declared nullable | Available balance in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `heldBalanceMinor` | `integer (int64)` | Yes | Not declared nullable | Funds reserved by applicable holds/escrow; they are not freely spendable. | No further constraint recorded |
-| `version` | `integer (int64)` | Yes | Not declared nullable | Version in this model's domain; not automatically an API major version. | No further constraint recorded |
+| Field | Type | Required by schema | Nullability | Meaning | Explanation basis | Additional constraints |
+| --- | --- | --- | --- | --- | --- | --- |
+| `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | Shared convention | No further constraint recorded |
+| `name` | `string` | Yes | Not declared nullable | Name of the record described by this model; distinct from its opaque ID. | Shared convention | No further constraint recorded |
+| `countryCode` | `string` | Yes | Not declared nullable | Country ISO code for this model/context; it cannot override authenticated country authority. | Shared convention | No further constraint recorded |
+| `currency` | `string` | Yes | Not declared nullable | ISO currency code for the accompanying monetary amounts. | Shared convention | No further constraint recorded |
+| `status` | [HouseholdStatus](h.md#householdstatus) | Yes | Not declared nullable | Current domain status; use this model's enum or documented string vocabulary. | Shared convention | No further constraint recorded |
+| `availableBalanceMinor` | `integer (int64)` | Yes | Not declared nullable | Available balance in the accompanying currency's integer minor units; do not send a formatted money string. | Naming convention | No further constraint recorded |
+| `heldBalanceMinor` | `integer (int64)` | Yes | Not declared nullable | Funds reserved by applicable holds/escrow; they are not freely spendable. | Shared convention | No further constraint recorded |
+| `version` | `integer (int64)` | Yes | Not declared nullable | Version in this model's domain; not automatically an API major version. | Shared convention | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
 

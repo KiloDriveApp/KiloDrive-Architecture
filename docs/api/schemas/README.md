@@ -36,3 +36,7 @@ Unknown future values must remain neutral and disable unsafe actions.
 
 Use [wire conventions](../wire-conventions.md) for cross-cutting interpretation and
 [contract limitations](../coverage-and-limitations.md) for metadata gaps.
+
+The [reverse model-usage map](usage.json) lists the operations that use each
+model, including nested references. [Review coverage](../reference/coverage.md)
+distinguishes a complete field inventory from complete semantic explanations.

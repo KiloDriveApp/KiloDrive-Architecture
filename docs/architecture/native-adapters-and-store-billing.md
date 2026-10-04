@@ -2,13 +2,13 @@
 
 - **Owner:** Mobile platform and membership engineering
 - **Last reviewed:** 2026-10-03
-- **Environment:** Current consumer source `1.0.0+168`, Admin source `0.1.0+10`; historical test records keep their original builds
-- **Evidence:** [Current bounded handover](../runbooks/build168-operational-handover.md) and the source repository's owned adapter inventory and build-168 verification snapshot
+- **Environment:** [Current reviewed source baseline](../current-baseline.md); historical test records keep their original builds
+- **Evidence:** [Historical build-168 handover](../runbooks/build168-operational-handover.md) and the source repository's dated adapter inventory and verification records
 
-This page retains its build-156 verification history. The consumer source has
-since advanced to `1.0.0+168`, and the System Admin client is a separate app.
+This page retains its build-156 and build-168 verification history. The
+current source is newer, and the System Admin client is a separate app.
 The [two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
-describes current ownership and additional device, notification and identity
+describes the historical ownership split and additional device, notification and identity
 adapters. Its source observations are not a signed release certification.
 
 Native adapters isolate Flutter from device and store SDKs. They do not own account identity, trip state, money, or membership entitlement. Those decisions are API and country-cell responsibilities. An adapter reports a typed observation or performs a bounded device action; its caller verifies account, tenant, country, role, and operation generation before accepting a callback. A late callback from a previous account or disposed screen cannot replace current state.
@@ -44,7 +44,7 @@ Both platforms preserve an operation journal and original idempotency/revision i
 
 The build-159 checkpoint's first-token recovery gap was subsequently addressed
 through durable prepared-account context and a replay-safe notification inbox.
-Build-168 current-schema tests recreate the API context and prove recovery
+The recorded build-168 schema tests recreate the API context and exercise recovery
 without client verification, including concurrent duplicate arrival. This is
 not a physical purchase-then-process-kill certificate. Conflicting ownership
 still fails closed. Exact provider order/charge/period evidence remains distinct

@@ -8,11 +8,14 @@ thin server-rendered API clients. Tests use one xUnit project plus integration
 infrastructure. Versions below are the reviewed source baseline, not a promise
 that every future release keeps them.
 
+Exact current coordinates and project-owner groups are in the generated
+[package inventory](direct-packages.md); its source revision is explicit.
+
 ## Direct API dependencies
 
 | Area | Direct package/family | Baseline | Why it exists |
 | --- | --- | --- | --- |
-| AWS | EventBridge, Pinpoint SMS/Voice v1+v2, S3, Secrets Manager, STS, SES v2, Social Messaging, SQS SDKs | AWS SDK v3 packages, centrally pinned | Dispatch, messaging, object storage, secret/identity access, email, WhatsApp, queues |
+| AWS | EventBridge, Pinpoint SMS/Voice v2, S3, Secrets Manager, STS, SES v2, Social Messaging, SQS SDKs | AWS SDK v3 packages, centrally pinned | Dispatch, messaging, object storage, secret/identity access, email, WhatsApp, queues |
 | Data | EF Core + Relational | 9.0.16 | Unit of work, model metadata, relational queries |
 | MySQL | Pomelo EF MySQL; MySqlConnector | 9.0.0; 2.4.0 | MySQL 8 provider and direct operational/test access |
 | Auth | JwtBearer; Fido2; Google APIs Auth; FirebaseAdmin | 9.0.16; 4.0.1; 1.70.0; 3.0.0 | JWT validation, passkeys, social token validation, FCM administration |
@@ -38,7 +41,6 @@ checking `AWSSDK.Core` compatibility.
 | Package | Reviewed version | Capability |
 | --- | --- | --- |
 | `AWSSDK.PinpointSMSVoiceV2` | 3.7.505.37 | End User Messaging SMS APIs |
-| `AWSSDK.PinpointSMSVoice` | 3.7.502.63 | Voice messaging APIs used by the adapter |
 | `AWSSDK.SimpleEmailV2` | 3.7.509.10 | SES email and raw-message delivery |
 | `AWSSDK.SocialMessaging` | 3.7.503.29 | AWS WhatsApp/Social Messaging path |
 | `AWSSDK.S3` | 3.7.415.3 | Private object storage |
@@ -71,7 +73,7 @@ Argon2 a FIPS-validated primitive.
 
 ## Resolved transitive examples
 
-The verified restore contains transitive components such as:
+A complete release restore also needs to account for transitive components such as:
 
 - `AWSSDK.Core` and CloudWatch Logs SDK support;
 - ClosedXML parser and Open XML document libraries;

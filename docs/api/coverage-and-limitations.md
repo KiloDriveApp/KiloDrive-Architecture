@@ -33,6 +33,13 @@ routes require explicit publication-policy review.
 
 ## Metadata is useful but not exhaustive
 
+The generated [coverage report](reference/coverage.md) and its JSON review queue
+enumerate route-derived summaries, type-only field explanations and untyped
+success responses. This makes semantic incompleteness visible even when every
+wire field has a table row. The corrected exporter preserves real properties
+named `description`, `default` or other OpenAPI keywords; it strips metadata
+only in the appropriate OpenAPI context.
+
 The OpenAPI artifact records types, declared authentication/roles, parameters,
 request bodies, selected statuses and concurrency metadata. Important limits
 remain:

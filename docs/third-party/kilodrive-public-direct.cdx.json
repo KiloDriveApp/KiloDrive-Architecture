@@ -15,6 +15,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -34,6 +46,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -57,6 +81,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -76,6 +112,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -99,6 +147,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -118,6 +178,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -141,6 +213,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -160,6 +244,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -183,6 +279,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -202,6 +310,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "test"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -225,6 +345,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -244,6 +376,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -267,6 +411,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -286,6 +442,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -309,6 +477,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -328,6 +508,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -351,6 +543,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -370,6 +574,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tests,tools"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -393,6 +609,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -412,6 +640,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -435,6 +675,18 @@
           "value": "test"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -454,6 +706,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -477,6 +741,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -496,6 +772,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "test"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -519,6 +807,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server,tests,tools"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -538,6 +838,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -561,6 +873,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -580,6 +904,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -603,6 +939,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -622,6 +970,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -645,6 +1005,18 @@
           "value": "test"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -664,6 +1036,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -687,6 +1071,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -706,6 +1102,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -729,6 +1137,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -748,6 +1168,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -771,6 +1203,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -790,6 +1234,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -813,6 +1269,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "server"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -832,6 +1300,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tools"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -855,6 +1335,18 @@
           "value": "test"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -874,6 +1366,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "test"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -897,6 +1401,18 @@
           "value": "test"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -916,6 +1432,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "test"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "tests"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "registry"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct"
         },
         {
           "name": "kilodrive:license-status",
@@ -939,6 +1467,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -958,6 +1498,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -981,6 +1533,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1000,6 +1564,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1023,6 +1599,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1044,6 +1632,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1051,6 +1651,39 @@
       "purl": "pkg:pub/cupertino_icons@1.0.9",
       "type": "library",
       "version": "1.0.9"
+    },
+    {
+      "bom-ref": "pkg:pub/device_info_plus@11.5.0",
+      "name": "device_info_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/device_info_plus@11.5.0",
+      "type": "library",
+      "version": "11.5.0"
     },
     {
       "bom-ref": "pkg:pub/device_info_plus@12.4.0",
@@ -1063,6 +1696,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1086,6 +1731,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1093,6 +1750,72 @@
       "purl": "pkg:pub/dio@5.11.0",
       "type": "library",
       "version": "5.11.0"
+    },
+    {
+      "bom-ref": "pkg:pub/dio@5.11.1",
+      "name": "dio",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/dio@5.11.1",
+      "type": "library",
+      "version": "5.11.1"
+    },
+    {
+      "bom-ref": "pkg:pub/file_picker@10.3.10",
+      "name": "file_picker",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/file_picker@10.3.10",
+      "type": "library",
+      "version": "10.3.10"
     },
     {
       "bom-ref": "pkg:pub/file_picker@11.0.3",
@@ -1105,6 +1828,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1128,6 +1863,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1135,6 +1882,39 @@
       "purl": "pkg:pub/firebase_app_check@0.4.6",
       "type": "library",
       "version": "0.4.6"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_app_check@0.4.8",
+      "name": "firebase_app_check",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_app_check@0.4.8",
+      "type": "library",
+      "version": "0.4.8"
     },
     {
       "bom-ref": "pkg:pub/firebase_core@4.13.0",
@@ -1149,6 +1929,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1156,6 +1948,39 @@
       "purl": "pkg:pub/firebase_core@4.13.0",
       "type": "library",
       "version": "4.13.0"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_core@4.15.0",
+      "name": "firebase_core",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_core@4.15.0",
+      "type": "library",
+      "version": "4.15.0"
     },
     {
       "bom-ref": "pkg:pub/firebase_core_platform_interface@8.1.0",
@@ -1168,6 +1993,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "development"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
         },
         {
           "name": "kilodrive:license-status",
@@ -1191,6 +2028,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1212,6 +2061,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1219,6 +2080,39 @@
       "purl": "pkg:pub/firebase_messaging@16.5.0",
       "type": "library",
       "version": "16.5.0"
+    },
+    {
+      "bom-ref": "pkg:pub/firebase_messaging@16.7.0",
+      "name": "firebase_messaging",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/firebase_messaging@16.7.0",
+      "type": "library",
+      "version": "16.7.0"
     },
     {
       "bom-ref": "pkg:pub/fl_chart@0.69.2",
@@ -1231,6 +2125,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1254,6 +2160,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1275,6 +2193,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1284,7 +2214,7 @@
       "version": "3.4.2"
     },
     {
-      "bom-ref": "pkg:pub/flutter_callkit_incoming@3.1.5",
+      "bom-ref": "pkg:generic/kilodrive-vendored/flutter_callkit_incoming@3.1.5",
       "name": "flutter_callkit_incoming",
       "properties": [
         {
@@ -1296,11 +2226,23 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "reviewed-source-fork"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
       ],
-      "purl": "pkg:pub/flutter_callkit_incoming@3.1.5",
+      "purl": "pkg:generic/kilodrive-vendored/flutter_callkit_incoming@3.1.5",
       "type": "library",
       "version": "3.1.5"
     },
@@ -1315,6 +2257,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1338,6 +2292,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1359,6 +2325,18 @@
           "value": "development"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1366,6 +2344,39 @@
       "purl": "pkg:pub/flutter_lints@5.0.0",
       "type": "library",
       "version": "5.0.0"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_lints@6.0.0",
+      "name": "flutter_lints",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "development"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_lints@6.0.0",
+      "type": "library",
+      "version": "6.0.0"
     },
     {
       "bom-ref": "pkg:pub/flutter_local_notifications@22.3.0",
@@ -1378,6 +2389,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1401,6 +2424,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1422,6 +2457,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1429,6 +2476,39 @@
       "purl": "pkg:pub/flutter_secure_storage@10.3.1",
       "type": "library",
       "version": "10.3.1"
+    },
+    {
+      "bom-ref": "pkg:pub/flutter_secure_storage@10.3.4",
+      "name": "flutter_secure_storage",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/flutter_secure_storage@10.3.4",
+      "type": "library",
+      "version": "10.3.4"
     },
     {
       "bom-ref": "pkg:pub/flutter_svg@2.3.0",
@@ -1441,6 +2521,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1464,6 +2556,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1483,6 +2587,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1506,6 +2622,18 @@
           "value": "development"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1525,6 +2653,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1548,6 +2688,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1555,6 +2707,39 @@
       "purl": "pkg:pub/html@0.15.6",
       "type": "library",
       "version": "0.15.6"
+    },
+    {
+      "bom-ref": "pkg:pub/html@0.15.7",
+      "name": "html",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/html@0.15.7",
+      "type": "library",
+      "version": "0.15.7"
     },
     {
       "bom-ref": "pkg:pub/http@1.6.0",
@@ -1567,6 +2752,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1590,6 +2787,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1609,6 +2818,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1632,6 +2853,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1641,7 +2874,7 @@
       "version": "3.3.0"
     },
     {
-      "bom-ref": "pkg:pub/in_app_purchase_android@0.5.0",
+      "bom-ref": "pkg:generic/kilodrive-vendored/in_app_purchase_android@0.5.0",
       "name": "in_app_purchase_android",
       "properties": [
         {
@@ -1653,13 +2886,58 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "reviewed-source-fork"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
       ],
-      "purl": "pkg:pub/in_app_purchase_android@0.5.0",
+      "purl": "pkg:generic/kilodrive-vendored/in_app_purchase_android@0.5.0",
       "type": "library",
       "version": "0.5.0"
+    },
+    {
+      "bom-ref": "pkg:pub/in_app_purchase_storekit@0.4.11+1",
+      "name": "in_app_purchase_storekit",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/in_app_purchase_storekit@0.4.11+1",
+      "type": "library",
+      "version": "0.4.11+1"
     },
     {
       "bom-ref": "pkg:pub/in_app_review@2.0.12",
@@ -1672,6 +2950,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1695,6 +2985,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1714,6 +3016,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1737,6 +3051,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1758,6 +3084,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1765,6 +3103,39 @@
       "purl": "pkg:pub/mobile_scanner@7.4.0",
       "type": "library",
       "version": "7.4.0"
+    },
+    {
+      "bom-ref": "pkg:pub/package_info_plus@8.3.1",
+      "name": "package_info_plus",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/package_info_plus@8.3.1",
+      "type": "library",
+      "version": "8.3.1"
     },
     {
       "bom-ref": "pkg:pub/package_info_plus@9.0.1",
@@ -1777,6 +3148,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1800,6 +3183,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1821,6 +3216,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1828,6 +3235,39 @@
       "purl": "pkg:pub/path_provider@2.1.6",
       "type": "library",
       "version": "2.1.6"
+    },
+    {
+      "bom-ref": "pkg:pub/path_provider_platform_interface@2.1.3",
+      "name": "path_provider_platform_interface",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "development"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/path_provider_platform_interface@2.1.3",
+      "type": "library",
+      "version": "2.1.3"
     },
     {
       "bom-ref": "pkg:pub/permission_handler@12.0.3",
@@ -1840,6 +3280,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1863,6 +3315,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1884,6 +3348,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1891,6 +3367,39 @@
       "purl": "pkg:pub/qr_flutter@4.1.0",
       "type": "library",
       "version": "4.1.0"
+    },
+    {
+      "bom-ref": "pkg:generic/kilodrive-vendored/riverpod@3.3.2",
+      "name": "riverpod",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "explicit-override"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "reviewed-source-fork"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct overridden"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:generic/kilodrive-vendored/riverpod@3.3.2",
+      "type": "library",
+      "version": "3.3.2"
     },
     {
       "bom-ref": "pkg:pub/share_plus@12.0.2",
@@ -1903,6 +3412,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1926,6 +3447,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1945,6 +3478,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -1968,6 +3513,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -1987,6 +3544,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -2010,6 +3579,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -2029,6 +3610,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -2052,6 +3645,18 @@
           "value": "development"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -2071,6 +3676,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -2094,6 +3711,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer,system-admin"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -2113,6 +3742,18 @@
         {
           "name": "kilodrive:direct-scope",
           "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
         },
         {
           "name": "kilodrive:license-status",
@@ -2136,6 +3777,18 @@
           "value": "runtime"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -2157,6 +3810,18 @@
           "value": "development"
         },
         {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct dev"
+        },
+        {
           "name": "kilodrive:license-status",
           "value": "review-in-release-evidence"
         }
@@ -2164,6 +3829,39 @@
       "purl": "pkg:pub/vm_service@15.2.0",
       "type": "library",
       "version": "15.2.0"
+    },
+    {
+      "bom-ref": "pkg:pub/workmanager@0.10.10",
+      "name": "workmanager",
+      "properties": [
+        {
+          "name": "kilodrive:ecosystem",
+          "value": "pub"
+        },
+        {
+          "name": "kilodrive:direct-scope",
+          "value": "runtime"
+        },
+        {
+          "name": "kilodrive:owners",
+          "value": "consumer"
+        },
+        {
+          "name": "kilodrive:origin",
+          "value": "hosted"
+        },
+        {
+          "name": "kilodrive:declaration",
+          "value": "direct main"
+        },
+        {
+          "name": "kilodrive:license-status",
+          "value": "review-in-release-evidence"
+        }
+      ],
+      "purl": "pkg:pub/workmanager@0.10.10",
+      "type": "library",
+      "version": "0.10.10"
     }
   ],
   "dependencies": [
@@ -2219,46 +3917,59 @@
         "pkg:pub/connectivity_plus@7.3.1",
         "pkg:pub/crypto@3.0.7",
         "pkg:pub/cupertino_icons@1.0.9",
+        "pkg:pub/device_info_plus@11.5.0",
         "pkg:pub/device_info_plus@12.4.0",
         "pkg:pub/dio@5.11.0",
+        "pkg:pub/dio@5.11.1",
+        "pkg:pub/file_picker@10.3.10",
         "pkg:pub/file_picker@11.0.3",
         "pkg:pub/firebase_app_check@0.4.6",
+        "pkg:pub/firebase_app_check@0.4.8",
         "pkg:pub/firebase_core@4.13.0",
+        "pkg:pub/firebase_core@4.15.0",
         "pkg:pub/firebase_core_platform_interface@8.1.0",
         "pkg:pub/firebase_crashlytics@5.2.7",
         "pkg:pub/firebase_messaging@16.5.0",
+        "pkg:pub/firebase_messaging@16.7.0",
         "pkg:pub/fl_chart@0.69.2",
         "pkg:pub/flutter_animate@4.5.2",
         "pkg:pub/flutter_cache_manager@3.4.2",
-        "pkg:pub/flutter_callkit_incoming@3.1.5",
+        "pkg:generic/kilodrive-vendored/flutter_callkit_incoming@3.1.5",
         "pkg:pub/flutter_facebook_auth@7.2.0",
         "pkg:pub/flutter_image_compress@2.5.1",
         "pkg:pub/flutter_lints@5.0.0",
+        "pkg:pub/flutter_lints@6.0.0",
         "pkg:pub/flutter_local_notifications@22.3.0",
         "pkg:pub/flutter_riverpod@3.3.2",
         "pkg:pub/flutter_secure_storage@10.3.1",
+        "pkg:pub/flutter_secure_storage@10.3.4",
         "pkg:pub/flutter_svg@2.3.0",
         "pkg:pub/geolocator@13.0.4",
         "pkg:pub/google_maps_flutter@2.18.0",
         "pkg:pub/google_maps_flutter_platform_interface@2.16.0",
         "pkg:pub/google_sign_in@7.2.0",
         "pkg:pub/html@0.15.6",
+        "pkg:pub/html@0.15.7",
         "pkg:pub/http@1.6.0",
         "pkg:pub/image_cropper@12.2.1",
         "pkg:pub/image_picker@1.2.3",
         "pkg:pub/in_app_purchase@3.3.0",
-        "pkg:pub/in_app_purchase_android@0.5.0",
+        "pkg:generic/kilodrive-vendored/in_app_purchase_android@0.5.0",
+        "pkg:pub/in_app_purchase_storekit@0.4.11+1",
         "pkg:pub/in_app_review@2.0.12",
         "pkg:pub/intl@0.20.2",
         "pkg:pub/livekit_client@2.11.0",
         "pkg:pub/local_auth@3.0.2",
         "pkg:pub/mobile_scanner@7.4.0",
+        "pkg:pub/package_info_plus@8.3.1",
         "pkg:pub/package_info_plus@9.0.1",
         "pkg:pub/path@1.9.1",
         "pkg:pub/path_provider@2.1.6",
+        "pkg:pub/path_provider_platform_interface@2.1.3",
         "pkg:pub/permission_handler@12.0.3",
         "pkg:pub/pointycastle@4.0.0",
         "pkg:pub/qr_flutter@4.1.0",
+        "pkg:generic/kilodrive-vendored/riverpod@3.3.2",
         "pkg:pub/share_plus@12.0.2",
         "pkg:pub/shared_preferences@2.5.5",
         "pkg:pub/shimmer@3.0.0",
@@ -2271,19 +3982,32 @@
         "pkg:pub/timezone@0.11.1",
         "pkg:pub/url_launcher@6.3.2",
         "pkg:pub/uuid@4.6.0",
-        "pkg:pub/vm_service@15.2.0"
+        "pkg:pub/vm_service@15.2.0",
+        "pkg:pub/workmanager@0.10.10"
       ],
-      "ref": "pkg:generic/kilodrive-public-baseline@1.0.0+144"
+      "ref": "pkg:generic/kilodrive-public-baseline@1.0.0+172"
     }
   ],
   "metadata": {
     "component": {
-      "bom-ref": "pkg:generic/kilodrive-public-baseline@1.0.0+144",
+      "bom-ref": "pkg:generic/kilodrive-public-baseline@1.0.0+172",
       "name": "KiloDrive public architecture baseline",
       "properties": [
         {
           "name": "kilodrive:inventory-depth",
-          "value": "direct-only"
+          "value": "direct-and-explicit-overrides"
+        },
+        {
+          "name": "kilodrive:source-commit",
+          "value": "1cd27c58f0fd9df6d974fab3718c3cb0b485f251"
+        },
+        {
+          "name": "kilodrive:consumer-version",
+          "value": "1.0.0+172"
+        },
+        {
+          "name": "kilodrive:system-admin-version",
+          "value": "0.1.0+16"
         },
         {
           "name": "kilodrive:distribution",
@@ -2295,20 +4019,20 @@
         }
       ],
       "type": "application",
-      "version": "1.0.0+144"
+      "version": "1.0.0+172"
     },
-    "timestamp": "2026-09-23T00:00:00Z",
+    "timestamp": "2026-10-04T04:17:37Z",
     "tools": {
       "components": [
         {
           "name": "KiloDrive public SBOM generator",
           "type": "application",
-          "version": "1.0.0"
+          "version": "1.1.0"
         }
       ]
     }
   },
-  "serialNumber": "urn:uuid:09841906-c08e-5ccb-8075-a9079abca74c",
+  "serialNumber": "urn:uuid:89a125e1-818e-5bd6-9366-bef192d7b071",
   "specVersion": "1.6",
   "version": 1
 }

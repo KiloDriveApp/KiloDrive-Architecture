@@ -1,0 +1,3698 @@
+[
+  {
+    "method": "DELETE",
+    "path": "/api/v1/account",
+    "topic": "identity",
+    "purpose": "Request removal of the selected record for account. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/activity",
+    "topic": "identity",
+    "purpose": "Read the current account's activity information within the authorized account scope.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/activity/settings",
+    "topic": "identity",
+    "purpose": "Save account activity settings after server validation; a failed request must not be displayed as saved.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/avatar",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for account / avatar. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/avatar",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / avatar. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/account/complete-profile",
+    "topic": "identity",
+    "purpose": "Update the permitted configuration/record for account / complete profile. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/contact-details",
+    "topic": "identity",
+    "purpose": "Read the account's contact details and verification information before requesting a protected contact change.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/account/contact-details",
+    "topic": "identity",
+    "purpose": "Request an account contact-details update subject to identity conflicts and the applicable contact-proof requirements.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/contact-details/email/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the account / contact details / email / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/contact-details/email/request-code",
+    "topic": "identity",
+    "purpose": "Request delivery of the applicable verification challenge in the account / contact details / email / request code workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/contact-details/phone/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the account / contact details / phone / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/contact-details/phone/request-code",
+    "topic": "identity",
+    "purpose": "Request delivery of the applicable verification challenge in the account / contact details / phone / request code workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/deactivate",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / deactivate. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/deactivate/recoverable",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / deactivate / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/deletion-request",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / deletion request. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/export",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for account / export. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/identity-verification",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for account / identity verification. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/identity-verification",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / identity verification. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/identity-verification/operations/outcome",
+    "topic": "identity",
+    "purpose": "Reconcile the original identity-evidence submission without submitting a replacement mutation.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/identity-verification/recoverable",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / identity verification / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/name-change-request",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / name change request. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/onboarding/contact-proof",
+    "topic": "identity",
+    "purpose": "Submit proof of the applicable contact ceremony in the account / onboarding / contact proof workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/onboarding/phone-decision",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / onboarding / phone decision. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/account/onboarding/profile-photo-decision",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for account / onboarding / profile photo decision. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/account/recoverable",
+    "topic": "identity",
+    "purpose": "Request removal of the selected record for account / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/referrals",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for account / referrals. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/reputation",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for account / reputation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/security-events",
+    "topic": "identity",
+    "purpose": "Read the current account's security-event history for account-security review.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/security-preferences",
+    "topic": "identity",
+    "purpose": "Read account security-notification preferences, separate from device-local app-lock settings.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/account/security-preferences/login-email-alerts",
+    "topic": "identity",
+    "purpose": "Update the account's login email-alert preference through the authorized settings workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/account/setup-progress",
+    "topic": "identity",
+    "purpose": "Read persisted account setup progress so onboarding can resume after a restart.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/app-releases",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for app releases. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/app-releases/current",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for app releases / current. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/app-releases/{version}",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for app releases. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/app-releases/{version}/build/{build}",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for app releases / build. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/app-version-policy",
+    "topic": "discovery",
+    "purpose": "Read app-version compatibility/update policy for the requested platform/version/build context.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the auth / 2fa / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/disable",
+    "topic": "identity",
+    "purpose": "Disable the selected security method or setting through its protected ceremony in the auth / 2fa / disable workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/enroll",
+    "topic": "identity",
+    "purpose": "Start enrollment in the applicable security method in the auth / 2fa / enroll workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/enroll/contact/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the auth / 2fa / enroll / contact / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/enroll/contact/request-code",
+    "topic": "identity",
+    "purpose": "Request delivery of the applicable verification challenge in the auth / 2fa / enroll / contact / request code workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/recovery-codes/regenerate",
+    "topic": "identity",
+    "purpose": "Replace the applicable recovery material through the protected workflow in the auth / 2fa / recovery codes / regenerate workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/2fa/status",
+    "topic": "identity",
+    "purpose": "Read the permitted records/state for auth / 2fa / status. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/step-up",
+    "topic": "identity",
+    "purpose": "Complete the additional server authentication ceremony in the auth / 2fa / step up workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/2fa/step-up/request-code",
+    "topic": "identity",
+    "purpose": "Request delivery of the applicable verification challenge in the auth / 2fa / step up / request code workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/change-password",
+    "topic": "identity",
+    "purpose": "Change an existing password through authenticated identity validation; this is distinct from forgotten-password recovery.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login",
+    "topic": "identity",
+    "purpose": "Authenticate an identifier and password; return either the next security step or the final authenticated session.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/2fa",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for auth / login / 2fa. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/2fa/passkey/begin",
+    "topic": "identity",
+    "purpose": "Begin the applicable secure ceremony in the auth / login / 2fa / passkey / begin workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/2fa/passkey/complete",
+    "topic": "identity",
+    "purpose": "Complete the selected workflow after its required state/evidence checks in the auth / login / 2fa / passkey / complete workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/2fa/request-code",
+    "topic": "identity",
+    "purpose": "Request delivery of the applicable verification challenge in the auth / login / 2fa / request code workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/email/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the auth / login / email / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/email/request",
+    "topic": "identity",
+    "purpose": "Start the applicable request/challenge workflow in the auth / login / email / request workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/phone/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the auth / login / phone / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/login/phone/request",
+    "topic": "identity",
+    "purpose": "Start the applicable request/challenge workflow in the auth / login / phone / request workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "topic": "identity",
+    "purpose": "End the applicable authenticated session through the server logout workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/me",
+    "topic": "identity",
+    "purpose": "Read the authenticated identity's user model.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/passkeys",
+    "topic": "identity",
+    "purpose": "List the current account's registered passkey metadata; private authenticator key material is not returned.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/passkeys/register/begin",
+    "topic": "identity",
+    "purpose": "Begin passkey registration and obtain the server challenge/options for the platform authenticator.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/passkeys/register/complete",
+    "topic": "identity",
+    "purpose": "Verify the authenticator's response to the registration challenge and bind the accepted passkey to this account.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/auth/passkeys/{id}",
+    "topic": "identity",
+    "purpose": "Remove the selected account-owned passkey through the protected security workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/password-reset/confirm",
+    "topic": "identity",
+    "purpose": "Confirm valid reset evidence and set the new password through the established identity workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/password-reset/request",
+    "topic": "identity",
+    "purpose": "Request the secure password-reset ceremony; the response must not expose a password or account-existence proof.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/password-strength",
+    "topic": "identity",
+    "purpose": "Submit/create the documented record or action for auth / password strength. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/phone-verification/confirm",
+    "topic": "identity",
+    "purpose": "Confirm the submitted evidence or pending decision in the auth / phone verification / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/phone-verification/request",
+    "topic": "identity",
+    "purpose": "Start the applicable request/challenge workflow in the auth / phone verification / request workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/recent-authentication",
+    "topic": "identity",
+    "purpose": "Obtain server-validated recent account proof for consequential operations that require it.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "topic": "identity",
+    "purpose": "Rotate an eligible refresh credential and obtain the current session; installation and session-family checks still apply.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/register",
+    "topic": "identity",
+    "purpose": "Create a consumer account and begin its country/contact/onboarding journey; this does not grant administrator authority.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/session",
+    "topic": "identity",
+    "purpose": "Read the current session's authoritative account/security state before resuming protected work.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/sessions",
+    "topic": "identity",
+    "purpose": "List the authenticated account's sessions so the owner can inspect and revoke eligible sessions.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/auth/sessions/{id}",
+    "topic": "identity",
+    "purpose": "Revoke the selected session belonging to the authenticated account; possession of another session's ID does not grant authority.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/set-password",
+    "topic": "identity",
+    "purpose": "Establish a password through the authenticated identity workflow where the account is eligible to do so.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/social",
+    "topic": "identity",
+    "purpose": "Validate provider sign-in evidence and return a session or the protected pending-link/verification ceremony.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/auth/social-connections",
+    "topic": "identity",
+    "purpose": "List the external sign-in connections attached to the authenticated account.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/social-connections",
+    "topic": "identity",
+    "purpose": "Request an additional social sign-in connection using provider proof and the protected account-linking rules.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/auth/social-connections/{id}",
+    "topic": "identity",
+    "purpose": "Disconnect an eligible external sign-in connection owned by the current account.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/social-link-intents/cancel",
+    "topic": "identity",
+    "purpose": "Cancel the pending social-link ceremony without creating the account connection.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/social-link-intents/confirm",
+    "topic": "identity",
+    "purpose": "Complete an explicitly authorized pending social-account link after the required account proof.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/auth/social-link-intents/review",
+    "topic": "identity",
+    "purpose": "Read the protected pending social-link decision using its ceremony evidence; matching email addresses alone do not authorize linking.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/blog",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for blog. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/blog/{slug}",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for blog. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/business-shipping/accounts",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for business shipping / accounts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/business-shipping/accounts",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for business shipping / accounts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/business-shipping/accounts/{accountId}/members",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for business shipping / accounts / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/business-shipping/accounts/{accountId}/members",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for business shipping / accounts / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/business-shipping/accounts/{accountId}/members/{memberId}",
+    "topic": "profiles",
+    "purpose": "Request removal of the selected record for business shipping / accounts / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/business-shipping/deliveries/bulk",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for business shipping / deliveries / bulk. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/calculations",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for calculations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/calculations",
+    "topic": "maps-and-tools",
+    "purpose": "Submit/create the documented record or action for calculations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/calculations/{id}",
+    "topic": "maps-and-tools",
+    "purpose": "Request removal of the selected record for calculations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/calculations/{id}/title",
+    "topic": "maps-and-tools",
+    "purpose": "Update the permitted configuration/record for calculations / title. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/campaign-inbox",
+    "topic": "notifications",
+    "purpose": "Read campaigns delivered into the current account's inbox; this is not a campaign-administration interface.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/campaign-inbox/{id}/acknowledge",
+    "topic": "notifications",
+    "purpose": "Record the current recipient's acknowledgement of a campaign inbox item.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/content/contact",
+    "topic": "discovery",
+    "purpose": "Submit/create the documented record or action for content / contact. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content/legal-catalogue",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content / legal catalogue. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content/{slug}",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content/{slug}/versions",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content / versions. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content/{slug}/versions/{version}",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content / versions. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/content/{slug}/versions/{version}/pdf",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for content / versions / pdf. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/corporate/accounts",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for corporate / accounts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/corporate/accounts",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for corporate / accounts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/corporate/accounts/{accountId}/budgets",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for corporate / accounts / budgets. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/corporate/accounts/{accountId}/members",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for corporate / accounts / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for deliveries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/active/{deliveryId}/verification/{purpose}",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for deliveries / active / verification. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/product-settings",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / product settings. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/quote",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for deliveries / quote. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/bids",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / bids. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "topic": "deliveries",
+    "purpose": "Accept the selected offer/request in the deliveries / bids / accept workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "topic": "deliveries",
+    "purpose": "Accept the selected offer/request in the deliveries / bids / accept workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / bids / acceptance preview. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/cancel",
+    "topic": "deliveries",
+    "purpose": "Cancel the selected pending or active workflow where permitted in the deliveries / cancel workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/custody",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / custody. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/evidence",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / evidence. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / protection / claims. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for deliveries / protection / claims. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/deliveries/{deliveryRequestId}/tracking",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for deliveries / tracking. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/devices/heartbeat",
+    "topic": "identity",
+    "purpose": "Update the current installation's reported metadata and return access state.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/devices/register",
+    "topic": "identity",
+    "purpose": "Register/admit an installation and return its private credential and access state; anonymous bearer metadata does not bypass app admission.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/devices/status",
+    "topic": "identity",
+    "purpose": "Read the current installation's allowed/restricted access state.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/assistance-capability",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / assistance capability. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/driver/assistance-capability",
+    "topic": "drivers",
+    "purpose": "Update the permitted configuration/record for driver / assistance capability. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/billing",
+    "topic": "memberships",
+    "purpose": "Read the driver's billing mode, payment choices, billing history and store reconciliation facts. Use membership/store-status for the unified entitlement decision.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/driver/billing/mode",
+    "topic": "memberships",
+    "purpose": "Change the driver's requested billing mode against the current revision; this does not by itself purchase or activate a plan.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/deliveries/available",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for driver / deliveries / available. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/deliveries/mine",
+    "topic": "deliveries",
+    "purpose": "Read the permitted records/state for driver / deliveries / mine. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "topic": "deliveries",
+    "purpose": "Record the failed fulfillment attempt and its required reason/evidence in the driver / deliveries / attempts / failed workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/cancel",
+    "topic": "deliveries",
+    "purpose": "Cancel the selected pending or active workflow where permitted in the driver / deliveries / cancel workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/complete",
+    "topic": "deliveries",
+    "purpose": "Complete the selected workflow after its required state/evidence checks in the driver / deliveries / complete workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "topic": "deliveries",
+    "purpose": "Confirm the submitted evidence or pending decision in the driver / deliveries / pickup / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "topic": "deliveries",
+    "purpose": "Confirm the submitted evidence or pending decision in the driver / deliveries / recipient / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "topic": "deliveries",
+    "purpose": "Complete the selected workflow after its required state/evidence checks in the driver / deliveries / return / complete workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/start",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for driver / deliveries / start. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete",
+    "topic": "deliveries",
+    "purpose": "Complete the selected workflow after its required state/evidence checks in the driver / deliveries / stops / complete workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "topic": "deliveries",
+    "purpose": "Submit/create the documented record or action for driver / deliveries / bids. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/documents",
+    "topic": "drivers",
+    "purpose": "List the driver's own submitted documents and their current review state.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/documents",
+    "topic": "drivers",
+    "purpose": "Submit a private upload as driver document evidence; submission does not approve it.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/incentives/current",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / incentives / current. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/membership",
+    "topic": "memberships",
+    "purpose": "Read the driver's current membership, usage period, pending plan change and renewal preference.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/membership",
+    "topic": "memberships",
+    "purpose": "Purchase an eligible driver plan through the wallet workflow with server-owned pricing/proration and revision checks.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/driver/membership/auto-renew",
+    "topic": "memberships",
+    "purpose": "Change the server-managed membership renewal preference. Native-store subscription management remains a separate provider workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/membership/checkout",
+    "topic": "memberships",
+    "purpose": "Create a membership checkout for a plan, term and supported provider; a checkout response is not proof of entitlement.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/membership/pending-change/cancel",
+    "topic": "memberships",
+    "purpose": "Cancel the identified pending membership change using the original membership revision; retain the currently effective entitlement facts.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/membership/store-status",
+    "topic": "memberships",
+    "purpose": "Read the single authoritative driver membership workspace snapshot, including entitlement and billing/recovery state.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / profile. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile/onboarding",
+    "topic": "drivers",
+    "purpose": "Read the driver's persisted setup/document checklist and remediation state.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/onboarding/complete",
+    "topic": "drivers",
+    "purpose": "Request completion of driver onboarding after required steps; this does not substitute for administrative readiness approval.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/onboarding/contact-proof",
+    "topic": "drivers",
+    "purpose": "Submit proof of the applicable contact ceremony in the driver / profile / onboarding / contact proof workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/onboarding/progress",
+    "topic": "drivers",
+    "purpose": "Persist the driver's onboarding progress for later resumption; progress is distinct from verified eligibility.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/onboarding/step",
+    "topic": "drivers",
+    "purpose": "Record a driver onboarding step through the server's step-validation workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile/preferred-program",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / profile / preferred program. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/preferred-program/applications",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / profile / preferred program / applications. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/preferred-program/apply",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / profile / preferred program / apply. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/rating/import",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / profile / rating / import. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile/rating/imports",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / profile / rating / imports. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile/readiness",
+    "topic": "drivers",
+    "purpose": "Read the authoritative assessment of whether this driver can go online or bid, including blocking reasons and next steps.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/profile/reviews",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / profile / reviews. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/profile/reviews/{reviewId}/dispute",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / profile / reviews / dispute. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/reports/earnings",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / reports / earnings. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rider-favorites",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / rider favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/driver/rider-favorites/{favoriteId}",
+    "topic": "drivers",
+    "purpose": "Request removal of the selected record for driver / rider favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/rider-favorites/{riderUserId}",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / rider favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rides/alert-preferences",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / rides / alert preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/driver/rides/alert-preferences",
+    "topic": "drivers",
+    "purpose": "Update the permitted configuration/record for driver / rides / alert preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rides/available",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / rides / available. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rides/available/seek",
+    "topic": "drivers",
+    "purpose": "Read a cursor-paged set of ride requests visible to this driver under current location, readiness and marketplace rules.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/driver/rides/bids/{bidId}",
+    "topic": "drivers",
+    "purpose": "Request removal of the selected record for driver / rides / bids. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/rides/{rideRequestId}/bids",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / rides / bids. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rides/{rideRequestId}/inquiry",
+    "topic": "drivers",
+    "purpose": "Read the permitted records/state for driver / rides / inquiry. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/rides/{rideRequestId}/inquiry",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / rides / inquiry. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/rides/{rideRequestId}/inquiry/read",
+    "topic": "drivers",
+    "purpose": "Update the caller's read/seen state in the driver / rides / inquiry / read workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/rides/{rideRequestId}/route-preview",
+    "topic": "drivers",
+    "purpose": "Read the permitted route preview for a ride request before deciding whether to bid.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/rides/{rideRequestId}/view",
+    "topic": "drivers",
+    "purpose": "Submit/create the documented record or action for driver / rides / view. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/status",
+    "topic": "drivers",
+    "purpose": "Read the driver's current operational/online status.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/status",
+    "topic": "drivers",
+    "purpose": "Request an online/status change subject to current readiness and operational rules.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/vehicles",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for driver / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/vehicles",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for driver / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/driver/vehicles/{vehicleId}",
+    "topic": "vehicles",
+    "purpose": "Request removal of the selected record for driver / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/driver/vehicles/{vehicleId}",
+    "topic": "vehicles",
+    "purpose": "Update the permitted configuration/record for driver / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/driver/vehicles/{vehicleId}/activate",
+    "topic": "vehicles",
+    "purpose": "Request activation of the selected vehicle under current verification/eligibility rules in the driver / vehicles / activate workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/driver/vehicles/{vehicleId}/bidding-eligibility",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for driver / vehicles / bidding eligibility. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/fare-splits/{planId}",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for fare splits. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/fare-splits/{planId}/respond",
+    "topic": "rides",
+    "purpose": "Record the caller's response to the selected request/share in the fare splits / respond workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/fares/quote",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for fares / quote. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/fares/quote",
+    "topic": "rides",
+    "purpose": "Submit/create the documented record or action for fares / quote. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/favorites",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/favorites",
+    "topic": "rides",
+    "purpose": "Submit/create the documented record or action for favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/favorites/{favoriteId}",
+    "topic": "rides",
+    "purpose": "Request removal of the selected record for favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/features",
+    "topic": "discovery",
+    "purpose": "Read applicable feature enablement for the current authenticated context.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/households",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for households. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/households",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for households. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/households/{householdId}/consent",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for households / consent. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/households/{householdId}/members",
+    "topic": "safety",
+    "purpose": "Update the permitted configuration/record for households / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/legal-acceptances",
+    "topic": "discovery",
+    "purpose": "Submit/create the documented record or action for legal acceptances. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/legal-acceptances/catalogue",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for legal acceptances / catalogue. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/autocomplete",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / autocomplete. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/geocode",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / geocode. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/place",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / place. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/reverse-geocode",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / reverse geocode. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/route",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / route. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/maps/traffic-routes",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for maps / traffic routes. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/membership/plans",
+    "topic": "memberships",
+    "purpose": "List driver membership catalog plans, term prices and benefit limits for the resolved country context.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/notifications",
+    "topic": "notifications",
+    "purpose": "Request removal of the selected record for notifications. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/notifications",
+    "topic": "notifications",
+    "purpose": "Read the permitted records/state for notifications. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/notifications/history",
+    "topic": "notifications",
+    "purpose": "Read the owner's persisted notification inbox using a scope-bound seek cursor and filters.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/notifications/preferences",
+    "topic": "notifications",
+    "purpose": "Read the permitted records/state for notifications / preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/notifications/preferences",
+    "topic": "notifications",
+    "purpose": "Update the permitted configuration/record for notifications / preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/notifications/preferences/effective",
+    "topic": "notifications",
+    "purpose": "Read effective notification settings after account preferences and mandatory-category rules are applied.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/notifications/push-token",
+    "topic": "notifications",
+    "purpose": "Deactivate the current owner's applicable push binding without transferring another account's authority.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/notifications/push-token",
+    "topic": "notifications",
+    "purpose": "Bind a current provider token to verified app, installation, session, account and country authority with guarded state updates.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/notifications/push-token/installation-state",
+    "topic": "notifications",
+    "purpose": "Read the current admitted installation's binding revision and enabled state before changing push registration.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/notifications/read-all",
+    "topic": "notifications",
+    "purpose": "Mark the caller's applicable inbox records read in the notifications / read all workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/notifications/{notificationId}",
+    "topic": "notifications",
+    "purpose": "Request removal of the selected record for notifications. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/notifications/{notificationId}/read",
+    "topic": "notifications",
+    "purpose": "Update the caller's read/seen state in the notifications / read workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/operations/status",
+    "topic": "wallets",
+    "purpose": "Read the caller's durable command outcome using its original key/reference; this read never executes the command.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/public/capabilities",
+    "topic": "discovery",
+    "purpose": "Read public capability/availability information; individual actions still require their own authorization and readiness.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/public/country-sites",
+    "topic": "discovery",
+    "purpose": "List published country-site information for discovery and public navigation.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/public/membership-prices",
+    "topic": "discovery",
+    "purpose": "Read informational membership prices in the selected country's currency; this does not create an executable purchase.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/recurring-rides",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for recurring rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/recurring-rides",
+    "topic": "rides",
+    "purpose": "Submit/create the documented record or action for recurring rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/recurring-rides/recoverable",
+    "topic": "rides",
+    "purpose": "Submit/create the documented record or action for recurring rides / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/recurring-rides/{recurringRideId}",
+    "topic": "rides",
+    "purpose": "Request removal of the selected record for recurring rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/recurring-rides/{recurringRideId}",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for recurring rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/recurring-rides/{recurringRideId}",
+    "topic": "rides",
+    "purpose": "Update the permitted configuration/record for recurring rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/recurring-rides/{recurringRideId}/occurrences",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for recurring rides / occurrences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "topic": "rides",
+    "purpose": "Request removal of the selected record for recurring rides / revisioned. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "topic": "rides",
+    "purpose": "Update the permitted configuration/record for recurring rides / revisioned. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reference-data/banks",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for reference data / banks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reference-data/countries",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for reference data / countries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reference-data/vehicle-insurers",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for reference data / vehicle insurers. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/membership/plans",
+    "topic": "memberships",
+    "purpose": "List membership plans for rental partners; organization access and purchase readiness are checked separately.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rental partner / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/analytics",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / analytics. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/availability-blocks",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / availability blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/availability-blocks/{blockId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rental partner / organizations / availability blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/billing",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / billing. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / billing / membership. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / billing / membership / auto renew. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout",
+    "topic": "rentals",
+    "purpose": "Start the applicable payment checkout; checkout creation is not settlement in the rental partner / organizations / billing / membership / checkout workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/billing/mode",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / billing / mode. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / bookings. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / bookings / agreement. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "topic": "rentals",
+    "purpose": "Submit signature/acceptance evidence for the selected agreement in the rental partner / organizations / bookings / agreement / sign workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / bookings / damage claims. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle",
+    "topic": "rentals",
+    "purpose": "Request the applicable settlement under the current financial state in the rental partner / organizations / bookings / deposit / settle workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / bookings / inspections. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/late-return/assess",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / bookings / late return / assess. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / bookings / status. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/branches",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / branches. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/branches",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / branches. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / extensions. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/fleet/reminders",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / fleet / reminders. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/profile-image",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / profile image. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/team",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / team. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/team/invitations",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / team / invitations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/team/invitations/{invitationId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rental partner / organizations / team / invitations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/team/{userId}",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / team. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / organizations / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rental partner / organizations / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rental partner / organizations / vehicles / availability. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rental partner / organizations / vehicles / images. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}/primary",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / vehicles / images / primary. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/protection",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rental partner / organizations / vehicles / protection. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/team/invitations/accept",
+    "topic": "rentals",
+    "purpose": "Accept the selected offer/request in the rental partner / team / invitations / accept workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rental-partner/vehicles/{vehicleId}/images",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rental partner / vehicles / images. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/booking-status-contract",
+    "topic": "rentals",
+    "purpose": "Read the rental booking state contract used to render supported states and transitions consistently.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rentals / bookings. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/mine",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / bookings / mine. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/agreement/sign",
+    "topic": "rentals",
+    "purpose": "Submit signature/acceptance evidence for the selected agreement in the rentals / bookings / agreement / sign workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/cancel",
+    "topic": "rentals",
+    "purpose": "Cancel the selected pending or active workflow where permitted in the rentals / bookings / cancel workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/checkout",
+    "topic": "rentals",
+    "purpose": "Start the applicable payment checkout; checkout creation is not settlement in the rentals / bookings / checkout workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/{bookingId}/damage-evidence/{evidenceId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / bookings / damage evidence. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/{bookingId}/dispute-evidence/{evidenceId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / bookings / dispute evidence. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/disputes",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rentals / bookings / disputes. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/extensions",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rentals / bookings / extensions. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/extensions/{extensionId}/checkout",
+    "topic": "rentals",
+    "purpose": "Start the applicable payment checkout; checkout creation is not settlement in the rentals / bookings / extensions / checkout workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/{bookingId}/inspection-evidence/{evidenceId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / bookings / inspection evidence. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/{bookingId}/operations",
+    "topic": "rentals",
+    "purpose": "Read operation/recovery facts for an authorized rental booking before continuing an interrupted booking or payment workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/payment-authorized",
+    "topic": "rentals",
+    "purpose": "Submit/create the documented record or action for rentals / bookings / payment authorized. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/bookings/{bookingId}/protection",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / bookings / protection. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rentals/bookings/{bookingId}/rating",
+    "topic": "rentals",
+    "purpose": "Submit the caller's permitted rating for the selected completed service in the rentals / bookings / rating workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/rentals/favorites/{vehicleId}",
+    "topic": "rentals",
+    "purpose": "Request removal of the selected record for rentals / favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rentals/favorites/{vehicleId}",
+    "topic": "rentals",
+    "purpose": "Update the permitted configuration/record for rentals / favorites. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/filters",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / filters. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/organizations",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/organizations/{organizationId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / organizations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/organizations/{organizationId}/profile-image",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / organizations / profile image. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles/{vehicleId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles/{vehicleId}/availability",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / vehicles / availability. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles/{vehicleId}/images/{imageId}",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / vehicles / images. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles/{vehicleId}/protection",
+    "topic": "rentals",
+    "purpose": "Read the permitted records/state for rentals / vehicles / protection. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rentals/vehicles/{vehicleId}/quote",
+    "topic": "rentals",
+    "purpose": "Read a rental quote for the selected vehicle and booking context; quoted availability is not a confirmed reservation.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/reports/exports",
+    "topic": "reports",
+    "purpose": "Submit/create the documented record or action for reports / exports. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reports/exports/{artifactId}",
+    "topic": "reports",
+    "purpose": "Read the authorized export job/artifact status before attempting a download.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reports/exports/{artifactId}/download",
+    "topic": "reports",
+    "purpose": "Download a ready report artifact after ownership and artifact-validity checks.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reports/scheduled",
+    "topic": "reports",
+    "purpose": "Read the permitted records/state for reports / scheduled. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/reports/scheduled",
+    "topic": "reports",
+    "purpose": "Submit/create the documented record or action for reports / scheduled. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/reports/scheduled/{scheduleId}",
+    "topic": "reports",
+    "purpose": "Request removal of the selected record for reports / scheduled. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/reports/{reportType}",
+    "topic": "reports",
+    "purpose": "Read the permitted records/state for reports. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/resources/manuals",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for resources / manuals. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/reviews/{kind}/{reviewId}/appeals",
+    "topic": "support",
+    "purpose": "Submit/create the documented record or action for reviews / appeals. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rider/assistance-profile",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rider / assistance profile. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rider/assistance-profile",
+    "topic": "rides",
+    "purpose": "Update the permitted configuration/record for rider / assistance profile. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rider/membership",
+    "topic": "rides",
+    "purpose": "Read the rider's membership state and benefits in the current account context.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rider/membership/plans",
+    "topic": "rides",
+    "purpose": "List membership plans for the rider audience; driver and rental plans are separate catalogs.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides",
+    "topic": "rides",
+    "purpose": "Create a rider request with journey, proposed fare, category and applicable product options; this does not yet assign a driver.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/fare-splits/{planId}/respond",
+    "topic": "rides",
+    "purpose": "Record the caller's response to the selected request/share in the rides / fare splits / respond workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/recent-locations",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / recent locations. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/bids",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / bids. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/bids/accept",
+    "topic": "rides",
+    "purpose": "Accept an eligible current bid and establish the trip/financial state under server concurrency and readiness checks.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/bids/{bidId}/avatar",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / bids / avatar. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/bids/{bidId}/reject",
+    "topic": "rides",
+    "purpose": "Reject the selected offer/request in the rides / bids / reject workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/cancel",
+    "topic": "rides",
+    "purpose": "Cancel the selected pending or active workflow where permitted in the rides / cancel workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rides/{rideRequestId}/fare",
+    "topic": "rides",
+    "purpose": "Update the permitted configuration/record for rides / fare. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/fare-split",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / fare split. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/rides/{rideRequestId}/fare-split",
+    "topic": "rides",
+    "purpose": "Update the permitted configuration/record for rides / fare split. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/inquiries",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / inquiries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / inquiries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "topic": "rides",
+    "purpose": "Submit/create the documented record or action for rides / inquiries. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}/read",
+    "topic": "rides",
+    "purpose": "Update the caller's read/seen state in the rides / inquiries / read workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/no-driver-recovery",
+    "topic": "rides",
+    "purpose": "Read permitted recovery choices when a ride request has not obtained a driver.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/rides/{rideRequestId}/search-map",
+    "topic": "rides",
+    "purpose": "Read the permitted records/state for rides / search map. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/rides/{rideRequestId}/search/extend",
+    "topic": "rides",
+    "purpose": "Request an extension of the current ride search under marketplace policy; it does not guarantee a match.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/cases",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for safety / cases. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/cases",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / cases. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/cases/recoverable",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / cases / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/cases/{id}/acknowledge",
+    "topic": "safety",
+    "purpose": "Record that the caller acknowledged the selected event/record in the safety / cases / acknowledge workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/cases/{id}/acknowledge/recoverable",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / cases / acknowledge / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/emergency-number",
+    "topic": "safety",
+    "purpose": "Read the emergency-number information for the server-resolved country; application support is not emergency dispatch.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/events",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / events. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/events/{id}/acknowledge",
+    "topic": "safety",
+    "purpose": "Record that the caller acknowledged the selected event/record in the safety / events / acknowledge workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/events/{id}/route-deviation-response",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / events / route deviation response. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/preferences",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for safety / preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/safety/preferences",
+    "topic": "safety",
+    "purpose": "Update the permitted configuration/record for safety / preferences. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/trips/{tripId}/events",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for safety / trips / events. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/trips/{tripId}/route-deviation",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for safety / trips / route deviation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/safety/trusted-contacts",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for safety / trusted contacts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/safety/trusted-contacts",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for safety / trusted contacts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/safety/trusted-contacts/{id}",
+    "topic": "safety",
+    "purpose": "Request removal of the selected record for safety / trusted contacts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/store-billing/operations/{operationId}",
+    "topic": "memberships",
+    "purpose": "Read the caller's prepared store purchase operation and recovery state without starting another native purchase.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/store-billing/prepare",
+    "topic": "memberships",
+    "purpose": "Persist the applicable purchase preparation before native checkout; preparation does not grant entitlement.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/store-billing/products",
+    "topic": "memberships",
+    "purpose": "Read the reviewed platform/audience product mapping for comparison with actual native localized offers.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/store-billing/quote",
+    "topic": "memberships",
+    "purpose": "Validate the exact mapped plan and native offer and create the applicable server-owned purchase quote.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/store-billing/restore",
+    "topic": "memberships",
+    "purpose": "Reconcile eligible existing store purchases with the authenticated account; restoration is not a new sale.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/store-billing/verify",
+    "topic": "memberships",
+    "purpose": "Validate store transaction evidence on the server and reconcile/grant the mapped entitlement once.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/supervised-trips/{tripId}/conversation",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for supervised trips / conversation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/supervised-trips/{tripId}/conversation",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for supervised trips / conversation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/supervised-trips/{tripId}/handoff",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for supervised trips / handoff. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/supervised-trips/{tripId}/safety-escalation",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for supervised trips / safety escalation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/support/tickets",
+    "topic": "support",
+    "purpose": "Read the permitted records/state for support / tickets. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets",
+    "topic": "support",
+    "purpose": "Submit/create the documented record or action for support / tickets. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/support/tickets/catalog",
+    "topic": "support",
+    "purpose": "Read supported ticket categories and submission choices before creating a support request.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/support/tickets/operations/outcome",
+    "topic": "support",
+    "purpose": "Read the original support mutation's outcome without posting a duplicate ticket, reply or state change.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/support/tickets/{ticketId}",
+    "topic": "support",
+    "purpose": "Read the permitted records/state for support / tickets. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/close",
+    "topic": "support",
+    "purpose": "Close the selected workflow where permitted in the support / tickets / close workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/close/recoverable",
+    "topic": "support",
+    "purpose": "Submit/create the documented record or action for support / tickets / close / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/support/tickets/{ticketId}/messages/{messageId}/attachments/{index}",
+    "topic": "support",
+    "purpose": "Read the permitted records/state for support / tickets / messages / attachments. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/support/tickets/{ticketId}/read",
+    "topic": "support",
+    "purpose": "Update the permitted configuration/record for support / tickets / read. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/reopen",
+    "topic": "support",
+    "purpose": "Reopen the selected workflow where permitted in the support / tickets / reopen workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/reopen/recoverable",
+    "topic": "support",
+    "purpose": "Submit/create the documented record or action for support / tickets / reopen / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/reply",
+    "topic": "support",
+    "purpose": "Add a reply to the caller's authorized conversation/ticket in the support / tickets / reply workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/support/tickets/{ticketId}/reply/recoverable",
+    "topic": "support",
+    "purpose": "Submit/create the documented record or action for support / tickets / reply / recoverable. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/tools/calculators/export/pdf",
+    "topic": "maps-and-tools",
+    "purpose": "Submit/create the documented record or action for tools / calculators / export / pdf. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/tools/tolls/estimate",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for tools / tolls / estimate. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/tools/tolls/options",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for tools / tolls / options. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/tools/tolls/periods",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for tools / tolls / periods. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/tools/tolls/plazas",
+    "topic": "maps-and-tools",
+    "purpose": "Read the permitted records/state for tools / tolls / plazas. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/tools/tolls/route-estimate",
+    "topic": "maps-and-tools",
+    "purpose": "Submit/create the documented record or action for tools / tolls / route estimate. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for travel profiles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/invitations/accept",
+    "topic": "profiles",
+    "purpose": "Accept the selected offer/request in the travel profiles / invitations / accept workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/travel-profiles/{profileId}",
+    "topic": "profiles",
+    "purpose": "Request removal of the selected record for travel profiles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/cost-centers",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for travel profiles / cost centers. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "topic": "profiles",
+    "purpose": "Request removal of the selected record for travel profiles / cost centers. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles / cost centers. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/dependents",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / dependents. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/dependents",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for travel profiles / dependents. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent",
+    "topic": "profiles",
+    "purpose": "Renew the applicable consent relationship through its workflow in the travel profiles / dependents / renew consent workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent",
+    "topic": "profiles",
+    "purpose": "Revoke the applicable consent relationship in the travel profiles / dependents / revoke consent workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / family safety policy. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles / family safety policy. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/members",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for travel profiles / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "topic": "profiles",
+    "purpose": "Request removal of the selected record for travel profiles / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles / members. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles / members / tracking consent. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/travel-profiles/{profileId}/ride-policy",
+    "topic": "profiles",
+    "purpose": "Update the permitted configuration/record for travel profiles / ride policy. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/travel-profiles/{profileId}/rides",
+    "topic": "profiles",
+    "purpose": "Submit/create the documented record or action for travel profiles / rides. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/statements/monthly",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / statements / monthly. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/trips",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / trips. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / trips / receipt. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking",
+    "topic": "profiles",
+    "purpose": "Read the permitted records/state for travel profiles / trips / tracking. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/active",
+    "topic": "trips",
+    "purpose": "Read the caller's active trip so startup and resume can return to the existing journey.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/history",
+    "topic": "trips",
+    "purpose": "Read authorized completed or historical trip records using this endpoint's pagination contract.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/receipts",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / receipts. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/arrived",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / arrived. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/cancel",
+    "topic": "trips",
+    "purpose": "Cancel the selected pending or active workflow where permitted in the trips / cancel workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/chat",
+    "topic": "trips",
+    "purpose": "Read authorized participant chat history using the documented pagination/reconciliation bounds.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/chat",
+    "topic": "trips",
+    "purpose": "Commit a participant chat message using its stable client/mutation identity; a realtime echo is not another message.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/chat/read",
+    "topic": "trips",
+    "purpose": "Update the caller's read/seen state in the trips / chat / read workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/complete",
+    "topic": "trips",
+    "purpose": "Complete an eligible trip and record its authoritative payment/settlement effects.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/dispute",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / dispute. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/dispute",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / dispute. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/driver-avatar",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / driver avatar. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/driver-termination",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / driver termination. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/emergency-stop",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / emergency stop. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/passenger-avatar",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / passenger avatar. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/trips/{tripId}/peer-block",
+    "topic": "trips",
+    "purpose": "Request removal of the selected record for trips / peer block. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/peer-block",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / peer block. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/trips/{tripId}/peer-block",
+    "topic": "trips",
+    "purpose": "Update the permitted configuration/record for trips / peer block. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/pickup-ceremony",
+    "topic": "trips",
+    "purpose": "Read the current pickup-verification ceremony and the next permitted participant action.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/pickup-challenge",
+    "topic": "trips",
+    "purpose": "Create or request the applicable trip-bound pickup challenge before starting the trip.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/pickup-code",
+    "topic": "trips",
+    "purpose": "Read pickup-code information only within the authorized participant ceremony; do not expose it in logs.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/pickup-contact-attempt",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / pickup contact attempt. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/rating",
+    "topic": "trips",
+    "purpose": "Submit the caller's permitted rating for the selected completed service in the trips / rating workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/receipt",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / receipt. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/receipt.pdf",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / receipt.pdf. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/receipt/email",
+    "topic": "trips",
+    "purpose": "Request email delivery of the authorized record; queuing is distinct from mailbox receipt in the trips / receipt / email workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/reservation/confirm",
+    "topic": "trips",
+    "purpose": "Confirm the submitted evidence or pending decision in the trips / reservation / confirm workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/reservation/decline",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / reservation / decline. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/reservation/rider-check-in",
+    "topic": "trips",
+    "purpose": "Read the permitted records/state for trips / reservation / rider check in. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/reservation/rider-check-in",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / reservation / rider check in. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/rider-cancellation",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / rider cancellation. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/route-alterations",
+    "topic": "trips",
+    "purpose": "Propose a trip route change for the other participant's decision and the server's fare/lifecycle validation.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "topic": "trips",
+    "purpose": "Accept the identified route-change proposal under the current trip state; use the returned route and financial facts.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/route-alterations/{alterationId}/reject",
+    "topic": "trips",
+    "purpose": "Reject the identified trip route-change proposal without treating its proposed route as effective.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/share",
+    "topic": "trips",
+    "purpose": "Create the applicable consent-bound sharing capability in the trips / share workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/share/revoke",
+    "topic": "trips",
+    "purpose": "Revoke the selected permission/sharing capability in the trips / share / revoke workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/start",
+    "topic": "trips",
+    "purpose": "Start the assigned trip after the applicable pickup and lifecycle checks.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / stops / arrive. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "topic": "trips",
+    "purpose": "Complete the selected workflow after its required state/evidence checks in the trips / stops / complete workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "topic": "trips",
+    "purpose": "Submit/create the documented record or action for trips / stops / skip. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/trips/{tripId}/timeline",
+    "topic": "trips",
+    "purpose": "Read the authorized trip's persisted lifecycle timeline; display order must follow server event evidence.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/trips/{tripId}/tip",
+    "topic": "trips",
+    "purpose": "Record an authorized trip tip as a distinct value-moving operation.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/uploads",
+    "topic": "uploads",
+    "purpose": "Accept a genuine supported file into private storage and return upload evidence; it is neither public sharing nor document approval.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/uploads/operations/{operationId}",
+    "topic": "uploads",
+    "purpose": "Read an authorized recoverable upload's result instead of blindly submitting a second upload.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/uploads/recoverable",
+    "topic": "uploads",
+    "purpose": "Create an upload with durable recovery identity so an interrupted response can be reconciled.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/uploads/{fileRef}",
+    "topic": "uploads",
+    "purpose": "Retrieve private bytes only through authorized owner/reviewer access to this file reference.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/user-blocks",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for user blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/user-blocks/driver",
+    "topic": "safety",
+    "purpose": "Submit/create the documented record or action for user blocks / driver. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/user-blocks/{blockId}",
+    "topic": "safety",
+    "purpose": "Request removal of the selected record for user blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/user-blocks/{userId}",
+    "topic": "safety",
+    "purpose": "Read the permitted records/state for user blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/user-blocks/{userId}",
+    "topic": "safety",
+    "purpose": "Update the permitted configuration/record for user blocks. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicle-catalog/makes",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for vehicle catalog / makes. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicle-catalog/models",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for vehicle catalog / models. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicle-catalog/years",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for vehicle catalog / years. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicle-categories",
+    "topic": "discovery",
+    "purpose": "Read the permitted records/state for vehicle categories. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/vehicles/{vehicleId}",
+    "topic": "vehicles",
+    "purpose": "Request removal of the selected record for vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "PUT",
+    "path": "/api/v1/vehicles/{vehicleId}",
+    "topic": "vehicles",
+    "purpose": "Update the permitted configuration/record for vehicles. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/activate",
+    "topic": "vehicles",
+    "purpose": "Request activation of the selected vehicle under current verification/eligibility rules in the vehicles / activate workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/bidding-eligibility",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / bidding eligibility. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / brakes. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / brakes. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / defects. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / defects. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "topic": "vehicles",
+    "purpose": "Record resolution of the selected issue where permitted in the vehicles / maintenance / defects / resolve workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / expenses. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / expenses. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / odometer. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / odometer. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / schedules. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / schedules. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/services",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / services. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/services",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / services. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "topic": "vehicles",
+    "purpose": "Void the selected record while preserving its history in the vehicles / maintenance / services / void workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / summary. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "topic": "vehicles",
+    "purpose": "Read the permitted records/state for vehicles / maintenance / tyres. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "topic": "vehicles",
+    "purpose": "Submit/create the documented record or action for vehicles / maintenance / tyres. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/voice/call",
+    "topic": "communications",
+    "purpose": "Submit/create the documented record or action for voice / call. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/voice/call/connected",
+    "topic": "communications",
+    "purpose": "Record the call connection state in the voice / call / connected workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/voice/call/consent",
+    "topic": "communications",
+    "purpose": "Submit/create the documented record or action for voice / call / consent. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/voice/call/end",
+    "topic": "communications",
+    "purpose": "End the applicable call workflow in the voice / call / end workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/voice/call/gsm",
+    "topic": "communications",
+    "purpose": "Submit/create the documented record or action for voice / call / gsm. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/voice/call/incoming",
+    "topic": "communications",
+    "purpose": "Read incoming call state for the authenticated participant. Stop polling when the protected session is unavailable.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/voice/call/{callId}",
+    "topic": "communications",
+    "purpose": "Read an authorized participant call's state and permitted connection information.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/voice/options",
+    "topic": "communications",
+    "purpose": "Read available calling options for this context; provider configuration and trip relationship determine actual availability.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/voice/token",
+    "topic": "communications",
+    "purpose": "Read the permitted records/state for voice / token. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet",
+    "topic": "wallets",
+    "purpose": "Read the current user's authoritative wallet, currency, held/available breakdown and revision.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/cashout",
+    "topic": "wallets",
+    "purpose": "List the current account's withdrawal requests and their lifecycle states.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/cashout",
+    "topic": "wallets",
+    "purpose": "Request a withdrawal and applicable hold; approval, provider dispatch and settlement are subsequent states.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/cashout/limits",
+    "topic": "wallets",
+    "purpose": "Read the current withdrawal bounds and applicable plan context before requesting a cashout.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/cashout/{cashoutId}/status",
+    "topic": "wallets",
+    "purpose": "Read the owner's existing withdrawal outcome; pending approval or dispatch is not settlement.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/command-recovery",
+    "topic": "wallets",
+    "purpose": "Read the compatibility command-recovery state; new clients prefer /api/v1/operations/status.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/fee-products",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / fee products. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/fee-products/{productId}/purchase",
+    "topic": "wallets",
+    "purpose": "Start the applicable purchase with server-owned financial validation in the wallet / fee products / purchase workflow. The request and returned models below define the exact submitted evidence and result.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/fees",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / fees. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/financial-history",
+    "topic": "wallets",
+    "purpose": "Read the account's financial-history projection across supported payment and wallet events.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/financial-history/export/pdf",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / financial history / export / pdf. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/financial-history/{entryId}",
+    "topic": "wallets",
+    "purpose": "Read a permitted financial-history entry and its linked transaction facts.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/financial-history/{entryId}/disputes",
+    "topic": "wallets",
+    "purpose": "Open a dispute concerning an eligible financial-history entry; opening a case does not refund money.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/financial-history/{entryId}/export/pdf",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / financial history / export / pdf. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/payments/status",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / payments / status. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/payments/{paymentId}/status",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / payments / status. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/payout-methods",
+    "topic": "wallets",
+    "purpose": "List the account's saved masked payout destinations; returned masking is not sufficient to reconstruct bank credentials.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/payout-methods",
+    "topic": "wallets",
+    "purpose": "Save an eligible payout destination through the account-owned payout-method workflow.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/wallet/payout-methods/{id}",
+    "topic": "wallets",
+    "purpose": "Remove an eligible saved payout method; an outstanding withdrawal can prevent deletion.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/recipients",
+    "topic": "wallets",
+    "purpose": "List saved wallet-transfer recipients for the current account.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/recipients",
+    "topic": "wallets",
+    "purpose": "Add a transfer recipient after the server resolves and validates the intended beneficiary.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/v1/wallet/recipients/{id}",
+    "topic": "wallets",
+    "purpose": "Remove the saved recipient relationship without deleting historical transfers.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/topup",
+    "topic": "wallets",
+    "purpose": "Start an owner-scoped top-up/payment intent; provider reconciliation, not checkout navigation, establishes wallet credit.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/topup/bank-transfers",
+    "topic": "wallets",
+    "purpose": "List the account's bank-transfer top-ups awaiting or carrying a review outcome.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/topup/bank-transfers/{paymentId}/cancel",
+    "topic": "wallets",
+    "purpose": "Request cancellation of the account's eligible pending bank-transfer top-up; reconcile if the review state changed concurrently.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/topup/limits",
+    "topic": "wallets",
+    "purpose": "Read current top-up limits for the resolved account, country and payment context.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/topup/quote",
+    "topic": "wallets",
+    "purpose": "Read a server top-up quote with applicable amount, currency and fee evidence before committing payment.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/topups/paypal/{operationId}/reconcile",
+    "topic": "wallets",
+    "purpose": "Ask the server to reconcile the existing PayPal top-up against provider evidence; reuse the original operation instead of creating a second payment.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/topups/paypal/{operationId}/status",
+    "topic": "wallets",
+    "purpose": "Read the existing PayPal top-up operation's server state without creating a new checkout.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/transactions",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / transactions. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/transactions/export",
+    "topic": "wallets",
+    "purpose": "Read the permitted records/state for wallet / transactions / export. This route-derived summary does not establish additional lifecycle rules.",
+    "explanationBasis": "Route-derived summary; detailed behavior review remains open"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/transactions/history",
+    "topic": "wallets",
+    "purpose": "Read owner-scoped seek-paged ledger history; its row-set cutoff is separate from the live wallet balance.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/wallet/transfers",
+    "topic": "wallets",
+    "purpose": "Execute the authorized value transfer to the documented saved recipient, with fees/FX and durable recovery where applicable.",
+    "explanationBasis": "Operation-specific explanation"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/wallet/transfers/quote",
+    "topic": "wallets",
+    "purpose": "Read a transfer quote before confirmation; retain its recipient, currencies, fees and expiry rather than recalculating them on the device.",
+    "explanationBasis": "Operation-specific explanation"
+  }
+]

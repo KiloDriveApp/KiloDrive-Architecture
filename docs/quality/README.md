@@ -8,6 +8,8 @@ disconnects, and operators can recover without inventing state.
   taxonomy, risk-based expectations, invariant traceability, authorization and
   lifecycle matrices, concurrency/failure testing, mobile pyramid, and release
   evidence policy.
+- [Documentation integrity review](documentation-audit-2026-10-03.md) records
+  corrected publication defects, regression checks and remaining explanation debt.
 - [Public quality assurance and concurrency guarantees](public-assurance-and-concurrency.md)
   publishes the public-safe test inventory, outcome-oriented coverage model,
   concurrency guarantees, and the boundary between architecture and measured
@@ -21,5 +23,5 @@ disconnects, and operators can recover without inventing state.
   exercises turn those tests into operational confidence.
 
 Public documents describe the philosophy and safe evidence categories. Exact
-source revisions, raw results, fixture credentials, provider destinations, and
+private test revisions, raw results, fixture credentials, provider destinations, and
 security-sensitive test details remain in restricted release evidence.

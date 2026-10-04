@@ -10,18 +10,27 @@ Each entry lists recorded schemas, parameters, status codes and mutation guards.
 Response metadata is not a complete list of runtime business outcomes; read the
 [contract limitations](../coverage-and-limitations.md).
 
+## Operations on this page
+
+- [POST `/api/v1/uploads`](#post-apiv1uploads)
+- [GET `/api/v1/uploads/operations/{operationId}`](#get-apiv1uploadsoperationsoperationid)
+- [POST `/api/v1/uploads/recoverable`](#post-apiv1uploadsrecoverable)
+- [GET `/api/v1/uploads/{fileRef}`](#get-apiv1uploadsfileref)
+
 ## POST `/api/v1/uploads`
 
 **What it does:** Accept a genuine supported file into private storage and return upload evidence; it is neither public sharing nor document approval.
 
+**Explanation basis:** Operation-specific explanation.
+
 **Access:** Bearer required.
 
-**Body:** inline schema in OpenAPI; requiredness not asserted in metadata; media types: `multipart/form-data`.
+**Body:** `object`; requiredness not asserted in metadata; media types: `multipart/form-data`.
 
-| Inline body field | Type | Meaning |
-| --- | --- | --- |
-| `file` | `string (binary)` | File text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. |
-| `contentClass` | `string` | Content class text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. |
+| Inline body field | Type | Required | Meaning | Constraints |
+| --- | --- | --- | --- | --- |
+| `file` | `string (binary)` | No | File text/value. Detailed meaning and accepted vocabulary are not yet documented for this model. | No further constraint recorded |
+| `contentClass` | `string` | No | Content class text/value. Detailed meaning and accepted vocabulary are not yet documented for this model. | No further constraint recorded |
 
 | Recorded status | Response schema | Media types | Response headers |
 | --- | --- | --- | --- |
@@ -39,11 +48,13 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **What it does:** Read an authorized recoverable upload's result instead of blindly submitting a second upload.
 
+**Explanation basis:** Operation-specific explanation.
+
 **Access:** Bearer required.
 
-| Parameter | Location | Required | Type | Meaning |
-| --- | --- | --- | --- | --- |
-| `operationId` | path | Yes | `string (uuid)` | Durable operation reference used for applicable outcome discovery. |
+| Parameter | Location | Required | Type | Meaning | Constraints |
+| --- | --- | --- | --- | --- | --- |
+| `operationId` | path | Yes | `string (uuid)` | Durable operation reference used for applicable outcome discovery. | No further constraint recorded |
 
 | Recorded status | Response schema | Media types | Response headers |
 | --- | --- | --- | --- |
@@ -60,21 +71,23 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **What it does:** Create an upload with durable recovery identity so an interrupted response can be reconciled.
 
+**Explanation basis:** Operation-specific explanation.
+
 **Access:** Bearer required.
 
-**Body:** inline schema in OpenAPI; requiredness not asserted in metadata; media types: `multipart/form-data`.
+**Body:** `object`; requiredness not asserted in metadata; media types: `multipart/form-data`.
 
-| Inline body field | Type | Meaning |
-| --- | --- | --- |
-| `file` | `string (binary)` | File text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. |
-| `contentClass` | `string` | Content class text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. |
-| `operationId` | `string (uuid)` | Durable operation reference used for applicable outcome discovery. |
-| `sha256` | `string` | Sha256 text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. |
-| `sizeBytes` | `integer (int64)` | Numeric size bytes for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. |
-
-| Parameter | Location | Required | Type | Meaning |
+| Inline body field | Type | Required | Meaning | Constraints |
 | --- | --- | --- | --- | --- |
-| `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
+| `file` | `string (binary)` | No | File text/value. Detailed meaning and accepted vocabulary are not yet documented for this model. | No further constraint recorded |
+| `contentClass` | `string` | No | Content class text/value. Detailed meaning and accepted vocabulary are not yet documented for this model. | No further constraint recorded |
+| `operationId` | `string (uuid)` | No | Durable operation reference used for applicable outcome discovery. | No further constraint recorded |
+| `sha256` | `string` | No | Sha256 text/value. Detailed meaning and accepted vocabulary are not yet documented for this model. | No further constraint recorded |
+| `sizeBytes` | `integer (int64)` | No | Numeric size bytes for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+
+| Parameter | Location | Required | Type | Meaning | Constraints |
+| --- | --- | --- | --- | --- | --- |
+| `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. | minLength: `1`; maxLength: `128` |
 
 | Recorded status | Response schema | Media types | Response headers |
 | --- | --- | --- | --- |
@@ -95,11 +108,13 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **What it does:** Retrieve private bytes only through authorized owner/reviewer access to this file reference.
 
+**Explanation basis:** Operation-specific explanation.
+
 **Access:** Bearer required.
 
-| Parameter | Location | Required | Type | Meaning |
-| --- | --- | --- | --- | --- |
-| `fileRef` | path | Yes | `string` | Private storage reference; not a permanent public URL or approval decision. |
+| Parameter | Location | Required | Type | Meaning | Constraints |
+| --- | --- | --- | --- | --- | --- |
+| `fileRef` | path | Yes | `string` | Private storage reference; not a permanent public URL or approval decision. | No further constraint recorded |
 
 | Recorded status | Response schema | Media types | Response headers |
 | --- | --- | --- | --- |

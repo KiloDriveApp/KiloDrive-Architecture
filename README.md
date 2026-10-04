@@ -30,6 +30,11 @@ The separate System Admin app is not the public consumer download.
 
 ## Start here
 
+Read the [current baseline and evidence guide](docs/current-baseline.md) to
+distinguish current source, historical releases, configuration and certification.
+The [documentation review record](docs/quality/documentation-audit-2026-10-03.md)
+lists corrected mistakes and remaining semantic-review work explicitly.
+
 For HTTP contracts, start with the [KiloDrive API Guide](docs/api/README.md).
 It includes plain-English endpoint purposes, a linked field dictionary,
 authentication/tenancy rules, money and timestamp conventions, safe recovery,
@@ -91,7 +96,7 @@ reading order. It builds one idea at a time:
     splitting a country-cell transaction.
 17. [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md) —
     how reviewed rates, fee policy, immutable quotes, transaction snapshots,
-    maker-checker controls, and reconciliation keep cross-currency money honest.
+    configurable approval controls, and reconciliation keep cross-currency money honest.
 
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.

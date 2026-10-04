@@ -128,6 +128,15 @@ commands or exact production targets.
 
 Use relative Markdown links so forks and offline copies remain usable. Check
 filename case because CI runs on a case-sensitive filesystem.
+The audit also checks heading fragments, including links within a page.
+Run `python -m unittest discover -s tools -p "test_*.py"` after changes to the
+publication or link tooling. Keep the [current baseline](docs/current-baseline.md)
+consistent with the generated API manifest; preserve dated historical evidence.
+
+API descriptions must distinguish model-specific semantics, shared conventions
+and meanings that remain unreviewed. Update `tools/api_context.py` for an exact
+operation or field, then regenerate rather than editing generated tables.
+The [coverage queue](docs/api/reference/coverage.md) makes that remaining work visible.
 
 Mermaid diagrams render on GitHub and are preferred for data flow and state
 machines. Label whether an arrow is synchronous, transactional, queued,

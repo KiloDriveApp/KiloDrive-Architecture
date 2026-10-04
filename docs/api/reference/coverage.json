@@ -1,0 +1,5639 @@
+{
+  "operations": 528,
+  "operationSpecificExplanations": 136,
+  "routeDerivedSummaries": [
+    "DELETE /api/v1/account",
+    "GET /api/v1/account/avatar",
+    "POST /api/v1/account/avatar",
+    "PUT /api/v1/account/complete-profile",
+    "POST /api/v1/account/contact-details/email/confirm",
+    "POST /api/v1/account/contact-details/email/request-code",
+    "POST /api/v1/account/contact-details/phone/confirm",
+    "POST /api/v1/account/contact-details/phone/request-code",
+    "POST /api/v1/account/deactivate",
+    "POST /api/v1/account/deactivate/recoverable",
+    "POST /api/v1/account/deletion-request",
+    "GET /api/v1/account/export",
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable",
+    "POST /api/v1/account/name-change-request",
+    "POST /api/v1/account/onboarding/contact-proof",
+    "POST /api/v1/account/onboarding/phone-decision",
+    "POST /api/v1/account/onboarding/profile-photo-decision",
+    "DELETE /api/v1/account/recoverable",
+    "GET /api/v1/account/referrals",
+    "GET /api/v1/account/reputation",
+    "GET /api/v1/app-releases",
+    "GET /api/v1/app-releases/current",
+    "GET /api/v1/app-releases/{version}",
+    "GET /api/v1/app-releases/{version}/build/{build}",
+    "POST /api/v1/auth/2fa/confirm",
+    "POST /api/v1/auth/2fa/disable",
+    "POST /api/v1/auth/2fa/enroll",
+    "POST /api/v1/auth/2fa/enroll/contact/confirm",
+    "POST /api/v1/auth/2fa/enroll/contact/request-code",
+    "POST /api/v1/auth/2fa/recovery-codes/regenerate",
+    "GET /api/v1/auth/2fa/status",
+    "POST /api/v1/auth/2fa/step-up",
+    "POST /api/v1/auth/2fa/step-up/request-code",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/begin",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/2fa/request-code",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/email/request",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/login/phone/request",
+    "POST /api/v1/auth/password-strength",
+    "POST /api/v1/auth/phone-verification/confirm",
+    "POST /api/v1/auth/phone-verification/request",
+    "GET /api/v1/blog",
+    "GET /api/v1/blog/{slug}",
+    "GET /api/v1/business-shipping/accounts",
+    "POST /api/v1/business-shipping/accounts",
+    "GET /api/v1/business-shipping/accounts/{accountId}/members",
+    "PUT /api/v1/business-shipping/accounts/{accountId}/members",
+    "DELETE /api/v1/business-shipping/accounts/{accountId}/members/{memberId}",
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "GET /api/v1/calculations",
+    "POST /api/v1/calculations",
+    "DELETE /api/v1/calculations/{id}",
+    "PUT /api/v1/calculations/{id}/title",
+    "GET /api/v1/content",
+    "POST /api/v1/content/contact",
+    "GET /api/v1/content/legal-catalogue",
+    "GET /api/v1/content/{slug}",
+    "GET /api/v1/content/{slug}/versions",
+    "GET /api/v1/content/{slug}/versions/{version}",
+    "GET /api/v1/content/{slug}/versions/{version}/pdf",
+    "GET /api/v1/corporate/accounts",
+    "POST /api/v1/corporate/accounts",
+    "PUT /api/v1/corporate/accounts/{accountId}/budgets",
+    "PUT /api/v1/corporate/accounts/{accountId}/members",
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/active/{deliveryId}/verification/{purpose}",
+    "GET /api/v1/deliveries/product-settings",
+    "POST /api/v1/deliveries/quote",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview",
+    "POST /api/v1/deliveries/{deliveryRequestId}/cancel",
+    "GET /api/v1/deliveries/{deliveryRequestId}/custody",
+    "GET /api/v1/deliveries/{deliveryRequestId}/evidence",
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/assistance-capability",
+    "PUT /api/v1/driver/assistance-capability",
+    "GET /api/v1/driver/deliveries/available",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/cancel",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "GET /api/v1/driver/incentives/current",
+    "GET /api/v1/driver/profile",
+    "POST /api/v1/driver/profile/onboarding/contact-proof",
+    "GET /api/v1/driver/profile/preferred-program",
+    "POST /api/v1/driver/profile/preferred-program/applications",
+    "POST /api/v1/driver/profile/preferred-program/apply",
+    "POST /api/v1/driver/profile/rating/import",
+    "GET /api/v1/driver/profile/rating/imports",
+    "GET /api/v1/driver/profile/reviews",
+    "POST /api/v1/driver/profile/reviews/{reviewId}/dispute",
+    "GET /api/v1/driver/reports/earnings",
+    "GET /api/v1/driver/rider-favorites",
+    "DELETE /api/v1/driver/rider-favorites/{favoriteId}",
+    "POST /api/v1/driver/rider-favorites/{riderUserId}",
+    "GET /api/v1/driver/rides/alert-preferences",
+    "PUT /api/v1/driver/rides/alert-preferences",
+    "GET /api/v1/driver/rides/available",
+    "DELETE /api/v1/driver/rides/bids/{bidId}",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry/read",
+    "POST /api/v1/driver/rides/{rideRequestId}/view",
+    "GET /api/v1/driver/vehicles",
+    "POST /api/v1/driver/vehicles",
+    "DELETE /api/v1/driver/vehicles/{vehicleId}",
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "POST /api/v1/driver/vehicles/{vehicleId}/activate",
+    "GET /api/v1/driver/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/favorites",
+    "POST /api/v1/favorites",
+    "DELETE /api/v1/favorites/{favoriteId}",
+    "GET /api/v1/households",
+    "POST /api/v1/households",
+    "POST /api/v1/households/{householdId}/consent",
+    "PUT /api/v1/households/{householdId}/members",
+    "POST /api/v1/legal-acceptances",
+    "GET /api/v1/legal-acceptances/catalogue",
+    "GET /api/v1/maps/autocomplete",
+    "GET /api/v1/maps/geocode",
+    "GET /api/v1/maps/place",
+    "GET /api/v1/maps/reverse-geocode",
+    "GET /api/v1/maps/route",
+    "GET /api/v1/maps/traffic-routes",
+    "DELETE /api/v1/notifications",
+    "GET /api/v1/notifications",
+    "GET /api/v1/notifications/preferences",
+    "PUT /api/v1/notifications/preferences",
+    "POST /api/v1/notifications/read-all",
+    "DELETE /api/v1/notifications/{notificationId}",
+    "POST /api/v1/notifications/{notificationId}/read",
+    "GET /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides/recoverable",
+    "DELETE /api/v1/recurring-rides/{recurringRideId}",
+    "GET /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}",
+    "GET /api/v1/recurring-rides/{recurringRideId}/occurrences",
+    "DELETE /api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "PUT /api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "GET /api/v1/reference-data/banks",
+    "GET /api/v1/reference-data/countries",
+    "GET /api/v1/reference-data/vehicle-insurers",
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/analytics",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/availability-blocks",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/availability-blocks/{blockId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/bookings",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/late-return/assess",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/branches",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/branches",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/fleet/reminders",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/profile-image",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/team/invitations/{invitationId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}/primary",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/protection",
+    "POST /api/v1/rental-partner/team/invitations/accept",
+    "POST /api/v1/rental-partner/vehicles/{vehicleId}/images",
+    "POST /api/v1/rentals/bookings",
+    "GET /api/v1/rentals/bookings/mine",
+    "POST /api/v1/rentals/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rentals/bookings/{bookingId}/cancel",
+    "POST /api/v1/rentals/bookings/{bookingId}/checkout",
+    "GET /api/v1/rentals/bookings/{bookingId}/damage-evidence/{evidenceId}",
+    "GET /api/v1/rentals/bookings/{bookingId}/dispute-evidence/{evidenceId}",
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions/{extensionId}/checkout",
+    "GET /api/v1/rentals/bookings/{bookingId}/inspection-evidence/{evidenceId}",
+    "POST /api/v1/rentals/bookings/{bookingId}/payment-authorized",
+    "GET /api/v1/rentals/bookings/{bookingId}/protection",
+    "POST /api/v1/rentals/bookings/{bookingId}/rating",
+    "DELETE /api/v1/rentals/favorites/{vehicleId}",
+    "PUT /api/v1/rentals/favorites/{vehicleId}",
+    "GET /api/v1/rentals/filters",
+    "GET /api/v1/rentals/organizations",
+    "GET /api/v1/rentals/organizations/{organizationId}",
+    "GET /api/v1/rentals/organizations/{organizationId}/profile-image",
+    "GET /api/v1/rentals/vehicles",
+    "GET /api/v1/rentals/vehicles/{vehicleId}",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/images/{imageId}",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/protection",
+    "POST /api/v1/reports/exports",
+    "GET /api/v1/reports/scheduled",
+    "POST /api/v1/reports/scheduled",
+    "DELETE /api/v1/reports/scheduled/{scheduleId}",
+    "GET /api/v1/reports/{reportType}",
+    "GET /api/v1/resources/manuals",
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals",
+    "GET /api/v1/rider/assistance-profile",
+    "PUT /api/v1/rider/assistance-profile",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/recent-locations",
+    "GET /api/v1/rides/{rideRequestId}",
+    "GET /api/v1/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids/{bidId}/avatar",
+    "POST /api/v1/rides/{rideRequestId}/bids/{bidId}/reject",
+    "POST /api/v1/rides/{rideRequestId}/cancel",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split",
+    "GET /api/v1/rides/{rideRequestId}/inquiries",
+    "GET /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}/read",
+    "GET /api/v1/rides/{rideRequestId}/search-map",
+    "GET /api/v1/safety/cases",
+    "POST /api/v1/safety/cases",
+    "POST /api/v1/safety/cases/recoverable",
+    "POST /api/v1/safety/cases/{id}/acknowledge",
+    "POST /api/v1/safety/cases/{id}/acknowledge/recoverable",
+    "POST /api/v1/safety/events",
+    "POST /api/v1/safety/events/{id}/acknowledge",
+    "POST /api/v1/safety/events/{id}/route-deviation-response",
+    "GET /api/v1/safety/preferences",
+    "PUT /api/v1/safety/preferences",
+    "GET /api/v1/safety/trips/{tripId}/events",
+    "GET /api/v1/safety/trips/{tripId}/route-deviation",
+    "GET /api/v1/safety/trusted-contacts",
+    "POST /api/v1/safety/trusted-contacts",
+    "DELETE /api/v1/safety/trusted-contacts/{id}",
+    "GET /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/handoff",
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation",
+    "GET /api/v1/support/tickets",
+    "POST /api/v1/support/tickets",
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/close",
+    "POST /api/v1/support/tickets/{ticketId}/close/recoverable",
+    "GET /api/v1/support/tickets/{ticketId}/messages/{messageId}/attachments/{index}",
+    "PUT /api/v1/support/tickets/{ticketId}/read",
+    "POST /api/v1/support/tickets/{ticketId}/reopen",
+    "POST /api/v1/support/tickets/{ticketId}/reopen/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable",
+    "POST /api/v1/tools/calculators/export/pdf",
+    "GET /api/v1/tools/tolls/estimate",
+    "GET /api/v1/tools/tolls/options",
+    "GET /api/v1/tools/tolls/periods",
+    "GET /api/v1/tools/tolls/plazas",
+    "POST /api/v1/tools/tolls/route-estimate",
+    "GET /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "DELETE /api/v1/travel-profiles/{profileId}",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}",
+    "POST /api/v1/travel-profiles/{profileId}/cost-centers",
+    "DELETE /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "PUT /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "GET /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent",
+    "GET /api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "PUT /api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "POST /api/v1/travel-profiles/{profileId}/members",
+    "DELETE /api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent",
+    "PUT /api/v1/travel-profiles/{profileId}/ride-policy",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/receipts",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/cancel",
+    "POST /api/v1/trips/{tripId}/chat/read",
+    "GET /api/v1/trips/{tripId}/dispute",
+    "POST /api/v1/trips/{tripId}/dispute",
+    "GET /api/v1/trips/{tripId}/driver-avatar",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "GET /api/v1/trips/{tripId}/passenger-avatar",
+    "DELETE /api/v1/trips/{tripId}/peer-block",
+    "GET /api/v1/trips/{tripId}/peer-block",
+    "PUT /api/v1/trips/{tripId}/peer-block",
+    "POST /api/v1/trips/{tripId}/pickup-contact-attempt",
+    "POST /api/v1/trips/{tripId}/rating",
+    "GET /api/v1/trips/{tripId}/receipt",
+    "GET /api/v1/trips/{tripId}/receipt.pdf",
+    "POST /api/v1/trips/{tripId}/receipt/email",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/reservation/decline",
+    "GET /api/v1/trips/{tripId}/reservation/rider-check-in",
+    "POST /api/v1/trips/{tripId}/reservation/rider-check-in",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/share",
+    "POST /api/v1/trips/{tripId}/share/revoke",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "GET /api/v1/user-blocks",
+    "POST /api/v1/user-blocks/driver",
+    "DELETE /api/v1/user-blocks/{blockId}",
+    "GET /api/v1/user-blocks/{userId}",
+    "PUT /api/v1/user-blocks/{userId}",
+    "GET /api/v1/vehicle-catalog/makes",
+    "GET /api/v1/vehicle-catalog/models",
+    "GET /api/v1/vehicle-catalog/years",
+    "GET /api/v1/vehicle-categories",
+    "GET /api/v1/vehicles",
+    "POST /api/v1/vehicles",
+    "DELETE /api/v1/vehicles/{vehicleId}",
+    "PUT /api/v1/vehicles/{vehicleId}",
+    "POST /api/v1/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/voice/call",
+    "POST /api/v1/voice/call/connected",
+    "POST /api/v1/voice/call/consent",
+    "POST /api/v1/voice/call/end",
+    "POST /api/v1/voice/call/gsm",
+    "GET /api/v1/voice/token",
+    "GET /api/v1/wallet/fee-products",
+    "POST /api/v1/wallet/fee-products/{productId}/purchase",
+    "GET /api/v1/wallet/fees",
+    "GET /api/v1/wallet/financial-history/export/pdf",
+    "GET /api/v1/wallet/financial-history/{entryId}/export/pdf",
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/export"
+  ],
+  "fieldExplanationBasis": {
+    "Model-specific": 55,
+    "Naming convention": 1333,
+    "Shared convention": 1413,
+    "Type only; meaning review open": 2211
+  },
+  "modelsWithTypeOnlyFields": [
+    {
+      "model": "AcceptLegalDocumentDto",
+      "fields": [
+        "role",
+        "channel"
+      ]
+    },
+    {
+      "model": "AcceptTravelInvitationDto",
+      "fields": [
+        "invitationCode"
+      ]
+    },
+    {
+      "model": "AccountSetupItemDto",
+      "fields": [
+        "action",
+        "isComplete",
+        "isRequired"
+      ]
+    },
+    {
+      "model": "AccountSetupProgressDto",
+      "fields": [
+        "role",
+        "completedSteps",
+        "totalSteps",
+        "percentComplete",
+        "steps",
+        "riderOnboarding"
+      ]
+    },
+    {
+      "model": "AddFavoriteDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "AddOdometerReadingDto",
+      "fields": [
+        "reading",
+        "unitCode",
+        "sourceCode",
+        "dashboardImageFileRef",
+        "correctionReason"
+      ]
+    },
+    {
+      "model": "AddRentalVehicleImageDto",
+      "fields": [
+        "altText"
+      ]
+    },
+    {
+      "model": "AddTravelMemberDto",
+      "fields": [
+        "role",
+        "relationship",
+        "employeeCode",
+        "canBook",
+        "canViewLiveTrips",
+        "canManageMembers",
+        "canManageBilling"
+      ]
+    },
+    {
+      "model": "AddTravelMemberResultDto",
+      "fields": [
+        "member",
+        "invitationCode"
+      ]
+    },
+    {
+      "model": "AddVehicleBrakeDto",
+      "fields": [
+        "odometer",
+        "componentCode",
+        "conditionCode",
+        "measurementMillimeters",
+        "recommendedAction",
+        "attachmentFileRef"
+      ]
+    },
+    {
+      "model": "AddVehicleExpenseDto",
+      "fields": [
+        "categoryCode",
+        "vendor",
+        "receiptFileRef"
+      ]
+    },
+    {
+      "model": "AddVehicleTyreDto",
+      "fields": [
+        "positionCode",
+        "brand",
+        "size",
+        "odometer",
+        "treadDepthMillimeters",
+        "pressurePsi",
+        "conditionCode"
+      ]
+    },
+    {
+      "model": "AddWalletRecipientDto",
+      "fields": [
+        "alias"
+      ]
+    },
+    {
+      "model": "AmortizationPdfRowDto",
+      "fields": [
+        "period",
+        "payment",
+        "principal",
+        "interest",
+        "balance",
+        "date"
+      ]
+    },
+    {
+      "model": "AppReleaseCorrectionNoticeDto",
+      "fields": [
+        "kind",
+        "relatedReleasePath",
+        "message"
+      ]
+    },
+    {
+      "model": "AppReleaseDetailDto",
+      "fields": [
+        "productSurface",
+        "simpleSummary",
+        "detailedDescription",
+        "isPublished",
+        "improvements",
+        "buildNumber",
+        "translationStatus",
+        "legalReviewStatus",
+        "fallbackPolicy",
+        "isMachineGenerated",
+        "translationReviewNotes",
+        "correctionNotice"
+      ]
+    },
+    {
+      "model": "AppReleaseImprovementDto",
+      "fields": [
+        "category",
+        "detail",
+        "endUserBenefit",
+        "sortOrder"
+      ]
+    },
+    {
+      "model": "AppReleaseSummaryDto",
+      "fields": [
+        "productSurface",
+        "simpleSummary",
+        "isPublished",
+        "translationStatus",
+        "legalReviewStatus",
+        "fallbackPolicy",
+        "isMachineGenerated",
+        "isStale"
+      ]
+    },
+    {
+      "model": "AppVersionPolicyDto",
+      "fields": [
+        "updateRequired",
+        "currentRelease",
+        "optionalPromptCooldownHours",
+        "optionalUpdateMessage",
+        "requiredUpdateMessage"
+      ]
+    },
+    {
+      "model": "AuthResponse",
+      "fields": [
+        "user",
+        "isNewAccount"
+      ]
+    },
+    {
+      "model": "AuthorizeRentalBookingPaymentDto",
+      "fields": [
+        "providerReference"
+      ]
+    },
+    {
+      "model": "BankBranchReferenceDto",
+      "fields": [
+        "branchCode",
+        "routingCode"
+      ]
+    },
+    {
+      "model": "BankReferenceDto",
+      "fields": [
+        "institutionCode",
+        "swiftBic",
+        "branches"
+      ]
+    },
+    {
+      "model": "BankTransferTopUpDto",
+      "fields": [
+        "instructions",
+        "failureReason"
+      ]
+    },
+    {
+      "model": "BeginContactTwoFactorEnrollmentRequest",
+      "fields": [
+        "method"
+      ]
+    },
+    {
+      "model": "BillingHistoryItemDto",
+      "fields": [
+        "description",
+        "method"
+      ]
+    },
+    {
+      "model": "BillingModeDto",
+      "fields": [
+        "mode"
+      ]
+    },
+    {
+      "model": "BillingPaymentMethodDto",
+      "fields": [
+        "label",
+        "available"
+      ]
+    },
+    {
+      "model": "BlockDriverByIdentifierDto",
+      "fields": [
+        "identifierType"
+      ]
+    },
+    {
+      "model": "BlogCatalogDto",
+      "fields": [
+        "posts",
+        "categories",
+        "tags",
+        "activeCategory",
+        "activeTag"
+      ]
+    },
+    {
+      "model": "BlogPostDto",
+      "fields": [
+        "slug",
+        "excerpt",
+        "bodyHtml",
+        "heroImageAlt",
+        "seoTitle",
+        "metaDescription",
+        "authorName",
+        "category",
+        "tags",
+        "tableOfContents",
+        "isPublished",
+        "isFeatured",
+        "editableBodyHtml"
+      ]
+    },
+    {
+      "model": "BlogPostSummaryDto",
+      "fields": [
+        "slug",
+        "excerpt",
+        "heroImageAlt",
+        "authorName",
+        "category",
+        "tags",
+        "isFeatured",
+        "isPublished",
+        "readingEstimateAvailable"
+      ]
+    },
+    {
+      "model": "BlogTaxonomyDto",
+      "fields": [
+        "slug",
+        "description",
+        "browsePath"
+      ]
+    },
+    {
+      "model": "BlogTocItemDto",
+      "fields": [
+        "level",
+        "href"
+      ]
+    },
+    {
+      "model": "BulkDeliveryItemResultDto",
+      "fields": [
+        "index",
+        "errorCode"
+      ]
+    },
+    {
+      "model": "BulkDeliveryRequestDto",
+      "fields": [
+        "orders"
+      ]
+    },
+    {
+      "model": "BusinessShippingAccountDto",
+      "fields": [
+        "billingEmail",
+        "requireDeliveryOtp",
+        "requireProofPhoto",
+        "requireSignature"
+      ]
+    },
+    {
+      "model": "BusinessShippingMemberDto",
+      "fields": [
+        "role",
+        "canCreateOrders",
+        "canViewBilling",
+        "canManageMembers"
+      ]
+    },
+    {
+      "model": "CalculatorPdfRequest",
+      "fields": [
+        "calculatorType",
+        "inputs",
+        "results",
+        "amortization",
+        "disclaimer"
+      ]
+    },
+    {
+      "model": "CalculatorPdfRowDto",
+      "fields": [
+        "label",
+        "value"
+      ]
+    },
+    {
+      "model": "CampaignInboxItemDto",
+      "fields": [
+        "channel",
+        "deepLink"
+      ]
+    },
+    {
+      "model": "CancelRentalBookingDto",
+      "fields": [
+        "reasonDetail"
+      ]
+    },
+    {
+      "model": "CashoutDto",
+      "fields": [
+        "payoutMethod",
+        "payoutStatus",
+        "processingLabel",
+        "estimatedArrivalMinutesMin",
+        "estimatedArrivalMinutesMax",
+        "externalFeesMayApply"
+      ]
+    },
+    {
+      "model": "CashoutLimitsDto",
+      "fields": [
+        "processingLabel",
+        "estimatedArrivalMinutesMin",
+        "estimatedArrivalMinutesMax",
+        "externalFeesMayApply",
+        "feeBasisPoints"
+      ]
+    },
+    {
+      "model": "CashoutStatusHistoryEntryDto",
+      "fields": [
+        "statusCode"
+      ]
+    },
+    {
+      "model": "CashoutStatusResourceDto",
+      "fields": [
+        "reconciliationState",
+        "statusCode",
+        "providerCode",
+        "providerTraceReference",
+        "failureCode",
+        "remediationCode",
+        "safeNextAction",
+        "isStale",
+        "blocksDuplicateSubmission",
+        "history"
+      ]
+    },
+    {
+      "model": "ChatMessageDto",
+      "fields": [
+        "senderName",
+        "commitOutcome",
+        "messageSequence"
+      ]
+    },
+    {
+      "model": "CompleteDriverOnboardingDto",
+      "fields": [
+        "privacyAccepted",
+        "termsAccepted"
+      ]
+    },
+    {
+      "model": "CompleteTripRequest",
+      "fields": [
+        "completionExceptionReasonCode",
+        "completionExceptionNote"
+      ]
+    },
+    {
+      "model": "CompleteVehicleServiceDto",
+      "fields": [
+        "categoryCode",
+        "completedOdometer",
+        "workshop",
+        "workPerformed",
+        "partsJson",
+        "warrantyNotes",
+        "receiptFileRef",
+        "evidenceFileRefsJson",
+        "nextRecommendedOdometer"
+      ]
+    },
+    {
+      "model": "ConfigureFareSplitDto",
+      "fields": [
+        "shares"
+      ]
+    },
+    {
+      "model": "ConfirmContactTwoFactorEnrollmentRequest",
+      "fields": [
+        "method"
+      ]
+    },
+    {
+      "model": "ConfirmDeliveryVerificationDto",
+      "fields": [
+        "qrPayload",
+        "evidence",
+        "recipientName",
+        "signatureFileRef"
+      ]
+    },
+    {
+      "model": "ConfirmDriverOnboardingStepDto",
+      "fields": [
+        "stepCode",
+        "defer"
+      ]
+    },
+    {
+      "model": "ConfirmPasswordResetRequest",
+      "fields": [
+        "ownershipConfirmed"
+      ]
+    },
+    {
+      "model": "ConfirmSupervisedHandoffDto",
+      "fields": [
+        "handoff"
+      ]
+    },
+    {
+      "model": "ContactDetailsDto",
+      "fields": [
+        "emailVerified",
+        "phoneVerified"
+      ]
+    },
+    {
+      "model": "ContactTwoFactorEnrollmentDto",
+      "fields": [
+        "method"
+      ]
+    },
+    {
+      "model": "ContentPageDto",
+      "fields": [
+        "slug",
+        "summary",
+        "bodyHtml",
+        "isPublished",
+        "sortOrder",
+        "legalChangeSummary",
+        "isVersionControlled"
+      ]
+    },
+    {
+      "model": "CorporateAccountDto",
+      "fields": [
+        "legalName"
+      ]
+    },
+    {
+      "model": "CorporateBudgetDto",
+      "fields": [
+        "costCenterCode"
+      ]
+    },
+    {
+      "model": "CountryReferenceDto",
+      "fields": [
+        "currencySymbol",
+        "sortOrder",
+        "driverLicensePattern",
+        "vehiclePlatePattern",
+        "driverLicenseMinLength",
+        "driverLicenseMaxLength",
+        "vehiclePlateMinLength",
+        "vehiclePlateMaxLength",
+        "riderIdentityVerificationRequired",
+        "launchReady",
+        "launchIssues"
+      ]
+    },
+    {
+      "model": "CourierProductSettingsDto",
+      "fields": [
+        "otpMaximumAttempts",
+        "maximumFailedAttempts",
+        "parcelProtectionAvailable",
+        "parcelProtectionRateBasisPoints"
+      ]
+    },
+    {
+      "model": "CreateBusinessShippingAccountDto",
+      "fields": [
+        "billingEmail",
+        "requireDeliveryOtp",
+        "requireProofPhoto",
+        "requireSignature"
+      ]
+    },
+    {
+      "model": "CreateCorporateAccountDto",
+      "fields": [
+        "legalName"
+      ]
+    },
+    {
+      "model": "CreateDelegatedRideDto",
+      "fields": [
+        "ride"
+      ]
+    },
+    {
+      "model": "CreateDeliveryQuoteDto",
+      "fields": [
+        "parcels",
+        "requestProtection",
+        "pickupWindowStart",
+        "pickupWindowEnd",
+        "deliveryWindowStart",
+        "deliveryWindowEnd"
+      ]
+    },
+    {
+      "model": "CreateDeliveryRequestDto",
+      "fields": [
+        "parcels",
+        "pickupWindowStart",
+        "pickupWindowEnd",
+        "deliveryWindowStart",
+        "deliveryWindowEnd",
+        "pickupVerificationRequired",
+        "recipientVerificationRequired",
+        "proofPhotoRequired",
+        "requestProtection",
+        "externalReference",
+        "signatureRequired",
+        "returnPolicy",
+        "maximumFailedAttempts",
+        "returnVerificationRequired",
+        "returnEvidenceRequired",
+        "quoteFingerprint"
+      ]
+    },
+    {
+      "model": "CreateDependentTravelDto",
+      "fields": [
+        "relationship",
+        "consentEvidenceReference",
+        "guardianAuthorityConfirmed",
+        "allowCash",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal",
+        "minimumDriverTrustLevel",
+        "requirePickupGuardianConfirmation",
+        "requireDropoffGuardianConfirmation",
+        "guardianAuthorityType",
+        "liveTrackingConsentGranted",
+        "threeWayCommunicationConsentGranted",
+        "emergencyContactConfirmed"
+      ]
+    },
+    {
+      "model": "CreateGeneratedExportRequest",
+      "fields": [
+        "reportType"
+      ]
+    },
+    {
+      "model": "CreateMaintenanceScheduleDto",
+      "fields": [
+        "categoryCode",
+        "description",
+        "trigger",
+        "severity",
+        "nextDueOdometer",
+        "recurrenceDistance",
+        "dueSoonDistance",
+        "remindersEnabled"
+      ]
+    },
+    {
+      "model": "CreateParcelProtectionClaimDto",
+      "fields": [
+        "description",
+        "evidence"
+      ]
+    },
+    {
+      "model": "CreatePayoutMethodDto",
+      "fields": [
+        "type",
+        "bankName",
+        "accountNumber",
+        "accountType",
+        "confirmedDetails"
+      ]
+    },
+    {
+      "model": "CreateRecentAuthenticationProofRequest",
+      "fields": [
+        "nonce"
+      ]
+    },
+    {
+      "model": "CreateRentalAvailabilityBlockDto",
+      "fields": [
+        "type",
+        "startsAt",
+        "endsAt"
+      ]
+    },
+    {
+      "model": "CreateRentalBookingDto",
+      "fields": [
+        "pickupAt",
+        "returnAt",
+        "handoverMode",
+        "policyConfirmed",
+        "returnAddress",
+        "protectionAcceptance"
+      ]
+    },
+    {
+      "model": "CreateRentalBranchDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "CreateRentalDamageClaimDto",
+      "fields": [
+        "description",
+        "evidence"
+      ]
+    },
+    {
+      "model": "CreateRentalInspectionDto",
+      "fields": [
+        "phase",
+        "odometerKilometers",
+        "fuelPercent",
+        "photos"
+      ]
+    },
+    {
+      "model": "CreateRentalOrganizationDto",
+      "fields": [
+        "providerType",
+        "legalName",
+        "tradingName",
+        "slug",
+        "registrationNumber",
+        "taxNumber",
+        "contactEmail",
+        "contactPhone",
+        "description"
+      ]
+    },
+    {
+      "model": "CreateRentalRatingDto",
+      "fields": [
+        "rating",
+        "comment",
+        "vehicleRating",
+        "vehicleCondition",
+        "providerService",
+        "communication",
+        "cleanliness",
+        "valueForMoney"
+      ]
+    },
+    {
+      "model": "CreateRentalVehicleDto",
+      "fields": [
+        "year",
+        "category",
+        "transmission",
+        "fuelType",
+        "seats",
+        "color",
+        "description",
+        "bookingMode",
+        "distanceUnit",
+        "includedDistancePerDay",
+        "handoverMode",
+        "serviceRadius",
+        "policyConfirmed"
+      ]
+    },
+    {
+      "model": "CreateReviewAppealDto",
+      "fields": [
+        "detail"
+      ]
+    },
+    {
+      "model": "CreateRideRequestDto",
+      "fields": [
+        "petFriendlyRequired",
+        "childSeatRequired",
+        "wheelchairAccessibleRequired",
+        "airportPickup",
+        "flightNumber",
+        "dispatchMode",
+        "autoAcceptExactFare",
+        "productType",
+        "useAssistanceProfile",
+        "acknowledgeEstimatedRouteVariance"
+      ]
+    },
+    {
+      "model": "CreateSafetyCaseRequest",
+      "fields": [
+        "severity",
+        "escalationChannel",
+        "evidenceBundleJson"
+      ]
+    },
+    {
+      "model": "CreateSafetyEventRequest",
+      "fields": [
+        "type",
+        "consentCaptured",
+        "silentEscalation"
+      ]
+    },
+    {
+      "model": "CreateScheduledReportCommand",
+      "fields": [
+        "reportType",
+        "cadence"
+      ]
+    },
+    {
+      "model": "CreateStorePurchaseQuoteDto",
+      "fields": [
+        "localizedPrice"
+      ]
+    },
+    {
+      "model": "CreateSupportTicketDto",
+      "fields": [
+        "ticketType",
+        "subject",
+        "attachmentFileRefs",
+        "subjectType",
+        "issueType",
+        "priority"
+      ]
+    },
+    {
+      "model": "CreateTravelProfileDto",
+      "fields": [
+        "type",
+        "centralBillingEnabled"
+      ]
+    },
+    {
+      "model": "CreateTwoFactorStepUpDto",
+      "fields": [
+        "action",
+        "channel"
+      ]
+    },
+    {
+      "model": "DeleteAccountDto",
+      "fields": [
+        "forfeitRemainingBalance"
+      ]
+    },
+    {
+      "model": "DeliveryAcceptancePreviewDto",
+      "fields": [
+        "authorizationFingerprint",
+        "cashAllowed",
+        "paymentEligible",
+        "ineligibilityCode",
+        "isCurrent"
+      ]
+    },
+    {
+      "model": "DeliveryBidDto",
+      "fields": [
+        "driverName",
+        "driverRating",
+        "driverTotalTrips",
+        "type",
+        "message"
+      ]
+    },
+    {
+      "model": "DeliveryCustodyEventDto",
+      "fields": [
+        "eventType",
+        "summary",
+        "actorType"
+      ]
+    },
+    {
+      "model": "DeliveryDto",
+      "fields": [
+        "driverName",
+        "commissionRate",
+        "paymentStatus",
+        "pickupVerificationMethod",
+        "recipientVerificationMethod",
+        "recipientName",
+        "failedDeliveryAttempts",
+        "verificationPurpose",
+        "returnPolicy",
+        "maximumFailedAttempts",
+        "trackingNumber"
+      ]
+    },
+    {
+      "model": "DeliveryDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "DeliveryEvidenceDto",
+      "fields": [
+        "type",
+        "caption"
+      ]
+    },
+    {
+      "model": "DeliveryEvidenceInputDto",
+      "fields": [
+        "type",
+        "caption"
+      ]
+    },
+    {
+      "model": "DeliveryQuoteDto",
+      "fields": [
+        "inputFingerprint",
+        "isServiceable",
+        "unavailableReason",
+        "routeSource",
+        "confidence"
+      ]
+    },
+    {
+      "model": "DeliveryRequestDto",
+      "fields": [
+        "vehicleCategoryName",
+        "parcels",
+        "declaredValueCurrency",
+        "protectionStatus",
+        "externalReference",
+        "signatureRequired",
+        "pickupVerificationRequired",
+        "recipientVerificationRequired",
+        "proofPhotoRequired",
+        "returnPolicy",
+        "maximumFailedAttempts",
+        "returnVerificationRequired",
+        "returnEvidenceRequired",
+        "trackingNumber"
+      ]
+    },
+    {
+      "model": "DeliveryRequestDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "DeliveryStopDto",
+      "fields": [
+        "sequence",
+        "type",
+        "contactName",
+        "contactPhone",
+        "address",
+        "instructions"
+      ]
+    },
+    {
+      "model": "DeliveryStopInputDto",
+      "fields": [
+        "type",
+        "contactName",
+        "contactPhone",
+        "address",
+        "instructions"
+      ]
+    },
+    {
+      "model": "DeliveryVerificationChallengeDto",
+      "fields": [
+        "purpose",
+        "qrPayload"
+      ]
+    },
+    {
+      "model": "DependentTravelDto",
+      "fields": [
+        "ageBand",
+        "allowCash",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal",
+        "minimumDriverTrustLevel",
+        "requirePickupGuardianConfirmation",
+        "requireDropoffGuardianConfirmation",
+        "guardianAuthorityType",
+        "liveTrackingConsentGranted",
+        "threeWayCommunicationConsentGranted",
+        "emergencyContactConfirmed"
+      ]
+    },
+    {
+      "model": "DeviceAccessStatusDto",
+      "fields": [
+        "banType",
+        "publicExplanation",
+        "allowed"
+      ]
+    },
+    {
+      "model": "DeviceMetadataDto",
+      "fields": [
+        "manufacturer",
+        "brand",
+        "operatingSystem",
+        "buildNumber",
+        "locale"
+      ]
+    },
+    {
+      "model": "DeviceRegistrationDto",
+      "fields": [
+        "access"
+      ]
+    },
+    {
+      "model": "DisputeDto",
+      "fields": [
+        "resolutionNote"
+      ]
+    },
+    {
+      "model": "DriverAssistanceCapabilityDto",
+      "fields": [
+        "acceptsAssistedRides",
+        "canAssistBoarding",
+        "acceptsServiceAnimals",
+        "supportsHearingCommunication",
+        "supportsVisionCommunication"
+      ]
+    },
+    {
+      "model": "DriverDeliveryOfferDto",
+      "fields": [
+        "vehicleCategoryName",
+        "firstPickupAddress",
+        "firstPickupLatitude",
+        "firstPickupLongitude",
+        "pickupVerificationRequired",
+        "recipientVerificationRequired",
+        "proofPhotoRequired",
+        "signatureRequired",
+        "returnPolicy",
+        "maximumFailedAttempts",
+        "returnVerificationRequired",
+        "returnEvidenceRequired"
+      ]
+    },
+    {
+      "model": "DriverDeliveryOfferDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "DriverDocument",
+      "fields": [
+        "driverProfile",
+        "vehicle",
+        "type"
+      ]
+    },
+    {
+      "model": "DriverDocumentDto",
+      "fields": [
+        "type"
+      ]
+    },
+    {
+      "model": "DriverFareRangeDto",
+      "fields": [
+        "confidence"
+      ]
+    },
+    {
+      "model": "DriverFirstEarningJourneyDto",
+      "fields": [
+        "stage",
+        "completed",
+        "hasSubmittedBid",
+        "hasAcceptedAssignment",
+        "hasCompletedTrip",
+        "hasRecordedEarning"
+      ]
+    },
+    {
+      "model": "DriverOfferEarningsDto",
+      "fields": [
+        "basis"
+      ]
+    },
+    {
+      "model": "DriverOfferFreshnessDto",
+      "fields": [
+        "scheduleStatus",
+        "routeEvidenceSource"
+      ]
+    },
+    {
+      "model": "DriverOfferGateDto",
+      "fields": [
+        "allowed",
+        "primaryAction"
+      ]
+    },
+    {
+      "model": "DriverOfferPaymentEvidenceDto",
+      "fields": [
+        "fundsHeld",
+        "settlementTiming"
+      ]
+    },
+    {
+      "model": "DriverOnboardingContactPolicyDto",
+      "fields": [
+        "phoneOptional",
+        "emailVerified",
+        "phoneProvided",
+        "phoneVerified"
+      ]
+    },
+    {
+      "model": "DriverOnboardingDto",
+      "fields": [
+        "driverStatus",
+        "identityVerified",
+        "driverLicenseNumber",
+        "driverLicenseControlNumber",
+        "rejectedReason",
+        "steps",
+        "completedSteps",
+        "totalSteps",
+        "readyForReview",
+        "wizardCompleted",
+        "approved",
+        "operationallyEligible",
+        "missingRequirements",
+        "pages",
+        "currentPage",
+        "requiresOnboarding",
+        "backgroundCheckDeferred",
+        "backgroundCheckDaysRemaining",
+        "complianceLocked",
+        "contactPolicy",
+        "reviewSlaHours",
+        "percentComplete",
+        "trainingSafetyAcknowledged"
+      ]
+    },
+    {
+      "model": "DriverOnboardingPageDto",
+      "fields": [
+        "number",
+        "missingRequirements"
+      ]
+    },
+    {
+      "model": "DriverProfile",
+      "fields": [
+        "user",
+        "driverLicenseNumber",
+        "driverLicenseNumberNormalized",
+        "driverLicenseControlNumber",
+        "driverLicenseControlNumberNormalized",
+        "accountType",
+        "businessLegalName",
+        "businessTradingName",
+        "businessRegistrationNumber",
+        "businessTaxNumber",
+        "businessEmail",
+        "businessPhone",
+        "businessRegisteredAddress",
+        "rejectedReason",
+        "onboardingCurrentPage",
+        "complianceHash",
+        "approvalOverrideActive",
+        "approvalOverrideReason",
+        "commissionRateOverride",
+        "billingMode",
+        "totalTrips",
+        "ratingSum",
+        "importedRatingSum",
+        "preferredDriverStatus",
+        "preferredReviewNote",
+        "drivingSum",
+        "courtesySum",
+        "cleanlinessSum",
+        "punctualitySum",
+        "isOnline",
+        "lastLatitude",
+        "lastLongitude",
+        "locationSequence",
+        "acceptsAssistedRides",
+        "canAssistBoarding",
+        "acceptsServiceAnimals",
+        "supportsHearingCommunication",
+        "supportsVisionCommunication",
+        "membershipRenewalBaseCurrency",
+        "membershipRenewalPriceSource",
+        "autoRenewMembership",
+        "vehicleChangesUsed",
+        "vehicles",
+        "documents",
+        "nativeAverageRating",
+        "averageRating",
+        "externalAverageRating",
+        "drivingRating",
+        "courtesyRating",
+        "cleanlinessRating",
+        "punctualityRating"
+      ]
+    },
+    {
+      "model": "DriverProfileDto",
+      "fields": [
+        "fullName",
+        "accountType",
+        "businessLegalName",
+        "businessTradingName",
+        "businessRegistrationNumber",
+        "businessTaxNumber",
+        "businessEmail",
+        "businessPhone",
+        "businessRegisteredAddress",
+        "driverLicenseNumber",
+        "driverLicenseControlNumber",
+        "identityVerified",
+        "rejectedReason",
+        "rating",
+        "totalTrips",
+        "membershipPlanName",
+        "activeVehicleDescription",
+        "activeVehicleInsured",
+        "trustProfile"
+      ]
+    },
+    {
+      "model": "DriverReadinessCheckDto",
+      "fields": [
+        "satisfied",
+        "action",
+        "reasonMessageKey",
+        "evidenceMessageKey",
+        "reviewSlaMessageKey",
+        "supportAction"
+      ]
+    },
+    {
+      "model": "DriverReadinessDto",
+      "fields": [
+        "profileStatus",
+        "emailVerified",
+        "phoneVerified",
+        "membershipPlanName",
+        "dutyMinutesUsed",
+        "isOnline",
+        "onlineState",
+        "lastLatitude",
+        "lastLongitude",
+        "primaryVehicleLabel",
+        "locationSource",
+        "firstEarningJourney"
+      ]
+    },
+    {
+      "model": "DriverReviewCategoryDto",
+      "fields": [
+        "average",
+        "count"
+      ]
+    },
+    {
+      "model": "DriverReviewDto",
+      "fields": [
+        "customerName",
+        "stars",
+        "comment",
+        "tags",
+        "safeDriving",
+        "communication",
+        "cleanliness",
+        "punctuality"
+      ]
+    },
+    {
+      "model": "DriverReviewStarCountDto",
+      "fields": [
+        "stars",
+        "count"
+      ]
+    },
+    {
+      "model": "DriverReviewsPageDto",
+      "fields": [
+        "averageStars",
+        "starCounts",
+        "categories",
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "DriverRideAlertPreferencesDto",
+      "fields": [
+        "isEnabled",
+        "standardTrips",
+        "airportTrips",
+        "petFriendlyTrips",
+        "childSeatTrips",
+        "wheelchairAccessibleTrips"
+      ]
+    },
+    {
+      "model": "DriverRideOfferDto",
+      "fields": [
+        "vehicleCategoryName",
+        "riderScore",
+        "petFriendlyRequired",
+        "childSeatRequired",
+        "wheelchairAccessibleRequired",
+        "airportPickup",
+        "flightNumber",
+        "dispatchMode",
+        "currentBidStatus",
+        "productType",
+        "riderCompletedTrips",
+        "riderCategories",
+        "riderAchievements",
+        "assistance",
+        "exactLocationAvailable",
+        "fareRange",
+        "earnings",
+        "paymentEvidence",
+        "gate",
+        "freshness",
+        "rankingReasons"
+      ]
+    },
+    {
+      "model": "DriverRideOfferDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "DriverRoutePointDto",
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "model": "DriverRoutePreviewDto",
+      "fields": [
+        "exactLocationAvailable",
+        "driverOrigin",
+        "approach",
+        "journey",
+        "earningsEstimate"
+      ]
+    },
+    {
+      "model": "DriverRouteSegmentDto",
+      "fields": [
+        "kind",
+        "polyline",
+        "roadRouteAvailable",
+        "source"
+      ]
+    },
+    {
+      "model": "DriverStatusRequest",
+      "fields": [
+        "isOnline",
+        "speedMetersPerSecond",
+        "headingDegrees"
+      ]
+    },
+    {
+      "model": "DriverTrustAchievementDto",
+      "fields": [
+        "evidence"
+      ]
+    },
+    {
+      "model": "DriverTrustProfileDto",
+      "fields": [
+        "verifiedKiloDriveTrips",
+        "reliabilityMonths",
+        "identityVerified",
+        "primaryVehicleVerified",
+        "documentsCurrent",
+        "achievements"
+      ]
+    },
+    {
+      "model": "EffectiveNotificationPreferencesDto",
+      "fields": [
+        "tripCalls",
+        "bidsAndAssignments",
+        "tripStatus",
+        "chat",
+        "deliveries",
+        "walletAndMembership",
+        "safety",
+        "security",
+        "promotions",
+        "vibration",
+        "readAloud",
+        "quietHoursTimeZone",
+        "presentationControlsAvailable",
+        "mandatoryCategories"
+      ]
+    },
+    {
+      "model": "EmailTripReceiptDto",
+      "fields": [
+        "emailAddress"
+      ]
+    },
+    {
+      "model": "EmergencyNumberDto",
+      "fields": [
+        "number"
+      ]
+    },
+    {
+      "model": "FailedDeliveryAttemptDto",
+      "fields": [
+        "evidence",
+        "initiateReturnToSender"
+      ]
+    },
+    {
+      "model": "FamilySafetyPolicyDto",
+      "fields": [
+        "isEnabled",
+        "minimumTravelerAge",
+        "maximumTravelerAge",
+        "requireLiveTrackingConsent",
+        "requireThreeWayCommunicationConsent",
+        "requireEmergencyContactConfirmation",
+        "allowCash",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal",
+        "minimumDriverTrustLevel",
+        "requirePickupGuardianConfirmation",
+        "requireDropoffGuardianConfirmation",
+        "dependentsRequiringConsent"
+      ]
+    },
+    {
+      "model": "FareQuoteBreakdownDto",
+      "fields": [
+        "maximumStops",
+        "maximumWaitMinutesPerStop",
+        "categoryMultiplier"
+      ]
+    },
+    {
+      "model": "FareQuoteRequestDto",
+      "fields": [
+        "fromLatitude",
+        "fromLongitude",
+        "toLatitude",
+        "toLongitude",
+        "petFriendlyRequired",
+        "childSeatRequired",
+        "wheelchairAccessibleRequired",
+        "airportPickup",
+        "productType",
+        "dispatchMode"
+      ]
+    },
+    {
+      "model": "FareQuoteResponseDto",
+      "fields": [
+        "includesToll",
+        "surgeMultiplier",
+        "rateBand",
+        "marketplaceGuidance",
+        "breakdown",
+        "routeSource",
+        "routeAssessment"
+      ]
+    },
+    {
+      "model": "FareQuoteStopDto",
+      "fields": [
+        "type",
+        "address"
+      ]
+    },
+    {
+      "model": "FareRouteAssessmentDto",
+      "fields": [
+        "source",
+        "confidence",
+        "distanceBasis",
+        "label",
+        "requiresAcknowledgement"
+      ]
+    },
+    {
+      "model": "FareSplitPlanDto",
+      "fields": [
+        "shares"
+      ]
+    },
+    {
+      "model": "FareSplitResponseDto",
+      "fields": [
+        "accept"
+      ]
+    },
+    {
+      "model": "FareSplitShareDto",
+      "fields": [
+        "isCurrentUser",
+        "isFallback",
+        "percentageBasisPoints"
+      ]
+    },
+    {
+      "model": "FareSplitShareInputDto",
+      "fields": [
+        "percentageBasisPoints"
+      ]
+    },
+    {
+      "model": "FavoriteDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "FeaturePolicyDto",
+      "fields": [
+        "key",
+        "owner",
+        "customerLabel",
+        "availability",
+        "available",
+        "configuredEnabled",
+        "destructive",
+        "rolloutPercentage",
+        "killSwitch",
+        "maintenance",
+        "availabilityLabel",
+        "legalProviderDependencies",
+        "unmetDependencies",
+        "rollbackReference"
+      ]
+    },
+    {
+      "model": "FeaturePolicyEnvelopeDto",
+      "fields": [
+        "policies",
+        "deliveries",
+        "cashouts",
+        "promos",
+        "riderIdentityVerificationRequired"
+      ]
+    },
+    {
+      "model": "FeeProductDto",
+      "fields": [
+        "type"
+      ]
+    },
+    {
+      "model": "FeePurchaseDto",
+      "fields": [
+        "productCode",
+        "type"
+      ]
+    },
+    {
+      "model": "FinancialHistoryDisputeDto",
+      "fields": [
+        "ticketReferenceCode"
+      ]
+    },
+    {
+      "model": "FinancialHistoryDisputeRequestDto",
+      "fields": [
+        "source",
+        "message",
+        "priority",
+        "attachmentFileRefs",
+        "issueType"
+      ]
+    },
+    {
+      "model": "FinancialHistoryEntryDto",
+      "fields": [
+        "source",
+        "walletTransactionType",
+        "walletDirection",
+        "paymentStatus",
+        "providerName",
+        "reference",
+        "paymentEntityType",
+        "canOpenDispute",
+        "statusCode",
+        "originalCurrency",
+        "senderDisplayName",
+        "recipientDisplayName",
+        "originatingIpAddress",
+        "deviceDetails",
+        "walletMovement",
+        "conversion"
+      ]
+    },
+    {
+      "model": "FinancialHistoryPageDto",
+      "fields": [
+        "balance",
+        "postingSequenceCutoff"
+      ]
+    },
+    {
+      "model": "FinancialNextActionDto",
+      "fields": [
+        "deepLink"
+      ]
+    },
+    {
+      "model": "FinancialOperationOutcomeDto",
+      "fields": [
+        "previousActionCommitted",
+        "safeToSubmitAgain",
+        "supportReference",
+        "workflowState"
+      ]
+    },
+    {
+      "model": "GeneratedExportDto",
+      "fields": [
+        "reportType",
+        "contentType",
+        "sizeBytes",
+        "previousActionCommitted",
+        "supportReference",
+        "failureCode"
+      ]
+    },
+    {
+      "model": "GoogleSubscriptionTransitionDto",
+      "fields": [
+        "previousPurchaseHash",
+        "replacementMode",
+        "disclosureCode"
+      ]
+    },
+    {
+      "model": "IdentitySubmissionOutcomeDto",
+      "fields": [
+        "path",
+        "action",
+        "keySha256",
+        "payloadSha256",
+        "submittedStatus",
+        "canResume"
+      ]
+    },
+    {
+      "model": "IdentityVerificationDto",
+      "fields": [
+        "gender",
+        "documentType",
+        "hasBackImage",
+        "driverLicenseNumber",
+        "driverLicenseControlNumber",
+        "riderPolicy"
+      ]
+    },
+    {
+      "model": "ImportedRatingBadgeDto",
+      "fields": [
+        "source",
+        "average",
+        "count"
+      ]
+    },
+    {
+      "model": "ImportedRatingSourceDto",
+      "fields": [
+        "source",
+        "average",
+        "count",
+        "verificationMethod",
+        "confidenceLevel"
+      ]
+    },
+    {
+      "model": "IncomingVoiceCallDto",
+      "fields": [
+        "callerName",
+        "callerHasAvatar",
+        "recordingEnabled",
+        "recordingRequired"
+      ]
+    },
+    {
+      "model": "IncomingVoiceCallRecoveryDto",
+      "fields": [
+        "call"
+      ]
+    },
+    {
+      "model": "InviteRentalTeamMemberDto",
+      "fields": [
+        "role",
+        "permissions"
+      ]
+    },
+    {
+      "model": "IssueRentalAgreementDto",
+      "fields": [
+        "termsSnapshot"
+      ]
+    },
+    {
+      "model": "LegalDocumentAcceptanceDto",
+      "fields": [
+        "contentHash",
+        "userRole",
+        "channel"
+      ]
+    },
+    {
+      "model": "LegalDocumentCatalogueDto",
+      "fields": [
+        "requestedLanguage",
+        "resolvedLanguage",
+        "isLanguageFallback",
+        "acceptanceVerified",
+        "requiredAcceptanceSatisfied",
+        "documents",
+        "recoveryHash"
+      ]
+    },
+    {
+      "model": "LegalDocumentCatalogueItemDto",
+      "fields": [
+        "category",
+        "routeSlug",
+        "publicPath",
+        "isLanguageFallback",
+        "jurisdictionCode",
+        "serviceScope",
+        "contentHash",
+        "changeSummary",
+        "materialChangeClassification",
+        "requiresAcceptance",
+        "requiresNotice",
+        "publicationState",
+        "acceptanceState"
+      ]
+    },
+    {
+      "model": "LegalDocumentVersionDto",
+      "fields": [
+        "routeSlug",
+        "jurisdictionCode",
+        "serviceScope",
+        "contentHash",
+        "summary",
+        "bodyHtml",
+        "changeSummary",
+        "materialChangeClassification",
+        "requiresAcceptance",
+        "requiresNotice",
+        "approvalRole",
+        "approvalReference"
+      ]
+    },
+    {
+      "model": "LegalDocumentVersionSummaryDto",
+      "fields": [
+        "routeSlug",
+        "jurisdictionCode",
+        "serviceScope",
+        "contentHash",
+        "changeSummary",
+        "materialChangeClassification",
+        "requiresAcceptance",
+        "requiresNotice"
+      ]
+    },
+    {
+      "model": "LinkSocialLoginConnectionRequest",
+      "fields": [
+        "nonce",
+        "authorizationCode"
+      ]
+    },
+    {
+      "model": "LoginResultDto",
+      "fields": [
+        "twoFactorMethod"
+      ]
+    },
+    {
+      "model": "MaintenanceStatusResult",
+      "fields": [
+        "dueOdometer",
+        "daysRemaining",
+        "distanceRemaining",
+        "triggeringLimit",
+        "severity",
+        "recommendedAction"
+      ]
+    },
+    {
+      "model": "MarketplaceFareGuidanceDto",
+      "fields": [
+        "fareRange",
+        "pickupEstimate",
+        "offerScenarios",
+        "disclosure"
+      ]
+    },
+    {
+      "model": "MarketplaceOfferScenarioDto",
+      "fields": [
+        "pickupProbabilityPercent",
+        "probabilityLowPercent",
+        "probabilityHighPercent",
+        "estimatedResponseSecondsLow",
+        "estimatedResponseSecondsHigh"
+      ]
+    },
+    {
+      "model": "MarketplacePickupEstimateDto",
+      "fields": [
+        "probabilityPercent",
+        "probabilityLowPercent",
+        "probabilityHighPercent",
+        "likelihood",
+        "estimatedResponseSecondsLow",
+        "estimatedResponseSecondsHigh",
+        "supplyLevel",
+        "demandLevel",
+        "confidence",
+        "historicalSampleSize",
+        "scheduledEstimate",
+        "signals"
+      ]
+    },
+    {
+      "model": "MembershipCheckoutDto",
+      "fields": [
+        "instructions"
+      ]
+    },
+    {
+      "model": "MembershipLifecycleDto",
+      "fields": [
+        "summary",
+        "benefitsRetained",
+        "actionCode",
+        "restoreAvailable",
+        "isKnown",
+        "timeline"
+      ]
+    },
+    {
+      "model": "MembershipLifecycleTimelineItemDto",
+      "fields": [
+        "summary"
+      ]
+    },
+    {
+      "model": "MembershipPeriodDto",
+      "fields": [
+        "source"
+      ]
+    },
+    {
+      "model": "MembershipPlanDto",
+      "fields": [
+        "canUseBlockList",
+        "canFavoriteRiders",
+        "canReceiveReviews"
+      ]
+    },
+    {
+      "model": "MembershipPriceTermEvidenceDto",
+      "fields": [
+        "source"
+      ]
+    },
+    {
+      "model": "MembershipSafeActionDto",
+      "fields": [
+        "deepLink"
+      ]
+    },
+    {
+      "model": "MembershipStoreStatusDto",
+      "fields": [
+        "currentPlanName",
+        "lifecycleState",
+        "renewalStatus",
+        "supportReference",
+        "renewalPriceEvidence",
+        "cancellationPolicyCode"
+      ]
+    },
+    {
+      "model": "MembershipUsageDto",
+      "fields": [
+        "acceptedTripsThisWeek",
+        "bidsToday",
+        "vehicleChangesUsed",
+        "favoritesUsed"
+      ]
+    },
+    {
+      "model": "MyMembershipDto",
+      "fields": [
+        "lifecycle"
+      ]
+    },
+    {
+      "model": "NameChangeRequestDto",
+      "fields": [
+        "currentFirstName",
+        "currentLastName",
+        "requestedFirstName",
+        "requestedLastName",
+        "identityFileRef"
+      ]
+    },
+    {
+      "model": "NearbyDriverDto",
+      "fields": [
+        "rating",
+        "locationSource"
+      ]
+    },
+    {
+      "model": "NotificationCenterItemDto",
+      "fields": [
+        "message",
+        "templateKey",
+        "actionType",
+        "actionTarget",
+        "metadata",
+        "isRead",
+        "category",
+        "priority",
+        "threadKey",
+        "deliveryState"
+      ]
+    },
+    {
+      "model": "NotificationCenterPageDto",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "NotificationPreferencesDto",
+      "fields": [
+        "rides",
+        "driverBidAlerts",
+        "deliveries",
+        "wallet",
+        "promotions"
+      ]
+    },
+    {
+      "model": "OnboardingStepDto",
+      "fields": [
+        "documentType"
+      ]
+    },
+    {
+      "model": "OpenRentalDisputeDto",
+      "fields": [
+        "detail",
+        "evidence"
+      ]
+    },
+    {
+      "model": "OutOfBandStepUpChallengeDto",
+      "fields": [
+        "channel"
+      ]
+    },
+    {
+      "model": "ParcelDto",
+      "fields": [
+        "description",
+        "sizeCategory",
+        "weightKg",
+        "quantity",
+        "declaredContents",
+        "declaredValueCurrency",
+        "isFragile"
+      ]
+    },
+    {
+      "model": "ParcelInputDto",
+      "fields": [
+        "description",
+        "sizeCategory",
+        "weightKg",
+        "quantity",
+        "dropoffStopIndex",
+        "declaredContents",
+        "isFragile",
+        "containsRestrictedItems",
+        "photoFileRefs"
+      ]
+    },
+    {
+      "model": "ParcelProtectionClaimDto",
+      "fields": [
+        "description",
+        "settlementReference",
+        "evidence"
+      ]
+    },
+    {
+      "model": "PasskeyCeremonyDto",
+      "fields": [
+        "options"
+      ]
+    },
+    {
+      "model": "PasskeyLoginBeginRequest",
+      "fields": [
+        "ticket"
+      ]
+    },
+    {
+      "model": "PasskeyLoginCompleteRequest",
+      "fields": [
+        "ticket",
+        "response"
+      ]
+    },
+    {
+      "model": "PasskeyRegisterCompleteRequest",
+      "fields": [
+        "response"
+      ]
+    },
+    {
+      "model": "PasswordStrengthDto",
+      "fields": [
+        "score",
+        "label",
+        "suggestions",
+        "compromised"
+      ]
+    },
+    {
+      "model": "PayPalTopUpStatusDto",
+      "fields": [
+        "lifecycleStatus",
+        "providerCurrency",
+        "walletCurrency",
+        "providerEnvironment",
+        "supportReference"
+      ]
+    },
+    {
+      "model": "PaymentConversionEvidenceDto",
+      "fields": [
+        "sourceCurrency",
+        "walletCurrency",
+        "exchangeRateDirection",
+        "exchangeRateSource",
+        "exchangeRateEvidenceReference",
+        "paymentLifecycleStatus",
+        "supportReference"
+      ]
+    },
+    {
+      "model": "PayoutMethodDto",
+      "fields": [
+        "type",
+        "detailsMasked",
+        "estimatedDaysMin",
+        "estimatedDaysMax",
+        "isVerified",
+        "automationEligible",
+        "payoutProvider"
+      ]
+    },
+    {
+      "model": "PendingMembershipChangeDto",
+      "fields": [
+        "changeType",
+        "targetPlanName",
+        "source",
+        "priceSource",
+        "canCancel"
+      ]
+    },
+    {
+      "model": "PendingSocialLinkDto",
+      "fields": [
+        "providerIdentity",
+        "existingAccount"
+      ]
+    },
+    {
+      "model": "PlaceBidDto",
+      "fields": [
+        "type",
+        "message"
+      ]
+    },
+    {
+      "model": "PreferredDriverDto",
+      "fields": [
+        "eligible",
+        "goldPlan",
+        "requiredRatings",
+        "requiredTrips",
+        "fullyVerified",
+        "shirtEntitlement",
+        "shirtsIssued"
+      ]
+    },
+    {
+      "model": "ProviderBillingDto",
+      "fields": [
+        "accountType",
+        "paymentMethods",
+        "billingHistory",
+        "storePlatform",
+        "storeStatus",
+        "storeAcknowledgementStatus",
+        "storeReconciliationStatus",
+        "lifecycle",
+        "storeRenewalState"
+      ]
+    },
+    {
+      "model": "PublicCountrySiteDto",
+      "fields": [
+        "currencySymbol",
+        "launchReady",
+        "launchState",
+        "unavailableReason"
+      ]
+    },
+    {
+      "model": "PublicMembershipPlanPriceDto",
+      "fields": [
+        "terms"
+      ]
+    },
+    {
+      "model": "PublicMembershipPriceTermDto",
+      "fields": [
+        "fxRateFromUsd"
+      ]
+    },
+    {
+      "model": "PublicMembershipPricesDto",
+      "fields": [
+        "plans"
+      ]
+    },
+    {
+      "model": "PublicVehicleCategoryDto",
+      "fields": [
+        "description",
+        "maxPassengers",
+        "fareMultiplier"
+      ]
+    },
+    {
+      "model": "PushChannelCapabilitiesDto",
+      "fields": [
+        "quietChannel",
+        "noVibrationChannels"
+      ]
+    },
+    {
+      "model": "RateTripDto",
+      "fields": [
+        "stars",
+        "comment",
+        "driving",
+        "courtesy",
+        "cleanliness",
+        "punctuality",
+        "tags",
+        "communication",
+        "respect",
+        "pickupReadiness",
+        "vehicleCare"
+      ]
+    },
+    {
+      "model": "RatingBreakdownDto",
+      "fields": [
+        "overall",
+        "count",
+        "driving",
+        "courtesy",
+        "cleanliness",
+        "punctuality",
+        "importedSources"
+      ]
+    },
+    {
+      "model": "RatingImportDto",
+      "fields": [
+        "driverName",
+        "source",
+        "profileRef",
+        "inDriveUsername",
+        "evidenceFileRef",
+        "evidenceFileRefs",
+        "importedAverage",
+        "error",
+        "resolutionNote",
+        "confidenceScore",
+        "scanNote",
+        "evidenceType",
+        "verificationMethod",
+        "confidenceLevel",
+        "positivePercentage",
+        "evidenceSha256",
+        "evidenceHashKind",
+        "legalHoldActive",
+        "revocationReason"
+      ]
+    },
+    {
+      "model": "RecentRideLocationDto",
+      "fields": [
+        "address",
+        "kind"
+      ]
+    },
+    {
+      "model": "RecordUserSettingChangeDto",
+      "fields": [
+        "settingKey",
+        "change"
+      ]
+    },
+    {
+      "model": "RecurringRideDto",
+      "fields": [
+        "weekdays",
+        "pickupTime",
+        "vehicleCategoryName"
+      ]
+    },
+    {
+      "model": "RecurringRideDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "ReferralSummaryDto",
+      "fields": [
+        "referralCode",
+        "referredUsers",
+        "completedTrips"
+      ]
+    },
+    {
+      "model": "RegisterDeviceDto",
+      "fields": [
+        "manufacturer",
+        "brand",
+        "operatingSystem",
+        "buildNumber",
+        "locale"
+      ]
+    },
+    {
+      "model": "RegisterRequest",
+      "fields": [
+        "referralCode",
+        "businessLegalName",
+        "businessTradingName",
+        "businessRegistrationNumber",
+        "businessTaxNumber",
+        "businessEmail",
+        "businessPhone",
+        "businessRegisteredAddress"
+      ]
+    },
+    {
+      "model": "RegisterVehicleDto",
+      "fields": [
+        "year",
+        "color",
+        "registrationFileRef",
+        "registrationFileName",
+        "allowsPets",
+        "childSeatCapacity",
+        "isWheelchairAccessible",
+        "isAirportPickupEligible",
+        "conditionCode",
+        "interiorImageFileRef",
+        "frontExteriorImageFileRef",
+        "insuranceFileRef",
+        "insuranceFileName",
+        "insuranceProvider",
+        "setAsPrimary",
+        "onboardingSubmission"
+      ]
+    },
+    {
+      "model": "RenewGuardianConsentDto",
+      "fields": [
+        "consentEvidenceReference",
+        "guardianAuthorityType",
+        "guardianAuthorityConfirmed",
+        "liveTrackingConsentGranted",
+        "threeWayCommunicationConsentGranted",
+        "emergencyContactConfirmed"
+      ]
+    },
+    {
+      "model": "RentalAgreementDto",
+      "fields": [
+        "termsSha256"
+      ]
+    },
+    {
+      "model": "RentalAllowedActionDto",
+      "fields": [
+        "actor",
+        "requiresReason",
+        "requiresEvidence",
+        "requiredPermission",
+        "requiredChecklistCodes"
+      ]
+    },
+    {
+      "model": "RentalAuthorizationEvidence",
+      "fields": [
+        "network",
+        "extendedAuthorization",
+        "incrementalAuthorization"
+      ]
+    },
+    {
+      "model": "RentalAvailabilityBlockDto",
+      "fields": [
+        "type"
+      ]
+    },
+    {
+      "model": "RentalAvailabilityCalendarDto",
+      "fields": [
+        "blocks",
+        "availabilityPolicy"
+      ]
+    },
+    {
+      "model": "RentalAvailabilityPolicyDto",
+      "fields": [
+        "basis",
+        "legacyUtcDayRestriction"
+      ]
+    },
+    {
+      "model": "RentalBookingDto",
+      "fields": [
+        "vehicle",
+        "providerName"
+      ]
+    },
+    {
+      "model": "RentalBookingOperationsDto",
+      "fields": [
+        "booking",
+        "handoverMode",
+        "returnAddress",
+        "distanceDrivenKilometers",
+        "startFuelPercent",
+        "endFuelPercent",
+        "agreement",
+        "inspections",
+        "extensions",
+        "damageClaims",
+        "disputes",
+        "acceptedPolicy",
+        "lifecycle",
+        "authorization",
+        "inventoryHold",
+        "protection"
+      ]
+    },
+    {
+      "model": "RentalBookingStatusContractDto",
+      "fields": [
+        "unknownName",
+        "statuses"
+      ]
+    },
+    {
+      "model": "RentalBookingStatusDefinitionDto",
+      "fields": [
+        "value",
+        "isTerminal",
+        "allowedTransitions"
+      ]
+    },
+    {
+      "model": "RentalBranchPublicDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "RentalDamageClaimDto",
+      "fields": [
+        "description",
+        "settlementReference",
+        "evidence"
+      ]
+    },
+    {
+      "model": "RentalDisputeDto",
+      "fields": [
+        "detail",
+        "resolutionReason",
+        "evidence"
+      ]
+    },
+    {
+      "model": "RentalEvidenceInput",
+      "fields": [
+        "label"
+      ]
+    },
+    {
+      "model": "RentalEvidencePreviewDto",
+      "fields": [
+        "label",
+        "previewPath"
+      ]
+    },
+    {
+      "model": "RentalExtensionDto",
+      "fields": [
+        "decisionReason"
+      ]
+    },
+    {
+      "model": "RentalFleetReminderDto",
+      "fields": [
+        "vehicle",
+        "kind",
+        "daysRemaining"
+      ]
+    },
+    {
+      "model": "RentalInspectionChecklistInput",
+      "fields": [
+        "isSatisfied"
+      ]
+    },
+    {
+      "model": "RentalInspectionChecklistItemDto",
+      "fields": [
+        "isSatisfied"
+      ]
+    },
+    {
+      "model": "RentalInspectionDto",
+      "fields": [
+        "phase",
+        "odometerKilometers",
+        "fuelPercent",
+        "photos"
+      ]
+    },
+    {
+      "model": "RentalInspectionPhotoDto",
+      "fields": [
+        "area",
+        "damageObserved",
+        "previewPath"
+      ]
+    },
+    {
+      "model": "RentalInspectionPhotoInput",
+      "fields": [
+        "area",
+        "damageObserved"
+      ]
+    },
+    {
+      "model": "RentalInventoryHoldDto",
+      "fields": [
+        "country"
+      ]
+    },
+    {
+      "model": "RentalLifecycleDto",
+      "fields": [
+        "currentStep",
+        "requirements",
+        "allowedActions"
+      ]
+    },
+    {
+      "model": "RentalLifecycleRequirementDto",
+      "fields": [
+        "satisfied",
+        "message"
+      ]
+    },
+    {
+      "model": "RentalMakeModelsDto",
+      "fields": [
+        "models"
+      ]
+    },
+    {
+      "model": "RentalMarketplaceFiltersDto",
+      "fields": [
+        "makes",
+        "models",
+        "vehicleTypes",
+        "transmissions",
+        "minimumYear",
+        "maximumYear",
+        "makeModels"
+      ]
+    },
+    {
+      "model": "RentalOrganizationCardDto",
+      "fields": [
+        "tradingName",
+        "providerType",
+        "rating",
+        "hasProfileImage",
+        "vehicleTypes"
+      ]
+    },
+    {
+      "model": "RentalOrganizationCardDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "RentalOrganizationDto",
+      "fields": [
+        "providerType",
+        "legalName",
+        "tradingName",
+        "slug",
+        "rating",
+        "myRole",
+        "myPermissions",
+        "description",
+        "contactEmail",
+        "contactPhone",
+        "registrationNumber",
+        "taxNumber",
+        "hasProfileImage"
+      ]
+    },
+    {
+      "model": "RentalOrganizationPublicDto",
+      "fields": [
+        "tradingName",
+        "providerType",
+        "rating",
+        "hasProfileImage",
+        "branches",
+        "vehicleTypes"
+      ]
+    },
+    {
+      "model": "RentalOwnerAnalyticsDto",
+      "fields": [
+        "activeFleet",
+        "bookedToday",
+        "completedBookings",
+        "utilizationPercent",
+        "averageRating"
+      ]
+    },
+    {
+      "model": "RentalPartnerBookingDto",
+      "fields": [
+        "vehicle",
+        "renterName",
+        "declineReason"
+      ]
+    },
+    {
+      "model": "RentalPartnerBranchDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "RentalPartnerVehicleDto",
+      "fields": [
+        "year",
+        "category",
+        "transmission",
+        "fuelType",
+        "seats",
+        "color",
+        "description",
+        "bookingMode",
+        "distanceUnit",
+        "includedDistancePerDay",
+        "includedKilometersPerDay",
+        "handoverMode",
+        "serviceRadius",
+        "serviceRadiusKilometers",
+        "images"
+      ]
+    },
+    {
+      "model": "RentalPartnerVehicleImageDto",
+      "fields": [
+        "altText",
+        "sortOrder"
+      ]
+    },
+    {
+      "model": "RentalPolicyDto",
+      "fields": [
+        "bookingApproval",
+        "mileage",
+        "securityDeposit",
+        "lateReturn",
+        "handover",
+        "cancellation"
+      ]
+    },
+    {
+      "model": "RentalPolicySnapshot",
+      "fields": [
+        "bookingMode",
+        "distanceUnit",
+        "includedDistancePerDay",
+        "includedKilometersPerDay",
+        "offeredHandoverMode",
+        "selectedHandoverMode",
+        "serviceRadius",
+        "serviceRadiusKilometers"
+      ]
+    },
+    {
+      "model": "RentalProtectionAcceptanceDto",
+      "fields": [
+        "termsSha256",
+        "accepted"
+      ]
+    },
+    {
+      "model": "RentalProviderProtectionDto",
+      "fields": [
+        "country",
+        "kind",
+        "issuerName",
+        "policyReference",
+        "coverageSummary",
+        "exclusions",
+        "permittedDriverTerms",
+        "claimsInstructions",
+        "termsSha256"
+      ]
+    },
+    {
+      "model": "RentalQuoteDto",
+      "fields": [
+        "weeklyBlocks",
+        "dailyBlocks",
+        "isAvailable",
+        "availabilityStatus",
+        "availabilityPolicy"
+      ]
+    },
+    {
+      "model": "RentalTeamDto",
+      "fields": [
+        "members",
+        "invitations"
+      ]
+    },
+    {
+      "model": "RentalTeamInvitationDto",
+      "fields": [
+        "role",
+        "permissions"
+      ]
+    },
+    {
+      "model": "RentalTeamMemberDto",
+      "fields": [
+        "role",
+        "permissions"
+      ]
+    },
+    {
+      "model": "RentalVehicleCardDto",
+      "fields": [
+        "companyName",
+        "year",
+        "category",
+        "seats",
+        "transmission",
+        "bookingMode",
+        "hasProviderProfileImage",
+        "providerRating",
+        "distanceKilometers"
+      ]
+    },
+    {
+      "model": "RentalVehicleCardDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "RentalVehicleDetailDto",
+      "fields": [
+        "companyName",
+        "branchName",
+        "branchAddress",
+        "year",
+        "category",
+        "seats",
+        "transmission",
+        "fuelType",
+        "color",
+        "description",
+        "includedKilometersPerDay",
+        "bookingMode",
+        "images",
+        "handoverMode",
+        "serviceRadiusKilometers",
+        "hasProviderProfileImage",
+        "providerRating",
+        "policies",
+        "isFavorite",
+        "distanceUnit",
+        "includedDistancePerDay",
+        "serviceRadius"
+      ]
+    },
+    {
+      "model": "RentalVehicleImageDto",
+      "fields": [
+        "altText"
+      ]
+    },
+    {
+      "model": "ReplySupportTicketDto",
+      "fields": [
+        "attachmentFileRefs"
+      ]
+    },
+    {
+      "model": "ReportVehicleDefectDto",
+      "fields": [
+        "componentCode",
+        "description",
+        "severity",
+        "odometer",
+        "reporterBelievesSafeToDrive",
+        "evidenceFileRefsJson"
+      ]
+    },
+    {
+      "model": "ReputationCategoryDto",
+      "fields": [
+        "average",
+        "count"
+      ]
+    },
+    {
+      "model": "RequestEmailLoginDto",
+      "fields": [
+        "role"
+      ]
+    },
+    {
+      "model": "RequestNameChangeDto",
+      "fields": [
+        "identityFileRef"
+      ]
+    },
+    {
+      "model": "RequestOutOfBandStepUpDto",
+      "fields": [
+        "action",
+        "channel"
+      ]
+    },
+    {
+      "model": "RequestPasswordResetRequest",
+      "fields": [
+        "ownershipConfirmed"
+      ]
+    },
+    {
+      "model": "RequestPhoneContactVerificationDto",
+      "fields": [
+        "deliveryMethod"
+      ]
+    },
+    {
+      "model": "RequestPhoneLoginDto",
+      "fields": [
+        "deliveryChannel",
+        "appSignature",
+        "role"
+      ]
+    },
+    {
+      "model": "RequestRatingImportDto",
+      "fields": [
+        "source",
+        "profileRef",
+        "inDriveUsername",
+        "evidenceFileRef",
+        "evidenceFileRefs"
+      ]
+    },
+    {
+      "model": "RequestRentalExtensionDto",
+      "fields": [
+        "requestedReturnAt"
+      ]
+    },
+    {
+      "model": "RequestRouteAlterationDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "RequestTwoFactorLoginCodeRequest",
+      "fields": [
+        "ticket"
+      ]
+    },
+    {
+      "model": "ResolveVehicleDefectDto",
+      "fields": [
+        "resolutionNotes"
+      ]
+    },
+    {
+      "model": "RespondFareSplitRequest",
+      "fields": [
+        "accept"
+      ]
+    },
+    {
+      "model": "ReviewAppealDto",
+      "fields": [
+        "reviewKind"
+      ]
+    },
+    {
+      "model": "ReviewRentalExtensionDto",
+      "fields": [
+        "approve"
+      ]
+    },
+    {
+      "model": "RideAssistanceDto",
+      "fields": [
+        "mobilityCode",
+        "wheelchairWidthMillimeters",
+        "wheelchairLengthMillimeters",
+        "wheelchairCombinedWeightKilograms",
+        "serviceAnimal",
+        "hearingCommunicationCode",
+        "visionCommunicationCode",
+        "communicationCode"
+      ]
+    },
+    {
+      "model": "RideBidDto",
+      "fields": [
+        "driverName",
+        "driverRating",
+        "driverTotalTrips",
+        "vehicleDescription",
+        "driverAvatarRef",
+        "vehicleYear",
+        "importedRatings",
+        "isPreferredDriver",
+        "type",
+        "message",
+        "trustBadges",
+        "ratingCategories",
+        "trustAchievements"
+      ]
+    },
+    {
+      "model": "RideInquiryMessageDto",
+      "fields": [
+        "senderRole"
+      ]
+    },
+    {
+      "model": "RideInquiryThreadDto",
+      "fields": [
+        "driverName"
+      ]
+    },
+    {
+      "model": "RideNoDriverRecoveryActionDecision",
+      "fields": [
+        "action",
+        "isAvailable",
+        "execution",
+        "constraintImpact",
+        "unavailableReason"
+      ]
+    },
+    {
+      "model": "RideNoDriverRecoveryProjection",
+      "fields": [
+        "actions"
+      ]
+    },
+    {
+      "model": "RideRequestDto",
+      "fields": [
+        "vehicleCategoryName",
+        "surgeMultiplier",
+        "petFriendlyRequired",
+        "childSeatRequired",
+        "wheelchairAccessibleRequired",
+        "airportPickup",
+        "flightNumber",
+        "dispatchMode",
+        "autoAcceptExactFare",
+        "scheduledGuaranteeStatus",
+        "guaranteeStatusReason",
+        "productType",
+        "guaranteeSupportPolicy",
+        "assistance",
+        "consistencyState"
+      ]
+    },
+    {
+      "model": "RideRequestDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "RideSearchMapDto",
+      "fields": [
+        "isExpanded",
+        "drivers",
+        "dispatchScope",
+        "pickupEstimate",
+        "activeViewerDefinition",
+        "backgroundBehavior",
+        "isGuaranteed"
+      ]
+    },
+    {
+      "model": "RideStopDto",
+      "fields": [
+        "sequence",
+        "address",
+        "type",
+        "skipReasonCode",
+        "skipReason"
+      ]
+    },
+    {
+      "model": "RideStopInputDto",
+      "fields": [
+        "address",
+        "type"
+      ]
+    },
+    {
+      "model": "RiderAssistanceProfileDto",
+      "fields": [
+        "isEnabled",
+        "mobilityCode",
+        "wheelchairWidthMillimeters",
+        "wheelchairLengthMillimeters",
+        "wheelchairCombinedWeightKilograms",
+        "serviceAnimal",
+        "hearingCommunicationCode",
+        "visionCommunicationCode",
+        "communicationCode",
+        "caregiverName",
+        "caregiverContactMasked",
+        "caregiverTripNotificationsEnabled"
+      ]
+    },
+    {
+      "model": "RiderEntitlementsDto",
+      "fields": [
+        "isPaid",
+        "canUseBlockList",
+        "canUseFavorites",
+        "canRepeatRides",
+        "canManageWallet",
+        "monthlyRideRequestLimit"
+      ]
+    },
+    {
+      "model": "RiderOnboardingDecisionDto",
+      "fields": [
+        "phoneDecision",
+        "phoneRequiredForOnboarding"
+      ]
+    },
+    {
+      "model": "RiderVerificationPolicyDto",
+      "fields": [
+        "required",
+        "canSubmit"
+      ]
+    },
+    {
+      "model": "RouteDeviationAlertDto",
+      "fields": [
+        "passengerResponse"
+      ]
+    },
+    {
+      "model": "RouteDeviationResponseRequest",
+      "fields": [
+        "action"
+      ]
+    },
+    {
+      "model": "SafetyEventViewDto",
+      "fields": [
+        "type",
+        "passengerResponse",
+        "severity",
+        "isConnectivityIssue",
+        "connectivityReason"
+      ]
+    },
+    {
+      "model": "SafetyPreferencesDto",
+      "fields": [
+        "driverTrustLevel",
+        "rideCheckEnabled",
+        "pickupConfirmationEnabled"
+      ]
+    },
+    {
+      "model": "SaveCalculationDto",
+      "fields": [
+        "calculatorType",
+        "inputs",
+        "results"
+      ]
+    },
+    {
+      "model": "SaveDriverOnboardingProgressDto",
+      "fields": [
+        "currentPage",
+        "devicePlatform"
+      ]
+    },
+    {
+      "model": "SaveFamilySafetyPolicyDto",
+      "fields": [
+        "isEnabled",
+        "minimumTravelerAge",
+        "maximumTravelerAge",
+        "requireLiveTrackingConsent",
+        "requireThreeWayCommunicationConsent",
+        "requireEmergencyContactConfirmation",
+        "allowCash",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal",
+        "minimumDriverTrustLevel",
+        "requirePickupGuardianConfirmation",
+        "requireDropoffGuardianConfirmation"
+      ]
+    },
+    {
+      "model": "SaveTravelPolicyDto",
+      "fields": [
+        "maxRidesPerDay",
+        "allowCash",
+        "allowWallet",
+        "allowScheduledRides",
+        "allowAirportRides",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal"
+      ]
+    },
+    {
+      "model": "SavedCalculationDto",
+      "fields": [
+        "calculatorType",
+        "inputs",
+        "results"
+      ]
+    },
+    {
+      "model": "ScheduledReportDto",
+      "fields": [
+        "reportType",
+        "cadence"
+      ]
+    },
+    {
+      "model": "ScheduledRideOperatingStatusDto",
+      "fields": [
+        "stateCode",
+        "riskLevel",
+        "promiseCode",
+        "riderActions",
+        "driverActions",
+        "driverActionRequired",
+        "supportRecommended"
+      ]
+    },
+    {
+      "model": "ScheduledRideRiderCheckInDto",
+      "fields": [
+        "isCheckedIn",
+        "canCheckIn"
+      ]
+    },
+    {
+      "model": "SecurityPreferencesDto",
+      "fields": [
+        "loginEmailNotificationsEnabled",
+        "emailVerified"
+      ]
+    },
+    {
+      "model": "SessionDto",
+      "fields": [
+        "deviceName",
+        "ipAddress",
+        "userAgent",
+        "deviceManufacturer",
+        "deviceModel",
+        "operatingSystem",
+        "isCurrent"
+      ]
+    },
+    {
+      "model": "SetAutoRenewRequest",
+      "fields": [
+        "enabled"
+      ]
+    },
+    {
+      "model": "SetCorporateBudgetDto",
+      "fields": [
+        "costCenterCode"
+      ]
+    },
+    {
+      "model": "SetHouseholdConsentDto",
+      "fields": [
+        "consentState"
+      ]
+    },
+    {
+      "model": "SetLoginEmailNotificationsDto",
+      "fields": [
+        "enabled"
+      ]
+    },
+    {
+      "model": "SetRentalProviderProtectionDto",
+      "fields": [
+        "isOffered",
+        "kind",
+        "issuerName",
+        "policyReference",
+        "coverageStartsAt",
+        "coverageEndsAt",
+        "coverageSummary",
+        "exclusions",
+        "permittedDriverTerms",
+        "claimsInstructions",
+        "providerResponsibilityConfirmed"
+      ]
+    },
+    {
+      "model": "SetRiderPhoneOnboardingDecisionDto",
+      "fields": [
+        "skip"
+      ]
+    },
+    {
+      "model": "SetRiderProfilePhotoOnboardingDecisionDto",
+      "fields": [
+        "skip"
+      ]
+    },
+    {
+      "model": "SetTravelTrackingConsentDto",
+      "fields": [
+        "granted"
+      ]
+    },
+    {
+      "model": "SettleRentalDepositDto",
+      "fields": [
+        "providerReference"
+      ]
+    },
+    {
+      "model": "SocialLoginRequest",
+      "fields": [
+        "role",
+        "nonce",
+        "createAccount",
+        "driverAccountType",
+        "createRentalOrganization",
+        "businessLegalName",
+        "businessTradingName",
+        "businessRegistrationNumber",
+        "businessTaxNumber",
+        "businessRegisteredAddress",
+        "authorizationCode"
+      ]
+    },
+    {
+      "model": "StartTripRequest",
+      "fields": [
+        "riderPin",
+        "qrPayload"
+      ]
+    },
+    {
+      "model": "StoreEntitlementDto",
+      "fields": [
+        "restored",
+        "willAutoRenew",
+        "acknowledgementPending",
+        "reconciliationStatus",
+        "reconciliationErrorCode"
+      ]
+    },
+    {
+      "model": "StoreMembershipBenefitDto",
+      "fields": [
+        "priceEvidence",
+        "commissionEffect",
+        "maxVehiclesEligibleForBidding",
+        "bidsUsedToday",
+        "acceptedTripsUsedThisWeek",
+        "registeredVehicles",
+        "favoritesUsed",
+        "renewalTermsCode",
+        "cancellationTermsCode",
+        "estimatedBreakEvenTrips",
+        "breakEvenAssumptionsCode",
+        "opportunity"
+      ]
+    },
+    {
+      "model": "StoreProductDto",
+      "fields": [
+        "appleSubscriptionGroupReference",
+        "planCurrency",
+        "benefits",
+        "purchaseDisabledReason"
+      ]
+    },
+    {
+      "model": "StorePurchaseOperationDto",
+      "fields": [
+        "safeRetryAllowed",
+        "safeInstructionCode",
+        "supportReference"
+      ]
+    },
+    {
+      "model": "StorePurchaseOpportunityDto",
+      "fields": [
+        "required",
+        "eligible",
+        "recentRequests",
+        "eligibleDrivers",
+        "requiredRequests",
+        "evidenceCode"
+      ]
+    },
+    {
+      "model": "StorePurchaseQuoteDto",
+      "fields": [
+        "localizedPrice",
+        "googleTransition"
+      ]
+    },
+    {
+      "model": "SubmitIdentityVerificationDto",
+      "fields": [
+        "gender",
+        "documentType",
+        "frontFileRef",
+        "backFileRef",
+        "driverLicenseNumber",
+        "driverLicenseControlNumber",
+        "onboardingSubmission"
+      ]
+    },
+    {
+      "model": "SubmitWebsiteContactDto",
+      "fields": [
+        "phone",
+        "subject",
+        "message",
+        "clientIpAddress",
+        "browserDetails"
+      ]
+    },
+    {
+      "model": "SupervisedConversationDto",
+      "fields": [
+        "conversationKind",
+        "currentUserRole",
+        "canSend",
+        "participants",
+        "messages"
+      ]
+    },
+    {
+      "model": "SupervisedMessageDto",
+      "fields": [
+        "senderRole"
+      ]
+    },
+    {
+      "model": "SupervisedParticipantDto",
+      "fields": [
+        "role",
+        "canRead",
+        "canSend"
+      ]
+    },
+    {
+      "model": "SupportCaseActionPolicyDto",
+      "fields": [
+        "canReply",
+        "canClose",
+        "canReopen",
+        "canEscalate",
+        "reopenPolicy",
+        "escalationPolicy",
+        "reopenPolicyCode",
+        "escalationPolicyCode"
+      ]
+    },
+    {
+      "model": "SupportCaseCatalogDto",
+      "fields": [
+        "subjects",
+        "issueTypes",
+        "contract"
+      ]
+    },
+    {
+      "model": "SupportCaseSubjectDto",
+      "fields": [
+        "subjectType",
+        "label"
+      ]
+    },
+    {
+      "model": "SupportCommandOutcomeDto",
+      "fields": [
+        "path",
+        "action",
+        "keySha256",
+        "payloadSha256"
+      ]
+    },
+    {
+      "model": "SupportContractOptionDto",
+      "fields": [
+        "localizationKey",
+        "wireValue",
+        "subjectType"
+      ]
+    },
+    {
+      "model": "SupportIssueTypeDto",
+      "fields": [
+        "subjectType",
+        "localizationKey"
+      ]
+    },
+    {
+      "model": "SupportLifecycleContractDto",
+      "fields": [
+        "statuses",
+        "priorities",
+        "nextActions",
+        "reopenPolicyCode",
+        "escalationPolicyCode",
+        "issueTypes",
+        "subjectTypes"
+      ]
+    },
+    {
+      "model": "SupportTicketDetailsDto",
+      "fields": [
+        "ticket",
+        "messages",
+        "timeline",
+        "actions"
+      ]
+    },
+    {
+      "model": "SupportTicketDto",
+      "fields": [
+        "referenceCode",
+        "ticketType",
+        "subject",
+        "adminNote",
+        "attachmentFileRefs",
+        "slaPriority",
+        "subjectType",
+        "subjectLabel",
+        "issueType",
+        "resolutionCode",
+        "resolutionSummary",
+        "hasUnreadSupportReply",
+        "ownerDisplayName",
+        "ageHours",
+        "slaBreached",
+        "statusCode",
+        "priorityCode",
+        "issueCode"
+      ]
+    },
+    {
+      "model": "SupportTicketDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "SupportTicketEventDto",
+      "fields": [
+        "eventType",
+        "fromStatus",
+        "toStatus",
+        "actorType"
+      ]
+    },
+    {
+      "model": "SupportTicketMessageDto",
+      "fields": [
+        "authorType",
+        "attachmentFileRefs",
+        "authorName"
+      ]
+    },
+    {
+      "model": "TollEstimateDto",
+      "fields": [
+        "corridorCode",
+        "corridorName",
+        "originName",
+        "destinationName",
+        "vehicleClass",
+        "oneWayKilometers",
+        "oneWayMiles",
+        "outboundCharges",
+        "returnCharges",
+        "returnTrip"
+      ]
+    },
+    {
+      "model": "TollJourneyOptionDto",
+      "fields": [
+        "corridorCode",
+        "corridorName",
+        "originCode",
+        "originName",
+        "destinationCode",
+        "destinationName",
+        "distanceKilometers",
+        "vehicleClasses"
+      ]
+    },
+    {
+      "model": "TollPlazaDto",
+      "fields": [
+        "corridorCode",
+        "sequence"
+      ]
+    },
+    {
+      "model": "TollRouteEstimateDto",
+      "fields": [
+        "segments",
+        "oneWayKilometers",
+        "oneWayMiles",
+        "returnTrip",
+        "legs",
+        "detectedPlazas",
+        "returnKilometers",
+        "returnMiles",
+        "returnSegments",
+        "returnLegs"
+      ]
+    },
+    {
+      "model": "TollRouteEstimateRequest",
+      "fields": [
+        "points",
+        "vehicleClass",
+        "returnTrip"
+      ]
+    },
+    {
+      "model": "TollRouteLegDto",
+      "fields": [
+        "fromAddress",
+        "toAddress",
+        "distanceKilometers",
+        "distanceMiles",
+        "includesToll",
+        "tollSegment",
+        "polyline",
+        "tollVerificationStatus"
+      ]
+    },
+    {
+      "model": "TollRoutePointDto",
+      "fields": [
+        "address"
+      ]
+    },
+    {
+      "model": "TollRouteSegmentDto",
+      "fields": [
+        "fromAddress",
+        "toAddress",
+        "corridorName",
+        "entryPlaza",
+        "exitPlaza",
+        "distanceKilometers",
+        "distanceMiles",
+        "charges",
+        "returnCharges"
+      ]
+    },
+    {
+      "model": "TopUpLimitsDto",
+      "fields": [
+        "feeBasisPoints",
+        "isAvailable",
+        "unavailableReasonCode"
+      ]
+    },
+    {
+      "model": "TopUpQuoteDto",
+      "fields": [
+        "payCurrency",
+        "walletCurrency",
+        "fxRate",
+        "rateSource",
+        "providerEnvironment",
+        "rateDirection",
+        "rateEvidenceReference",
+        "disclaimer",
+        "isDerivedRate",
+        "feePercentageRate",
+        "roundingDisclosure",
+        "rateEvidenceHash",
+        "feeEvidenceReference",
+        "feeEvidenceHash"
+      ]
+    },
+    {
+      "model": "TopUpResultDto",
+      "fields": [
+        "providerName",
+        "instructions",
+        "wallet",
+        "operationReference"
+      ]
+    },
+    {
+      "model": "TravelBookingPartiesDto",
+      "fields": [
+        "requester",
+        "traveler",
+        "payer",
+        "supervisor"
+      ]
+    },
+    {
+      "model": "TravelBookingPartyDto",
+      "fields": [
+        "role"
+      ]
+    },
+    {
+      "model": "TravelMemberDto",
+      "fields": [
+        "role",
+        "relationship",
+        "employeeCode",
+        "canBook",
+        "canViewLiveTrips",
+        "canManageMembers",
+        "canManageBilling",
+        "invitationPending"
+      ]
+    },
+    {
+      "model": "TravelProfileSummaryDto",
+      "fields": [
+        "type",
+        "isOwner",
+        "role",
+        "activeMembers",
+        "tripsThisMonth",
+        "centralBillingEnabled",
+        "allowDelegatedBooking",
+        "liveTrackingEnabled",
+        "notifyRideCreated",
+        "notifyDriverAssigned",
+        "notifyTripStarted",
+        "notifyTripCompleted",
+        "notifyTripCancelled",
+        "notifyByPush",
+        "notifyByEmail",
+        "notifyBySms"
+      ]
+    },
+    {
+      "model": "TravelProfileWorkspaceDto",
+      "fields": [
+        "profile",
+        "members",
+        "costCenters",
+        "policy",
+        "canManageMembers",
+        "canManageBilling",
+        "canBook",
+        "canViewLiveTrips"
+      ]
+    },
+    {
+      "model": "TravelRideBookingDto",
+      "fields": [
+        "booking",
+        "parties"
+      ]
+    },
+    {
+      "model": "TravelRidePolicyDto",
+      "fields": [
+        "maxRidesPerDay",
+        "allowCash",
+        "allowWallet",
+        "allowScheduledRides",
+        "allowAirportRides",
+        "allowedWeekdaysMask",
+        "earliestMinuteLocal",
+        "latestMinuteLocal"
+      ]
+    },
+    {
+      "model": "TravelStatementDto",
+      "fields": [
+        "profileName",
+        "costCenters",
+        "trips"
+      ]
+    },
+    {
+      "model": "TravelTrackingDto",
+      "fields": [
+        "travelerName",
+        "isFresh",
+        "parties",
+        "locationSource"
+      ]
+    },
+    {
+      "model": "TravelTripDto",
+      "fields": [
+        "travelerName",
+        "costCenterCode",
+        "parties"
+      ]
+    },
+    {
+      "model": "TravelTripReceiptDto",
+      "fields": [
+        "receipt",
+        "parties"
+      ]
+    },
+    {
+      "model": "TripCallLogDto",
+      "fields": [
+        "callerName",
+        "callerRole"
+      ]
+    },
+    {
+      "model": "TripChatDto",
+      "fields": [
+        "isReadOnly",
+        "tripStatus",
+        "readCursor",
+        "callLogs"
+      ]
+    },
+    {
+      "model": "TripChatMutationDto",
+      "fields": [
+        "readCursor"
+      ]
+    },
+    {
+      "model": "TripCustomerStatusDto",
+      "fields": [
+        "explanation",
+        "freshness",
+        "confidence",
+        "allowedActions"
+      ]
+    },
+    {
+      "model": "TripDistanceSummaryDto",
+      "fields": [
+        "meters",
+        "provenance"
+      ]
+    },
+    {
+      "model": "TripDto",
+      "fields": [
+        "driverName",
+        "driverRating",
+        "vehicleDescription",
+        "passengerName",
+        "surgeMultiplier",
+        "commissionRate",
+        "paymentStatus",
+        "chatUnread",
+        "pendingRouteAlteration",
+        "currentUserHasRated",
+        "distance",
+        "driverAvatarRef",
+        "driverLatitude",
+        "driverLongitude",
+        "scheduledGuaranteeStatus",
+        "guaranteeStatusReason",
+        "productType",
+        "activeStopSequence",
+        "guaranteeSupportPolicy",
+        "pickupConfirmationRequired",
+        "passengerAvatarRef",
+        "consistencyState",
+        "terminationAction",
+        "financialOutcome",
+        "driverLocationSource",
+        "customerStatus",
+        "driverLocationStatus",
+        "locationPolicy",
+        "lifecycleEvidence",
+        "scheduledRideOperatingStatus"
+      ]
+    },
+    {
+      "model": "TripDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "TripLifecycleEvidenceDto",
+      "fields": [
+        "pickupArrivalReady",
+        "pickupOutcome",
+        "destinationArrivalReady",
+        "destinationOutcome",
+        "startSuspected",
+        "startOutcome",
+        "completionReminderDue"
+      ]
+    },
+    {
+      "model": "TripLocationPolicyDto",
+      "fields": [
+        "scope",
+        "canViewDriverLocation",
+        "canViewPickup",
+        "canViewDropoff",
+        "canViewVehicleSnapshot"
+      ]
+    },
+    {
+      "model": "TripLocationStatusDto",
+      "fields": [
+        "source"
+      ]
+    },
+    {
+      "model": "TripPickupCeremonyStatusDto",
+      "fields": [
+        "canRecordContactAttempt",
+        "canStartTrip",
+        "canDeclareNoShow",
+        "noShowCode"
+      ]
+    },
+    {
+      "model": "TripPickupCodeDto",
+      "fields": [
+        "riderPin",
+        "qrPayload",
+        "required",
+        "maximumAttempts"
+      ]
+    },
+    {
+      "model": "TripReceiptDto",
+      "fields": [
+        "receiptNumber",
+        "passengerName",
+        "driverName",
+        "vehicleDescription",
+        "distanceKilometers",
+        "distanceMiles",
+        "startedAtLocal",
+        "completedAtLocal",
+        "createdAtLocal"
+      ]
+    },
+    {
+      "model": "TripRouteAlterationDto",
+      "fields": [
+        "previousDropoffAddress",
+        "newDropoffAddress",
+        "proposal"
+      ]
+    },
+    {
+      "model": "TripRouteProposalSnapshotDto",
+      "fields": [
+        "oldRoute",
+        "newRoute",
+        "paymentImpact",
+        "requiredActor",
+        "requiresActorApproval",
+        "supportPathCode"
+      ]
+    },
+    {
+      "model": "TripShareDto",
+      "fields": [
+        "shortCode",
+        "url"
+      ]
+    },
+    {
+      "model": "TripTerminationDto",
+      "fields": [
+        "trip",
+        "action",
+        "financialOutcome",
+        "locationSharingStopped",
+        "requiresReconciliation"
+      ]
+    },
+    {
+      "model": "TripTimelineDto",
+      "fields": [
+        "chatAvailable",
+        "events"
+      ]
+    },
+    {
+      "model": "TripTimelineEventDto",
+      "fields": [
+        "eventCode",
+        "labelKey",
+        "summary",
+        "actorRole",
+        "evidenceLinks"
+      ]
+    },
+    {
+      "model": "TripTimelineEvidenceLinkDto",
+      "fields": [
+        "kind",
+        "labelKey",
+        "route"
+      ]
+    },
+    {
+      "model": "TrustedContactRequest",
+      "fields": [
+        "phone",
+        "canReceiveLiveTrip"
+      ]
+    },
+    {
+      "model": "TwoFactorConfirmedDto",
+      "fields": [
+        "enabled",
+        "recoveryCodes"
+      ]
+    },
+    {
+      "model": "TwoFactorEnrollmentDto",
+      "fields": [
+        "secret",
+        "otpAuthUri"
+      ]
+    },
+    {
+      "model": "TwoFactorStatusDto",
+      "fields": [
+        "enabled",
+        "availableFallbackChannels",
+        "method",
+        "required",
+        "hasSocialLogin"
+      ]
+    },
+    {
+      "model": "TwoFactorStepUpDto",
+      "fields": [
+        "action"
+      ]
+    },
+    {
+      "model": "UpdateContactDetailsDto",
+      "fields": [
+        "requestEmailVerification"
+      ]
+    },
+    {
+      "model": "UpdateDriverAssistanceCapabilityDto",
+      "fields": [
+        "acceptsAssistedRides",
+        "canAssistBoarding",
+        "acceptsServiceAnimals",
+        "supportsHearingCommunication",
+        "supportsVisionCommunication"
+      ]
+    },
+    {
+      "model": "UpdateDriverRideAlertPreferencesDto",
+      "fields": [
+        "isEnabled",
+        "standardTrips",
+        "airportTrips",
+        "petFriendlyTrips",
+        "childSeatTrips",
+        "wheelchairAccessibleTrips"
+      ]
+    },
+    {
+      "model": "UpdateNotificationPreferencesDto",
+      "fields": [
+        "rides",
+        "driverBidAlerts",
+        "deliveries",
+        "wallet",
+        "promotions",
+        "tripCalls",
+        "tripStatus",
+        "chat",
+        "walletAndMembership",
+        "vibration",
+        "readAloud",
+        "quietHoursTimeZone"
+      ]
+    },
+    {
+      "model": "UpdateRentalOrganizationSettingsDto",
+      "fields": [
+        "legalName",
+        "tradingName",
+        "registrationNumber",
+        "taxNumber",
+        "contactEmail",
+        "contactPhone",
+        "description"
+      ]
+    },
+    {
+      "model": "UpdateRentalTeamMemberDto",
+      "fields": [
+        "role",
+        "permissions"
+      ]
+    },
+    {
+      "model": "UpdateRentalVehicleDto",
+      "fields": [
+        "year",
+        "category",
+        "transmission",
+        "fuelType",
+        "seats",
+        "color",
+        "description",
+        "bookingMode",
+        "distanceUnit",
+        "includedDistancePerDay",
+        "handoverMode",
+        "serviceRadius",
+        "policyConfirmed"
+      ]
+    },
+    {
+      "model": "UpdateRiderAssistanceProfileDto",
+      "fields": [
+        "isEnabled",
+        "mobilityCode",
+        "wheelchairWidthMillimeters",
+        "wheelchairLengthMillimeters",
+        "wheelchairCombinedWeightKilograms",
+        "serviceAnimal",
+        "hearingCommunicationCode",
+        "visionCommunicationCode",
+        "communicationCode",
+        "caregiverName",
+        "caregiverContact",
+        "caregiverTripNotificationsEnabled"
+      ]
+    },
+    {
+      "model": "UpdateTravelMemberDto",
+      "fields": [
+        "role",
+        "relationship",
+        "employeeCode",
+        "canBook",
+        "canViewLiveTrips",
+        "canManageMembers",
+        "canManageBilling"
+      ]
+    },
+    {
+      "model": "UpdateTravelProfileDto",
+      "fields": [
+        "centralBillingEnabled",
+        "allowDelegatedBooking",
+        "liveTrackingEnabled",
+        "notifyRideCreated",
+        "notifyDriverAssigned",
+        "notifyTripStarted",
+        "notifyTripCompleted",
+        "notifyTripCancelled",
+        "notifyByPush",
+        "notifyByEmail",
+        "notifyBySms"
+      ]
+    },
+    {
+      "model": "UpdateVehicleDto",
+      "fields": [
+        "year",
+        "color",
+        "allowsPets",
+        "childSeatCapacity",
+        "isWheelchairAccessible",
+        "isAirportPickupEligible",
+        "interiorImageFileRef",
+        "frontExteriorImageFileRef"
+      ]
+    },
+    {
+      "model": "UploadDocumentDto",
+      "fields": [
+        "type",
+        "driverLicenseNumber",
+        "driverLicenseControlNumber",
+        "onboardingSubmission"
+      ]
+    },
+    {
+      "model": "UpsertBusinessShippingMemberDto",
+      "fields": [
+        "role",
+        "canCreateOrders",
+        "canViewBilling",
+        "canManageMembers"
+      ]
+    },
+    {
+      "model": "UpsertCorporateMemberDto",
+      "fields": [
+        "role",
+        "permissions"
+      ]
+    },
+    {
+      "model": "UpsertHouseholdMemberDto",
+      "fields": [
+        "role",
+        "canBook",
+        "canApprove"
+      ]
+    },
+    {
+      "model": "UpsertRecurringRideDto",
+      "fields": [
+        "weekdays",
+        "pickupTime"
+      ]
+    },
+    {
+      "model": "User",
+      "fields": [
+        "role",
+        "avatarStorageKey",
+        "gender",
+        "loginEmailNotificationsEnabled",
+        "riderPhoneOnboardingDecision",
+        "preferredLanguage",
+        "passwordHash",
+        "twoFactorEnabled",
+        "twoFactorRequired",
+        "twoFactorMethod",
+        "referralCode",
+        "autoRenewMembership",
+        "driverProfile",
+        "wallet"
+      ]
+    },
+    {
+      "model": "UserActivityDto",
+      "fields": [
+        "activity",
+        "source",
+        "deviceName",
+        "deviceManufacturer",
+        "deviceModel",
+        "operatingSystem",
+        "ipAddress",
+        "userAgent",
+        "authenticationMethod",
+        "tenantSlug",
+        "riskLevel",
+        "detailsJson"
+      ]
+    },
+    {
+      "model": "UserActivityDtoPagedResult",
+      "fields": [
+        "hasPreviousPage",
+        "hasNextPage"
+      ]
+    },
+    {
+      "model": "UserBlockDto",
+      "fields": [
+        "identifierType",
+        "identifierDisplay"
+      ]
+    },
+    {
+      "model": "UserDto",
+      "fields": [
+        "role",
+        "phoneVerified",
+        "identityVerified"
+      ]
+    },
+    {
+      "model": "UserExternalExperienceDto",
+      "fields": [
+        "source",
+        "averageRating",
+        "positivePercentage",
+        "confidence"
+      ]
+    },
+    {
+      "model": "UserReputationAchievementDto",
+      "fields": [
+        "evidence"
+      ]
+    },
+    {
+      "model": "UserReputationCategoryDto",
+      "fields": [
+        "average",
+        "count"
+      ]
+    },
+    {
+      "model": "UserReputationDto",
+      "fields": [
+        "averageStars",
+        "verifiedCompletedTrips",
+        "categories",
+        "achievements",
+        "recentReviews",
+        "publicationPolicy",
+        "subjectRole",
+        "nativeAverageStars",
+        "importedAverageStars",
+        "verificationBadges",
+        "externalExperiences"
+      ]
+    },
+    {
+      "model": "UserReputationReviewDto",
+      "fields": [
+        "reviewerName",
+        "stars",
+        "comment",
+        "tags",
+        "reviewerRole"
+      ]
+    },
+    {
+      "model": "UserReputationVerificationBadgeDto",
+      "fields": [
+        "verified"
+      ]
+    },
+    {
+      "model": "UserSecurityEventDto",
+      "fields": [
+        "eventType",
+        "authenticationMethod",
+        "riskLevel",
+        "tenantSlug",
+        "ipAddress"
+      ]
+    },
+    {
+      "model": "Vehicle",
+      "fields": [
+        "ownerUser",
+        "driverProfile",
+        "vehicleCategory",
+        "year",
+        "color",
+        "conditionCode",
+        "interiorImageFileRef",
+        "frontExteriorImageFileRef",
+        "allowsPets",
+        "childSeatCapacity",
+        "isWheelchairAccessible",
+        "isAirportPickupEligible",
+        "insuranceProvider",
+        "isArchived",
+        "documents",
+        "driverAssignments",
+        "odometerReadings",
+        "maintenanceSchedules",
+        "serviceRecords",
+        "defects"
+      ]
+    },
+    {
+      "model": "VehicleBiddingEligibilityResult",
+      "fields": [
+        "isEligible",
+        "membershipStatus",
+        "vehicleReadiness",
+        "reasons",
+        "currentLimit",
+        "currentUsage",
+        "remainingAllowance",
+        "primaryReasonCode"
+      ]
+    },
+    {
+      "model": "VehicleBrakeRecord",
+      "fields": [
+        "vehicle",
+        "odometer",
+        "componentCode",
+        "conditionCode",
+        "measurementMillimeters",
+        "recommendedAction",
+        "attachmentFileRef"
+      ]
+    },
+    {
+      "model": "VehicleCategory",
+      "fields": [
+        "description",
+        "maxPassengers",
+        "fareMultiplier",
+        "sortOrder"
+      ]
+    },
+    {
+      "model": "VehicleDefect",
+      "fields": [
+        "vehicle",
+        "componentCode",
+        "description",
+        "severity",
+        "odometer",
+        "reporterBelievesSafeToDrive",
+        "evidenceFileRefsJson",
+        "resolutionNotes"
+      ]
+    },
+    {
+      "model": "VehicleDriverAssignment",
+      "fields": [
+        "vehicle",
+        "driverProfile",
+        "endReason"
+      ]
+    },
+    {
+      "model": "VehicleDto",
+      "fields": [
+        "year",
+        "color",
+        "categoryName",
+        "insuranceProvider",
+        "allowsPets",
+        "childSeatCapacity",
+        "isWheelchairAccessible",
+        "isAirportPickupEligible",
+        "conditionCode",
+        "interiorImageFileRef",
+        "frontExteriorImageFileRef"
+      ]
+    },
+    {
+      "model": "VehicleEligibilityReason",
+      "fields": [
+        "messageKey",
+        "isBlocking",
+        "correctiveAction",
+        "route"
+      ]
+    },
+    {
+      "model": "VehicleExpense",
+      "fields": [
+        "vehicle",
+        "categoryCode",
+        "vendor",
+        "receiptFileRef"
+      ]
+    },
+    {
+      "model": "VehicleInsurerReferenceDto",
+      "fields": [
+        "sortOrder"
+      ]
+    },
+    {
+      "model": "VehicleMaintenanceSchedule",
+      "fields": [
+        "vehicle",
+        "categoryCode",
+        "description",
+        "trigger",
+        "severity",
+        "lastCompletedOdometer",
+        "nextDueOdometer",
+        "recurrenceDistance",
+        "dueSoonDistance",
+        "remindersEnabled",
+        "lastReminderStatus"
+      ]
+    },
+    {
+      "model": "VehicleMaintenanceSummaryDto",
+      "fields": [
+        "currentOdometer",
+        "odometerUnit",
+        "overallStatus",
+        "hasSafetyCriticalDefect",
+        "schedules",
+        "monthToDateByCurrency",
+        "yearToDateByCurrency",
+        "lifetimeByCurrency"
+      ]
+    },
+    {
+      "model": "VehicleOdometerReading",
+      "fields": [
+        "vehicle",
+        "reading",
+        "unitCode",
+        "sourceCode",
+        "dashboardImageFileRef",
+        "correctionReason"
+      ]
+    },
+    {
+      "model": "VehicleServiceRecord",
+      "fields": [
+        "vehicle",
+        "schedule",
+        "categoryCode",
+        "completedOdometer",
+        "workshop",
+        "workPerformed",
+        "partsJson",
+        "warrantyNotes",
+        "receiptFileRef",
+        "evidenceFileRefsJson",
+        "nextRecommendedOdometer",
+        "isVoided",
+        "voidReason"
+      ]
+    },
+    {
+      "model": "VehicleTyreRecord",
+      "fields": [
+        "vehicle",
+        "positionCode",
+        "brand",
+        "size",
+        "odometer",
+        "treadDepthMillimeters",
+        "pressurePsi",
+        "conditionCode"
+      ]
+    },
+    {
+      "model": "VerifyStorePurchaseDto",
+      "fields": [
+        "verificationData",
+        "restore",
+        "recovery"
+      ]
+    },
+    {
+      "model": "VerifyTwoFactorLoginRequest",
+      "fields": [
+        "ticket"
+      ]
+    },
+    {
+      "model": "VoiceCallLifecycleDto",
+      "fields": [
+        "recordingStatus",
+        "recordingJurisdiction"
+      ]
+    },
+    {
+      "model": "VoiceCallOptionsDto",
+      "fields": [
+        "canUseInAppCalling",
+        "peerPhoneNumber",
+        "peerName",
+        "unavailableReason"
+      ]
+    },
+    {
+      "model": "VoiceCallStartDto",
+      "fields": [
+        "recordingEnabled",
+        "recordingRequired"
+      ]
+    },
+    {
+      "model": "VoiceSessionDto",
+      "fields": [
+        "channel",
+        "url",
+        "recordingEnabled",
+        "recordingRequired"
+      ]
+    },
+    {
+      "model": "Wallet",
+      "fields": [
+        "user",
+        "transferSendEnabled",
+        "transferReceiveEnabled",
+        "topUpEnabled",
+        "restrictionReason"
+      ]
+    },
+    {
+      "model": "WalletAmountBreakdownDto",
+      "fields": [
+        "heldReleaseCondition",
+        "pendingSettlementCondition",
+        "debtRemediation",
+        "safeNextAction"
+      ]
+    },
+    {
+      "model": "WalletFeeScheduleDto",
+      "fields": [
+        "topUpBasisPoints",
+        "transferSendBasisPoints",
+        "transferReceiveBasisPoints",
+        "tripPaymentBasisPoints",
+        "withdrawalBasisPoints",
+        "deliveryPaymentBasisPoints",
+        "membershipPurchaseBasisPoints",
+        "voucherRedemptionBasisPoints"
+      ]
+    },
+    {
+      "model": "WalletLedgerPageDto",
+      "fields": [
+        "totals",
+        "balance"
+      ]
+    },
+    {
+      "model": "WalletMovementEvidenceDto",
+      "fields": [
+        "activityCode"
+      ]
+    },
+    {
+      "model": "WalletPaymentStatusDto",
+      "fields": [
+        "operationReference",
+        "lifecycleStatus",
+        "providerStatus",
+        "providerName",
+        "failureCode",
+        "receiptAvailable",
+        "wallet",
+        "resourceStatus",
+        "evidenceOutcome"
+      ]
+    },
+    {
+      "model": "WalletRecipientDto",
+      "fields": [
+        "alias"
+      ]
+    },
+    {
+      "model": "WalletTransactionDto",
+      "fields": [
+        "type",
+        "direction",
+        "reference",
+        "relatedEntityType",
+        "explanation",
+        "walletMovement",
+        "conversion"
+      ]
+    },
+    {
+      "model": "WalletTransactionExplanationDto",
+      "fields": [
+        "purposeCode",
+        "settlementCode",
+        "safeNextAction",
+        "isKnown"
+      ]
+    },
+    {
+      "model": "WalletTransferQuoteDto",
+      "fields": [
+        "sourceCurrency"
+      ]
+    }
+  ],
+  "untypedSuccessResponses": [
+    {
+      "operation": "DELETE /api/v1/account",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/activity/settings",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "GET /api/v1/account/avatar",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "PUT /api/v1/account/complete-profile",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/contact-details/email/confirm",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/contact-details/phone/confirm",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/deactivate",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/deactivate/recoverable",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "GET /api/v1/account/export",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/account/onboarding/profile-photo-decision",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "DELETE /api/v1/account/recoverable",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/change-password",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/login/email/request",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/login/phone/request",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/logout",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "DELETE /api/v1/auth/passkeys/{id}",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/password-reset/confirm",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/password-reset/request",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/phone-verification/confirm",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/phone-verification/request",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "DELETE /api/v1/auth/sessions/{id}",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/set-password",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "DELETE /api/v1/auth/social-connections/{id}",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "POST /api/v1/auth/social-link-intents/cancel",
+      "status": "200",
+      "topic": "identity"
+    },
+    {
+      "operation": "DELETE /api/v1/business-shipping/accounts/{accountId}/members/{memberId}",
+      "status": "200",
+      "topic": "profiles"
+    },
+    {
+      "operation": "DELETE /api/v1/calculations/{id}",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "PUT /api/v1/corporate/accounts/{accountId}/members",
+      "status": "200",
+      "topic": "profiles"
+    },
+    {
+      "operation": "POST /api/v1/deliveries/{deliveryRequestId}/cancel",
+      "status": "200",
+      "topic": "deliveries"
+    },
+    {
+      "operation": "POST /api/v1/driver/deliveries/{deliveryId}/cancel",
+      "status": "200",
+      "topic": "deliveries"
+    },
+    {
+      "operation": "GET /api/v1/driver/incentives/current",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/profile/onboarding/complete",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/profile/onboarding/progress",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/profile/onboarding/step",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "GET /api/v1/driver/reports/earnings",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "DELETE /api/v1/driver/rider-favorites/{favoriteId}",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/rider-favorites/{riderUserId}",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "DELETE /api/v1/driver/rides/bids/{bidId}",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/rides/{rideRequestId}/inquiry/read",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/rides/{rideRequestId}/view",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "GET /api/v1/driver/status",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "POST /api/v1/driver/status",
+      "status": "200",
+      "topic": "drivers"
+    },
+    {
+      "operation": "DELETE /api/v1/driver/vehicles/{vehicleId}",
+      "status": "200",
+      "topic": "vehicles"
+    },
+    {
+      "operation": "DELETE /api/v1/favorites/{favoriteId}",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "PUT /api/v1/households/{householdId}/members",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "GET /api/v1/maps/autocomplete",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "GET /api/v1/maps/geocode",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "GET /api/v1/maps/place",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "GET /api/v1/maps/reverse-geocode",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "GET /api/v1/maps/route",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "GET /api/v1/maps/traffic-routes",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "DELETE /api/v1/notifications",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "DELETE /api/v1/notifications/push-token",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "POST /api/v1/notifications/push-token",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "GET /api/v1/notifications/push-token/installation-state",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "POST /api/v1/notifications/read-all",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "DELETE /api/v1/notifications/{notificationId}",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "POST /api/v1/notifications/{notificationId}/read",
+      "status": "200",
+      "topic": "notifications"
+    },
+    {
+      "operation": "GET /api/v1/public/capabilities",
+      "status": "200",
+      "topic": "discovery"
+    },
+    {
+      "operation": "DELETE /api/v1/recurring-rides/{recurringRideId}",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "DELETE /api/v1/recurring-rides/{recurringRideId}/revisioned",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "DELETE /api/v1/rental-partner/organizations/{organizationId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "DELETE /api/v1/rental-partner/organizations/{organizationId}/availability-blocks/{blockId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rental-partner/organizations/{organizationId}/profile-image",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "DELETE /api/v1/rental-partner/organizations/{organizationId}/team/invitations/{invitationId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}/primary",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "POST /api/v1/rental-partner/team/invitations/accept",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "POST /api/v1/rentals/bookings/{bookingId}/cancel",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/rentals/bookings/{bookingId}/damage-evidence/{evidenceId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/rentals/bookings/{bookingId}/dispute-evidence/{evidenceId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/rentals/bookings/{bookingId}/inspection-evidence/{evidenceId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "POST /api/v1/rentals/bookings/{bookingId}/rating",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "DELETE /api/v1/rentals/favorites/{vehicleId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "PUT /api/v1/rentals/favorites/{vehicleId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/rentals/organizations/{organizationId}/profile-image",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/rentals/vehicles/{vehicleId}/images/{imageId}",
+      "status": "200",
+      "topic": "rentals"
+    },
+    {
+      "operation": "GET /api/v1/reports/exports/{artifactId}/download",
+      "status": "200",
+      "topic": "reports"
+    },
+    {
+      "operation": "DELETE /api/v1/reports/scheduled/{scheduleId}",
+      "status": "200",
+      "topic": "reports"
+    },
+    {
+      "operation": "GET /api/v1/reports/{reportType}",
+      "status": "200",
+      "topic": "reports"
+    },
+    {
+      "operation": "GET /api/v1/resources/manuals",
+      "status": "200",
+      "topic": "discovery"
+    },
+    {
+      "operation": "GET /api/v1/rides/{rideRequestId}/bids/{bidId}/avatar",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "POST /api/v1/rides/{rideRequestId}/bids/{bidId}/reject",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "POST /api/v1/rides/{rideRequestId}/cancel",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}/read",
+      "status": "200",
+      "topic": "rides"
+    },
+    {
+      "operation": "GET /api/v1/safety/cases",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/cases",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/cases/recoverable",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/cases/{id}/acknowledge",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/cases/{id}/acknowledge/recoverable",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/events",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/events/{id}/acknowledge",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "GET /api/v1/safety/trusted-contacts",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "POST /api/v1/safety/trusted-contacts",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "DELETE /api/v1/safety/trusted-contacts/{id}",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "GET /api/v1/support/tickets/{ticketId}/messages/{messageId}/attachments/{index}",
+      "status": "200",
+      "topic": "support"
+    },
+    {
+      "operation": "PUT /api/v1/support/tickets/{ticketId}/read",
+      "status": "200",
+      "topic": "support"
+    },
+    {
+      "operation": "POST /api/v1/tools/calculators/export/pdf",
+      "status": "200",
+      "topic": "maps-and-tools"
+    },
+    {
+      "operation": "DELETE /api/v1/travel-profiles/{profileId}",
+      "status": "200",
+      "topic": "profiles"
+    },
+    {
+      "operation": "DELETE /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+      "status": "200",
+      "topic": "profiles"
+    },
+    {
+      "operation": "DELETE /api/v1/travel-profiles/{profileId}/members/{memberId}",
+      "status": "200",
+      "topic": "profiles"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/cancel",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "GET /api/v1/trips/{tripId}/driver-avatar",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "GET /api/v1/trips/{tripId}/passenger-avatar",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "DELETE /api/v1/trips/{tripId}/peer-block",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "PUT /api/v1/trips/{tripId}/peer-block",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/rating",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "GET /api/v1/trips/{tripId}/receipt.pdf",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/receipt/email",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/reservation/decline",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/reject",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/trips/{tripId}/share/revoke",
+      "status": "200",
+      "topic": "trips"
+    },
+    {
+      "operation": "POST /api/v1/uploads",
+      "status": "200",
+      "topic": "uploads"
+    },
+    {
+      "operation": "GET /api/v1/uploads/operations/{operationId}",
+      "status": "200",
+      "topic": "uploads"
+    },
+    {
+      "operation": "POST /api/v1/uploads/recoverable",
+      "status": "200",
+      "topic": "uploads"
+    },
+    {
+      "operation": "GET /api/v1/uploads/{fileRef}",
+      "status": "200",
+      "topic": "uploads"
+    },
+    {
+      "operation": "DELETE /api/v1/user-blocks/{blockId}",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "PUT /api/v1/user-blocks/{userId}",
+      "status": "200",
+      "topic": "safety"
+    },
+    {
+      "operation": "DELETE /api/v1/vehicles/{vehicleId}",
+      "status": "200",
+      "topic": "vehicles"
+    },
+    {
+      "operation": "POST /api/v1/voice/call/end",
+      "status": "200",
+      "topic": "communications"
+    },
+    {
+      "operation": "POST /api/v1/voice/call/gsm",
+      "status": "200",
+      "topic": "communications"
+    },
+    {
+      "operation": "GET /api/v1/wallet/financial-history/export/pdf",
+      "status": "200",
+      "topic": "wallets"
+    },
+    {
+      "operation": "GET /api/v1/wallet/financial-history/{entryId}/export/pdf",
+      "status": "200",
+      "topic": "wallets"
+    },
+    {
+      "operation": "DELETE /api/v1/wallet/payout-methods/{id}",
+      "status": "200",
+      "topic": "wallets"
+    },
+    {
+      "operation": "DELETE /api/v1/wallet/recipients/{id}",
+      "status": "200",
+      "topic": "wallets"
+    },
+    {
+      "operation": "POST /api/v1/wallet/topup/bank-transfers/{paymentId}/cancel",
+      "status": "200",
+      "topic": "wallets"
+    },
+    {
+      "operation": "GET /api/v1/wallet/transactions/export",
+      "status": "200",
+      "topic": "wallets"
+    }
+  ]
+}

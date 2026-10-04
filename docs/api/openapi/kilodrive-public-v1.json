@@ -86040,6 +86040,9 @@
             "type": "string",
             "format": "uuid"
           },
+          "description": {
+            "type": "string"
+          },
           "amountMinor": {
             "type": "integer",
             "format": "int64"
@@ -86414,6 +86417,10 @@
           },
           "name": {
             "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
           },
           "articleCount": {
             "type": "integer",
@@ -88331,6 +88338,10 @@
           "name": {
             "type": "string"
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "trigger": {
             "$ref": "#/components/schemas/VehicleMaintenanceTrigger"
           },
@@ -88385,6 +88396,9 @@
         "properties": {
           "reason": {
             "$ref": "#/components/schemas/ParcelProtectionClaimReason"
+          },
+          "description": {
+            "type": "string"
           },
           "claimedAmountMinor": {
             "type": "integer",
@@ -88677,6 +88691,9 @@
           "reason": {
             "$ref": "#/components/schemas/RentalDamageReason"
           },
+          "description": {
+            "type": "string"
+          },
           "claimedAmountMinor": {
             "type": "integer",
             "format": "int64"
@@ -88787,6 +88804,10 @@
           },
           "contactPhone": {
             "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
           },
           "websiteUrl": {
             "type": "string",
@@ -88904,6 +88925,9 @@
             "type": "string"
           },
           "plateNumber": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "dailyRateMinor": {
@@ -96007,6 +96031,10 @@
           "name": {
             "type": "string"
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "feeMinor": {
             "type": "integer",
             "format": "int64"
@@ -96871,6 +96899,9 @@
             "type": "string",
             "format": "uuid"
           },
+          "description": {
+            "type": "string"
+          },
           "sizeCategory": {
             "$ref": "#/components/schemas/ParcelSize"
           },
@@ -96916,6 +96947,9 @@
         ],
         "type": "object",
         "properties": {
+          "description": {
+            "type": "string"
+          },
           "sizeCategory": {
             "$ref": "#/components/schemas/ParcelSize"
           },
@@ -96984,6 +97018,9 @@
           },
           "reason": {
             "$ref": "#/components/schemas/ParcelProtectionClaimReason"
+          },
+          "description": {
+            "type": "string"
           },
           "claimedAmountMinor": {
             "type": "integer",
@@ -98034,6 +98071,10 @@
           },
           "name": {
             "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
           },
           "iconUrl": {
             "type": "string",
@@ -99648,6 +99689,9 @@
           "reason": {
             "$ref": "#/components/schemas/RentalDamageReason"
           },
+          "description": {
+            "type": "string"
+          },
           "claimedAmountMinor": {
             "type": "integer",
             "format": "int64"
@@ -100409,6 +100453,10 @@
           "myPermissions": {
             "$ref": "#/components/schemas/RentalOrganizationPermission"
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "websiteUrl": {
             "type": "string",
             "nullable": true
@@ -100766,6 +100814,9 @@
             "type": "string"
           },
           "plateNumber": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "dailyRateMinor": {
@@ -101545,6 +101596,9 @@
           "color": {
             "type": "string"
           },
+          "description": {
+            "type": "string"
+          },
           "dailyRateMinor": {
             "type": "integer",
             "format": "int64"
@@ -101727,6 +101781,9 @@
         "type": "object",
         "properties": {
           "componentCode": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "severity": {
@@ -104653,6 +104710,10 @@
             "nullable": true
           },
           "googleOfferId": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
             "type": "string",
             "nullable": true
           },
@@ -108700,6 +108761,10 @@
           "contactPhone": {
             "type": "string"
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "websiteUrl": {
             "type": "string",
             "nullable": true
@@ -108790,6 +108855,9 @@
             "type": "string"
           },
           "plateNumber": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "dailyRateMinor": {
@@ -110536,6 +110604,10 @@
             "type": "string",
             "nullable": true
           },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "iconUrl": {
             "type": "string",
             "nullable": true
@@ -110590,6 +110662,10 @@
             "format": "uuid"
           },
           "componentCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
             "type": "string",
             "nullable": true
           },
@@ -111008,6 +111084,10 @@
             "nullable": true
           },
           "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
             "type": "string",
             "nullable": true
           },
