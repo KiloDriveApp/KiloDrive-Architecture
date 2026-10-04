@@ -30,10 +30,12 @@ The exporter:
 3. Selects only approved operations.
 4. Rejects privileged route families, callbacks and declared administrative roles.
 5. Preserves declared bearer/anonymous security and required wire fields.
-6. Removes source examples, defaults, operational prose and unreviewed extensions.
+6. Removes unreviewed metadata in its OpenAPI context, preserving actual DTO
+   properties and response keys even when named `description` or `default`.
 7. Includes only transitively referenced components and required security schemes.
 8. Checks numeric enum labels against committed source declarations.
-9. Generates endpoint explanations and field tables with locally reviewed wording.
+9. Independently compares schema/parameter/body shapes with the source and
+   generates explanations labelled by their level of semantic review.
 10. Records hashes/counts and verifies the reproducible public outputs.
 
 The OpenAPI server is a reserved example host. No production access commands,
@@ -48,7 +50,7 @@ checkout. The tool derives consumer/Admin versions and the schema contract;
 maintainers do not copy a historical build number from a deployment log.
 
 Review any publication-policy change before generation. Review field/endpoint
-wording in `tools/public_api_semantics.py` against the owning controller, DTO,
+wording in `tools/public_api_semantics.py` and `tools/api_context.py` against the owning controller, DTO,
 validator, handler and contract tests. A generic schema-derived explanation
 must not invent an unrecorded business rule.
 
@@ -62,7 +64,7 @@ Public CI can validate the bundle without private source access:
 
 ```bash
 python tools/public_api.py --check
-python -m unittest discover -s tools -p "test_public_api.py"
+python -m unittest discover -s tools -p "test_*.py"
 python tools/audit_docs.py
 python tools/generate_public_sbom.py --check
 npx --yes markdownlint-cli2@0.23.2 "**/*.md"
@@ -71,10 +73,18 @@ codespell .
 
 The API verification checks publication-policy/hash agreement, route/method
 scope, local reference closure, security metadata, path parameters, forbidden
-content and exact regenerated catalogs/dictionary. Focused tests exercise
+content, complete manifest coverage and exact regenerated catalogs/dictionary.
+The maintainer can additionally compare published wire shapes with the
+manifest's source artifact:
+
+```text
+python tools/public_api.py --check --source-root <authorized-source-checkout>
+```
+
+Focused tests exercise
 exclusion, shared-schema filtering, anonymous security, dangling references and
 unsafe examples/extensions. Repository audits cover links, structure and
-high-risk content.
+high-risk content, heading fragments and cross-platform filename case.
 
 Checksums detect drift. They do not prove a malicious edited artifact is
 trustworthy. Source/policy review and private deployment/provider/device evidence

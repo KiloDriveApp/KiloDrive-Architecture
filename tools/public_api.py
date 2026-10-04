@@ -10,7 +10,8 @@ import hashlib
 import json
 import re
 import subprocess
-from public_api_semantics import field_meaning, purpose, words
+from public_api_semantics import field_meaning, field_basis, purpose, purpose_basis, words
+from doc_links import heading_id
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +25,10 @@ ALLOWED_EXTENSIONS = {
     "x-if-match-condition", "x-recent-authentication-condition",
 }
 DROP_KEYS = {"description", "example", "examples", "default", "externalDocs", "callbacks", "links"}
+# These objects contain contract-defined names, not OpenAPI keyword names.
+# A DTO property named `description` or a response named `default` is wire data.
+NAMED_MAPS = {"properties", "headers", "responses", "content", "encoding", "mapping"}
+LITERAL_VALUES = {"enum", "required", "security"}
 TOPICS = {
     "discovery": "Public information and capability discovery",
     "identity": "Identity, account and installation lifecycle",
@@ -54,11 +59,13 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def sanitized(value: object) -> object:
+def sanitized(value: object, named_map: bool = False) -> object:
     if isinstance(value, dict):
         return {
-            key: sanitized(item) for key, item in value.items()
-            if key not in DROP_KEYS and (not key.startswith("x-") or key in ALLOWED_EXTENSIONS)
+            key: (copy.deepcopy(item) if not named_map and key in LITERAL_VALUES
+                  else sanitized(item, not named_map and key in NAMED_MAPS))
+            for key, item in value.items()
+            if named_map or (key not in DROP_KEYS and (not key.startswith("x-") or key in ALLOWED_EXTENSIONS))
         }
     if isinstance(value, list):
         return [sanitized(item) for item in value]
@@ -94,7 +101,7 @@ def is_privileged(path: str, operation: dict) -> bool:
         or path in {"/api/v1/auth/apple/notifications", "/api/v1/auth/workspaces",
                        "/api/v1/account/store-review-policy"}
         or path.startswith("/api/v1/store-billing/notifications/")
-        or any(role in {"Admin", "Administrator", "SystemAdmin"}
+        or any(role in {"Admin", "Administrator", "SystemAdmin", "TenantAdmin"}
                for role in operation.get("x-authorization-roles", []))
     )
 
@@ -137,7 +144,7 @@ def export(source: dict, policy: dict) -> dict:
         if ref in seen:
             continue
         group, name = component_id(ref)
-        if re.match(r"^(?:Admin|SystemAdmin)", name):
+        if re.match(r"^(?:Admin|SystemAdmin|TenantAdmin)", name):
             raise ValueError(f"Administrative component referenced by reviewed subset: {name}")
         try:
             clean = sanitized(source["components"][group][name])
@@ -172,6 +179,59 @@ def export(source: dict, policy: dict) -> dict:
     }
 
 
+def verify_wire_parity(source: dict, public: dict) -> None:
+    """Compare wire shapes independently of the metadata sanitizer.
+
+    All nested property names, types, constraints and compositions survive.
+    Request/response containers are checked too, not just referenced DTOs.
+    """
+    schema_keys = {
+        "$ref", "type", "format", "nullable", "required", "enum", "readOnly", "writeOnly",
+        "minimum", "maximum", "exclusiveMinimum", "exclusiveMaximum", "multipleOf",
+        "minLength", "maxLength", "pattern", "minItems", "maxItems", "uniqueItems",
+        "minProperties", "maxProperties", "discriminator", "xml", "deprecated",
+    }
+
+    def shape(schema: object) -> object:
+        if not isinstance(schema, dict):
+            return schema
+        result = {key: schema[key] for key in schema_keys if key in schema}
+        for key in ("properties",):
+            if key in schema:
+                result[key] = {name: shape(value) for name, value in schema[key].items()}
+        for key in ("items", "additionalProperties", "not"):
+            if key in schema:
+                result[key] = shape(schema[key])
+        for key in ("allOf", "oneOf", "anyOf"):
+            if key in schema:
+                result[key] = [shape(value) for value in schema[key]]
+        return result
+
+    def media_shape(node: dict) -> dict:
+        return {kind: shape(value.get("schema", {})) for kind, value in node.get("content", {}).items()}
+
+    for name, schema in public.get("components", {}).get("schemas", {}).items():
+        if shape(schema) != shape(source["components"]["schemas"][name]):
+            raise ValueError(f"Wire schema changed during publication: {name}")
+    for path, item in public["paths"].items():
+        for method in METHODS.intersection(item):
+            original, result = source["paths"][path][method], item[method]
+            for owner in ("requestBody",):
+                if media_shape(original.get(owner, {})) != media_shape(result.get(owner, {})):
+                    raise ValueError(f"Wire body changed during publication: {method} {path}")
+            if set(original["responses"]) != set(result["responses"]):
+                raise ValueError(f"Response status lost during publication: {method} {path}")
+            for status, response in original["responses"].items():
+                if media_shape(response) != media_shape(result["responses"][status]):
+                    raise ValueError(f"Wire response changed during publication: {method} {path} {status}")
+            def parameters(parent: dict, operation: dict) -> list:
+                return [(p.get("name"), p.get("in"), p.get("required"), p.get("$ref"),
+                         shape(p.get("schema", {})), media_shape(p))
+                        for p in parent.get("parameters", []) + operation.get("parameters", [])]
+            if parameters(source["paths"][path], original) != parameters(item, result):
+                raise ValueError(f"Wire parameter changed during publication: {method} {path}")
+
+
 def schema_names(value: object) -> list[str]:
     return sorted({component_id(ref)[1] for ref in references(value) if ref.startswith("#/components/schemas/")})
 
@@ -192,6 +252,25 @@ def model_link(name: str, parent: str = "../schemas/") -> str:
     return f"[{name}]({parent}{name[0].lower()}.md#{name.lower()})"
 
 
+def operation_link(method: str, path: str, topic: str, parent: str = "") -> str:
+    return f"[{method.upper()} `{path}`]({parent}{topic}.md#{heading_id(method + ' ' + path)})"
+
+
+def schema_display(schema: dict) -> str:
+    if "$ref" in schema:
+        label = model_link(component_id(schema["$ref"])[1])
+    elif schema.get("type") == "array":
+        label = "Array of " + schema_display(schema.get("items", {}))
+    elif isinstance(schema.get("additionalProperties"), dict) and schema["additionalProperties"]:
+        label = "Map of " + schema_display(schema["additionalProperties"])
+    elif any(kind in schema for kind in ("oneOf", "allOf", "anyOf")):
+        kind = next(k for k in ("oneOf", "allOf", "anyOf") if k in schema)
+        label = kind + " (" + ", ".join(schema_display(item) for item in schema[kind]) + ")"
+    else:
+        label = f"`{cell(type_label(schema))}`"
+    return label + (" (nullable)" if schema.get("nullable") else "")
+
+
 def constraints(schema: dict) -> str:
     values = []
     for name in ("minimum", "maximum", "exclusiveMinimum", "exclusiveMaximum", "minLength", "maxLength", "minItems", "maxItems", "uniqueItems", "pattern", "readOnly", "writeOnly"):
@@ -210,7 +289,9 @@ def fields_catalog(spec: dict, enum_labels: dict) -> dict[str, bytes]:
     index = ["# Request and response field dictionary", "", "[API Guide](../README.md) · [Endpoint reference](../reference/README.md)", "", "Every referenced component schema is included below. Field names, types, required", "markers, nullability and constraints come from the curated contract. Explanations", "describe contract meaning without inventing unrecorded business rules. A field marked", "not required by the schema can still be required by workflow validation.", "", "Numeric enum labels are checked against the reviewed source declarations. These", "labels explain values; they do not grant a role, provider or lifecycle permission.", "Unknown future values must remain neutral and disable unsafe actions.", "", "| Initial | Models |", "| --- | ---: |"]
     for letter, models in groups.items():
         index.append(f"| [{letter.upper()}]({letter}.md) | {len(models)} |")
-        lines = [f"# Field dictionary: {letter.upper()}", "", "[Dictionary index](README.md) · [API Guide](../README.md)", "", "Requiredness and nullability below are schema metadata, not a replacement for", "workflow validation. Monetary amounts use integer minor units; timestamp fields", "use strict UTC parsing. Private tokens, passwords, document references and", "personal fields must remain outside public logs and examples.", ""]
+        lines = [f"# Field dictionary: {letter.upper()}", "", "[Dictionary index](README.md) · [API Guide](../README.md)", "", "Requiredness and nullability below are schema metadata, not a replacement for", "workflow validation. Monetary amounts use integer minor units; timestamp fields", "use strict UTC parsing. Private tokens, passwords, document references and", "personal fields must remain outside public logs and examples.", "", "The explanation basis distinguishes model-specific meaning, shared conventions,", "name-derived units and type-only entries awaiting semantic review. See the", "[coverage report](../reference/coverage.md); field presence is not semantic completeness.", "", "## Models on this page", ""]
+        lines.extend(f"- [{name}](#{name.lower()})" for name, _ in models)
+        lines.append("")
         for name, schema in models:
             lines.extend([f"## {name}", "", f"**Wire type:** `{type_label(schema)}`. {constraints(schema)}.", ""])
             if "enum" in schema:
@@ -226,14 +307,14 @@ def fields_catalog(spec: dict, enum_labels: dict) -> dict[str, bytes]:
             properties = schema.get("properties", {})
             if properties:
                 required = set(schema.get("required", []))
-                lines.extend(["| Field | Type | Required by schema | Nullability | Meaning | Additional constraints |", "| --- | --- | --- | --- | --- | --- |"])
+                lines.extend(["| Field | Type | Required by schema | Nullability | Meaning | Explanation basis | Additional constraints |", "| --- | --- | --- | --- | --- | --- | --- |"])
                 for field, definition in properties.items():
                     label = type_label(definition)
                     field_type = model_link(component_id(definition["$ref"])[1], "") if "$ref" in definition else f"`{cell(label)}`"
                     if definition.get("type") == "array" and "$ref" in definition.get("items", {}):
                         field_type = model_link(component_id(definition["items"]["$ref"])[1], "") + "[]"
                     null = "Explicitly allowed" if definition.get("nullable") else "Not declared nullable"
-                    lines.append(f"| `{field}` | {field_type} | {'Yes' if field in required else 'No'} | {null} | {cell(field_meaning(field, definition, name))} | {cell(constraints(definition))} |")
+                    lines.append(f"| `{field}` | {field_type} | {'Yes' if field in required else 'No'} | {null} | {cell(field_meaning(field, definition, name))} | {field_basis(field, definition, name)} | {cell(constraints(definition))} |")
                 lines.append("")
             for kind in ("allOf", "oneOf", "anyOf"):
                 if kind in schema:
@@ -248,6 +329,7 @@ def fields_catalog(spec: dict, enum_labels: dict) -> dict[str, bytes]:
                 lines.extend(["This is a scalar/composed model. Follow the recorded type and referenced definitions;", "the schema does not declare a separate property table.", ""])
         outputs[f"schemas/{letter}.md"] = ("\n".join(lines).rstrip() + "\n").encode("utf-8")
     index.extend(["", "Use [wire conventions](../wire-conventions.md) for cross-cutting interpretation and", "[contract limitations](../coverage-and-limitations.md) for metadata gaps.", ""])
+    index.extend(["The [reverse model-usage map](usage.json) lists the operations that use each", "model, including nested references. [Review coverage](../reference/coverage.md)", "distinguishes a complete field inventory from complete semantic explanations.", ""])
     outputs["schemas/README.md"] = "\n".join(index).encode("utf-8")
     return outputs
 
@@ -262,6 +344,11 @@ def catalog(spec: dict, policy: dict) -> dict[str, bytes]:
         op_count = sum(sum(method in METHODS for method in item) for _, item in selected)
         index.append(f"| [{title}]({topic}.md) | {len(selected)} | {op_count} |")
         lines = [f"# {title}", "", "[Reference index](README.md) · [API guide](../README.md)", "", "Access shown here describes bearer metadata only. Anonymous operations can still", "require installation admission, application attestation, contact proof or country", "context. A bearer token does not replace ownership, feature gates or role checks.", "", "Each entry lists recorded schemas, parameters, status codes and mutation guards.", "Response metadata is not a complete list of runtime business outcomes; read the", "[contract limitations](../coverage-and-limitations.md).", ""]
+        lines.extend(["## Operations on this page", ""])
+        for path, item in selected:
+            for method in sorted(METHODS.intersection(item)):
+                lines.append(f"- [{method.upper()} `{path}`](#{heading_id(method + ' ' + path)})")
+        lines.append("")
         for path, item in selected:
             for method in sorted(METHODS.intersection(item)):
                 operation = item[method]
@@ -269,37 +356,34 @@ def catalog(spec: dict, policy: dict) -> dict[str, bytes]:
                 access = "Anonymous bearer metadata" if operation.get("x-allow-anonymous") else "Bearer required" if operation.get("security") else "No bearer requirement recorded; confirm runtime policy"
                 if roles:
                     access += "; declared roles: " + ", ".join(roles)
-                lines.extend([f"## {method.upper()} `{path}`", "", f"**What it does:** {purpose(method, path)}", "", f"**Access:** {access}.", ""])
+                lines.extend([f"## {method.upper()} `{path}`", "", f"**What it does:** {purpose(method, path)}", "", f"**Explanation basis:** {purpose_basis(method, path)}.", "", f"**Access:** {access}.", ""])
                 body = operation.get("requestBody")
                 if body:
-                    schemas = schema_names(body)
                     inline = ", ".join(f"`{kind}`" for kind in body.get("content", {}))
-                    names = ", ".join(model_link(name) for name in schemas) or "inline schema in OpenAPI"
+                    names = "; ".join(dict.fromkeys(schema_display(media.get("schema", {})) for media in body.get("content", {}).values())) or "No body schema recorded"
                     lines.extend([f"**Body:** {names}; {'required' if body.get('required') else 'requiredness not asserted in metadata'}; media types: {inline}.", ""])
                     for media in body.get("content", {}).values():
                         inline_properties = media.get("schema", {}).get("properties", {})
                         if inline_properties:
-                            lines.extend(["| Inline body field | Type | Meaning |", "| --- | --- | --- |"])
+                            required = set(media["schema"].get("required", []))
+                            lines.extend(["| Inline body field | Type | Required | Meaning | Constraints |", "| --- | --- | --- | --- | --- |"])
                             for field, definition in inline_properties.items():
-                                lines.append(f"| `{field}` | `{cell(type_label(definition))}` | {cell(field_meaning(field, definition))} |")
+                                lines.append(f"| `{field}` | {schema_display(definition)} | {'Yes' if field in required else 'No'} | {cell(field_meaning(field, definition))} | {cell(constraints(definition))} |")
                             lines.append("")
                             break
                 parameters = item.get("parameters", []) + operation.get("parameters", [])
                 if parameters:
-                    lines.extend(["| Parameter | Location | Required | Type | Meaning |", "| --- | --- | --- | --- | --- |"])
+                    lines.extend(["| Parameter | Location | Required | Type | Meaning | Constraints |", "| --- | --- | --- | --- | --- | --- |"])
                     for parameter in parameters:
                         if "$ref" in parameter:
-                            lines.append(f"| `{cell(parameter['$ref'])}` | Referenced | See schema | See schema | Referenced parameter contract |")
+                            lines.append(f"| `{cell(parameter['$ref'])}` | Referenced | See schema | See schema | Referenced parameter contract | See OpenAPI |")
                         else:
-                            lines.append(f"| `{cell(parameter['name'])}` | {parameter['in']} | {'Yes' if parameter.get('required') else 'Conditional or optional'} | `{cell(type_label(parameter.get('schema', {})))}` | {cell(field_meaning(parameter['name'], parameter.get('schema', {})))} |")
+                            lines.append(f"| `{cell(parameter['name'])}` | {parameter['in']} | {'Yes' if parameter.get('required') else 'Conditional or optional'} | {schema_display(parameter.get('schema', {}))} | {cell(field_meaning(parameter['name'], parameter.get('schema', {})))} | {cell(constraints(parameter.get('schema', {})))} |")
                     lines.append("")
                 lines.extend(["| Recorded status | Response schema | Media types | Response headers |", "| --- | --- | --- | --- |"])
                 for status, response in operation.get("responses", {}).items():
-                    names = ", ".join(model_link(name) for name in schema_names(response))
                     media = response.get("content", {})
-                    if not names:
-                        inline = sorted({type_label(value["schema"]) for value in media.values() if "schema" in value})
-                        names = ", ".join(f"`{cell(value)}`" for value in inline) or "No typed schema recorded"
+                    names = "; ".join(dict.fromkeys(schema_display(value["schema"]) for value in media.values() if "schema" in value)) or ("No response body (204)" if status == "204" else "No typed schema recorded")
                     media_types = ", ".join(f"`{kind}`" for kind in media) or "None recorded"
                     headers = ", ".join(f"`{name}`" for name in response.get("headers", {})) or "None recorded"
                     lines.append(f"| {status} | {names} | {media_types} | {headers} |")
@@ -315,8 +399,89 @@ def catalog(spec: dict, policy: dict) -> dict[str, bytes]:
                 lines.append("")
         outputs[f"reference/{topic}.md"] = ("\n".join(lines).rstrip() + "\n").encode("utf-8")
     index.extend(["", "The [field dictionary](../schemas/README.md) explains every referenced model and", "the [curated OpenAPI](../openapi/kilodrive-public-v1.json) retains the wire definitions.", "The [snapshot manifest](../openapi/manifest.json) records provenance, scope and checksums.", ""])
+    index.extend(["Search the [all-operation finder](operations.md) or use its", "[JSON index](operations.json). The [coverage report](coverage.md) and", "[review queue](coverage.json) identify incomplete explanations and response metadata.", ""])
     outputs["reference/README.md"] = "\n".join(index).encode("utf-8")
+    outputs.update(navigation_and_coverage(spec, policy))
     return outputs
+
+
+def navigation_and_coverage(spec: dict, policy: dict) -> dict[str, bytes]:
+    """Searchable index and honest semantic/metadata coverage, not pass scores."""
+    from collections import Counter
+    rows, missing, derived = [], [], []
+    model_usage = {name: [] for name in spec["components"].get("schemas", {})}
+    index = ["# All published operations", "", "[Reference index](README.md) · [Coverage and review debt](coverage.md)", "",
+             "Search this page by route, resource or action. Follow a method link for its",
+             "request, response, parameters and authorization metadata. A route-derived",
+             "summary is explicitly distinguished from an operation-specific explanation.", "",
+             "| Operation | Domain | Purpose | Explanation basis |", "| --- | --- | --- | --- |"]
+    for path, item in sorted(spec["paths"].items()):
+        topic = policy["routes"][path]["topic"]
+        for method in sorted(METHODS.intersection(item)):
+            op = item[method]
+            identity = f"{method.upper()} {path}"
+            link = operation_link(method, path, topic)
+            basis = purpose_basis(method, path)
+            index.append(f"| {link} | {topic} | {cell(purpose(method, path))} | {basis} |")
+            rows.append({"method": method.upper(), "path": path, "topic": topic, "purpose": purpose(method, path), "explanationBasis": basis})
+            if basis.startswith("Route-derived"):
+                derived.append(identity)
+            for status, response in op.get("responses", {}).items():
+                if status.startswith("2") and status != "204" and not any("schema" in media for media in response.get("content", {}).values()) and "$ref" not in response:
+                    missing.append({"operation": identity, "status": status, "topic": topic})
+            pending, seen = set(schema_names(op)), set()
+            while pending - seen:
+                name = min(pending - seen)
+                seen.add(name)
+                model_usage[name].append(identity)
+                pending.update(schema_names(spec["components"]["schemas"][name]))
+    basis_counts = Counter()
+    incomplete_models = []
+    for name, schema in spec["components"].get("schemas", {}).items():
+        pending_fields = []
+        for field, definition in schema.get("properties", {}).items():
+            basis = field_basis(field, definition, name)
+            basis_counts[basis] += 1
+            if basis.startswith("Type only"):
+                pending_fields.append(field)
+        if pending_fields:
+            incomplete_models.append({"model": name, "fields": pending_fields})
+    coverage = {"operations": len(rows), "operationSpecificExplanations": len(rows) - len(derived),
+                "routeDerivedSummaries": derived, "fieldExplanationBasis": dict(sorted(basis_counts.items())),
+                "modelsWithTypeOnlyFields": incomplete_models, "untypedSuccessResponses": missing}
+    lines = ["# Reference coverage and review debt", "", "[API Guide](../README.md) · [Operation finder](operations.md)", "",
+             "Generated from the same artifact as the reference. These are documentation",
+             "coverage counts, not test pass rates, release readiness or runtime success rates.", "",
+             "## Endpoint explanations", "",
+             f"- Published operations: **{len(rows)}**.",
+             f"- Operation-specific explanations: **{len(rows) - len(derived)}**.",
+             f"- Route-derived summaries requiring deeper behavior review: **{len(derived)}**.", "",
+             "Both kinds preserve the recorded wire contract. A route-derived summary must",
+             "not be mistaken for a reviewed state machine or an exhaustive permission rule.", "",
+             "## Field explanations", "", "| Basis | Properties |", "| --- | ---: |"]
+    lines.extend(f"| {basis} | {count} |" for basis, count in sorted(basis_counts.items()))
+    lines.extend(["", "Shared or naming conventions explain representation, not every business rule.",
+                  "The [machine-readable review queue](coverage.json) lists every type-only field",
+                  "and route-derived operation so omissions remain actionable. The",
+                  "[model usage map](../schemas/usage.json) connects each model to all published",
+                  "operations that use it, including nested models.", "", "## Untyped success responses", "",
+                  "An untyped result is a source-contract documentation gap, not proof of an empty",
+                  "runtime body. Intentional HTTP 204 responses are excluded. Update the canonical",
+                  "source response annotation and contract tests before regenerating this reference.", "",
+                  "| Operation | Status without a typed body |", "| --- | --- |"])
+    for entry in missing:
+        method, path = entry["operation"].split(" ", 1)
+        lines.append(f"| {operation_link(method.lower(), path, entry['topic'])} | {entry['status']} |")
+    lines.extend(["", "## Remediation order", "",
+                  "1. Clarify identity, money, eligibility and document-handling contracts first.",
+                  "2. Review the controller, validator and handler together; add model-specific",
+                  "   descriptions where a shared name is ambiguous.",
+                  "3. Correct missing status/body annotations in the private canonical API contract.",
+                  "4. Add focused publication tests, regenerate and compare wire shapes with source.",
+                  "5. Record provider/device observations separately; documentation cannot certify them.", ""])
+    return {"reference/operations.md": ("\n".join(index) + "\n").encode(),
+            "reference/operations.json": encoded(rows), "reference/coverage.json": encoded(coverage),
+            "reference/coverage.md": "\n".join(lines).encode(), "schemas/usage.json": encoded(model_usage)}
 
 
 def counts(spec: dict) -> dict:
@@ -378,17 +543,23 @@ def validate_bundle(spec: dict, policy: dict) -> None:
             if f"#/components/{group}/{name}" not in seen:
                 raise ValueError(f"Unreferenced component leaked into public export: {name}")
     for group, entries in spec.get("components", {}).items():
-        if any(re.match(r"^(?:Admin|SystemAdmin)", name) for name in entries):
+        if any(re.match(r"^(?:Admin|SystemAdmin|TenantAdmin)", name) for name in entries):
             raise ValueError(f"Administrative component in {group}")
     # Descriptions generated locally are allowed; copied examples and defaults are not.
-    def visit(value: object) -> None:
+    def visit(value: object, named_map: bool = False) -> None:
         if isinstance(value, dict):
             for key, child in value.items():
-                if key in {"example", "examples", "default", "callbacks", "links", "externalDocs"}:
+                if not named_map and key in {"example", "examples", "default", "callbacks", "links", "externalDocs"}:
                     raise ValueError(f"Unreviewed source content retained: {key}")
-                if key.startswith("x-") and key not in ALLOWED_EXTENSIONS:
+                if not named_map and key.startswith("x-") and key not in ALLOWED_EXTENSIONS:
                     raise ValueError(f"Unreviewed operational extension: {key}")
-                visit(child)
+                if not named_map and key == "components":
+                    for entries in child.values():
+                        visit(entries, True)
+                elif not named_map and key in LITERAL_VALUES:
+                    continue
+                else:
+                    visit(child, not named_map and key in NAMED_MAPS | {"paths"})
         elif isinstance(value, list):
             for child in value:
                 visit(child)
@@ -416,6 +587,8 @@ def generate(source_root: Path, commit: str, reviewed_date: str) -> None:
     policy = json.loads(policy_bytes)
     spec = export(source, policy)
     validate_bundle(spec, policy)
+    verify_wire_parity(source, spec)
+    validate_explanations(spec)
     versions = {}
     for name, folder in (("consumer", "mobile"), ("systemAdmin", "system_admin")):
         text = (source_root / "src/client" / folder / "pubspec.yaml").read_text(encoding="utf-8-sig")
@@ -438,10 +611,10 @@ def generate(source_root: Path, commit: str, reviewed_date: str) -> None:
     spec_hash = digest(outputs["openapi/kilodrive-public-v1.json"])
     outputs["openapi/kilodrive-public-v1.json.sha256"] = f"{spec_hash}  kilodrive-public-v1.json\n".encode()
     manifest = {
-        "exportVersion": 1, "reviewedDate": reviewed_date,
+        "exportVersion": 2, "reviewedDate": reviewed_date,
         "source": {"commit": commit, "contractSha256": digest(source_bytes), **versions,
                    "paths": len(source["paths"]), "operations": counts(source)["operations"]},
-        "public": counts(spec), "publicationPolicySha256": digest(policy_bytes),
+        "public": counts(spec), "wireParityVerified": True, "publicationPolicySha256": digest(policy_bytes),
         "enumLabelsSha256": digest(enum_path.read_bytes()),
         "omissions": ["administrative and cross-workspace contracts", "provider webhooks and callback contracts", "operational diagnostics and infrastructure contracts", "source descriptions, examples, defaults and defensive thresholds", "unreferenced components"],
         "artifacts": {name: digest(data) for name, data in sorted(outputs.items())},
@@ -460,11 +633,22 @@ def extract_enum_labels(source_root: Path, spec: dict) -> dict:
     source_files.extend((source_root / "src/shared/KiloDrive.Contracts").rglob("*.cs"))
     texts = [(path, re.sub(r"/\*.*?\*/|//[^\n]*", "", path.read_text(encoding="utf-8-sig"), flags=re.S))
              for path in source_files]
-    constants: dict[str, int] = {}
-    for _, text in texts:
+    constants: dict[str, tuple[int, Path]] = {}
+    verified_files: set[Path] = set()
+
+    def verify_committed(path: Path) -> None:
+        if path in verified_files:
+            return
+        relative = path.relative_to(source_root).as_posix()
+        committed = subprocess.check_output(["git", "show", f"HEAD:{relative}"], cwd=source_root).decode("utf-8-sig")
+        if committed.replace("\r\n", "\n") != path.read_text(encoding="utf-8-sig").replace("\r\n", "\n"):
+            raise ValueError(f"Working enum input differs from committed source: {relative}")
+        verified_files.add(path)
+
+    for path, text in texts:
         for block in re.finditer(r"\bclass\s+(\w+)\s*\{([^}]+)\}", text, re.S):
             for value in re.finditer(r"\bconst\s+int\s+(\w+)\s*=\s*(-?\d+)\s*;", block[2]):
-                constants[f"{block[1]}.{value[1]}"] = int(value[2])
+                constants[f"{block[1]}.{value[1]}"] = (int(value[2]), path)
 
     def expression_value(expression: str, known: dict) -> int:
         expression = re.sub(r"(?<=\d)[lL]\b", "", expression)
@@ -476,7 +660,9 @@ def extract_enum_labels(source_root: Path, spec: dict) -> dict:
             if isinstance(value, ast.Name):
                 return known[value.id]
             if isinstance(value, ast.Attribute) and isinstance(value.value, ast.Name):
-                return constants[f"{value.value.id}.{value.attr}"]
+                number, path = constants[f"{value.value.id}.{value.attr}"]
+                verify_committed(path)
+                return number
             if isinstance(value, ast.UnaryOp) and isinstance(value.op, ast.USub):
                 return -interpret(value.operand)
             if isinstance(value, ast.BinOp):
@@ -513,22 +699,32 @@ def extract_enum_labels(source_root: Path, spec: dict) -> dict:
                 raise ValueError(f"Conflicting source declarations for {name}")
             found[name] = labels
             # Do not attach enum labels from uncommitted source changes.
-            relative = path.relative_to(source_root).as_posix()
-            committed = subprocess.check_output(["git", "show", f"HEAD:{relative}"], cwd=source_root).decode("utf-8-sig")
-            if committed.replace("\r\n", "\n") != path.read_text(encoding="utf-8-sig").replace("\r\n", "\n"):
-                raise ValueError(f"Working enum declaration differs from committed source: {name}")
+            verify_committed(path)
     for name, values in wanted.items():
         if set(found.get(name, {})) != {str(value) for value in values}:
             raise ValueError(f"Source enum labels do not exactly cover the public wire values: {name}")
     return dict(sorted(found.items()))
 
 
-def check() -> None:
+def validate_explanations(spec: dict) -> None:
+    from api_context import OPERATIONS, MODEL_FIELDS
+    from public_api_semantics import PURPOSES
+    for method, path in set(PURPOSES) | set(OPERATIONS):
+        if method not in spec["paths"].get(path, {}):
+            raise ValueError(f"Explanation refers to a missing operation: {method} {path}")
+    for name, fields in MODEL_FIELDS.items():
+        properties = spec["components"]["schemas"].get(name, {}).get("properties", {})
+        if set(fields) - set(properties):
+            raise ValueError(f"Explanation refers to missing properties: {name}")
+
+
+def check(source_root: Path | None = None) -> None:
     spec = json.loads(SPEC.read_bytes())
     policy_bytes = (API / "publication-policy.json").read_bytes()
     policy = json.loads(policy_bytes)
     manifest = json.loads((API / "openapi/manifest.json").read_bytes())
     validate_bundle(spec, policy)
+    validate_explanations(spec)
     if counts(spec) != manifest["public"]:
         raise ValueError("Public counts differ from manifest")
     if digest(policy_bytes) != manifest["publicationPolicySha256"]:
@@ -550,9 +746,17 @@ def check() -> None:
             raise ValueError(f"Generated artifact differs from manifest: {name}")
     regenerated = catalog(spec, policy)
     regenerated.update(fields_catalog(spec, json.loads(enum_bytes)))
+    expected_names = set(regenerated) | {"openapi/kilodrive-public-v1.json", "openapi/kilodrive-public-v1.json.sha256"}
+    if set(manifest["artifacts"]) != expected_names:
+        raise ValueError("Manifest must cover exactly the generated artifact set")
     for name, expected in regenerated.items():
         if (API / name).read_bytes() != expected:
             raise ValueError(f"Generated endpoint catalog is stale: {name}")
+    if source_root:
+        private = source_root / "docs/contracts/openapi/kilodrive-v1.json"
+        if digest(private.read_bytes()) != manifest["source"]["contractSha256"]:
+            raise ValueError("Verification source is not the manifest contract")
+        verify_wire_parity(json.loads(private.read_bytes()), spec)
     print(f"Public API verification passed: {manifest['public']}; source {manifest['source']['commit']}")
 
 
@@ -564,7 +768,7 @@ def main() -> None:
     parser.add_argument("--reviewed-date")
     args = parser.parse_args()
     if args.check:
-        check()
+        check(args.source_root)
     elif args.source_root and args.source_commit and args.reviewed_date:
         generate(args.source_root, args.source_commit, args.reviewed_date)
         check()

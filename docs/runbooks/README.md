@@ -19,7 +19,7 @@ environment-specific commands remain in restricted operational material.
 
 | Runbook | Use it when | Recovery goal |
 | --- | --- | --- |
-| [Build-168 operational handover](build168-operational-handover.md) | Investigating the current membership, session, notification or queue changes | Distinguish current authority and exact executed evidence from historical tests or unperformed certification |
+| [Build-168 operational handover](build168-operational-handover.md) | Investigating the build-168 membership, session, notification or queue checkpoint | Distinguish current authority and exact executed evidence from historical tests or unperformed certification |
 | [API deployment](api-deployment.md) | An approved API build is being released or rolled back | Prove the intended binary and compatible schema are serving traffic |
 | [Portal and website release](portal-website-release.md) | A browser application is being released | Preserve security headers, localization, API contracts, and rollback |
 | [Content Security Policy change](csp-policy-change.md) | A Portal or corporate-site resource needs a production CSP change | Stage, probe, approve, activate, or roll back a parsed policy without weakening the web boundary |

@@ -7,7 +7,7 @@
 
 ## Release facts and evidence source
 
-Current source: consumer **1.0.0+168**, separate System Admin **0.1.0+10**,
+Historical build-168 source snapshot: consumer **1.0.0+168**, separate System Admin **0.1.0+10**,
 schema **2026.10.02.3**, read from the application's two pubspecs and canonical
 schema contract. The reviewed application source is
 [commit df37a2a7](https://github.com/KiloDriveApp/KiloDrive/commit/df37a2a7bac8810ea74c570434dc9a68fa22901b).

@@ -29,3 +29,7 @@ before implementing a protected operation. Defaults and source examples are inte
 The [field dictionary](../schemas/README.md) explains every referenced model and
 the [curated OpenAPI](../openapi/kilodrive-public-v1.json) retains the wire definitions.
 The [snapshot manifest](../openapi/manifest.json) records provenance, scope and checksums.
+
+Search the [all-operation finder](operations.md) or use its
+[JSON index](operations.json). The [coverage report](coverage.md) and
+[review queue](coverage.json) identify incomplete explanations and response metadata.

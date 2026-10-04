@@ -14,6 +14,7 @@ support, policies, releases and the consumer download.
 
 | Chapter | Question it answers |
 | --- | --- |
+| [Current baseline and evidence](../current-baseline.md) | Which source was inspected, what changed, and what do historical tests or current documentation actually prove? |
 | [API Guide and endpoint reference](../api/README.md) | What does each published operation do, what do its fields mean, and how do authorization and safe recovery apply? |
 | [System context](system-context.md) | Who uses KiloDrive and what sits inside or outside the trust boundary? |
 | [Capability status](capability-status.md) | What is implemented, incremental, or planned in source, and what is configurable, uncertified, certified, active, or unavailable in deployment? |

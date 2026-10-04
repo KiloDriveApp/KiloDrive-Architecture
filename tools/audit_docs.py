@@ -11,8 +11,11 @@ from __future__ import annotations
 
 import re
 import sys
+import os
 from pathlib import Path
 from urllib.parse import unquote
+from functools import lru_cache
+from doc_links import anchors, without_fences
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,7 +35,7 @@ SECRET_PATTERNS = {
         r"\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})\b"
     ),
     "AWS account ARN": re.compile(r"arn:aws[a-z-]*:[^:\s]*:[^:\s]*:\d{12}:[^\s]+"),
-    "AWS account ID": re.compile(r"(?<![\d-])\d{12}(?![\d-])"),
+    "AWS account ID": re.compile(r"(?<![\w-])\d{12}(?![\w-])"),
     "AWS instance ID": re.compile(r"\bi-[0-9a-f]{8,17}\b"),
     "presigned AWS URL": re.compile(r"(?i)[?&]X-Amz-(?:Credential|Signature)="),
     "bearer token": re.compile(r"(?i)\bAuthorization\s*:\s*Bearer\s+(?!<|\$\{|\{\{)[A-Za-z0-9._~+/=-]{20,}"),
@@ -43,6 +46,10 @@ REQUIRED_PATHS = (
     "CONTRIBUTING.md",
     "SECURITY.md",
     "docs/README.md",
+    "docs/current-baseline.md",
+    "docs/quality/documentation-audit-2026-10-03.md",
+    "docs/api/reference/operations.md",
+    "docs/api/reference/coverage.md",
     "docs/further-reading.md",
     "docs/api/README.md",
     "docs/api/reference/README.md",
@@ -140,16 +147,21 @@ def has_case_exact_path(path: Path) -> bool:
     return True
 
 
+@lru_cache(maxsize=512)
+def file_anchors(path: Path) -> set[str]:
+    return anchors(path.read_text(encoding="utf-8"))
+
+
 def relative_link_errors(path: Path, text: str) -> list[str]:
     errors: list[str] = []
-    for raw_target in MARKDOWN_LINK.findall(text):
+    for raw_target in MARKDOWN_LINK.findall(without_fences(text)):
         target = raw_target.strip().split(maxsplit=1)[0].strip("<>\"")
-        if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+        if not target or target.startswith(("http://", "https://", "mailto:")):
             continue
-        target_path = unquote(target.split("#", 1)[0])
-        if not target_path:
-            continue
-        resolved = (path.parent / target_path).resolve()
+        parts = target.split("#", 1)
+        target_path = unquote(parts[0])
+        fragment = unquote(parts[1]) if len(parts) == 2 else None
+        resolved = (path.parent / target_path).resolve() if target_path else path.resolve()
         try:
             resolved.relative_to(ROOT)
         except ValueError:
@@ -157,10 +169,12 @@ def relative_link_errors(path: Path, text: str) -> list[str]:
             continue
         if not resolved.exists():
             errors.append(f"{path.relative_to(ROOT)}: missing link target: {target}")
-        elif not has_case_exact_path(resolved):
+        elif not has_case_exact_path(Path(os.path.abspath(path.parent / target_path)) if target_path else path):
             errors.append(
                 f"{path.relative_to(ROOT)}: link target case does not match disk: {target}"
             )
+        elif fragment and resolved.suffix.lower() == ".md" and fragment not in file_anchors(resolved):
+            errors.append(f"{path.relative_to(ROOT)}: missing heading anchor: {target}")
     return errors
 
 
@@ -237,14 +251,6 @@ def main() -> int:
             continue
         for name, pattern in SECRET_PATTERNS.items():
             for match in pattern.finditer(text):
-                # A checked SHA-256 artifact digest can contain twelve digits.
-                # Skip only a substring inside an entire quoted 64-hex value;
-                # standalone account numbers and ARNs remain detected.
-                if name == "AWS account ID" and any(
-                    value.start(1) <= match.start() and match.end() <= value.end(1)
-                    for value in re.finditer(r'"([0-9a-f]{64})"', text)
-                ):
-                    continue
                 line = text.count("\n", 0, match.start()) + 1
                 errors.append(f"{path.relative_to(ROOT)}:{line}: possible {name}")
         if path.suffix.lower() == ".md":

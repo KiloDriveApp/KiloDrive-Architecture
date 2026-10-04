@@ -56,13 +56,19 @@ because this is a curated export, not a copy of the private contract.
 | [Coverage and limitations](coverage-and-limitations.md) | What is excluded, incomplete or dependent on external configuration? |
 | [Versioning and publication](versioning-and-publication.md) | How is the guide kept accurate without exposing the full private API? |
 | [Endpoint reference](reference/README.md) | Which exact methods, routes, parameters, DTOs and recorded statuses are in this snapshot? |
+| [Operation finder](reference/operations.md) | Where can I search every published method and route on one page? |
+| [Coverage and review queue](reference/coverage.md) | Which explanations are specific, which are derived, and which source responses lack typed metadata? |
 | [Field dictionary](schemas/README.md) | What does every referenced request/response field mean, with its type, requiredness, nullability and constraints? |
 
 The endpoint reference has one page per domain, with a purpose explanation for
-every operation and links to its models. The field dictionary covers **4,989
+every operation and links to its models. The field dictionary covers **5,012
 model properties and 103 numeric enums**, including source-verified enum labels.
 The OpenAPI defines request and
 response fields; the narrative chapters explain their meaning and safe use.
+Explanation labels distinguish model-specific meanings from shared conventions
+and type-only descriptions. A listed field is not proof that its business
+meaning has been fully reviewed. The [model usage map](schemas/usage.json)
+shows which operations use each schema, including nested references.
 Neither should replace the other. In particular, a generated schema cannot
 prove ownership, compliance, provider readiness or correctness after a lost
 response.

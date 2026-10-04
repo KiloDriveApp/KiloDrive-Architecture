@@ -21,10 +21,17 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
+Use the [current baseline and evidence guide](current-baseline.md) for the
+source snapshot and the distinction between implementation and certification.
+The [documentation correction record](quality/documentation-audit-2026-10-03.md)
+also records omissions, fixes and the remaining review queue.
+
 The current published API documentation snapshot is the
 [API Guide](api/README.md), derived from reviewed consumer `1.0.0+172`,
 System Admin `0.1.0+16` and schema `2026.10.03.1`. It includes 528 operation
-explanations and a complete field dictionary for the curated subset. These
+entries and a field dictionary covering the curated subset. The
+[coverage report](api/reference/coverage.md) identifies route-derived summaries
+and fields that still need detailed semantic review. These
 are source provenance, not a claim that every native/provider journey is certified.
 
 The earlier source and bounded-release checkpoint is the

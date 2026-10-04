@@ -40,7 +40,10 @@ currencies' exponents.
 
 ## Authoritative foreign exchange
 
-The control database owns one versioned FX catalogue and maker-checker lifecycle.
+The control database owns one versioned FX catalogue and approval lifecycle.
+Independent second approval is a domain policy, not an unconditional requirement;
+the reviewed source defaults to one authorized reviewer. See the
+[approval-policy explanation](system-admin-mobile-app.md#approval-policy-and-restricted-viewing).
 Application settings, web lookups and provider responses cannot become a second
 runtime rate authority. A customer quote binds source/destination currencies,
 rate version, fee-policy version, purpose, provider/environment, account,

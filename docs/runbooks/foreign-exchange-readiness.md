@@ -39,7 +39,8 @@ opens a reconciliation case, or operators need to activate/suspend a pair.
    effective/freshness times, exact direction and reason.
 2. Verify representative conversions and fee totals at small, typical and
    boundary amounts.
-3. Obtain independent approval. Schedule or activate using the expected
+3. Read the effective approval policy. Obtain a distinct approver when it is
+   enabled; otherwise one authorized reviewer can decide. Schedule or activate using the expected
    revision and original administrative idempotency key.
 4. Reconcile open operations against their own snapshots.
 5. Correct money only through a reviewed compensating posting linked to the
@@ -58,7 +59,7 @@ opens a reconciliation case, or operators need to activate/suspend a pair.
 
 ## Abort and rollback
 
-Abort if maker-checker separation, evidence hash, effective window, currency
+Abort if the configured approval policy, evidence hash, effective window, currency
 metadata, provider mapping or representative conversion is wrong. Rollback is
 a newly reviewed version using the prior value; never reactivate a superseded
 row or rewrite history.

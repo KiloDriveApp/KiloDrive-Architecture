@@ -12,18 +12,29 @@ a sanitized, machine-readable
 [CycloneDX 1.6 direct-dependency baseline](kilodrive-public-direct.cdx.json) and
 its [SHA-256 sidecar](kilodrive-public-direct.cdx.json.sha256).
 
-That public artifact is deliberately labelled `direct-only` and
+That public artifact is deliberately labelled `direct-and-explicit-overrides` and
 `authoritative-release-sbom=false`. It proves the reviewed direct coordinates at
 this documentation baseline; it does not pretend to be the complete SBOM for a
 signed release. The private release pipeline produces the authoritative direct,
 transitive, native, asset, and toolchain graph from the exact clean build and
 binds it to the API, Portal, Website, APK, AAB, and IPA artifacts.
 
+The refreshed public baseline covers both consumer and System Admin Flutter
+apps plus the tracked .NET projects. It records their source revision and app
+versions and contains **117 package coordinates**, including explicitly declared
+overrides. The generated [readable inventory](direct-packages.md) identifies
+owners, scope and origin. Different app versions of one dependency stay separate.
+Reviewed vendored forks have distinct generic coordinates and are not labelled
+as unmodified packages from pub.dev. Arbitrary local or Git dependencies require
+an explicit publication review before export.
+
 ## Public baseline generation and verification
 
 The standard-library generator reads central NuGet metadata, actual project
-references, Flutter `pubspec.yaml`, and `pubspec.lock` from an authorized clean
-source checkout. It emits no repository path or infrastructure identifier.
+references, both apps' `pubspec.yaml` and `pubspec.lock`, and the reviewed fork
+manifests from an authorized checkout. Dependency inputs must agree with the
+source commit; tracked project selection excludes build/artifact copies. It
+emits no host path or infrastructure identifier.
 
 ```text
 python tools/generate_public_sbom.py --generate \
@@ -34,7 +45,8 @@ python tools/generate_public_sbom.py --check
 
 CI performs the second command. It verifies CycloneDX format and version, root
 and component identity, unique purls, NuGet and Pub coverage,
-sensitive-pattern absence, and the SHA-256 sidecar. Regeneration belongs in the
+sensitive-pattern absence, owner coverage, dependency references, the generated
+readable inventory and the SHA-256 sidecar. Regeneration belongs in the
 documentation change that updates the package baseline.
 
 The exact generated release notice bundle is retained with restricted release

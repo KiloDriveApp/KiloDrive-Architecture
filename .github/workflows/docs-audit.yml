@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: "22"
       - name: Compile audit tooling
-        run: python -m py_compile tools/audit_docs.py tools/generate_public_sbom.py tools/public_api.py tools/public_api_semantics.py tools/test_public_api.py
+        run: python -m compileall -q tools
       - name: Check relative links and public-safe content
         run: python tools/audit_docs.py
       - name: Verify public CycloneDX baseline and hash
@@ -33,7 +33,7 @@ jobs:
       - name: Verify curated API contract, dictionary and publication boundary
         run: |
           python tools/public_api.py --check
-          python -m unittest discover -s tools -p "test_public_api.py"
+          python -m unittest discover -s tools -p "test_*.py"
       - name: Validate OpenAPI 3 syntax and local references
         run: |
           python -m pip install --disable-pip-version-check openapi-spec-validator==0.7.2

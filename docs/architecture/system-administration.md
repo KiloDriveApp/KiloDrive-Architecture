@@ -11,14 +11,14 @@ The mobile control plane is now a **separate Android/iOS System Admin Flutter
 app** in `src/client/system_admin`. The consumer package no longer contains
 operative System Admin screens, routes or mutations. The Portal remains a
 separate browser surface. The app split does not relax server authorization or
-certify the many workflows still migrating from the archived consumer-admin
-surface. The [2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+certify parity with every archived consumer-admin workflow. The historical
+[2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
 maps ownership, adapters, notifications, device trust and release limits.
 The [dedicated System Admin mobile chapter](system-admin-mobile-app.md) explains
 the operator experience and currently migrated workspaces in more detail.
 
 - **Historical reviewed baseline below:** consumer `1.0.0+144`, schema contract `2026.09.23.2`
-- **Current local source checkpoint:** consumer `1.0.0+159`, separate Admin `0.1.0+4`, schema contract `2026.09.30.2`; not a signed release claim
+- **Current source authority:** [2026-10-03 baseline](../current-baseline.md); earlier build references below remain historical
 - **Source status:** implemented incrementally across API, Flutter, and Portal
 - **Runtime status:** capability-, country-, role-, and feature-policy-dependent
 - **Not claimed:** complete mobile/Portal parity, universal country activation,
@@ -36,7 +36,8 @@ acknowledgement backlog, reconciliation exceptions, notification delivery,
 device enforcement, fraud thresholds, and onboarding SLA. A green feature flag
 alone is never labelled production certified.
 
-Foreign-exchange administration is a maker-checker workspace. Operators can
+Foreign-exchange administration is a versioned approval workspace with optional
+independent-review policy. Operators can
 propose, review, schedule, activate, suspend and supersede versioned rates while
 seeing source classification, freshness, evidence hash and impacted purposes.
 The client cannot edit historical transaction snapshots or bypass quote expiry.

@@ -1,0 +1,3889 @@
+{
+  "AcceptBidDto": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept"
+  ],
+  "AcceptDeliveryBidAuthorizationDto": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "AcceptLegalDocumentDto": [
+    "POST /api/v1/legal-acceptances"
+  ],
+  "AcceptRentalTeamInvitationDto": [
+    "POST /api/v1/rental-partner/team/invitations/accept"
+  ],
+  "AcceptTravelInvitationDto": [
+    "POST /api/v1/travel-profiles/invitations/accept"
+  ],
+  "AccountSetupItemDto": [
+    "GET /api/v1/account/setup-progress"
+  ],
+  "AccountSetupProgressDto": [
+    "GET /api/v1/account/setup-progress"
+  ],
+  "AddFavoriteDto": [
+    "POST /api/v1/favorites"
+  ],
+  "AddOdometerReadingDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer"
+  ],
+  "AddRentalVehicleImageDto": [
+    "POST /api/v1/rental-partner/vehicles/{vehicleId}/images"
+  ],
+  "AddTravelMemberDto": [
+    "POST /api/v1/travel-profiles/{profileId}/members"
+  ],
+  "AddTravelMemberResultDto": [
+    "POST /api/v1/travel-profiles/{profileId}/members"
+  ],
+  "AddVehicleBrakeDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes"
+  ],
+  "AddVehicleExpenseDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses"
+  ],
+  "AddVehicleTyreDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "AddWalletRecipientDto": [
+    "POST /api/v1/wallet/recipients"
+  ],
+  "AmortizationPdfRowDto": [
+    "POST /api/v1/tools/calculators/export/pdf"
+  ],
+  "AppReleaseCorrectionNoticeDto": [
+    "GET /api/v1/app-releases/current",
+    "GET /api/v1/app-releases/{version}",
+    "GET /api/v1/app-releases/{version}/build/{build}"
+  ],
+  "AppReleaseDetailDto": [
+    "GET /api/v1/app-releases/current",
+    "GET /api/v1/app-releases/{version}",
+    "GET /api/v1/app-releases/{version}/build/{build}"
+  ],
+  "AppReleaseImprovementDto": [
+    "GET /api/v1/app-releases/current",
+    "GET /api/v1/app-releases/{version}",
+    "GET /api/v1/app-releases/{version}/build/{build}"
+  ],
+  "AppReleaseListDto": [
+    "GET /api/v1/app-releases"
+  ],
+  "AppReleaseSummaryDto": [
+    "GET /api/v1/app-releases",
+    "GET /api/v1/app-version-policy"
+  ],
+  "AppVersionPolicyDto": [
+    "GET /api/v1/app-version-policy"
+  ],
+  "AuthResponse": [
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/refresh",
+    "POST /api/v1/auth/register",
+    "POST /api/v1/auth/social"
+  ],
+  "AuthorizeRentalBookingPaymentDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/payment-authorized"
+  ],
+  "BankBranchReferenceDto": [
+    "GET /api/v1/reference-data/banks"
+  ],
+  "BankReferenceDto": [
+    "GET /api/v1/reference-data/banks"
+  ],
+  "BankTransferTopUpDto": [
+    "GET /api/v1/wallet/topup/bank-transfers"
+  ],
+  "BeginContactTwoFactorEnrollmentRequest": [
+    "POST /api/v1/auth/2fa/enroll/contact/request-code"
+  ],
+  "BidStatus": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids"
+  ],
+  "BidType": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids"
+  ],
+  "BillingHistoryItemDto": [
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "BillingModeDto": [
+    "PUT /api/v1/driver/billing/mode",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "BillingPaymentMethodDto": [
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "BlockDriverByIdentifierDto": [
+    "POST /api/v1/user-blocks/driver"
+  ],
+  "BlogCatalogDto": [
+    "GET /api/v1/blog"
+  ],
+  "BlogPostDto": [
+    "GET /api/v1/blog/{slug}"
+  ],
+  "BlogPostSummaryDto": [
+    "GET /api/v1/blog"
+  ],
+  "BlogTaxonomyDto": [
+    "GET /api/v1/blog",
+    "GET /api/v1/blog/{slug}"
+  ],
+  "BlogTocItemDto": [
+    "GET /api/v1/blog/{slug}"
+  ],
+  "BulkDeliveryItemResultDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk"
+  ],
+  "BulkDeliveryRequestDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk"
+  ],
+  "BulkDeliveryResultDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk"
+  ],
+  "BusinessShippingAccountDto": [
+    "GET /api/v1/business-shipping/accounts",
+    "POST /api/v1/business-shipping/accounts"
+  ],
+  "BusinessShippingAccountStatus": [
+    "GET /api/v1/business-shipping/accounts",
+    "POST /api/v1/business-shipping/accounts"
+  ],
+  "BusinessShippingMemberDto": [
+    "GET /api/v1/business-shipping/accounts/{accountId}/members",
+    "PUT /api/v1/business-shipping/accounts/{accountId}/members"
+  ],
+  "CalculatorPdfRequest": [
+    "POST /api/v1/tools/calculators/export/pdf"
+  ],
+  "CalculatorPdfRowDto": [
+    "POST /api/v1/tools/calculators/export/pdf"
+  ],
+  "CampaignChannel": [
+    "GET /api/v1/campaign-inbox",
+    "POST /api/v1/campaign-inbox/{id}/acknowledge"
+  ],
+  "CampaignInboxItemDto": [
+    "GET /api/v1/campaign-inbox",
+    "POST /api/v1/campaign-inbox/{id}/acknowledge"
+  ],
+  "CancelPendingMembershipChangeRequest": [
+    "POST /api/v1/driver/membership/pending-change/cancel"
+  ],
+  "CancelRentalBookingDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/cancel"
+  ],
+  "CancelRequest": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/cancel",
+    "POST /api/v1/driver/deliveries/{deliveryId}/cancel",
+    "POST /api/v1/rides/{rideRequestId}/cancel",
+    "POST /api/v1/trips/{tripId}/cancel",
+    "POST /api/v1/trips/{tripId}/reservation/decline"
+  ],
+  "CashoutDto": [
+    "GET /api/v1/wallet/cashout",
+    "POST /api/v1/wallet/cashout"
+  ],
+  "CashoutLimitsDto": [
+    "GET /api/v1/wallet/cashout/limits"
+  ],
+  "CashoutReconciliationState": [
+    "GET /api/v1/wallet/cashout/{cashoutId}/status"
+  ],
+  "CashoutSettlementState": [
+    "GET /api/v1/wallet/cashout/{cashoutId}/status"
+  ],
+  "CashoutStatus": [
+    "GET /api/v1/wallet/cashout",
+    "POST /api/v1/wallet/cashout"
+  ],
+  "CashoutStatusHistoryEntryDto": [
+    "GET /api/v1/wallet/cashout/{cashoutId}/status"
+  ],
+  "CashoutStatusResourceDto": [
+    "GET /api/v1/wallet/cashout/{cashoutId}/status"
+  ],
+  "ChatMessageCommitOutcome": [
+    "GET /api/v1/trips/{tripId}/chat",
+    "POST /api/v1/trips/{tripId}/chat"
+  ],
+  "ChatMessageDto": [
+    "GET /api/v1/trips/{tripId}/chat",
+    "POST /api/v1/trips/{tripId}/chat"
+  ],
+  "CloseSupportCaseDto": [
+    "POST /api/v1/support/tickets/{ticketId}/close",
+    "POST /api/v1/support/tickets/{ticketId}/close/recoverable"
+  ],
+  "CompleteDriverOnboardingDto": [
+    "POST /api/v1/driver/profile/onboarding/complete"
+  ],
+  "CompleteProfileDto": [
+    "PUT /api/v1/account/complete-profile"
+  ],
+  "CompleteTripRequest": [
+    "POST /api/v1/trips/{tripId}/complete"
+  ],
+  "CompleteVehicleServiceDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services"
+  ],
+  "ConfigureFareSplitDto": [
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "ConfirmContactTwoFactorEnrollmentRequest": [
+    "POST /api/v1/auth/2fa/enroll/contact/confirm"
+  ],
+  "ConfirmDeliveryVerificationDto": [
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete"
+  ],
+  "ConfirmDriverOnboardingStepDto": [
+    "POST /api/v1/driver/profile/onboarding/step"
+  ],
+  "ConfirmEmailLoginDto": [
+    "POST /api/v1/auth/login/email/confirm"
+  ],
+  "ConfirmEmailVerificationDto": [
+    "POST /api/v1/account/contact-details/email/confirm"
+  ],
+  "ConfirmPasswordResetRequest": [
+    "POST /api/v1/auth/password-reset/confirm"
+  ],
+  "ConfirmPendingSocialLinkRequest": [
+    "POST /api/v1/auth/social-link-intents/confirm"
+  ],
+  "ConfirmPhoneContactVerificationDto": [
+    "POST /api/v1/account/contact-details/phone/confirm"
+  ],
+  "ConfirmPhoneLoginDto": [
+    "POST /api/v1/auth/login/phone/confirm"
+  ],
+  "ConfirmPhoneVerificationRequest": [
+    "POST /api/v1/auth/phone-verification/confirm"
+  ],
+  "ConfirmSupervisedHandoffDto": [
+    "POST /api/v1/supervised-trips/{tripId}/handoff"
+  ],
+  "ContactDetailsDto": [
+    "GET /api/v1/account/contact-details",
+    "PUT /api/v1/account/contact-details"
+  ],
+  "ContactTwoFactorEnrollmentDto": [
+    "POST /api/v1/auth/2fa/enroll/contact/request-code",
+    "POST /api/v1/auth/login/2fa/request-code"
+  ],
+  "ContactVerificationChallengeDto": [
+    "POST /api/v1/account/contact-details/email/request-code",
+    "POST /api/v1/account/contact-details/phone/request-code"
+  ],
+  "ContentPageDto": [
+    "GET /api/v1/content",
+    "GET /api/v1/content/{slug}"
+  ],
+  "CorporateAccountDto": [
+    "GET /api/v1/corporate/accounts",
+    "POST /api/v1/corporate/accounts"
+  ],
+  "CorporateAccountStatus": [
+    "GET /api/v1/corporate/accounts",
+    "POST /api/v1/corporate/accounts"
+  ],
+  "CorporateBudgetDto": [
+    "PUT /api/v1/corporate/accounts/{accountId}/budgets"
+  ],
+  "CorporateMemberPermission": [
+    "PUT /api/v1/corporate/accounts/{accountId}/members"
+  ],
+  "CorporateMemberRole": [
+    "PUT /api/v1/corporate/accounts/{accountId}/members"
+  ],
+  "CountryReferenceDto": [
+    "GET /api/v1/reference-data/countries"
+  ],
+  "CourierProductSettingsDto": [
+    "GET /api/v1/deliveries/product-settings"
+  ],
+  "CreateBusinessShippingAccountDto": [
+    "POST /api/v1/business-shipping/accounts"
+  ],
+  "CreateCorporateAccountDto": [
+    "POST /api/v1/corporate/accounts"
+  ],
+  "CreateDelegatedRideDto": [
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "CreateDeliveryQuoteDto": [
+    "POST /api/v1/deliveries/quote"
+  ],
+  "CreateDeliveryRequestDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "POST /api/v1/deliveries"
+  ],
+  "CreateDependentTravelDto": [
+    "POST /api/v1/travel-profiles/{profileId}/dependents"
+  ],
+  "CreateGeneratedExportRequest": [
+    "POST /api/v1/reports/exports"
+  ],
+  "CreateHouseholdAccountDto": [
+    "POST /api/v1/households"
+  ],
+  "CreateMaintenanceScheduleDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules"
+  ],
+  "CreateParcelProtectionClaimDto": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims"
+  ],
+  "CreatePayoutMethodDto": [
+    "POST /api/v1/wallet/payout-methods"
+  ],
+  "CreateRecentAuthenticationProofRequest": [
+    "POST /api/v1/auth/recent-authentication"
+  ],
+  "CreateRentalAvailabilityBlockDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/availability-blocks"
+  ],
+  "CreateRentalBookingDto": [
+    "POST /api/v1/rentals/bookings"
+  ],
+  "CreateRentalBranchDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/branches"
+  ],
+  "CreateRentalCheckoutDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/checkout"
+  ],
+  "CreateRentalDamageClaimDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims"
+  ],
+  "CreateRentalInspectionDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections"
+  ],
+  "CreateRentalOrganizationDto": [
+    "POST /api/v1/rental-partner/organizations"
+  ],
+  "CreateRentalRatingDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/rating"
+  ],
+  "CreateRentalVehicleDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/vehicles"
+  ],
+  "CreateReviewAppealDto": [
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals"
+  ],
+  "CreateRideRequestDto": [
+    "POST /api/v1/rides",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "CreateSafetyCaseRequest": [
+    "POST /api/v1/safety/cases",
+    "POST /api/v1/safety/cases/recoverable"
+  ],
+  "CreateSafetyEventRequest": [
+    "POST /api/v1/safety/events"
+  ],
+  "CreateScheduledReportCommand": [
+    "POST /api/v1/reports/scheduled"
+  ],
+  "CreateStorePurchaseQuoteDto": [
+    "POST /api/v1/store-billing/quote"
+  ],
+  "CreateSupportTicketDto": [
+    "POST /api/v1/support/tickets"
+  ],
+  "CreateTravelProfileDto": [
+    "POST /api/v1/travel-profiles"
+  ],
+  "CreateTripTipDto": [
+    "POST /api/v1/trips/{tripId}/tip"
+  ],
+  "CreateTwoFactorStepUpDto": [
+    "POST /api/v1/auth/2fa/step-up"
+  ],
+  "DeleteAccountDto": [
+    "DELETE /api/v1/account",
+    "DELETE /api/v1/account/recoverable"
+  ],
+  "DeliveryAcceptancePreviewDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview"
+  ],
+  "DeliveryBidDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids"
+  ],
+  "DeliveryBulkOrderStatus": [
+    "POST /api/v1/business-shipping/deliveries/bulk"
+  ],
+  "DeliveryCustodyEventDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/custody"
+  ],
+  "DeliveryDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryDtoPagedResult": [
+    "GET /api/v1/driver/deliveries/mine"
+  ],
+  "DeliveryEvidenceDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/evidence",
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims"
+  ],
+  "DeliveryEvidenceInputDto": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete"
+  ],
+  "DeliveryEvidenceType": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/evidence",
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete"
+  ],
+  "DeliveryFailureReason": [
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed"
+  ],
+  "DeliveryQuoteDto": [
+    "POST /api/v1/deliveries/quote"
+  ],
+  "DeliveryRequestDto": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "DeliveryRequestDtoPagedResult": [
+    "GET /api/v1/deliveries"
+  ],
+  "DeliveryRequestStatus": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "DeliveryReturnPolicy": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/available",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryStatus": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryStopDto": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryStopInputDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/quote"
+  ],
+  "DeliveryStopStatus": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryStopType": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/quote",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DeliveryVerificationChallengeDto": [
+    "POST /api/v1/deliveries/active/{deliveryId}/verification/{purpose}"
+  ],
+  "DeliveryVerificationMethod": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete"
+  ],
+  "DependentTravelDto": [
+    "GET /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent"
+  ],
+  "DeviceAccessStatusDto": [
+    "POST /api/v1/devices/heartbeat",
+    "POST /api/v1/devices/register",
+    "GET /api/v1/devices/status"
+  ],
+  "DeviceBanType": [
+    "POST /api/v1/devices/heartbeat",
+    "POST /api/v1/devices/register",
+    "GET /api/v1/devices/status"
+  ],
+  "DeviceMetadataDto": [
+    "POST /api/v1/devices/heartbeat"
+  ],
+  "DeviceRegistrationDto": [
+    "POST /api/v1/devices/register"
+  ],
+  "DisputeDriverReviewRequest": [
+    "POST /api/v1/driver/profile/reviews/{reviewId}/dispute"
+  ],
+  "DisputeDto": [
+    "GET /api/v1/trips/{tripId}/dispute",
+    "POST /api/v1/trips/{tripId}/dispute"
+  ],
+  "DisputeStatus": [
+    "GET /api/v1/trips/{tripId}/dispute",
+    "POST /api/v1/trips/{tripId}/dispute"
+  ],
+  "DocumentStatus": [
+    "GET /api/v1/driver/documents",
+    "POST /api/v1/driver/documents",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DocumentType": [
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable",
+    "GET /api/v1/driver/documents",
+    "POST /api/v1/driver/documents",
+    "GET /api/v1/driver/profile/onboarding",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DriverAccountType": [
+    "POST /api/v1/auth/register",
+    "POST /api/v1/auth/social",
+    "GET /api/v1/driver/profile",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DriverAssistanceCapabilityDto": [
+    "GET /api/v1/driver/assistance-capability",
+    "PUT /api/v1/driver/assistance-capability"
+  ],
+  "DriverDeliveryOfferDto": [
+    "GET /api/v1/driver/deliveries/available"
+  ],
+  "DriverDeliveryOfferDtoPagedResult": [
+    "GET /api/v1/driver/deliveries/available"
+  ],
+  "DriverDocument": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DriverDocumentDto": [
+    "GET /api/v1/driver/documents",
+    "POST /api/v1/driver/documents"
+  ],
+  "DriverFareRangeDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverFirstEarningJourneyDto": [
+    "GET /api/v1/driver/profile/readiness"
+  ],
+  "DriverOfferEarningsDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverOfferFreshnessDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverOfferGateDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverOfferPaymentEvidenceDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverOfferScheduleFilter": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverOfferSort": [
+    "GET /api/v1/driver/rides/available"
+  ],
+  "DriverOnboardingContactPolicyDto": [
+    "GET /api/v1/driver/profile/onboarding"
+  ],
+  "DriverOnboardingDto": [
+    "GET /api/v1/driver/profile/onboarding"
+  ],
+  "DriverOnboardingPageDto": [
+    "GET /api/v1/driver/profile/onboarding"
+  ],
+  "DriverProfile": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DriverProfileDto": [
+    "GET /api/v1/driver/profile"
+  ],
+  "DriverReadinessCheckDto": [
+    "GET /api/v1/driver/profile/readiness"
+  ],
+  "DriverReadinessDto": [
+    "GET /api/v1/driver/profile/readiness"
+  ],
+  "DriverReviewCategoryDto": [
+    "GET /api/v1/driver/profile/reviews"
+  ],
+  "DriverReviewDto": [
+    "GET /api/v1/driver/profile/reviews"
+  ],
+  "DriverReviewStarCountDto": [
+    "GET /api/v1/driver/profile/reviews"
+  ],
+  "DriverReviewsPageDto": [
+    "GET /api/v1/driver/profile/reviews"
+  ],
+  "DriverRideAlertPreferencesDto": [
+    "GET /api/v1/driver/rides/alert-preferences",
+    "PUT /api/v1/driver/rides/alert-preferences"
+  ],
+  "DriverRideOfferDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverRideOfferDtoPagedResult": [
+    "GET /api/v1/driver/rides/available"
+  ],
+  "DriverRideOfferSeekPageDto": [
+    "GET /api/v1/driver/rides/available/seek"
+  ],
+  "DriverRiderFavoriteDto": [
+    "GET /api/v1/driver/rider-favorites"
+  ],
+  "DriverRouteEarningsEstimateDto": [
+    "GET /api/v1/driver/rides/{rideRequestId}/route-preview"
+  ],
+  "DriverRoutePointDto": [
+    "GET /api/v1/driver/rides/{rideRequestId}/route-preview"
+  ],
+  "DriverRoutePreviewDto": [
+    "GET /api/v1/driver/rides/{rideRequestId}/route-preview"
+  ],
+  "DriverRouteSegmentDto": [
+    "GET /api/v1/driver/rides/{rideRequestId}/route-preview"
+  ],
+  "DriverStatus": [
+    "GET /api/v1/driver/profile",
+    "GET /api/v1/driver/profile/onboarding",
+    "GET /api/v1/driver/profile/readiness",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "DriverStatusRequest": [
+    "POST /api/v1/driver/status"
+  ],
+  "DriverTrustAchievementDto": [
+    "GET /api/v1/driver/profile"
+  ],
+  "DriverTrustLevel": [
+    "GET /api/v1/safety/preferences",
+    "PUT /api/v1/safety/preferences"
+  ],
+  "DriverTrustProfileDto": [
+    "GET /api/v1/driver/profile"
+  ],
+  "EffectiveNotificationPreferencesDto": [
+    "GET /api/v1/notifications/preferences/effective"
+  ],
+  "EmailTripReceiptDto": [
+    "POST /api/v1/trips/{tripId}/receipt/email"
+  ],
+  "EmergencyNumberDto": [
+    "GET /api/v1/safety/emergency-number"
+  ],
+  "EndVoiceCallRequest": [
+    "POST /api/v1/voice/call/end"
+  ],
+  "EscalateSupervisedTripDto": [
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation"
+  ],
+  "ExternalEvidenceConfidenceLevel": [
+    "GET /api/v1/account/reputation",
+    "GET /api/v1/driver/profile",
+    "POST /api/v1/driver/profile/rating/import",
+    "GET /api/v1/driver/profile/rating/imports"
+  ],
+  "FailedDeliveryAttemptDto": [
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed"
+  ],
+  "FamilySafetyPolicyDto": [
+    "GET /api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "PUT /api/v1/travel-profiles/{profileId}/family-safety-policy"
+  ],
+  "FareQuoteBreakdownDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "FareQuoteRequestDto": [
+    "POST /api/v1/fares/quote"
+  ],
+  "FareQuoteResponseDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "FareQuoteStopDto": [
+    "POST /api/v1/fares/quote"
+  ],
+  "FareRouteAssessmentDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "FareSplitPlanDto": [
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "FareSplitPlanStatus": [
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "FareSplitResponseDto": [
+    "POST /api/v1/fare-splits/{planId}/respond"
+  ],
+  "FareSplitShareDto": [
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "FareSplitShareInputDto": [
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "FareSplitShareStatus": [
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split"
+  ],
+  "FavoriteDto": [
+    "GET /api/v1/favorites",
+    "POST /api/v1/favorites"
+  ],
+  "FeatureAvailability": [
+    "GET /api/v1/features"
+  ],
+  "FeaturePolicyDto": [
+    "GET /api/v1/features"
+  ],
+  "FeaturePolicyEnvelopeDto": [
+    "GET /api/v1/features"
+  ],
+  "FeeProductDto": [
+    "GET /api/v1/wallet/fee-products"
+  ],
+  "FeePurchaseDto": [
+    "POST /api/v1/wallet/fee-products/{productId}/purchase"
+  ],
+  "FinancialHistoryDisputeDto": [
+    "POST /api/v1/wallet/financial-history/{entryId}/disputes"
+  ],
+  "FinancialHistoryDisputeRequestDto": [
+    "POST /api/v1/wallet/financial-history/{entryId}/disputes"
+  ],
+  "FinancialHistoryEntryDto": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}"
+  ],
+  "FinancialHistoryEntrySource": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "POST /api/v1/wallet/financial-history/{entryId}/disputes",
+    "GET /api/v1/wallet/financial-history/{entryId}/export/pdf"
+  ],
+  "FinancialHistoryPageDto": [
+    "GET /api/v1/wallet/financial-history"
+  ],
+  "FinancialNextActionDto": [
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status"
+  ],
+  "FinancialOperationOutcomeDto": [
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status"
+  ],
+  "GeneratedExportDto": [
+    "POST /api/v1/reports/exports",
+    "GET /api/v1/reports/exports/{artifactId}"
+  ],
+  "GlobalProductType": [
+    "GET /api/v1/wallet/fee-products",
+    "POST /api/v1/wallet/fee-products/{productId}/purchase"
+  ],
+  "GoogleSubscriptionTransitionDto": [
+    "POST /api/v1/store-billing/quote"
+  ],
+  "HouseholdAccountDto": [
+    "GET /api/v1/households",
+    "POST /api/v1/households",
+    "POST /api/v1/households/{householdId}/consent"
+  ],
+  "HouseholdConsentState": [
+    "POST /api/v1/households/{householdId}/consent"
+  ],
+  "HouseholdMemberRole": [
+    "PUT /api/v1/households/{householdId}/members"
+  ],
+  "HouseholdStatus": [
+    "GET /api/v1/households",
+    "POST /api/v1/households",
+    "POST /api/v1/households/{householdId}/consent"
+  ],
+  "IdentitySubmissionOutcomeDto": [
+    "GET /api/v1/account/identity-verification/operations/outcome"
+  ],
+  "IdentityVerificationDto": [
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable"
+  ],
+  "ImportedRatingBadgeDto": [
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids"
+  ],
+  "ImportedRatingSourceDto": [
+    "GET /api/v1/driver/profile"
+  ],
+  "IncomingVoiceCallDto": [
+    "GET /api/v1/voice/call/incoming"
+  ],
+  "IncomingVoiceCallRecoveryDto": [
+    "GET /api/v1/voice/call/incoming"
+  ],
+  "InsuranceStatus": [
+    "GET /api/v1/driver/vehicles",
+    "POST /api/v1/driver/vehicles",
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "POST /api/v1/driver/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles",
+    "POST /api/v1/vehicles",
+    "PUT /api/v1/vehicles/{vehicleId}",
+    "POST /api/v1/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "InviteRentalTeamMemberDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations"
+  ],
+  "IssueRentalAgreementDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement"
+  ],
+  "LegalDocumentAcceptanceDto": [
+    "POST /api/v1/legal-acceptances"
+  ],
+  "LegalDocumentCatalogueDto": [
+    "GET /api/v1/content/legal-catalogue",
+    "GET /api/v1/legal-acceptances/catalogue"
+  ],
+  "LegalDocumentCatalogueItemDto": [
+    "GET /api/v1/content/legal-catalogue",
+    "GET /api/v1/legal-acceptances/catalogue"
+  ],
+  "LegalDocumentVersionDto": [
+    "GET /api/v1/content/{slug}/versions/{version}"
+  ],
+  "LegalDocumentVersionSummaryDto": [
+    "GET /api/v1/content/{slug}/versions"
+  ],
+  "LinkSocialLoginConnectionRequest": [
+    "POST /api/v1/auth/social-connections"
+  ],
+  "LoginRequest": [
+    "POST /api/v1/auth/login"
+  ],
+  "LoginResultDto": [
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/social"
+  ],
+  "MaintenanceStatusResult": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary"
+  ],
+  "MarketplaceFareGuidanceDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "MarketplaceFareRangeDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "MarketplaceOfferScenarioDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "MarketplacePickupEstimateDto": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/rides/{rideRequestId}/search-map"
+  ],
+  "MembershipCheckoutDto": [
+    "POST /api/v1/driver/membership/checkout",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout"
+  ],
+  "MembershipCheckoutRequest": [
+    "POST /api/v1/driver/membership/checkout",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout"
+  ],
+  "MembershipLifecycleDto": [
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "MembershipLifecycleTimelineItemDto": [
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "MembershipPeriodDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel"
+  ],
+  "MembershipPlanDto": [
+    "GET /api/v1/membership/plans",
+    "GET /api/v1/rental-partner/membership/plans",
+    "GET /api/v1/rider/membership/plans"
+  ],
+  "MembershipPriceTermEvidenceDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "MembershipSafeActionDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "MembershipStoreStatusDto": [
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "MembershipUsageDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "MembershipUsageResetDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "MoneyCommandOutcome": [
+    "GET /api/v1/operations/status",
+    "GET /api/v1/wallet/command-recovery"
+  ],
+  "MoneyCommandRecoveryDto": [
+    "GET /api/v1/operations/status",
+    "GET /api/v1/wallet/command-recovery"
+  ],
+  "MyMembershipDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel"
+  ],
+  "NameChangeRequestDto": [
+    "POST /api/v1/account/name-change-request"
+  ],
+  "NearbyDriverDto": [
+    "GET /api/v1/rides/{rideRequestId}/search-map"
+  ],
+  "NotificationCenterItemDto": [
+    "GET /api/v1/notifications",
+    "GET /api/v1/notifications/history"
+  ],
+  "NotificationCenterPageDto": [
+    "GET /api/v1/notifications"
+  ],
+  "NotificationCenterSeekPageDto": [
+    "GET /api/v1/notifications/history"
+  ],
+  "NotificationPreferencesDto": [
+    "GET /api/v1/notifications/preferences",
+    "PUT /api/v1/notifications/preferences"
+  ],
+  "OnboardingStepDto": [
+    "GET /api/v1/driver/profile/onboarding"
+  ],
+  "OpenRentalDisputeDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes"
+  ],
+  "OpenTripDisputeRequest": [
+    "POST /api/v1/trips/{tripId}/dispute"
+  ],
+  "OutOfBandStepUpChallengeDto": [
+    "POST /api/v1/auth/2fa/step-up/request-code"
+  ],
+  "ParcelDto": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "ParcelInputDto": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/quote"
+  ],
+  "ParcelProtectionClaimDto": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims"
+  ],
+  "ParcelProtectionClaimReason": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims"
+  ],
+  "ParcelProtectionClaimStatus": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims"
+  ],
+  "ParcelProtectionStatus": [
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "ParcelSize": [
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/quote",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept"
+  ],
+  "PasskeyCeremonyDto": [
+    "POST /api/v1/auth/login/2fa/passkey/begin",
+    "POST /api/v1/auth/passkeys/register/begin"
+  ],
+  "PasskeyDto": [
+    "GET /api/v1/auth/passkeys",
+    "POST /api/v1/auth/passkeys/register/complete"
+  ],
+  "PasskeyLoginBeginRequest": [
+    "POST /api/v1/auth/login/2fa/passkey/begin"
+  ],
+  "PasskeyLoginCompleteRequest": [
+    "POST /api/v1/auth/login/2fa/passkey/complete"
+  ],
+  "PasskeyRegisterCompleteRequest": [
+    "POST /api/v1/auth/passkeys/register/complete"
+  ],
+  "PasswordStrengthDto": [
+    "POST /api/v1/auth/password-strength"
+  ],
+  "PasswordStrengthRequest": [
+    "POST /api/v1/auth/password-strength"
+  ],
+  "PayPalTopUpStatusDto": [
+    "POST /api/v1/wallet/topups/paypal/{operationId}/reconcile",
+    "GET /api/v1/wallet/topups/paypal/{operationId}/status"
+  ],
+  "PaymentConversionEvidenceDto": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "PaymentEntityType": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}"
+  ],
+  "PaymentMethod": [
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete",
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/receipts",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "GET /api/v1/trips/{tripId}/receipt",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}"
+  ],
+  "PaymentStatus": [
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}"
+  ],
+  "PayoutMethodDto": [
+    "GET /api/v1/wallet/payout-methods",
+    "POST /api/v1/wallet/payout-methods"
+  ],
+  "PayoutMethodType": [
+    "GET /api/v1/wallet/payout-methods",
+    "POST /api/v1/wallet/payout-methods"
+  ],
+  "PayoutTransferStatus": [
+    "GET /api/v1/wallet/cashout",
+    "POST /api/v1/wallet/cashout"
+  ],
+  "PendingMembershipChangeDto": [
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status"
+  ],
+  "PendingSocialLinkDto": [
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/social",
+    "POST /api/v1/auth/social-link-intents/review"
+  ],
+  "PendingSocialLinkTokenRequest": [
+    "POST /api/v1/auth/social-link-intents/cancel",
+    "POST /api/v1/auth/social-link-intents/review"
+  ],
+  "PlaceBidDto": [
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids"
+  ],
+  "PreferredDriverDto": [
+    "GET /api/v1/driver/profile/preferred-program",
+    "POST /api/v1/driver/profile/preferred-program/applications",
+    "POST /api/v1/driver/profile/preferred-program/apply"
+  ],
+  "PreferredDriverStatus": [
+    "GET /api/v1/driver/profile/preferred-program",
+    "POST /api/v1/driver/profile/preferred-program/applications",
+    "POST /api/v1/driver/profile/preferred-program/apply",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "PrepareStorePurchaseDto": [
+    "POST /api/v1/store-billing/prepare"
+  ],
+  "ProblemDetails": [
+    "DELETE /api/v1/account",
+    "GET /api/v1/account/activity",
+    "POST /api/v1/account/activity/settings",
+    "GET /api/v1/account/avatar",
+    "POST /api/v1/account/avatar",
+    "PUT /api/v1/account/complete-profile",
+    "GET /api/v1/account/contact-details",
+    "PUT /api/v1/account/contact-details",
+    "POST /api/v1/account/contact-details/email/confirm",
+    "POST /api/v1/account/contact-details/email/request-code",
+    "POST /api/v1/account/contact-details/phone/confirm",
+    "POST /api/v1/account/contact-details/phone/request-code",
+    "POST /api/v1/account/deactivate",
+    "POST /api/v1/account/deactivate/recoverable",
+    "POST /api/v1/account/deletion-request",
+    "GET /api/v1/account/export",
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "GET /api/v1/account/identity-verification/operations/outcome",
+    "POST /api/v1/account/identity-verification/recoverable",
+    "POST /api/v1/account/name-change-request",
+    "POST /api/v1/account/onboarding/contact-proof",
+    "POST /api/v1/account/onboarding/phone-decision",
+    "POST /api/v1/account/onboarding/profile-photo-decision",
+    "DELETE /api/v1/account/recoverable",
+    "GET /api/v1/account/referrals",
+    "GET /api/v1/account/reputation",
+    "GET /api/v1/account/security-events",
+    "GET /api/v1/account/security-preferences",
+    "PUT /api/v1/account/security-preferences/login-email-alerts",
+    "GET /api/v1/account/setup-progress",
+    "GET /api/v1/app-releases",
+    "GET /api/v1/app-releases/current",
+    "GET /api/v1/app-releases/{version}",
+    "GET /api/v1/app-releases/{version}/build/{build}",
+    "GET /api/v1/app-version-policy",
+    "POST /api/v1/auth/2fa/confirm",
+    "POST /api/v1/auth/2fa/disable",
+    "POST /api/v1/auth/2fa/enroll",
+    "POST /api/v1/auth/2fa/enroll/contact/confirm",
+    "POST /api/v1/auth/2fa/enroll/contact/request-code",
+    "POST /api/v1/auth/2fa/recovery-codes/regenerate",
+    "GET /api/v1/auth/2fa/status",
+    "POST /api/v1/auth/2fa/step-up",
+    "POST /api/v1/auth/2fa/step-up/request-code",
+    "POST /api/v1/auth/change-password",
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/begin",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/2fa/request-code",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/email/request",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/login/phone/request",
+    "POST /api/v1/auth/logout",
+    "GET /api/v1/auth/me",
+    "GET /api/v1/auth/passkeys",
+    "POST /api/v1/auth/passkeys/register/begin",
+    "POST /api/v1/auth/passkeys/register/complete",
+    "DELETE /api/v1/auth/passkeys/{id}",
+    "POST /api/v1/auth/password-reset/confirm",
+    "POST /api/v1/auth/password-reset/request",
+    "POST /api/v1/auth/password-strength",
+    "POST /api/v1/auth/phone-verification/confirm",
+    "POST /api/v1/auth/phone-verification/request",
+    "POST /api/v1/auth/recent-authentication",
+    "POST /api/v1/auth/refresh",
+    "POST /api/v1/auth/register",
+    "GET /api/v1/auth/session",
+    "GET /api/v1/auth/sessions",
+    "DELETE /api/v1/auth/sessions/{id}",
+    "POST /api/v1/auth/set-password",
+    "POST /api/v1/auth/social",
+    "GET /api/v1/auth/social-connections",
+    "POST /api/v1/auth/social-connections",
+    "DELETE /api/v1/auth/social-connections/{id}",
+    "POST /api/v1/auth/social-link-intents/cancel",
+    "POST /api/v1/auth/social-link-intents/confirm",
+    "POST /api/v1/auth/social-link-intents/review",
+    "GET /api/v1/blog",
+    "GET /api/v1/blog/{slug}",
+    "GET /api/v1/business-shipping/accounts",
+    "POST /api/v1/business-shipping/accounts",
+    "GET /api/v1/business-shipping/accounts/{accountId}/members",
+    "PUT /api/v1/business-shipping/accounts/{accountId}/members",
+    "DELETE /api/v1/business-shipping/accounts/{accountId}/members/{memberId}",
+    "POST /api/v1/business-shipping/deliveries/bulk",
+    "GET /api/v1/calculations",
+    "POST /api/v1/calculations",
+    "DELETE /api/v1/calculations/{id}",
+    "PUT /api/v1/calculations/{id}/title",
+    "GET /api/v1/campaign-inbox",
+    "POST /api/v1/campaign-inbox/{id}/acknowledge",
+    "GET /api/v1/content",
+    "POST /api/v1/content/contact",
+    "GET /api/v1/content/legal-catalogue",
+    "GET /api/v1/content/{slug}",
+    "GET /api/v1/content/{slug}/versions",
+    "GET /api/v1/content/{slug}/versions/{version}",
+    "GET /api/v1/content/{slug}/versions/{version}/pdf",
+    "GET /api/v1/corporate/accounts",
+    "POST /api/v1/corporate/accounts",
+    "PUT /api/v1/corporate/accounts/{accountId}/budgets",
+    "PUT /api/v1/corporate/accounts/{accountId}/members",
+    "GET /api/v1/deliveries",
+    "POST /api/v1/deliveries",
+    "POST /api/v1/deliveries/active/{deliveryId}/verification/{purpose}",
+    "GET /api/v1/deliveries/product-settings",
+    "POST /api/v1/deliveries/quote",
+    "GET /api/v1/deliveries/{deliveryRequestId}",
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/accept",
+    "POST /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept",
+    "GET /api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview",
+    "POST /api/v1/deliveries/{deliveryRequestId}/cancel",
+    "GET /api/v1/deliveries/{deliveryRequestId}/custody",
+    "GET /api/v1/deliveries/{deliveryRequestId}/evidence",
+    "GET /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "POST /api/v1/deliveries/{deliveryRequestId}/protection/claims",
+    "GET /api/v1/deliveries/{deliveryRequestId}/tracking",
+    "POST /api/v1/devices/heartbeat",
+    "POST /api/v1/devices/register",
+    "GET /api/v1/devices/status",
+    "GET /api/v1/driver/assistance-capability",
+    "PUT /api/v1/driver/assistance-capability",
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/driver/deliveries/available",
+    "GET /api/v1/driver/deliveries/mine",
+    "POST /api/v1/driver/deliveries/{deliveryId}/attempts/failed",
+    "POST /api/v1/driver/deliveries/{deliveryId}/cancel",
+    "POST /api/v1/driver/deliveries/{deliveryId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/pickup/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/recipient/confirm",
+    "POST /api/v1/driver/deliveries/{deliveryId}/return/complete",
+    "POST /api/v1/driver/deliveries/{deliveryId}/start",
+    "POST /api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete",
+    "POST /api/v1/driver/deliveries/{deliveryRequestId}/bids",
+    "GET /api/v1/driver/documents",
+    "POST /api/v1/driver/documents",
+    "GET /api/v1/driver/incentives/current",
+    "GET /api/v1/driver/membership",
+    "POST /api/v1/driver/membership",
+    "PUT /api/v1/driver/membership/auto-renew",
+    "POST /api/v1/driver/membership/checkout",
+    "POST /api/v1/driver/membership/pending-change/cancel",
+    "GET /api/v1/driver/membership/store-status",
+    "GET /api/v1/driver/profile",
+    "GET /api/v1/driver/profile/onboarding",
+    "POST /api/v1/driver/profile/onboarding/complete",
+    "POST /api/v1/driver/profile/onboarding/contact-proof",
+    "POST /api/v1/driver/profile/onboarding/progress",
+    "POST /api/v1/driver/profile/onboarding/step",
+    "GET /api/v1/driver/profile/preferred-program",
+    "POST /api/v1/driver/profile/preferred-program/applications",
+    "POST /api/v1/driver/profile/preferred-program/apply",
+    "POST /api/v1/driver/profile/rating/import",
+    "GET /api/v1/driver/profile/rating/imports",
+    "GET /api/v1/driver/profile/readiness",
+    "GET /api/v1/driver/profile/reviews",
+    "POST /api/v1/driver/profile/reviews/{reviewId}/dispute",
+    "GET /api/v1/driver/reports/earnings",
+    "GET /api/v1/driver/rider-favorites",
+    "DELETE /api/v1/driver/rider-favorites/{favoriteId}",
+    "POST /api/v1/driver/rider-favorites/{riderUserId}",
+    "GET /api/v1/driver/rides/alert-preferences",
+    "PUT /api/v1/driver/rides/alert-preferences",
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "DELETE /api/v1/driver/rides/bids/{bidId}",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry/read",
+    "GET /api/v1/driver/rides/{rideRequestId}/route-preview",
+    "POST /api/v1/driver/rides/{rideRequestId}/view",
+    "GET /api/v1/driver/status",
+    "POST /api/v1/driver/status",
+    "GET /api/v1/driver/vehicles",
+    "POST /api/v1/driver/vehicles",
+    "DELETE /api/v1/driver/vehicles/{vehicleId}",
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "POST /api/v1/driver/vehicles/{vehicleId}/activate",
+    "GET /api/v1/driver/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/fare-splits/{planId}",
+    "POST /api/v1/fare-splits/{planId}/respond",
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/favorites",
+    "POST /api/v1/favorites",
+    "DELETE /api/v1/favorites/{favoriteId}",
+    "GET /api/v1/features",
+    "GET /api/v1/households",
+    "POST /api/v1/households",
+    "POST /api/v1/households/{householdId}/consent",
+    "PUT /api/v1/households/{householdId}/members",
+    "POST /api/v1/legal-acceptances",
+    "GET /api/v1/legal-acceptances/catalogue",
+    "GET /api/v1/maps/autocomplete",
+    "GET /api/v1/maps/geocode",
+    "GET /api/v1/maps/place",
+    "GET /api/v1/maps/reverse-geocode",
+    "GET /api/v1/maps/route",
+    "GET /api/v1/maps/traffic-routes",
+    "GET /api/v1/membership/plans",
+    "DELETE /api/v1/notifications",
+    "GET /api/v1/notifications",
+    "GET /api/v1/notifications/history",
+    "GET /api/v1/notifications/preferences",
+    "PUT /api/v1/notifications/preferences",
+    "GET /api/v1/notifications/preferences/effective",
+    "DELETE /api/v1/notifications/push-token",
+    "POST /api/v1/notifications/push-token",
+    "GET /api/v1/notifications/push-token/installation-state",
+    "POST /api/v1/notifications/read-all",
+    "DELETE /api/v1/notifications/{notificationId}",
+    "POST /api/v1/notifications/{notificationId}/read",
+    "GET /api/v1/operations/status",
+    "GET /api/v1/public/capabilities",
+    "GET /api/v1/public/country-sites",
+    "GET /api/v1/public/membership-prices",
+    "GET /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides/recoverable",
+    "DELETE /api/v1/recurring-rides/{recurringRideId}",
+    "GET /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}",
+    "GET /api/v1/recurring-rides/{recurringRideId}/occurrences",
+    "DELETE /api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "PUT /api/v1/recurring-rides/{recurringRideId}/revisioned",
+    "GET /api/v1/reference-data/banks",
+    "GET /api/v1/reference-data/countries",
+    "GET /api/v1/reference-data/vehicle-insurers",
+    "GET /api/v1/rental-partner/membership/plans",
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/analytics",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/availability-blocks",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/availability-blocks/{blockId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/bookings",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/late-return/assess",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/branches",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/branches",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/fleet/reminders",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/profile-image",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/team/invitations/{invitationId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "DELETE /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}/primary",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/protection",
+    "POST /api/v1/rental-partner/team/invitations/accept",
+    "POST /api/v1/rental-partner/vehicles/{vehicleId}/images",
+    "GET /api/v1/rentals/booking-status-contract",
+    "POST /api/v1/rentals/bookings",
+    "GET /api/v1/rentals/bookings/mine",
+    "POST /api/v1/rentals/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rentals/bookings/{bookingId}/cancel",
+    "POST /api/v1/rentals/bookings/{bookingId}/checkout",
+    "GET /api/v1/rentals/bookings/{bookingId}/damage-evidence/{evidenceId}",
+    "GET /api/v1/rentals/bookings/{bookingId}/dispute-evidence/{evidenceId}",
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions/{extensionId}/checkout",
+    "GET /api/v1/rentals/bookings/{bookingId}/inspection-evidence/{evidenceId}",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "POST /api/v1/rentals/bookings/{bookingId}/payment-authorized",
+    "GET /api/v1/rentals/bookings/{bookingId}/protection",
+    "POST /api/v1/rentals/bookings/{bookingId}/rating",
+    "DELETE /api/v1/rentals/favorites/{vehicleId}",
+    "PUT /api/v1/rentals/favorites/{vehicleId}",
+    "GET /api/v1/rentals/filters",
+    "GET /api/v1/rentals/organizations",
+    "GET /api/v1/rentals/organizations/{organizationId}",
+    "GET /api/v1/rentals/organizations/{organizationId}/profile-image",
+    "GET /api/v1/rentals/vehicles",
+    "GET /api/v1/rentals/vehicles/{vehicleId}",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/images/{imageId}",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/protection",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/quote",
+    "POST /api/v1/reports/exports",
+    "GET /api/v1/reports/exports/{artifactId}",
+    "GET /api/v1/reports/exports/{artifactId}/download",
+    "GET /api/v1/reports/scheduled",
+    "POST /api/v1/reports/scheduled",
+    "DELETE /api/v1/reports/scheduled/{scheduleId}",
+    "GET /api/v1/reports/{reportType}",
+    "GET /api/v1/resources/manuals",
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals",
+    "GET /api/v1/rider/assistance-profile",
+    "PUT /api/v1/rider/assistance-profile",
+    "GET /api/v1/rider/membership",
+    "GET /api/v1/rider/membership/plans",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "POST /api/v1/rides/fare-splits/{planId}/respond",
+    "GET /api/v1/rides/recent-locations",
+    "GET /api/v1/rides/{rideRequestId}",
+    "GET /api/v1/rides/{rideRequestId}/bids",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "GET /api/v1/rides/{rideRequestId}/bids/{bidId}/avatar",
+    "POST /api/v1/rides/{rideRequestId}/bids/{bidId}/reject",
+    "POST /api/v1/rides/{rideRequestId}/cancel",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "GET /api/v1/rides/{rideRequestId}/fare-split",
+    "PUT /api/v1/rides/{rideRequestId}/fare-split",
+    "GET /api/v1/rides/{rideRequestId}/inquiries",
+    "GET /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}/read",
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery",
+    "GET /api/v1/rides/{rideRequestId}/search-map",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "GET /api/v1/safety/cases",
+    "POST /api/v1/safety/cases",
+    "POST /api/v1/safety/cases/recoverable",
+    "POST /api/v1/safety/cases/{id}/acknowledge",
+    "POST /api/v1/safety/cases/{id}/acknowledge/recoverable",
+    "GET /api/v1/safety/emergency-number",
+    "POST /api/v1/safety/events",
+    "POST /api/v1/safety/events/{id}/acknowledge",
+    "POST /api/v1/safety/events/{id}/route-deviation-response",
+    "GET /api/v1/safety/preferences",
+    "PUT /api/v1/safety/preferences",
+    "GET /api/v1/safety/trips/{tripId}/events",
+    "GET /api/v1/safety/trips/{tripId}/route-deviation",
+    "GET /api/v1/safety/trusted-contacts",
+    "POST /api/v1/safety/trusted-contacts",
+    "DELETE /api/v1/safety/trusted-contacts/{id}",
+    "GET /api/v1/store-billing/operations/{operationId}",
+    "POST /api/v1/store-billing/prepare",
+    "GET /api/v1/store-billing/products",
+    "POST /api/v1/store-billing/quote",
+    "POST /api/v1/store-billing/restore",
+    "POST /api/v1/store-billing/verify",
+    "GET /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/handoff",
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation",
+    "GET /api/v1/support/tickets",
+    "POST /api/v1/support/tickets",
+    "GET /api/v1/support/tickets/catalog",
+    "GET /api/v1/support/tickets/operations/outcome",
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/close",
+    "POST /api/v1/support/tickets/{ticketId}/close/recoverable",
+    "GET /api/v1/support/tickets/{ticketId}/messages/{messageId}/attachments/{index}",
+    "PUT /api/v1/support/tickets/{ticketId}/read",
+    "POST /api/v1/support/tickets/{ticketId}/reopen",
+    "POST /api/v1/support/tickets/{ticketId}/reopen/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable",
+    "POST /api/v1/tools/calculators/export/pdf",
+    "GET /api/v1/tools/tolls/estimate",
+    "GET /api/v1/tools/tolls/options",
+    "GET /api/v1/tools/tolls/periods",
+    "GET /api/v1/tools/tolls/plazas",
+    "POST /api/v1/tools/tolls/route-estimate",
+    "GET /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "DELETE /api/v1/travel-profiles/{profileId}",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}",
+    "POST /api/v1/travel-profiles/{profileId}/cost-centers",
+    "DELETE /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "PUT /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "GET /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent",
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent",
+    "GET /api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "PUT /api/v1/travel-profiles/{profileId}/family-safety-policy",
+    "POST /api/v1/travel-profiles/{profileId}/members",
+    "DELETE /api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent",
+    "PUT /api/v1/travel-profiles/{profileId}/ride-policy",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/receipts",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/cancel",
+    "GET /api/v1/trips/{tripId}/chat",
+    "POST /api/v1/trips/{tripId}/chat",
+    "POST /api/v1/trips/{tripId}/chat/read",
+    "POST /api/v1/trips/{tripId}/complete",
+    "GET /api/v1/trips/{tripId}/dispute",
+    "POST /api/v1/trips/{tripId}/dispute",
+    "GET /api/v1/trips/{tripId}/driver-avatar",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "GET /api/v1/trips/{tripId}/passenger-avatar",
+    "DELETE /api/v1/trips/{tripId}/peer-block",
+    "GET /api/v1/trips/{tripId}/peer-block",
+    "PUT /api/v1/trips/{tripId}/peer-block",
+    "GET /api/v1/trips/{tripId}/pickup-ceremony",
+    "POST /api/v1/trips/{tripId}/pickup-challenge",
+    "GET /api/v1/trips/{tripId}/pickup-code",
+    "POST /api/v1/trips/{tripId}/pickup-contact-attempt",
+    "POST /api/v1/trips/{tripId}/rating",
+    "GET /api/v1/trips/{tripId}/receipt",
+    "GET /api/v1/trips/{tripId}/receipt.pdf",
+    "POST /api/v1/trips/{tripId}/receipt/email",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/reservation/decline",
+    "GET /api/v1/trips/{tripId}/reservation/rider-check-in",
+    "POST /api/v1/trips/{tripId}/reservation/rider-check-in",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/reject",
+    "POST /api/v1/trips/{tripId}/share",
+    "POST /api/v1/trips/{tripId}/share/revoke",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "GET /api/v1/trips/{tripId}/timeline",
+    "POST /api/v1/trips/{tripId}/tip",
+    "POST /api/v1/uploads",
+    "GET /api/v1/uploads/operations/{operationId}",
+    "POST /api/v1/uploads/recoverable",
+    "GET /api/v1/uploads/{fileRef}",
+    "GET /api/v1/user-blocks",
+    "POST /api/v1/user-blocks/driver",
+    "DELETE /api/v1/user-blocks/{blockId}",
+    "GET /api/v1/user-blocks/{userId}",
+    "PUT /api/v1/user-blocks/{userId}",
+    "GET /api/v1/vehicle-catalog/makes",
+    "GET /api/v1/vehicle-catalog/models",
+    "GET /api/v1/vehicle-catalog/years",
+    "GET /api/v1/vehicle-categories",
+    "GET /api/v1/vehicles",
+    "POST /api/v1/vehicles",
+    "DELETE /api/v1/vehicles/{vehicleId}",
+    "PUT /api/v1/vehicles/{vehicleId}",
+    "POST /api/v1/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/voice/call",
+    "POST /api/v1/voice/call/connected",
+    "POST /api/v1/voice/call/consent",
+    "POST /api/v1/voice/call/end",
+    "POST /api/v1/voice/call/gsm",
+    "GET /api/v1/voice/call/incoming",
+    "GET /api/v1/voice/call/{callId}",
+    "GET /api/v1/voice/options",
+    "GET /api/v1/voice/token",
+    "GET /api/v1/wallet",
+    "GET /api/v1/wallet/cashout",
+    "POST /api/v1/wallet/cashout",
+    "GET /api/v1/wallet/cashout/limits",
+    "GET /api/v1/wallet/cashout/{cashoutId}/status",
+    "GET /api/v1/wallet/command-recovery",
+    "GET /api/v1/wallet/fee-products",
+    "POST /api/v1/wallet/fee-products/{productId}/purchase",
+    "GET /api/v1/wallet/fees",
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/export/pdf",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "POST /api/v1/wallet/financial-history/{entryId}/disputes",
+    "GET /api/v1/wallet/financial-history/{entryId}/export/pdf",
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status",
+    "GET /api/v1/wallet/payout-methods",
+    "POST /api/v1/wallet/payout-methods",
+    "DELETE /api/v1/wallet/payout-methods/{id}",
+    "GET /api/v1/wallet/recipients",
+    "POST /api/v1/wallet/recipients",
+    "DELETE /api/v1/wallet/recipients/{id}",
+    "POST /api/v1/wallet/topup",
+    "GET /api/v1/wallet/topup/bank-transfers",
+    "POST /api/v1/wallet/topup/bank-transfers/{paymentId}/cancel",
+    "GET /api/v1/wallet/topup/limits",
+    "GET /api/v1/wallet/topup/quote",
+    "POST /api/v1/wallet/topups/paypal/{operationId}/reconcile",
+    "GET /api/v1/wallet/topups/paypal/{operationId}/status",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/export",
+    "GET /api/v1/wallet/transactions/history",
+    "POST /api/v1/wallet/transfers",
+    "GET /api/v1/wallet/transfers/quote"
+  ],
+  "ProviderBillingDto": [
+    "GET /api/v1/driver/billing",
+    "PUT /api/v1/driver/billing/mode",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/billing",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/mode"
+  ],
+  "PublicCountrySiteDto": [
+    "GET /api/v1/public/country-sites"
+  ],
+  "PublicMembershipPlanPriceDto": [
+    "GET /api/v1/public/membership-prices"
+  ],
+  "PublicMembershipPriceTermDto": [
+    "GET /api/v1/public/membership-prices"
+  ],
+  "PublicMembershipPricesDto": [
+    "GET /api/v1/public/membership-prices"
+  ],
+  "PublicVehicleCategoryDto": [
+    "GET /api/v1/vehicle-categories"
+  ],
+  "PushChannelCapabilitiesDto": [
+    "DELETE /api/v1/notifications/push-token",
+    "POST /api/v1/notifications/push-token"
+  ],
+  "PushPlatform": [
+    "DELETE /api/v1/notifications/push-token",
+    "POST /api/v1/notifications/push-token",
+    "GET /api/v1/notifications/push-token/installation-state"
+  ],
+  "RateTripDto": [
+    "POST /api/v1/trips/{tripId}/rating"
+  ],
+  "RatingBreakdownDto": [
+    "GET /api/v1/driver/profile"
+  ],
+  "RatingImportDto": [
+    "POST /api/v1/driver/profile/rating/import",
+    "GET /api/v1/driver/profile/rating/imports"
+  ],
+  "RatingImportStatus": [
+    "GET /api/v1/account/reputation",
+    "POST /api/v1/driver/profile/rating/import",
+    "GET /api/v1/driver/profile/rating/imports"
+  ],
+  "RecentAuthenticationProofDto": [
+    "POST /api/v1/auth/recent-authentication"
+  ],
+  "RecentRideLocationDto": [
+    "GET /api/v1/rides/recent-locations"
+  ],
+  "RecordUserSettingChangeDto": [
+    "POST /api/v1/account/activity/settings"
+  ],
+  "RecurringRideDto": [
+    "GET /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides/recoverable",
+    "GET /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}/revisioned"
+  ],
+  "RecurringRideDtoPagedResult": [
+    "GET /api/v1/recurring-rides"
+  ],
+  "RecurringRideOccurrenceDto": [
+    "GET /api/v1/recurring-rides/{recurringRideId}/occurrences"
+  ],
+  "ReferralSummaryDto": [
+    "GET /api/v1/account/referrals"
+  ],
+  "RefreshRequest": [
+    "POST /api/v1/auth/logout",
+    "POST /api/v1/auth/refresh"
+  ],
+  "RegisterDeviceDto": [
+    "POST /api/v1/devices/register"
+  ],
+  "RegisterPushTokenRequest": [
+    "DELETE /api/v1/notifications/push-token",
+    "POST /api/v1/notifications/push-token"
+  ],
+  "RegisterRequest": [
+    "POST /api/v1/auth/register"
+  ],
+  "RegisterVehicleDto": [
+    "POST /api/v1/driver/vehicles",
+    "POST /api/v1/vehicles"
+  ],
+  "RenameSavedCalculationDto": [
+    "PUT /api/v1/calculations/{id}/title"
+  ],
+  "RenewGuardianConsentDto": [
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent"
+  ],
+  "RentalAgreementDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rentals/bookings/{bookingId}/agreement/sign",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalAgreementStatus": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rentals/bookings/{bookingId}/agreement/sign",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalAllowedActionDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalAuthorizationEvidence": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalAuthorizationState": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalAvailabilityBlockDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/availability-blocks",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability"
+  ],
+  "RentalAvailabilityBlockType": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/availability-blocks",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability"
+  ],
+  "RentalAvailabilityCalendarDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability"
+  ],
+  "RentalAvailabilityPolicyDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/availability",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/quote"
+  ],
+  "RentalBookingDto": [
+    "POST /api/v1/rentals/bookings",
+    "GET /api/v1/rentals/bookings/mine",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "POST /api/v1/rentals/bookings/{bookingId}/payment-authorized"
+  ],
+  "RentalBookingMode": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "GET /api/v1/rentals/vehicles",
+    "GET /api/v1/rentals/vehicles/{vehicleId}"
+  ],
+  "RentalBookingOperationsDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalBookingStatus": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/bookings",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status",
+    "POST /api/v1/rentals/bookings",
+    "GET /api/v1/rentals/bookings/mine",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "POST /api/v1/rentals/bookings/{bookingId}/payment-authorized"
+  ],
+  "RentalBookingStatusContractDto": [
+    "GET /api/v1/rentals/booking-status-contract"
+  ],
+  "RentalBookingStatusDefinitionDto": [
+    "GET /api/v1/rentals/booking-status-contract"
+  ],
+  "RentalBranchPublicDto": [
+    "GET /api/v1/rentals/organizations/{organizationId}"
+  ],
+  "RentalCancellationReason": [
+    "POST /api/v1/rentals/bookings/{bookingId}/cancel"
+  ],
+  "RentalCheckoutDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/checkout",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions/{extensionId}/checkout"
+  ],
+  "RentalDamageClaimDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalDamageClaimStatus": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalDamageReason": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalDisputeDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalDisputeStatus": [
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalEvidenceInput": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes"
+  ],
+  "RentalEvidencePreviewDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims",
+    "POST /api/v1/rentals/bookings/{bookingId}/disputes",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalExpectedVersionDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/late-return/assess"
+  ],
+  "RentalExtensionDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalExtensionStatus": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}",
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalFleetReminderDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/fleet/reminders"
+  ],
+  "RentalInspectionChecklistInput": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections"
+  ],
+  "RentalInspectionChecklistItemDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalInspectionDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalInspectionPhase": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalInspectionPhotoDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalInspectionPhotoInput": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections"
+  ],
+  "RentalInventoryHoldDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalInventoryHoldState": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalLifecycleDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalLifecycleRequirementDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalMakeModelsDto": [
+    "GET /api/v1/rentals/filters"
+  ],
+  "RentalMarketplaceFiltersDto": [
+    "GET /api/v1/rentals/filters"
+  ],
+  "RentalMembershipPurchaseDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/billing/membership"
+  ],
+  "RentalOrganizationCardDto": [
+    "GET /api/v1/rentals/organizations"
+  ],
+  "RentalOrganizationCardDtoPagedResult": [
+    "GET /api/v1/rentals/organizations"
+  ],
+  "RentalOrganizationDto": [
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}"
+  ],
+  "RentalOrganizationPermission": [
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}"
+  ],
+  "RentalOrganizationPublicDto": [
+    "GET /api/v1/rentals/organizations/{organizationId}"
+  ],
+  "RentalOrganizationRole": [
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}",
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}"
+  ],
+  "RentalOrganizationStatus": [
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}"
+  ],
+  "RentalOwnerAnalyticsDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/analytics"
+  ],
+  "RentalPartnerBookingDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/bookings"
+  ],
+  "RentalPartnerBranchDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/branches"
+  ],
+  "RentalPartnerVehicleDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles"
+  ],
+  "RentalPartnerVehicleImageDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles"
+  ],
+  "RentalPolicyDto": [
+    "GET /api/v1/rentals/vehicles/{vehicleId}"
+  ],
+  "RentalPolicySnapshot": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations"
+  ],
+  "RentalProtectionAcceptanceDto": [
+    "POST /api/v1/rentals/bookings"
+  ],
+  "RentalProviderProtectionDto": [
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "GET /api/v1/rentals/bookings/{bookingId}/protection",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/protection"
+  ],
+  "RentalProviderType": [
+    "GET /api/v1/rental-partner/organizations",
+    "POST /api/v1/rental-partner/organizations",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}",
+    "GET /api/v1/rentals/organizations",
+    "GET /api/v1/rentals/organizations/{organizationId}"
+  ],
+  "RentalQuoteDto": [
+    "GET /api/v1/rentals/vehicles/{vehicleId}/quote"
+  ],
+  "RentalTeamDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team"
+  ],
+  "RentalTeamInvitationDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations"
+  ],
+  "RentalTeamInvitationStatus": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/team/invitations"
+  ],
+  "RentalTeamMemberDto": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/team"
+  ],
+  "RentalVehicleCardDto": [
+    "GET /api/v1/rentals/vehicles"
+  ],
+  "RentalVehicleCardDtoPagedResult": [
+    "GET /api/v1/rentals/vehicles"
+  ],
+  "RentalVehicleDetailDto": [
+    "GET /api/v1/rentals/vehicles/{vehicleId}"
+  ],
+  "RentalVehicleHandoverMode": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "POST /api/v1/rental-partner/organizations/{organizationId}/vehicles",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}",
+    "POST /api/v1/rentals/bookings",
+    "GET /api/v1/rentals/bookings/{bookingId}/operations",
+    "GET /api/v1/rentals/vehicles/{vehicleId}",
+    "GET /api/v1/rentals/vehicles/{vehicleId}/quote"
+  ],
+  "RentalVehicleImageDto": [
+    "GET /api/v1/rentals/vehicles/{vehicleId}"
+  ],
+  "RentalVehicleStatus": [
+    "GET /api/v1/rental-partner/organizations/{organizationId}/vehicles"
+  ],
+  "ReopenSupportCaseDto": [
+    "POST /api/v1/support/tickets/{ticketId}/reopen",
+    "POST /api/v1/support/tickets/{ticketId}/reopen/recoverable"
+  ],
+  "ReplySupportTicketDto": [
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "ReportVehicleDefectDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects"
+  ],
+  "ReputationCategoryDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids"
+  ],
+  "RequestAccountDeletionDto": [
+    "POST /api/v1/account/deletion-request"
+  ],
+  "RequestCashoutDto": [
+    "POST /api/v1/wallet/cashout"
+  ],
+  "RequestEmailLoginDto": [
+    "POST /api/v1/auth/login/email/request"
+  ],
+  "RequestNameChangeDto": [
+    "POST /api/v1/account/name-change-request"
+  ],
+  "RequestOutOfBandStepUpDto": [
+    "POST /api/v1/auth/2fa/step-up/request-code"
+  ],
+  "RequestPasswordResetRequest": [
+    "POST /api/v1/auth/password-reset/request"
+  ],
+  "RequestPhoneContactVerificationDto": [
+    "POST /api/v1/account/contact-details/phone/request-code"
+  ],
+  "RequestPhoneLoginDto": [
+    "POST /api/v1/auth/login/phone/request"
+  ],
+  "RequestRatingImportDto": [
+    "POST /api/v1/driver/profile/rating/import"
+  ],
+  "RequestRentalExtensionDto": [
+    "POST /api/v1/rentals/bookings/{bookingId}/extensions"
+  ],
+  "RequestRouteAlterationDto": [
+    "POST /api/v1/trips/{tripId}/route-alterations"
+  ],
+  "RequestTwoFactorLoginCodeRequest": [
+    "POST /api/v1/auth/login/2fa/request-code"
+  ],
+  "ResolveVehicleDefectDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve"
+  ],
+  "RespondFareSplitRequest": [
+    "POST /api/v1/rides/fare-splits/{planId}/respond"
+  ],
+  "ReviewAggregateKind": [
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals"
+  ],
+  "ReviewAppealDto": [
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals"
+  ],
+  "ReviewAppealStatus": [
+    "POST /api/v1/reviews/{kind}/{reviewId}/appeals"
+  ],
+  "ReviewRentalExtensionDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}"
+  ],
+  "RevokeDependentConsentDto": [
+    "POST /api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent"
+  ],
+  "RideAssistanceDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "RideBidDto": [
+    "POST /api/v1/driver/rides/{rideRequestId}/bids",
+    "GET /api/v1/rides/{rideRequestId}/bids"
+  ],
+  "RideDispatchMode": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "RideFareRouteSource": [
+    "GET /api/v1/fares/quote",
+    "POST /api/v1/fares/quote"
+  ],
+  "RideInquiryMessageDto": [
+    "GET /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "GET /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}"
+  ],
+  "RideInquiryThreadDto": [
+    "GET /api/v1/rides/{rideRequestId}/inquiries"
+  ],
+  "RideNoDriverRecoveryAction": [
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery"
+  ],
+  "RideNoDriverRecoveryActionDecision": [
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery"
+  ],
+  "RideNoDriverRecoveryProjection": [
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery"
+  ],
+  "RideNoDriverRecoveryState": [
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery"
+  ],
+  "RideProductType": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "RideRecoveryExecutionKind": [
+    "GET /api/v1/rides/{rideRequestId}/no-driver-recovery"
+  ],
+  "RideRequestDto": [
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "RideRequestDtoPagedResult": [
+    "GET /api/v1/rides"
+  ],
+  "RideRequestStatus": [
+    "GET /api/v1/recurring-rides/{recurringRideId}/occurrences",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "RideSearchMapDto": [
+    "GET /api/v1/rides/{rideRequestId}/search-map"
+  ],
+  "RideStopDto": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "RideStopInputDto": [
+    "POST /api/v1/rides",
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "RideStopStatus": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "RideStopType": [
+    "GET /api/v1/driver/rides/available",
+    "GET /api/v1/driver/rides/available/seek",
+    "POST /api/v1/fares/quote",
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "RiderAssistanceProfileDto": [
+    "GET /api/v1/rider/assistance-profile",
+    "PUT /api/v1/rider/assistance-profile"
+  ],
+  "RiderEntitlementsDto": [
+    "GET /api/v1/rider/membership"
+  ],
+  "RiderOnboardingDecisionDto": [
+    "POST /api/v1/account/onboarding/phone-decision",
+    "GET /api/v1/account/setup-progress"
+  ],
+  "RiderVerificationPolicyDto": [
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable"
+  ],
+  "RiderVerificationState": [
+    "GET /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable"
+  ],
+  "RouteDeviationAlertDto": [
+    "POST /api/v1/safety/events/{id}/route-deviation-response",
+    "GET /api/v1/safety/trips/{tripId}/route-deviation"
+  ],
+  "RouteDeviationResponseRequest": [
+    "POST /api/v1/safety/events/{id}/route-deviation-response"
+  ],
+  "SafetyCaseSeverity": [
+    "POST /api/v1/safety/cases",
+    "POST /api/v1/safety/cases/recoverable"
+  ],
+  "SafetyEscalationChannel": [
+    "POST /api/v1/safety/cases",
+    "POST /api/v1/safety/cases/recoverable"
+  ],
+  "SafetyEventPassengerResponse": [
+    "POST /api/v1/safety/events/{id}/route-deviation-response",
+    "GET /api/v1/safety/trips/{tripId}/events",
+    "GET /api/v1/safety/trips/{tripId}/route-deviation"
+  ],
+  "SafetyEventSeverity": [
+    "GET /api/v1/safety/trips/{tripId}/events"
+  ],
+  "SafetyEventStatus": [
+    "POST /api/v1/safety/events/{id}/route-deviation-response",
+    "GET /api/v1/safety/trips/{tripId}/events",
+    "GET /api/v1/safety/trips/{tripId}/route-deviation"
+  ],
+  "SafetyEventType": [
+    "POST /api/v1/safety/events",
+    "GET /api/v1/safety/trips/{tripId}/events"
+  ],
+  "SafetyEventViewDto": [
+    "GET /api/v1/safety/trips/{tripId}/events"
+  ],
+  "SafetyPreferencesDto": [
+    "GET /api/v1/safety/preferences",
+    "PUT /api/v1/safety/preferences"
+  ],
+  "SaveCalculationDto": [
+    "POST /api/v1/calculations"
+  ],
+  "SaveDriverOnboardingProgressDto": [
+    "POST /api/v1/driver/profile/onboarding/progress"
+  ],
+  "SaveFamilySafetyPolicyDto": [
+    "PUT /api/v1/travel-profiles/{profileId}/family-safety-policy"
+  ],
+  "SaveTravelCostCenterDto": [
+    "POST /api/v1/travel-profiles/{profileId}/cost-centers"
+  ],
+  "SaveTravelPolicyDto": [
+    "PUT /api/v1/travel-profiles/{profileId}/ride-policy"
+  ],
+  "SavedCalculationDto": [
+    "GET /api/v1/calculations",
+    "POST /api/v1/calculations",
+    "PUT /api/v1/calculations/{id}/title"
+  ],
+  "ScheduledReportDto": [
+    "GET /api/v1/reports/scheduled",
+    "POST /api/v1/reports/scheduled"
+  ],
+  "ScheduledRideGuaranteeStatus": [
+    "GET /api/v1/rides",
+    "POST /api/v1/rides",
+    "GET /api/v1/rides/{rideRequestId}",
+    "POST /api/v1/rides/{rideRequestId}/bids/accept",
+    "PUT /api/v1/rides/{rideRequestId}/fare",
+    "POST /api/v1/rides/{rideRequestId}/search/extend",
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "ScheduledRideOperatingStatusDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "ScheduledRideRiderCheckInDto": [
+    "GET /api/v1/trips/{tripId}/reservation/rider-check-in",
+    "POST /api/v1/trips/{tripId}/reservation/rider-check-in"
+  ],
+  "SecurityPreferencesDto": [
+    "GET /api/v1/account/security-preferences",
+    "PUT /api/v1/account/security-preferences/login-email-alerts"
+  ],
+  "SendChatMessageRequest": [
+    "POST /api/v1/trips/{tripId}/chat"
+  ],
+  "SendRideInquiryMessageDto": [
+    "POST /api/v1/driver/rides/{rideRequestId}/inquiry",
+    "POST /api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}"
+  ],
+  "SendSupervisedMessageDto": [
+    "POST /api/v1/supervised-trips/{tripId}/conversation"
+  ],
+  "SessionDto": [
+    "GET /api/v1/auth/sessions"
+  ],
+  "SetAutoRenewRequest": [
+    "PUT /api/v1/driver/membership/auto-renew",
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew"
+  ],
+  "SetAvatarDto": [
+    "POST /api/v1/account/avatar"
+  ],
+  "SetCorporateBudgetDto": [
+    "PUT /api/v1/corporate/accounts/{accountId}/budgets"
+  ],
+  "SetHouseholdConsentDto": [
+    "POST /api/v1/households/{householdId}/consent"
+  ],
+  "SetLoginEmailNotificationsDto": [
+    "PUT /api/v1/account/security-preferences/login-email-alerts"
+  ],
+  "SetPasswordRequest": [
+    "POST /api/v1/auth/change-password",
+    "POST /api/v1/auth/set-password"
+  ],
+  "SetRentalProviderProtectionDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/protection"
+  ],
+  "SetRiderPhoneOnboardingDecisionDto": [
+    "POST /api/v1/account/onboarding/phone-decision"
+  ],
+  "SetRiderProfilePhotoOnboardingDecisionDto": [
+    "POST /api/v1/account/onboarding/profile-photo-decision"
+  ],
+  "SetTravelTrackingConsentDto": [
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent"
+  ],
+  "SettleRentalDepositDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle"
+  ],
+  "SignRentalAgreementDto": [
+    "POST /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign",
+    "POST /api/v1/rentals/bookings/{bookingId}/agreement/sign"
+  ],
+  "SkipTripStopRequest": [
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "SocialLoginConnectionDto": [
+    "GET /api/v1/auth/social-connections",
+    "POST /api/v1/auth/social-connections",
+    "POST /api/v1/auth/social-link-intents/confirm"
+  ],
+  "SocialLoginRequest": [
+    "POST /api/v1/auth/social"
+  ],
+  "StartTripRequest": [
+    "POST /api/v1/trips/{tripId}/start"
+  ],
+  "StartVoiceCallRequest": [
+    "POST /api/v1/voice/call",
+    "POST /api/v1/voice/call/gsm"
+  ],
+  "StoreEntitlementDto": [
+    "POST /api/v1/store-billing/restore",
+    "POST /api/v1/store-billing/verify"
+  ],
+  "StoreMembershipBenefitDto": [
+    "GET /api/v1/store-billing/products"
+  ],
+  "StoreProductDto": [
+    "GET /api/v1/store-billing/products"
+  ],
+  "StorePurchaseOperationDto": [
+    "GET /api/v1/store-billing/operations/{operationId}"
+  ],
+  "StorePurchaseOpportunityDto": [
+    "GET /api/v1/store-billing/products"
+  ],
+  "StorePurchasePreparationDto": [
+    "POST /api/v1/store-billing/prepare"
+  ],
+  "StorePurchaseQuoteDto": [
+    "POST /api/v1/store-billing/quote"
+  ],
+  "SubmitIdentityVerificationDto": [
+    "POST /api/v1/account/identity-verification",
+    "POST /api/v1/account/identity-verification/recoverable"
+  ],
+  "SubmitWebsiteContactDto": [
+    "POST /api/v1/content/contact"
+  ],
+  "SubscribeMembershipRequest": [
+    "POST /api/v1/driver/membership"
+  ],
+  "SupervisedConversationDto": [
+    "GET /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/handoff",
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation"
+  ],
+  "SupervisedMessageDto": [
+    "GET /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/handoff",
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation"
+  ],
+  "SupervisedParticipantDto": [
+    "GET /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/conversation",
+    "POST /api/v1/supervised-trips/{tripId}/handoff",
+    "POST /api/v1/supervised-trips/{tripId}/safety-escalation"
+  ],
+  "SupportCaseActionPolicyDto": [
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "SupportCaseCatalogDto": [
+    "GET /api/v1/support/tickets/catalog"
+  ],
+  "SupportCaseSubjectDto": [
+    "GET /api/v1/support/tickets/catalog"
+  ],
+  "SupportCommandOutcomeDto": [
+    "GET /api/v1/support/tickets/operations/outcome"
+  ],
+  "SupportContractOptionDto": [
+    "GET /api/v1/support/tickets/catalog"
+  ],
+  "SupportIssueTypeDto": [
+    "GET /api/v1/support/tickets/catalog"
+  ],
+  "SupportLifecycleContractDto": [
+    "GET /api/v1/support/tickets/catalog"
+  ],
+  "SupportTicketDetailsDto": [
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "SupportTicketDto": [
+    "GET /api/v1/support/tickets",
+    "POST /api/v1/support/tickets",
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/close",
+    "POST /api/v1/support/tickets/{ticketId}/close/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reopen",
+    "POST /api/v1/support/tickets/{ticketId}/reopen/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "SupportTicketDtoPagedResult": [
+    "GET /api/v1/support/tickets"
+  ],
+  "SupportTicketEventDto": [
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "SupportTicketMessageDto": [
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "SupportTicketStatus": [
+    "GET /api/v1/support/tickets",
+    "POST /api/v1/support/tickets",
+    "GET /api/v1/support/tickets/{ticketId}",
+    "POST /api/v1/support/tickets/{ticketId}/close",
+    "POST /api/v1/support/tickets/{ticketId}/close/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reopen",
+    "POST /api/v1/support/tickets/{ticketId}/reopen/recoverable",
+    "POST /api/v1/support/tickets/{ticketId}/reply",
+    "POST /api/v1/support/tickets/{ticketId}/reply/recoverable"
+  ],
+  "TollEstimateDto": [
+    "GET /api/v1/tools/tolls/estimate"
+  ],
+  "TollJourneyOptionDto": [
+    "GET /api/v1/tools/tolls/options"
+  ],
+  "TollPlazaChargeDto": [
+    "GET /api/v1/tools/tolls/estimate",
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollPlazaDto": [
+    "GET /api/v1/tools/tolls/plazas",
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollPricingPeriodDto": [
+    "GET /api/v1/tools/tolls/periods"
+  ],
+  "TollRouteEstimateDto": [
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollRouteEstimateRequest": [
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollRouteLegDto": [
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollRoutePointDto": [
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TollRouteSegmentDto": [
+    "POST /api/v1/tools/tolls/route-estimate"
+  ],
+  "TopUpLimitsDto": [
+    "GET /api/v1/wallet/topup/limits"
+  ],
+  "TopUpQuoteDto": [
+    "GET /api/v1/wallet/topup/quote"
+  ],
+  "TopUpResultDto": [
+    "POST /api/v1/wallet/topup"
+  ],
+  "TopUpWalletDto": [
+    "POST /api/v1/wallet/topup"
+  ],
+  "TravelBookingPartiesDto": [
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking"
+  ],
+  "TravelBookingPartyDto": [
+    "POST /api/v1/travel-profiles/{profileId}/rides",
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking"
+  ],
+  "TravelCostCenterDto": [
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}",
+    "POST /api/v1/travel-profiles/{profileId}/cost-centers",
+    "PUT /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}",
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly"
+  ],
+  "TravelMemberDto": [
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}",
+    "POST /api/v1/travel-profiles/{profileId}/members",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}",
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent"
+  ],
+  "TravelProfileSummaryDto": [
+    "GET /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}"
+  ],
+  "TravelProfileWorkspaceDto": [
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}"
+  ],
+  "TravelRideBookingDto": [
+    "POST /api/v1/travel-profiles/{profileId}/rides"
+  ],
+  "TravelRidePolicyDto": [
+    "POST /api/v1/travel-profiles",
+    "POST /api/v1/travel-profiles/invitations/accept",
+    "GET /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}",
+    "PUT /api/v1/travel-profiles/{profileId}/ride-policy"
+  ],
+  "TravelStatementDto": [
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly"
+  ],
+  "TravelTrackingDto": [
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking"
+  ],
+  "TravelTripDto": [
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips"
+  ],
+  "TravelTripReceiptDto": [
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt"
+  ],
+  "TripCallLogDto": [
+    "GET /api/v1/trips/{tripId}/chat"
+  ],
+  "TripChatDto": [
+    "GET /api/v1/trips/{tripId}/chat"
+  ],
+  "TripChatMutationDto": [
+    "POST /api/v1/trips/{tripId}/chat/read"
+  ],
+  "TripCustomerStatusDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripDistanceProvenance": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripDistanceSummaryDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripDtoPagedResult": [
+    "GET /api/v1/trips"
+  ],
+  "TripHistorySeekPageDto": [
+    "GET /api/v1/trips/history"
+  ],
+  "TripLifecycleEvidenceDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripLocationPolicyDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripLocationStatusDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripPickupCeremonyStatusDto": [
+    "GET /api/v1/trips/{tripId}/pickup-ceremony",
+    "POST /api/v1/trips/{tripId}/pickup-contact-attempt"
+  ],
+  "TripPickupCodeDto": [
+    "POST /api/v1/trips/{tripId}/pickup-challenge",
+    "GET /api/v1/trips/{tripId}/pickup-code"
+  ],
+  "TripReceiptDto": [
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt",
+    "GET /api/v1/trips/receipts",
+    "GET /api/v1/trips/{tripId}/receipt"
+  ],
+  "TripRouteAlterationDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripRouteProposalSnapshotDto": [
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip"
+  ],
+  "TripShareDto": [
+    "POST /api/v1/trips/{tripId}/share"
+  ],
+  "TripStatus": [
+    "GET /api/v1/travel-profiles/{profileId}/statements/monthly",
+    "GET /api/v1/travel-profiles/{profileId}/trips",
+    "GET /api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking",
+    "GET /api/v1/trips",
+    "GET /api/v1/trips/active",
+    "GET /api/v1/trips/history",
+    "GET /api/v1/trips/{tripId}",
+    "POST /api/v1/trips/{tripId}/arrived",
+    "GET /api/v1/trips/{tripId}/chat",
+    "POST /api/v1/trips/{tripId}/complete",
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/reservation/confirm",
+    "POST /api/v1/trips/{tripId}/rider-cancellation",
+    "POST /api/v1/trips/{tripId}/route-alterations/{alterationId}/accept",
+    "POST /api/v1/trips/{tripId}/start",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/skip",
+    "GET /api/v1/trips/{tripId}/timeline"
+  ],
+  "TripStopTransitionRequest": [
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/arrive",
+    "POST /api/v1/trips/{tripId}/stops/{stopId}/complete"
+  ],
+  "TripTerminationDto": [
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/rider-cancellation"
+  ],
+  "TripTerminationRequest": [
+    "POST /api/v1/trips/{tripId}/driver-termination",
+    "POST /api/v1/trips/{tripId}/emergency-stop",
+    "POST /api/v1/trips/{tripId}/rider-cancellation"
+  ],
+  "TripTimelineDto": [
+    "GET /api/v1/trips/{tripId}/timeline"
+  ],
+  "TripTimelineEventDto": [
+    "GET /api/v1/trips/{tripId}/timeline"
+  ],
+  "TripTimelineEvidenceLinkDto": [
+    "GET /api/v1/trips/{tripId}/timeline"
+  ],
+  "TripTipDto": [
+    "POST /api/v1/trips/{tripId}/tip"
+  ],
+  "TrustedContactRequest": [
+    "POST /api/v1/safety/trusted-contacts"
+  ],
+  "TwoFactorCodeRequest": [
+    "POST /api/v1/auth/2fa/confirm",
+    "POST /api/v1/auth/2fa/disable"
+  ],
+  "TwoFactorConfirmedDto": [
+    "POST /api/v1/auth/2fa/confirm",
+    "POST /api/v1/auth/2fa/enroll/contact/confirm",
+    "POST /api/v1/auth/2fa/recovery-codes/regenerate"
+  ],
+  "TwoFactorEnrollmentDto": [
+    "POST /api/v1/auth/2fa/enroll"
+  ],
+  "TwoFactorStatusDto": [
+    "POST /api/v1/auth/2fa/disable",
+    "GET /api/v1/auth/2fa/status"
+  ],
+  "TwoFactorStepUpDto": [
+    "POST /api/v1/account/onboarding/contact-proof",
+    "POST /api/v1/auth/2fa/step-up",
+    "POST /api/v1/driver/profile/onboarding/contact-proof"
+  ],
+  "UpdateContactDetailsDto": [
+    "PUT /api/v1/account/contact-details"
+  ],
+  "UpdateDriverAssistanceCapabilityDto": [
+    "PUT /api/v1/driver/assistance-capability"
+  ],
+  "UpdateDriverRideAlertPreferencesDto": [
+    "PUT /api/v1/driver/rides/alert-preferences"
+  ],
+  "UpdateNotificationPreferencesDto": [
+    "PUT /api/v1/notifications/preferences"
+  ],
+  "UpdateRentalBookingStatusDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status"
+  ],
+  "UpdateRentalOrganizationProfileImageDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/profile-image"
+  ],
+  "UpdateRentalOrganizationSettingsDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}"
+  ],
+  "UpdateRentalTeamMemberDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/team/{userId}"
+  ],
+  "UpdateRentalVehicleDto": [
+    "PUT /api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}"
+  ],
+  "UpdateRideFareDto": [
+    "PUT /api/v1/rides/{rideRequestId}/fare"
+  ],
+  "UpdateRiderAssistanceProfileDto": [
+    "PUT /api/v1/rider/assistance-profile"
+  ],
+  "UpdateTravelCostCenterDto": [
+    "PUT /api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}"
+  ],
+  "UpdateTravelMemberDto": [
+    "PUT /api/v1/travel-profiles/{profileId}/members/{memberId}"
+  ],
+  "UpdateTravelProfileDto": [
+    "PUT /api/v1/travel-profiles/{profileId}"
+  ],
+  "UpdateVehicleDto": [
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "PUT /api/v1/vehicles/{vehicleId}"
+  ],
+  "UploadDocumentDto": [
+    "POST /api/v1/driver/documents"
+  ],
+  "UpsertBusinessShippingMemberDto": [
+    "PUT /api/v1/business-shipping/accounts/{accountId}/members"
+  ],
+  "UpsertCorporateMemberDto": [
+    "PUT /api/v1/corporate/accounts/{accountId}/members"
+  ],
+  "UpsertHouseholdMemberDto": [
+    "PUT /api/v1/households/{householdId}/members"
+  ],
+  "UpsertRecurringRideDto": [
+    "POST /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides/recoverable",
+    "PUT /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}/revisioned"
+  ],
+  "User": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "UserActivityDto": [
+    "GET /api/v1/account/activity"
+  ],
+  "UserActivityDtoPagedResult": [
+    "GET /api/v1/account/activity"
+  ],
+  "UserBlockDto": [
+    "GET /api/v1/user-blocks",
+    "POST /api/v1/user-blocks/driver"
+  ],
+  "UserDto": [
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/phone/confirm",
+    "GET /api/v1/auth/me",
+    "POST /api/v1/auth/refresh",
+    "POST /api/v1/auth/register",
+    "POST /api/v1/auth/social"
+  ],
+  "UserExternalExperienceDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserReputationAchievementDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserReputationCategoryDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserReputationDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserReputationReviewDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserReputationVerificationBadgeDto": [
+    "GET /api/v1/account/reputation"
+  ],
+  "UserRole": [
+    "POST /api/v1/auth/login",
+    "POST /api/v1/auth/login/2fa",
+    "POST /api/v1/auth/login/2fa/passkey/complete",
+    "POST /api/v1/auth/login/email/confirm",
+    "POST /api/v1/auth/login/email/request",
+    "POST /api/v1/auth/login/phone/confirm",
+    "POST /api/v1/auth/login/phone/request",
+    "GET /api/v1/auth/me",
+    "POST /api/v1/auth/refresh",
+    "POST /api/v1/auth/register",
+    "POST /api/v1/auth/social",
+    "GET /api/v1/trips/{tripId}/chat",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "UserSecurityEventDto": [
+    "GET /api/v1/account/security-events"
+  ],
+  "UserStatus": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "Vehicle": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleBiddingEligibilityResult": [
+    "GET /api/v1/driver/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/vehicles/{vehicleId}/bidding-eligibility"
+  ],
+  "VehicleBrakeRecord": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes"
+  ],
+  "VehicleCategory": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleDefect": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleDefectStatus": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleDriverAssignment": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleDto": [
+    "GET /api/v1/driver/vehicles",
+    "POST /api/v1/driver/vehicles",
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "POST /api/v1/driver/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles",
+    "POST /api/v1/vehicles",
+    "PUT /api/v1/vehicles/{vehicleId}",
+    "POST /api/v1/vehicles/{vehicleId}/activate"
+  ],
+  "VehicleEligibilityReason": [
+    "GET /api/v1/driver/vehicles/{vehicleId}/bidding-eligibility",
+    "GET /api/v1/vehicles/{vehicleId}/bidding-eligibility"
+  ],
+  "VehicleExpense": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses"
+  ],
+  "VehicleInsurerReferenceDto": [
+    "GET /api/v1/reference-data/vehicle-insurers"
+  ],
+  "VehicleMaintenanceSchedule": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleMaintenanceSeverity": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleMaintenanceStatus": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleMaintenanceSummaryDto": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary"
+  ],
+  "VehicleMaintenanceTrigger": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/summary",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleOdometerReading": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleServiceRecord": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleTyreRecord": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VehicleVerificationStatus": [
+    "GET /api/v1/driver/vehicles",
+    "POST /api/v1/driver/vehicles",
+    "PUT /api/v1/driver/vehicles/{vehicleId}",
+    "POST /api/v1/driver/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles",
+    "POST /api/v1/vehicles",
+    "PUT /api/v1/vehicles/{vehicleId}",
+    "POST /api/v1/vehicles/{vehicleId}/activate",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "VerifyStorePurchaseDto": [
+    "POST /api/v1/store-billing/restore",
+    "POST /api/v1/store-billing/verify"
+  ],
+  "VerifyTwoFactorLoginRequest": [
+    "POST /api/v1/auth/login/2fa"
+  ],
+  "VoiceCallLifecycleDto": [
+    "POST /api/v1/voice/call/connected",
+    "POST /api/v1/voice/call/consent",
+    "GET /api/v1/voice/call/{callId}"
+  ],
+  "VoiceCallLifecycleRequest": [
+    "POST /api/v1/voice/call/connected",
+    "POST /api/v1/voice/call/consent"
+  ],
+  "VoiceCallOptionsDto": [
+    "GET /api/v1/voice/options"
+  ],
+  "VoiceCallStartDto": [
+    "POST /api/v1/voice/call"
+  ],
+  "VoiceSessionDto": [
+    "GET /api/v1/voice/token"
+  ],
+  "VoidVehicleServiceDto": [
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void"
+  ],
+  "Wallet": [
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/brakes",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/expenses",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/odometer",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/schedules",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void",
+    "GET /api/v1/vehicles/{vehicleId}/maintenance/tyres",
+    "POST /api/v1/vehicles/{vehicleId}/maintenance/tyres"
+  ],
+  "WalletAmountBreakdownDto": [
+    "GET /api/v1/wallet",
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status",
+    "POST /api/v1/wallet/topup"
+  ],
+  "WalletBalanceContextDto": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/transactions"
+  ],
+  "WalletDto": [
+    "GET /api/v1/wallet",
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status",
+    "POST /api/v1/wallet/topup"
+  ],
+  "WalletFeeScheduleDto": [
+    "GET /api/v1/wallet/fees"
+  ],
+  "WalletLedgerPageDto": [
+    "GET /api/v1/wallet/transactions"
+  ],
+  "WalletLedgerSeekPageDto": [
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletLedgerTotalsDto": [
+    "GET /api/v1/wallet/transactions"
+  ],
+  "WalletMovementEvidenceDto": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletPaymentStatusDto": [
+    "GET /api/v1/wallet/payments/status",
+    "GET /api/v1/wallet/payments/{paymentId}/status"
+  ],
+  "WalletRecipientDto": [
+    "GET /api/v1/wallet/recipients",
+    "POST /api/v1/wallet/recipients"
+  ],
+  "WalletTransactionDirection": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletTransactionDto": [
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletTransactionExplanationDto": [
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletTransactionType": [
+    "GET /api/v1/wallet/financial-history",
+    "GET /api/v1/wallet/financial-history/{entryId}",
+    "GET /api/v1/wallet/transactions",
+    "GET /api/v1/wallet/transactions/history"
+  ],
+  "WalletTransferDto": [
+    "POST /api/v1/wallet/transfers"
+  ],
+  "WalletTransferQuoteDto": [
+    "GET /api/v1/wallet/transfers/quote"
+  ],
+  "WalletTransferRequest": [
+    "POST /api/v1/wallet/transfers"
+  ],
+  "WeekdayFlags": [
+    "GET /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides",
+    "POST /api/v1/recurring-rides/recoverable",
+    "GET /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}",
+    "PUT /api/v1/recurring-rides/{recurringRideId}/revisioned"
+  ]
+}

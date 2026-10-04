@@ -17,10 +17,17 @@ currency metadata and provider-fee policy. Country cells own quotes and
 transaction snapshots. Money uses integer minor units, rates use exact decimals
 with explicit direction, and one conversion component owns rounding.
 
-Rates follow maker-checker lifecycle and cannot be edited after activation.
+Rates follow an approval lifecycle and cannot be edited after activation.
 Every financial operation binds a fresh approved rate and fee snapshot before
 provider I/O. All later lifecycle events use that snapshot. Reconciliation is
 read-only; corrections use reviewed compensating postings.
+
+**2026-10-03 amendment:** independent maker/checker separation is configurable
+per domain in the reviewed source and defaults off for FX. One authorized
+reviewer may therefore complete the workflow when that policy is disabled.
+Version immutability, permission, audit, evidence and concurrency controls remain
+required. Enabling the policy requires a distinct authorized approver. This
+amends the original unconditional separation rule, not the ownership of rates.
 
 ## Consequences
 

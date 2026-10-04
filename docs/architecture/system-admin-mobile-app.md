@@ -13,12 +13,14 @@ belongs to the consumer app. It is not a distribution link for the restricted
 System Admin app. Public support, legal and product resources are collected in
 [official product links](../public-product-links.md).
 
-This chapter describes the **2026-09-30 local source checkpoint**. The separate
-app exists and several workspaces are implemented, but the migration is not
-complete. Source tests, an API route, a rendered screen and a signed-device
-operator journey are different evidence levels. Nothing here claims a
-production rollout or approval for private distribution. See the
-[two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md) for the shared
+This chapter was refreshed against the **2026-10-03 reviewed source checkpoint**
+identified in the [current baseline](../current-baseline.md). Driver/identity
+document viewing and decisions, membership-center navigation and catalog
+editing now have implementations; the earlier statement that these were
+uniformly absent was stale. Source tests, an API route, a rendered screen and
+a signed-device operator journey remain different evidence levels. Nothing here
+claims complete parity, a production rollout or approval for private distribution.
+See the historical [two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md) for the shared
 consumer/admin boundary and [System Administration](system-administration.md)
 for the wider control-plane rules.
 
@@ -112,9 +114,120 @@ The People listing leads to a user dossier with eight accessible tab pages:
 
 Tabs and subtabs retain navigation context when a detail screen closes. The
 lists load and page independently so an unavailable optional section does not
-erase a person's basic details. Some dossier actions and detail destinations
-still require further migration and signed-device verification; this list
-describes the intended and locally implemented structure, not universal parity.
+erase a person's basic details. The current operation ledger and executable
+workspace determine each action's source coverage; the old migration table is
+not an authoritative list of everything still missing. Signed-device and
+permission-boundary evidence remains necessary for each released workflow.
+
+### Membership center and plan editing
+
+The membership metric leads to a dedicated center rather than an unrelated
+people list. Its source workspace presents catalog plans and membership counts,
+opens the members of a selected plan and links a member to the person's dossier.
+Member expiry and status are parsed as domain facts; a missing expiry is not
+silently converted into a healthy active subscription. The sidebar supplies
+the same destination so the center does not depend on a dashboard shortcut.
+
+The catalog editor manages plan identity, audience, name, description, term
+prices, benefit allotments and activation state. Prices and withdrawal bounds
+remain integer minor units in their defined currency. A cosmetic name or color
+change does not create a new store product or entitlement. Existing plan limits
+and historical purchased-period evidence have different responsibilities.
+
+New paid plans start as inactive drafts until the required store mappings and
+country prices are configured and reviewed. Saving a draft does not publish an
+Apple or Google product. The editor retains its original key, revision and
+payload through an uncertain save, then validates the returned record instead
+of assuming that a completed HTTP request means every requested field persisted.
+
+| Operator task | Correct authority and result |
+| --- | --- |
+| Edit benefits or prices | Validated catalog save and a fresh server read; a local form value is not the effective catalog |
+| Add a plan | New catalog draft with explicit readiness for activation; no invented native product availability |
+| Inspect members | Server-scoped membership query with statuses and expiries; counts must use the same definition as the list |
+| Grant or extend a person's plan | Authorized subject-level membership mutation and audited entitlement read-back |
+| Change a paid subscription | Provider-aware lifecycle and current entitlement projection; changing a catalog row is not proof of a provider change |
+| Recover an interrupted edit | Original command identity and server outcome, followed by a current authorized read |
+
+The consumer purchase screen, admin editor, membership usage checks and store
+reconciliation must agree on the server catalog while respecting snapshots of
+already accepted terms. This documentation does not certify propagation or a
+store lifecycle merely because the editor and contracts exist. See
+[money and memberships](../api/money-and-memberships.md).
+
+### Driver review from evidence to readiness
+
+The driver-review workspace and repository support protected document inspection,
+review reasons, individual decisions, outcome reconciliation and final readiness
+decisions. The identity-review workspace supplies the corresponding protected
+identity evidence flow. A reviewer must be able to inspect the actual permitted
+image or PDF; a filename, an upload count or a placeholder is not evidence review.
+
+1. Open the applicant from People or the review queue in the correct country
+   and tenant. Read the latest checklist, document records and aggregate revision.
+2. Open a document through the protected viewer. The server authorizes the
+   subject and purpose; the client validates the response and handles unsupported
+   or unavailable media explicitly. Private bytes are not a public download.
+3. Approve or reject the selected document. Rejection uses the supported reason
+   catalog and explanatory note where required. A decision refers to a particular
+   upload and revision, not merely a document category name.
+4. Read the persisted decision and refreshed readiness. The country document
+   decision and global identity/compliance state can require synchronization;
+   the UI must not treat the first successful response as proof that all gates passed.
+5. Let the owner remediate a rejection with replacement evidence. The replacement
+   is reviewed on its own merits; the rejected file's approval state cannot carry over.
+6. Complete final approval only when the server's current workflow permits it.
+   Read the resulting readiness assessment before enabling work controls.
+
+Document approval/rejection produces durable notification work. The reviewed
+notice code supports email and app notification, with SMS and WhatsApp when the
+contact destination, provider and applicable policy permit them. This is a
+channel-eligibility rule, not a promise that every applicant has four reachable
+destinations. Queuing, provider acceptance, recipient delivery and viewing are
+separate facts. A failed notification must not repeat the review mutation.
+
+Required contact verification, current identity evidence, vehicle assignment,
+registration, insurance, fitness, membership, duty eligibility and fresh location
+can all affect readiness. One approved document or a paid Gold plan does not
+override the remaining gates. Expiry, replacement, revocation or a changed
+assignment can invalidate an earlier readiness assessment.
+
+### Approval policy and restricted viewing
+
+The API owns optional independent-approval requirements. In the reviewed source,
+`SystemConfiguration:AdminApprovalPolicy` has the following domain flags, all
+**false by default**. These are example/source defaults, not a disclosure of a
+live production configuration.
+
+| Setting suffix | Domain governed |
+| --- | --- |
+| `DriverIdentityRequireIndependentApproval` | Driver identity decisions |
+| `ExternalDrivingHistoryRequireIndependentApproval` | Imported driving-history decisions |
+| `CampaignRequireIndependentApproval` | Campaign approval |
+| `PayPalControlsRequireIndependentApproval` | PayPal operational controls |
+| `WalletAdjustmentsRequireIndependentApproval` | Reviewed wallet adjustments |
+| `FxRatesRequireIndependentApproval` | FX rate decisions |
+| `LegalDocumentsRequireIndependentApproval` | Legal-document publication decisions |
+| `TripCallEvidenceDisclosuresRequireIndependentApproval` | Restricted call-evidence disclosures |
+| `CountryProvisioningRequireIndependentApproval` | Country provisioning decisions |
+
+Disabled means one authorized administrator may complete the applicable approval
+workflow. Enabled means the server requires the applicable distinct proposer and
+reviewer identities. It does not mean every operation in a domain requires a
+second approver. The specific decision boundary owns that rule. Role/capability,
+tenant proof, input validation, concurrency, action proof where required and audit
+remain enforced in either mode. Client buttons cannot override the policy.
+
+The native restricted-viewer lease is separately policy-gated and disabled by
+default in the reviewed example configuration. Disabling that particular viewing
+lease does not remove protected media authorization, evidence-session validity,
+workspace fencing, secure byte disposal or a decision's own authentication needs.
+Viewing a file, renewing account proof and making a consequential decision are
+different operations with different evidence.
+
+Policy verification must exercise both modes: an authorized single reviewer
+when disabled; same-person denial and distinct-reviewer acceptance when enabled;
+and denial for missing capability or cross-workspace access in either mode.
 
 ### Investigations and financial decisions
 
@@ -123,7 +236,8 @@ route/timeline, retained replay, financial context, support links and permitted
 communication evidence. Calls and chat are evidence with privacy and retention
 limits, not general employee browsing. Certain state changes use a reviewed
 revision and a stable operation identity, and the UI returns to an authoritative
-read after acting. Archived lifecycle actions are not all migrated.
+read after acting. Exact operation coverage must be checked against the current
+ledger; broad menu coverage is not proof of every archived lifecycle action.
 
 Finance screens keep amounts in integer minor units and show the currency with
 the formatted value. A pending bank transfer, cashout review, payout completion
@@ -213,20 +327,19 @@ number or guessing a successful state.
 
 ## Current limits and evidence needed
 
-The System Admin migration is substantial but unfinished. Restricted document
-viewing and decisions, parts of account governance, broader trip/delivery and
-financial actions, campaigns, provider operations and some support channels
-still need contracts, UI, recovery and permission evidence. The operation
-inventory is a worklist, not proof that every route is usable. Some source
-screens and API tests pass while no signed-device exercise exists for the exact
-workflow. The private iOS/Android release process, independent app identity,
+Source migration and release certification must be assessed separately. The
+older migration inventory contains stale “unavailable” statements for some
+implemented capabilities; the newer exact-operation ledger also explicitly
+states that its generated rows are not certification. This chapter corrects
+known stale claims without declaring universal parity. The private iOS/Android
+release process, independent app identity,
 notification isolation, process-death recovery, limited-admin denials and
 paired installation with the consumer app all need evidence tied to a specific
 signed candidate before a general release claim.
 
-Use the source repository's `src/client/system_admin/MIGRATION_PARITY.md` and
-dated operation-evidence ledger for per-workflow status; regenerate them before
-using counts because the People work has continued since the last ledger. For
+Use the current operation-evidence ledger together with its actual repository,
+workspace and focused tests for per-workflow status. Reconcile the older
+`src/client/system_admin/MIGRATION_PARITY.md` before quoting it as current. For
 the operator-level map, continue with [workflow contracts](admin-workflow-contracts.md)
 and [critical journeys](../diagrams/admin-critical-journeys.md). For the trust
 boundaries, continue with [Identity and access](../security/identity-and-access.md),

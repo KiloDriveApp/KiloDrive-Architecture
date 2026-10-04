@@ -70,9 +70,10 @@ environment mismatch, dual entitlement, unknown product/term, missing price
 evidence or financial mismatch. Preserve evidence and route to the restricted
 membership exception queue.
 
-## Current handover and unperformed cases
+## Historical handover and candidate-specific evidence
 
-Use the [build-168 handover](build168-operational-handover.md) for the current
+Use the [current baseline](../current-baseline.md) for source provenance and the
+[build-168 handover](build168-operational-handover.md) for its historical
 source and deployment checkpoint. Automated first-token context recovery and
 pending-refund workflow tests cover controlled provider boundaries, not a
 physical first-purchase kill or genuine provider refund. Historical Play
