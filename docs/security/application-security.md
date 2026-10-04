@@ -4,6 +4,11 @@ This document follows a request from the public edge to the domain handler and
 back. It highlights controls that are easy to place in the wrong order and bugs
 that look harmless until an attacker automates them.
 
+The [security control model](security-control-model.md) supplies current source
+evidence and configuration qualifications. The
+[OWASP API Top 10 mapping](owasp-api-top-10-2023.md) organizes review by risk,
+including object, property and function authorization as separate concerns.
+
 ## Edge and trusted proxy boundary
 
 Cloudflare or another approved edge may terminate public TLS and add the original
@@ -22,20 +27,27 @@ looking API request still passes every application check.
 
 ## Middleware order
 
-Ordering changes meaning. A typical protected path needs:
+Ordering changes meaning. In the reviewed API source, after the early response,
+correlation, exception and applicable mobile-version boundaries, the protected
+request pipeline registers:
 
-1. forwarded-header/client-IP trust resolution;
-2. correlation ID validation or generation;
-3. response hardening and exception boundary;
-4. tenant/country context needed by the selected limiter policy;
+1. authentication;
+2. device access for the public API runtime profile;
+3. endpoint authorization;
+4. tenant resolution and the authenticated cell-session check;
 5. rate limiting;
-6. authentication;
-7. authorization; and
-8. endpoint validation and handler execution.
+6. applicable App Check and public-form admission;
+7. idempotency and mutation-audit middleware; and
+8. endpoint filters, validation and handler execution.
 
-Specific endpoints may require authorization before model validation, rate-limit
-work, notification enqueueing, or entity lookup to avoid revealing behavior to
-anonymous callers. Tests should assert this ordering, not merely the final status.
+This order comes from `Program.cs` at the
+[reviewed baseline](../current-baseline.md). It corrects the older illustrative
+ordering that placed rate limiting before authentication and authorization.
+Protected endpoints reject unauthenticated callers before tenant resolution,
+model validation or notification staging. The hosting/edge layer still needs
+its own traffic controls; a later application limiter does not bound all work
+performed before it. Tests should assert ordering and absence of unauthorized
+side effects, not merely the final status code.
 
 ## Response hardening
 
@@ -92,6 +104,12 @@ available and trusted client IP where appropriate. Return `429` with a useful
 Do not disable the limiter globally to fix a legitimate burst. Measure normal
 peak behavior and tune the narrow policy. Keep business usage limits—such as bid
 or membership limits—separate from transport abuse limits.
+
+The reviewed ASP.NET limiter instances hold process-local counters. Multiple
+API nodes require an assessed aggregate budget; using Redis elsewhere does not
+make these counters distributed. Configurable endpoint budgets can also observe
+without enforcing. Effective modes, provider spending controls and multi-node
+capacity evidence remain operational verification requirements.
 
 ## Idempotency and optimistic concurrency
 

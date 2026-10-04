@@ -35,6 +35,11 @@ distinguish current source, historical releases, configuration and certification
 The [documentation review record](docs/quality/documentation-audit-2026-10-03.md)
 lists corrected mistakes and remaining semantic-review work explicitly.
 
+For security, read the [control model](docs/security/security-control-model.md)
+and the [OWASP API Top 10 mapping](docs/security/owasp-api-top-10-2023.md).
+They explain authentication, authorization, device admission, financial safeguards
+and abuse controls, with source evidence and deployment qualifications.
+
 For HTTP contracts, start with the [KiloDrive API Guide](docs/api/README.md).
 It includes plain-English endpoint purposes, a linked field dictionary,
 authentication/tenancy rules, money and timestamp conventions, safe recovery,
@@ -318,6 +323,8 @@ versions worth remembering:
 - [Valkey](docs/integrations/valkey.md)
 - [Provider boundaries](docs/integrations/providers.md)
 - [Security posture](docs/security/README.md)
+- [Security controls and assurance boundaries](docs/security/security-control-model.md)
+- [KiloDrive and OWASP API Security Top 10](docs/security/owasp-api-top-10-2023.md)
 - [Identity and access](docs/security/identity-and-access.md)
 - [Application security](docs/security/application-security.md)
 - [Privacy and data protection](docs/security/privacy-and-data-protection.md)

@@ -26,6 +26,24 @@ The inspected product revision and versions are in the current baseline.
 | Source-controlled plugin forks were labelled as upstream Pub packages and an explicit override was omitted | Give reviewed forks distinct coordinates and include explicit overrides; reject unreviewed non-hosted dependencies | Fork-identity, overlap/version and non-hosted-origin tests |
 | Native-package chapter described both apps as remote-notification-only | Correct the consumer's declared background location mode and distinguish it from the Admin declaration | Inspection of both source Info.plist files; no background-device result inferred |
 
+## Security documentation expansion
+
+The [security control model](../security/security-control-model.md) and
+[OWASP API Top 10 mapping](../security/owasp-api-top-10-2023.md) now connect
+authentication, authorization, admission, money and abuse controls to the pinned
+source. This follow-up corrects the older blanket admission-gap wording to
+describe the implemented browser proof and its configuration dependency. It
+also makes legacy-session compatibility, process-local rate limits, observation
+mode and unverified edge configuration explicit.
+The application-security chapter now follows the actual reviewed middleware
+registration order instead of an older illustrative sequence that placed
+rate limiting before authentication and authorization.
+
+The evidence index identifies implementation and defined tests without claiming
+those application suites or production security tests were executed during this
+documentation update. OWASP category names and definitions were checked against
+the official 2023 edition. This mapping is not an OWASP certification.
+
 ## What was checked
 
 The local and GitHub documentation lanes check the public OpenAPI, policy and

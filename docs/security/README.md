@@ -23,6 +23,24 @@ For the separate operator client, read [System Admin data handling](admin-data-h
 alongside [identity and access](identity-and-access.md). The former classifies
 what an administrator may view, cache, export and retain for a permitted task.
 
+## Detailed control and OWASP guides
+
+Read [security controls and assurance boundaries](security-control-model.md)
+for the current source baseline, a request-boundary diagram and the detailed
+control model. Read [KiloDrive and OWASP API Security Top 10](owasp-api-top-10-2023.md)
+for all ten 2023 risk categories, KiloDrive examples, source evidence, negative
+test expectations and remaining verification responsibilities. This is a
+self-assessment mapping, not OWASP certification.
+
+| Area | What the controls protect | Essential distinction |
+| --- | --- | --- |
+| Authentication | Credentials, sessions, recovery, passkeys and social identities | A verified account does not authorize every operation |
+| Authorization | Functions, records, fields, country scope and current lifecycle | Tenant filtering does not replace ownership or permission checks |
+| Device admission | Application identity, installations, bans and session binding | Attestation does not prove the human or grant an admin role |
+| Financial safeguards | Amounts, holds, entitlements, provider evidence and replay recovery | An uncertain outcome cannot justify another mutation |
+| Abuse controls | Request frequency, expensive work and sensitive workflows | Rate limits do not prevent every abuse of otherwise valid commands |
+| Assurance | Configuration, source tests, deployment and release evidence | Implementation presence is different from production verification |
+
 ## The short version
 
 KiloDrive's main security boundaries are:
@@ -37,7 +55,8 @@ KiloDrive's main security boundaries are:
   compliance, and step-up authorization checks;
 - idempotency and conditional entity versions on sensitive mutations;
 - immutable double-entry journals alongside operational wallet transactions;
-- private encrypted object storage with fail-closed quarantine scanning;
+- private-object and encryption controls with fail-closed quarantine scanning,
+  subject to verified storage and key configuration;
 - durable outbox delivery, safe provider reconciliation, and redacted telemetry;
 - trusted-proxy boundaries, rate limits, strict response headers, and sanitized
   Problem Details; and
@@ -47,7 +66,7 @@ KiloDrive's main security boundaries are:
 
 | Layer | Primary controls | What it cannot do alone |
 | --- | --- | --- |
-| Cloudflare/edge | TLS, WAF, bot and probe filtering, rate limits | authorize a ride or wallet resource |
+| Cloudflare/edge | Deployment-configured TLS, WAF, bot/probe filtering and rate limits | authorize a ride or wallet resource |
 | IIS/reverse proxy | process isolation, request bounds, headers | decide tenant ownership |
 | API middleware | correlation, authentication, tenant resolution, rate limits, redaction | replace handler-level domain authorization |
 | Handlers/services | ownership, state, compliance, idempotency, accounting | protect a leaked signing key |
@@ -56,6 +75,13 @@ KiloDrive's main security boundaries are:
 | S3/scanner | private storage, encryption, quarantine | decide whether a reviewer is authorized now |
 | Mobile/portal | safe UX, secure storage, platform biometrics | enforce trust against a modified client |
 | Operations | least privilege, monitoring, rotation, runbooks | correct insecure application logic by itself |
+
+The table assigns responsibilities; it does not attest that each external
+control is enabled in production. App Check protected routes, device bootstrap,
+browser admission and legacy session compatibility have different enforcement
+boundaries. Request budgets are process-local unless an assessed aggregate
+control is supplied. These qualifications are detailed in the
+[control model](security-control-model.md).
 
 ## Seven principles used in reviews
 
@@ -111,6 +137,10 @@ real environment check.
 
 ## How to use this chapter
 
+- [Security control model](security-control-model.md) joins the main protections,
+  representative source evidence and deployment responsibilities.
+- [OWASP API Top 10 mapping](owasp-api-top-10-2023.md) connects all ten risk
+  categories to KiloDrive controls and bounded verification requirements.
 - [Identity and access](identity-and-access.md) explains credentials, JWTs,
   refresh families, OTP, passkeys, TOTP, roles, and step-up.
 - [Application security](application-security.md) covers edge, middleware,
