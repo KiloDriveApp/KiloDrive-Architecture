@@ -155,6 +155,12 @@ into a token family. Every refresh rotates the token. If an already used token i
 presented again, the server treats the family as compromised and revokes the
 replacement chain.
 
+The session-family policy also preserves compatibility for legacy access tokens
+without that additive claim. New family-bound guarantees must therefore be
+reported with their rollout scope rather than attributed to every historical
+token. Defined regression cases are indexed in the
+[control evidence table](security-control-model.md#representative-source-evidence).
+
 Native session families bind to a server-registered installation credential.
 The random installation secret and server ID describe one app installation,
 not permanent physical hardware. A second app or a reinstall can create a
@@ -163,8 +169,11 @@ client-claimed installation IDs are useful diagnostics but cannot authorize a
 request. App Check supplies separately verified application identity where
 configured; a claimed channel header is not equivalent. A known installation
 ban or revoked session remains authoritative across resume and token rotation.
-Anonymous, unattested native login that resembles a browser request is still a
-documented admission-boundary gap and must not be described as solved.
+The reviewed source also implements request-bound browser-audience proof with
+a distributed replay claim, under a separate enforcement setting. Device
+bootstrap, native admission and browser enforcement must be assessed together;
+source presence does not establish complete deployed admission coverage. See
+[device admission](security-control-model.md#device-admission-and-identification).
 
 Logout calls the server first to revoke the refresh token/session, then the app
 disconnects realtime services and wipes secure tokens, identity metadata,

@@ -208,7 +208,11 @@ number.
 
 ### I review security or privacy
 
-Begin with [threat boundaries](security/threat-boundaries.md), then read
+Begin with the [security control model](security/security-control-model.md) and
+[OWASP API Security Top 10 mapping](security/owasp-api-top-10-2023.md). They
+connect specific protections with source evidence, configurable behavior and
+outstanding assurance work. Continue with
+[threat boundaries](security/threat-boundaries.md), then read
 [identity and access](security/identity-and-access.md),
 [application security](security/application-security.md), and
 [privacy and data protection](security/privacy-and-data-protection.md).

@@ -4,6 +4,11 @@ This is a practical threat model for engineers. It is organized around trust
 boundaries because defects usually occur where one component assumes another has
 already validated something.
 
+Use the [control model](security-control-model.md) for source evidence and the
+[OWASP API Top 10 mapping](owasp-api-top-10-2023.md) for risk-specific review
+criteria. The boundary catalogue below states required controls; it does not
+claim every deployment or endpoint has been independently certified.
+
 ## Assumptions
 
 - Phones can be rooted, instrumented, automated, or running a modified APK.

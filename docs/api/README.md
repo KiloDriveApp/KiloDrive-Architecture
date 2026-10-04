@@ -89,6 +89,16 @@ repository. Public architectural explanations are available in
 [System Administration](../architecture/system-administration.md) and the
 [System Admin mobile app chapter](../architecture/system-admin-mobile-app.md).
 
+## Security controls and assurance
+
+The [security control model](../security/security-control-model.md) explains
+authentication, authorization, installation and push-token binding, financial
+recovery and abuse controls. The
+[OWASP API Security Top 10 mapping](../security/owasp-api-top-10-2023.md) adds
+risk-by-risk controls, evidence locators and verification requirements.
+Neither publication nor a documented endpoint grants access or certifies
+production security.
+
 ## Product and support links
 
 For current country disclosures, use the [website](https://kilodrive.com/),
