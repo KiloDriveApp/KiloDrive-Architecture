@@ -30,6 +30,14 @@ The separate System Admin app is not the public consumer download.
 
 ## Start here
 
+For HTTP contracts, start with the [KiloDrive API Guide](docs/api/README.md).
+It includes plain-English endpoint purposes, a linked field dictionary,
+authentication/tenancy rules, money and timestamp conventions, safe recovery,
+workflow guides and a curated OpenAPI export. Its source snapshot identifies
+consumer `1.0.0+172`, System Admin `0.1.0+16` and schema `2026.10.03.1`;
+publication does not grant partner or administrator access or certify every
+production dependency.
+
 If this is your first day with a sharded, realtime platform, use the following
 reading order. It builds one idea at a time:
 
@@ -88,11 +96,13 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The current release checkpoint is documented in the
+The earlier build-168 release checkpoint is documented in the
 [build-168 operational handover](docs/runbooks/build168-operational-handover.md).
 It identifies consumer `1.0.0+168`, separate System Admin source `0.1.0+10`,
 schema `2026.10.02.3`, the deployed bounded fixes, and the provider/device
-evidence that still remains separate. The earlier local-source architecture is documented in
+evidence that still remains separate. The newer API source snapshot and its
+explicit publication limits are recorded in the [API Guide](docs/api/README.md)
+and [manifest](docs/api/openapi/manifest.json). The earlier local-source architecture is documented in
 [Two mobile apps, one authoritative API](docs/architecture/two-mobile-apps-and-security-2026-09-30.md).
 It explains the consumer/System Admin split, shared identity, adapters,
 notifications, device trust, and the release evidence still needed. The

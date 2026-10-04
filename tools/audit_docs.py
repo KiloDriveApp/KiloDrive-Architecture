@@ -44,6 +44,15 @@ REQUIRED_PATHS = (
     "SECURITY.md",
     "docs/README.md",
     "docs/further-reading.md",
+    "docs/api/README.md",
+    "docs/api/reference/README.md",
+    "docs/api/schemas/README.md",
+    "docs/api/coverage-and-limitations.md",
+    "docs/api/publication-policy.json",
+    "docs/api/enum-labels.json",
+    "docs/api/openapi/kilodrive-public-v1.json",
+    "docs/api/openapi/kilodrive-public-v1.json.sha256",
+    "docs/api/openapi/manifest.json",
     "docs/architecture/README.md",
     "docs/architecture/system-context.md",
     "docs/architecture/capability-status.md",
@@ -228,6 +237,14 @@ def main() -> int:
             continue
         for name, pattern in SECRET_PATTERNS.items():
             for match in pattern.finditer(text):
+                # A checked SHA-256 artifact digest can contain twelve digits.
+                # Skip only a substring inside an entire quoted 64-hex value;
+                # standalone account numbers and ARNs remain detected.
+                if name == "AWS account ID" and any(
+                    value.start(1) <= match.start() and match.end() <= value.end(1)
+                    for value in re.finditer(r'"([0-9a-f]{64})"', text)
+                ):
+                    continue
                 line = text.count("\n", 0, match.start()) + 1
                 errors.append(f"{path.relative_to(ROOT)}:{line}: possible {name}")
         if path.suffix.lower() == ".md":

@@ -21,7 +21,13 @@ boundaries should also use the
 It joins controls that are easy to review separately but dangerous to operate
 as unrelated concerns.
 
-The current source and bounded-release checkpoint is the
+The current published API documentation snapshot is the
+[API Guide](api/README.md), derived from reviewed consumer `1.0.0+172`,
+System Admin `0.1.0+16` and schema `2026.10.03.1`. It includes 528 operation
+explanations and a complete field dictionary for the curated subset. These
+are source provenance, not a claim that every native/provider journey is certified.
+
+The earlier source and bounded-release checkpoint is the
 [build-168 operational handover](runbooks/build168-operational-handover.md):
 consumer `1.0.0+168`, separate System Admin source `0.1.0+10`, and schema
 `2026.10.02.3`. It separates source tests, provider observations, configuration,
@@ -33,6 +39,18 @@ release or production certification. The [build 156 update](architecture/release
 and [build 144 baseline](architecture/release-1.0.0-144.md) remain historical.
 
 ## Choose a path
+
+### I need API endpoints, fields or an integration assessment
+
+Read [getting started](api/getting-started.md),
+[authentication](api/access-and-authentication.md),
+[country/authorization rules](api/authorization-and-tenancy.md) and
+[safe recovery](api/errors-and-recovery.md). Then use the
+[endpoint reference](api/reference/README.md),
+[field dictionary](api/schemas/README.md) and
+[curated OpenAPI](api/openapi/kilodrive-public-v1.json).
+Read [coverage and limitations](api/coverage-and-limitations.md) before treating
+a documented first-party contract as an approved third-party integration.
 
 ### I am new to backend systems
 

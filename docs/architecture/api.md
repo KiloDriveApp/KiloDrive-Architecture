@@ -61,6 +61,12 @@ and the correlation ID used to join evidence.
 
 ## Public contract rules
 
+For endpoint-by-endpoint purpose, parameters, request/response fields and
+consumer workflow interpretation, use the [API Guide](../api/README.md),
+[endpoint reference](../api/reference/README.md) and
+[field dictionary](../api/schemas/README.md). The curated public export is an
+explicit subset; the complete administrative/provider contract remains private.
+
 The public canonical prefix is `/api/v1`. Controllers retain internal `api/...`
 templates, while `ApiV1RouteConvention` registers native canonical `/api/v1/...`
 MVC selectors before endpoint matching. `ApiVersioningMiddleware` never rewrites
@@ -73,7 +79,11 @@ sunset on 2027-02-10. New first-party clients use `/api/v1`; the double-version
 form must return `404`.
 
 One reviewed OpenAPI v1 artifact in the product repository describes the public
-contract. At the build `1.0.0+144` baseline it contains 826 paths and 925
+HTTP contract, including protected first-party surfaces. Its reviewed
+2026-10-03 source snapshot contains 996 paths and 1,123 operations. The
+[curated publication](../api/README.md) exports 459 paths and 528 operations,
+with distinct source/public checksums and publication-policy verification.
+At the historical build `1.0.0+144` baseline the complete artifact contains 826 paths and 925
 operations, with SHA-256
 `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
 A contract change is incomplete until endpoint metadata, canonical path tests,

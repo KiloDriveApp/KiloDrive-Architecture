@@ -1,4 +1,4 @@
 [codespell]
 skip = .git,*.json
-ignore-words-list = BLoC
+ignore-words-list = BLoC,tread,checkin
 quiet-level = 2
