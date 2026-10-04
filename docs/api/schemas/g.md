@@ -22,7 +22,7 @@ personal fields must remain outside public logs and examples.
 | `sourceAsOfUtc` | `string (date-time)` | Yes | Not declared nullable | UTC instant for source as of; parse strictly and localize only for display. | No further constraint recorded |
 | `availableAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for available at; parse strictly and localize only for display. | No further constraint recorded |
 | `downloadExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for download expires at; parse strictly and localize only for display. | No further constraint recorded |
-| `fileName` | `string` | No | Explicitly allowed | File name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `fileName` | `string` | No | Explicitly allowed | Document/file display name; it is not a storage authorization or approved-document status. | No further constraint recorded |
 | `contentType` | `string` | No | Explicitly allowed | Content type text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `sizeBytes` | `integer (int64)` | No | Explicitly allowed | Numeric size bytes for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `previousActionCommitted` | `boolean` | Yes | Not declared nullable | Whether previous action committed applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |

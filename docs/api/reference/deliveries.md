@@ -21,15 +21,15 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `page` | query | Conditional or optional | `integer (int32)` | Page-number context for this endpoint; not a universal zero-based offset. |
 | `pageSize` | query | Conditional or optional | `integer (int32)` | Requested or returned page size, subject to this endpoint's server bounds. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryRequestDtoPagedResult](../schemas/d.md#deliveryrequestdtopagedresult) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryRequestDtoPagedResult](../schemas/d.md#deliveryrequestdtopagedresult) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/deliveries`
 
@@ -43,18 +43,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -71,18 +71,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `stopId` | query | Conditional or optional | `string (uuid)` | Identifier of the related stop record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryVerificationChallengeDto](../schemas/d.md#deliveryverificationchallengedto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryVerificationChallengeDto](../schemas/d.md#deliveryverificationchallengedto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -92,14 +92,14 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Access:** Bearer required; declared roles: Passenger.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [CourierProductSettingsDto](../schemas/c.md#courierproductsettingsdto) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [CourierProductSettingsDto](../schemas/c.md#courierproductsettingsdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/deliveries/quote`
 
@@ -113,18 +113,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryQuoteDto](../schemas/d.md#deliveryquotedto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryQuoteDto](../schemas/d.md#deliveryquotedto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -138,16 +138,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/deliveries/{deliveryRequestId}/bids`
 
@@ -159,16 +159,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryBidDto](../schemas/d.md#deliverybiddto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryBidDto](../schemas/d.md#deliverybiddto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/deliveries/{deliveryRequestId}/bids/accept`
 
@@ -184,19 +184,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -214,19 +214,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `bidId` | path | Yes | `string (uuid)` | Identifier of the related bid record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryRequestDto](../schemas/d.md#deliveryrequestdto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -243,16 +243,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `paymentMethod` | query | Conditional or optional | `PaymentMethod` | Payment method enum; availability and settlement rules are checked separately. |
 | `promoCode` | query | Conditional or optional | `string` | Promotion code supplied for server validation; it is not a guaranteed discount or credit. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryAcceptancePreviewDto](../schemas/d.md#deliveryacceptancepreviewdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryAcceptancePreviewDto](../schemas/d.md#deliveryacceptancepreviewdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/deliveries/{deliveryRequestId}/cancel`
 
@@ -268,19 +268,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | No typed schema recorded | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | No typed schema recorded | None recorded | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -294,16 +294,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryCustodyEventDto](../schemas/d.md#deliverycustodyeventdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryCustodyEventDto](../schemas/d.md#deliverycustodyeventdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/deliveries/{deliveryRequestId}/evidence`
 
@@ -315,16 +315,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryEvidenceDto](../schemas/d.md#deliveryevidencedto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryEvidenceDto](../schemas/d.md#deliveryevidencedto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/deliveries/{deliveryRequestId}/protection/claims`
 
@@ -336,16 +336,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [ParcelProtectionClaimDto](../schemas/p.md#parcelprotectionclaimdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [ParcelProtectionClaimDto](../schemas/p.md#parcelprotectionclaimdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/deliveries/{deliveryRequestId}/protection/claims`
 
@@ -360,19 +360,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [ParcelProtectionClaimDto](../schemas/p.md#parcelprotectionclaimdto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [ParcelProtectionClaimDto](../schemas/p.md#parcelprotectionclaimdto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -386,16 +386,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/driver/deliveries/available`
 
@@ -411,15 +411,15 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `page` | query | Conditional or optional | `integer (int32)` | Page-number context for this endpoint; not a universal zero-based offset. |
 | `pageSize` | query | Conditional or optional | `integer (int32)` | Requested or returned page size, subject to this endpoint's server bounds. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DriverDeliveryOfferDtoPagedResult](../schemas/d.md#driverdeliveryofferdtopagedresult) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DriverDeliveryOfferDtoPagedResult](../schemas/d.md#driverdeliveryofferdtopagedresult) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/driver/deliveries/mine`
 
@@ -433,15 +433,15 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `pageSize` | query | Conditional or optional | `integer (int32)` | Requested or returned page size, subject to this endpoint's server bounds. |
 | `status` | query | Conditional or optional | `DeliveryStatus` | Current domain status; use this model's enum or documented string vocabulary. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDtoPagedResult](../schemas/d.md#deliverydtopagedresult) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDtoPagedResult](../schemas/d.md#deliverydtopagedresult) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/driver/deliveries/{deliveryId}/attempts/failed`
 
@@ -456,19 +456,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryId` | path | Yes | `string (uuid)` | Identifier of the related delivery record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -486,19 +486,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | No typed schema recorded | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | No typed schema recorded | None recorded | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -514,18 +514,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -542,19 +542,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryId` | path | Yes | `string (uuid)` | Identifier of the related delivery record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -571,19 +571,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryId` | path | Yes | `string (uuid)` | Identifier of the related delivery record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -600,19 +600,19 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryId` | path | Yes | `string (uuid)` | Identifier of the related delivery record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -628,18 +628,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -656,18 +656,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `expectedRevision` | query | Conditional or optional | `integer (int64)` | Revision the caller read for this logical update; retain the original during uncertain-outcome recovery. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryDto](../schemas/d.md#deliverydto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.
 
@@ -684,18 +684,18 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `deliveryRequestId` | path | Yes | `string (uuid)` | Identifier of the related delivery request record in this model; ownership and scope are checked separately. |
 | `Idempotency-Key` | header | Yes | `string` | Original stable key for this logical operation; retain it with the original payload/revision when reconciling a lost response. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [DeliveryBidDto](../schemas/d.md#deliverybiddto) | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [DeliveryBidDto](../schemas/d.md#deliverybiddto) | `text/plain`, `application/json`, `text/json` | `Idempotent-Replayed`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After`, `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 422 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `X-Operation-Reference`, `X-Recovery-Operation-Reference` |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 **Mutation handling:** Preserve the original idempotency key and payload through unknown outcomes.

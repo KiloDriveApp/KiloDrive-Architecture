@@ -18,17 +18,17 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Body:** [StartVoiceCallRequest](../schemas/s.md#startvoicecallrequest); required; media types: `application/json`, `text/json`, `application/*+json`.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceCallStartDto](../schemas/v.md#voicecallstartdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceCallStartDto](../schemas/v.md#voicecallstartdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/voice/call/connected`
 
@@ -38,17 +38,17 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Body:** [VoiceCallLifecycleRequest](../schemas/v.md#voicecalllifecyclerequest); required; media types: `application/json`, `text/json`, `application/*+json`.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/voice/call/consent`
 
@@ -58,17 +58,17 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Body:** [VoiceCallLifecycleRequest](../schemas/v.md#voicecalllifecyclerequest); required; media types: `application/json`, `text/json`, `application/*+json`.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/voice/call/end`
 
@@ -78,17 +78,17 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Body:** [EndVoiceCallRequest](../schemas/e.md#endvoicecallrequest); required; media types: `application/json`, `text/json`, `application/*+json`.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | No typed schema recorded | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | No typed schema recorded | None recorded | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## POST `/api/v1/voice/call/gsm`
 
@@ -98,17 +98,17 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Body:** [StartVoiceCallRequest](../schemas/s.md#startvoicecallrequest); required; media types: `application/json`, `text/json`, `application/*+json`.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | No typed schema recorded | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | No typed schema recorded | None recorded | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 409 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 415 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/voice/call/incoming`
 
@@ -116,14 +116,14 @@ Response metadata is not a complete list of runtime business outcomes; read the
 
 **Access:** Bearer required; declared roles: Driver, Passenger.
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [IncomingVoiceCallRecoveryDto](../schemas/i.md#incomingvoicecallrecoverydto) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [IncomingVoiceCallRecoveryDto](../schemas/i.md#incomingvoicecallrecoverydto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/voice/call/{callId}`
 
@@ -135,16 +135,16 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `callId` | path | Yes | `string (uuid)` | Identifier of the related call record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceCallLifecycleDto](../schemas/v.md#voicecalllifecycledto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 404 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/voice/options`
 
@@ -156,15 +156,15 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | --- | --- | --- | --- | --- |
 | `tripId` | query | Yes | `string (uuid)` | Accepted trip record, distinct from the originating ride request. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceCallOptionsDto](../schemas/v.md#voicecalloptionsdto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceCallOptionsDto](../schemas/v.md#voicecalloptionsdto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
 
 ## GET `/api/v1/voice/token`
 
@@ -177,12 +177,12 @@ Response metadata is not a complete list of runtime business outcomes; read the
 | `tripId` | query | Yes | `string (uuid)` | Accepted trip record, distinct from the originating ride request. |
 | `callId` | query | Conditional or optional | `string (uuid)` | Identifier of the related call record in this model; ownership and scope are checked separately. |
 
-| Recorded status | Response schema | Response headers |
-| --- | --- | --- |
-| 200 | [VoiceSessionDto](../schemas/v.md#voicesessiondto) | None recorded |
-| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
-| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `Retry-After` |
-| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | None recorded |
+| Recorded status | Response schema | Media types | Response headers |
+| --- | --- | --- | --- |
+| 200 | [VoiceSessionDto](../schemas/v.md#voicesessiondto) | `text/plain`, `application/json`, `text/json` | None recorded |
+| 400 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 401 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 403 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 426 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |
+| 429 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | `Retry-After` |
+| 500 | [ProblemDetails](../schemas/p.md#problemdetails) | `application/problem+json` | None recorded |

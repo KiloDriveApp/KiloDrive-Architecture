@@ -261,7 +261,7 @@ personal fields must remain outside public logs and examples.
 | `instructions` | `string` | No | Explicitly allowed | Instructions text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `wallet` | [WalletDto](w.md#walletdto) | Yes | Not declared nullable | Wallet represented by the `WalletDto` model or enum; use that definition's fields/values. | No further constraint recorded |
 | `operationReference` | `string` | No | Explicitly allowed | Operation reference text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `feeMinor` | `integer (int64)` | No | Not declared nullable | Fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
+| `feeMinor` | `integer (int64)` | No | Not declared nullable | Fee for the applicable default product/plan period, in the stated currency's integer minor units. | No further constraint recorded |
 | `walletCreditMinor` | `integer (int64)` | No | Explicitly allowed | Wallet credit in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
@@ -596,7 +596,7 @@ personal fields must remain outside public logs and examples.
 | `driverName` | `string` | Yes | Not declared nullable | Driver name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `driverRating` | `number (double)` | Yes | Not declared nullable | Numeric driver rating for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `vehicleDescription` | `string` | No | Explicitly allowed | Vehicle description text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `plateNumber` | `string` | No | Explicitly allowed | Plate number text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `plateNumber` | `string` | No | Explicitly allowed | Country-specific vehicle registration plate; validate through the applicable country workflow. | No further constraint recorded |
 | `passengerId` | `string (uuid)` | Yes | Not declared nullable | Identifier of the related passenger record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `passengerName` | `string` | Yes | Not declared nullable | Passenger name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `pickupAddress` | `string` | Yes | Not declared nullable | Human pickup-address text accompanying the structured location. | No further constraint recorded |

@@ -490,7 +490,7 @@ personal fields must remain outside public logs and examples.
 | `platform` | `string` | Yes | Not declared nullable | Platform selector in this contract; numeric enums and string selectors are not interchangeable. | No further constraint recorded |
 | `manufacturer` | `string` | Yes | Not declared nullable | Manufacturer text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `brand` | `string` | Yes | Not declared nullable | Brand text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `displayName` | `string` | Yes | Not declared nullable | Human-readable display label; do not use it as a stable identifier. | No further constraint recorded |
 | `operatingSystem` | `string` | Yes | Not declared nullable | Operating system text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `osVersion` | `string` | Yes | Not declared nullable | Os version for this model's state or policy; do not substitute a timestamp or mobile build. | No further constraint recorded |
@@ -676,7 +676,7 @@ personal fields must remain outside public logs and examples.
 | `vehicle` | [Vehicle](v.md#vehicle) | No | Not declared nullable | Vehicle represented by the `Vehicle` model or enum; use that definition's fields/values. | No further constraint recorded |
 | `type` | [DocumentType](d.md#documenttype) | No | Not declared nullable | Type represented by the `DocumentType` model or enum; use that definition's fields/values. | No further constraint recorded |
 | `fileRef` | `string` | No | Explicitly allowed | Private storage reference; not a permanent public URL or approval decision. | No further constraint recorded |
-| `fileName` | `string` | No | Explicitly allowed | File name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `fileName` | `string` | No | Explicitly allowed | Document/file display name; it is not a storage authorization or approved-document status. | No further constraint recorded |
 | `status` | [DocumentStatus](d.md#documentstatus) | No | Not declared nullable | Current domain status; use this model's enum or documented string vocabulary. | No further constraint recorded |
 | `reviewNote` | `string` | No | Explicitly allowed | Human-readable reviewer explanation, including remediation where applicable. | No further constraint recorded |
 | `expiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for expires at; parse strictly and localize only for display. | No further constraint recorded |
@@ -694,13 +694,13 @@ personal fields must remain outside public logs and examples.
 | `type` | [DocumentType](d.md#documenttype) | Yes | Not declared nullable | Type represented by the `DocumentType` model or enum; use that definition's fields/values. | No further constraint recorded |
 | `status` | [DocumentStatus](d.md#documentstatus) | Yes | Not declared nullable | Current domain status; use this model's enum or documented string vocabulary. | No further constraint recorded |
 | `fileRef` | `string` | Yes | Not declared nullable | Private storage reference; not a permanent public URL or approval decision. | No further constraint recorded |
-| `fileName` | `string` | Yes | Not declared nullable | File name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `fileName` | `string` | Yes | Not declared nullable | Document/file display name; it is not a storage authorization or approved-document status. | No further constraint recorded |
 | `vehicleId` | `string (uuid)` | No | Explicitly allowed | Account vehicle record associated with this operation or result. | No further constraint recorded |
 | `reviewNote` | `string` | No | Explicitly allowed | Human-readable reviewer explanation, including remediation where applicable. | No further constraint recorded |
 | `expiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for expires at; parse strictly and localize only for display. | No further constraint recorded |
 | `createdAtUtc` | `string (date-time)` | Yes | Not declared nullable | UTC instant for created at; parse strictly and localize only for display. | No further constraint recorded |
 | `revision` | `integer (int64)` | No | Not declared nullable | Authoritative record revision used for applicable concurrency checks. | No further constraint recorded |
-| `driverRevision` | `integer (int64)` | No | Not declared nullable | Driver revision for this model's state or policy; do not substitute a timestamp or mobile build. | No further constraint recorded |
+| `driverRevision` | `integer (int64)` | No | Not declared nullable | Driver aggregate revision associated with the document/readiness state. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
 
@@ -1020,7 +1020,7 @@ personal fields must remain outside public logs and examples.
 | `membershipPlanName` | `string` | No | Explicitly allowed | Membership plan name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `membershipExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for membership expires at; parse strictly and localize only for display. | No further constraint recorded |
 | `vehicleCount` | `integer (int32)` | Yes | Not declared nullable | Number of vehicle in this model's stated scope; not automatically a global/live total. | No further constraint recorded |
-| `maxRegisteredVehicles` | `integer (int32)` | Yes | Not declared nullable | Numeric max registered vehicles for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxRegisteredVehicles` | `integer (int32)` | Yes | Not declared nullable | Legacy plan metadata; it must not cap account-owned vehicle storage or Maintenance Center access. | No further constraint recorded |
 | `activeVehicleId` | `string (uuid)` | No | Explicitly allowed | Identifier of the related active vehicle record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `activeVehicleDescription` | `string` | No | Explicitly allowed | Active vehicle description text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `activeVehicleInsured` | `boolean` | Yes | Not declared nullable | Whether active vehicle insured applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |

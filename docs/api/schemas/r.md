@@ -237,7 +237,7 @@ personal fields must remain outside public logs and examples.
 | `platform` | `string` | Yes | Not declared nullable | Platform selector in this contract; numeric enums and string selectors are not interchangeable. | No further constraint recorded |
 | `manufacturer` | `string` | Yes | Not declared nullable | Manufacturer text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `brand` | `string` | Yes | Not declared nullable | Brand text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `displayName` | `string` | Yes | Not declared nullable | Human-readable display label; do not use it as a stable identifier. | No further constraint recorded |
 | `operatingSystem` | `string` | Yes | Not declared nullable | Operating system text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `osVersion` | `string` | Yes | Not declared nullable | Os version for this model's state or policy; do not substitute a timestamp or mobile build. | No further constraint recorded |
@@ -296,11 +296,11 @@ personal fields must remain outside public logs and examples.
 
 | Field | Type | Required by schema | Nullability | Meaning | Additional constraints |
 | --- | --- | --- | --- | --- | --- |
-| `make` | `string` | Yes | Not declared nullable | Make text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `make` | `string` | Yes | Not declared nullable | Vehicle manufacturer name/catalog selection. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `year` | `integer (int32)` | No | Explicitly allowed | Numeric year for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `color` | `string` | Yes | Not declared nullable | Color text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `plateNumber` | `string` | Yes | Not declared nullable | Plate number text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `plateNumber` | `string` | Yes | Not declared nullable | Country-specific vehicle registration plate; validate through the applicable country workflow. | No further constraint recorded |
 | `vehicleCategoryId` | `string (uuid)` | Yes | Not declared nullable | Identifier of the related vehicle category record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `registrationFileRef` | `string` | No | Explicitly allowed | Registration file ref text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `registrationFileName` | `string` | No | Explicitly allowed | Registration file name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
@@ -309,7 +309,7 @@ personal fields must remain outside public logs and examples.
 | `isWheelchairAccessible` | `boolean` | No | Not declared nullable | Whether is wheelchair accessible applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 | `isAirportPickupEligible` | `boolean` | No | Not declared nullable | Whether is airport pickup eligible applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 | `conditionCode` | `string` | No | Explicitly allowed | Condition code text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `vinChassis` | `string` | No | Explicitly allowed | Vin chassis text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `vinChassis` | `string` | No | Explicitly allowed | Vehicle VIN/chassis identification data; keep the actual value private and within authorized views. | No further constraint recorded |
 | `registrationExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for registration expires at; parse strictly and localize only for display. | No further constraint recorded |
 | `fitnessExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for fitness expires at; parse strictly and localize only for display. | No further constraint recorded |
 | `insuranceExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for insurance expires at; parse strictly and localize only for display. | No further constraint recorded |
@@ -786,7 +786,7 @@ personal fields must remain outside public logs and examples.
 | --- | --- | --- | --- | --- | --- |
 | `vehicleId` | `string (uuid)` | Yes | Not declared nullable | Account vehicle record associated with this operation or result. | No further constraint recorded |
 | `vehicle` | `string` | Yes | Not declared nullable | Vehicle text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `plateNumber` | `string` | Yes | Not declared nullable | Plate number text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `plateNumber` | `string` | Yes | Not declared nullable | Country-specific vehicle registration plate; validate through the applicable country workflow. | No further constraint recorded |
 | `kind` | `string` | Yes | Not declared nullable | Kind text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `dueAtUtc` | `string (date-time)` | Yes | Not declared nullable | UTC instant for due at; parse strictly and localize only for display. | No further constraint recorded |
 | `daysRemaining` | `integer (int32)` | Yes | Not declared nullable | Numeric days remaining for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
@@ -931,7 +931,7 @@ personal fields must remain outside public logs and examples.
 
 | Field | Type | Required by schema | Nullability | Meaning | Additional constraints |
 | --- | --- | --- | --- | --- | --- |
-| `make` | `string` | Yes | Not declared nullable | Make text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `make` | `string` | Yes | Not declared nullable | Vehicle manufacturer name/catalog selection. | No further constraint recorded |
 | `models` | `string[]` | Yes | Not declared nullable | Collection of models for this model; interpret each item through the declared item type. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
@@ -1150,15 +1150,15 @@ personal fields must remain outside public logs and examples.
 | `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | No further constraint recorded |
 | `branchId` | `string (uuid)` | Yes | Not declared nullable | Identifier of the related branch record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `displayName` | `string` | Yes | Not declared nullable | Human-readable display label; do not use it as a stable identifier. | No further constraint recorded |
-| `make` | `string` | Yes | Not declared nullable | Make text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `make` | `string` | Yes | Not declared nullable | Vehicle manufacturer name/catalog selection. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `year` | `integer (int32)` | Yes | Not declared nullable | Numeric year for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `category` | `string` | Yes | Not declared nullable | Category text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `transmission` | `string` | Yes | Not declared nullable | Transmission text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `fuelType` | `string` | Yes | Not declared nullable | Fuel type text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `seats` | `integer (int32)` | Yes | Not declared nullable | Numeric seats for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `color` | `string` | Yes | Not declared nullable | Color text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `plateNumber` | `string` | Yes | Not declared nullable | Plate number text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `plateNumber` | `string` | Yes | Not declared nullable | Country-specific vehicle registration plate; validate through the applicable country workflow. | No further constraint recorded |
 | `dailyRateMinor` | `integer (int64)` | Yes | Not declared nullable | Daily rate in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
 | `weeklyRateMinor` | `integer (int64)` | No | Explicitly allowed | Weekly rate in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
 | `securityDepositMinor` | `integer (int64)` | Yes | Not declared nullable | Security deposit in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
@@ -1195,7 +1195,7 @@ personal fields must remain outside public logs and examples.
 | `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | No further constraint recorded |
 | `fileRef` | `string` | Yes | Not declared nullable | Private storage reference; not a permanent public URL or approval decision. | No further constraint recorded |
 | `altText` | `string` | Yes | Not declared nullable | Alt text text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether is primary applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
+| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether the vehicle is designated primary in this account context; work eligibility is assessed separately. | No further constraint recorded |
 | `sortOrder` | `integer (int32)` | Yes | Not declared nullable | Numeric sort order for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
@@ -1379,8 +1379,8 @@ personal fields must remain outside public logs and examples.
 | `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | No further constraint recorded |
 | `organizationId` | `string (uuid)` | Yes | Not declared nullable | Identifier of the related organization record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `companyName` | `string` | Yes | Not declared nullable | Company name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `make` | `string` | Yes | Not declared nullable | Make text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `make` | `string` | Yes | Not declared nullable | Vehicle manufacturer name/catalog selection. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `year` | `integer (int32)` | Yes | Not declared nullable | Numeric year for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `category` | `string` | Yes | Not declared nullable | Category text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `seats` | `integer (int32)` | Yes | Not declared nullable | Numeric seats for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
@@ -1425,8 +1425,8 @@ personal fields must remain outside public logs and examples.
 | `branchId` | `string (uuid)` | Yes | Not declared nullable | Identifier of the related branch record in this model; ownership and scope are checked separately. | No further constraint recorded |
 | `branchName` | `string` | Yes | Not declared nullable | Branch name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `branchAddress` | `string` | Yes | Not declared nullable | Branch address text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `make` | `string` | Yes | Not declared nullable | Make text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | Yes | Not declared nullable | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `make` | `string` | Yes | Not declared nullable | Vehicle manufacturer name/catalog selection. | No further constraint recorded |
+| `model` | `string` | Yes | Not declared nullable | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `year` | `integer (int32)` | Yes | Not declared nullable | Numeric year for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `category` | `string` | Yes | Not declared nullable | Category text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `seats` | `integer (int32)` | Yes | Not declared nullable | Numeric seats for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
@@ -1478,7 +1478,7 @@ personal fields must remain outside public logs and examples.
 | --- | --- | --- | --- | --- | --- |
 | `id` | `string (uuid)` | Yes | Not declared nullable | Opaque identifier of this model's record; knowing it does not grant access. | No further constraint recorded |
 | `altText` | `string` | Yes | Not declared nullable | Alt text text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether is primary applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
+| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether the vehicle is designated primary in this account context; work eligibility is assessed separately. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
 
@@ -1803,7 +1803,7 @@ personal fields must remain outside public logs and examples.
 | `driverRating` | `number (double)` | Yes | Not declared nullable | Numeric driver rating for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `driverTotalTrips` | `integer (int32)` | Yes | Not declared nullable | Numeric driver total trips for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `vehicleDescription` | `string` | No | Explicitly allowed | Vehicle description text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `plateNumber` | `string` | No | Explicitly allowed | Plate number text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `plateNumber` | `string` | No | Explicitly allowed | Country-specific vehicle registration plate; validate through the applicable country workflow. | No further constraint recorded |
 | `driverAvatarRef` | `string` | No | Explicitly allowed | Driver avatar ref text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `vehicleYear` | `integer (int32)` | Yes | Not declared nullable | Numeric vehicle year for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `positiveRatingCount` | `integer (int32)` | Yes | Not declared nullable | Number of positive rating in this model's stated scope; not automatically a global/live total. | No further constraint recorded |

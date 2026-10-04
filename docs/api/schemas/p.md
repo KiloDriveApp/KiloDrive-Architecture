@@ -346,7 +346,7 @@ personal fields must remain outside public logs and examples.
 | `quotedPriceMinor` | `integer (int64)` | No | Explicitly allowed | Quoted price in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
 | `currency` | `string` | No | Explicitly allowed | ISO currency code for the accompanying monetary amounts. | No further constraint recorded |
 | `priceSource` | `string` | No | Explicitly allowed | Price source text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `lifecycleReasonCode` | `string` | Yes | Not declared nullable | Lifecycle reason code text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `lifecycleReasonCode` | `string` | Yes | Not declared nullable | Reason for the current membership lifecycle state; render through its contract vocabulary. | No further constraint recorded |
 | `revision` | `integer (int64)` | Yes | Not declared nullable | Authoritative record revision used for applicable concurrency checks. | No further constraint recorded |
 | `canCancel` | `boolean` | Yes | Not declared nullable | Whether can cancel applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 
@@ -467,7 +467,7 @@ personal fields must remain outside public logs and examples.
 | `planId` | `string (uuid)` | No | Explicitly allowed | Membership catalog record; it does not itself prove a user entitlement. | No further constraint recorded |
 | `planName` | `string` | No | Explicitly allowed | Human plan name; use plan/entitlement records for identity and authority. | No further constraint recorded |
 | `planExpiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for plan expires at; parse strictly and localize only for display. | No further constraint recorded |
-| `autoRenew` | `boolean` | Yes | Not declared nullable | Whether auto renew applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
+| `autoRenew` | `boolean` | Yes | Not declared nullable | Membership renewal preference/state for this model; it does not itself prove the next charge will succeed. | No further constraint recorded |
 | `availableTermDays` | `integer (int32)[]` | Yes | Not declared nullable | Available term, measured in days under this workflow's calendar rules. | No further constraint recorded |
 | `paymentMethods` | [BillingPaymentMethodDto](b.md#billingpaymentmethoddto)[] | Yes | Not declared nullable | Collection of payment methods for this model; interpret each item through the declared item type. | No further constraint recorded |
 | `billingHistory` | [BillingHistoryItemDto](b.md#billinghistoryitemdto)[] | Yes | Not declared nullable | Collection of billing history for this model; interpret each item through the declared item type. | No further constraint recorded |
@@ -514,7 +514,7 @@ personal fields must remain outside public logs and examples.
 | `audience` | `string` | Yes | Not declared nullable | Applicable product/client audience, distinct from verified security authority. | No further constraint recorded |
 | `name` | `string` | Yes | Not declared nullable | Name of the record described by this model; distinct from its opaque ID. | No further constraint recorded |
 | `currency` | `string` | Yes | Not declared nullable | ISO currency code for the accompanying monetary amounts. | No further constraint recorded |
-| `baseCurrency` | `string` | Yes | Not declared nullable | Base currency text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `baseCurrency` | `string` | Yes | Not declared nullable | Currency of the catalog/quote's base amount, distinct from the displayed local currency. | No further constraint recorded |
 | `planRevision` | `integer (int64)` | Yes | Not declared nullable | Plan revision for this model's state or policy; do not substitute a timestamp or mobile build. | No further constraint recorded |
 | `terms` | [PublicMembershipPriceTermDto](p.md#publicmembershippricetermdto)[] | Yes | Not declared nullable | Collection of terms for this model; interpret each item through the declared item type. | No further constraint recorded |
 

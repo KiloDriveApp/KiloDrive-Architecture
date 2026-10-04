@@ -293,11 +293,16 @@ def catalog(spec: dict, policy: dict) -> dict[str, bytes]:
                         else:
                             lines.append(f"| `{cell(parameter['name'])}` | {parameter['in']} | {'Yes' if parameter.get('required') else 'Conditional or optional'} | `{cell(type_label(parameter.get('schema', {})))}` | {cell(field_meaning(parameter['name'], parameter.get('schema', {})))} |")
                     lines.append("")
-                lines.extend(["| Recorded status | Response schema | Response headers |", "| --- | --- | --- |"])
+                lines.extend(["| Recorded status | Response schema | Media types | Response headers |", "| --- | --- | --- | --- |"])
                 for status, response in operation.get("responses", {}).items():
-                    names = ", ".join(model_link(name) for name in schema_names(response)) or "No typed schema recorded"
+                    names = ", ".join(model_link(name) for name in schema_names(response))
+                    media = response.get("content", {})
+                    if not names:
+                        inline = sorted({type_label(value["schema"]) for value in media.values() if "schema" in value})
+                        names = ", ".join(f"`{cell(value)}`" for value in inline) or "No typed schema recorded"
+                    media_types = ", ".join(f"`{kind}`" for kind in media) or "None recorded"
                     headers = ", ".join(f"`{name}`" for name in response.get("headers", {})) or "None recorded"
-                    lines.append(f"| {status} | {names} | {headers} |")
+                    lines.append(f"| {status} | {names} | {media_types} | {headers} |")
                 guards = []
                 if any(p.get("name", "").lower() == "idempotency-key" for p in parameters) or operation.get("x-idempotency-protected"):
                     guards.append("Preserve the original idempotency key and payload through unknown outcomes.")

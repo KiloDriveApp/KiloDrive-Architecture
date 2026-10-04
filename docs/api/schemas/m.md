@@ -172,29 +172,29 @@ personal fields must remain outside public logs and examples.
 | `code` | `string` | Yes | Not declared nullable | Code in this model's vocabulary; distinguish business/error/catalog codes from confidential verification codes. | No further constraint recorded |
 | `audience` | `string` | Yes | Not declared nullable | Applicable product/client audience, distinct from verified security authority. | No further constraint recorded |
 | `name` | `string` | Yes | Not declared nullable | Name of the record described by this model; distinct from its opaque ID. | No further constraint recorded |
-| `feeMinor` | `integer (int64)` | Yes | Not declared nullable | Fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `periodDays` | `integer (int32)` | Yes | Not declared nullable | Period, measured in days under this workflow's calendar rules. | No further constraint recorded |
-| `weeklyFeeMinor` | `integer (int64)` | No | Explicitly allowed | Weekly fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `monthlyFeeMinor` | `integer (int64)` | No | Explicitly allowed | Monthly fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `threeMonthFeeMinor` | `integer (int64)` | No | Explicitly allowed | Three month fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `sixMonthFeeMinor` | `integer (int64)` | No | Explicitly allowed | Six month fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `annualFeeMinor` | `integer (int64)` | No | Explicitly allowed | Annual fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `maxBidsPerDay` | `integer (int32)` | Yes | Not declared nullable | Numeric max bids per day for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxVehicleChangesPerPeriod` | `integer (int32)` | Yes | Not declared nullable | Numeric max vehicle changes per period for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxRegisteredVehicles` | `integer (int32)` | Yes | Not declared nullable | Numeric max registered vehicles for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxFavorites` | `integer (int32)` | Yes | Not declared nullable | Numeric max favorites for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `feeMinor` | `integer (int64)` | Yes | Not declared nullable | Fee for the applicable default product/plan period, in the stated currency's integer minor units. | No further constraint recorded |
+| `periodDays` | `integer (int32)` | Yes | Not declared nullable | Duration of this catalog plan's default period, expressed in days. | No further constraint recorded |
+| `weeklyFeeMinor` | `integer (int64)` | No | Explicitly allowed | Catalog price for the weekly term in currency minor units; availability still depends on the configured offer. | No further constraint recorded |
+| `monthlyFeeMinor` | `integer (int64)` | No | Explicitly allowed | Catalog price for the monthly term in currency minor units. | No further constraint recorded |
+| `threeMonthFeeMinor` | `integer (int64)` | No | Explicitly allowed | Catalog price for the three-month term in currency minor units. | No further constraint recorded |
+| `sixMonthFeeMinor` | `integer (int64)` | No | Explicitly allowed | Catalog price for the six-month term in currency minor units. | No further constraint recorded |
+| `annualFeeMinor` | `integer (int64)` | No | Explicitly allowed | Catalog price for the annual term in currency minor units. | No further constraint recorded |
+| `maxBidsPerDay` | `integer (int32)` | Yes | Not declared nullable | Plan allotment for new bids in the server-defined daily usage period; re-bid rules are separate. | No further constraint recorded |
+| `maxVehicleChangesPerPeriod` | `integer (int32)` | Yes | Not declared nullable | Plan's vehicle-change allotment for its usage period; assignment and verification checks still apply. | No further constraint recorded |
+| `maxRegisteredVehicles` | `integer (int32)` | Yes | Not declared nullable | Legacy plan metadata; it must not cap account-owned vehicle storage or Maintenance Center access. | No further constraint recorded |
+| `maxFavorites` | `integer (int32)` | Yes | Not declared nullable | Plan's applicable saved-favorite allotment; ownership and feature policy still apply. | No further constraint recorded |
 | `canUseBlockList` | `boolean` | Yes | Not declared nullable | Whether can use block list applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 | `canFavoriteRiders` | `boolean` | Yes | Not declared nullable | Whether can favorite riders applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 | `canReceiveReviews` | `boolean` | Yes | Not declared nullable | Whether can receive reviews applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
-| `maxAcceptedRidesPerMonth` | `integer (int32)` | No | Explicitly allowed | Numeric max accepted rides per month for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxAcceptedTripsPerWeek` | `integer (int32)` | No | Explicitly allowed | Numeric max accepted trips per week for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `minWithdrawalMinor` | `integer (int64)` | Yes | Not declared nullable | Min withdrawal in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
-| `maxWithdrawalMinor` | `integer (int64)` | No | Explicitly allowed | Max withdrawal in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
+| `maxAcceptedRidesPerMonth` | `integer (int32)` | No | Explicitly allowed | Catalog allotment for accepted rides in the applicable monthly period; use authoritative usage/readiness checks. | No further constraint recorded |
+| `maxAcceptedTripsPerWeek` | `integer (int32)` | No | Explicitly allowed | Catalog allotment for accepted trips in the applicable weekly period; use authoritative usage/readiness checks. | No further constraint recorded |
+| `minWithdrawalMinor` | `integer (int64)` | Yes | Not declared nullable | Applicable lower withdrawal bound in currency minor units; read current cashout limits before requesting. | No further constraint recorded |
+| `maxWithdrawalMinor` | `integer (int64)` | No | Explicitly allowed | Applicable upper withdrawal bound in currency minor units; current server limits remain authoritative. | No further constraint recorded |
 | `sortOrder` | `integer (int32)` | Yes | Not declared nullable | Numeric sort order for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
 | `isActive` | `boolean` | Yes | Not declared nullable | Whether this record is marked active; other permission/provider/readiness checks still apply. | No further constraint recorded |
 | `currency` | `string` | Yes | Not declared nullable | ISO currency code for the accompanying monetary amounts. | No further constraint recorded |
-| `baseCurrency` | `string` | Yes | Not declared nullable | Base currency text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `fxRateFromBase` | `number (double)` | Yes | Not declared nullable | Numeric fx rate from base for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `baseCurrency` | `string` | Yes | Not declared nullable | Currency of the catalog/quote's base amount, distinct from the displayed local currency. | No further constraint recorded |
+| `fxRateFromBase` | `number (double)` | Yes | Not declared nullable | Reference conversion rate from the base currency; executable prices come from the server's reviewed quote. | No further constraint recorded |
 | `revision` | `integer (int64)` | No | Not declared nullable | Authoritative record revision used for applicable concurrency checks. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
@@ -245,9 +245,9 @@ personal fields must remain outside public logs and examples.
 | `nextChargeAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for next charge at; parse strictly and localize only for display. | No further constraint recorded |
 | `provider` | `string` | Yes | Not declared nullable | Configured provider selector for this operation; a named provider is not proof of readiness. | No further constraint recorded |
 | `source` | `string` | Yes | Not declared nullable | Source text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `usage` | [MembershipUsageDto](m.md#membershipusagedto) | Yes | Not declared nullable | Usage represented by the `MembershipUsageDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `nextReset` | [MembershipUsageResetDto](m.md#membershipusageresetdto) | No | Not declared nullable | Next reset represented by the `MembershipUsageResetDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `pendingChange` | [PendingMembershipChangeDto](p.md#pendingmembershipchangedto) | No | Not declared nullable | Pending change represented by the `PendingMembershipChangeDto` model or enum; use that definition's fields/values. | No further constraint recorded |
+| `usage` | [MembershipUsageDto](m.md#membershipusagedto) | Yes | Not declared nullable | Current benefit consumption/allotment model; plan definition and consumed usage are different facts. | No further constraint recorded |
+| `nextReset` | [MembershipUsageResetDto](m.md#membershipusageresetdto) | No | Not declared nullable | Next benefit-usage reset information; it is not automatically membership expiry. | No further constraint recorded |
+| `pendingChange` | [PendingMembershipChangeDto](p.md#pendingmembershipchangedto) | No | Not declared nullable | Scheduled or pending membership change, distinct from the currently effective entitlement. | No further constraint recorded |
 | `lastSuccessfulProviderCheckAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for last successful provider check at; parse strictly and localize only for display. | No further constraint recorded |
 | `nextReconciliationAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for next reconciliation at; parse strictly and localize only for display. | No further constraint recorded |
 | `isChecking` | `boolean` | Yes | Not declared nullable | Whether is checking applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
@@ -269,15 +269,15 @@ personal fields must remain outside public logs and examples.
 | Field | Type | Required by schema | Nullability | Meaning | Additional constraints |
 | --- | --- | --- | --- | --- | --- |
 | `acceptedTripsThisWeek` | `integer (int32)` | Yes | Not declared nullable | Numeric accepted trips this week for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxAcceptedTripsPerWeek` | `integer (int32)` | No | Explicitly allowed | Numeric max accepted trips per week for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxAcceptedTripsPerWeek` | `integer (int32)` | No | Explicitly allowed | Catalog allotment for accepted trips in the applicable weekly period; use authoritative usage/readiness checks. | No further constraint recorded |
 | `bidsToday` | `integer (int32)` | Yes | Not declared nullable | Numeric bids today for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxBidsPerDay` | `integer (int32)` | No | Explicitly allowed | Numeric max bids per day for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxBidsPerDay` | `integer (int32)` | No | Explicitly allowed | Plan allotment for new bids in the server-defined daily usage period; re-bid rules are separate. | No further constraint recorded |
 | `vehicleChangesUsed` | `integer (int32)` | Yes | Not declared nullable | Numeric vehicle changes used for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxVehicleChangesPerPeriod` | `integer (int32)` | No | Explicitly allowed | Numeric max vehicle changes per period for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxVehicleChangesPerPeriod` | `integer (int32)` | No | Explicitly allowed | Plan's vehicle-change allotment for its usage period; assignment and verification checks still apply. | No further constraint recorded |
 | `vehicleCount` | `integer (int32)` | Yes | Not declared nullable | Number of vehicle in this model's stated scope; not automatically a global/live total. | No further constraint recorded |
-| `maxRegisteredVehicles` | `integer (int32)` | No | Explicitly allowed | Numeric max registered vehicles for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxRegisteredVehicles` | `integer (int32)` | No | Explicitly allowed | Legacy plan metadata; it must not cap account-owned vehicle storage or Maintenance Center access. | No further constraint recorded |
 | `favoritesUsed` | `integer (int32)` | Yes | Not declared nullable | Numeric favorites used for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
-| `maxFavorites` | `integer (int32)` | No | Explicitly allowed | Numeric max favorites for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |
+| `maxFavorites` | `integer (int32)` | No | Explicitly allowed | Plan's applicable saved-favorite allotment; ownership and feature policy still apply. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
 
@@ -329,16 +329,16 @@ personal fields must remain outside public logs and examples.
 | `planName` | `string` | No | Explicitly allowed | Human plan name; use plan/entitlement records for identity and authority. | No further constraint recorded |
 | `expiresAtUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for expires at; parse strictly and localize only for display. | No further constraint recorded |
 | `isActive` | `boolean` | Yes | Not declared nullable | Whether this record is marked active; other permission/provider/readiness checks still apply. | No further constraint recorded |
-| `usage` | [MembershipUsageDto](m.md#membershipusagedto) | Yes | Not declared nullable | Usage represented by the `MembershipUsageDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `autoRenew` | `boolean` | No | Not declared nullable | Whether auto renew applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
-| `upgradeCreditMinor` | `integer (int64)` | No | Not declared nullable | Upgrade credit in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
+| `usage` | [MembershipUsageDto](m.md#membershipusagedto) | Yes | Not declared nullable | Current benefit consumption/allotment model; plan definition and consumed usage are different facts. | No further constraint recorded |
+| `autoRenew` | `boolean` | No | Not declared nullable | Membership renewal preference/state for this model; it does not itself prove the next charge will succeed. | No further constraint recorded |
+| `upgradeCreditMinor` | `integer (int64)` | No | Not declared nullable | Server-calculated unused-value upgrade credit in currency minor units. | No further constraint recorded |
 | `revision` | `integer (int64)` | No | Not declared nullable | Authoritative record revision used for applicable concurrency checks. | No further constraint recorded |
-| `currentPeriod` | [MembershipPeriodDto](m.md#membershipperioddto) | No | Not declared nullable | Current period represented by the `MembershipPeriodDto` model or enum; use that definition's fields/values. | No further constraint recorded |
+| `currentPeriod` | [MembershipPeriodDto](m.md#membershipperioddto) | No | Not declared nullable | Current authoritative membership usage/entitlement period model. | No further constraint recorded |
 | `accessThroughUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for access through; parse strictly and localize only for display. | No further constraint recorded |
-| `pendingChange` | [PendingMembershipChangeDto](p.md#pendingmembershipchangedto) | No | Not declared nullable | Pending change represented by the `PendingMembershipChangeDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `nextReset` | [MembershipUsageResetDto](m.md#membershipusageresetdto) | No | Not declared nullable | Next reset represented by the `MembershipUsageResetDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `priceTermEvidence` | [MembershipPriceTermEvidenceDto](m.md#membershippricetermevidencedto) | No | Not declared nullable | Price term evidence represented by the `MembershipPriceTermEvidenceDto` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `lifecycleReasonCode` | `string` | No | Explicitly allowed | Lifecycle reason code text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `pendingChange` | [PendingMembershipChangeDto](p.md#pendingmembershipchangedto) | No | Not declared nullable | Scheduled or pending membership change, distinct from the currently effective entitlement. | No further constraint recorded |
+| `nextReset` | [MembershipUsageResetDto](m.md#membershipusageresetdto) | No | Not declared nullable | Next benefit-usage reset information; it is not automatically membership expiry. | No further constraint recorded |
+| `priceTermEvidence` | [MembershipPriceTermEvidenceDto](m.md#membershippricetermevidencedto) | No | Not declared nullable | Evidence of the accepted price/term mapping used by the membership lifecycle. | No further constraint recorded |
+| `lifecycleReasonCode` | `string` | No | Explicitly allowed | Reason for the current membership lifecycle state; render through its contract vocabulary. | No further constraint recorded |
 | `safeAction` | [MembershipSafeActionDto](m.md#membershipsafeactiondto) | No | Not declared nullable | Server guidance for safe recovery; preserve operation evidence before retrying. | No further constraint recorded |
 | `lifecycle` | [MembershipLifecycleDto](m.md#membershiplifecycledto) | No | Not declared nullable | Lifecycle represented by the `MembershipLifecycleDto` model or enum; use that definition's fields/values. | No further constraint recorded |
 

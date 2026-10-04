@@ -127,6 +127,16 @@ class PublicApiTests(unittest.TestCase):
         self.assertIn("Explicitly allowed", text)
         self.assertIn("| `name` | `string` | Yes |", text)
 
+    def test_scalar_and_binary_responses_are_described_without_invented_models(self):
+        self.source["paths"][self.path]["get"]["responses"]["200"] = {
+            "description": "Download", "content": {"application/pdf": {
+                "schema": {"type": "string", "format": "binary"}
+            }}
+        }
+        text = catalog(export(self.source, self.policy), self.policy)["reference/identity.md"].decode()
+        self.assertIn("`string (binary)`", text)
+        self.assertIn("`application/pdf`", text)
+
 
 if __name__ == "__main__":
     unittest.main()

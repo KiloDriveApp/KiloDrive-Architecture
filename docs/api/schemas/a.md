@@ -140,7 +140,7 @@ personal fields must remain outside public logs and examples.
 | --- | --- | --- | --- | --- | --- |
 | `fileRef` | `string` | Yes | Not declared nullable | Private storage reference; not a permanent public URL or approval decision. | No further constraint recorded |
 | `altText` | `string` | Yes | Not declared nullable | Alt text text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether is primary applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
+| `isPrimary` | `boolean` | Yes | Not declared nullable | Whether the vehicle is designated primary in this account context; work eligibility is assessed separately. | No further constraint recorded |
 
 **Additional object properties:** not allowed by the schema.
 
@@ -223,7 +223,7 @@ personal fields must remain outside public logs and examples.
 | --- | --- | --- | --- | --- | --- |
 | `positionCode` | `string` | Yes | Not declared nullable | Position code text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `brand` | `string` | No | Explicitly allowed | Brand text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `model` | `string` | No | Explicitly allowed | Model text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
+| `model` | `string` | No | Explicitly allowed | Model in the owning domain; for vehicle contracts, the vehicle model associated with the manufacturer. | No further constraint recorded |
 | `size` | `string` | No | Explicitly allowed | Size text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `observedAtUtc` | `string (date-time)` | Yes | Not declared nullable | UTC instant for observed at; parse strictly and localize only for display. | No further constraint recorded |
 | `odometer` | `number (double)` | No | Explicitly allowed | Numeric odometer for this model. No additional unit or business rule is asserted by the source schema; follow the owning workflow. | No further constraint recorded |

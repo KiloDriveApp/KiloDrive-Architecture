@@ -332,7 +332,7 @@ personal fields must remain outside public logs and examples.
 | `code` | `string` | Yes | Not declared nullable | Code in this model's vocabulary; distinguish business/error/catalog codes from confidential verification codes. | No further constraint recorded |
 | `name` | `string` | Yes | Not declared nullable | Name of the record described by this model; distinct from its opaque ID. | No further constraint recorded |
 | `type` | [GlobalProductType](g.md#globalproducttype) | Yes | Not declared nullable | Type represented by the `GlobalProductType` model or enum; use that definition's fields/values. | No further constraint recorded |
-| `feeMinor` | `integer (int64)` | Yes | Not declared nullable | Fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
+| `feeMinor` | `integer (int64)` | Yes | Not declared nullable | Fee for the applicable default product/plan period, in the stated currency's integer minor units. | No further constraint recorded |
 | `currency` | `string` | Yes | Not declared nullable | ISO currency code for the accompanying monetary amounts. | No further constraint recorded |
 | `validityDays` | `integer (int32)` | No | Explicitly allowed | Validity, measured in days under this workflow's calendar rules. | No further constraint recorded |
 | `isActive` | `boolean` | Yes | Not declared nullable | Whether this record is marked active; other permission/provider/readiness checks still apply. | No further constraint recorded |
@@ -408,7 +408,7 @@ personal fields must remain outside public logs and examples.
 | `servicePeriodEndUtc` | `string (date-time)` | No | Explicitly allowed | UTC instant for service period end; parse strictly and localize only for display. | No further constraint recorded |
 | `canOpenDispute` | `boolean` | Yes | Not declared nullable | Whether can open dispute applies in this model's context. This flag does not replace server permission or lifecycle checks. | No further constraint recorded |
 | `statusCode` | `string` | No | Explicitly allowed | Status code text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
-| `feeMinor` | `integer (int64)` | No | Not declared nullable | Fee in the accompanying currency's integer minor units; do not send a formatted money string. | No further constraint recorded |
+| `feeMinor` | `integer (int64)` | No | Not declared nullable | Fee for the applicable default product/plan period, in the stated currency's integer minor units. | No further constraint recorded |
 | `originalCurrency` | `string` | No | Explicitly allowed | Original currency text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `senderDisplayName` | `string` | No | Explicitly allowed | Sender display name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
 | `recipientDisplayName` | `string` | No | Explicitly allowed | Recipient display name text/value for this model. The source schema does not specify a further vocabulary; server validation and the owning workflow define permitted use. | No further constraint recorded |
