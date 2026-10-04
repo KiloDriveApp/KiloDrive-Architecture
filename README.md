@@ -12,11 +12,11 @@ reasoning behind the design, not merely memorize component names. Wherever a
 choice has a cost, the documentation says so. Wherever production taught us a
 painful lesson, the lesson is recorded beside the design it changed.
 
-> **Public-safe scope:** this repository contains no credentials, signing keys,
-> tokens, cloud account identifiers, private addresses, production connection
-> strings, customer data, or copy-and-paste access instructions. It explains
-> architecture and operating principles. Restricted values and private incident
-> evidence belong in controlled operational systems.
+> **Publication boundary:** credentials, signing keys, tokens, cloud account
+> identifiers, private addresses, production connection strings, customer data
+> and production access instructions belong in restricted systems. This
+> repository explains reviewed architecture and operating principles. Report
+> suspected sensitive material through [SECURITY.md](SECURITY.md).
 
 For the product itself, visit the [KiloDrive website](https://kilodrive.com/),
 read the [user manuals](https://kilodrive.com/manuals) or
@@ -27,6 +27,10 @@ read the [user manuals](https://kilodrive.com/manuals) or
 [consumer Android listing on Google Play](https://play.google.com/store/apps/details?id=com.kilodrive.app)
 are linked from the [official product-links guide](docs/public-product-links.md).
 The separate System Admin app is not the public consumer download.
+
+[Documentation guide](docs/README.md) · [Glossary](GLOSSARY.md) ·
+[Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
+[Publication notice](NOTICE.md)
 
 ## Start here
 
@@ -43,10 +47,21 @@ and abuse controls, with source evidence and deployment qualifications.
 For HTTP contracts, start with the [KiloDrive API Guide](docs/api/README.md).
 It includes plain-English endpoint purposes, a linked field dictionary,
 authentication/tenancy rules, money and timestamp conventions, safe recovery,
-workflow guides and a curated OpenAPI export. Its source snapshot identifies
-consumer `1.0.0+172`, System Admin `0.1.0+16` and schema `2026.10.03.1`;
-publication does not grant partner or administrator access or certify every
-production dependency.
+workflow guides and a curated OpenAPI export. The
+[documentation baseline](#documentation-baselines) below agrees with the
+[published manifest](docs/api/openapi/manifest.json). Publication does not grant
+partner or administrator access or certify every production dependency.
+
+| What you need | Start with |
+| --- | --- |
+| Current scope, evidence and known limitations | [Baseline](docs/current-baseline.md) and [correction record](docs/quality/documentation-audit-2026-10-03.md) |
+| Endpoint purposes, request/response fields and enums | [API guide](docs/api/README.md), [operation finder](docs/api/reference/operations.md) and [field dictionary](docs/api/schemas/README.md) |
+| Consumer and administrative responsibilities | [Two-client model](#two-mobile-apps-one-authoritative-api) and [System Admin chapter](docs/architecture/system-admin-mobile-app.md) |
+| Authentication, admission, money and abuse protection | [Control model](docs/security/security-control-model.md) and [OWASP mapping](docs/security/owasp-api-top-10-2023.md) |
+| Recovery, release and verification | [Runbooks](docs/runbooks/README.md) and [testing guide](docs/quality/testing-and-verification.md) |
+| Terminology, rights and disclosure | [Glossary](GLOSSARY.md), [NOTICE](NOTICE.md) and [SECURITY](SECURITY.md) |
+
+### Suggested architecture reading order
 
 If this is your first day with a sharded, realtime platform, use the following
 reading order. It builds one idea at a time:
@@ -106,47 +121,49 @@ reading order. It builds one idea at a time:
 The [documentation guide](docs/README.md) also provides role-based paths for
 mobile, API, database, security, and operations engineers.
 
-The earlier build-168 release checkpoint is documented in the
-[build-168 operational handover](docs/runbooks/build168-operational-handover.md).
-It identifies consumer `1.0.0+168`, separate System Admin source `0.1.0+10`,
-schema `2026.10.02.3`, the deployed bounded fixes, and the provider/device
-evidence that still remains separate. The newer API source snapshot and its
-explicit publication limits are recorded in the [API Guide](docs/api/README.md)
-and [manifest](docs/api/openapi/manifest.json). The earlier local-source architecture is documented in
-[Two mobile apps, one authoritative API](docs/architecture/two-mobile-apps-and-security-2026-09-30.md).
-It explains the consumer/System Admin split, shared identity, adapters,
-notifications, device trust, and the release evidence still needed. The
-[Admin workflow map](docs/architecture/admin-workflow-contracts.md),
-[critical journeys](docs/diagrams/admin-critical-journeys.md), and
-[two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
-carry the design into task and release decisions. The
-[build 156 update](docs/architecture/release-1.0.0-156.md) is historical; its
-public changelog consolidated the pending improvements under that build.
-[Build 144](docs/architecture/release-1.0.0-144.md) remains a historical
-baseline for role workspaces, journey protection, financial evidence,
-administration, manuals, and search discovery. The 2026-09-30 local source
-schema contract is `2026.09.30.2`; the historical build-144 OpenAPI v1 artifact
-contains 826 paths and 925 operations with SHA-256
-`34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`.
-Deployment, native-copy, device, store, provider, and country certification
-remain separate evidence.
+## Two mobile apps, one authoritative API
+
+| Client | Intended work | Authority boundary |
+| --- | --- | --- |
+| Consumer Android/iOS app | Rider, driver, rental and account journeys: onboarding, vehicles, trips, wallet, membership, communications and preferences | Consumer-scoped sessions and server-enforced ownership, eligibility and lifecycle rules |
+| Restricted System Admin Android/iOS app | People dossiers, driver/document review, Membership Center, security, devices, notifications, financial investigations, audit and operational recovery | Administrative role/capability checks, selected country workspace, required proofs and durable audit |
+| Portal and Website | Their reviewed browser operations and public content | The same API authorization and domain rules; browser rendering does not grant permission |
+
+System Admin tasks belong in the separate Admin app, not the consumer app. One
+global identity may also have an active rider membership, but that consumer
+session does not inherit administrative authority. The API computes driver
+readiness and membership entitlements; an app screen cannot override them.
+
+The Admin chapter describes document viewing and decision/re-upload workflows,
+plan creation and benefit/pricing editing, member drill-down, expiry management,
+user security and readable audit details. New paid plans remain drafts until
+the required store/country setup is complete. Independent second approval is
+configurable per supported domain, with disabled source defaults; authorization,
+audit and concurrency checks remain in force. Actual deployed settings and
+complete signed-device workflow coverage need their own evidence.
+
+Both apps use adapters to translate platform/provider observations into typed
+results. StoreKit, Google Play, camera, secure storage, push, location and media
+callbacks do not directly establish server authority. Account-switch fencing,
+installation/session binding and safe recovery are detailed in
+[native adapters](docs/architecture/native-adapters-and-store-billing.md),
+[mobile sessions and installations](docs/architecture/mobile-session-and-device-lifecycle.md)
+and [notification delivery](docs/architecture/notification-delivery-lifecycle.md).
 
 ## The system in one picture
 
 ```mermaid
 flowchart LR
     subgraph Clients
-      Rider[Rider workspace]
-      Driver[Driver workspace]
-      Rental[Rental workspace]
-      Admin[Operations portal]
+      Consumer[Consumer app: rider, driver and rental]
+      Admin[Separate System Admin app]
+      Portal[Operations portal]
       Web[Corporate website]
     end
 
-    Rider --> Edge[Cloud edge, TLS and WAF]
-    Driver --> Edge
-    Rental --> Edge
+    Consumer --> Edge[TLS and configured edge controls]
     Admin --> Edge
+    Portal --> Edge
     Web --> Edge
     Edge --> API[ASP.NET Core API]
 
@@ -157,13 +174,17 @@ flowchart LR
 
     API <--> Valkey[(Valkey: short-lived distributed state)]
     API --> Outbox[(SQL outbox)]
-    Outbox --> Bus[EventBridge and SQS]
-    Outbox --> Providers[Messaging, maps, payments and media]
+    Outbox -. optional acceleration .-> Bus[EventBridge and SQS]
+    Outbox --> Providers[Provider adapters]
+    API --> Providers
     API --> Telemetry[OpenTelemetry, logs, metrics and alarms]
 ```
 
-The most important idea in this diagram is that the arrows do not all mean the
-same thing:
+This diagram shows responsibility and communication boundaries, not a complete
+live deployment or literal middleware order. API requests can call provider
+adapters directly where their contract requires it; durable queued effects use
+the outbox. Optional infrastructure needs verified deployment configuration.
+The arrows do not all mean the same thing:
 
 - MySQL owns durable business truth.
 - Valkey owns fast, replaceable, short-lived state such as fresh driver
@@ -198,20 +219,37 @@ state must still explain what happened.
 | Operations portal | ASP.NET Core MVC | Administrative and operational workflows through the API |
 | Corporate website | ASP.NET Core Razor Pages | Public content and calculators backed by reviewed API contracts |
 | Consumer mobile | Flutter 3.41 / Dart 3.11 | Rider, driver, rental, and tools-only workspaces; no operative System Admin UI |
-| System Admin mobile | Separate Flutter Android/iOS package | Capability-scoped country/tenant operations; migration and signed-device certification remain incremental |
+| System Admin mobile | Separate Flutter Android/iOS package | People/readiness review, Membership Center and capability-scoped operations; complete migration parity and signed-device certification require their own evidence |
 | Durable data | MySQL 8 | Global identity control plane plus independent country cells |
-| Distributed state | Valkey over TLS | Production design dependency for cache, SignalR backplane, geospatial freshness, rate coordination, and short-lived ceremonies; runtime activation needs its own evidence |
+| Distributed state | Valkey over TLS | Cache, SignalR backplane, geospatial freshness and short-lived ceremonies; reviewed ASP.NET request-limit counters remain process-local |
 | Routing | Google provider adapters and OSRM | Geocoding, route calculation, map matching, and degraded fallback paths |
 | Events | SQL outbox, optional EventBridge and SQS acceleration | Durable side effects, scalable dispatch, retries, and dead-letter recovery; SQL remains the recovery authority |
 | Object storage | Private S3-compatible object storage | Quarantined uploads, reviewed documents, report artifacts, and authorized call recordings |
 | Realtime media | LiveKit and TURN | Configurable consent-aware voice, room tokens, connectivity, and egress only where provider, jurisdiction, consent, and retention gates are approved |
-| Observability | OpenTelemetry, ADOT, CloudWatch, Serilog | Correlated traces, bounded metrics, sanitized logs, readiness, dashboards, and alarms |
+| Observability | Serilog rolling logs, OpenTelemetry and optional cloud exporters | Correlated traces, bounded metrics, sanitized logs and readiness; CloudWatch is optional and alert delivery must be verified |
 
 Version numbers in this public repository are a reviewed documentation
 baseline, not an instruction to upgrade every dependency at once. Native mobile
 packages are deliberately upgraded in isolated batches because WebRTC, social
 authentication, local authentication, and state-management changes have very
 different failure modes.
+
+## Security posture and evidence
+
+| Area | Architectural protection | Limit that matters |
+| --- | --- | --- |
+| Authentication | Central credentials, asymmetric tokens, refresh families, secure recovery, passkeys and social linking | Local app unlock is not server reauthentication; legacy session scope needs review |
+| Authorization | Role, capability, country, tenant, object, property and lifecycle checks | Hidden UI and a valid token do not grant permission to another record or function |
+| Device admission | Verified app identity, installation credentials, session and push-channel binding | Installation identity is not permanent hardware identity; enforcement varies by entry policy |
+| Financial safeguards | Integer minor units, holds, ledger invariants, durable operation identity and provider reconciliation | Unknown outcomes retain the original command; a fresh key can duplicate value |
+| Abuse and availability | Endpoint budgets, bounded work, lifecycle rules and action-specific financial risk controls | Observation mode is not enforcement and per-node counters are not aggregate limits |
+| Documents and operations | Private uploads, scan evidence, authorized review, safe errors and durable audit | Scanning does not prove document authenticity; audit storage alone is not tamper-proof assurance |
+
+The [security control model](docs/security/security-control-model.md) identifies
+source evidence, configuration responsibilities and release checks. The
+[OWASP API Security Top 10 mapping](docs/security/owasp-api-top-10-2023.md)
+covers all ten 2023 categories without claiming OWASP certification. Report
+suspected weaknesses privately through [SECURITY.md](SECURITY.md).
 
 ## Five questions every feature must answer
 
@@ -288,6 +326,17 @@ versions worth remembering:
 
 ## Documentation map
 
+### API contracts and field reference
+
+- [API guide and getting started](docs/api/README.md)
+- [Authentication](docs/api/access-and-authentication.md)
+- [Authorization and tenancy](docs/api/authorization-and-tenancy.md)
+- [Operation finder](docs/api/reference/operations.md)
+- [Field dictionary](docs/api/schemas/README.md)
+- [Errors and safe recovery](docs/api/errors-and-recovery.md)
+- [Curated OpenAPI and provenance](docs/api/openapi/manifest.json)
+- [Semantic coverage and remaining review queue](docs/api/reference/coverage.md)
+
 ### Architecture and data
 
 - [Architecture index](docs/architecture/README.md)
@@ -301,6 +350,9 @@ versions worth remembering:
 - [Native adapters and store billing](docs/architecture/native-adapters-and-store-billing.md)
 - [Portal and website](docs/architecture/portal-and-website.md)
 - [System Administration](docs/architecture/system-administration.md)
+- [System Admin mobile app](docs/architecture/system-admin-mobile-app.md)
+- [Mobile sessions and installations](docs/architecture/mobile-session-and-device-lifecycle.md)
+- [Notification delivery lifecycle](docs/architecture/notification-delivery-lifecycle.md)
 - [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md)
 - [Entity identification](docs/architecture/entity-identification.md)
 - [Realtime and events](docs/architecture/realtime-and-events.md)
@@ -352,7 +404,9 @@ versions worth remembering:
 - [Flutter packages](docs/third-party/flutter-packages.md)
 - [License obligations](docs/third-party/licenses.md)
 - [SBOM guide](docs/third-party/sbom.md)
+- [Readable direct-package inventory](docs/third-party/direct-packages.md)
 - [Machine-readable public CycloneDX baseline](docs/third-party/kilodrive-public-direct.cdx.json)
+- [Publication, rights and attribution notice](NOTICE.md)
 
 ## Official repositories
 
@@ -366,7 +420,8 @@ versions worth remembering:
 ## Quickstart for documentation contributors
 
 This public repository contains documentation tooling, not the private KiloDrive
-application source.
+application source. The current CI uses Python 3.12 and Node.js 22. Start with
+this minimal local check:
 
 ```powershell
 git clone https://github.com/KiloDriveApp/KiloDrive-Architecture.git
@@ -381,7 +436,27 @@ Before opening a pull request:
 3. explain the reason and tradeoff, not only the mechanism;
 4. add or update the affected ADR and runbook;
 5. keep examples synthetic and public-safe; and
-6. run the documentation audit on a clean checkout.
+6. run the full documentation checks below, not only the initial link audit.
+
+```powershell
+python -m pip install openapi-spec-validator==0.7.2 codespell==2.4.3
+python -m compileall -q tools
+python tools/audit_docs.py
+python tools/generate_public_sbom.py --check
+python tools/public_api.py --check
+python -m unittest discover -s tools -p "test_*.py"
+python -c "import json; from openapi_spec_validator import validate; validate(json.load(open('docs/api/openapi/kilodrive-public-v1.json', encoding='utf-8')))"
+npx --yes markdownlint-cli2@0.23.2 "**/*.md"
+codespell .
+git diff --check
+```
+
+Each command must pass. The [CI workflow](.github/workflows/docs-audit.yml) is
+versioned alongside the tools. Regenerate owned API/dependency artifacts when
+their inputs change; do not hand-edit generated tables. Public CI verifies
+published consistency and structure; a maintainer with source access performs
+the separate private-contract comparison. These are documentation checks, not
+application or production certification.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full writing and review guide.
 
@@ -404,16 +479,45 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-- Current source checkpoint (2026-10-03): consumer `1.0.0+168`, separate System Admin `0.1.0+10`; documentation is not whole-app certification
-- Current source schema contract: `2026.10.02.3`
-- Previous source checkpoint (2026-09-30): consumer `1.0.0+159`, System Admin `0.1.0+4`, schema `2026.09.30.2`; historical, not silently relabeled
-- Last full architecture review: 2026-09-23, build `1.0.0+144`
-- Reviewed Flutter snapshot: `3.41.7` / Dart `3.11.5`
-- API/runtime family: .NET `9`
-- Database family: MySQL `8`
-- Reviewed build-144 schema contract: `2026.09.23.2`
-- Reviewed build-144 OpenAPI v1 snapshot: 826 paths / 925 operations
-- Reviewed OpenAPI SHA-256: `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`
-- Supported mobile locales: `en`, `es`, `fr`, `ja`, `zh_Hans`, `zh_Hant`
+The published source checkpoint is **2026-10-03**, pinned to product commit
+`1cd27c58f0fd9df6d974fab3718c3cb0b485f251`. The values below come from its
+committed app metadata and schema contract, as recorded in the
+[API manifest](docs/api/openapi/manifest.json) and
+[current baseline guide](docs/current-baseline.md). They do not describe
+uncommitted source edits, current store availability or an independently
+verified live deployment.
+
+| Item | Reviewed snapshot |
+| --- | --- |
+| Consumer app source | `1.0.0+172` |
+| System Admin app source | `0.1.0+16` |
+| Schema contract | `2026.10.03.1` |
+| Complete private canonical API | 996 paths / 1,123 operations |
+| Curated public API | 459 paths / 528 operations / 659 models / 5,012 model properties |
+| Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |
+| API/runtime and database families | .NET 9 and MySQL 8 |
+| Mobile locales | `en`, `es`, `fr`, `ja`, `zh_Hans`, `zh_Hant` |
+
+The API is versioned under `/api/v1/...`. Compatibility `/api/...` aliases have
+a documented sunset of 2027-02-10; the lifecycle date is not evidence that
+removal has already occurred. Administrative, operational and provider-callback
+contracts are excluded from the public export. The
+[coverage report](docs/api/reference/coverage.md) separates reviewed semantics
+from route-derived descriptions and remaining field explanations.
+
+### Historical checkpoints
+
+| Checkpoint | Original scope |
+| --- | --- |
+| [Build 168 handover](docs/runbooks/build168-operational-handover.md) | Consumer `1.0.0+168`, Admin `0.1.0+10`, schema `2026.10.02.3`; bounded release observations for that candidate |
+| [2026-09-30 two-app checkpoint](docs/architecture/two-mobile-apps-and-security-2026-09-30.md) | Consumer `1.0.0+159`, Admin `0.1.0+4`, schema `2026.09.30.2`; the earlier app split and then-open work |
+| [Build 156 update](docs/architecture/release-1.0.0-156.md) | Historical source/release documentation and consolidated public changes |
+| [Build 144 baseline](docs/architecture/release-1.0.0-144.md) | Earlier architecture and API snapshot; retain its original date, counts and evidence |
+
+Historical results stay attached to their original build and environment. The
+[Admin workflow map](docs/architecture/admin-workflow-contracts.md),
+[critical journeys](docs/diagrams/admin-critical-journeys.md) and
+[two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
+explain how to collect fresh evidence without relabeling an older pass.
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).
