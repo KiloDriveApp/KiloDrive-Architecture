@@ -1,0 +1,748 @@
+{
+  "BidStatus": {
+    "1": "Pending",
+    "2": "Accepted",
+    "3": "Rejected",
+    "4": "Withdrawn",
+    "5": "Expired"
+  },
+  "BidType": {
+    "1": "Accept",
+    "2": "Counter"
+  },
+  "BusinessShippingAccountStatus": {
+    "1": "Pending",
+    "2": "Active",
+    "3": "Suspended",
+    "4": "Closed"
+  },
+  "CampaignChannel": {
+    "0": "None",
+    "1": "Email",
+    "2": "Sms",
+    "4": "Push",
+    "8": "WhatsApp",
+    "16": "InAppInbox",
+    "32": "InAppBanner",
+    "64": "MandatoryOperationalNotice"
+  },
+  "CashoutReconciliationState": {
+    "1": "Pending",
+    "2": "Settled",
+    "3": "CheckingOutcome",
+    "4": "NeedsReview"
+  },
+  "CashoutSettlementState": {
+    "0": "Unknown",
+    "1": "Queued",
+    "2": "Submitted",
+    "3": "Paid",
+    "4": "Failed",
+    "5": "Returned",
+    "6": "Reversed"
+  },
+  "CashoutStatus": {
+    "1": "Pending",
+    "2": "Approved",
+    "3": "Rejected",
+    "4": "Completed",
+    "5": "Returned",
+    "6": "Reversed"
+  },
+  "ChatMessageCommitOutcome": {
+    "0": "NotApplicable",
+    "1": "CommittedPendingFanout",
+    "2": "AlreadyCommittedPendingFanout"
+  },
+  "CorporateAccountStatus": {
+    "1": "Pending",
+    "2": "Active",
+    "3": "Suspended",
+    "4": "Closed"
+  },
+  "CorporateMemberPermission": {
+    "0": "None",
+    "1": "ManageMembers",
+    "2": "ManagePolicy",
+    "4": "ManageBudgets",
+    "8": "BookTravel",
+    "16": "ApproveTravel",
+    "32": "ViewFinance",
+    "64": "ManageBilling",
+    "128": "ViewAudit",
+    "255": "All"
+  },
+  "CorporateMemberRole": {
+    "1": "Owner",
+    "2": "Administrator",
+    "3": "Approver",
+    "4": "Booker",
+    "5": "Traveler",
+    "6": "Finance",
+    "7": "Auditor"
+  },
+  "DeliveryBulkOrderStatus": {
+    "1": "Processing",
+    "2": "Completed",
+    "3": "PartiallyCompleted",
+    "4": "Failed"
+  },
+  "DeliveryEvidenceType": {
+    "1": "PackageAtBooking",
+    "2": "PackageAtPickup",
+    "3": "FailedAttempt",
+    "4": "ProofOfDelivery",
+    "5": "Signature",
+    "6": "ReturnToSender",
+    "7": "ProtectionClaim"
+  },
+  "DeliveryFailureReason": {
+    "1": "RecipientUnavailable",
+    "2": "IncorrectAddress",
+    "3": "RecipientRefused",
+    "4": "UnsafeLocation",
+    "5": "DamagedPackage",
+    "6": "VerificationFailed",
+    "99": "Other"
+  },
+  "DeliveryRequestStatus": {
+    "1": "Requested",
+    "2": "Assigned",
+    "3": "InProgress",
+    "4": "Completed",
+    "5": "Cancelled",
+    "6": "Expired",
+    "7": "ReturnedToSender"
+  },
+  "DeliveryReturnPolicy": {
+    "1": "ReturnAfterMaximumAttempts",
+    "2": "ReturnAfterFirstFailedAttempt"
+  },
+  "DeliveryStatus": {
+    "1": "Assigned",
+    "2": "InProgress",
+    "3": "Completed",
+    "4": "Cancelled",
+    "5": "ReturningToSender",
+    "6": "ReturnedToSender",
+    "7": "Failed"
+  },
+  "DeliveryStopStatus": {
+    "1": "Pending",
+    "2": "Completed",
+    "3": "Failed",
+    "4": "Attempted",
+    "5": "ReturnedToSender"
+  },
+  "DeliveryStopType": {
+    "1": "Pickup",
+    "2": "Dropoff"
+  },
+  "DeliveryVerificationMethod": {
+    "1": "Otp",
+    "2": "Qr",
+    "3": "ManualOverride"
+  },
+  "DeviceBanType": {
+    "1": "Temporary",
+    "2": "Permanent"
+  },
+  "DisputeStatus": {
+    "0": "Open",
+    "1": "Resolved"
+  },
+  "DocumentStatus": {
+    "1": "Pending",
+    "2": "Approved",
+    "3": "Rejected",
+    "4": "Expired",
+    "5": "Staged"
+  },
+  "DocumentType": {
+    "1": "DriversLicense",
+    "2": "VehicleRegistration",
+    "3": "VehicleInsurance",
+    "4": "ProfilePhoto",
+    "5": "VehiclePhoto",
+    "6": "Other",
+    "7": "MilitaryId",
+    "8": "Passport",
+    "9": "NationalId",
+    "10": "BirthCertificate",
+    "11": "MarriageCertificate",
+    "12": "SocialSecurityCard",
+    "13": "VoterRegistrationCard",
+    "14": "NaturalizationCertificate",
+    "15": "ProofOfAddress",
+    "16": "PoliceRecord",
+    "17": "VehicleFitness",
+    "18": "SchoolId",
+    "19": "CitizenCard",
+    "20": "JusticeOfPeaceAttestation"
+  },
+  "DriverAccountType": {
+    "1": "Individual",
+    "2": "SoleTrader",
+    "3": "Company"
+  },
+  "DriverOfferScheduleFilter": {
+    "1": "All",
+    "2": "Immediate",
+    "3": "Scheduled"
+  },
+  "DriverOfferSort": {
+    "1": "Newest",
+    "2": "Urgency",
+    "3": "PickupDistance",
+    "4": "ExpectedNetEarnings"
+  },
+  "DriverStatus": {
+    "1": "PendingApproval",
+    "2": "Active",
+    "3": "Suspended",
+    "4": "Rejected"
+  },
+  "DriverTrustLevel": {
+    "0": "AllDrivers",
+    "1": "IdentityVerified",
+    "2": "IdentityAndAddressVerified",
+    "3": "VehicleInsuranceVerified",
+    "4": "MultipleRatings",
+    "5": "FullyVerified",
+    "6": "PreferredDriver"
+  },
+  "ExternalEvidenceConfidenceLevel": {
+    "1": "Low",
+    "2": "Medium",
+    "3": "High"
+  },
+  "FareSplitPlanStatus": {
+    "1": "Inviting",
+    "2": "Authorized",
+    "3": "Settled",
+    "4": "Cancelled",
+    "5": "Expired",
+    "6": "Failed"
+  },
+  "FareSplitShareStatus": {
+    "1": "Pending",
+    "2": "Accepted",
+    "3": "Declined",
+    "4": "Authorized",
+    "5": "Settled",
+    "6": "Refunded",
+    "7": "Failed"
+  },
+  "FeatureAvailability": {
+    "0": "Unavailable",
+    "1": "Available",
+    "2": "LimitedRollout",
+    "3": "Maintenance"
+  },
+  "FinancialHistoryEntrySource": {
+    "0": "Unknown",
+    "1": "WalletLedger",
+    "2": "ExternalPayment"
+  },
+  "GlobalProductType": {
+    "1": "Membership",
+    "2": "DocumentVerification",
+    "3": "Badge"
+  },
+  "HouseholdConsentState": {
+    "1": "Pending",
+    "2": "Accepted",
+    "3": "Revoked",
+    "4": "NotApplicable"
+  },
+  "HouseholdMemberRole": {
+    "1": "Owner",
+    "2": "Guardian",
+    "3": "Adult",
+    "4": "Dependent",
+    "5": "Delegate"
+  },
+  "HouseholdStatus": {
+    "1": "PendingConsent",
+    "2": "Active",
+    "3": "Suspended",
+    "4": "Closed"
+  },
+  "InsuranceStatus": {
+    "1": "Unconfirmed",
+    "2": "Confirmed"
+  },
+  "MoneyCommandOutcome": {
+    "0": "Missing",
+    "1": "Processing",
+    "2": "Replayable",
+    "3": "NeedsReview",
+    "4": "Succeeded",
+    "5": "Rejected",
+    "6": "NoMutation"
+  },
+  "ParcelProtectionClaimReason": {
+    "1": "Lost",
+    "2": "Damaged",
+    "3": "PartialLoss",
+    "4": "Theft",
+    "99": "Other"
+  },
+  "ParcelProtectionClaimStatus": {
+    "1": "Submitted",
+    "2": "UnderReview",
+    "3": "Approved",
+    "4": "Rejected",
+    "5": "Settled",
+    "6": "Withdrawn"
+  },
+  "ParcelProtectionStatus": {
+    "0": "NotRequested",
+    "1": "Quoted",
+    "2": "Active",
+    "3": "Voided",
+    "4": "ClaimOpened",
+    "5": "ClaimSettled",
+    "6": "ClaimRejected"
+  },
+  "ParcelSize": {
+    "1": "Small",
+    "2": "Medium",
+    "3": "Large",
+    "4": "ExtraLarge"
+  },
+  "PaymentEntityType": {
+    "1": "Trip",
+    "2": "Delivery",
+    "3": "WalletTopUp",
+    "4": "MembershipFee",
+    "5": "DocumentVerificationFee",
+    "6": "BadgeFee",
+    "7": "WalletTopUpCard",
+    "8": "Rental"
+  },
+  "PaymentMethod": {
+    "1": "Cash",
+    "2": "Wallet",
+    "3": "Card",
+    "4": "External"
+  },
+  "PaymentStatus": {
+    "1": "Pending",
+    "2": "Completed",
+    "3": "Failed",
+    "4": "Refunded",
+    "5": "PartiallyRefunded",
+    "6": "Authorized",
+    "7": "Voided"
+  },
+  "PayoutMethodType": {
+    "1": "Bank",
+    "2": "PayPal"
+  },
+  "PayoutTransferStatus": {
+    "1": "Queued",
+    "2": "Submitting",
+    "3": "Submitted",
+    "4": "Processing",
+    "5": "Completed",
+    "6": "Failed",
+    "7": "NeedsAttention",
+    "8": "Returned",
+    "9": "Reversed"
+  },
+  "PreferredDriverStatus": {
+    "0": "None",
+    "1": "Pending",
+    "2": "Approved",
+    "3": "Rejected",
+    "4": "Suspended"
+  },
+  "PushPlatform": {
+    "1": "Ios",
+    "2": "Android",
+    "3": "Web"
+  },
+  "RatingImportStatus": {
+    "1": "Pending",
+    "2": "Completed",
+    "3": "Failed",
+    "4": "Rejected",
+    "5": "Superseded",
+    "6": "AwaitingSecondApproval",
+    "7": "Expired",
+    "8": "Revoked"
+  },
+  "RentalAgreementStatus": {
+    "1": "AwaitingRenter",
+    "2": "AwaitingProvider",
+    "3": "Executed",
+    "4": "Voided"
+  },
+  "RentalAuthorizationState": {
+    "0": "Unavailable",
+    "1": "Valid",
+    "2": "Expiring",
+    "3": "Expired",
+    "4": "Released",
+    "5": "Captured",
+    "6": "Declined",
+    "7": "Mismatch"
+  },
+  "RentalAvailabilityBlockType": {
+    "1": "Maintenance",
+    "2": "Repair",
+    "3": "OwnerUse",
+    "4": "Inspection",
+    "5": "Other"
+  },
+  "RentalBookingMode": {
+    "1": "RequestToBook",
+    "2": "InstantBook"
+  },
+  "RentalBookingStatus": {
+    "1": "Requested",
+    "2": "Approved",
+    "3": "Declined",
+    "4": "Confirmed",
+    "5": "CheckedOut",
+    "6": "Returned",
+    "7": "Completed",
+    "8": "Cancelled",
+    "9": "Disputed",
+    "10": "Quote",
+    "11": "PaymentAuthorized",
+    "12": "CheckedIn",
+    "13": "Active",
+    "14": "Settled"
+  },
+  "RentalCancellationReason": {
+    "1": "PlansChanged",
+    "2": "PriceOrDeposit",
+    "3": "VehicleOrProvider",
+    "4": "TravelDisruption",
+    "5": "DuplicateBooking",
+    "6": "ProviderCancelled",
+    "7": "NoShow",
+    "8": "Other"
+  },
+  "RentalDamageClaimStatus": {
+    "1": "Submitted",
+    "2": "UnderReview",
+    "3": "Approved",
+    "4": "Rejected",
+    "5": "Settled",
+    "6": "Withdrawn"
+  },
+  "RentalDamageReason": {
+    "1": "ExteriorDamage",
+    "2": "InteriorDamage",
+    "3": "GlassOrLighting",
+    "4": "TireOrWheel",
+    "5": "Mechanical",
+    "6": "FuelShortfall",
+    "7": "ExcessMileage",
+    "8": "Cleaning",
+    "9": "LostItemOrKey",
+    "10": "Other"
+  },
+  "RentalDisputeStatus": {
+    "1": "Submitted",
+    "2": "UnderReview",
+    "3": "Resolved",
+    "4": "Rejected"
+  },
+  "RentalExtensionStatus": {
+    "1": "Pending",
+    "2": "Approved",
+    "3": "Rejected",
+    "4": "Cancelled",
+    "5": "PaymentPending"
+  },
+  "RentalInspectionPhase": {
+    "1": "PreRental",
+    "2": "PostRental"
+  },
+  "RentalInventoryHoldState": {
+    "0": "Legacy",
+    "1": "Holding",
+    "2": "Reserved",
+    "3": "Expired",
+    "4": "Released",
+    "5": "PaymentReview"
+  },
+  "RentalOrganizationPermission": {
+    "0": "None",
+    "1": "ManageTeam",
+    "2": "ManageBranches",
+    "4": "ManageVehicles",
+    "8": "ManageVehicleImages",
+    "16": "ManageBookings",
+    "32": "ViewFinance",
+    "64": "ManagePayouts",
+    "128": "PerformInspections",
+    "256": "ViewAudit",
+    "511": "All"
+  },
+  "RentalOrganizationRole": {
+    "1": "Owner",
+    "2": "FleetManager",
+    "3": "BookingAgent",
+    "4": "FinanceOfficer",
+    "5": "VehicleInspector",
+    "6": "Auditor"
+  },
+  "RentalOrganizationStatus": {
+    "1": "Pending",
+    "2": "Active",
+    "3": "Suspended",
+    "4": "Closed"
+  },
+  "RentalProviderType": {
+    "1": "Individual",
+    "2": "Organization"
+  },
+  "RentalTeamInvitationStatus": {
+    "1": "Pending",
+    "2": "Accepted",
+    "3": "Revoked",
+    "4": "Expired"
+  },
+  "RentalVehicleHandoverMode": {
+    "1": "BranchOnly",
+    "2": "Pickup",
+    "3": "Delivery",
+    "4": "PickupAndDelivery"
+  },
+  "RentalVehicleStatus": {
+    "1": "Draft",
+    "2": "PendingReview",
+    "3": "Available",
+    "4": "Reserved",
+    "5": "Rented",
+    "6": "Maintenance",
+    "7": "Suspended",
+    "8": "Archived"
+  },
+  "ReviewAggregateKind": {
+    "1": "TripRating",
+    "2": "RentalRating"
+  },
+  "ReviewAppealStatus": {
+    "1": "Submitted",
+    "2": "UnderReview",
+    "3": "Upheld",
+    "4": "Reversed",
+    "5": "Closed"
+  },
+  "RideDispatchMode": {
+    "1": "Proximity",
+    "2": "CountrywideHall"
+  },
+  "RideFareRouteSource": {
+    "0": "Provider",
+    "1": "GeodesicEstimate"
+  },
+  "RideNoDriverRecoveryAction": {
+    "1": "WaitOrExtend",
+    "2": "AdjustPickup",
+    "3": "Reschedule",
+    "4": "ReviseFare",
+    "5": "ChangeCategory",
+    "6": "Cancel"
+  },
+  "RideNoDriverRecoveryState": {
+    "1": "ActiveSearchNoBids",
+    "2": "ActiveSearchWithBids",
+    "3": "SearchExpired",
+    "4": "Closed"
+  },
+  "RideProductType": {
+    "1": "PointToPoint",
+    "2": "RoundTrip",
+    "3": "Hourly"
+  },
+  "RideRecoveryExecutionKind": {
+    "0": "Unavailable",
+    "1": "PassiveWait",
+    "2": "ExistingMutation"
+  },
+  "RideRequestStatus": {
+    "1": "Requested",
+    "2": "Assigned",
+    "3": "InProgress",
+    "4": "Completed",
+    "5": "Cancelled",
+    "6": "Expired"
+  },
+  "RideStopStatus": {
+    "1": "Pending",
+    "2": "Arrived",
+    "3": "Waiting",
+    "4": "Completed",
+    "5": "Skipped"
+  },
+  "RideStopType": {
+    "1": "Intermediate",
+    "2": "Turnaround"
+  },
+  "RiderVerificationState": {
+    "0": "NotRequired",
+    "1": "NotStarted",
+    "2": "Pending",
+    "3": "Verified",
+    "4": "Rejected",
+    "5": "Expired",
+    "6": "Unavailable"
+  },
+  "SafetyCaseSeverity": {
+    "1": "Low",
+    "2": "Moderate",
+    "3": "High",
+    "4": "Critical"
+  },
+  "SafetyEscalationChannel": {
+    "1": "InApp",
+    "2": "Phone",
+    "3": "Sms",
+    "4": "Email",
+    "5": "EmergencyServices"
+  },
+  "SafetyEventPassengerResponse": {
+    "0": "None",
+    "1": "RouteAllowed",
+    "2": "EmergencyRequested"
+  },
+  "SafetyEventSeverity": {
+    "0": "Unknown",
+    "1": "Informational",
+    "2": "Attention",
+    "3": "SuspectedIncident",
+    "4": "Emergency"
+  },
+  "SafetyEventStatus": {
+    "1": "Open",
+    "2": "AwaitingCheckIn",
+    "3": "Escalated",
+    "4": "Resolved"
+  },
+  "SafetyEventType": {
+    "1": "Sos",
+    "2": "RouteDeviation",
+    "3": "UnexpectedStop",
+    "4": "CollisionSuspected",
+    "5": "CheckIn",
+    "6": "TelemetryGap"
+  },
+  "ScheduledRideGuaranteeStatus": {
+    "0": "NotApplicable",
+    "1": "Searching",
+    "2": "DriverReserved",
+    "3": "ConfirmationRequired",
+    "4": "Guaranteed",
+    "5": "ReplacementSearching",
+    "6": "NotGuaranteed",
+    "7": "Cancelled",
+    "8": "Scheduled"
+  },
+  "SupportTicketStatus": {
+    "1": "Open",
+    "2": "Answered",
+    "3": "Closed",
+    "10": "Received",
+    "20": "Reviewing",
+    "30": "WaitingForInformation",
+    "40": "Resolved"
+  },
+  "TripDistanceProvenance": {
+    "0": "Unavailable",
+    "1": "ValidatedRoute",
+    "2": "ValidatedTelemetry"
+  },
+  "TripStatus": {
+    "1": "Assigned",
+    "2": "DriverArrived",
+    "3": "InProgress",
+    "4": "Completed",
+    "5": "Cancelled",
+    "6": "Reserved",
+    "7": "AwaitingReplacement"
+  },
+  "UserRole": {
+    "1": "Passenger",
+    "2": "Driver",
+    "3": "TenantAdmin",
+    "4": "SystemAdmin"
+  },
+  "UserStatus": {
+    "1": "Active",
+    "2": "Suspended",
+    "3": "Deleted"
+  },
+  "VehicleDefectStatus": {
+    "0": "Open",
+    "1": "InProgress",
+    "2": "Resolved",
+    "3": "Voided"
+  },
+  "VehicleMaintenanceSeverity": {
+    "0": "Advisory",
+    "1": "Important",
+    "2": "SafetyCritical"
+  },
+  "VehicleMaintenanceStatus": {
+    "0": "Good",
+    "1": "DueSoon",
+    "2": "DueNow",
+    "3": "Overdue",
+    "4": "CriticallyOverdue",
+    "5": "Completed",
+    "6": "Snoozed",
+    "7": "Inactive"
+  },
+  "VehicleMaintenanceTrigger": {
+    "0": "None",
+    "1": "Date",
+    "2": "Odometer",
+    "3": "WhicheverComesFirst"
+  },
+  "VehicleVerificationStatus": {
+    "1": "Pending",
+    "2": "Verified",
+    "3": "Rejected"
+  },
+  "WalletTransactionDirection": {
+    "1": "Credit",
+    "2": "Debit"
+  },
+  "WalletTransactionType": {
+    "1": "TopUp",
+    "2": "RidePayment",
+    "3": "DeliveryPayment",
+    "4": "DriverEarning",
+    "5": "Commission",
+    "6": "Refund",
+    "7": "Adjustment",
+    "8": "Cashout",
+    "9": "MembershipFee",
+    "10": "Referral",
+    "11": "PromoCredit",
+    "12": "MembershipCredit",
+    "13": "DeliveryEscrow",
+    "14": "DocumentVerificationFee",
+    "15": "BadgeFee",
+    "16": "WalletTransfer",
+    "17": "TopUpCard",
+    "18": "TripTip"
+  },
+  "WeekdayFlags": {
+    "0": "None",
+    "1": "Sunday",
+    "2": "Monday",
+    "4": "Tuesday",
+    "8": "Wednesday",
+    "16": "Thursday",
+    "32": "Friday",
+    "64": "Saturday"
+  }
+}

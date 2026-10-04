@@ -1,0 +1,2829 @@
+{
+  "policyVersion": 1,
+  "purpose": "Curated first-party and anonymous consumer contract; documentation does not grant integration access.",
+  "routes": {
+    "/api/v1/account": {
+      "topic": "identity",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/account/activity": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/activity/settings": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/avatar": {
+      "topic": "identity",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/account/complete-profile": {
+      "topic": "identity",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/account/contact-details": {
+      "topic": "identity",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/account/contact-details/email/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/contact-details/email/request-code": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/contact-details/phone/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/contact-details/phone/request-code": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/deactivate": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/deactivate/recoverable": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/deletion-request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/export": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/identity-verification": {
+      "topic": "identity",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/account/identity-verification/operations/outcome": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/identity-verification/recoverable": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/name-change-request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/onboarding/contact-proof": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/onboarding/phone-decision": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/onboarding/profile-photo-decision": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/account/recoverable": {
+      "topic": "identity",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/account/referrals": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/reputation": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/security-events": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/security-preferences": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/account/security-preferences/login-email-alerts": {
+      "topic": "identity",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/account/setup-progress": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/app-releases": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/app-releases/current": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/app-releases/{version}": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/app-releases/{version}/build/{build}": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/app-version-policy": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/2fa/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/disable": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/enroll": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/enroll/contact/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/enroll/contact/request-code": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/recovery-codes/regenerate": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/status": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/2fa/step-up": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/2fa/step-up/request-code": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/change-password": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/2fa": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/2fa/passkey/begin": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/2fa/passkey/complete": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/2fa/request-code": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/email/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/email/request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/phone/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/login/phone/request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/logout": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/me": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/passkeys": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/passkeys/register/begin": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/passkeys/register/complete": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/passkeys/{id}": {
+      "topic": "identity",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/auth/password-reset/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/password-reset/request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/password-strength": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/phone-verification/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/phone-verification/request": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/recent-authentication": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/refresh": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/register": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/session": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/sessions": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/auth/sessions/{id}": {
+      "topic": "identity",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/auth/set-password": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/social": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/social-connections": {
+      "topic": "identity",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/auth/social-connections/{id}": {
+      "topic": "identity",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/auth/social-link-intents/cancel": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/social-link-intents/confirm": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/auth/social-link-intents/review": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/blog": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/blog/{slug}": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/business-shipping/accounts": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/business-shipping/accounts/{accountId}/members": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/business-shipping/accounts/{accountId}/members/{memberId}": {
+      "topic": "profiles",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/business-shipping/deliveries/bulk": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/calculations": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/calculations/{id}": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/calculations/{id}/title": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/campaign-inbox": {
+      "topic": "notifications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/campaign-inbox/{id}/acknowledge": {
+      "topic": "notifications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/content": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/content/contact": {
+      "topic": "discovery",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/content/legal-catalogue": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/content/{slug}": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/content/{slug}/versions": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/content/{slug}/versions/{version}": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/content/{slug}/versions/{version}/pdf": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/corporate/accounts": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/corporate/accounts/{accountId}/budgets": {
+      "topic": "profiles",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/corporate/accounts/{accountId}/members": {
+      "topic": "profiles",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/deliveries": {
+      "topic": "deliveries",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/active/{deliveryId}/verification/{purpose}": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/product-settings": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/quote": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/bids": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/bids/accept": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/accept": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/bids/{bidId}/acceptance-preview": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/cancel": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/custody": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/evidence": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/protection/claims": {
+      "topic": "deliveries",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/deliveries/{deliveryRequestId}/tracking": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/devices/heartbeat": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/devices/register": {
+      "topic": "identity",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/devices/status": {
+      "topic": "identity",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/assistance-capability": {
+      "topic": "drivers",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/driver/billing": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/billing/mode": {
+      "topic": "memberships",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/driver/deliveries/available": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/deliveries/mine": {
+      "topic": "deliveries",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/attempts/failed": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/cancel": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/complete": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/pickup/confirm": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/recipient/confirm": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/return/complete": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/start": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryId}/stops/{stopId}/complete": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/deliveries/{deliveryRequestId}/bids": {
+      "topic": "deliveries",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/documents": {
+      "topic": "drivers",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/driver/incentives/current": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/membership": {
+      "topic": "memberships",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/driver/membership/auto-renew": {
+      "topic": "memberships",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/driver/membership/checkout": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/membership/pending-change/cancel": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/membership/store-status": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/onboarding": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/onboarding/complete": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/onboarding/contact-proof": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/onboarding/progress": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/onboarding/step": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/preferred-program": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/preferred-program/applications": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/preferred-program/apply": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/rating/import": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/profile/rating/imports": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/readiness": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/reviews": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/profile/reviews/{reviewId}/dispute": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/reports/earnings": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/rider-favorites": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/rider-favorites/{favoriteId}": {
+      "topic": "drivers",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/driver/rider-favorites/{riderUserId}": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/rides/alert-preferences": {
+      "topic": "drivers",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/driver/rides/available": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/rides/available/seek": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/rides/bids/{bidId}": {
+      "topic": "drivers",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/driver/rides/{rideRequestId}/bids": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/rides/{rideRequestId}/inquiry": {
+      "topic": "drivers",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/driver/rides/{rideRequestId}/inquiry/read": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/rides/{rideRequestId}/route-preview": {
+      "topic": "drivers",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/driver/rides/{rideRequestId}/view": {
+      "topic": "drivers",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/status": {
+      "topic": "drivers",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/driver/vehicles": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/driver/vehicles/{vehicleId}": {
+      "topic": "vehicles",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/driver/vehicles/{vehicleId}/activate": {
+      "topic": "vehicles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/driver/vehicles/{vehicleId}/bidding-eligibility": {
+      "topic": "vehicles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/fare-splits/{planId}": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/fare-splits/{planId}/respond": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/fares/quote": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/favorites": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/favorites/{favoriteId}": {
+      "topic": "rides",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/features": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/households": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/households/{householdId}/consent": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/households/{householdId}/members": {
+      "topic": "safety",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/legal-acceptances": {
+      "topic": "discovery",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/legal-acceptances/catalogue": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/autocomplete": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/geocode": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/place": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/reverse-geocode": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/route": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/maps/traffic-routes": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/membership/plans": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/notifications": {
+      "topic": "notifications",
+      "methods": [
+        "delete",
+        "get"
+      ]
+    },
+    "/api/v1/notifications/history": {
+      "topic": "notifications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/notifications/preferences": {
+      "topic": "notifications",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/notifications/preferences/effective": {
+      "topic": "notifications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/notifications/push-token": {
+      "topic": "notifications",
+      "methods": [
+        "delete",
+        "post"
+      ]
+    },
+    "/api/v1/notifications/push-token/installation-state": {
+      "topic": "notifications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/notifications/read-all": {
+      "topic": "notifications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/notifications/{notificationId}": {
+      "topic": "notifications",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/notifications/{notificationId}/read": {
+      "topic": "notifications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/operations/status": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/public/capabilities": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/public/country-sites": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/public/membership-prices": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/recurring-rides": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/recurring-rides/recoverable": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/recurring-rides/{recurringRideId}": {
+      "topic": "rides",
+      "methods": [
+        "delete",
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/recurring-rides/{recurringRideId}/occurrences": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/recurring-rides/{recurringRideId}/revisioned": {
+      "topic": "rides",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/reference-data/banks": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reference-data/countries": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reference-data/vehicle-insurers": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/membership/plans": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations": {
+      "topic": "rentals",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/analytics": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/availability-blocks": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/availability-blocks/{blockId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/billing": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/billing/membership": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/billing/membership/auto-renew": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/billing/membership/checkout": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/billing/mode": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/agreement/sign": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/damage-claims": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/deposit/settle": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/inspections": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/late-return/assess": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/bookings/{bookingId}/status": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/branches": {
+      "topic": "rentals",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/extensions/{extensionId}": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/fleet/reminders": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/profile-image": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/team": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/team/invitations": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/team/invitations/{invitationId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/team/{userId}": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles": {
+      "topic": "rentals",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/availability": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/images/{imageId}/primary": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/organizations/{organizationId}/vehicles/{vehicleId}/protection": {
+      "topic": "rentals",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rental-partner/team/invitations/accept": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rental-partner/vehicles/{vehicleId}/images": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/booking-status-contract": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/mine": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/agreement/sign": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/cancel": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/checkout": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/damage-evidence/{evidenceId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/dispute-evidence/{evidenceId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/disputes": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/extensions": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/extensions/{extensionId}/checkout": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/inspection-evidence/{evidenceId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/operations": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/payment-authorized": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/protection": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/bookings/{bookingId}/rating": {
+      "topic": "rentals",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rentals/favorites/{vehicleId}": {
+      "topic": "rentals",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/rentals/filters": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/organizations": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/organizations/{organizationId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/organizations/{organizationId}/profile-image": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles/{vehicleId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles/{vehicleId}/availability": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles/{vehicleId}/images/{imageId}": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles/{vehicleId}/protection": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rentals/vehicles/{vehicleId}/quote": {
+      "topic": "rentals",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reports/exports": {
+      "topic": "reports",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/reports/exports/{artifactId}": {
+      "topic": "reports",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reports/exports/{artifactId}/download": {
+      "topic": "reports",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reports/scheduled": {
+      "topic": "reports",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/reports/scheduled/{scheduleId}": {
+      "topic": "reports",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/reports/{reportType}": {
+      "topic": "reports",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/resources/manuals": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/reviews/{kind}/{reviewId}/appeals": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rider/assistance-profile": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/rider/membership": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rider/membership/plans": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/rides/fare-splits/{planId}/respond": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rides/recent-locations": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/bids": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/bids/accept": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/bids/{bidId}/avatar": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/bids/{bidId}/reject": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/cancel": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/fare": {
+      "topic": "rides",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/fare-split": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/inquiries": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}": {
+      "topic": "rides",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/inquiries/{driverProfileId}/read": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/no-driver-recovery": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/search-map": {
+      "topic": "rides",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/rides/{rideRequestId}/search/extend": {
+      "topic": "rides",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/cases": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/safety/cases/recoverable": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/cases/{id}/acknowledge": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/cases/{id}/acknowledge/recoverable": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/emergency-number": {
+      "topic": "safety",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/safety/events": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/events/{id}/acknowledge": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/events/{id}/route-deviation-response": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/safety/preferences": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/safety/trips/{tripId}/events": {
+      "topic": "safety",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/safety/trips/{tripId}/route-deviation": {
+      "topic": "safety",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/safety/trusted-contacts": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/safety/trusted-contacts/{id}": {
+      "topic": "safety",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/store-billing/operations/{operationId}": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/store-billing/prepare": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/store-billing/products": {
+      "topic": "memberships",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/store-billing/quote": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/store-billing/restore": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/store-billing/verify": {
+      "topic": "memberships",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/supervised-trips/{tripId}/conversation": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/supervised-trips/{tripId}/handoff": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/supervised-trips/{tripId}/safety-escalation": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets": {
+      "topic": "support",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/catalog": {
+      "topic": "support",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/support/tickets/operations/outcome": {
+      "topic": "support",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}": {
+      "topic": "support",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/close": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/close/recoverable": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/messages/{messageId}/attachments/{index}": {
+      "topic": "support",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/read": {
+      "topic": "support",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/reopen": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/reopen/recoverable": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/reply": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/support/tickets/{ticketId}/reply/recoverable": {
+      "topic": "support",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/tools/calculators/export/pdf": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/tools/tolls/estimate": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/tools/tolls/options": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/tools/tolls/periods": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/tools/tolls/plazas": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/tools/tolls/route-estimate": {
+      "topic": "maps-and-tools",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/invitations/accept": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}": {
+      "topic": "profiles",
+      "methods": [
+        "delete",
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/cost-centers": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/cost-centers/{costCenterId}": {
+      "topic": "profiles",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/dependents": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/dependents/{memberId}/renew-consent": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/dependents/{memberId}/revoke-consent": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/family-safety-policy": {
+      "topic": "profiles",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/members": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/members/{memberId}": {
+      "topic": "profiles",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/members/{memberId}/tracking-consent": {
+      "topic": "profiles",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/ride-policy": {
+      "topic": "profiles",
+      "methods": [
+        "put"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/rides": {
+      "topic": "profiles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/statements/monthly": {
+      "topic": "profiles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/trips": {
+      "topic": "profiles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/trips/{tripId}/receipt": {
+      "topic": "profiles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/travel-profiles/{profileId}/trips/{tripId}/tracking": {
+      "topic": "profiles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/active": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/history": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/receipts": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/arrived": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/cancel": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/chat": {
+      "topic": "trips",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/chat/read": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/complete": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/dispute": {
+      "topic": "trips",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/driver-avatar": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/driver-termination": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/emergency-stop": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/passenger-avatar": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/peer-block": {
+      "topic": "trips",
+      "methods": [
+        "delete",
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/trips/{tripId}/pickup-ceremony": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/pickup-challenge": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/pickup-code": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/pickup-contact-attempt": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/rating": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/receipt": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/receipt.pdf": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/receipt/email": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/reservation/confirm": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/reservation/decline": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/reservation/rider-check-in": {
+      "topic": "trips",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/rider-cancellation": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/route-alterations": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/route-alterations/{alterationId}/accept": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/route-alterations/{alterationId}/reject": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/share": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/share/revoke": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/start": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/stops/{stopId}/arrive": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/stops/{stopId}/complete": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/stops/{stopId}/skip": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/trips/{tripId}/timeline": {
+      "topic": "trips",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/trips/{tripId}/tip": {
+      "topic": "trips",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/uploads": {
+      "topic": "uploads",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/uploads/operations/{operationId}": {
+      "topic": "uploads",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/uploads/recoverable": {
+      "topic": "uploads",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/uploads/{fileRef}": {
+      "topic": "uploads",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/user-blocks": {
+      "topic": "safety",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/user-blocks/driver": {
+      "topic": "safety",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/user-blocks/{blockId}": {
+      "topic": "safety",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/user-blocks/{userId}": {
+      "topic": "safety",
+      "methods": [
+        "get",
+        "put"
+      ]
+    },
+    "/api/v1/vehicle-catalog/makes": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicle-catalog/models": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicle-catalog/years": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicle-categories": {
+      "topic": "discovery",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicles": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}": {
+      "topic": "vehicles",
+      "methods": [
+        "delete",
+        "put"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/activate": {
+      "topic": "vehicles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/bidding-eligibility": {
+      "topic": "vehicles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/brakes": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/defects": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/defects/{defectId}/resolve": {
+      "topic": "vehicles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/expenses": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/odometer": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/schedules": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/services": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/services/{serviceId}/void": {
+      "topic": "vehicles",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/summary": {
+      "topic": "vehicles",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/vehicles/{vehicleId}/maintenance/tyres": {
+      "topic": "vehicles",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/voice/call": {
+      "topic": "communications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/voice/call/connected": {
+      "topic": "communications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/voice/call/consent": {
+      "topic": "communications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/voice/call/end": {
+      "topic": "communications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/voice/call/gsm": {
+      "topic": "communications",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/voice/call/incoming": {
+      "topic": "communications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/voice/call/{callId}": {
+      "topic": "communications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/voice/options": {
+      "topic": "communications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/voice/token": {
+      "topic": "communications",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/cashout": {
+      "topic": "wallets",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/wallet/cashout/limits": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/cashout/{cashoutId}/status": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/command-recovery": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/fee-products": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/fee-products/{productId}/purchase": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/fees": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/financial-history": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/financial-history/export/pdf": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/financial-history/{entryId}": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/financial-history/{entryId}/disputes": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/financial-history/{entryId}/export/pdf": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/payments/status": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/payments/{paymentId}/status": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/payout-methods": {
+      "topic": "wallets",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/wallet/payout-methods/{id}": {
+      "topic": "wallets",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/wallet/recipients": {
+      "topic": "wallets",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    "/api/v1/wallet/recipients/{id}": {
+      "topic": "wallets",
+      "methods": [
+        "delete"
+      ]
+    },
+    "/api/v1/wallet/topup": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/topup/bank-transfers": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/topup/bank-transfers/{paymentId}/cancel": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/topup/limits": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/topup/quote": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/topups/paypal/{operationId}/reconcile": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/topups/paypal/{operationId}/status": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/transactions": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/transactions/export": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/transactions/history": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    },
+    "/api/v1/wallet/transfers": {
+      "topic": "wallets",
+      "methods": [
+        "post"
+      ]
+    },
+    "/api/v1/wallet/transfers/quote": {
+      "topic": "wallets",
+      "methods": [
+        "get"
+      ]
+    }
+  }
+}

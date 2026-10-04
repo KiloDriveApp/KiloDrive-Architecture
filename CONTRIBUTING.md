@@ -69,6 +69,13 @@ material, and coordinate history rewriting.
 
 ## Choose the right document
 
+- Update the [API Guide](docs/api/README.md) when a reviewed HTTP contract or
+  consumer workflow changes. Curated routes are explicitly approved in
+  `docs/api/publication-policy.json`; do not copy the full private OpenAPI.
+  Regenerate endpoint/field pages with `tools/public_api.py`, then run its
+  `--check` and focused publication tests. Keep source metadata accurate and
+  follow [API publication governance](docs/api/versioning-and-publication.md).
+
 - Change an **architecture chapter** when responsibilities, boundaries, or data
   flow changed.
 - Add or amend an **ADR** when the team made a material tradeoff that future
