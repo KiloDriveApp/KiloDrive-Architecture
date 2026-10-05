@@ -10,15 +10,25 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-03 | Date of this source/documentation review |
-| Source revision | `1cd27c58f0fd9df6d974fab3718c3cb0b485f251` | Product source pinned for the API export and current source observations |
-| Consumer source | `1.0.0+172` | Read from the consumer pubspec; not a store-availability assertion |
-| System Admin source | `0.1.0+16` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.03.1` | Source contract version; not proof that every database is aligned |
-| Public API coverage | 528 operations, 659 models, 5,012 properties | Explicitly curated subset, with wire-shape parity checked against the source |
+| Review date | 2026-10-05 | Date of the native-adapter source observation |
+| Product source revision | `8bfe08881bce51535d1165552f2d5be8e05fc872` | Git HEAD in the product checkout; the checkout also contained uncommitted adapter/API changes, so this commit alone does not reproduce every observation |
+| Consumer source | `1.0.0+192` | Read from the consumer pubspec; not a signed-artifact or store-availability assertion |
+| System Admin source | `0.1.0+32` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.10.05.1` | Source contract version; not proof that any deployed database is aligned |
+| Private v1 OpenAPI hash | `5ce23bf4eaba9dd3a187e65b4575673e6e821badba1aeb4a302b4a5cc1383249` | Current local file hash, not a reviewed/public publication claim |
+| Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
-The [generated manifest](api/openapi/manifest.json) is the machine-readable
-provenance record. The [reference coverage report](api/reference/coverage.md)
+The historical public API export's own source metadata is consumer
+`1.0.0+172`, System Admin `0.1.0+16` and schema contract `2026.10.03.1`.
+Those values are retained to describe that export, not the current app or
+database. Its 528 operations, 659 models and 5,012 properties must not be
+read as current private API counts.
+
+The [native source snapshot](architecture/native-source-snapshot.json) records
+the inspected versions and hash; its local checker can compare them to a
+product checkout. The [generated public API manifest](api/openapi/manifest.json)
+is the machine-readable provenance record **for its older curated export**, not
+for the current product source. The [reference coverage report](api/reference/coverage.md)
 separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
@@ -58,8 +68,9 @@ a newer route or ledger row is not proof of a completed operator journey.
 | What passed on a device? | Exact signed artifact, OS/device, environment, scenario and observed result | Untested platforms, accounts or lifecycle variants |
 | What does this repository verify? | Documentation CI and source-comparison results | Production health or application test results |
 
-The public dependency baseline was regenerated from the same pinned source and
-now covers both apps, .NET projects and explicit package overrides. Its
+The public dependency baseline was regenerated from the historical API-export
+source and covers both apps, .NET projects and explicit package overrides at
+that checkpoint. Its
 [117-coordinate inventory](third-party/direct-packages.md) is still not the
 complete release SBOM. See [SBOM scope](third-party/sbom.md).
 

@@ -28,6 +28,14 @@ ADRs are not marketing documents. A good ADR admits what became harder.
 | [015](015-account-membership-notification-authority.md) | Account, membership and notification authority boundaries | Accepted/Incremental |
 | [016](016-separate-system-admin-mobile-app.md) | Separate privileged mobile administration from the consumer app | Accepted/Incremental |
 
+The [native platform handbook](../architecture/native-platform-handbook.md)
+applies these existing decisions rather than inventing a new one: [010](010-flutter-feature-repositories.md)
+owns feature/adaptor layering, [012](012-native-api-v1-and-generated-contract.md)
+owns the canonical API contract, [015](015-account-membership-notification-authority.md)
+owns membership and notification authority, and [016](016-separate-system-admin-mobile-app.md)
+owns the two-app privilege boundary. A changed trust or transaction decision
+needs a new ADR; this documentation pass does not silently rewrite those decisions.
+
 ## Lifecycle
 
 - **Proposed** — discussion is open; do not treat the design as deployed.

@@ -1,0 +1,11 @@
+{
+  "reviewedDate": "2026-10-05",
+  "productSourceRevision": "8bfe08881bce51535d1165552f2d5be8e05fc872",
+  "productWorkingTree": "modified; native adapter and API observations may include uncommitted changes and are not reproducible from the revision alone",
+  "consumerVersion": "1.0.0+192",
+  "systemAdminVersion": "0.1.0+32",
+  "schemaContract": "2026.10.05.1",
+  "privateOpenApiSha256": "5ce23bf4eaba9dd3a187e65b4575673e6e821badba1aeb4a302b4a5cc1383249",
+  "publicApiExportRevision": "1cd27c58f0fd9df6d974fab3718c3cb0b485f251",
+  "publicApiExportStatus": "historical curated snapshot; not regenerated from the current product source"
+}

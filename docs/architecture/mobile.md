@@ -1,9 +1,10 @@
 # Mobile Architecture
 
-For the current two-package boundary, security and notification flows, see
-[Two mobile apps, one authoritative API](two-mobile-apps-and-security-2026-09-30.md).
-The build-156 adapter history and current billing limits are described in
-[Native adapters and store billing](native-adapters-and-store-billing.md).
+For the current two-package boundary, security and notification flows, start
+with the [native platform handbook](native-platform-handbook.md). The
+[2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)
+and [build-156 adapter history](native-adapters-and-store-billing.md) retain
+their dated evidence; neither certifies today's source build.
 
 KiloDrive has two Android/iOS Flutter packages. This chapter describes the
 consumer app for rider, driver, rental organization and tools-only journeys.
@@ -124,24 +125,20 @@ substitute for a deterministic policy.
 
 ## Driver onboarding: resumable but not bypassable
 
-New drivers move through one server-backed, twelve-page journey. The mobile app
-renders immutable view models and saves the current page; it does not keep an
-untyped JSON checklist or infer completion from one local flag.
-
-| Page | Purpose | Blocking rule |
-| ---: | --- | --- |
-| 1 | Identity, profile photo, driver-licence details and licence document | Required |
-| 2 | Proof of address and background/police evidence | May be deferred for up to 21 days; overdue evidence locks operations |
-| 3 | Membership introduction and Free/Silver/Gold choice | A deliberate choice is required; paid membership is not required |
-| 4 | Verified email and phone review | Both contacts must be present and verified |
-| 5 | Language, currency display, distance unit, text/accessibility and optional 2FA preferences | Required confirmation; preferences do not change ledger currency |
-| 6 | Vehicle make, model, year, condition and images | An existing complete verified vehicle satisfies it |
-| 7 | Registration details, expiry and document | Required |
-| 8 | Insurance details, expiry and document | Required |
-| 9 | Fitness/inspection details, expiry and document | Required for every driver at the current implementation baseline |
-| 10 | Optional reviewed Uber, Lyft or inDrive rating screenshots | Skippable; imported evidence remains separately labelled |
-| 11 | Hourly-hire rate, distance unit, currency view and driver business preferences | Required confirmation; reviewed default hourly rate is USD 6.00 |
-| 12 | Terms, Privacy and manual links plus explicit legal acceptance | Required to complete; cancel-and-delete follows the separate governed deletion flow |
+New drivers move through a server-backed journey. The v1 API retains stable
+historical page numbers for saved progress, but the current response presents
+identity, deferrable background evidence, membership choice, verified contact,
+vehicle, vehicle fitness, optional external-rating evidence and legal consent.
+Page 5 device/preferences and page 11 work preferences are no longer first-
+dollar onboarding blockers; settings remain available separately. Contact
+policy requires verified email, while phone is an optional second channel.
+The API keeps a legacy fitness page identifier without making a duplicate
+wizard page block completion; current vehicle compliance still governs bidding
+and assignment. See the current
+[`DriverOnboardingFeature`](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Features/Drivers/DriverOnboardingFeature.cs)
+and [source baseline](../current-baseline.md). The client renders the returned
+requirements and preserves draft state rather than inferring completion from a
+local step count.
 
 Each page offers Back, Next, Save for later and Logout; the restricted settings
 action exposes only basic preferences and cannot escape into the ordinary app

@@ -27,7 +27,9 @@ jobs:
       - name: Compile audit tooling
         run: python -m compileall -q tools
       - name: Check relative links and public-safe content
-        run: python tools/audit_docs.py
+        run: |
+          python tools/audit_docs.py
+          python tools/native_handbook.py
       - name: Verify public CycloneDX baseline and hash
         run: python tools/generate_public_sbom.py --check
       - name: Verify curated API contract, dictionary and publication boundary

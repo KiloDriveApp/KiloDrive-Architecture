@@ -33,6 +33,7 @@ Use the [current baseline](docs/current-baseline.md) for source provenance and
 | ABI | Application Binary Interface: the native machine-code contract for a processor family, such as `arm64-v8a` or `armeabi-v7a`. A package can build successfully yet fail on a device if the required ABI is absent. |
 | Acting workspace | An explicitly selected and server-authorized administrative country/tenant context. A header or saved UI choice alone does not grant cross-tenant access. See [System Admin architecture](docs/architecture/system-admin-mobile-app.md). |
 | Adapter | A boundary translating platform/provider protocols into typed application results. It isolates SDK behavior, timeouts and callbacks without making client observations authoritative. See [native adapters](docs/architecture/native-adapters-and-store-billing.md). |
+| Adapter observation | Typed OS or provider evidence such as product discovery, a picker result or a GPS fix. The API must still decide the corresponding account, money, document or trip transition. See the [native platform handbook](docs/architecture/native-platform-handbook.md). |
 | ADOT | AWS Distro for OpenTelemetry: AWS-supported components for collecting and exporting OpenTelemetry traces and metrics. It is an observability path, not the source of business truth. |
 | ADR | Architecture Decision Record: a short, durable explanation of an important design choice, the alternatives considered, and the consequences the team accepts. |
 | Aggregate | A cluster of domain state protected by one consistency boundary and version, such as a ride request and its actionable assignment state. |
@@ -59,6 +60,7 @@ Use the [current baseline](docs/current-baseline.md) for source provenance and
 | Breadcrumb | A sampled, durable location observation retained for authorized trip reconstruction, safety, and distance evidence. |
 | Browser-audience proof | A signed, short-lived proof supplied by an approved server-side browser component and bound to method, target and body. When enabled, a distributed nonce claim prevents replay. It supplements user/session authorization. |
 | Callback fencing | Rejecting late asynchronous results when their captured account, session, workspace or operation generation no longer matches the active context. It prevents a previous user's callback from changing current state. |
+| Certification row | One exact capability, platform, lifecycle, signed artifact and provider environment with an observed result and evidence link. A host test cannot fill a physical-device row. See the [native matrix](docs/quality/native-platform-certification-matrix.md). |
 | Canary | A scheduled non-user probe sent to a dedicated test destination to verify a provider path without involving customer data. |
 | Canonical route | The reviewed versioned HTTP route, currently `/api/v1/...`. A compatibility alias is a separate lifecycle concern and must not weaken the same authorization rules. |
 | Capability | An explicitly supported administrative function with associated UI, contract and permission requirements. A navigation entry or registry row is not proof that its entire operator workflow is certified. |

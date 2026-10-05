@@ -1,5 +1,13 @@
 # Mobile sessions and installation lifecycle
 
+**Owner:** Mobile platform and Identity/API security. **Last verified:**
+2026-10-05 source review. **Environment:** Local modified product checkout;
+no signed-device/provider exercise. **Evidence:** product committed HEAD
+[`8bfe0888`](https://github.com/KiloDriveApp/KiloDrive/tree/8bfe08881bce51535d1165552f2d5be8e05fc872),
+consumer `1.0.0+192`, System Admin `0.1.0+32`. The product working tree
+contains uncommitted native and API changes, so this is a source checkpoint,
+not signed-artifact or deployed-policy certification.
+
 The consumer and System Admin apps share KiloDrive's global identity authority
 but use separate native applications, local storage and intended workspaces.
 This chapter describes the public-safe trust model. It is not a device-fingerprint
@@ -24,6 +32,30 @@ but none is the durable identity. Reinstall, data reset and the two KiloDrive
 apps can produce multiple installations on one handset. On platforms where
 secure storage may survive reinstall, an ordinary app-data marker prevents
 historical secure material from silently becoming the new installation.
+
+The consumer [installation preparation](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/client/mobile/lib/core/bootstrap/installation_preparation.dart)
+asks an iOS native channel to reconcile that marker before account restore. It
+can leave the first frame visible while protected storage is temporarily
+unavailable; restoration waits for a retryable result. Android and iOS values
+pass through the [scoped credential adapter](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/client/mobile/lib/core/platform_adapters/secure_credential_adapter.dart):
+its namespace includes user, tenant, country and role. A timed-out native write
+may still finish, so operations are serialized per scope. Timeout is not proof
+of a no-op and is not a reason to create another installation blindly.
+
+```mermaid
+sequenceDiagram
+    participant App as Consumer app
+    participant OS as Keychain or Keystore
+    participant API as Identity API
+    App->>OS: Prepare installation and read scoped credential
+    alt credential available
+        App->>API: Restore session with installation proof
+        API-->>App: Current binding, roles and restrictions
+    else unavailable or ambiguous
+        OS-->>App: Retryable or outcome-unknown observation
+        App-->>App: Keep private workspace locked; retry or escalate
+    end
+```
 
 ## Login and dual-role resolution
 
@@ -81,6 +113,15 @@ neither a hidden menu nor a local device-status cache is an access policy. The
 server checks installation restrictions and the session family's binding before
 the domain handler examines role, tenant, country and target ownership.
 
+Firebase App Check is a separate proof of native app identity, not a person or
+installation ID. The [consumer attestation adapter](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/client/mobile/lib/core/platform_adapters/attestation_adapter.dart)
+selects Play Integrity on release Android and App Attest on release iOS, with
+debug proof explicitly distinct; it serializes activation and token requests.
+The [API middleware](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Security/AppCheck/AppCheckProtection.cs)
+validates token signatures and app identity for protected endpoints. A verifier
+outage is different from an authoritative rejection. Neither a cached client
+proof nor a successful biometric unlock overrides current API authorization.
+
 The public browser and native audiences require different admission behavior.
 They must remain explicit in policy and tests rather than inferred from a
 user-agent string. This document does not publish a bypass recipe or assert that
@@ -122,3 +163,5 @@ behavior, App Check, OS notifications or the signed iOS/Android lifecycle. Do
 not put real installation secrets, tokens, IPs or device identifiers in this
 public repository. Continue with the [notification lifecycle](notification-delivery-lifecycle.md)
 and [mobile security verification](../quality/mobile-security-verification.md).
+For OS-level failure handling see the [native integrations chapter](native-os-integrations.md)
+and [device runbook](../runbooks/native-device-integrations.md).

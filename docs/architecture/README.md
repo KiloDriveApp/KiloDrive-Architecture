@@ -31,8 +31,11 @@ support, policies, releases and the consumer download.
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |
 | [Documents, media, and voice](documents-media-voice.md) | How are private uploads and call media authorized, scanned, retained, and audited? |
 | [Mobile](mobile.md) | How do Flutter workspaces, repositories, state, offline behavior, and native services fit together? |
+| [Native platform handbook](native-platform-handbook.md) | Where is the universal native-operation contract, adapter inventory, and exact evidence boundary? |
+| [Native OS integrations](native-os-integrations.md) | How do attestation, location, Maps, capture, deep links, export, and other OS services hand off to API authority? |
 | [Two mobile apps and security](two-mobile-apps-and-security-2026-09-30.md) | Which work belongs in the consumer versus System Admin app, and how do identity, adapters, device trust, notifications and release evidence connect? |
 | [Native adapters and store billing](native-adapters-and-store-billing.md) | How do device SDKs, StoreKit, Play Billing, the API, and membership recovery divide responsibility? |
+| [Google Play Billing and RTDN](google-play-billing-native-adapter.md) | How do prepared purchases, provider status, token linkage and notification-driven reconciliation work? |
 | [Portal and website](portal-and-website.md) | How do browser applications preserve API authorization and presentation parity? |
 | [System Administration](system-administration.md) | How do capabilities, country workspaces, work queues, investigations, step-up, audit, and recovery stay inside the control-plane boundary? |
 | [System Admin mobile app](system-admin-mobile-app.md) | What does the separate operator app present, and how do its dossiers, investigations, security, notifications and recovery behave? |

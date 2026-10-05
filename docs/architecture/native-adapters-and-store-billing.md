@@ -1,9 +1,9 @@
 # Native adapters and store billing
 
 - **Owner:** Mobile platform and membership engineering
-- **Last reviewed:** 2026-10-03
-- **Environment:** [Current reviewed source baseline](../current-baseline.md); historical test records keep their original builds
-- **Evidence:** [Historical build-168 handover](../runbooks/build168-operational-handover.md) and the source repository's dated adapter inventory and verification records
+- **Last verified:** 2026-10-05 source review
+- **Environment:** Local modified product checkout at the [captured source baseline](../current-baseline.md); historical test records keep their original builds
+- **Evidence:** [Native adapter inventory](native-adapter-inventory.json), [historical build-168 handover](../runbooks/build168-operational-handover.md) and the source repository's dated verification records
 
 This page retains its build-156 and build-168 verification history. The
 current source is newer, and the System Admin client is a separate app.
@@ -30,11 +30,122 @@ The full file-level inventory and remaining physical-device certification are in
 
 ## Apple: StoreKit 2 and subscriptions
 
-The iOS adapter requests the exact Silver/Gold weekly, monthly, and quarterly product IDs for the device storefront. It presents Apple's purchase sheet and listens for transaction updates and restore. StoreKit returning a product or a local transaction is **evidence, not entitlement**. The API verifies signed Apple transaction/server history, bundle ID, product ID, environment, account binding, term, and price evidence before updating the membership period. App Store Notifications V2 prompts recovery; it is not accepted blindly as the final state.
+This section is a **source review, not a signed-iPhone certificate**. It pins
+product source revision [`8bfe08881bce51535d1165552f2d5be8e05fc872`](https://github.com/KiloDriveApp/KiloDrive/tree/8bfe08881bce51535d1165552f2d5be8e05fc872)
+(consumer pubspec `1.0.0+192`, inspected 2026-10-05). The product checkout also
+had uncommitted edits to the billing coordinator and native adapter at review
+time; details explicitly called *working-tree observations* below require a new
+revision and verification before becoming release evidence. The source of the
+six driver IDs, group reference and weekly/monthly/quarterly mapping is
+[`StoreMembershipCatalog.cs`](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Features/Membership/StoreMembershipCatalog.cs),
+not a separately maintained list here.
 
-Product discovery records sanitized per-product evidence: requested/returned ID, storefront, timestamp/duration, localized currency/price, subscription period/group when available, mapping revision/status, build, and a bounded failure category. The client does not infer sandbox versus production when the SDK cannot prove it. It never logs receipts, JWS payloads, private keys, raw purchase tokens, or personal data. A quarterly product missing from StoreKit must be diagnosed across storefront availability, subscription group, metadata, agreement, mapping, and timing—not treated as proof of a currency-conversion fault.
+```mermaid
+flowchart LR
+  Driver[Signed-in driver] --> UI[Consumer membership screen]
+  UI --> Coordinator[StoreBillingService + protected journal]
+  Coordinator --> Plugin[in_app_purchase / StoreKit 2]
+  Coordinator --> API[/api/v1/store-billing]
+  Plugin --> Apple[App Store storefront and transaction stream]
+  Apple --> Notifications[Notifications V2]
+  Notifications --> API
+  API --> Server[Signed-JWS verifier + App Store Server API]
+  Server --> Cell[Country-cell purchase, period, payment and exception]
+  Cell --> UI
+```
 
-A verified cancellation normally stops renewal but preserves access through the paid period. Immediate upgrade, deferred downgrade, renewal, billing retry/grace, expiry, refund, revocation, and restore are server lifecycle events. The Current Plan view uses the authoritative active period's exact term, such as `Gold-Weekly`; a later payment or pending quarterly change cannot relabel it.
+The [native adapter](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/client/mobile/lib/core/platform_adapters/native_store_billing_adapter.dart)
+uses `in_app_purchase` plus `in_app_purchase_storekit`: query products,
+`buyNonConsumable`, `purchaseStream`, explicit `restorePurchases`, and a
+StoreKit-2 unfinished-transaction probe. It carries `applicationUserName` on
+purchase/Restore. A returned product has StoreKit's localized display price
+and currency; the [API catalogue and quote](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Features/Membership/StoreBillingFeature.cs)
+provide the licensed plan, term, mapping revision and operational-country
+price evidence. Those prices are not interchangeable when the device storefront
+differs from the operational country. The plugin DTO visible at this revision
+does **not** independently expose Apple subscription-group/period metadata to
+the Dart diagnostic record; mark those StoreKit fields *unknown* unless a
+separate verified source supplies them. The server validates its configured
+group during paid-transaction recovery.
+
+```mermaid
+sequenceDiagram
+  participant D as Driver
+  participant C as Consumer + protected journal
+  participant S as KiloDrive API
+  participant K as StoreKit 2
+  participant A as App Store Server API
+  D->>C: Select an available term
+  C->>S: Quote exact mapping/term
+  S-->>C: Quote evidence
+  C->>C: Persist scoped quote + operation before launch
+  C->>K: Launch with account binding
+  K-->>C: Cancel, pending, purchase, error or late update
+  alt Transaction identifier and signed evidence available
+    C->>S: Verify or Restore with original operation/idempotency
+    S->>S: Verify signature, app, bundle, environment, product, account
+    S->>A: Status/history/refund lookup when recovery requires it
+    S-->>C: Authoritative entitlement or review state
+    C->>K: Finish only after verification/commit
+  else Outcome uncertain or no transaction identifier
+    C->>C: Retain journal; checking or manual review
+    C->>S: Read exact operation status where available
+  end
+```
+
+| Observation / transition | Local behavior and durable evidence | Authority for next step |
+| --- | --- | --- |
+| Product absent or delayed | Keep per-product diagnostic; do not manufacture a price or infer a charge | StoreKit discovery and current App Store Connect territory/group/metadata, then API mapping |
+| Sheet requested | A persisted operation is not proof that a sheet appeared or Apple charged | Explicit plugin result or transaction; never infer from an absent server row |
+| User explicitly cancelled | Clear only that no-charge checkout after definite native cancellation | Native cancellation classification; a generic error/timeout is not cancellation |
+| Pending, interrupted, or duplicate unfinished | Preserve scoped journal, original quote and operation; no blind second purchase | Transaction stream/unfinished probe plus server reconciliation |
+| Signed purchase or Restore | Verify exact transaction and account; retain charged-or-possibly-charged recovery if rejected or unavailable | API verification and provider status/history, not local `purchased`/`restored` alone |
+| Renewal/cancellation/grace/expiry/replacement/refund/revoke | Apply event to the correct original-transaction family and period; preserve paid-through access unless revoked | Signed renewal/status/refund evidence and server membership projection |
+
+The [server verifier](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Features/Membership/AppleStoreTransactionVerifier.cs)
+checks signed transaction data against bundle/app ID, product, environment,
+transaction ID and `appAccountToken`; [paid-transaction recovery](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/server/KiloDrive.Api/Features/Membership/ApplePurchaseRecovery.cs)
+also checks App Store Server transaction info, subscription-family status,
+bounded history and refund history. An Apple account reused after a KiloDrive
+identity reseed is not ownership proof: old evidence cannot transfer because
+an email or Apple sandbox login happens to match. Server membership projection,
+not StoreKit's `currentEntitlements` or a notification, authorizes KiloDrive
+benefits. Apple's [current-entitlement definition](https://developer.apple.com/documentation/storekit/transaction/currententitlements)
+does not include every expired or revoked historical transaction; the source's
+Restore path probes unfinished transactions separately. An empty Restore or an
+absent KiloDrive row cannot prove that Apple did not charge.
+
+| Decision | Trusted source | Not sufficient alone |
+| --- | --- | --- |
+| Displayed checkout price/currency | Localized StoreKit product | API operational-country text, guessed FX |
+| Eligible plan/term and mapping revision | KiloDrive API quote/catalogue | Returned StoreKit ID alone |
+| User's account and tenant entitlement | Signed transaction + server binding and country-cell period | Apple login/email or a Dart stream event |
+| Renewal intent | Signed renewal info or current App Store Server status | Bare transaction JWS |
+| Money and period accounting | Exact provider order/price/currency/period evidence and idempotent server records | Entitlement change or notification alone |
+
+There is an important **source limitation**: the signed-transaction verifier
+initializes `WillAutoRenew=false` while `RenewalState="unknown"`, and the
+purchase handler persists that Boolean. Therefore `false` at first JWS
+verification cannot be presented as a verified iOS Settings cancellation.
+The notification/status path must bind signed renewal information to the
+exact original transaction family before applying it; missing or mismatched
+family identity needs review. This is a source-audit finding, not a claim that
+an exploit or wrong-account grant was observed. The [operator runbook](../runbooks/store-entitlement-reconciliation.md)
+keeps cancellation, grace, billing retry, expiry, refund and revocation
+separate.
+
+**Working-tree observations (uncommitted on 2026-10-05):** the local
+`store_billing.dart` writes a launch journal before native invocation, has
+per-transaction Restore slots, checks an exact legacy Restore transaction,
+and fences account changes. It still emits string events and keeps a shared
+catalogue map; those are not a typed account/product/operation/transaction
+event contract or proved audience-isolated discovery. The local native
+adapter includes explicit StoreKit unfinished replay. Treat these as
+implementation under review until committed and re-tested. The
+[source test families below](#what-was-actually-tested-for-build-156) are
+host-level evidence only; no current `+192` physical iPhone purchase matrix,
+App Store Connect configuration capture or Notifications V2 delivery record
+was established by this documentation review.
 
 ## Google Play Billing and subscriptions
 

@@ -44,6 +44,11 @@ and the [OWASP API Top 10 mapping](docs/security/owasp-api-top-10-2023.md).
 They explain authentication, authorization, device admission, financial safeguards
 and abuse controls, with source evidence and deployment qualifications.
 
+For native iOS/Android integrations, start with the
+[platform-boundary handbook](docs/architecture/native-platform-handbook.md),
+then use its adapter inventory, recovery runbooks and exact-artifact
+certification matrix.
+
 For HTTP contracts, start with the [KiloDrive API Guide](docs/api/README.md).
 It includes plain-English endpoint purposes, a linked field dictionary,
 authentication/tenancy rules, money and timestamp conventions, safe recovery,
@@ -479,21 +484,21 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The published source checkpoint is **2026-10-03**, pinned to product commit
-`1cd27c58f0fd9df6d974fab3718c3cb0b485f251`. The values below come from its
-committed app metadata and schema contract, as recorded in the
-[API manifest](docs/api/openapi/manifest.json) and
-[current baseline guide](docs/current-baseline.md). They do not describe
-uncommitted source edits, current store availability or an independently
-verified live deployment.
+The latest local source observation is **2026-10-05**, at product HEAD
+`8bfe08881bce51535d1165552f2d5be8e05fc872`. Its checkout has uncommitted
+changes, so the commit alone does not reproduce every native-adapter claim.
+The separate [API manifest](docs/api/openapi/manifest.json) remains a curated
+**2026-10-03 historical export**, not a current contract regeneration. Read the
+[current baseline guide](docs/current-baseline.md) before combining those two
+snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source | `1.0.0+172` |
-| System Admin app source | `0.1.0+16` |
-| Schema contract | `2026.10.03.1` |
-| Complete private canonical API | 996 paths / 1,123 operations |
-| Curated public API | 459 paths / 528 operations / 659 models / 5,012 model properties |
+| Consumer app source, local observation | `1.0.0+192` |
+| System Admin app source, local observation | `0.1.0+32` |
+| Schema contract, local observation | `2026.10.05.1` |
+| Complete private canonical API, older export | 996 paths / 1,123 operations |
+| Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |
 | API/runtime and database families | .NET 9 and MySQL 8 |
 | Mobile locales | `en`, `es`, `fr`, `ja`, `zh_Hans`, `zh_Hant` |

@@ -26,13 +26,16 @@ source snapshot and the distinction between implementation and certification.
 The [documentation correction record](quality/documentation-audit-2026-10-03.md)
 also records omissions, fixes and the remaining review queue.
 
-The current published API documentation snapshot is the
+The published API documentation is a **historical curated snapshot** in the
 [API Guide](api/README.md), derived from reviewed consumer `1.0.0+172`,
 System Admin `0.1.0+16` and schema `2026.10.03.1`. It includes 528 operation
 entries and a field dictionary covering the curated subset. The
 [coverage report](api/reference/coverage.md) identifies route-derived summaries
 and fields that still need detailed semantic review. These
-are source provenance, not a claim that every native/provider journey is certified.
+are that export's source provenance, not current product versions or a claim
+that every native/provider journey is certified. See the
+[native platform handbook](architecture/native-platform-handbook.md) for the
+newer local source observation and its dirty-working-tree limitation.
 
 The earlier source and bounded-release checkpoint is the
 [build-168 operational handover](runbooks/build168-operational-handover.md):
