@@ -8,6 +8,14 @@ consumer `1.0.0+192`, System Admin `0.1.0+32`. The product working tree
 contains uncommitted native and API changes, so this is a source checkpoint,
 not signed-artifact or deployed-policy certification.
 
+**2026-10-06 amendment:** The [build-196 checkpoint](release-1.0.0-196.md)
+supersedes that source observation with committed installation preparation,
+KiloDrive-owned Keychain reset and resumable fresh-install Firebase token
+rotation. Ordinary upgrades preserve unresolved payment context; a fresh
+installation does not silently inherit the prior account. Provider token
+rotation does not delete Apple purchase history or establish account ownership.
+The earlier source anchors below retain their historical provenance.
+
 The consumer and System Admin apps share KiloDrive's global identity authority
 but use separate native applications, local storage and intended workspaces.
 This chapter describes the public-safe trust model. It is not a device-fingerprint

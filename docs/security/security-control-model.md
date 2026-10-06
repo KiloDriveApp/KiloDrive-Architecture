@@ -13,6 +13,14 @@ architecture by threat category.
 
 ## Scope and strength of evidence
 
+**2026-10-06 amendment:** The latest
+[consumer-196/Admin-33 checkpoint](../architecture/release-1.0.0-196.md)
+records committed fresh-install credential/token reset, billing ownership and
+expired-transaction recovery, scoped participant/marketplace projections and
+API-gated administrative review policies. The older security review below
+keeps its original source scope. Host checks, configuration defaults and live
+security/provider certification remain separate evidence levels.
+
 The source review uses commit
 `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`: consumer `1.0.0+172`, System Admin
 `0.1.0+16`, schema `2026.10.03.1`. See the

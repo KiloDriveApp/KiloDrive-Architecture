@@ -1,5 +1,11 @@
 # Notifications: authority, delivery and recipient isolation
 
+**2026-10-06 amendment:** See the [build-196 checkpoint](release-1.0.0-196.md)
+for committed fresh-install token rotation, current binding fences and
+marketplace attention changes. The original source inspection below retains
+its date and file anchors. Host/installation evidence does not prove audible
+receipt, background delivery or every provisioned channel on every platform.
+
 **Owner:** Mobile platform and Notifications API. **Last verified:** 2026-10-05 source review. **Environment:** Local modified product checkout, not a signed-device/provider exercise. **Evidence:** product repository committed HEAD [`8bfe08881bce51535d1165552f2d5be8e05fc872`](https://github.com/KiloDriveApp/KiloDrive/tree/8bfe08881bce51535d1165552f2d5be8e05fc872), plus separately identified dirty working-tree changes. This is not a production delivery certification.
 
 A KiloDrive notification is not the business event that caused it. A completed

@@ -1,5 +1,10 @@
 # Mobile Architecture
 
+The [consumer-196/Admin-33 checkpoint](release-1.0.0-196.md) records the latest
+committed installation, membership, marketplace and trip-continuity changes.
+Its release observations distinguish source tests, deployment, store review
+submission and the physical-device/provider work still outstanding.
+
 For the current two-package boundary, security and notification flows, start
 with the [native platform handbook](native-platform-handbook.md). The
 [2026-09-30 two-app checkpoint](two-mobile-apps-and-security-2026-09-30.md)

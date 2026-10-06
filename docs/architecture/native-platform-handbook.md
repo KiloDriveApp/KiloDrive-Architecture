@@ -5,6 +5,12 @@
 - **Environment:** Local product source at `8bfe08881bce51535d1165552f2d5be8e05fc872` with uncommitted changes; documentation review, not a signed-device exercise
 - **Evidence:** [Source snapshot](native-source-snapshot.json), [adapter inventory](native-adapter-inventory.json) and [certification matrix](../quality/native-platform-certification-matrix.md)
 
+**2026-10-06 amendment:** [Build 196](release-1.0.0-196.md) is the current
+committed checkpoint. The source snapshot has been compared with consumer
+`1.0.0+196`, Admin `0.1.0+33` and schema `2026.10.05.2`. Historical file anchors
+and the original inspection below keep their dates. The scenario register is
+still a test plan, not universal device/provider certification.
+
 This is the entry point for the iOS and Android adapter handbook. A native SDK
 can tell the app that a sheet was presented, a file was selected, a GPS fix
 arrived, or a notification was accepted by a provider. It cannot grant a
@@ -24,8 +30,9 @@ capability, source interface/implementation, callback, API owner, scope,
 permission, recovery record, diagnostic, tests and certification status. The
 [matrix](../quality/native-platform-certification-matrix.md) deliberately leaves
 current signed-artifact scenarios **untested** until evidence is attached.
-The product checkout was dirty during this review: the pinned commit is a
-traceable baseline, not a complete hash of the modified local behavior.
+The original 2026-10-05 checkout was dirty: its pinned commit alone did not
+reproduce every observation. The build-196 amendment records the subsequent
+committed recovery changes without relabeling old test evidence.
 
 ## One operation, two kinds of truth
 

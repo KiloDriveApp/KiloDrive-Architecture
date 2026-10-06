@@ -13,7 +13,7 @@ belongs to the consumer app. It is not a distribution link for the restricted
 System Admin app. Public support, legal and product resources are collected in
 [official product links](../public-product-links.md).
 
-This chapter was refreshed against the **2026-10-03 reviewed source checkpoint**
+This chapter was refreshed against the **2026-10-06 committed source checkpoint**
 identified in the [current baseline](../current-baseline.md). Driver/identity
 document viewing and decisions, membership-center navigation and catalog
 editing now have implementations; the earlier statement that these were
@@ -25,6 +25,12 @@ consumer/admin boundary and [System Administration](system-administration.md)
 for the wider control-plane rules.
 
 ## What an operator experiences
+
+The current source is System Admin `0.1.0+33`, paired architecturally with
+consumer `1.0.0+196` and schema `2026.10.05.2`. Physical Android installation
+and launch have been verified; they do not certify every dossier, form or
+provider workflow. The [release checkpoint](release-1.0.0-196.md) keeps those
+evidence levels separate.
 
 An administrator signs in, selects a country and an authorized marketplace
 workspace, and sees a statistics-led home screen. The app then shows only the
@@ -120,6 +126,12 @@ not an authoritative list of everything still missing. Signed-device and
 permission-boundary evidence remains necessary for each released workflow.
 
 ### Membership center and plan editing
+
+The person's User details tab separates membership into a dedicated plan-themed
+card: status, tier, start/expiry, days remaining and benefit allotment/current
+usage. Color helps recognize the tier but does not replace status text,
+accessible labels or currency-aware formatting. The tab/form already names its
+task; duplicate headings are removed rather than consuming phone layout space.
 
 The membership metric leads to a dedicated center rather than an unrelated
 people list. Its source workspace presents catalog plans and membership counts,

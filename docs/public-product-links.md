@@ -28,3 +28,25 @@ The Google Play link is for the **consumer** app. The separate System Admin app
 has its own restricted distribution and should not be represented as a public
 consumer download. A store listing, website button or source package name is
 not proof that a particular country, feature, provider or release is active.
+
+## Published build-196 manuals
+
+The three public English PDF manuals were refreshed for consumer `1.0.0+196`,
+schema `2026.10.05.2` and edition 3.3 on 2026-10-06. Publication read-back
+verified the downloaded files against their certified output hashes. These are
+user guides, not certification that every native/provider scenario has passed.
+The app's six selectable languages do not imply six translated PDF editions.
+
+| Download | Public PDF |
+| --- | --- |
+| Rider | [Rider operations manual PDF](https://kilodrive-public.s3.us-east-1.amazonaws.com/Manuals/KiloDrive-Rider-Operations-Manual.pdf) |
+| Driver | [Driver operations manual PDF](https://kilodrive-public.s3.us-east-1.amazonaws.com/Manuals/KiloDrive-Driver-Operations-Manual.pdf) |
+| Rental provider | [Vehicle rental entity operations manual PDF](https://kilodrive-public.s3.us-east-1.amazonaws.com/Manuals/KiloDrive-Vehicle-Rental-Entity-Operations-Manual.pdf) |
+
+The country-aware manual library and HTML routes above remain the navigation
+entry points. The downloadable English guides cover account/device lifecycle,
+notifications, trip/safety workflows and finance; the driver guide also
+distinguishes Free membership, native-store driver subscriptions, account
+country versus storefront, and uncertain-purchase recovery. Administrative
+review and approval take place in the separate System Admin app, not these
+consumer workspaces.

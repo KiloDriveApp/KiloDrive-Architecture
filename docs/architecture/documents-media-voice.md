@@ -1,5 +1,11 @@
 # Documents, media, and voice architecture
 
+**2026-10-06 amendment:** The [build-196 checkpoint](release-1.0.0-196.md)
+records committed trip, participant-profile, session and readiness boundaries.
+The original native source inspection below retains its date and references;
+no new broad camera, RTC or protected-document provider certification is
+asserted by this documentation update.
+
 **Owner:** Mobile platform and Voice API. **Last verified:** 2026-10-05 source review. **Environment:** Local modified product checkout, not a signed-device/provider exercise. **Evidence:** product committed HEAD [`8bfe08881bce51535d1165552f2d5be8e05fc872`](https://github.com/KiloDriveApp/KiloDrive/tree/8bfe08881bce51535d1165552f2d5be8e05fc872). The working tree also contains uncommitted native/voice changes and no new signed-device result is inferred from them.
 
 Documents, profile images, and call recordings are all “files” at the storage

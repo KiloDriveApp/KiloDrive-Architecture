@@ -10,6 +10,13 @@
 
 ## Trigger
 
+**2026-10-06 amendment:** Use the committed
+[build-196 checkpoint](../architecture/release-1.0.0-196.md) for the current
+membership synchronization and unfinished-Apple-transaction branches. The
+original native inspection below keeps its date; current source is consumer
+`1.0.0+196`, Admin `0.1.0+33`, schema `2026.10.05.2`. Host checks and store
+submission do not establish a complete signed-iPhone recovery exercise.
+
 Use this runbook when a purchase remains pending, a renewal/cancellation/refund
 is not reflected, provider notifications are stale, acknowledgement approaches
 its deadline, product discovery omits a reviewed term, or account entitlement
@@ -52,6 +59,28 @@ and Apple/Google history disagree.
   charge evidence cannot be replaced with a guessed payment or zero fee.
 
 ## Verification
+
+### An unfinished Apple transaction blocks a new purchase
+
+1. Identify the exact unfinished product and transaction through the protected
+   native adapter; preserve original charged/possibly-charged recovery context.
+2. Use the authenticated server review to verify signed evidence and current
+   expiry. Do not use an old ownership rejection as permanent expiry evidence.
+3. A verified `expired_finish_only` disposition permits finishing only that
+   exact native queue item. It neither grants a plan nor transfers ownership,
+   creates a payment, refunds money or cancels provider renewal.
+4. A current owned period still needs entitlement confirmation; a current
+   foreign-account period remains an ownership conflict. Unknown/unverified
+   evidence keeps the journal and a clear support/reconciliation path.
+5. After a terminal result, read the current membership revision and verify the
+   visible plan. An older startup/status response cannot overwrite newer
+   authoritative state, and an account change cannot display the former user's
+   entitlement while the next read is pending.
+
+Reinstalling KiloDrive rotates app installation/token state where appropriate;
+it does not clear Apple purchase history. Clearing a sandbox tester's history
+is a testing operation at the provider, not a production entitlement repair or
+permission to assign a historical purchase to a new KiloDrive identity.
 
 Confirm the provider status, product/term, current period, access-through date,
 pending change, payment, membership lifecycle event, receipt, notification and

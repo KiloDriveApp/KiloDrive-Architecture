@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-05 | Date of the native-adapter source observation |
-| Product source revision | `8bfe08881bce51535d1165552f2d5be8e05fc872` | Git HEAD in the product checkout; the checkout also contained uncommitted adapter/API changes, so this commit alone does not reproduce every observation |
-| Consumer source | `1.0.0+192` | Read from the consumer pubspec; not a signed-artifact or store-availability assertion |
-| System Admin source | `0.1.0+32` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.05.1` | Source contract version; not proof that any deployed database is aligned |
-| Private v1 OpenAPI hash | `5ce23bf4eaba9dd3a187e65b4575673e6e821badba1aeb4a302b4a5cc1383249` | Current local file hash, not a reviewed/public publication claim |
+| Review date | 2026-10-06 | Source comparison and retained release-record review |
+| Product source revision | `027869dbcb4d8b1ff5c7d94931f8d1266cb4ad94` | Committed product release source; later fixture/manual edits are outside this captured revision |
+| Consumer source | `1.0.0+196` | Read from the consumer pubspec; not a store-availability assertion |
+| System Admin source | `0.1.0+33` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.10.05.2` | Source contract; the retained API deployment made no new schema change |
+| Private v1 OpenAPI hash | `528c908ddb1026aad228012382758f2e9258f2715a07a35dae42035e4636c12c` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -32,6 +32,32 @@ for the current product source. The [reference coverage report](api/reference/co
 separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
+
+## Build-196 release observations and limits
+
+The [consumer-196/Admin-33 checkpoint](architecture/release-1.0.0-196.md)
+records the latest committed changes and bounded release evidence. The mandatory
+pre-push gate passed with 4,839 consumer and 1,335 Admin Flutter tests; both
+analyzers reported no issues. The API lane recorded 8,563 passing tests and
+155 skipped environment-dependent tests. API deployment retained schema
+`2026.10.05.2`, returned liveness HTTP 200 and left the pre-existing readiness
+state Degraded. Google Play changes were submitted for review; submission does
+not establish live availability. The iOS Codemagic start record does not prove
+completed signing or TestFlight delivery. Physical iOS StoreKit and final paired
+phone checks remain outstanding in that release record.
+
+The release-owner copy exception accepts 1,571 incomplete explanations and
+42,048 missing error-catalog locale keys for the recorded source. It does not
+complete native-copy review or make every error message available in all six
+languages. Android Admin installation/launch checks are separate from full
+operator workflow certification. The native certification scenario register
+retains untested rows until exact scenario evidence is attached.
+
+Older native-handbook source anchors preserve the 2026-10-05 inspection.
+Their build-192 working-tree limitations are historical; the linked build-196
+amendment records the committed recovery changes. The public API export and
+dependency inventory likewise retain their own dates instead of being relabeled
+as regenerated build-196 contracts.
 
 ## What changed in the documented architecture
 

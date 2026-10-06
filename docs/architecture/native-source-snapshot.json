@@ -1,11 +1,11 @@
 {
-  "reviewedDate": "2026-10-05",
-  "productSourceRevision": "8bfe08881bce51535d1165552f2d5be8e05fc872",
-  "productWorkingTree": "modified; native adapter and API observations may include uncommitted changes and are not reproducible from the revision alone",
-  "consumerVersion": "1.0.0+192",
-  "systemAdminVersion": "0.1.0+32",
-  "schemaContract": "2026.10.05.1",
-  "privateOpenApiSha256": "5ce23bf4eaba9dd3a187e65b4575673e6e821badba1aeb4a302b4a5cc1383249",
+  "reviewedDate": "2026-10-06",
+  "productSourceRevision": "027869dbcb4d8b1ff5c7d94931f8d1266cb4ad94",
+  "productWorkingTree": "release source committed; later fixture/manual operational edits are outside this captured revision; older handbook anchors retain their inspection date and have a build-196 amendment",
+  "consumerVersion": "1.0.0+196",
+  "systemAdminVersion": "0.1.0+33",
+  "schemaContract": "2026.10.05.2",
+  "privateOpenApiSha256": "528c908ddb1026aad228012382758f2e9258f2715a07a35dae42035e4636c12c",
   "publicApiExportRevision": "1cd27c58f0fd9df6d974fab3718c3cb0b485f251",
   "publicApiExportStatus": "historical curated snapshot; not regenerated from the current product source"
 }

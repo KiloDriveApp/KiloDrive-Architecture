@@ -1,5 +1,11 @@
 # Consumer native OS integrations
 
+**2026-10-06 amendment:** Current source and retained evidence are described
+in [build 196](release-1.0.0-196.md). Fresh-install preparation and trip state
+composition are committed there; the original inspection below preserves its
+date. Physical iOS and final paired-device verification remain separate from
+host tests, source review and Android installation/launch checks.
+
 **Owner:** Mobile platform, with Identity, Trips, Maps and Upload API owners.
 **Last verified:** 2026-10-05 source review. **Environment:** Local modified
 product checkout; no signed-device/provider exercise. **Evidence:** committed product

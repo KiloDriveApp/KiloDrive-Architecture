@@ -5,6 +5,13 @@
 - **Environment:** Documentation-only review of a modified product checkout; no app installed or provider event executed for this pass
 - **Evidence:** [Source baseline](../current-baseline.md), [adapter inventory](../architecture/native-adapter-inventory.json), [generated scenario rows](native-platform-certification-matrix.csv)
 
+**2026-10-06 amendment:** The source snapshot now compares committed consumer
+`1.0.0+196`, Admin `0.1.0+33` and schema `2026.10.05.2`. The
+[release checkpoint](../architecture/release-1.0.0-196.md) records host checks,
+deployment/submission observations and remaining device/provider dependencies.
+Those bounded records do not automatically fill this scenario register with
+passing results. Original inspection metadata above is historical.
+
 The CSV is a scenario register, **not a pass report**. It expands each
 applicable inventory capability across iOS/Android, foreground/background/
 terminated/reinstall and, where relevant, sandbox/test versus production

@@ -2,8 +2,8 @@
 
 This is a public-safe map of **operator outcomes**, not an endpoint inventory or
 permission specification. It complements the [System Admin mobile app](system-admin-mobile-app.md)
-and the source repository's more detailed migration ledger. The 2026-09-30
-local source contains implemented and incomplete slices; this page does not
+and the source repository's more detailed migration ledger. The 2026-10-06
+committed consumer-196/Admin-33 checkpoint contains implemented and incomplete slices; this page does not
 certify a signed build, a production configuration, or every operation in a
 domain. The consumer app has no operative System Admin workspace.
 
@@ -34,7 +34,9 @@ material into a general-purpose log.
 | Correct contact or status | Confirmed People actions | Identity owner validates conflict, current state and authorization; mutation audit records before/after meaning | Narrow source actions; concurrency, denial, response-loss and signed-device proof pending |
 | Initiate password recovery | Reasoned recovery action and status receipt | Identity service issues the existing expiring ceremony; admin never sets or sees a plaintext password | Source working for the reviewed path; delivery and account-owner completion need native/provider evidence |
 | Revoke a session or restrict an installation | Security and Devices workspaces | Central session/device authority revokes access; audit records target and reason | Narrow source actions; cross-device and process-death checks pending |
-| Review driver/vehicle readiness | Review workspaces and evidence summaries | Current documents, vehicle state and prerequisites determine final eligibility; review decisions audited | Partial; private evidence viewer and some decisions remain withheld |
+| Review driver/vehicle readiness | Readiness dossier, protected identity/vehicle document viewers, approval/rejection and replacement workflow | Country requirement policy, current evidence and API checks determine eligibility; document decisions and final approval are separate audited actions | Source working for implemented review paths; exact signed-device, denial and multichannel delivery evidence remains workflow-specific |
+| Manage membership catalog and benefits | Dedicated membership center, plan cards, active-member drill-down, plan creation/editing and term-price/benefit editor | Catalog revision, country pricing, native product setup and effective entitlement determine availability | Source working for reviewed edits; new paid plans remain inactive drafts until required store setup; store/provider and cross-client propagation require exact evidence |
+| Grant or extend an individual's plan | Dossier financial/actions pages and membership workflows | Current entitlement, permitted grant, expiry validation and stable mutation identity; audit and fresh read-back | Source working for reviewed actions; interrupted response, limited-role and signed-device form checks remain separate |
 | Investigate a trip | Trip/ride detail, timeline, retained replay and call metadata | Country trip record is authoritative; communication evidence has separate access/retention | Partial; missing/expired evidence, lifecycle actions and device presentation need review |
 | Inspect money | Wallet, transaction, payment, top-up, cashout and dispute evidence | Country ledger and provider reconciliation establish financial truth; every amount has a currency | Partial; no UI value may be inferred from a provider callback alone |
 | Decide a pending bank transfer or cashout | Reviewed financial decision screens | Conditional API mutation with current revision and stable operation identity; ledger and audit read-back | Narrow source actions; duplicate, interruption, provider and database certification pending |
@@ -45,6 +47,14 @@ material into a general-purpose log.
 | Resolve support work | Ticket queue, detail and reviewed lifecycle actions | Country support case version, owner and audit determine the result | Partial; attachments and external channels remain incomplete |
 | Recover outbox work | Queue/history/detail with guarded retry or dismissal | Outbox worker state, not a second domain command, controls delivery retry | Narrow source actions; crash, retention and operational-alert evidence pending |
 | Change reference or policy data | Selected bank/plan and governance views | Domain owner validates revision, scope and audit | Partial; many governance mutations are read-only or unavailable in mobile |
+
+The [build-196 amendment](release-1.0.0-196.md) corrects the older blanket
+claim that document viewers and membership editors were unavailable. It also
+records API policy gates separately: single-reviewer approval, review
+second-factor verification, sensitive-action verification and viewer lease.
+Disabling an additional policy does not disable capability, scope, validation,
+protected media authorization or audit. An operation remains unverified on a
+specific signed device until its retained evidence establishes that journey.
 
 The [dated source migration checkpoint](system-admin-mobile-app.md#current-limits-and-evidence-needed)
 is more useful than a single percentage. The source repository's

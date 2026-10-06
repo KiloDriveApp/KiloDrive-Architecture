@@ -7,6 +7,13 @@
 
 This chapter expands the [native-adapter overview](native-adapters-and-store-billing.md) without replacing its cross-platform rules. The [store-entitlement runbook](../runbooks/store-entitlement-reconciliation.md) owns shared Apple/Google decisions; the [Google-specific recovery runbook](../runbooks/google-play-billing-recovery.md) supplies operational branches. Product IDs and available country mappings belong to the API catalog, not to this hand-maintained page.
 
+**2026-10-06 amendment:** Current source is committed at the
+[build-196 checkpoint](release-1.0.0-196.md), with account/lifecycle fences and
+revision-aware membership synchronization. The retained Play record is a
+production-track review submission, not confirmed live availability or a new
+licensed-purchase certificate. The original build-192 anchors above keep their
+inspection date; their uncommitted limitation does not describe build 196.
+
 ## Context and authority
 
 ```mermaid

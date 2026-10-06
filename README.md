@@ -353,6 +353,7 @@ versions worth remembering:
 - [API architecture](docs/architecture/api.md)
 - [Mobile architecture](docs/architecture/mobile.md)
 - [Native adapters and store billing](docs/architecture/native-adapters-and-store-billing.md)
+- [Consumer 196 and System Admin 33 checkpoint](docs/architecture/release-1.0.0-196.md)
 - [Portal and website](docs/architecture/portal-and-website.md)
 - [System Administration](docs/architecture/system-administration.md)
 - [System Admin mobile app](docs/architecture/system-admin-mobile-app.md)
@@ -484,9 +485,12 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest local source observation is **2026-10-05**, at product HEAD
-`8bfe08881bce51535d1165552f2d5be8e05fc872`. Its checkout has uncommitted
-changes, so the commit alone does not reproduce every native-adapter claim.
+The latest source observation is **2026-10-06**, at committed product revision
+`027869dbcb4d8b1ff5c7d94931f8d1266cb4ad94`. The
+[consumer-196/Admin-33 checkpoint](docs/architecture/release-1.0.0-196.md)
+records changes, bounded release evidence, accepted copy debt and outstanding
+physical-device/provider certification. Older native-handbook anchors keep
+their original inspection date and an explicit build-196 amendment.
 The separate [API manifest](docs/api/openapi/manifest.json) remains a curated
 **2026-10-03 historical export**, not a current contract regeneration. Read the
 [current baseline guide](docs/current-baseline.md) before combining those two
@@ -494,9 +498,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, local observation | `1.0.0+192` |
-| System Admin app source, local observation | `0.1.0+32` |
-| Schema contract, local observation | `2026.10.05.1` |
+| Consumer app source, current observation | `1.0.0+196` |
+| System Admin app source, current observation | `0.1.0+33` |
+| Schema contract, current observation | `2026.10.05.2` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |

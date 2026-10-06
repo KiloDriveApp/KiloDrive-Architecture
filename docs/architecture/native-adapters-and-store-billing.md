@@ -5,6 +5,15 @@
 - **Environment:** Local modified product checkout at the [captured source baseline](../current-baseline.md); historical test records keep their original builds
 - **Evidence:** [Native adapter inventory](native-adapter-inventory.json), [historical build-168 handover](../runbooks/build168-operational-handover.md) and the source repository's dated verification records
 
+**2026-10-06 amendment:** The current committed source is consumer
+`1.0.0+196` and System Admin `0.1.0+33`. The
+[build-196 checkpoint](release-1.0.0-196.md) documents exact unfinished-Apple
+transaction review, expired finish-only disposition, cross-device membership
+revision handling, typed observations and remaining signed-iPhone checks.
+The build-192 source anchors and working-tree observations below retain their
+original inspection date; they are historical observations, not current
+uncommitted-release or complete-certification claims.
+
 This page retains its build-156 and build-168 verification history. The
 current source is newer, and the System Admin client is a separate app.
 The [two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
