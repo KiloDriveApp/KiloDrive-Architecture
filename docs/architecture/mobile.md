@@ -1,9 +1,9 @@
 # Mobile Architecture
 
-The [consumer-196/Admin-33 checkpoint](release-1.0.0-196.md) records the latest
-committed installation, membership, marketplace and trip-continuity changes.
-Its release observations distinguish source tests, deployment, store review
-submission and the physical-device/provider work still outstanding.
+The [consumer-198/Admin-33 update](release-1.0.0-198.md) records the latest
+source improvements. [Generated version facts](source-versions.generated.md)
+identify the current source; [current evidence](../current-baseline.md) separates
+host tests, deployment and exact signed-device/provider observations.
 
 For the current two-package boundary, security and notification flows, start
 with the [native platform handbook](native-platform-handbook.md). The

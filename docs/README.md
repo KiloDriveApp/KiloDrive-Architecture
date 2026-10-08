@@ -36,9 +36,10 @@ are that export's source provenance, not current product versions or a claim
 that every native/provider journey is certified. See the
 [native platform handbook](architecture/native-platform-handbook.md) for the
 source observations and their certification boundaries. The
-[consumer-196/Admin-33 checkpoint](architecture/release-1.0.0-196.md)
-records the newer committed source, fresh-install recovery, membership
-reconciliation, marketplace changes and retained release limitations.
+[consumer-198/Admin-33 update](architecture/release-1.0.0-198.md)
+records current source improvements. [Generated version facts](architecture/source-versions.generated.md)
+keep the source baseline aligned; the current evidence guide owns deployment
+and certification observations.
 
 The earlier source and bounded-release checkpoint is the
 [build-168 operational handover](runbooks/build168-operational-handover.md):

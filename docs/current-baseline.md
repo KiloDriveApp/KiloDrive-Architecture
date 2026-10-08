@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-06 | Source comparison and retained release-record review |
-| Product source revision | `027869dbcb4d8b1ff5c7d94931f8d1266cb4ad94` | Committed product release source; later fixture/manual edits are outside this captured revision |
-| Consumer source | `1.0.0+196` | Read from the consumer pubspec; not a store-availability assertion |
+| Review date | 2026-10-08 | Source comparison and retained release-record review |
+| Product source revision | `adb8071cf17c0b748f46ce6e3bd6f941db652228` | Documentation-aligned source; implementation artifacts retain their build-198 revision `b658a8d` |
+| Consumer source | `1.0.0+198` | Read from the consumer pubspec; not a store-availability assertion |
 | System Admin source | `0.1.0+33` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.05.2` | Source contract; the retained API deployment made no new schema change |
-| Private v1 OpenAPI hash | `528c908ddb1026aad228012382758f2e9258f2715a07a35dae42035e4636c12c` | Captured source file hash, not regeneration of the curated public export |
+| Schema contract | `2026.10.08.2` | Source target; not a claim that production has applied it |
+| Private v1 OpenAPI hash | `df28ba0ea76f88b012925ca03cd9e3916e4b4527a7c34c9dfccfd910aeb41020` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -33,31 +33,39 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-196 release observations and limits
+## Build-198 source and execution evidence
 
-The [consumer-196/Admin-33 checkpoint](architecture/release-1.0.0-196.md)
-records the latest committed changes and bounded release evidence. The mandatory
-pre-push gate passed with 4,839 consumer and 1,335 Admin Flutter tests; both
-analyzers reported no issues. The API lane recorded 8,563 passing tests and
-155 skipped environment-dependent tests. API deployment retained schema
-`2026.10.05.2`, returned liveness HTTP 200 and left the pre-existing readiness
-state Degraded. Google Play changes were submitted for review; submission does
-not establish live availability. The iOS Codemagic start record does not prove
-completed signing or TestFlight delivery. Physical iOS StoreKit and final paired
-phone checks remain outstanding in that release record.
+The [consumer-198/Admin-33 update](architecture/release-1.0.0-198.md) describes
+the implemented changes. The [generated version facts](architecture/source-versions.generated.md)
+are derived from both pubspecs, the schema constant and the canonical private
+v1 contract. Regeneration preserves the historical public API export rather
+than attaching newer build numbers to an older contract.
 
-The release-owner copy exception accepts 1,571 incomplete explanations and
-42,048 missing error-catalog locale keys for the recorded source. It does not
-complete native-copy review or make every error message available in all six
-languages. Android Admin installation/launch checks are separate from full
-operator workflow certification. The native certification scenario register
-retains untested rows until exact scenario evidence is attached.
+Retained build-198 host evidence records 5,046 passing consumer Flutter tests,
+1,358 passing Admin Flutter tests and clean analyzers. The API Release lane
+records 9,114 passed, zero failed and 165 skipped. The strict KD inventory
+contains 2,914 codes, zero stock meanings, zero incomplete explanations and
+zero missing keys across all six locales. Copy approval is advisory; code,
+placeholder, catalog and artifact consistency checks remain enforced.
 
-Older native-handbook source anchors preserve the 2026-10-05 inspection.
-Their build-192 working-tree limitations are historical; the linked build-196
-amendment records the committed recovery changes. The public API export and
-dependency inventory likewise retain their own dates instead of being relabeled
-as regenerated build-196 contracts.
+These are executed host results, not new physical-device certification.
+The release record shows signed Android artifacts built, a saved Play production
+release and an accepted Codemagic start request. It does not establish completed
+store submission, approved store availability or a signed iOS artifact.
+
+The packaged API/schema target is `2026.10.08.2`; the last retained deployed
+schema is `2026.10.05.2`. Deployment remains a distinct operation: the strict
+disposable-MySQL run passed 18 selected lifecycle tests and required-object
+verification but exited red on historical cross-cell physical index/FK parity.
+Do not apply destructive normalization or claim parity from required-object
+fingerprints alone. Consult [schema alignment](runbooks/schema-alignment.md)
+and the restricted per-object review before deployment.
+
+The [historical release evidence](quality/historical-release-evidence.md)
+preserves earlier test limitations, dated deployment observations and copy
+exceptions separately from benefit-focused release notes. Older native-source
+anchors keep their original dates; the current snapshot does not re-execute
+those scenarios or update the historical public dependency export.
 
 ## What changed in the documented architecture
 

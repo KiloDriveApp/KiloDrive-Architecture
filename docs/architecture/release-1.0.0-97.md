@@ -61,10 +61,7 @@ checks API readiness before traffic is considered healthy.
    alignment and API deployment runbooks. Do not repair a production cell with
    ad-hoc row edits.
 
-## Evidence boundaries
+## Verification record
 
-Source tests, OpenAPI verification, manual certification and the deployment
-manifest are maintained in the application repository. This architecture
-repository records the design and operating rationale; it does not claim that
-an external provider, store review or country launch is certified merely
-because the code path exists.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-97).

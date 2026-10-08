@@ -1,5 +1,8 @@
 # Quality engineering
 
+The [historical release evidence](historical-release-evidence.md) preserves
+dated execution observations separately from benefit-focused release updates.
+
 Quality in KiloDrive means proving the promises that matter: one assignment has
 one winner, money reconciles, private data stays private, clients converge after
 disconnects, and operators can recover without inventing state.

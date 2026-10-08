@@ -19,9 +19,8 @@ structured improvements. It combines the pending source notes from builds
 intermediate builds are not separate public release pages. The published
 English detail covers task resumption, external driver-experience evidence,
 governed administrative recovery, account verification, store diagnostics,
-membership and adapter recovery, and release checks. Spanish and French
-contain only earlier partial drafts, so public requests fall back to the
-complete English entry until the consolidated translations are reviewed.
+membership and adapter recovery, and release checks. The dated publication
+scope is preserved in the [quality record](../quality/historical-release-evidence.md#build-156).
 Build 144 remains a historical public release and retains its previously
 consolidated history; publication of 156 did not rewrite it.
 
@@ -33,4 +32,5 @@ current-release response and the website changelog listing and detail were
 checked after publication; the current release and detail reported build 156
 with ten improvements.
 
-Recorded build-156 source verification: Flutter analyze passed; the Codemagic-equivalent gate passed 4,739 Flutter tests; 71 focused membership widget tests and 87 focused billing-lifecycle tests passed; .NET solution build reported zero warnings/errors; release governance and Android APK/AAB packaging passed. These results do not certify actual App Store/Play transactions, notification delivery, GPS/RTC, or current production provider health. Each requires separately dated provider or physical-device evidence.
+Dated source verification is retained in the
+[quality record](../quality/historical-release-evidence.md#build-156).

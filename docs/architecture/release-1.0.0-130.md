@@ -50,10 +50,7 @@ disabled when a future contract value cannot be understood. Chat replay uses a
 monotonic checkpoint and merges realtime delivery with authoritative history so
 a concurrent refresh cannot discard newer content.
 
-## Evidence limits
+## Verification record
 
-Source, schema and automated tests do not prove store approval, licensed-store
-discovery, provider delivery, physical-device lifecycle, production credentials
-or current production health. The six changed ARB files are hash-bound but
-pending qualified native review. Build 130 must not be described as production
-certified until the named operational gates retain current positive evidence.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-130).

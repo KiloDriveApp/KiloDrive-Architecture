@@ -3,10 +3,14 @@
 - **Owner:** Mobile platform on-call with Identity/API security, Trips, Maps and Upload owners
 - **Status:** Operational policy for implemented adapters; signed-device certification is separate
 - **Last source review:** 2026-10-05 against product committed [`8bfe0888`](https://github.com/KiloDriveApp/KiloDrive/tree/8bfe08881bce51535d1165552f2d5be8e05fc872); working tree is dirty
-- **Last exercised:** Not yet exercised end-to-end on the current signed consumer `1.0.0+192` or System Admin `0.1.0+32` artifacts
+- **Last exercised:** The 2026-10-05 inspection did not exercise its consumer `1.0.0+192` or Admin `0.1.0+32` artifacts end-to-end; that observation is historical
 - **Related architecture:** [native OS integrations](../architecture/native-os-integrations.md), [sessions](../architecture/mobile-session-and-device-lifecycle.md), [private media](../architecture/documents-media-voice.md)
 
 ## Purpose and safety boundary
+
+Use [generated version facts](../architecture/source-versions.generated.md)
+for current source versions and the [current baseline](../current-baseline.md)
+for separately dated execution and deployment observations.
 
 Restore an interrupted native operation without crossing identity, account,
 location, document or payment boundaries. Do not clear a protected financial

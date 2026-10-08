@@ -485,12 +485,13 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-06**, at committed product revision
-`027869dbcb4d8b1ff5c7d94931f8d1266cb4ad94`. The
-[consumer-196/Admin-33 checkpoint](docs/architecture/release-1.0.0-196.md)
-records changes, bounded release evidence, accepted copy debt and outstanding
-physical-device/provider certification. Older native-handbook anchors keep
-their original inspection date and an explicit build-196 amendment.
+The latest source observation is **2026-10-08**, at committed product revision
+`adb8071cf17c0b748f46ce6e3bd6f941db652228`. The
+[consumer-198/Admin-33 update](docs/architecture/release-1.0.0-198.md)
+summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
+bind the source baseline to the authoritative pubspecs and schema constant.
+Deployment observations and certification scope belong in the
+[current evidence guide](docs/current-baseline.md), not release announcements.
 The separate [API manifest](docs/api/openapi/manifest.json) remains a curated
 **2026-10-03 historical export**, not a current contract regeneration. Read the
 [current baseline guide](docs/current-baseline.md) before combining those two
@@ -498,9 +499,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+196` |
+| Consumer app source, current observation | `1.0.0+198` |
 | System Admin app source, current observation | `0.1.0+33` |
-| Schema contract, current observation | `2026.10.05.2` |
+| Schema contract, current observation | `2026.10.08.2` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |

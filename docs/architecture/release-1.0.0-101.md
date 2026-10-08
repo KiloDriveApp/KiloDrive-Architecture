@@ -79,21 +79,10 @@ requirements to obtain a passing test.
 - Native test entry points make missed hit tests fatal. Suppressing them would hide
   an obstruction, not prove an interaction succeeded.
 
-## Verification and operations
+## Verification record
 
-Focused tests cover chat queue isolation, navigation supersession, provider-lane
-isolation, lease replacement/reclamation, payment snapshots and calculator dismissal.
-The calculator pass recorded 2,721 host tests passing and a clean analyzer. Native
-API-35 build/install succeeded, but the runner stalled before assertions; neither
-that attempt nor earlier two-device stalls certify the Android journey. Physical
-device and iOS/provider/store evidence remain separately required.
-
-For rollout, package the source-derived contract manifests with the API and Portal,
-verify actual database objects in every cell, retain application/database backups,
-preserve deployment configuration, and check readiness plus anonymous Portal routes.
-When objects already match, do not rerun historical pricing/content seeds or stamp
-metadata just to make a release appear newer. Monitor chat/provider lane failures,
-oldest pending age, reclaimed leases and conflicting finalizations after rollout.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-101).
 
 ## Source references
 

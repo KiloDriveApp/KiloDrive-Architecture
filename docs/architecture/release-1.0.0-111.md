@@ -59,24 +59,10 @@ validated. New revisioned routes require the original revision and idempotency k
 and publish committed revision headers. Assignment changes advance the parent vehicle
 revision. Modern retry must preserve the original key and revision after response loss.
 
-## Runtime and certification boundaries
+## Verification record
 
-Identity credentials remain in the control database. Operational projections, trips,
-payments, wallets, audit and outbox remain in the selected country cell. A settlement
-does not span control and cell transactions. The combined host and configurable
-runtime profiles preserve this ownership; endpoint registration does not replace
-configuration readiness.
-
-Recorded deployment for this source aligned eight database schemas and reported the
-API Healthy with the expected valid schema contract. Application backup and database
-backup occurred before deployment. Restricted backup paths and cloud identifiers are
-kept in private operational evidence. Portal and website were not deployed in this run.
-
-Local verification recorded 4,414 passing .NET tests and 54 environment-gated skips,
-clean Flutter analysis, and signed APK/AAB packaged-manifest checks. These results do
-not certify skipped MySQL concurrency/provider cases, universal mobile process-death
-recovery, two-device calling, store approval or all countries. Remaining boundaries are
-listed in the [source hardening assessment](https://github.com/KiloDriveApp/KiloDrive/blob/119775490f7e3c54e6ff174cb9342993dddd80fe/docs/audits/admin-operation-hardening-2026-09-12.md).
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-111).
 
 ## Operator documentation
 

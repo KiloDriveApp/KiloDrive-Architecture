@@ -30,6 +30,7 @@ jobs:
         run: |
           python tools/audit_docs.py
           python tools/native_handbook.py
+          python tools/source_baseline.py
       - name: Verify public CycloneDX baseline and hash
         run: python tools/generate_public_sbom.py --check
       - name: Verify curated API contract, dictionary and publication boundary

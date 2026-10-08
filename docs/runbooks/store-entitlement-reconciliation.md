@@ -13,8 +13,10 @@
 **2026-10-06 amendment:** Use the committed
 [build-196 checkpoint](../architecture/release-1.0.0-196.md) for the current
 membership synchronization and unfinished-Apple-transaction branches. The
-original native inspection below keeps its date; current source is consumer
-`1.0.0+196`, Admin `0.1.0+33`, schema `2026.10.05.2`. Host checks and store
+original native inspection below keeps its date; that checkpoint was consumer
+`1.0.0+196`, Admin `0.1.0+33`, schema `2026.10.05.2`. Use the
+[generated version facts](../architecture/source-versions.generated.md) for
+current source and the [current baseline](../current-baseline.md) for execution scope. Host checks and store
 submission do not establish a complete signed-iPhone recovery exercise.
 
 Use this runbook when a purchase remains pending, a renewal/cancellation/refund

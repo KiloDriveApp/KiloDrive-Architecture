@@ -58,18 +58,7 @@ worker path excludes suspended/deleted users, unrelated templates, different
 recipients and non-email channels. No database schema or v1 wire change is
 required; existing metadata-capable mobile releases remain compatible.
 
-## Verification limits
+## Verification record
 
-Actual emulator rider/driver login and re-login passed in the preceding smoke
-pass. Reset request, code entry and local invalid-code handling passed. A real
-inbox and completed password replacement, physical two-device calling,
-provider failover and store approval remain separate evidence requirements.
-Audio recording remains disabled. Deployment results are recorded in the
-owned release verification report. The final API hash matches the release
-package; read-only schema inspection verified eight aligned databases with
-zero mismatches. Dedicated administrator, driver and rider login/identity/
-workspace reads passed nine checks. The deployed notification asset matches
-source, minimum supported builds are unchanged, and the current release
-catalogue is published without resetting its history. Android APK/AAB packaged
-manifest and signature checks passed. These facts do not certify inbox delivery,
-complete physical journeys or store approval.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-117).

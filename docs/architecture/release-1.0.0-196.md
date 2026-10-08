@@ -171,36 +171,7 @@ policy on later requires exercising that mode, not only exposing a settings
 flag. The public repository describes the policy boundary without publishing
 production secrets, internal access instructions or bypass recipes.
 
-## Verification, deployment and remaining limits
+## Verification record
 
-| Observation retained for this checkpoint | Meaning and limit |
-| --- | --- |
-| Required pre-push gate passed; consumer 4,839 and Admin 1,335 Flutter tests passed; both analyzers had no issues | Host/source evidence for the recorded candidate, not every OS/provider journey |
-| API regression lane: 8,563 passed, 155 environment-dependent tests skipped | Passing executed tests; the skipped lane remains unverified in that record |
-| API deployed using AWS Systems Manager; liveness HTTP 200; schema remained `2026.10.05.2` | Deployment receipt, not a new schema migration or full production readiness claim |
-| Production readiness remained Degraded before and after deployment | Existing provider/operational dependencies remain; liveness does not replace readiness |
-| Signed consumer APK/AAB packaged; Play production changes submitted for review | Review submission is not confirmed live store availability |
-| Consumer iOS Codemagic workflow started | Completed IPA signing and TestFlight arrival were not established by the retained start record |
-| Admin 33 installed and launched on physical Android devices | Installation/launch verification does not certify every form or administrative workflow |
-| Copy exception: 1,571 incomplete explanations and 42,048 missing error-catalog locale keys | Release-owner accepted recorded debt; six app language choices do not mean the error catalog or native-copy review is complete |
-
-Physical iOS StoreKit verification and the final simultaneous paired-device
-journey remain outstanding in the build-196 release record. This documentation
-update does not clear those limitations. Native certification rows remain
-untested until exact signed-artifact, OS, provider, account-scope and lifecycle
-evidence is attached. Historical provider/test passes keep their original date
-and build. See [native certification matrix](../quality/native-platform-certification-matrix.md).
-
-The published [manual library](https://kilodrive.com/manuals),
-[product changes](https://kilodrive.com/changelog),
-[support](https://kilodrive.com/contact), [privacy](https://kilodrive.com/privacy)
-and [terms](https://kilodrive.com/terms) explain user-facing operation. Country
-pages and current in-app/native-store disclosures govern availability and
-transactions; this architecture checkpoint is not a substitute for them.
-
-The three English consumer manuals were published as edition 3.3 for build
-196 and schema `2026.10.05.2`, with public download hashes verified on
-2026-10-06. [Manual downloads](../public-product-links.md#published-build-196-manuals)
-provide the rider, driver and rental-provider PDFs. This is publication of
-reviewed documentation, not a claim of six translated PDF editions or completed
-native-store certification.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-196).

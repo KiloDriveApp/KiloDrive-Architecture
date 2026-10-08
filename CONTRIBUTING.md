@@ -145,6 +145,17 @@ ephemeral, or human-approved in the surrounding text.
 Do not place sensitive values in diagrams; images are harder to search and
 redact than text.
 
+## Source-derived version alignment
+
+Run `python tools/source_baseline.py --source-root <product-checkout> --reviewed-date YYYY-MM-DD --write`
+after committing the product changes, then update the current baseline and
+README to the generated values. Run the same command without `--write` to
+compare with authoritative source. Public CI checks generated-file drift with
+`python tools/source_baseline.py`; it cannot inspect a private checkout.
+Historical release chapters, dated evidence and curated API export provenance
+keep their original versions. Release announcements describe improvements;
+execution limitations belong in the quality records and operational baseline.
+
 ## Review workflow
 
 1. Make a focused branch.

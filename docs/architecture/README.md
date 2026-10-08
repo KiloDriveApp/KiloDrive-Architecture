@@ -58,9 +58,10 @@ and [build 144 update](release-1.0.0-144.md) remain historical snapshots.
 
 ## Three mental models worth keeping
 
-Read the [consumer-196/Admin-33 checkpoint](release-1.0.0-196.md) for the latest
-committed source, deployment observations, copy debt and certification limits.
-Earlier release chapters retain their original evidence.
+Read the [consumer-198/Admin-33 update](release-1.0.0-198.md) for the latest
+source improvements and [generated version facts](source-versions.generated.md).
+The [current baseline](../current-baseline.md) owns execution and deployment
+scope. Earlier release chapters retain their original evidence.
 
 ### 1. Ownership before access
 

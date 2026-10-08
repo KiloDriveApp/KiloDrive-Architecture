@@ -67,23 +67,7 @@ references move before source parents are deleted. Display dates converge on
 the destination build's most recent release date. Transactional scripts and
 deterministic markers make canonical seed replay converge on the same result.
 
-## Verification and operating limits
+## Verification record
 
-Production readiness returned Healthy with the reviewed schema contract valid.
-Admin, driver and rider sign-in and the safety/incoming-call read routes passed
-smoke checks. An authenticated investigator request without its fresh proof
-returned Forbidden. Release 116 and 109 are published; consolidated source build
-detail routes are absent. The corporate build 116 changelog is published.
-The final server suite passed 4,730 tests with no failures; 74 integration cases
-requiring dedicated environments were skipped, not certified by this release.
-
-Verification includes hash tampering, MySQL timestamp materialization, rotated
-keys, immutable role snapshots, retention holds, open disclosures and explicit
-terminal-event mappings. Runtime composition keeps the evidence expiry worker
-inside the country-cell worker profile. Source verification and signed Android
-artifacts do not imply store approval or physical two-device certification.
-
-Production signing material belongs in the secret manager and restricted
-deployment configuration. It is never included in source, documentation,
-release packages or investigator responses. Operators must preserve retained
-keys while any signed evidence or legal hold still depends on them.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-116).

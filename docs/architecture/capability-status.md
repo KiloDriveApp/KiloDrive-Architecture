@@ -10,6 +10,8 @@ architecture claims honest by separating code capability from active operation.
 The status is a reviewed source baseline, not a live production dashboard.
 Operators use restricted deployment evidence and health systems for the latter.
 
+For current source versions, use the [generated facts](source-versions.generated.md)
+and [current baseline](../current-baseline.md).
 The matrix below retains its 2026-09-23 build-144 review baseline. The later
 [2026-09-30 two-app source checkpoint](two-mobile-apps-and-security-2026-09-30.md)
 records the separate consumer/Admin packages, newer source versions, typed
@@ -19,7 +21,7 @@ retroactively recertify the older matrix or establish a live deployment state.
 ## Review baseline and evidence anchors
 
 - **Reviewed:** 2026-09-23
-- **Public product baseline:** mobile `1.0.0+144`, Flutter `3.41.7` / Dart
+- **Historical product baseline:** mobile `1.0.0+144`, Flutter `3.41.7` / Dart
   `3.11.5`, .NET `9`, MySQL `8`, schema-contract version `2026.09.23.2`
 - **Reviewed API:** `/api/v1`, 826 paths, 925 operations, SHA-256
   `34f98ce9a71b4a9130394f15c9d8647920c73551cc9510f27de18ebed49c7749`

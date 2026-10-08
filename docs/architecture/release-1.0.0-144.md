@@ -233,19 +233,10 @@ global identity and configuration; each country cell owns its complete
 transactional mobility and money graph. Dedicated reporting storage receives
 privacy-safe facts and is not the transactional control database.
 
-## Verification represented by the corpus
+## Verification record
 
-The source corpus includes deterministic unit, contract, architecture, widget,
-MySQL, failure-injection and Codemagic-equivalent gates. A bounded two-device
-Android run covered installation, role login, driver navigation, membership
-routing, financial back navigation, readiness presentation and resume
-restoration on the build-143 candidate immediately before build 144.
-
-That evidence did not execute every provider or trip lifecycle. Store
-renewal/refund, PayPal capture/refund/dispute, physical GPS journeys, RTC network
-handoff, APNs, multi-node SignalR failure and production webhooks require their
-own named sandbox or production-safe certification. They remain “not run” when
-the evidence does not show otherwise.
+Dated execution observations are retained in the
+[quality record](../quality/historical-release-evidence.md#build-144).
 
 ## Related architecture decisions and runbooks
 

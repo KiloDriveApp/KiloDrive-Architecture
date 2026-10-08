@@ -45,7 +45,11 @@ flowchart LR
     Device --> Open[Reauthorized open/read]
 ```
 
-The current consumer build declared in [`pubspec.yaml`](https://github.com/KiloDriveApp/KiloDrive/blob/8bfe08881bce51535d1165552f2d5be8e05fc872/src/client/mobile/pubspec.yaml) is `1.0.0+192`. That source version does not identify the exact installed, signed artifact. Native notification and voice files were modified in the working tree at review time; those edits are not part of the pinned HEAD and require a fresh commit/artifact review before certification.
+The original 2026-10-05 inspection declared consumer `1.0.0+192` and included
+working-tree notification/voice edits outside its pinned commit. That is
+historical evidence. [Generated version facts](source-versions.generated.md)
+identify the current committed source; exact installed artifacts and device
+observations remain separate.
 
 ## Handoff and authority
 
