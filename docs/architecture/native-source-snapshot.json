@@ -1,11 +1,11 @@
 {
-  "reviewedDate": "2026-10-08",
-  "productSourceRevision": "adb8071cf17c0b748f46ce6e3bd6f941db652228",
-  "productWorkingTree": "tracked product source clean at capture; dated evidence retains its original artifact identity",
-  "consumerVersion": "1.0.0+198",
-  "systemAdminVersion": "0.1.0+33",
-  "schemaContract": "2026.10.08.2",
-  "privateOpenApiSha256": "df28ba0ea76f88b012925ca03cd9e3916e4b4527a7c34c9dfccfd910aeb41020",
+  "reviewedDate": "2026-10-13",
+  "productSourceRevision": "93491dac97f4c458cf61873adb5c566430298e39",
+  "productWorkingTree": "version and contract authorities match HEAD; unrelated local work is excluded from this snapshot",
+  "consumerVersion": "1.0.0+211",
+  "systemAdminVersion": "0.1.0+44",
+  "schemaContract": "2026.10.13.1",
+  "privateOpenApiSha256": "60aa0d2e4d917a481cfad4a8ae74c12111eb57c9ca191ebd0d3d01405c41b460",
   "publicApiExportRevision": "1cd27c58f0fd9df6d974fab3718c3cb0b485f251",
   "publicApiExportStatus": "historical curated snapshot; not regenerated from the current product source"
 }

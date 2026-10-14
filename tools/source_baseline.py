@@ -46,7 +46,7 @@ def render(snapshot):
     lines.extend([
         "", "Source versions are not deployed-runtime versions or store-availability claims.",
         "The curated public API export retains its independently recorded provenance.", "",
-        "[Current baseline](../current-baseline.md) · [Release updates](release-1.0.0-198.md)", "",
+        "[Current baseline](../current-baseline.md) · [Release updates](release-1.0.0-211.md)", "",
     ])
     return "\n".join(lines)
 
@@ -61,14 +61,22 @@ def main():
     if args.write:
         if not args.source_root or not args.reviewed_date:
             parser.error("--write requires --source-root and --reviewed-date")
-        # Ignore untracked local evidence, but reject uncaptured tracked source edits.
-        if subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=no"], cwd=args.source_root, text=True).strip():
-            parser.error("commit tracked product changes before capturing source provenance")
+        # The snapshot reads only these four committed authorities. Other
+        # tracked work in a shared checkout cannot change these values, but a
+        # dirty authority must never be attributed to HEAD.
+        authorities = (
+            "src/client/mobile/pubspec.yaml",
+            "src/client/system_admin/pubspec.yaml",
+            "src/server/KiloDrive.Api/Data/SchemaContract.cs",
+            "docs/contracts/openapi/kilodrive-v1.json",
+        )
+        if subprocess.call(["git", "diff", "--quiet", "HEAD", "--", *authorities], cwd=args.source_root) != 0:
+            parser.error("commit version or contract authorities before capturing source provenance")
         snapshot.update(read_values(args.source_root))
         snapshot.update(
             reviewedDate=args.reviewed_date,
             productSourceRevision=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=args.source_root, text=True).strip(),
-            productWorkingTree="tracked product source clean at capture; dated evidence retains its original artifact identity",
+            productWorkingTree="version and contract authorities match HEAD; unrelated local work is excluded from this snapshot",
         )
         SNAPSHOT_PATH.write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
         FACTS.write_text(render(snapshot), encoding="utf-8")

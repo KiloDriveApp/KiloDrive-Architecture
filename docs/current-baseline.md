@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-08 | Source comparison and retained release-record review |
-| Product source revision | `adb8071cf17c0b748f46ce6e3bd6f941db652228` | Documentation-aligned source; implementation artifacts retain their build-198 revision `b658a8d` |
-| Consumer source | `1.0.0+198` | Read from the consumer pubspec; not a store-availability assertion |
-| System Admin source | `0.1.0+33` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.08.2` | Source target; not a claim that production has applied it |
-| Private v1 OpenAPI hash | `df28ba0ea76f88b012925ca03cd9e3916e4b4527a7c34c9dfccfd910aeb41020` | Captured source file hash, not regeneration of the curated public export |
+| Review date | 2026-10-13 | Source comparison and retained release-record review |
+| Product source revision | `93491dac97f4c458cf61873adb5c566430298e39` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+211` | Read from the consumer pubspec; not a store-availability assertion |
+| System Admin source | `0.1.0+44` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.10.13.1` | Source target; deployment evidence remains separate |
+| Private v1 OpenAPI hash | `60aa0d2e4d917a481cfad4a8ae74c12111eb57c9ca191ebd0d3d01405c41b460` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -33,33 +33,31 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-198 source and execution evidence
+## Build-211 source and evidence boundary
 
-The [consumer-198/Admin-33 update](architecture/release-1.0.0-198.md) describes
-the implemented changes. The [generated version facts](architecture/source-versions.generated.md)
+The [consumer-211/Admin-44 update](architecture/release-1.0.0-211.md) describes
+the inspected changes. The [generated version facts](architecture/source-versions.generated.md)
 are derived from both pubspecs, the schema constant and the canonical private
 v1 contract. Regeneration preserves the historical public API export rather
 than attaching newer build numbers to an older contract.
 
-Retained build-198 host evidence records 5,046 passing consumer Flutter tests,
-1,358 passing Admin Flutter tests and clean analyzers. The API Release lane
-records 9,114 passed, zero failed and 165 skipped. The strict KD inventory
-contains 2,914 codes, zero stock meanings, zero incomplete explanations and
-zero missing keys across all six locales. Copy approval is advisory; code,
-placeholder, catalog and artifact consistency checks remain enforced.
+The build-211 source catalogue contains 3,991 KD situation identities: 1,855
+semantic bases and 2,136 exact-detail situations. Its generated inventory
+reports zero stock base meanings, zero incomplete explanations and zero missing
+title/detail/action keys across six selectable locales. Structural parity is
+not a qualified linguistic review; copy approval is advisory under the owner's
+8 October decision. Current executed test counts, native packages, store state,
+live schema, provider outcomes and device journeys require their own exact
+release records. Build-198's 5,046 consumer tests, 1,358 Admin tests, 9,114 API
+passes and schema caveats remain historical in its original
+[release chapter](architecture/release-1.0.0-198.md).
 
-These are executed host results, not new physical-device certification.
-The release record shows signed Android artifacts built, a saved Play production
-release and an accepted Codemagic start request. It does not establish completed
-store submission, approved store availability or a signed iOS artifact.
+### Build-198 source and execution evidence
 
-The packaged API/schema target is `2026.10.08.2`; the last retained deployed
-schema is `2026.10.05.2`. Deployment remains a distinct operation: the strict
-disposable-MySQL run passed 18 selected lifecycle tests and required-object
-verification but exited red on historical cross-cell physical index/FK parity.
-Do not apply destructive normalization or claim parity from required-object
-fingerprints alone. Consult [schema alignment](runbooks/schema-alignment.md)
-and the restricted per-object review before deployment.
+The historical chapter's bounded test and packaging statements retain their
+original build-198 identity. They do not certify build 211. The earlier
+packaged schema target was `2026.10.08.2`; its retained deployment caveats are
+documented in [schema alignment](runbooks/schema-alignment.md).
 
 The [historical release evidence](quality/historical-release-evidence.md)
 preserves earlier test limitations, dated deployment observations and copy
@@ -72,6 +70,9 @@ those scenarios or update the historical public dependency export.
 | Area | Current source responsibility | What still needs independent evidence |
 | --- | --- | --- |
 | Two mobile clients | Consumer owns rider, driver and rental tasks; the restricted System Admin app owns operational administration | Exact signed-client access boundaries, distribution and device journeys |
+| Consumer navigation and data | Home, Hail a Ride, Rentals and Courier are explicit rider destinations; My Data consolidates profile, authentication, readiness, favorites and data-management controls | Current signed-device navigation, account deletion and country policy |
+| Courier and bearer | Separate goods-only job lifecycle, progressive enrollment, custody, capacity and delivery proof | Approval, live dispatch, handoff, payment and provider evidence for each country |
+| Contacts and referral rewards | Controlled QR/contact-card sharing and favorite people support discovery; loyalty awards and conversion remain server-led | Referral qualification, actual award, conversion quote and wallet ledger agreement |
 | People and readiness | Admin dossiers connect people, documents, membership, security and activity; the API calculates readiness | Current permission denials, document-preview/decision/replacement and final-approval journeys |
 | Membership management | Catalog editing and plan creation, benefit/term-price management, member drill-down and individual membership actions have dedicated source surfaces | Store mappings, country pricing, effective entitlement propagation and real purchase/renewal outcomes |
 | Approval policy | Independent second approval is configurable per reviewed domain; source defaults allow one authorized reviewer | Deployed effective policy, policy changes and both enabled/disabled workflow tests |

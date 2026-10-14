@@ -1,5 +1,15 @@
 # Wallet, Membership, Billing, and Accounting
 
+For the consumer build-211 navigation and source boundary, see the
+[current release chapter](release-1.0.0-211.md). Billing & Financial now makes
+Rewards & Referrals and Transaction resolution easier to find. Available
+points, pending points and wallet minor units are different balances. A
+referral code does not itself issue money; qualifying completed activity and
+current policy determine the award. A points conversion requires a quote,
+server confirmation and ledger result. If an outcome is unknown, reconcile the
+original operation instead of creating a second one. These client surfaces do
+not weaken the holds, idempotency or provider-reconciliation rules below.
+
 This chapter explains how KiloDrive treats money. It is written for engineers
 who may be comfortable building CRUD features but have not yet worked on a
 ledger-backed system. The essential rule is simple: a displayed wallet balance
