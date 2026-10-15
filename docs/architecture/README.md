@@ -86,3 +86,7 @@ database lock and condition make competing accepts deterministic.
 
 These models are repeated throughout the documentation because they explain
 many of the failure modes documented in this repository.
+
+## Delivery wizard source update — 15 October 2026
+
+See [optional contacts and clearer wizard navigation](delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.

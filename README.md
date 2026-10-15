@@ -537,3 +537,7 @@ Historical results stay attached to their original build and environment. The
 explain how to collect fresh evidence without relabeling an older pass.
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).
+
+## Delivery wizard source update — 15 October 2026
+
+See [optional contacts and clearer wizard navigation](docs/architecture/delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.

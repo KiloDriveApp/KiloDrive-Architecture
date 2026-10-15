@@ -136,3 +136,7 @@ complete release SBOM. See [SBOM scope](third-party/sbom.md).
 
 See the [documentation correction record](quality/documentation-audit-2026-10-03.md)
 for the defects corrected in this revision and the limits still visible.
+
+## Delivery wizard source update — 15 October 2026
+
+See [optional contacts and clearer wizard navigation](architecture/delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.
