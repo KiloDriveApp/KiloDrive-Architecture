@@ -32,11 +32,12 @@ The separate System Admin app is not the public consumer download.
 [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
 [Publication notice](NOTICE.md)
 
-The [build-211 source update](docs/architecture/release-1.0.0-211.md) covers
-Hail a Ride and Courier navigation, My Data and contact-card controls,
-progressive bearer enrollment, referrals and points, account lifecycle safety,
-and the separate Admin review boundary. Source availability, country policy,
-store distribution and physical-device certification are distinct claims.
+The [build-223 source update](docs/architecture/release-1.0.0-223.md) covers
+simpler delivery booking, optional measurements and contacts, profile details,
+unit preferences and the separation of reward points from wallet money. The
+older [build-211 update](docs/architecture/release-1.0.0-211.md) remains dated
+history. Source availability, country policy, store distribution and
+physical-device certification are distinct claims.
 
 ## Start here
 
@@ -491,9 +492,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-13**, at committed product revision
-`93491dac97f4c458cf61873adb5c566430298e39`. The
-[consumer-211/Admin-44 update](docs/architecture/release-1.0.0-211.md)
+The latest source observation is **2026-10-16**, at committed product revision
+`7cf91dbb009d0446c1d8ace26370b244232a7b61`. The
+[consumer-223/Admin-46 update](docs/architecture/release-1.0.0-223.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
 Deployment observations and certification scope belong in the
@@ -505,9 +506,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+211` |
-| System Admin app source, current observation | `0.1.0+44` |
-| Schema contract, current observation | `2026.10.13.1` |
+| Consumer app source, current observation | `1.0.0+223` |
+| System Admin app source, current observation | `0.1.0+46` |
+| Schema contract, current observation | `2026.10.14.2` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |

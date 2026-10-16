@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-13 | Source comparison and retained release-record review |
-| Product source revision | `93491dac97f4c458cf61873adb5c566430298e39` | Committed version/contract authorities; unrelated working-tree edits are excluded |
-| Consumer source | `1.0.0+211` | Read from the consumer pubspec; not a store-availability assertion |
-| System Admin source | `0.1.0+44` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.13.1` | Source target; deployment evidence remains separate |
-| Private v1 OpenAPI hash | `60aa0d2e4d917a481cfad4a8ae74c12111eb57c9ca191ebd0d3d01405c41b460` | Captured source file hash, not regeneration of the curated public export |
+| Review date | 2026-10-16 | Source comparison and retained release-record review |
+| Product source revision | `7cf91dbb009d0446c1d8ace26370b244232a7b61` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+223` | Read from the consumer pubspec; not a store-availability assertion |
+| System Admin source | `0.1.0+46` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.10.14.2` | Source target; deployment evidence remains separate |
+| Private v1 OpenAPI hash | `f2a50e7bbe169c34e0f42938e121eee6f8856a7da095680a006473fe3792c6c8` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -33,29 +33,30 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-211 source and evidence boundary
+## Build-223 source and evidence boundary
 
-The [consumer-211/Admin-44 update](architecture/release-1.0.0-211.md) describes
+The [consumer-223/Admin-46 update](architecture/release-1.0.0-223.md) describes
 the inspected changes. The [generated version facts](architecture/source-versions.generated.md)
 are derived from both pubspecs, the schema constant and the canonical private
 v1 contract. Regeneration preserves the historical public API export rather
 than attaching newer build numbers to an older contract.
 
-The build-211 source catalogue contains 3,991 KD situation identities: 1,855
+The historical build-211 source catalogue contained 3,991 KD situation identities: 1,855
 semantic bases and 2,136 exact-detail situations. Its generated inventory
 reports zero stock base meanings, zero incomplete explanations and zero missing
 title/detail/action keys across six selectable locales. Structural parity is
 not a qualified linguistic review; copy approval is advisory under the owner's
 8 October decision. Current executed test counts, native packages, store state,
 live schema, provider outcomes and device journeys require their own exact
-release records. Build-198's 5,046 consumer tests, 1,358 Admin tests, 9,114 API
+release records. Those build-211 counts are not a fresh build-223 catalog run.
+Build-198's 5,046 consumer tests, 1,358 Admin tests, 9,114 API
 passes and schema caveats remain historical in its original
 [release chapter](architecture/release-1.0.0-198.md).
 
 ### Build-198 source and execution evidence
 
 The historical chapter's bounded test and packaging statements retain their
-original build-198 identity. They do not certify build 211. The earlier
+original build-198 identity. They do not certify build 223. The earlier
 packaged schema target was `2026.10.08.2`; its retained deployment caveats are
 documented in [schema alignment](runbooks/schema-alignment.md).
 

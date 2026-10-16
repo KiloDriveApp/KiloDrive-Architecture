@@ -1,11 +1,11 @@
 {
-  "reviewedDate": "2026-10-13",
-  "productSourceRevision": "93491dac97f4c458cf61873adb5c566430298e39",
+  "reviewedDate": "2026-10-16",
+  "productSourceRevision": "7cf91dbb009d0446c1d8ace26370b244232a7b61",
   "productWorkingTree": "version and contract authorities match HEAD; unrelated local work is excluded from this snapshot",
-  "consumerVersion": "1.0.0+211",
-  "systemAdminVersion": "0.1.0+44",
-  "schemaContract": "2026.10.13.1",
-  "privateOpenApiSha256": "60aa0d2e4d917a481cfad4a8ae74c12111eb57c9ca191ebd0d3d01405c41b460",
+  "consumerVersion": "1.0.0+223",
+  "systemAdminVersion": "0.1.0+46",
+  "schemaContract": "2026.10.14.2",
+  "privateOpenApiSha256": "f2a50e7bbe169c34e0f42938e121eee6f8856a7da095680a006473fe3792c6c8",
   "publicApiExportRevision": "1cd27c58f0fd9df6d974fab3718c3cb0b485f251",
   "publicApiExportStatus": "historical curated snapshot; not regenerated from the current product source"
 }

@@ -58,7 +58,7 @@ and [build 144 update](release-1.0.0-144.md) remain historical snapshots.
 
 ## Three mental models worth keeping
 
-Read the [consumer-198/Admin-33 update](release-1.0.0-198.md) for the latest
+Read the [consumer-223 update](release-1.0.0-223.md) for the latest
 source improvements and [generated version facts](source-versions.generated.md).
 The [current baseline](../current-baseline.md) owns execution and deployment
 scope. Earlier release chapters retain their original evidence.
@@ -90,3 +90,7 @@ many of the failure modes documented in this repository.
 ## Delivery wizard source update — 15 October 2026
 
 See [optional contacts and clearer wizard navigation](delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.
+
+The [build-223 chapter](release-1.0.0-223.md) records the subsequent Simple/Advanced
+booking paths, unit preferences and profile display boundary. The build-215
+chapter remains historical rather than being relabelled as current.
