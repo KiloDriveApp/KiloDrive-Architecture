@@ -32,12 +32,12 @@ The separate System Admin app is not the public consumer download.
 [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
 [Publication notice](NOTICE.md)
 
-The [build-223 source update](docs/architecture/release-1.0.0-223.md) covers
-simpler delivery booking, optional measurements and contacts, profile details,
-unit preferences and the separation of reward points from wallet money. The
-older [build-211 update](docs/architecture/release-1.0.0-211.md) remains dated
-history. Source availability, country policy, store distribution and
-physical-device certification are distinct claims.
+The [latest source update](docs/architecture/release-1.0.0-238.md) covers
+the Service Provider workspaces, memberships, organization teams, courier and
+rental journeys, the restricted Rental Risk Exchange candidate and the
+intelligence programme. The [build-223 update](docs/architecture/release-1.0.0-223.md)
+remains dated history. Source availability, country policy, store distribution
+and physical-device certification are distinct claims.
 
 ## Start here
 
@@ -69,6 +69,8 @@ partner or administrator access or certify every production dependency.
 | Current scope, evidence and known limitations | [Baseline](docs/current-baseline.md) and [correction record](docs/quality/documentation-audit-2026-10-03.md) |
 | Endpoint purposes, request/response fields and enums | [API guide](docs/api/README.md), [operation finder](docs/api/reference/operations.md) and [field dictionary](docs/api/schemas/README.md) |
 | Consumer and administrative responsibilities | [Two-client model](#two-mobile-apps-one-authoritative-api) and [System Admin chapter](docs/architecture/system-admin-mobile-app.md) |
+| Provider onboarding, memberships and workspaces | [Service Provider platform](docs/architecture/service-provider-platform.md) |
+| Rental risk and marketplace intelligence | [Risk and intelligence boundaries](docs/architecture/rental-risk-and-marketplace-intelligence.md) |
 | Authentication, admission, money and abuse protection | [Control model](docs/security/security-control-model.md) and [OWASP mapping](docs/security/owasp-api-top-10-2023.md) |
 | Recovery, release and verification | [Runbooks](docs/runbooks/README.md) and [testing guide](docs/quality/testing-and-verification.md) |
 | Terminology, rights and disclosure | [Glossary](GLOSSARY.md), [NOTICE](NOTICE.md) and [SECURITY](SECURITY.md) |
@@ -98,6 +100,10 @@ reading order. It builds one idea at a time:
 8. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) —
    how scheduled and multi-stop rides, driver business tools, family/business
    travel, courier, rentals, reputation, and support remain recoverable.
+   The [Service Provider platform](docs/architecture/service-provider-platform.md)
+   explains common onboarding, workspaces, memberships and organization grants.
+   [Risk and intelligence boundaries](docs/architecture/rental-risk-and-marketplace-intelligence.md)
+   separates rental screening from marketplace analytics and automation.
 9. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
    how country dossiers, shard gates, effective rules, approvals, and retained
    evidence turn legal requirements into enforceable operations.
@@ -137,7 +143,7 @@ mobile, API, database, security, and operations engineers.
 
 | Client | Intended work | Authority boundary |
 | --- | --- | --- |
-| Consumer Android/iOS app | Rider, driver, rental and account journeys: onboarding, vehicles, trips, wallet, membership, communications and preferences | Consumer-scoped sessions and server-enforced ownership, eligibility and lifecycle rules |
+| Consumer Android/iOS app | Customer, driver, courier and rental journeys: onboarding, bookings, wallet, provider membership, communications and preferences | Consumer-scoped sessions and server-enforced ownership, eligibility and lifecycle rules |
 | Restricted System Admin Android/iOS app | People dossiers, driver/document review, Membership Center, security, devices, notifications, financial investigations, audit and operational recovery | Administrative role/capability checks, selected country workspace, required proofs and durable audit |
 | Portal and Website | Their reviewed browser operations and public content | The same API authorization and domain rules; browser rendering does not grant permission |
 
@@ -145,6 +151,14 @@ System Admin tasks belong in the separate Admin app, not the consumer app. One
 global identity may also have an active rider membership, but that consumer
 session does not inherit administrative authority. The API computes driver
 readiness and membership entitlements; an app screen cannot override them.
+
+Provider service readiness is distinct for ride hailing, courier and rentals.
+Free, Silver and Gold share one Service Provider catalog; paid terms use
+verified native-store products. A rental organization's optional Risk Exchange
+access is a separate, country-gated wallet-funded contract, not a provider
+membership benefit. [Service Provider platform](docs/architecture/service-provider-platform.md)
+and [Risk and intelligence boundaries](docs/architecture/rental-risk-and-marketplace-intelligence.md)
+explain the source design and activation limits.
 
 The Admin chapter describes document viewing and decision/re-upload workflows,
 plan creation and benefit/pricing editing, member drill-down, expiry management,
@@ -167,7 +181,7 @@ and [notification delivery](docs/architecture/notification-delivery-lifecycle.md
 ```mermaid
 flowchart LR
     subgraph Clients
-      Consumer[Consumer app: rider, driver and rental]
+      Consumer[Consumer app: customer, driver, courier and rental]
       Admin[Separate System Admin app]
       Portal[Operations portal]
       Web[Corporate website]
@@ -492,9 +506,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-16**, at committed product revision
-`7cf91dbb009d0446c1d8ace26370b244232a7b61`. The
-[consumer-223/Admin-46 update](docs/architecture/release-1.0.0-223.md)
+The latest source observation is **2026-10-20**, at committed product revision
+`15d7491e30b63a168700150962b3101c5d60d499`. The
+[consumer-238/Admin-49 update](docs/architecture/release-1.0.0-238.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
 Deployment observations and certification scope belong in the
@@ -506,9 +520,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+223` |
-| System Admin app source, current observation | `0.1.0+46` |
-| Schema contract, current observation | `2026.10.14.2` |
+| Consumer app source, current observation | `1.0.0+238` |
+| System Admin app source, current observation | `0.1.0+49` |
+| Schema contract, current observation | `2026.10.19.8` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |
@@ -526,6 +540,7 @@ from route-derived descriptions and remaining field explanations.
 
 | Checkpoint | Original scope |
 | --- | --- |
+| [Build 215 delivery wizard](docs/architecture/delivery-wizard-optional-contacts.md) | Dated 15 October 2026 source behavior for optional contacts and clearer wizard navigation; no store or deployment assertion |
 | [Build 168 handover](docs/runbooks/build168-operational-handover.md) | Consumer `1.0.0+168`, Admin `0.1.0+10`, schema `2026.10.02.3`; bounded release observations for that candidate |
 | [2026-09-30 two-app checkpoint](docs/architecture/two-mobile-apps-and-security-2026-09-30.md) | Consumer `1.0.0+159`, Admin `0.1.0+4`, schema `2026.09.30.2`; the earlier app split and then-open work |
 | [Build 156 update](docs/architecture/release-1.0.0-156.md) | Historical source/release documentation and consolidated public changes |
@@ -538,7 +553,3 @@ Historical results stay attached to their original build and environment. The
 explain how to collect fresh evidence without relabeling an older pass.
 
 Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).
-
-## Delivery wizard source update — 15 October 2026
-
-See [optional contacts and clearer wizard navigation](docs/architecture/delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.

@@ -13,13 +13,28 @@ architecture by threat category.
 
 ## Scope and strength of evidence
 
-**2026-10-06 amendment:** The latest
+**2026-10-06 amendment:** The historical
 [consumer-196/Admin-33 checkpoint](../architecture/release-1.0.0-196.md)
 records committed fresh-install credential/token reset, billing ownership and
 expired-transaction recovery, scoped participant/marketplace projections and
 API-gated administrative review policies. The older security review below
 keeps its original source scope. Host checks, configuration defaults and live
 security/provider certification remain separate evidence levels.
+
+**2026-10-20 source extension:** The newer
+[Service Provider platform](../architecture/service-provider-platform.md)
+requires independent country membership, service readiness, organization
+grant and published-benefit checks for each kind of work. An invitation does
+not create a credential, and an organization role does not authorize personal
+wallet or security actions. The
+[Rental Risk Exchange candidate](../architecture/rental-risk-and-marketplace-intelligence.md)
+keeps raw allegations private, requires reviewed limited publication and
+subject rights, and does not automatically deny a rental. Optional analytics
+uses consented, bounded observations, suppresses small cohorts and cannot
+write money or assignment state. The exact current versions are in
+[source-derived facts](../architecture/source-versions.generated.md); these
+extensions do not turn the historical review below into a new penetration
+test or live production assessment.
 
 The source review uses commit
 `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`: consumer `1.0.0+172`, System Admin

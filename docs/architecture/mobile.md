@@ -1,7 +1,8 @@
 # Mobile Architecture
 
-The [consumer-198/Admin-33 update](release-1.0.0-198.md) records the latest
-source improvements. [Generated version facts](source-versions.generated.md)
+The [consumer-198/Admin-33 update](release-1.0.0-198.md) records historical
+source improvements. [Latest source update](release-1.0.0-238.md) and
+[generated version facts](source-versions.generated.md)
 identify the current source; [current evidence](../current-baseline.md) separates
 host tests, deployment and exact signed-device/provider observations.
 
@@ -12,16 +13,19 @@ and [build-156 adapter history](native-adapters-and-store-billing.md) retain
 their dated evidence; neither certifies today's source build.
 
 KiloDrive has two Android/iOS Flutter packages. This chapter describes the
-consumer app for rider, driver, rental organization and tools-only journeys.
+consumer app for customer, driver, courier, rental organization and tools-only
+journeys. The newer [Service Provider platform](service-provider-platform.md)
+documents common membership and separate service readiness; historical
+screen descriptions below retain their original build context.
 System Administrator work belongs to the separate restricted app described in
 [System Administration](system-administration.md). The two apps share API
 contracts and design principles, not privileged navigation or local credentials.
 
 The public consumer Android listing is
 [KiloDrive on Google Play](https://play.google.com/store/apps/details?id=com.kilodrive.app).
-The [rider](https://kilodrive.com/manuals/rider),
-[driver](https://kilodrive.com/manuals/driver) and
-[rental provider](https://kilodrive.com/manuals/rental-provider) manuals describe
+The [rider](https://kilodrive.com/manuals/KiloDrive-Rider-Operations-Manual.pdf),
+[Transportation Provider](https://kilodrive.com/manuals/KiloDrive-Transportation-Provider-Operations-Manual.pdf) and
+[rental provider](https://kilodrive.com/manuals/KiloDrive-Vehicle-Rental-Entity-Operations-Manual.pdf) manuals describe
 user workflows. Country availability and current in-app terms remain decisive.
 
 ## Verified technology baseline

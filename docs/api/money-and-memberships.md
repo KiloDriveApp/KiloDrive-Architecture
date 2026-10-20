@@ -3,6 +3,13 @@
 [API Guide](README.md) · [Wallet reference](reference/wallets.md) ·
 [Membership reference](reference/memberships.md)
 
+The endpoint reference linked above is a historical curated public export,
+not a regenerated inventory of the current private API. The newer
+[Service Provider source design](../architecture/service-provider-platform.md)
+uses one Free/Silver/Gold catalog with six paid native-store products. Retired
+driver-plan and wallet-subscription paths in the historical export are not
+current provider-purchase instructions.
+
 ## Different records answer different questions
 
 | Record/read | What it means | What it does not prove |
@@ -71,11 +78,13 @@ mapping and server reconciliation rules.
 
 ## Membership state and benefits
 
-Plan catalogs describe benefit allotments, fees and allowed terms. User
-membership reads describe status, start/expiry, usage and applicable revisions.
-The driver's `/api/v1/driver/membership/store-status` is the authoritative
-membership workspace snapshot; the client should not invent a competing
-entitlement state by joining independent plan and billing reads.
+Plan catalogs describe benefit allotments, units, reset periods and allowed
+terms. Current provider membership reads describe beneficiary, status,
+start/expiry, usage and applicable published revisions. The historical
+driver-specific store-status path belongs to the older curated export. Current
+clients use the account-scoped Service Provider membership projection; they
+must not invent a competing entitlement by joining independent old plan and
+billing reads.
 
 Benefits and current usage are different values. Show the applicable active
 plan, expiry and usage against its allotment. Expiry, a scheduled change, store
@@ -91,16 +100,14 @@ membership.
 
 ## Wallet versus store purchase flows
 
-The API includes wallet membership and provider/native-store workflows. They
-are governed by platform, audience, policy and configuration. The existence of
-a wallet subscription route does not authorize bypassing a platform's purchase
-rules or substituting a wallet grant for a native-store entitlement.
-
-Wallet purchase/renewal records the applicable payment and authoritative
-membership. Upgrade credit/proration uses server rules and returned amounts.
-An expiry extension does not automatically change the store's billing cycle.
-Auto-renewal settings and cancel-pending-change actions use their own secure,
-revisioned contracts.
+Current paid Service Provider periods come from verified Apple or Google
+subscription products. The store owns the charge, renewal and supported
+replacement terms; KiloDrive applies the verified beneficiary and effective
+period. A historical wallet-membership route, an Admin grant or an expiry edit
+cannot substitute for the purchaser's native-store billing relationship.
+The separately gated Rental Risk Exchange candidate uses a fixed-period
+owner-wallet purchase for an organization, not these provider subscriptions.
+See [risk and intelligence](../architecture/rental-risk-and-marketplace-intelligence.md).
 
 ## Native store lifecycle
 

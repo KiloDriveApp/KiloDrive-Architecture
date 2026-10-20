@@ -13,6 +13,16 @@ row whose `Status` may be edited freely. It is a versioned agreement that moves
 through a controlled state machine while availability, payment, evidence,
 accounting, notifications, and audit stay consistent.
 
+The newer [Service Provider source chapter](service-provider-platform.md)
+describes organization registration, reusable vehicle requirement profiles,
+structured branch hours, reservation versus booking, canonical vehicle
+allocation and current membership. The separate
+[Rental Risk Exchange chapter](rental-risk-and-marketplace-intelligence.md)
+explains why a reviewed, purpose-limited incident disclosure cannot
+automatically cancel or price a booking. The older capability map below keeps
+its original architectural scope; consult the
+[current baseline](../current-baseline.md) for exact source provenance.
+
 The [rental provider manual](https://kilodrive.com/manuals/rental-provider)
 explains user tasks; this chapter explains the system behind them. Current
 [Terms of Service](https://kilodrive.com/terms) and the country-specific booking

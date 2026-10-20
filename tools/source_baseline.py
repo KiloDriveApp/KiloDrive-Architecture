@@ -46,7 +46,7 @@ def render(snapshot):
     lines.extend([
         "", "Source versions are not deployed-runtime versions or store-availability claims.",
         "The curated public API export retains its independently recorded provenance.", "",
-        "[Current baseline](../current-baseline.md) · [Release updates](release-1.0.0-223.md)", "",
+        "[Current baseline](../current-baseline.md) · [Release updates](release-1.0.0-238.md)", "",
     ])
     return "\n".join(lines)
 

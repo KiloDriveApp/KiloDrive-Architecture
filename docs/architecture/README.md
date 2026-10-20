@@ -26,6 +26,8 @@ support, policies, releases and the consumer download.
 | [Geospatial](geospatial.md) | How are noisy locations turned into useful matching and safety signals? |
 | [Rider and driver safety](rider-driver-safety.md) | How do prevention, trip protection, RideCheck, emergency actions, evidence, and human response protect both marketplace participants? |
 | [Marketplace product lifecycles](marketplace-product-lifecycles.md) | How do scheduled/multi-stop rides, intelligence, driver tools, family/business travel, courier, rentals, reputation, and support remain durable and recoverable? |
+| [Service Provider platform](service-provider-platform.md) | How do registration intent, workspaces, distinct service readiness, shared Free/Silver/Gold membership and organization teams fit together? |
+| [Rental risk and marketplace intelligence](rental-risk-and-marketplace-intelligence.md) | Why are reviewed rental disclosures and advisory analytics separate from automatic safety, pricing and financial decisions? |
 | [Jurisdictional compliance](jurisdictional-compliance.md) | How do country dossiers, shard controls, effective rules, approvals, and evidence support lawful country operations? |
 | [Financial systems](financial-systems.md) | How are wallet balances, holds, journals, and provider settlements kept explainable? |
 | [Rental marketplace](rental-marketplace.md) | How do organizations, compliant fleets, bookings, deposits, evidence, settlement, and disputes stay consistent? |
@@ -58,8 +60,9 @@ and [build 144 update](release-1.0.0-144.md) remain historical snapshots.
 
 ## Three mental models worth keeping
 
-Read the [consumer-223 update](release-1.0.0-223.md) for the latest
-source improvements and [generated version facts](source-versions.generated.md).
+Read the [latest source update](release-1.0.0-238.md) and
+[generated version facts](source-versions.generated.md). The
+[consumer-223 update](release-1.0.0-223.md) remains historical.
 The [current baseline](../current-baseline.md) owns execution and deployment
 scope. Earlier release chapters retain their original evidence.
 

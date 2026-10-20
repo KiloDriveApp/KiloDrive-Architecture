@@ -13,8 +13,9 @@ belongs to the consumer app. It is not a distribution link for the restricted
 System Admin app. Public support, legal and product resources are collected in
 [official product links](../public-product-links.md).
 
-This chapter was refreshed against the **2026-10-06 committed source checkpoint**
-identified in the [current baseline](../current-baseline.md). Driver/identity
+The detailed workspace map below was refreshed against the **2026-10-06
+committed source checkpoint**, retained in the
+[historical release chapter](release-1.0.0-196.md). Driver/identity
 document viewing and decisions, membership-center navigation and catalog
 editing now have implementations; the earlier statement that these were
 uniformly absent was stale. Source tests, an API route, a rendered screen and
@@ -24,9 +25,17 @@ See the historical [two-app checkpoint](two-mobile-apps-and-security-2026-09-30.
 consumer/admin boundary and [System Administration](system-administration.md)
 for the wider control-plane rules.
 
+The newer [provider-platform](service-provider-platform.md) and
+[rental-risk/intelligence](rental-risk-and-marketplace-intelligence.md)
+chapters describe organization teams, source-level Exchange review and
+metric-provenance surfaces added after that historical checkpoint. The
+[latest source update](release-1.0.0-238.md) and
+[source-derived facts](source-versions.generated.md) identify their exact
+reviewed version. The older build numbers below remain dated history.
+
 ## What an operator experiences
 
-The current source is System Admin `0.1.0+33`, paired architecturally with
+At that historical checkpoint, the source was System Admin `0.1.0+33`, paired architecturally with
 consumer `1.0.0+196` and schema `2026.10.05.2`. Physical Android installation
 and launch have been verified; they do not certify every dossier, form or
 provider workflow. The [release checkpoint](release-1.0.0-196.md) keeps those

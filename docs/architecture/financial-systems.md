@@ -1,7 +1,9 @@
 # Wallet, Membership, Billing, and Accounting
 
-For the consumer build-211 navigation and source boundary, see the
-[current release chapter](release-1.0.0-211.md). Billing & Financial now makes
+For current provider navigation and source boundaries, see the
+[Service Provider platform](service-provider-platform.md). The historical
+consumer build-211 navigation is recorded in its
+[historical release chapter](release-1.0.0-211.md). Billing & Financial now makes
 Rewards & Referrals and Transaction resolution easier to find. Available
 points, pending points and wallet minor units are different balances. A
 referral code does not itself issue money; qualifying completed activity and
@@ -19,8 +21,7 @@ balanced accounting journal, and a way to reconcile KiloDrive with the external
 provider that actually moved the funds.
 
 For user-facing wallet and membership steps, consult the
-[rider manual](https://kilodrive.com/manuals/rider) or
-[driver manual](https://kilodrive.com/manuals/driver), the current
+[KiloDrive manuals](https://kilodrive.com/manuals), the current
 [Terms of Service](https://kilodrive.com/terms), and the in-app price and
 payment disclosure for the selected country.
 
@@ -180,8 +181,10 @@ that authoritative status; it is never proof of payment.
 
 Membership entitlement is state-machine driven. Current access, current period,
 access-through date, grace/hold reason and a versioned pending change are
-separate data. An immediate upgrade records disclosed proration evidence; a
-downgrade preserves the current tier until its effective date. Renewal, billing
+separate data. The native store determines a supported change's charge and
+effective date; KiloDrive applies the verified period rather than inventing a
+proration. A scheduled downgrade preserves the current verified tier until its
+effective date. Renewal, billing
 retry, cancellation, expiry, refund, dispute, revocation and restoration consume
 verified Apple/Google/provider identities idempotently. Storefront product data
 is price/currency authority for native checkout, while server mappings bind the
@@ -296,54 +299,44 @@ reconciliation matrices pass.
 
 ### Membership
 
-Riders do not require rider subscription plans. Driver and rental organization
-memberships operate in the membership/no-commission model. A subscription
-preserves plan foreign key, audience, purchased term, actual billed price source,
-service period, renewal/grace state, provider transaction, entitlement, payment,
-and journal reference.
+Customers do not require a paid subscription to request ordinary services.
+The current Service Provider catalog has Free, Silver and Gold for the named
+individual or organization beneficiary across applicable ride, courier and
+rental benefits. An active paid period preserves its published revision,
+purchased term, actual billed price source, service period, provider
+transaction, lifecycle state, entitlement, payment and accounting reference.
+The Service Provider revision and usage ledger, not retired driver-profile
+membership fields, govern current limits. Readiness remains independent.
 
-### Public tier language and reviewed published/store catalogue baseline
+### Public tier language and store purchase boundary
 
 The tier name communicates a bounded entitlement, not social status, driver
 quality, guaranteed demand, priority over safety rules, or promised earnings.
-Use the audience-qualified names **Rider Free**, **Free Driver**, **Silver
-Driver**, **Gold Driver**, **Rental Free**, **Rental Silver**, and **Rental
-Gold**. Never shorten a label in a context where driver and rental plans can be
-confused.
+Use **Service Provider Free**, **Service Provider Silver** and **Service
+Provider Gold** where the audience is not otherwise clear. Free has published
+allowances and reset periods without a recurring charge. Paid terms are weekly,
+monthly and quarterly. The six exact native product identifiers use
+`kilodrive.provider.{silver|gold}.{weekly|monthly|quarterly}`. They replace
+the historical Driver and Rental product rows; the 2026-08-30 price/limit
+table is no longer a current plan catalog.
 
-Riders use KiloDrive without a rider subscription. Driver and rental providers
-choose Free, Silver, or Gold. Paid terms are one week, one month, or one quarter;
-"quarterly" means the reviewed three-month term, not an instalment loan. The
-published/store presentation catalogue reviewed on 2026-08-30 is:
+The country catalog stores versioned benefit allotments and approved display
+references. The native storefront supplies the actual checkout price and
+currency. A country price reference, historic release note or hard-coded USD
+amount cannot override that charge. Runtime certification compares country,
+beneficiary, product, base plan/offer where applicable, term, currency,
+published revision and storefront availability. A missing or stale mapping
+disables that purchase action without treating an existing verified period as
+unpaid.
 
-| Audience and tier | Week | Month | Quarter | Published allocation or headline limit |
-| --- | ---: | ---: | ---: | --- |
-| Rider Free | USD 0 | USD 0 | USD 0 | No rider subscription plan |
-| Free Driver | USD 0 | USD 0 | USD 0 | Up to 8 accepted trips/week and 1 registered vehicle |
-| Silver Driver | USD 7.50 | USD 27 | USD 78 | Up to 40 accepted trips/week and 3 registered vehicles |
-| Gold Driver | USD 25 | USD 90 | USD 260 | Up to 120 accepted trips/week and 5 registered vehicles; Preferred Driver eligibility still requires every safety/reputation rule |
-| Rental Free | USD 0 | USD 0 | USD 0 | Published allocation: 1 active listing and owner-managed core tools |
-| Rental Silver | USD 7.50 | USD 27 | USD 78 | Published allocation: up to 5 active fleet vehicles plus the approved team/reporting tools |
-| Rental Gold | USD 25 | USD 90 | USD 260 | Published allocation: up to 25 active fleet vehicles plus expanded team/analytics tools |
-
-These figures document the reviewed published/store presentation; they are not
-proof that a live database, store console, or every server handler is aligned.
-The canonical membership bootstrap/alignment scripts now use the reviewed
-50%-reduced values above for driver and rental audiences. Runtime certification
-still compares the named release's country plan rows with the native store
-product, base plan, offer, term, currency, minor-unit amount, and localized
-display price. A missing/stale mapping keeps the plan visible but disables that
-purchase action.
-
-Similarly, the rental vehicle counts above are published product allocations.
-They must not be described as uniformly enforced limits until all rental
-mutation handlers and contract tests prove the same rule. Apple and Google
-storefront prices are the checkout authority in store builds; approved
-non-store displays use the country currency and an explicit FX snapshot. The
-active, verified plan record remains the runtime source for benefits that are
-actually enforced. A manual or marketing page must be updated when the
-catalogue changes and must not invent a benefit merely because the tier sounds
-premium.
+Plan benefits must state their unit and reset window. Limits for ride bids,
+courier offers, active rental listings, vehicle changes, seats, points and
+withdrawals are not interchangeable. A change in a published catalog cannot
+rewrite the immutable terms or usage of a period already purchased. The
+current verified entitlement, published benefit revision and usage ledger
+remain the runtime source for enforced limits. The latest
+[provider chapter](service-provider-platform.md) explains the cross-service
+and organization boundary.
 
 The no-commission statement is also precise: drivers retain 100% of the agreed
 ordinary trip fare before their own taxes, fuel, maintenance, insurance, tolls,
@@ -354,8 +347,10 @@ Apple and Google purchases are validated server-side. Google acknowledgement is
 durable outbox work, so `acknowledgement_pending` can be represented without
 pretending the entitlement did not commit. Product, base plan, offer, account
 type, currency, term, and environment must all match the internal mapping.
-Upgrade/downgrade proration uses the customer's actual paid service period, not
-only a catalogue default.
+Native-store replacement, renewal, cancellation and restoration are applied
+only from verified provider periods in their effective order. KiloDrive does
+not invent a wallet-funded proration or silently create a second subscription
+to resolve an uncertain change.
 
 ## Webhooks, provider adapters, and outbox
 

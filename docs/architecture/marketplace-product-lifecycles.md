@@ -16,13 +16,21 @@ rules they share. It deliberately avoids route dumps and schema listings. Those
 change faster than the ownership, consistency, privacy, and recovery decisions
 an engineer needs to understand.
 
-The [build-211 update](release-1.0.0-211.md) adds a current client entry point:
+The [build-211 update](release-1.0.0-211.md) recorded an earlier client entry point:
 Riders reach Hail a Ride, Rentals and Courier directly; an existing account can
 follow progressive courier enrollment under My Data. Courier jobs have a
 goods-and-custody lifecycle rather than a passenger onboard state. Enrollment,
 agreement acceptance, document review, capacity and country policy remain
 distinct gates before accepting work. A saved request, an offer, an assignment,
 a pickup proof and a completed handoff are different authoritative states.
+
+The [current Service Provider chapter](service-provider-platform.md) updates
+the common Free/Silver/Gold membership, independent driver/courier/rental
+readiness and organization grants. The
+[risk and intelligence chapter](rental-risk-and-marketplace-intelligence.md)
+distinguishes reviewed rental disclosures from advisory forecasts. These
+later source changes do not retroactively certify the older capability table
+or activate a country service.
 
 ## Capability status at this baseline
 

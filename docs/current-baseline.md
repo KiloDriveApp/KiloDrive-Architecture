@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-16 | Source comparison and retained release-record review |
-| Product source revision | `7cf91dbb009d0446c1d8ace26370b244232a7b61` | Committed version/contract authorities; unrelated working-tree edits are excluded |
-| Consumer source | `1.0.0+223` | Read from the consumer pubspec; not a store-availability assertion |
-| System Admin source | `0.1.0+46` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.14.2` | Source target; deployment evidence remains separate |
-| Private v1 OpenAPI hash | `f2a50e7bbe169c34e0f42938e121eee6f8856a7da095680a006473fe3792c6c8` | Captured source file hash, not regeneration of the curated public export |
+| Review date | 2026-10-20 | Source comparison and retained release-record review |
+| Product source revision | `15d7491e30b63a168700150962b3101c5d60d499` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+238` | Read from the consumer pubspec; not a store-availability assertion |
+| System Admin source | `0.1.0+49` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.10.19.8` | Source target; deployment evidence remains separate |
+| Private v1 OpenAPI hash | `951780e402309c3ad507304721d10311f2d907024407bbb472592dfe82e3c913` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -33,9 +33,9 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-223 source and evidence boundary
+## Build-238 source and evidence boundary
 
-The [consumer-223/Admin-46 update](architecture/release-1.0.0-223.md) describes
+The [consumer-238/Admin-49 update](architecture/release-1.0.0-238.md) describes
 the inspected changes. The [generated version facts](architecture/source-versions.generated.md)
 are derived from both pubspecs, the schema constant and the canonical private
 v1 contract. Regeneration preserves the historical public API export rather
@@ -48,7 +48,7 @@ title/detail/action keys across six selectable locales. Structural parity is
 not a qualified linguistic review; copy approval is advisory under the owner's
 8 October decision. Current executed test counts, native packages, store state,
 live schema, provider outcomes and device journeys require their own exact
-release records. Those build-211 counts are not a fresh build-223 catalog run.
+release records. Those build-211 counts are not a fresh build-238 catalog run.
 Build-198's 5,046 consumer tests, 1,358 Admin tests, 9,114 API
 passes and schema caveats remain historical in its original
 [release chapter](architecture/release-1.0.0-198.md).
@@ -56,7 +56,7 @@ passes and schema caveats remain historical in its original
 ### Build-198 source and execution evidence
 
 The historical chapter's bounded test and packaging statements retain their
-original build-198 identity. They do not certify build 223. The earlier
+original build-198 identity. They do not certify build 238. The earlier
 packaged schema target was `2026.10.08.2`; its retained deployment caveats are
 documented in [schema alignment](runbooks/schema-alignment.md).
 
@@ -76,6 +76,11 @@ those scenarios or update the historical public dependency export.
 | Contacts and referral rewards | Controlled QR/contact-card sharing and favorite people support discovery; loyalty awards and conversion remain server-led | Referral qualification, actual award, conversion quote and wallet ledger agreement |
 | People and readiness | Admin dossiers connect people, documents, membership, security and activity; the API calculates readiness | Current permission denials, document-preview/decision/replacement and final-approval journeys |
 | Membership management | Catalog editing and plan creation, benefit/term-price management, member drill-down and individual membership actions have dedicated source surfaces | Store mappings, country pricing, effective entitlement propagation and real purchase/renewal outcomes |
+| Transportation Provider workspaces | One account can choose customer use or separate ride, courier and rental service setup; current country/service grants and readiness govern work | Fresh signup, restart, revocation, cross-service denial and signed-device flow for each country |
+| Service Provider membership | One Free/Silver/Gold catalog supplies published service-specific benefits to a named individual or organization; six paid product IDs map to weekly/monthly/quarterly terms | Live Apple/Google storefront availability, effective price, interruption, renewal, cancellation and exact-beneficiary entitlement proof |
+| Provider Team & Access | Recipient-bound invitations and current service-scoped grants preserve each person's own login and customer account | Delivery, acceptance, capacity races, owner handoff, current MySQL state and physical-client checks |
+| Rental Risk Exchange | Private incident, independent review, limited derivative disclosure, screening, rights and wallet-access source contracts are separate from ordinary membership | Approved country/legal policy, real channel prices and terms, wallet sale activation, subject-rights operations and provider/device evidence |
+| Marketplace intelligence | Consented interaction attempts and committed domain outcomes have different authority; metrics carry quality/provenance; forecasts are advisory | Organic population proof, privacy attacks, data completeness, real-world calibration and sustained capacity measurement |
 | Approval policy | Independent second approval is configurable per reviewed domain; source defaults allow one authorized reviewer | Deployed effective policy, policy changes and both enabled/disabled workflow tests |
 | Account security | Central identity owns credentials, sessions and recovery; clients carry appropriately scoped sessions | Current credentials, attestation, revocation and cold-restart behavior on signed apps |
 | Device identity | Installation credentials and verified app identity establish admission; model/IP metadata alone does not | Reinstall, restored storage, device restriction and cross-app binding observations |

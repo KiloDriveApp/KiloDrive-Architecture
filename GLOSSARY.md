@@ -182,11 +182,13 @@ Use the [current baseline](docs/current-baseline.md) for source provenance and
 | Permission grant | Authoritative assignment of capabilities to an account. Possessing the Admin app or selecting a country in its UI does not create a grant. |
 | PII | Personally identifiable information, including combinations of data that can identify or locate a person. |
 | Plan draft | An inactive membership-catalog entry awaiting required benefit, pricing, product and country setup. Creating it is not equivalent to publishing an Apple or Google product. |
+| Population provenance | Evidence that classifies which accounts and committed outcomes belong in a metric. A synthetic or unclassified population cannot silently be reported as organic growth. |
 | Presigned URL | Time-bounded, scoped URL granting a specific object operation without making the object public. Treat it as a temporary bearer credential. |
 | ProblemDetails | Structured HTTP error representation with stable public fields; production responses must not expose stack traces or sensitive payloads. |
 | Process-local limit | A rate/work counter maintained by one running process. Multiple API nodes require an assessed aggregate control; a shared cache used for other purposes does not change this property. |
 | Projection | A derived representation for a particular read or operational purpose. KiloDrive's country user projection is credential-free and supports local relationships; the global identity remains the credential authority. |
 | Provider acceptance | The provider accepted a request for processing. This does not establish eventual recipient delivery, final payment settlement or agreement with the server's business state. |
+| Provider organization grant | The current country- and service-scoped authority of a human member in an organization. A role label or invitation alone does not grant personal wallet, security or cross-service access. |
 | Provider reconciliation | Comparing authoritative provider evidence with the server-owned operation, account, amount, currency and lifecycle to establish a durable outcome. It is a read/decision process before any justified retry, not permission to repeat a charge. |
 | Push-token binding | Association of a push token with the verified app channel, account, country, installation and session. Rotation, logout, revocation and explicit opt-out must preserve ownership boundaries. |
 | Query filter | EF Core rule automatically applying tenant or archival scope. Administrative bypass requires explicit proof and review. |
@@ -196,6 +198,7 @@ Use the [current baseline](docs/current-baseline.md) for source provenance and
 | Refresh-token family | The persisted chain of session tokens produced by rotation. Family liveness and reuse detection support revocation; legacy tokens without the additive family claim have an explicitly different compatibility scope. |
 | Replay | Repeating a prior message or command. A protected mutation may return its stored response without executing again; malicious replay of an expired or consumed authentication proof must fail. |
 | Residual risk | Risk remaining after implemented controls and operating measures. Record its owner, scope, review date and closure evidence rather than hiding it behind a generic secure label. |
+| Rental Risk Exchange | A separately gated, country-scoped workflow for private rental incidents, independent review, limited derivative sharing, screening and subject rights. A filed report is not an automatic rental denial or verified finding. |
 | Reverse geocoding | Converting coordinates into a human-readable address. It can fail or be slow, so coordinates remain the immediate fallback. |
 | RPO/RTO | Recovery point and recovery time objectives. Exact production targets are restricted operational data. |
 | RS256 / ES256 | JWT signature algorithms using RSA or elliptic-curve private keys respectively and SHA-256. Verifiers use public keys; algorithm selection must be pinned rather than trusted from an unvalidated token header. |
@@ -214,7 +217,10 @@ Use the [current baseline](docs/current-baseline.md) for source provenance and
 | Semantic coverage | How much of a contract has a reviewed explanation of purpose, units, lifecycle and field meaning. A complete type listing or successful regeneration does not establish complete semantic coverage. |
 | SES | Amazon Simple Email Service, a configurable provider for transactional email. Successful API acceptance is tracked separately from delivery, bounce, complaint, or open evidence. |
 | Session family | See refresh-token family. A family is bound to a user and tenant and may bind an installation; it is not the physical device identifier or a reusable authentication secret. |
+| Service readiness | The current service-specific eligibility to accept ride, courier or rental work. It is distinct from provider membership capacity and from a document merely being uploaded. |
+| Service Provider membership | The Free, Silver or Gold benefit entitlement for a named individual or organization beneficiary. Native-store verification establishes paid terms; the tier alone does not establish driver, courier or rental readiness. |
 | SHA-256 sidecar | A companion file recording the expected SHA-256 of an artifact. Matching it detects inconsistency with that recorded baseline but does not prove the artifact is safe or independently reviewed. |
+| Shadow forecast | A prediction evaluated without governing live pricing, dispatch or other marketplace decisions. It is not evidence of calibrated accuracy or measured commercial uplift. |
 | Side effect | Work outside the core state transition, such as publish, email, webhook, object processing, or provider call. |
 | SignalR | ASP.NET Core realtime framework used to deliver authorized live updates to connected clients. |
 | Signed-artifact evidence | Observations tied to the exact signed APK/AAB/IPA, platform, device, provider mode and scenario. Source analysis cannot replace native distribution and runtime behavior checks. |

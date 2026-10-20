@@ -36,8 +36,8 @@ are that export's source provenance, not current product versions or a claim
 that every native/provider journey is certified. See the
 [native platform handbook](architecture/native-platform-handbook.md) for the
 source observations and their certification boundaries. The
-[consumer-211/Admin-44 update](architecture/release-1.0.0-211.md)
-records current source improvements. [Generated version facts](architecture/source-versions.generated.md)
+[latest consumer/Admin source update](architecture/release-1.0.0-238.md)
+records the newer source design. [Generated version facts](architecture/source-versions.generated.md)
 keep the source baseline aligned; the current evidence guide owns deployment
 and certification observations.
 
@@ -160,6 +160,12 @@ is not ordinary CRUD: inventory, payment authorization, immutable policy,
 condition evidence, deposit handling, and settlement must move together.
 Use the [rental booking recovery runbook](runbooks/rental-booking-recovery.md)
 before changing a lifecycle or attempting operational repair.
+
+For the shared provider enrollment, membership and organization boundary,
+continue with [Service Provider platform](architecture/service-provider-platform.md).
+For the optional Rental Risk Exchange candidate and advisory intelligence,
+read [rental risk and marketplace intelligence](architecture/rental-risk-and-marketplace-intelligence.md)
+before describing either as a live eligibility or pricing authority.
 
 ### I work on providers, messaging, maps, payments, or media
 
