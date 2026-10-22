@@ -64,6 +64,8 @@ The [website changelog](https://kilodrive.com/changelog/1.0.0/build/247?surface=
 consolidates the requested earlier releases while retaining internal history.
 The [manual library](https://kilodrive.com/manuals) publishes the End User Manual
 and Transportation Provider Operations Manual. The latter includes driver,
-courier and rental-provider procedures. Edition 5 uses one framed screenshot
+courier and rental-provider procedures. Edition 5.1 provides 22 customer and 31 provider screenshot pages, with one framed screenshot
 per illustrated page, task navigation and explicit recovery guidance.
 Screenshots illustrate captured states, not certification of untested outcomes.
+
+The End User guide contains 84 pages, a directory of 31 instructional chapters and 42 relevant error-code explanations. The Transportation Provider guide contains 121 pages, 48 instructional chapters and 61 error-code explanations. Printed codes link to the full public directory; each recovery explanation remains subordinate to the actual operation outcome. Captions identify retained earlier-build illustrations.
