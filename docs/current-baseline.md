@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-20 | Source comparison and retained release-record review |
-| Product source revision | `15d7491e30b63a168700150962b3101c5d60d499` | Committed version/contract authorities; unrelated working-tree edits are excluded |
-| Consumer source | `1.0.0+238` | Read from the consumer pubspec; not a store-availability assertion |
+| Review date | 2026-10-22 | Source comparison and retained release-record review |
+| Product source revision | `01b9e93f09ad02420145f5c0509e8e9248a88193` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+247` | Read from the consumer pubspec; not a store-availability assertion |
 | System Admin source | `0.1.0+49` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.19.8` | Source target; deployment evidence remains separate |
-| Private v1 OpenAPI hash | `951780e402309c3ad507304721d10311f2d907024407bbb472592dfe82e3c913` | Captured source file hash, not regeneration of the curated public export |
+| Schema contract | `2026.10.21.3` | Source target; deployment evidence remains separate |
+| Private v1 OpenAPI hash | `be5762f30d4e7a50afaa97c861fddf674a1338dbe6ea905fad09b42c767541bd` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -35,7 +35,7 @@ not quality scores or certification percentages.
 
 ## Build-238 source and evidence boundary
 
-The [consumer-238/Admin-49 update](architecture/release-1.0.0-238.md) describes
+The [consumer-238/Admin-49 update](architecture/release-1.0.0-247.md) describes
 the inspected changes. The [generated version facts](architecture/source-versions.generated.md)
 are derived from both pubspecs, the schema constant and the canonical private
 v1 contract. Regeneration preserves the historical public API export rather

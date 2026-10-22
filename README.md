@@ -32,7 +32,7 @@ The separate System Admin app is not the public consumer download.
 [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
 [Publication notice](NOTICE.md)
 
-The [latest source update](docs/architecture/release-1.0.0-238.md) covers
+The [latest source update](docs/architecture/release-1.0.0-247.md) covers
 the Service Provider workspaces, memberships, organization teams, courier and
 rental journeys, the restricted Rental Risk Exchange candidate and the
 intelligence programme. The [build-223 update](docs/architecture/release-1.0.0-223.md)
@@ -506,9 +506,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-20**, at committed product revision
-`15d7491e30b63a168700150962b3101c5d60d499`. The
-[consumer-238/Admin-49 update](docs/architecture/release-1.0.0-238.md)
+The latest source observation is **2026-10-22**, at committed product revision
+`01b9e93f09ad02420145f5c0509e8e9248a88193`. The
+[consumer-238/Admin-49 update](docs/architecture/release-1.0.0-247.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
 Deployment observations and certification scope belong in the
@@ -520,9 +520,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+238` |
+| Consumer app source, current observation | `1.0.0+247` |
 | System Admin app source, current observation | `0.1.0+49` |
-| Schema contract, current observation | `2026.10.19.8` |
+| Schema contract, current observation | `2026.10.21.3` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |
