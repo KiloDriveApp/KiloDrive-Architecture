@@ -10,9 +10,9 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-22 | Source comparison and retained release-record review |
-| Product source revision | `01b9e93f09ad02420145f5c0509e8e9248a88193` | Committed version/contract authorities; unrelated working-tree edits are excluded |
-| Consumer source | `1.0.0+247` | Read from the consumer pubspec; not a store-availability assertion |
+| Review date | 2026-10-23 | Source comparison and retained release-record review |
+| Product source revision | `3630d1c33b03577c7770664f3f7c3f49422cea17` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+248` | Read from the consumer pubspec; not a store-availability assertion |
 | System Admin source | `0.1.0+49` | Read from its independent pubspec; not private-distribution certification |
 | Schema contract | `2026.10.21.3` | Source target; deployment evidence remains separate |
 | Private v1 OpenAPI hash | `be5762f30d4e7a50afaa97c861fddf674a1338dbe6ea905fad09b42c767541bd` | Captured source file hash, not regeneration of the curated public export |
@@ -33,9 +33,9 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-238 source and evidence boundary
+## Build-248 source and evidence boundary
 
-The [consumer-238/Admin-49 update](architecture/release-1.0.0-247.md) describes
+The [consumer-248/Admin-49 update](architecture/release-1.0.0-248.md) describes
 the inspected changes. The [generated version facts](architecture/source-versions.generated.md)
 are derived from both pubspecs, the schema constant and the canonical private
 v1 contract. Regeneration preserves the historical public API export rather
@@ -65,6 +65,12 @@ preserves earlier test limitations, dated deployment observations and copy
 exceptions separately from benefit-focused release notes. Older native-source
 anchors keep their original dates; the current snapshot does not re-execute
 those scenarios or update the historical public dependency export.
+
+## Current country-policy publication
+
+The [23 October policy release](architecture/release-1.0.0-248.md) records active small-value rewards, seven published courier agreements, optional goods cash collection and exact-fare assignment, and evidence-based wallet-trip completion. Its API changes are a separately hashed working-tree deployment, not part of the source-version commit above. The new owner-approval date does not replace original country-checklist evidence or certify all countries end to end.
+
+The two edition-5.7 manuals contain 128 and 177 pages, with 56 customer and 75 provider framed screenshot pages. Current public release notes consolidate builds 247 and 224 into 248.
 
 ## What changed in the documented architecture
 

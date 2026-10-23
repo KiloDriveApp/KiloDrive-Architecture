@@ -4,7 +4,7 @@ This guide is the front door to the KiloDrive documentation set. You do not
 need to read every file before making a useful contribution. You do need to
 understand the ownership and failure boundaries touched by your change.
 
-Readers looking for the live website, rider/driver/rental manuals, public
+Readers looking for the live website, End User and Transportation Provider manuals, public
 changes, support, privacy notices, terms or the consumer Google Play listing
 can start with [official product links](public-product-links.md). Architecture
 chapters describe the design; current country-specific product disclosures
@@ -36,7 +36,7 @@ are that export's source provenance, not current product versions or a claim
 that every native/provider journey is certified. See the
 [native platform handbook](architecture/native-platform-handbook.md) for the
 source observations and their certification boundaries. The
-[latest consumer/Admin source update](architecture/release-1.0.0-238.md)
+[latest consumer/Admin source update](architecture/release-1.0.0-248.md)
 records the newer source design. [Generated version facts](architecture/source-versions.generated.md)
 keep the source baseline aligned; the current evidence guide owns deployment
 and certification observations.

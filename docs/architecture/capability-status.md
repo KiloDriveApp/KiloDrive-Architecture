@@ -18,6 +18,10 @@ records the separate consumer/Admin packages, newer source versions, typed
 adapters, notification/device binding and open certification gaps. It does not
 retroactively recertify the older matrix or establish a live deployment state.
 
+## Current policy observation
+
+The [23 October build-248 update](release-1.0.0-248.md) records the newer, independently verified country-policy publication and remaining certification limits. It supersedes older inactive-policy descriptions for that specific release scope; the historical matrix below retains its original evidence date.
+
 ## Review baseline and evidence anchors
 
 - **Reviewed:** 2026-09-23
