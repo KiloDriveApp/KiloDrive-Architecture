@@ -56,6 +56,10 @@ account reset or fabricated legal acceptance is involved.
 | Automatic assignment | Bidding remains the default. Customer opt-in accepts an eligible driver's exact-fare acceptance through the normal acceptance command. Counteroffers remain manual. Ranking does not itself assign a driver. |
 | Automatic completion | Wallet-funded journeys can complete after fresh, accurate, continuous stationary destination evidence and the normal locked settlement checks. Cash/external-payment journeys remain manual because GPS cannot prove payment collection. |
 
+Ride awards belong to the customer and courier-request awards to the sender.
+Providers can earn qualifying referral points; completed work as a driver or
+courier is not a separate provider award under these defaults.
+
 Automatic completion requires an in-progress, unpaused trip started at least
 one minute ago, no unfinished stops, at least three samples spanning 30 seconds,
 no sample gap over 15 seconds, latest evidence no older than 15 seconds,
