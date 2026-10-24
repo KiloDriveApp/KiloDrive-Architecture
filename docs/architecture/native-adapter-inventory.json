@@ -9,7 +9,7 @@
       "id": "apple-storekit",
       "operation": "Discover and purchase a driver or rental subscription; Restore and reconcile",
       "app": "consumer; System Admin investigates but does not launch a purchase",
-      "dart": "src/client/mobile/lib/core/platform_adapters/native_store_billing_adapter.dart; src/client/mobile/lib/core/store_billing.dart; src/client/mobile/lib/features/membership/data/membership_notifier.part.dart",
+      "dart": "src/client/mobile/lib/core/platform_adapters/native_store_billing_adapter.dart; src/client/mobile/lib/core/store_billing.dart; src/client/mobile/lib/features/membership/data/provider_store_checkout.dart",
       "ios": "StoreKit 2 through in_app_purchase_storekit; transaction updates and unfinished transactions",
       "android": "not applicable",
       "callback": "typed product/purchase observation enters a scoped journal; some UI event strings still require exact-operation correlation",

@@ -32,12 +32,12 @@ The separate System Admin app is not the public consumer download.
 [Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
 [Publication notice](NOTICE.md)
 
-The [latest source update](docs/architecture/release-1.0.0-248.md) covers
-the Service Provider workspaces, memberships, organization teams, courier and
-rental journeys, the restricted Rental Risk Exchange candidate and the
-intelligence programme. The [build-223 update](docs/architecture/release-1.0.0-223.md)
-remains dated history. Source availability, country policy, store distribution
-and physical-device certification are distinct claims.
+The [latest source update](docs/architecture/release-1.0.0-250.md) brings
+together the build-244 and build-248 customer improvements with build-250 trip
+sharing, ride-map and rental-journey changes. The
+[build-248 update](docs/architecture/release-1.0.0-248.md) retains its dated
+country-policy and manual evidence. Source availability, country policy,
+store distribution and physical-device certification are distinct claims.
 
 ## Start here
 
@@ -506,9 +506,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-23**, at committed product revision
-`3630d1c33b03577c7770664f3f7c3f49422cea17`. The
-[consumer-248/Admin-49 update](docs/architecture/release-1.0.0-248.md)
+The latest source observation is **2026-10-24**, at committed product revision
+`33acdf7e54348f4b3bdf5bb2e06ee0c06f38b4e9`. The
+[consumer-250/Admin-49 update](docs/architecture/release-1.0.0-250.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
 Deployment observations and certification scope belong in the
@@ -520,9 +520,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+248` |
+| Consumer app source, current observation | `1.0.0+250` |
 | System Admin app source, current observation | `0.1.0+49` |
-| Schema contract, current observation | `2026.10.21.3` |
+| Schema contract, current observation | `2026.10.24.1` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |

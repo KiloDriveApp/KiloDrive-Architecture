@@ -36,7 +36,7 @@ are that export's source provenance, not current product versions or a claim
 that every native/provider journey is certified. See the
 [native platform handbook](architecture/native-platform-handbook.md) for the
 source observations and their certification boundaries. The
-[latest consumer/Admin source update](architecture/release-1.0.0-248.md)
+[latest consumer/Admin source update](architecture/release-1.0.0-250.md)
 records the newer source design. [Generated version facts](architecture/source-versions.generated.md)
 keep the source baseline aligned; the current evidence guide owns deployment
 and certification observations.
