@@ -1,7 +1,7 @@
 # Consumer 1.0.0+250 — trip sharing, rental journeys and release history
 
 Reviewed 24 October 2026 against product source revision
-`33acdf7e54348f4b3bdf5bb2e06ee0c06f38b4e9`. The consumer source version is
+`c7c0892b6eff189a2849d6ae0226718f6b7b2bfc`. The consumer source version is
 `1.0.0+250`, the separate System Admin source version is `0.1.0+49`, and the
 schema contract is `2026.10.24.1`. These are source observations, not claims
 that a store has approved the build or that every country and provider is live.

@@ -11,7 +11,7 @@ test counts and device observations do not become evidence for newer builds.
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
 | Review date | 2026-10-24 | Source comparison and retained release-record review |
-| Product source revision | `33acdf7e54348f4b3bdf5bb2e06ee0c06f38b4e9` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Product source revision | `c7c0892b6eff189a2849d6ae0226718f6b7b2bfc` | Committed version/contract authorities; unrelated working-tree edits are excluded |
 | Consumer source | `1.0.0+250` | Read from the consumer pubspec; not a store-availability assertion |
 | System Admin source | `0.1.0+49` | Read from its independent pubspec; not private-distribution certification |
 | Schema contract | `2026.10.24.1` | Source target; deployment evidence remains separate |

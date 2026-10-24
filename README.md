@@ -507,7 +507,7 @@ jurisdiction-specific approval.
 ## Documentation baselines
 
 The latest source observation is **2026-10-24**, at committed product revision
-`33acdf7e54348f4b3bdf5bb2e06ee0c06f38b4e9`. The
+`c7c0892b6eff189a2849d6ae0226718f6b7b2bfc`. The
 [consumer-250/Admin-49 update](docs/architecture/release-1.0.0-250.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
