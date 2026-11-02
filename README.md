@@ -552,4 +552,4 @@ Historical results stay attached to their original build and environment. The
 [two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
 explain how to collect fresh evidence without relabeling an older pass.
 
-Copyright © 2026 Eprecus LLC. See [NOTICE.md](NOTICE.md).
+Copyright © 2026 KiloDrive Inc. See [NOTICE.md](NOTICE.md).

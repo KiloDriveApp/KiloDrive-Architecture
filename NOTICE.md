@@ -1,6 +1,6 @@
 # Notice
 
-Copyright © 2026 Eprecus LLC. All rights reserved.
+Copyright © 2026 KiloDrive Inc. All rights reserved.
 
 ## What this repository publishes
 
@@ -19,7 +19,7 @@ privileges or permission to test production. See the
 
 ## Rights and third-party material
 
-The copyright notice above remains unchanged. This update adds no new license
+KiloDrive is owned by KiloDrive Inc. This update adds no new license
 grant over KiloDrive code, documentation, branding or confidential material.
 Public visibility must not be interpreted as permission to use production data,
 trademarks, private implementation details or third-party services.

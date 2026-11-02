@@ -2,7 +2,7 @@
 
 - **Owner:** Web release engineering, content operations, and application security
 - **Status:** Operational browser-application release procedure
-- **Last exercised:** Not yet recorded in this public repository
+- **Last exercised:** 1 November 2026 for the consolidated manuals and release notes; ownership publication is recorded separately by its verified deployment evidence.
 - **Related architecture:** [Portal and website](../architecture/portal-and-website.md), [API architecture](../architecture/api.md), and [application security](../security/application-security.md)
 
 ## Purpose and scope
@@ -380,3 +380,34 @@ security, privacy, financial, and incident owners as appropriate.
 - Maintaining a second calculator formula that drifts from mobile/API behavior.
 - Testing with an administrator's browser session rather than seeded role fixtures.
 - Capturing credentials or private documents in screenshots.
+
+## Ownership and manual publication
+
+KiloDrive is owned by **KiloDrive Inc.** Original KiloDrive material carries
+`Copyright © 2026 KiloDrive Inc. All rights reserved.` Third-party and user
+materials keep their respective owners and licence terms.
+
+1. Update the current website/Portal footers, application attribution, PDF
+   author metadata, manual copyright pages, and repository notices together.
+2. Publish an ownership change as a new legal notice. Keep prior legal text,
+   hashes, acceptance records, and effective dates unchanged. A baseline seed
+   must not replace a later published legal version.
+3. Build the two canonical manuals: **End User Manual** and **Transportation
+   Provider Operations Manual**. The provider manual includes driver, courier,
+   rental organization, and delegated-team workflows. Use one phone-framed
+   screenshot per page and identify evidence captured on older builds.
+4. Validate source links, anchors, images, PDF metadata and page layout before
+   uploading. Verify the public PDF checksum and the website's served HTML
+   after publishing; an upload success alone does not prove publication.
+5. Preserve original release cards when consolidating release notes. Show the
+   selected language (English fallback), and a single release date rather
+   than dates or original-release metadata repeated in every card.
+6. Check app-store copyright fields separately. Store-verified seller identity,
+   company verification and app transfers are separate platform processes;
+   changing a copyright footer does not complete them.
+
+The canonical public entry points are [manuals](https://kilodrive.com/manuals),
+[End User Manual](https://kilodrive.com/manuals/end-user),
+[Transportation Provider Operations Manual](https://kilodrive.com/manuals/driver),
+and [release notes](https://kilodrive.com/changelog). Build numbers and schema
+versions must come from current source metadata, not a copied deployment log.
