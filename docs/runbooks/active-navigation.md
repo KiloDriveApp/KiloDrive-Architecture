@@ -82,8 +82,11 @@ or accept whichever duplicate Gradle selects.
 
 The packaged APK and AAB must pass the manifest permission gate. The native
 SDK contributes a background-location permission transitively; the consumer
-manifest removes it. Location continues only through the scoped trip service
-started from visible UI, without unrestricted background-location access.
+manifest removes it. The scoped telemetry service and the SDK guidance service
+are separately owned. Both are private and location-only; native guidance stops
+on view exit, app backgrounding, terminal trip state and task removal. Unknown
+typed services, an exported guidance service or any extra foreground-service
+type fail packaging. Starting navigation from the background is not supported.
 
 Abort rollout for map crashes, cross-account route ownership, continuing audio
 after terminal state, false speed/ETA, or any lifecycle/financial side effect
