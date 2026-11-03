@@ -4,7 +4,7 @@ KiloDrive is a transportation marketplace with more moving parts than a typical
 CRUD application. A rider can publish a trip, several drivers can receive it at
 nearly the same time, bids can change while phones move between networks, and a
 wallet payment may complete even when a notification provider is unavailable.
-That combination makes the system interesting—and occasionally unforgiving.
+That combination makes the system interestingâ€”and occasionally unforgiving.
 
 This repository explains how KiloDrive is designed, secured, and operated. It
 is written for junior and mid-level engineers who want to understand the
@@ -28,13 +28,15 @@ read the [user manuals](https://kilodrive.com/manuals) or
 are linked from the [official product-links guide](docs/public-product-links.md).
 The separate System Admin app is not the public consumer download.
 
-[Documentation guide](docs/README.md) · [Glossary](GLOSSARY.md) ·
-[Contributing](CONTRIBUTING.md) · [Security reporting](SECURITY.md) ·
+[Documentation guide](docs/README.md) Â· [Glossary](GLOSSARY.md) Â·
+[Contributing](CONTRIBUTING.md) Â· [Security reporting](SECURITY.md) Â·
 [Publication notice](NOTICE.md)
 
-The [latest source update](docs/architecture/release-1.0.0-250.md) brings
-together the build-244 and build-248 customer improvements with build-250 trip
-sharing, ride-map and rental-journey changes. The
+The [latest source update](docs/architecture/release-1.0.0-260.md) describes
+in-app driver navigation, full-screen speed and ETA, audio recovery and
+membership-configured pickup arrival distances. The
+[build-250 history](docs/architecture/release-1.0.0-250.md) preserves its
+trip-sharing and rental-journey evidence. The
 [build-248 update](docs/architecture/release-1.0.0-248.md) retains its dated
 country-policy and manual evidence. Source availability, country policy,
 store distribution and physical-device certification are distinct claims.
@@ -80,59 +82,59 @@ partner or administrator access or certify every production dependency.
 If this is your first day with a sharded, realtime platform, use the following
 reading order. It builds one idea at a time:
 
-1. [System context](docs/architecture/system-context.md) — what KiloDrive does
+1. [System context](docs/architecture/system-context.md) â€” what KiloDrive does
    and where the important trust boundaries sit.
-2. [Product and operational doctrine](docs/governance/product-and-operational-doctrine.md) —
+2. [Product and operational doctrine](docs/governance/product-and-operational-doctrine.md) â€”
    the rules that connect product intent, security, money, safety, failure
    recovery, honest status, and production evidence.
-3. [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md) —
+3. [Tenancy and country cells](docs/architecture/tenancy-and-country-cells.md) â€”
    why identity is global while trips and money remain country-local.
-4. [Entity identification](docs/architecture/entity-identification.md) — why
+4. [Entity identification](docs/architecture/entity-identification.md) â€” why
    UUIDv7 is used and why public support IDs are not database keys.
-5. [Realtime and asynchronous processing](docs/architecture/realtime-and-events.md) —
+5. [Realtime and asynchronous processing](docs/architecture/realtime-and-events.md) â€”
    the difference between durable truth and fast delivery.
-6. [Geospatial processing](docs/architecture/geospatial.md) — how location,
+6. [Geospatial processing](docs/architecture/geospatial.md) â€” how location,
    route matching, and deviation detection work without treating noisy GPS as
    perfect evidence.
-7. [Rider and driver safety](docs/architecture/rider-driver-safety.md) — how
+7. [Rider and driver safety](docs/architecture/rider-driver-safety.md) â€” how
    eligibility, pre-trip confirmation, RideCheck, emergency actions, evidence,
    and human response protect both sides of a trip.
-8. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) —
+8. [Marketplace product lifecycles](docs/architecture/marketplace-product-lifecycles.md) â€”
    how scheduled and multi-stop rides, driver business tools, family/business
    travel, courier, rentals, reputation, and support remain recoverable.
    The [Service Provider platform](docs/architecture/service-provider-platform.md)
    explains common onboarding, workspaces, memberships and organization grants.
    [Risk and intelligence boundaries](docs/architecture/rental-risk-and-marketplace-intelligence.md)
    separates rental screening from marketplace analytics and automation.
-9. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) —
+9. [Jurisdictional compliance](docs/architecture/jurisdictional-compliance.md) â€”
    how country dossiers, shard gates, effective rules, approvals, and retained
    evidence turn legal requirements into enforceable operations.
-10. [Financial systems](docs/architecture/financial-systems.md) — wallets,
+10. [Financial systems](docs/architecture/financial-systems.md) â€” wallets,
    holds, double-entry journals, idempotency, and reconciliation.
-11. [Rental marketplace](docs/architecture/rental-marketplace.md) — how fleet,
+11. [Rental marketplace](docs/architecture/rental-marketplace.md) â€” how fleet,
     availability, payment authorization, evidence, deposits, and disputes form
     one lifecycle.
-12. [System Administration](docs/architecture/system-administration.md) — how
+12. [System Administration](docs/architecture/system-administration.md) â€” how
     capabilities, country workspaces, work queues, investigations, step-up,
     audit, and safe recovery fit together.
     The [System Admin mobile app](docs/architecture/system-admin-mobile-app.md)
     chapter describes the separate operator client and its current limits.
-13. [Runbook fundamentals](docs/runbooks/README.md) — how to diagnose and recover
+13. [Runbook fundamentals](docs/runbooks/README.md) â€” how to diagnose and recover
     production safely.
 14. [Public quality assurance and concurrency guarantees](docs/quality/public-assurance-and-concurrency.md)
-    and [testing and verification](docs/quality/testing-and-verification.md) —
+    and [testing and verification](docs/quality/testing-and-verification.md) â€”
     how outcome-oriented coverage, invariants, negative authorization, races,
     failure injection, real boundaries, and signed artifacts become release
     evidence.
-15. [Runtime boundaries and certification](docs/architecture/runtime-boundaries-and-certification.md) —
+15. [Runtime boundaries and certification](docs/architecture/runtime-boundaries-and-certification.md) â€”
     how anonymous tenancy, public routes, hardened failures, typed clients,
     work queues, negotiated fares, realtime recovery, and capacity proof fit
     together.
-16. [Runtime profiles](docs/architecture/runtime-profiles.md) — how the modular
+16. [Runtime profiles](docs/architecture/runtime-profiles.md) â€” how the modular
     monolith can run as Public API, realtime gateway, country worker, media
     worker, reporting worker, or the compatibility Combined host without
     splitting a country-cell transaction.
-17. [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md) —
+17. [Authoritative foreign exchange](docs/architecture/authoritative-foreign-exchange.md) â€”
     how reviewed rates, fee policy, immutable quotes, transaction snapshots,
     configurable approval controls, and reconciliation keep cross-currency money honest.
 
@@ -334,7 +336,7 @@ versions worth remembering:
   an on-call engineer that something is wrong; normalized table, column, index,
   and foreign-key differences tell them what to inspect.
 - **Optional providers need honest degraded states.** Missing LiveKit, maps, or
-  messaging configuration should be visible and bounded—not converted into a
+  messaging configuration should be visible and boundedâ€”not converted into a
   confusing generic error or an infinite loader.
 - **Secret redaction must cover URLs.** OAuth tokens and SignalR access tokens
   can leak through query strings even when request bodies are masked.
@@ -489,8 +491,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the full writing and review guide.
 
 ## Status language
 
-Every chapter separates **source maturity**—Implemented, Incremental, or
-Planned—from **deployment state**—Configurable, Uncertified, Certified, Active,
+Every chapter separates **source maturity**â€”Implemented, Incremental, or
+Plannedâ€”from **deployment state**â€”Configurable, Uncertified, Certified, Active,
 or Unavailable. Operational policy names a required procedure and its retained
 evidence; it is not a maturity level. Read the exact definitions in the
 [product and operational doctrine](docs/governance/product-and-operational-doctrine.md).
@@ -506,9 +508,9 @@ jurisdiction-specific approval.
 
 ## Documentation baselines
 
-The latest source observation is **2026-10-24**, at committed product revision
-`c7c0892b6eff189a2849d6ae0226718f6b7b2bfc`. The
-[consumer-250/Admin-49 update](docs/architecture/release-1.0.0-250.md)
+The latest source observation is **2026-11-03**, at committed product revision
+`088bd58a1450598080f3649bad98f1286ccd94de`. The
+[consumer-260 update](docs/architecture/release-1.0.0-260.md)
 summarizes the implemented improvements. [Generated version facts](docs/architecture/source-versions.generated.md)
 bind the source baseline to the authoritative pubspecs and schema constant.
 Deployment observations and certification scope belong in the
@@ -520,9 +522,9 @@ snapshots. Neither proves store availability or a live deployment.
 
 | Item | Reviewed snapshot |
 | --- | --- |
-| Consumer app source, current observation | `1.0.0+250` |
-| System Admin app source, current observation | `0.1.0+49` |
-| Schema contract, current observation | `2026.10.24.1` |
+| Consumer app source, current observation | `1.0.0+260` |
+| System Admin app source, current observation | `0.1.0+51` |
+| Schema contract, current observation | `2026.11.02.1` |
 | Complete private canonical API, older export | 996 paths / 1,123 operations |
 | Curated public API, older export | 459 paths / 528 operations / 659 models / 5,012 model properties |
 | Public dependency baseline | 117 direct/override package coordinates; not the full release SBOM |
@@ -552,4 +554,4 @@ Historical results stay attached to their original build and environment. The
 [two-app release runbook](docs/runbooks/two-app-release-and-compatibility.md)
 explain how to collect fresh evidence without relabeling an older pass.
 
-Copyright © 2026 KiloDrive Inc. See [NOTICE.md](NOTICE.md).
+Copyright Â© 2026 KiloDrive Inc. See [NOTICE.md](NOTICE.md).

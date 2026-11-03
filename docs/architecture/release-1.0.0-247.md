@@ -69,6 +69,4 @@ per illustrated page, task navigation and explicit recovery guidance.
 Screenshots illustrate captured states, not certification of untested outcomes.
 
 The End User guide contains 91 pages, a directory of 36 instructional chapters and 42 relevant error-code explanations. The Transportation Provider guide contains 130 pages, 55 instructional chapters and 61 error-code explanations. Printed codes link to the full public directory; each recovery explanation remains subordinate to the actual operation outcome. Captions identify retained earlier-build illustrations.
-
-
 The [workflow and manual coverage review](consumer-workflow-coverage-247.md) records the latest source-backed additions, publication checks and illustration limits.

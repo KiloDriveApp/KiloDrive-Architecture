@@ -19,6 +19,7 @@ environment-specific commands remain in restricted operational material.
 
 | Runbook | Use it when | Recovery goal |
 | --- | --- | --- |
+| [Active navigation and pickup recovery](active-navigation.md) | Driver guidance, speed/ETA, route audio or pickup recovery fails | Restore current-trip guidance without changing lifecycle, privacy or financial authority |
 | [Build-168 operational handover](build168-operational-handover.md) | Investigating the build-168 membership, session, notification or queue checkpoint | Distinguish current authority and exact executed evidence from historical tests or unperformed certification |
 | [API deployment](api-deployment.md) | An approved API build is being released or rolled back | Prove the intended binary and compatible schema are serving traffic |
 | [Portal and website release](portal-website-release.md) | A browser application is being released | Preserve security headers, localization, API contracts, and rollback |

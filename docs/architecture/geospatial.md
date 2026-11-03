@@ -425,6 +425,7 @@ Use synthetic coordinates and reviewed public route fixtures. Cover:
 
 ## Related reading
 
+- [Active navigation and pickup recovery](../runbooks/active-navigation.md)
 - [Valkey geospatial-state ADR](../adr/003-valkey-geospatial-state.md)
 - [OSRM map-matching ADR](../adr/004-osrm-map-matching.md)
 - [Country-cell sharding ADR](../adr/001-country-cell-sharding.md)

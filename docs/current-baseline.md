@@ -1,6 +1,6 @@
 # Current documentation baseline and evidence
 
-[Documentation guide](README.md) · [API Guide](api/README.md) · [Capability status](architecture/capability-status.md)
+[Documentation guide](README.md) Â· [API Guide](api/README.md) Â· [Capability status](architecture/capability-status.md)
 
 This is the entry point for interpreting dates and completion claims in this
 repository. Historical release chapters remain useful, but their versions,
@@ -10,12 +10,12 @@ test counts and device observations do not become evidence for newer builds.
 
 | Item | Inspected value | Meaning |
 | --- | --- | --- |
-| Review date | 2026-10-24 | Source comparison and retained release-record review |
-| Product source revision | `c7c0892b6eff189a2849d6ae0226718f6b7b2bfc` | Committed version/contract authorities; unrelated working-tree edits are excluded |
-| Consumer source | `1.0.0+250` | Read from the consumer pubspec; not a store-availability assertion |
-| System Admin source | `0.1.0+49` | Read from its independent pubspec; not private-distribution certification |
-| Schema contract | `2026.10.24.1` | Source target; deployment evidence remains separate |
-| Private v1 OpenAPI hash | `156fee34b0c7c0d1bfa129fbb42edb83c4e10230c74e6e437c918c3390a9db1d` | Captured source file hash, not regeneration of the curated public export |
+| Review date | 2026-11-03 | Source comparison and retained release-record review |
+| Product source revision | `088bd58a1450598080f3649bad98f1286ccd94de` | Committed version/contract authorities; unrelated working-tree edits are excluded |
+| Consumer source | `1.0.0+260` | Read from the consumer pubspec; not a store-availability assertion |
+| System Admin source | `0.1.0+51` | Read from its independent pubspec; not private-distribution certification |
+| Schema contract | `2026.11.02.1` | Source target; deployment evidence remains separate |
+| Private v1 OpenAPI hash | `2d2314e82f3801c0a3efea0357598fd551b5498f2e1595325e7caf37097bcb39` | Captured source file hash, not regeneration of the curated public export |
 | Public API coverage | 528 operations, 659 models, 5,012 properties | Historical curated export from product revision `1cd27c58f0fd9df6d974fab3718c3cb0b485f251`; it has **not** been regenerated against the current product checkout |
 
 The historical public API export's own source metadata is consumer
@@ -33,7 +33,32 @@ separates operation-specific explanations from route-derived summaries and
 lists unresolved schema and field-description gaps. Counts describe coverage,
 not quality scores or certification percentages.
 
-## Build-250 source and evidence boundary
+## Build-260 source and evidence boundary
+
+The [build-260 navigation update](architecture/release-1.0.0-260.md) adds the
+native active-navigation surface, account/trip-scoped audio preference,
+rerouting recovery and database-owned pickup arrival policy. Its
+[operational runbook](runbooks/active-navigation.md) distinguishes camera,
+guidance, trip lifecycle and payment ownership. Stationary Android observations
+do not replace moving-road or native iPhone certification.
+
+The current strict error catalogue contains 4,713 situations, with zero
+incomplete explanations and zero missing six-language keys. Structural parity
+does not constitute qualified linguistic review. Release gates, signed artifact
+identity, production deployment and store outcomes have separate records.
+
+Runtime diagnostics use console and rolling-file logs. CloudWatch and X-Ray
+publishing were retired on 31 October 2026. Older observability examples do not
+authorize restoring those paid integrations; a new owner decision and cost
+estimate are required.
+
+On 3 November 2026, the two canonical PDF manuals were published and their
+download hashes checked: End User, 139 pages, and Transportation Provider,
+204 pages. The website manual routes and build-260 release notes returned
+HTTP 200 with the new content. The screenshot ledger preserves the original
+build of each capture. Publication does not certify unexercised journeys.
+
+### Retained build-250 history
 
 The [consumer-250/Admin-49 update](architecture/release-1.0.0-250.md) describes
 the inspected changes and consolidates the customer-facing themes from builds
@@ -72,7 +97,7 @@ those scenarios or update the historical public dependency export.
 
 The [23 October policy release](architecture/release-1.0.0-248.md) records active small-value rewards, seven published courier agreements, optional goods cash collection and exact-fare assignment, and evidence-based wallet-trip completion. Its API changes are a separately hashed working-tree deployment, not part of the source-version commit above. The new owner-approval date does not replace original country-checklist evidence or certify all countries end to end.
 
-The two edition-5.7 manuals contain 128 and 177 pages, with 56 customer and 75 provider framed screenshot pages. The build-248 public release notes had already consolidated builds 247 and 224. The build-250 source chapter adds the distinct build-244 and build-250 themes; website publication is verified separately.
+At the build-248 checkpoint, the two edition-5.7 manuals contained 128 and 177 pages, with 56 customer and 75 provider framed screenshot pages. Those counts are historical. The build-248 public release notes had already consolidated builds 247 and 224. The build-250 source chapter retains the distinct build-244 and build-250 themes.
 
 ## What changed in the documented architecture
 
@@ -95,6 +120,7 @@ The two edition-5.7 manuals contain 128 and 177 pages, with 56 customer and 75 p
 | Notifications | Durable side effects and provider adapters separate account preferences, installation bindings, delivery attempts and admin alerts | Provisioned destinations and observed email/SMS/WhatsApp/push delivery |
 | Financial recovery | Stable operation identity, retained payload/revision and authoritative outcome reads govern uncertain results | Provider, ledger and client agreement after real interrupted operations |
 | Native adapters | Typed platform observations are separated from server decisions; late callbacks are scoped and fenced | Real StoreKit/Play, secure storage, camera, push, RTC and location behavior |
+| Active navigation | Native guidance and camera state remain separate from authoritative trip lifecycle; account/trip-scoped mute survives view handoff and stale estimates clear on reroute | Moving-road accuracy, audible guidance, weak-connectivity driving and native iPhone execution |
 | API documentation | Public export preserves allowed wire contracts without copying the complete private API | Deeper semantic review where the coverage report flags a gap |
 
 These statements describe inspected source, not a declaration that all
@@ -151,6 +177,6 @@ complete release SBOM. See [SBOM scope](third-party/sbom.md).
 See the [documentation correction record](quality/documentation-audit-2026-10-03.md)
 for the defects corrected in this revision and the limits still visible.
 
-## Delivery wizard source update — 15 October 2026
+## Delivery wizard source update â€” 15 October 2026
 
 See [optional contacts and clearer wizard navigation](architecture/delivery-wizard-optional-contacts.md) for consumer 215 source behavior, security boundaries and focused verification. Deployment and store availability are not asserted.
