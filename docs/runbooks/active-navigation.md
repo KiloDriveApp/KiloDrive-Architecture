@@ -86,7 +86,11 @@ manifest removes it. The scoped telemetry service and the SDK guidance service
 are separately owned. Both are private and location-only; native guidance stops
 on view exit, app backgrounding, terminal trip state and task removal. Unknown
 typed services, an exported guidance service or any extra foreground-service
-type fail packaging. Starting navigation from the background is not supported.
+type fail packaging. Permission checks include SDK-specific tags and reject
+duplicate declarations. Legacy Bluetooth declarations are normalized to one
+version-bounded entry per permission. Starting navigation from the background
+is not supported. Native permission localization is checked locally and in the
+Mac lane, including the motion permission required by navigation.
 
 Abort rollout for map crashes, cross-account route ownership, continuing audio
 after terminal state, false speed/ETA, or any lifecycle/financial side effect
